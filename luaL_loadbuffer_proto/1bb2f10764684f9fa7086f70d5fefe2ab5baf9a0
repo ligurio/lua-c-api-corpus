@@ -1,0 +1,84 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\000\000\000"
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    list {
+      varlist {
+        var {
+          indexname {
+            prefixexp {
+              exp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    less: 10
+                  }
+                  rightexp {
+                    str: "string.format"
+                  }
+                }
+              }
+            }
+            Name: ""
+          }
+        }
+        vars {
+          indexname {
+            prefixexp {
+            }
+            Name: ""
+          }
+        }
+      }
+      explist {
+        expressions {
+          str: "os"
+        }
+        expressions {
+          nil: 10
+        }
+        expressions {
+          binary {
+            leftexp {
+            }
+            binop {
+            }
+            rightexp {
+            }
+          }
+        }
+        expressions {
+          binary {
+            leftexp {
+            }
+            binop {
+            }
+            rightexp {
+            }
+          }
+        }
+        explast {
+          unary {
+            unop {
+              negate: 0
+            }
+            exp {
+            }
+          }
+        }
+      }
+    }
+  }
+}
