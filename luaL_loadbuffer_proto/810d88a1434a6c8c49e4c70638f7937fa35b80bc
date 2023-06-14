@@ -1,0 +1,79 @@
+chunk {
+  stat {
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+        vars {
+          indexexpr {
+            prefixexp {
+              exp {
+                ellipsis: "\000\000\000\000\000\000\000\000"
+              }
+            }
+            exp {
+            }
+          }
+        }
+        vars {
+          indexexpr {
+            prefixexp {
+              functioncall {
+                prefArgs {
+                  prefixexp {
+                    exp {
+                      str: "A"
+                    }
+                  }
+                  args {
+                    explist {
+                    }
+                  }
+                }
+              }
+            }
+            exp {
+              str: "\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377"
+            }
+          }
+        }
+      }
+      explist {
+        expressions {
+          function {
+            body {
+              block {
+                chunk {
+                  laststat {
+                    semicolon: true
+                  }
+                }
+              }
+            }
+          }
+        }
+        explast {
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          exp {
+            str: "A"
+          }
+        }
+        args {
+          explist {
+          }
+        }
+      }
+    }
+  }
+  laststat {
+  }
+}

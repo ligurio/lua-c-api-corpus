@@ -1,0 +1,101 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+        }
+        vars {
+          indexexpr {
+            prefixexp {
+            }
+            exp {
+            }
+          }
+        }
+        vars {
+          indexexpr {
+            prefixexp {
+            }
+            exp {
+            }
+          }
+        }
+        vars {
+          indexname {
+            prefixexp {
+            }
+            Name: "package"
+          }
+        }
+      }
+      explist {
+        expressions {
+        }
+        explast {
+        }
+      }
+    }
+    semicolon: false
+  }
+  laststat {
+    explist {
+      explist {
+        expressions {
+          str: "z"
+        }
+        expressions {
+          binary {
+            leftexp {
+            }
+            binop {
+            }
+            rightexp {
+              function {
+                body {
+                  parlist {
+                  }
+                  block {
+                    chunk {
+                      stat {
+                        semicolon: true
+                      }
+                      laststat {
+                        semicolon: true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        explast {
+          binary {
+            leftexp {
+            }
+            binop {
+            }
+            rightexp {
+              function {
+                body {
+                  parlist {
+                  }
+                  block {
+                    chunk {
+                      stat {
+                        semicolon: false
+                      }
+                      laststat {
+                        semicolon: true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

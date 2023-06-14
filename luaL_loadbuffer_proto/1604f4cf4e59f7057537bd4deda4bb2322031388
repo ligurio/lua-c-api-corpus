@@ -1,0 +1,73 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "w\000\000\000\006"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  laststat {
+    explist {
+      explist {
+        expressions {
+          unary {
+            unop {
+              length: 4
+            }
+            exp {
+              binary {
+                leftexp {
+                }
+                binop {
+                  add: 1
+                }
+                rightexp {
+                  number: 0
+                }
+              }
+            }
+          }
+        }
+        explast {
+          binary {
+            leftexp {
+              binary {
+                leftexp {
+                }
+                binop {
+                  exp: 0
+                }
+                rightexp {
+                  unary {
+                    unop {
+                      negate: 1056
+                    }
+                    exp {
+                      number: 8.0625762939453125
+                    }
+                  }
+                }
+              }
+            }
+            binop {
+              add: 1
+            }
+            rightexp {
+              false: 6488064
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\000\000\000"
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    list {
+      varlist {
+        var {
+          indexname {
+            prefixexp {
+              exp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    less: 0
+                  }
+                  rightexp {
+                    str: "string.format"
+                  }
+                }
+              }
+            }
+            Name: ""
+          }
+        }
+        vars {
+          indexname {
+            prefixexp {
+              var {
+                indexexpr {
+                  prefixexp {
+                  }
+                  exp {
+                    nil: 0
+                  }
+                }
+              }
+            }
+            Name: "\001\005"
+          }
+        }
+      }
+      explist {
+        expressions {
+          nil: 10
+        }
+        expressions {
+          binary {
+            leftexp {
+            }
+            binop {
+            }
+            rightexp {
+              binary {
+                leftexp {
+                  prefixexp {
+                    var {
+                      indexexpr {
+                        prefixexp {
+                        }
+                        exp {
+                          nil: 0
+                        }
+                      }
+                    }
+                  }
+                }
+                binop {
+                }
+                rightexp {
+                }
+              }
+            }
+          }
+        }
+        expressions {
+          binary {
+            leftexp {
+            }
+            binop {
+              mod: 13434880
+            }
+            rightexp {
+            }
+          }
+        }
+        explast {
+          nil: 0
+        }
+      }
+    }
+  }
+  laststat {
+  }
+}

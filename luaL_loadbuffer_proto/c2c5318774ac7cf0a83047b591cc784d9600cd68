@@ -1,0 +1,55 @@
+chunk {
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: "_______________________________"
+          num: 0
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        str: "fuzz"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  str: "fuzz"
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        localnames {
+                          namelist {
+                            firstname {
+                              name: "_______________________________"
+                              num: 0
+                            }
+                            names {
+                              name: ""
+                              num: 8388608
+                            }
+                          }
+                        }
+                      }
+                      stat {
+                      }
+                    }
+                  }
+                }
+              }
+              semicolon: false
+            }
+          }
+        }
+      }
+    }
+  }
+}
