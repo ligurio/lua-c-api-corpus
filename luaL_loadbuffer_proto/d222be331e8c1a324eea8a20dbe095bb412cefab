@@ -1,0 +1,81 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        true: 0
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            length: 0
+          }
+          exp {
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+      explist {
+        expressions {
+          prefixexp {
+          }
+        }
+        expressions {
+          unary {
+            unop {
+              not: 0
+            }
+            exp {
+              unary {
+                unop {
+                  not: 0
+                }
+                exp {
+                  binary {
+                    leftexp {
+                      prefixexp {
+                      }
+                    }
+                    binop {
+                      lessEqual: 0
+                    }
+                    rightexp {
+                      number: 0.00244140625
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        explast {
+          str: ""
+        }
+      }
+    }
+  }
+}

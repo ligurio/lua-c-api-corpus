@@ -1,0 +1,107 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                nil: 255
+              }
+              first {
+                chunk {
+                  laststat {
+                    break: 50
+                  }
+                }
+              }
+              last {
+                chunk {
+                  stat {
+                    ifstat {
+                      condition {
+                      }
+                      first {
+                        chunk {
+                          stat {
+                            call {
+                              namedArgs {
+                                prefixexp {
+                                }
+                                name {
+                                  name: "\377\377\377\377\377\377\377\377\377\377\377\377"
+                                  num: 0
+                                }
+                                args {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      last {
+                        chunk {
+                          laststat {
+                            break: 0
+                          }
+                        }
+                      }
+                    }
+                  }
+                  laststat {
+                    break: 0
+                  }
+                }
+              }
+            }
+          }
+          laststat {
+            break: 50
+          }
+        }
+      }
+      condition {
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+      }
+      first {
+        chunk {
+          stat {
+            forcyclelist {
+              names {
+                firstname {
+                  name: ""
+                  num: 0
+                }
+              }
+              expressions {
+                explast {
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      last {
+        chunk {
+          laststat {
+            break: 50
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    break: 0
+  }
+}

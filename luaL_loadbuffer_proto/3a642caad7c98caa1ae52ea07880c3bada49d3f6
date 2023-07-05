@@ -1,0 +1,110 @@
+chunk {
+  stat {
+  }
+  stat {
+    localfunc {
+      name {
+        name: ""
+        num: 0
+      }
+      funcbody {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        true: 0
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    whilecycle {
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+              expression {
+                tableconstructor {
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    semicolon: false
+  }
+  stat {
+    whilecycle {
+      condition {
+        tableconstructor {
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  tableconstructor {
+                    fieldlist {
+                      firstField {
+                        namedassign {
+                          name {
+                            name: "\'#"
+                            num: 0
+                          }
+                          value {
+                            ellipsis: "\'#"
+                          }
+                        }
+                      }
+                      fields {
+                        field {
+                        }
+                        sep {
+                          semicolon: 7
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+}

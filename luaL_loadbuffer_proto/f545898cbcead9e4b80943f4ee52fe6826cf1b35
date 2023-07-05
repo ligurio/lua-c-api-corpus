@@ -1,0 +1,49 @@
+chunk {
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+    }
+  }
+  stat {
+    list {
+      varlist {
+        var {
+          indexname {
+            prefixexp {
+            }
+            Name: "fuzz"
+          }
+        }
+      }
+      explist {
+        explast {
+          function {
+            body {
+              parlist {
+                ellipsis: "("
+              }
+              block {
+                chunk {
+                  stat {
+                    semicolon: true
+                  }
+                  laststat {
+                    break: 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  laststat {
+  }
+}

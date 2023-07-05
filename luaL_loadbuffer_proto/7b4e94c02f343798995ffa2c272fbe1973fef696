@@ -1,0 +1,76 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            length: 4
+          }
+          exp {
+            tableconstructor {
+              fieldlist {
+                firstField {
+                  expression {
+                    binary {
+                      leftexp {
+                        unary {
+                          unop {
+                            length: 4
+                          }
+                          exp {
+                            tableconstructor {
+                            }
+                          }
+                        }
+                      }
+                      binop {
+                        mod: 4
+                      }
+                      rightexp {
+                        number: 416
+                      }
+                    }
+                  }
+                }
+                fields {
+                  field {
+                    expression {
+                      nil: 0
+                    }
+                  }
+                  sep {
+                  }
+                }
+                lastSep {
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              list {
+                varlist {
+                  var {
+                  }
+                }
+                explist {
+                  explast {
+                    number: 5
+                  }
+                }
+              }
+              semicolon: true
+            }
+            stat {
+              semicolon: false
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            tableconstructor {
+            }
+          }
+          binop {
+            notEqual: 0
+          }
+          rightexp {
+            tableconstructor {
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                      binary {
+                        leftexp {
+                          true: 0
+                        }
+                        binop {
+                        }
+                        rightexp {
+                          binary {
+                            leftexp {
+                              true: 0
+                            }
+                            binop {
+                            }
+                            rightexp {
+                              tableconstructor {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                    binop {
+                      notEqual: 0
+                    }
+                    rightexp {
+                      tableconstructor {
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+            stat {
+              semicolon: false
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  laststat {
+    explist {
+    }
+  }
+}

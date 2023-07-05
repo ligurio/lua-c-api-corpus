@@ -1,0 +1,29 @@
+chunk {
+  stat {
+    semicolon: false
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            false: 2
+          }
+          binop {
+            mod: 0
+          }
+          rightexp {
+            number: -3
+          }
+        }
+      }
+    }
+  }
+}

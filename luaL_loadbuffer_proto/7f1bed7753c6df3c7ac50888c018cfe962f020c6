@@ -1,0 +1,90 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        prefixexp {
+          exp {
+            unary {
+              unop {
+              }
+              exp {
+                unary {
+                  unop {
+                    length: 0
+                  }
+                  exp {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    forcyclelist {
+      names {
+        firstname {
+          name: "z"
+          num: 0
+        }
+      }
+      expressions {
+        explast {
+          function {
+            body {
+              parlist {
+                ellipsis: ""
+              }
+              block {
+                chunk {
+                  stat {
+                    semicolon: true
+                  }
+                  laststat {
+                    explist {
+                      explist {
+                        explast {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              list {
+                varlist {
+                  var {
+                  }
+                }
+                explist {
+                  expressions {
+                    tableconstructor {
+                    }
+                  }
+                  explast {
+                    nil: 0
+                  }
+                }
+              }
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

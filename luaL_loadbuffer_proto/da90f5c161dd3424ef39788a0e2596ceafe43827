@@ -1,0 +1,65 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+          }
+          stat {
+            semicolon: true
+          }
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                  stat {
+                  }
+                  stat {
+                    semicolon: true
+                  }
+                  stat {
+                    repeatcycle {
+                      block {
+                        chunk {
+                          stat {
+                          }
+                          stat {
+                            semicolon: true
+                          }
+                          stat {
+                          }
+                        }
+                      }
+                      condition {
+                        ellipsis: "\377\377\377\377\377\377\377\016"
+                      }
+                    }
+                  }
+                }
+              }
+              condition {
+              }
+            }
+          }
+        }
+      }
+      condition {
+        false: 2105376
+      }
+    }
+    semicolon: false
+  }
+}

@@ -1,0 +1,95 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            true: 0
+          }
+          binop {
+          }
+          rightexp {
+            str: "n"
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                      binary {
+                        leftexp {
+                          true: 0
+                        }
+                        binop {
+                        }
+                        rightexp {
+                          binary {
+                            leftexp {
+                              true: 0
+                            }
+                            binop {
+                            }
+                            rightexp {
+                              true: 0
+                            }
+                          }
+                        }
+                      }
+                    }
+                    binop {
+                      notEqual: 0
+                    }
+                    rightexp {
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+              semicolon: false
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    forcyclename {
+      name {
+        name: ""
+        num: 0
+      }
+      startexp {
+        binary {
+          leftexp {
+            true: 0
+          }
+          binop {
+          }
+          rightexp {
+            str: "n"
+          }
+        }
+      }
+      stopexp {
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

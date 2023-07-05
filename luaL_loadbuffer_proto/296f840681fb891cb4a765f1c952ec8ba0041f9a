@@ -1,0 +1,157 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                  }
+                  args {
+                    str: "hotexit"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                  }
+                  args {
+                    str: "hotexit"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            semicolon: true
+          }
+        }
+      }
+      condition {
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        nil: 0
+      }
+    }
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        expressions {
+        }
+        expressions {
+          binary {
+            leftexp {
+              unary {
+                unop {
+                }
+                exp {
+                  ellipsis: " "
+                }
+              }
+            }
+            binop {
+              and: 0
+            }
+            rightexp {
+            }
+          }
+        }
+        explast {
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        expressions {
+          binary {
+            leftexp {
+              unary {
+                unop {
+                }
+                exp {
+                  ellipsis: " "
+                }
+              }
+            }
+            binop {
+              and: 0
+            }
+            rightexp {
+              nil: 0
+            }
+          }
+        }
+        expressions {
+          str: " "
+        }
+        explast {
+          binary {
+            leftexp {
+              unary {
+                unop {
+                }
+                exp {
+                  ellipsis: "$"
+                }
+              }
+            }
+            binop {
+              and: 0
+            }
+            rightexp {
+            }
+          }
+        }
+      }
+    }
+  }
+}
