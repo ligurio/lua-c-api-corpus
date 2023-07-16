@@ -1,0 +1,41 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            unary {
+              unop {
+                length: 2
+              }
+              exp {
+                tableconstructor {
+                }
+              }
+            }
+          }
+          binop {
+            greaterEqual: 126
+          }
+          rightexp {
+            unary {
+              unop {
+                length: 0
+              }
+              exp {
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    semicolon: true
+  }
+}

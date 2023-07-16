@@ -1,0 +1,38 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            number: 0
+          }
+          binop {
+            mod: 8192
+          }
+          rightexp {
+            str: "\000(____"
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        expressions {
+          str: "\000(____"
+        }
+        explast {
+          str: "\000(____"
+        }
+      }
+    }
+    semicolon: true
+  }
+}

@@ -1,0 +1,64 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        false: 0
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                or: 8
+              }
+              rightexp {
+                nil: 8
+              }
+            }
+          }
+          binop {
+            add: 0
+          }
+          rightexp {
+            prefixexp {
+              exp {
+                prefixexp {
+                  exp {
+                    binary {
+                      leftexp {
+                      }
+                      binop {
+                        or: 0
+                      }
+                      rightexp {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+}

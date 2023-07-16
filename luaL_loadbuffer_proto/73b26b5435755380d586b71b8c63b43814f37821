@@ -1,0 +1,109 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        explast {
+          unary {
+            unop {
+              length: 0
+            }
+            exp {
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            list {
+              varlist {
+                var {
+                }
+              }
+              explist {
+                explast {
+                  binary {
+                    leftexp {
+                      unary {
+                        unop {
+                          negate: 2
+                        }
+                        exp {
+                          prefixexp {
+                          }
+                        }
+                      }
+                    }
+                    binop {
+                      mult: 4
+                    }
+                    rightexp {
+                      prefixexp {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            forcyclename {
+              name {
+                name: ""
+                num: 2
+              }
+              startexp {
+                prefixexp {
+                }
+              }
+              stopexp {
+                binary {
+                  leftexp {
+                    binary {
+                      leftexp {
+                      }
+                      binop {
+                        and: 0
+                      }
+                      rightexp {
+                        prefixexp {
+                        }
+                      }
+                    }
+                  }
+                  binop {
+                    exp: 4
+                  }
+                  rightexp {
+                    number: 14
+                  }
+                }
+              }
+              stepexp {
+                prefixexp {
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        nil: 0
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+          indexexpr {
+            prefixexp {
+            }
+            exp {
+              prefixexp {
+              }
+            }
+          }
+        }
+        vars {
+          indexexpr {
+            prefixexp {
+              var {
+              }
+            }
+            exp {
+              prefixexp {
+                var {
+                }
+              }
+            }
+          }
+        }
+      }
+      explist {
+        expressions {
+          binary {
+            leftexp {
+              str: "not enough memory"
+            }
+            binop {
+              concat: 0
+            }
+            rightexp {
+              str: "not enough memory"
+            }
+          }
+        }
+        expressions {
+        }
+        explast {
+          binary {
+            leftexp {
+              str: "string.pack"
+            }
+            binop {
+              concat: 0
+            }
+            rightexp {
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        expressions {
+        }
+        expressions {
+          str: "not en\021\000gh memory"
+        }
+        expressions {
+          str: "string.pack"
+        }
+        explast {
+          str: "string.pack"
+        }
+      }
+    }
+  }
+}
