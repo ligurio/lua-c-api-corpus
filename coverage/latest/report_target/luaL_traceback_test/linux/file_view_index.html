@@ -1,0 +1,1182 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' type='text/css' href='../style.css'>
+    <!-- Custom style overrides -->
+    <style>
+      /* Copyright 2018 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+th, td {
+  padding: 5px 16px;
+}
+
+tbody td, tfoot td {
+  font-size: 14px;
+}
+
+thead th {
+  font-size: 16px;
+}
+
+thead th, tfoot td {
+  background-color: #f5f5f5;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  color: #484848;
+  text-transform: uppercase;
+}
+
+tbody tr:hover td, tfoot tr:hover td {
+  background-color: #f5f5f5;
+  border-color: #e4e4e4 !important;
+}
+    </style>
+  </head>
+  <body>
+    <h2>Coverage Report</h2>
+    <p>
+      View results by:
+            <a href='directory_view_index.html'>Directories</a>
+              | <a href='file_view_index.html'>Files</a>
+          </p>
+    <div class='centered'><table>
+  <thead>
+    <tr>
+      <th class="column-entry-bold">Path</th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.LINE)" title=
+          "Line coverage is the percentage of code lines which have been executed at least once. Only executable lines within function bodies are considered to be code lines.">
+        Line Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.FUNCTION)" title=
+          "Function coverage is the percentage of functions which have been executed at least once. A function is considered to be executed if any of its instantiations are executed.">
+        Function Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.REGION)" title=
+          "Region coverage is the percentage of code regions which have been executed at least once. A code region may span multiple lines (e.g in a large function body with no control flow). However, it's also possible for a single line to contain multiple code regions (e.g in 'return x || y &amp;&amp; z').">
+        Region Coverage
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lib_aux.c.html'>src/testdir/build/luajit-v2.1/source/src/lib_aux.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 14.63% (36/246)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  9.09% (2/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 14.52% (27/186)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lib_base.c.html'>src/testdir/build/luajit-v2.1/source/src/lib_base.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/480)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/41)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/718)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lib_ffi.c.html'>src/testdir/build/luajit-v2.1/source/src/lib_ffi.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/647)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/52)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/923)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_alloc.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_alloc.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 36.25% (224/618)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 52.17% (12/23)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 29.87% (552/1848)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_api.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_api.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 11.69% (121/1035)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 16.84% (16/95)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  8.52% (192/2254)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_asm.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_asm.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1561)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/64)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2780)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_asm_x86.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_asm_x86.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2104)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/73)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3932)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_assert.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_assert.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_bc.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_bc.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_bcread.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_bcread.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/333)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/373)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_bcwrite.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_bcwrite.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/277)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/396)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_buf.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_buf.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 14.10% (32/227)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 15.79% (3/19)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 12.34% (39/316)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_buf.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_buf.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 41.79% (28/67)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (7/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 42.31% (22/52)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_carith.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_carith.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/336)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/568)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_ccall.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_ccall.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/280)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/499)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_ccallback.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_ccallback.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/258)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/447)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_cconv.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_cconv.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/609)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1132)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_cconv.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_cconv.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_cdata.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_cdata.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/222)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/436)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_cdata.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_cdata.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/34)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_clib.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_clib.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/134)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/148)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_cparse.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_cparse.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1496)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/64)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1826)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_crecord.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_crecord.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1544)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/52)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2686)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_ctype.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_ctype.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  1.02% (4/391)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  4.00% (1/25)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.76% (4/526)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_ctype.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_ctype.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/33)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/43)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_debug.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_debug.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  3.99% (24/601)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 14.29% (3/21)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  1.55% (15/969)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_def.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_def.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 25.00% (3/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 25.00% (1/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 25.00% (1/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_dispatch.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_dispatch.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  8.55% (33/386)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 11.11% (2/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  8.39% (53/632)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_emit_x86.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_emit_x86.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/348)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/25)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/369)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_err.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_err.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  1.95% (9/461)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  5.88% (2/34)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  1.03% (7/679)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_ffrecord.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_ffrecord.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1187)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/84)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1382)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_func.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_func.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 15.04% (20/133)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 27.27% (3/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  9.83% (17/173)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_gc.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_gc.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 11.53% (77/668)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 21.62% (8/37)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  7.99% (137/1714)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_gc.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_gc.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 28.57% (4/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (1/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  4.35% (1/23)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_ir.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_ir.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/314)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/25)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/380)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_ir.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_ir.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/30)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/43)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_iropt.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_iropt.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_jit.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_jit.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_lex.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_lex.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  1.98% (8/404)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  5.88% (1/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  1.61% (7/436)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_lib.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_lib.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/262)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/424)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_load.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_load.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/101)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/100)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_mcode.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_mcode.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  4.23% (6/142)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  7.14% (1/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  1.72% (2/116)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_meta.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_meta.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 17.33% (61/352)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 17.65% (3/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 11.78% (121/1027)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_obj.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_obj.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/24)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/76)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_obj.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_obj.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 27.17% (25/92)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 38.46% (5/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 22.81% (26/114)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_opt_dce.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_opt_dce.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/39)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/34)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_opt_fold.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_opt_fold.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1428)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/151)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3129)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_opt_loop.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_opt_loop.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/281)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/308)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_opt_mem.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_opt_mem.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/725)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1065)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_opt_narrow.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_opt_narrow.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/308)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/547)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_opt_sink.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_opt_sink.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/194)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/281)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_parse.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_parse.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2049)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/117)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2231)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_prng.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_prng.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 54.29% (19/35)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 75.00% (3/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 45.45% (15/33)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_prng.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_prng.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_profile.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_profile.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  4.17% (5/120)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 12.50% (1/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  4.82% (4/83)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_record.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_record.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2169)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/65)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3652)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_serialize.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_serialize.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/390)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/668)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_snap.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_snap.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/771)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/23)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1492)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_snap.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_snap.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_state.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_state.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 55.74% (136/244)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 40.00% (6/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 41.55% (123/296)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_state.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_state.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_str.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_str.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 35.71% (95/266)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 54.55% (6/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 31.01% (89/287)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_strfmt.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_strfmt.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 11.28% (52/461)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  8.70% (2/23)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  5.31% (38/716)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_strfmt.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_strfmt.h</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 83.33% (5/6)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 71.43% (5/7)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_strfmt_num.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_strfmt_num.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/413)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/474)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_strscan.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_strscan.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/366)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/652)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_strscan.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_strscan.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_tab.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_tab.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 20.15% (107/531)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 38.71% (12/31)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 17.24% (150/870)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_tab.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_tab.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 61.11% (11/18)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (2/2)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (7/7)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_target.h.html'>src/testdir/build/luajit-v2.1/source/src/lj_target.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_trace.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_trace.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  4.96% (34/685)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  6.67% (2/30)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  2.60% (25/960)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_udata.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_udata.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/38)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/58)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_vmevent.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_vmevent.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/35)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/83)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/build/luajit-v2.1/source/src/lj_vmmath.c.html'>src/testdir/build/luajit-v2.1/source/src/lj_vmmath.c</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/46)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/67)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/testdir/tests/luaL_traceback_test.c.html'>src/testdir/tests/luaL_traceback_test.c</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 86.67% (13/15)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 71.43% (5/7)</pre>
+      </td>
+          </tr>
+      </tbody>
+      <tfoot>
+      <tr class="light-row-bold">
+        <td>
+          <pre>Totals</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre>  3.95% (1192/30176)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre>  6.60% (107/1621)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre>  3.45% (1684/48866)</pre>
+        </td>
+              </tr>
+    </tfoot>
+  </table>
+
+<script>
+  const SORT_COLUMN = {
+    LINE: 2,
+    FUNCTION: 3,
+    REGION: 4,
+  }
+
+  const SORT_TYPES = {
+    UNSET: -1,
+    PERCENT: 0,
+    AGGREGATE: 1,
+  }
+
+  var SORT_ORDER = {
+    [SORT_COLUMN.LINE]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.FUNCTION]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.REGION]: [SORT_TYPES.UNSET],
+  }
+
+  function sortTable(columnNumber) {
+    SORT_ORDER[columnNumber] = ++SORT_ORDER[columnNumber] % 2;
+
+    let columnSortOrder = SORT_ORDER[columnNumber];
+    let tbody = document.getElementsByTagName("tbody")[0];
+
+    [].slice.call(tbody.rows).sort(function(a, b) {
+      let aColumn = a.cells[columnNumber-1].textContent;
+      let bColumn = b.cells[columnNumber-1].textContent;
+
+      let aColumnCompare, bColumnCompare;
+      if (columnSortOrder == SORT_TYPES.PERCENT) {
+        aColumnCompare = parseFloat(/([0-9.]+)%/.exec(aColumn)[1]);
+        bColumnCompare = parseFloat(/([0-9.]+)%/.exec(bColumn)[1]);
+      } else {
+        aColumnCompare = parseInt(/\/(\d+)/.exec(aColumn)[1]);
+        bColumnCompare = parseInt(/\/(\d+)/.exec(bColumn)[1]);
+      }
+
+      return (
+          aColumnCompare < bColumnCompare ? -1:
+              aColumnCompare > bColumnCompare ? 1 : 0);
+    }).forEach(function(value, index) {
+      tbody.appendChild(value);
+    });
+  }
+
+</script>    </div>
+  </body>
+</html>
