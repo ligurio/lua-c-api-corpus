@@ -1,0 +1,63 @@
+chunk {
+  stat {
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+                tableconstructor {
+                  fieldlist {
+                    firstField {
+                      expression {
+                      }
+                    }
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            tableconstructor {
+              fieldlist {
+                firstField {
+                }
+                lastSep {
+                  semicolon: 268435456
+                }
+              }
+            }
+          }
+          binop {
+            greater: 0
+          }
+          rightexp {
+            tableconstructor {
+              fieldlist {
+                firstField {
+                  expression {
+                    str: "\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+  }
+}
