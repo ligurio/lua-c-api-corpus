@@ -1,0 +1,107 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+              expression {
+              }
+            }
+            fields {
+              field {
+                expression {
+                  binary {
+                    leftexp {
+                      binary {
+                        leftexp {
+                          unary {
+                            unop {
+                              length: 0
+                            }
+                            exp {
+                            }
+                          }
+                        }
+                        binop {
+                        }
+                        rightexp {
+                          binary {
+                            leftexp {
+                              unary {
+                                unop {
+                                  length: 2
+                                }
+                                exp {
+                                  tableconstructor {
+                                  }
+                                }
+                              }
+                            }
+                            binop {
+                              mod: 256
+                            }
+                            rightexp {
+                              unary {
+                                unop {
+                                  length: 0
+                                }
+                                exp {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                    binop {
+                      mod: 65536
+                    }
+                    rightexp {
+                      binary {
+                        leftexp {
+                          unary {
+                            unop {
+                              length: 0
+                            }
+                            exp {
+                            }
+                          }
+                        }
+                        binop {
+                          mult: 65536
+                        }
+                        rightexp {
+                          number: 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              sep {
+                semicolon: 2
+              }
+            }
+            fields {
+              field {
+                expression {
+                }
+              }
+              sep {
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+          }
+        }
+      }
+    }
+  }
+}
