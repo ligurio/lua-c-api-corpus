@@ -1,0 +1,63 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+              expression {
+                binary {
+                  leftexp {
+                    binary {
+                      leftexp {
+                        prefixexp {
+                          exp {
+                            binary {
+                              leftexp {
+                                true: 2
+                              }
+                              binop {
+                                concat: 0
+                              }
+                              rightexp {
+                                unary {
+                                  unop {
+                                    length: 4
+                                  }
+                                  exp {
+                                    str: "\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      binop {
+                        concat: 134217728
+                      }
+                      rightexp {
+                      }
+                    }
+                  }
+                  binop {
+                    concat: 0
+                  }
+                  rightexp {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}
