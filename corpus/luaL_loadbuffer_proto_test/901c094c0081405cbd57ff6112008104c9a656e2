@@ -1,0 +1,130 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+              expression {
+              }
+            }
+            fields {
+              field {
+                expression {
+                  binary {
+                    leftexp {
+                    }
+                    binop {
+                      or: 0
+                    }
+                    rightexp {
+                      prefixexp {
+                        functioncall {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              sep {
+              }
+            }
+            fields {
+              field {
+                expression {
+                  binary {
+                    leftexp {
+                    }
+                    binop {
+                      or: 0
+                    }
+                    rightexp {
+                      ellipsis: ";"
+                    }
+                  }
+                }
+              }
+              sep {
+              }
+            }
+            fields {
+              field {
+                expression {
+                  binary {
+                    leftexp {
+                    }
+                    binop {
+                      or: 0
+                    }
+                    rightexp {
+                      tableconstructor {
+                        fieldlist {
+                          firstField {
+                            expression {
+                              binary {
+                                leftexp {
+                                }
+                                binop {
+                                  or: 0
+                                }
+                                rightexp {
+                                  prefixexp {
+                                    functioncall {
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                          fields {
+                            field {
+                            }
+                            sep {
+                              comma: 64
+                            }
+                          }
+                          fields {
+                            field {
+                            }
+                            sep {
+                            }
+                          }
+                          lastSep {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              sep {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: true
+  }
+  laststat {
+    explist {
+      explist {
+        explast {
+          prefixexp {
+            var {
+              indexname {
+                prefixexp {
+                }
+                Name: "#"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
