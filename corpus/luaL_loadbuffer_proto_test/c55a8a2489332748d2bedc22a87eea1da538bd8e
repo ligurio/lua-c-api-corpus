@@ -1,0 +1,104 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                greater: 0
+              }
+              rightexp {
+                prefixexp {
+                  functioncall {
+                    namedArgs {
+                      prefixexp {
+                      }
+                      name {
+                        name: ""
+                        num: 0
+                      }
+                      args {
+                        tableconstructor {
+                          fieldlist {
+                            firstField {
+                            }
+                            fields {
+                              field {
+                              }
+                              sep {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          binop {
+            greater: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                greater: 0
+              }
+              rightexp {
+                nil: 0
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            true: 0
+          }
+          binop {
+            greaterEqual: 536870912
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                greater: 0
+              }
+              rightexp {
+                unary {
+                  unop {
+                  }
+                  exp {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: true
+  }
+}
