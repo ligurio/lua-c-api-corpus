@@ -1,0 +1,85 @@
+chunk {
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: false
+  }
+  stat {
+    forcyclelist {
+      names {
+        firstname {
+          name: "z"
+          num: 2
+        }
+      }
+      expressions {
+        explast {
+          function {
+            body {
+              block {
+                chunk {
+                  laststat {
+                    explist {
+                      explist {
+                        expressions {
+                          number: 0
+                        }
+                        explast {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclelist {
+                names {
+                  firstname {
+                    name: "z"
+                    num: 2
+                  }
+                }
+                expressions {
+                  explast {
+                    prefixexp {
+                      var {
+                        indexname {
+                          prefixexp {
+                          }
+                          Name: "dump"
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}
