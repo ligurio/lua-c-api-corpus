@@ -1,0 +1,66 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            false: 2097152
+          }
+          binop {
+            and: 0
+          }
+          rightexp {
+            true: 2097152
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        ellipsis: "\376\377"
+      }
+      first {
+        chunk {
+          laststat {
+            break: 8192
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            nil: 0
+          }
+          binop {
+            and: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                or: 0
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+}
