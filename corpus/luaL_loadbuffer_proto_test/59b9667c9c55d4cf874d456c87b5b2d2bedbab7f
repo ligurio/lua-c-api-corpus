@@ -1,0 +1,108 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        ellipsis: "\001\000\000\000"
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            whilecycle {
+              condition {
+                tableconstructor {
+                  fieldlist {
+                    firstField {
+                    }
+                    fields {
+                      field {
+                        exprassign {
+                          key {
+                            binary {
+                              leftexp {
+                                number: 2
+                              }
+                              binop {
+                                exp: 4
+                              }
+                              rightexp {
+                                unary {
+                                  unop {
+                                    negate: 0
+                                  }
+                                  exp {
+                                    binary {
+                                      leftexp {
+                                        unary {
+                                          unop {
+                                            length: 2
+                                          }
+                                          exp {
+                                            tableconstructor {
+                                            }
+                                          }
+                                        }
+                                      }
+                                      binop {
+                                        add: 0
+                                      }
+                                      rightexp {
+                                        number: 2
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                          value {
+                          }
+                        }
+                      }
+                      sep {
+                      }
+                    }
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+          laststat {
+          }
+        }
+      }
+      condition {
+        nil: 2
+      }
+    }
+  }
+  stat {
+  }
+}
