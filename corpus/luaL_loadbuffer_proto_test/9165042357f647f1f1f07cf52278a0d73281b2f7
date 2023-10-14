@@ -1,0 +1,83 @@
+chunk {
+  stat {
+    localfunc {
+      name {
+        name: ""
+        num: 0
+      }
+      funcbody {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                  stat {
+                  }
+                }
+              }
+              condition {
+                tableconstructor {
+                  fieldlist {
+                    firstField {
+                      exprassign {
+                        key {
+                          true: 0
+                        }
+                        value {
+                          prefixexp {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+              exprassign {
+                key {
+                  true: 0
+                }
+                value {
+                  prefixexp {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        str: "loopunroll"
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+}
