@@ -1,0 +1,158 @@
+chunk {
+  stat {
+    localfunc {
+      name {
+        name: "."
+        num: 0
+      }
+      funcbody {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    localfunc {
+      name {
+        name: "&"
+        num: 0
+      }
+      funcbody {
+        parlist {
+          ellipsis: "os.difftime"
+        }
+        block {
+          chunk {
+            stat {
+              repeatcycle {
+                block {
+                  chunk {
+                    stat {
+                      repeatcycle {
+                        block {
+                          chunk {
+                            laststat {
+                              break: 2
+                            }
+                          }
+                        }
+                        condition {
+                          ellipsis: "."
+                        }
+                      }
+                      semicolon: true
+                    }
+                    stat {
+                      whilecycle {
+                        condition {
+                        }
+                        doblock {
+                          block {
+                            chunk {
+                            }
+                          }
+                        }
+                      }
+                      semicolon: true
+                    }
+                  }
+                }
+                condition {
+                }
+              }
+              semicolon: false
+            }
+            stat {
+              localfunc {
+                name {
+                  name: ""
+                  num: 0
+                }
+                funcbody {
+                  parlist {
+                    ellipsis: "os.difftime"
+                  }
+                  block {
+                    chunk {
+                      laststat {
+                        semicolon: true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+          }
+          stat {
+            whilecycle {
+              condition {
+                tableconstructor {
+                  fieldlist {
+                    firstField {
+                      exprassign {
+                        key {
+                        }
+                        value {
+                          prefixexp {
+                            functioncall {
+                              namedArgs {
+                                prefixexp {
+                                }
+                                name {
+                                  name: ""
+                                  num: 0
+                                }
+                                args {
+                                  explist {
+                                    explist {
+                                      expressions {
+                                        number: 0
+                                      }
+                                      explast {
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                    laststat {
+                      break: 2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        ellipsis: ""
+      }
+    }
+    semicolon: true
+  }
+  stat {
+  }
+}
