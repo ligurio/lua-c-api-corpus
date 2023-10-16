@@ -1,0 +1,79 @@
+chunk {
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          str: "ab"
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                binary {
+                  leftexp {
+                    function {
+                      body {
+                        block {
+                          chunk {
+                            stat {
+                              semicolon: true
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  binop {
+                  }
+                  rightexp {
+                  }
+                }
+              }
+              explast {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          functioncall {
+            prefArgs {
+              prefixexp {
+                functioncall {
+                  prefArgs {
+                    prefixexp {
+                    }
+                    args {
+                      str: "ab"
+                    }
+                  }
+                }
+              }
+              args {
+                str: ""
+              }
+            }
+          }
+        }
+        args {
+          str: "$b"
+        }
+      }
+    }
+  }
+}
