@@ -1,0 +1,59 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+            stat {
+              repeatcycle {
+                block {
+                  chunk {
+                  }
+                }
+                condition {
+                  false: 4
+                }
+              }
+            }
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                    }
+                    binop {
+                      concat: 4
+                    }
+                    rightexp {
+                      binary {
+                        leftexp {
+                          prefixexp {
+                          }
+                        }
+                        binop {
+                          less: 0
+                        }
+                        rightexp {
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
