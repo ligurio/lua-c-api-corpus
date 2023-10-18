@@ -1,0 +1,68 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                greater: 0
+              }
+              rightexp {
+                prefixexp {
+                  functioncall {
+                  }
+                }
+              }
+            }
+          }
+          binop {
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                greater: 0
+              }
+              rightexp {
+                nil: 0
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+              exprassign {
+                key {
+                  prefixexp {
+                  }
+                }
+                value {
+                }
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: true
+  }
+}
