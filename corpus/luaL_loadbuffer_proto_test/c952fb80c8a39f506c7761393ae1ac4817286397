@@ -1,0 +1,65 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+            not: 0
+          }
+          exp {
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      clauses {
+        condition {
+          prefixexp {
+            exp {
+            }
+          }
+        }
+        block {
+          chunk {
+            stat {
+              ifstat {
+                condition {
+                  ellipsis: ""
+                }
+                first {
+                  chunk {
+                  }
+                }
+                clauses {
+                  condition {
+                  }
+                  block {
+                    chunk {
+                      stat {
+                      }
+                      stat {
+                      }
+                      laststat {
+                        break: 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
