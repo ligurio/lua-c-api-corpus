@@ -1,0 +1,76 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+          }
+          exp {
+            binary {
+              leftexp {
+                false: 4
+              }
+              binop {
+                greaterEqual: 4
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      last {
+        chunk {
+          stat {
+            localnames {
+              namelist {
+                firstname {
+                  name: ""
+                  num: 4
+                }
+              }
+            }
+          }
+          stat {
+            ifstat {
+              condition {
+                prefixexp {
+                }
+              }
+              first {
+                chunk {
+                  stat {
+                    localnames {
+                      namelist {
+                        firstname {
+                          name: ""
+                          num: 4
+                        }
+                      }
+                    }
+                  }
+                  stat {
+                    ifstat {
+                      condition {
+                        prefixexp {
+                        }
+                      }
+                      first {
+                        chunk {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
