@@ -1,0 +1,38 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          laststat {
+          }
+        }
+      }
+      condition {
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            str: "call"
+          }
+          binop {
+            notEqual: 0
+          }
+          rightexp {
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+          }
+        }
+      }
+    }
+  }
+}
