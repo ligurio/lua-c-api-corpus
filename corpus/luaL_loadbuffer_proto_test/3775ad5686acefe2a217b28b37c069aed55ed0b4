@@ -1,0 +1,117 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+                tableconstructor {
+                  fieldlist {
+                    firstField {
+                      expression {
+                        binary {
+                          leftexp {
+                            number: 2
+                          }
+                          binop {
+                            concat: 0
+                          }
+                          rightexp {
+                            binary {
+                              leftexp {
+                                str: "Y"
+                              }
+                              binop {
+                                greaterEqual: 0
+                              }
+                              rightexp {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                    fields {
+                      field {
+                        expression {
+                          binary {
+                            leftexp {
+                              number: 2
+                            }
+                            binop {
+                              concat: 0
+                            }
+                            rightexp {
+                              binary {
+                                leftexp {
+                                  unary {
+                                    unop {
+                                      length: 0
+                                    }
+                                    exp {
+                                      tableconstructor {
+                                        fieldlist {
+                                          firstField {
+                                            expression {
+                                              binary {
+                                                leftexp {
+                                                  str: "Y"
+                                                }
+                                                binop {
+                                                  greaterEqual: 0
+                                                }
+                                                rightexp {
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                binop {
+                                  less: 11
+                                }
+                                rightexp {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      sep {
+                      }
+                    }
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                    stat {
+                      repeatcycle {
+                        block {
+                          chunk {
+                          }
+                        }
+                        condition {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        nil: 2
+      }
+    }
+  }
+  stat {
+  }
+}
