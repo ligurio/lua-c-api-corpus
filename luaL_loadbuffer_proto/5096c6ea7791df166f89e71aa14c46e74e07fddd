@@ -1,0 +1,53 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        prefixexp {
+          exp {
+            prefixexp {
+              exp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          laststat {
+            break: 0
+            semicolon: false
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          explist {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          exp {
+          }
+        }
+        args {
+          str: "ab"
+        }
+      }
+    }
+  }
+  laststat {
+    break: 0
+    semicolon: false
+  }
+}

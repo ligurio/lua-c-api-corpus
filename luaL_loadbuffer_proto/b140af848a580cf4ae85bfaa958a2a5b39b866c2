@@ -1,0 +1,123 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\000\000\000$"
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+                tableconstructor {
+                  fieldlist {
+                    firstField {
+                      expression {
+                        unary {
+                          unop {
+                          }
+                          exp {
+                            unary {
+                              unop {
+                                not: 0
+                              }
+                              exp {
+                                unary {
+                                  unop {
+                                    not: 0
+                                  }
+                                  exp {
+                                    tableconstructor {
+                                      fieldlist {
+                                        firstField {
+                                        }
+                                        fields {
+                                          field {
+                                          }
+                                          sep {
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                    stat {
+                      whilecycle {
+                        condition {
+                          tableconstructor {
+                            fieldlist {
+                              firstField {
+                                expression {
+                                  unary {
+                                    unop {
+                                    }
+                                    exp {
+                                      unary {
+                                        unop {
+                                          not: 0
+                                        }
+                                        exp {
+                                          ellipsis: ""
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                              fields {
+                                field {
+                                }
+                                sep {
+                                }
+                              }
+                            }
+                          }
+                        }
+                        doblock {
+                          block {
+                            chunk {
+                            }
+                          }
+                        }
+                      }
+                      semicolon: false
+                    }
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+        }
+      }
+      condition {
+      }
+    }
+    semicolon: true
+  }
+  laststat {
+    semicolon: true
+  }
+}

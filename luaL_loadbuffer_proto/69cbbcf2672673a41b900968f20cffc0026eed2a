@@ -1,0 +1,50 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            function {
+              body {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+          binop {
+            lessEqual: 4
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                lessEqual: 4
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    lessEqual: 4
+                  }
+                  rightexp {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+}

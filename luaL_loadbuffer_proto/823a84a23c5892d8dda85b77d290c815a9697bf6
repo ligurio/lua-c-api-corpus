@@ -1,0 +1,115 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                or: 0
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            or: 255
+          }
+          rightexp {
+            prefixexp {
+              exp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    or: 0
+                  }
+                  rightexp {
+                    binary {
+                      leftexp {
+                        binary {
+                          leftexp {
+                            binary {
+                              leftexp {
+                              }
+                              binop {
+                                or: 0
+                              }
+                              rightexp {
+                              }
+                            }
+                          }
+                          binop {
+                            or: 0
+                          }
+                          rightexp {
+                          }
+                        }
+                      }
+                      binop {
+                        or: 255
+                      }
+                      rightexp {
+                        prefixexp {
+                          exp {
+                            binary {
+                              leftexp {
+                              }
+                              binop {
+                                or: 0
+                              }
+                              rightexp {
+                                function {
+                                  body {
+                                    block {
+                                      chunk {
+                                        laststat {
+                                          semicolon: true
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          laststat {
+            break: 16777216
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        explast {
+          tableconstructor {
+            fieldlist {
+              firstField {
+              }
+              lastSep {
+                semicolon: 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

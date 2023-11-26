@@ -1,0 +1,53 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        prefixexp {
+          var {
+            indexname {
+              prefixexp {
+              }
+              Name: ""
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+              }
+            }
+            stat {
+              call {
+              }
+              semicolon: true
+            }
+            stat {
+              call {
+              }
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  laststat {
+    explist {
+      explist {
+        expressions {
+          prefixexp {
+            exp {
+              str: "\001\000"
+            }
+          }
+        }
+        explast {
+        }
+      }
+    }
+  }
+}

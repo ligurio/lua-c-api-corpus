@@ -1,0 +1,197 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              localfunc {
+                name {
+                  name: ""
+                  num: 0
+                }
+                funcbody {
+                  block {
+                    chunk {
+                      stat {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            stat {
+              ifstat {
+                condition {
+                  prefixexp {
+                  }
+                }
+                first {
+                  chunk {
+                  }
+                }
+                last {
+                  chunk {
+                    laststat {
+                      break: 0
+                    }
+                  }
+                }
+              }
+            }
+            stat {
+              ifstat {
+                condition {
+                }
+                first {
+                  chunk {
+                    laststat {
+                      break: 0
+                    }
+                  }
+                }
+                last {
+                  chunk {
+                    stat {
+                      ifstat {
+                        condition {
+                          nil: 0
+                        }
+                        first {
+                          chunk {
+                          }
+                        }
+                        last {
+                          chunk {
+                            laststat {
+                              break: 0
+                            }
+                          }
+                        }
+                      }
+                    }
+                    laststat {
+                      break: 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            localfunc {
+              name {
+                name: ""
+                num: 0
+              }
+              funcbody {
+                block {
+                  chunk {
+                    stat {
+                    }
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            ifstat {
+              condition {
+                prefixexp {
+                  var {
+                    indexexpr {
+                      prefixexp {
+                      }
+                      exp {
+                        unary {
+                          unop {
+                            length: 0
+                          }
+                          exp {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              first {
+                chunk {
+                }
+              }
+              last {
+                chunk {
+                  laststat {
+                    explist {
+                    }
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            ifstat {
+              condition {
+              }
+              first {
+                chunk {
+                  stat {
+                    repeatcycle {
+                      block {
+                        chunk {
+                          laststat {
+                            semicolon: true
+                          }
+                        }
+                      }
+                      condition {
+                      }
+                    }
+                  }
+                  laststat {
+                    break: 0
+                  }
+                }
+              }
+              last {
+                chunk {
+                  stat {
+                    repeatcycle {
+                      block {
+                        chunk {
+                        }
+                      }
+                      condition {
+                        number: 4.4849590103113e-308
+                      }
+                    }
+                    semicolon: false
+                  }
+                  laststat {
+                    break: 0
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+          laststat {
+            break: 536870912
+          }
+        }
+      }
+      condition {
+      }
+    }
+  }
+}

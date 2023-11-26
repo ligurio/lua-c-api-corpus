@@ -1,0 +1,76 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                notEqual: 0
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            notEqual: 4
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                notEqual: 0
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            number: -2
+          }
+          binop {
+            greaterEqual: 4
+          }
+          rightexp {
+            true: 4294967094
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            block {
+              block {
+                chunk {
+                }
+              }
+            }
+          }
+        }
+      }
+      last {
+        chunk {
+          laststat {
+            break: 0
+          }
+        }
+      }
+    }
+  }
+}

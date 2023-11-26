@@ -1,0 +1,86 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                or: 0
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            or: 255
+          }
+          rightexp {
+            prefixexp {
+              exp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    or: 0
+                  }
+                  rightexp {
+                    binary {
+                      leftexp {
+                        binary {
+                          leftexp {
+                            binary {
+                              leftexp {
+                              }
+                              binop {
+                                or: 0
+                              }
+                              rightexp {
+                              }
+                            }
+                          }
+                          binop {
+                            or: 0
+                          }
+                          rightexp {
+                          }
+                        }
+                      }
+                      binop {
+                        or: 255
+                      }
+                      rightexp {
+                        prefixexp {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          laststat {
+          }
+        }
+      }
+      last {
+        chunk {
+          laststat {
+            break: 16777216
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    break: 16777216
+    semicolon: true
+  }
+}

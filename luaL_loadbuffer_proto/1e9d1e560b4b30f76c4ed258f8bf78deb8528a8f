@@ -1,0 +1,38 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                }
+              }
+              condition {
+                unary {
+                  unop {
+                    length: 0
+                  }
+                  exp {
+                    false: 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        unary {
+          unop {
+            not: 42
+          }
+          exp {
+            false: 0
+          }
+        }
+      }
+    }
+  }
+}

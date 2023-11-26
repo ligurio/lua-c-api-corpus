@@ -1,0 +1,43 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        prefixexp {
+        }
+      }
+      first {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+              }
+              doblock {
+                block {
+                  chunk {
+                    stat {
+                      semicolon: true
+                    }
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+        }
+      }
+      clauses {
+        condition {
+          number: 0
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      last {
+        chunk {
+        }
+      }
+    }
+  }
+}

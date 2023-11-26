@@ -1,0 +1,73 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                less: 0
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            lessEqual: 4
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                lessEqual: 4
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            lessEqual: 4
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                lessEqual: 4
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+  laststat {
+    break: 0
+  }
+}

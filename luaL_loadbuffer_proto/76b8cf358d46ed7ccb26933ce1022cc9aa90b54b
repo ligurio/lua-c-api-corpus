@@ -1,0 +1,53 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        false: 1
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            number: -2
+          }
+          binop {
+            greaterEqual: 4
+          }
+          rightexp {
+            true: 4294967094
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            block {
+              block {
+                chunk {
+                }
+              }
+            }
+          }
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+      last {
+        chunk {
+          laststat {
+            break: 0
+          }
+        }
+      }
+    }
+  }
+}

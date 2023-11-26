@@ -1,0 +1,55 @@
+chunk {
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          str: "cb"
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          str: "abc"
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          functioncall {
+            prefArgs {
+              prefixexp {
+                functioncall {
+                  prefArgs {
+                    prefixexp {
+                      functioncall {
+                      }
+                    }
+                    args {
+                      str: "ab"
+                    }
+                  }
+                }
+              }
+              args {
+              }
+            }
+          }
+        }
+        args {
+          str: "ab"
+        }
+      }
+    }
+  }
+}

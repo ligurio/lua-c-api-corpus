@@ -1,0 +1,29 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            length: 0
+          }
+          exp {
+            unary {
+              unop {
+                length: 131072
+              }
+              exp {
+                str: "4\000\000\000\000\000\000\000"
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+}

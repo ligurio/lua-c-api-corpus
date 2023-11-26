@@ -1,0 +1,38 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+                number: -2
+              }
+              binop {
+                concat: 32
+              }
+              rightexp {
+                number: -2.5
+              }
+            }
+          }
+          binop {
+            div: 0
+          }
+          rightexp {
+            number: -2
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+  }
+}

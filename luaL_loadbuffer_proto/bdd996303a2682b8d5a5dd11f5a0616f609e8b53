@@ -1,0 +1,83 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+            not: 25344
+          }
+          exp {
+            unary {
+              unop {
+                negate: 0
+              }
+              exp {
+                unary {
+                  unop {
+                    negate: 25344
+                  }
+                  exp {
+                    unary {
+                      unop {
+                        negate: 0
+                      }
+                      exp {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            call {
+            }
+          }
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                  stat {
+                    semicolon: true
+                  }
+                }
+              }
+              condition {
+              }
+            }
+          }
+          stat {
+            call {
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+  }
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+            not: 25344
+          }
+          exp {
+            true: 4
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: true
+  }
+}

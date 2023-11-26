@@ -1,0 +1,153 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+          }
+          exp {
+          }
+        }
+      }
+      first {
+        chunk {
+          laststat {
+            explist {
+              explist {
+                expressions {
+                  false: 11520
+                }
+                explast {
+                }
+              }
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+              }
+              doblock {
+                block {
+                  chunk {
+                    stat {
+                      list {
+                        varlist {
+                          var {
+                            name {
+                              name: "."
+                              num: 0
+                            }
+                          }
+                        }
+                        explist {
+                          expressions {
+                            unary {
+                              unop {
+                                length: 4
+                              }
+                              exp {
+                                tableconstructor {
+                                }
+                              }
+                            }
+                          }
+                          explast {
+                            binary {
+                              leftexp {
+                                unary {
+                                  unop {
+                                    length: 4
+                                  }
+                                  exp {
+                                    tableconstructor {
+                                    }
+                                  }
+                                }
+                              }
+                              binop {
+                                mod: 0
+                              }
+                              rightexp {
+                                number: 416
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          laststat {
+            semicolon: false
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            unary {
+              unop {
+                length: 4
+              }
+              exp {
+                tableconstructor {
+                }
+              }
+            }
+          }
+          binop {
+            mod: 4
+          }
+          rightexp {
+            binary {
+              leftexp {
+                unary {
+                  unop {
+                    length: 4
+                  }
+                  exp {
+                    tableconstructor {
+                    }
+                  }
+                }
+              }
+              binop {
+                mod: 4
+              }
+              rightexp {
+                number: 416
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+  }
+  laststat {
+    semicolon: true
+  }
+}

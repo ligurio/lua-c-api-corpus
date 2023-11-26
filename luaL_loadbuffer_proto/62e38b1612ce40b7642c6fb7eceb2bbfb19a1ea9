@@ -1,0 +1,42 @@
+chunk {
+  stat {
+    call {
+    }
+  }
+  stat {
+    call {
+    }
+  }
+  stat {
+    call {
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+                ellipsis: "\200\377\377\377\377\377\377\377"
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+          laststat {
+            break: 0
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        nil: 20
+      }
+    }
+  }
+}

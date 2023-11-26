@@ -1,0 +1,77 @@
+chunk {
+  stat {
+    semicolon: false
+  }
+  stat {
+    whilecycle {
+      condition {
+        number: 2
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                      binary {
+                        leftexp {
+                          number: -2
+                        }
+                        binop {
+                          concat: 32
+                        }
+                        rightexp {
+                          binary {
+                            leftexp {
+                              binary {
+                                leftexp {
+                                  number: -2
+                                }
+                                binop {
+                                  concat: 32
+                                }
+                                rightexp {
+                                  number: -2
+                                }
+                              }
+                            }
+                            binop {
+                              div: 0
+                            }
+                            rightexp {
+                              number: -2
+                            }
+                          }
+                        }
+                      }
+                    }
+                    binop {
+                      div: 0
+                    }
+                    rightexp {
+                      number: -2
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+            stat {
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  laststat {
+    semicolon: true
+  }
+}
