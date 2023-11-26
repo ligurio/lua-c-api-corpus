@@ -1,0 +1,53 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+          }
+          exp {
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            call {
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+          function {
+            body {
+              parlist {
+                ellipsis: "\003\000\000\000\000\000\000\000"
+              }
+              block {
+                chunk {
+                }
+              }
+            }
+          }
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        number: 0
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: false
+  }
+}

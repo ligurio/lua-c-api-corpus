@@ -1,0 +1,131 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            ellipsis: "\\001\\003"
+          }
+          binop {
+            lessEqual: 65536
+          }
+          rightexp {
+            number: -0
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            lessEqual: 0
+          }
+          rightexp {
+            number: -0
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            tableconstructor {
+              fieldlist {
+                firstField {
+                  expression {
+                    binary {
+                      leftexp {
+                      }
+                      binop {
+                        exp: 65536
+                      }
+                      rightexp {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          binop {
+            lessEqual: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+                str: ""
+              }
+              binop {
+                lessEqual: 65536
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    list {
+      varlist {
+        var {
+          indexname {
+            prefixexp {
+              exp {
+                number: 1.7800590868057611e-307
+              }
+            }
+            Name: ""
+          }
+        }
+      }
+      explist {
+        explast {
+        }
+      }
+    }
+  }
+  laststat {
+    semicolon: false
+  }
+}

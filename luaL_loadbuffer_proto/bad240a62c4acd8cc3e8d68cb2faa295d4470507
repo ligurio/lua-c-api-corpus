@@ -1,0 +1,85 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            concat: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+                number: -468.75
+              }
+              binop {
+                exp: 0
+              }
+              rightexp {
+                number: 84
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+          }
+          stat {
+            semicolon: true
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  exp {
+                    binary {
+                      leftexp {
+                        number: -468.75
+                      }
+                      binop {
+                        exp: 0
+                      }
+                      rightexp {
+                        number: 84
+                      }
+                    }
+                  }
+                }
+                args {
+                }
+              }
+            }
+          }
+          laststat {
+            break: 67108864
+          }
+        }
+      }
+      clauses {
+        condition {
+          number: 84
+        }
+        block {
+          chunk {
+            laststat {
+            }
+          }
+        }
+      }
+      last {
+        chunk {
+          stat {
+            semicolon: true
+          }
+          laststat {
+            break: 0
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

@@ -1,0 +1,119 @@
+chunk {
+  stat {
+    forcyclename {
+      name {
+        name: ""
+        num: 0
+      }
+      startexp {
+        false: 1
+      }
+      stopexp {
+        binary {
+          leftexp {
+          }
+          binop {
+            mult: 1
+          }
+          rightexp {
+            prefixexp {
+              exp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    or: 1
+                  }
+                  rightexp {
+                    number: -0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclename {
+                name {
+                  name: ""
+                  num: 0
+                }
+                startexp {
+                  false: 1
+                }
+                stopexp {
+                  binary {
+                    leftexp {
+                    }
+                    binop {
+                      mult: 1
+                    }
+                    rightexp {
+                      prefixexp {
+                        exp {
+                          binary {
+                            leftexp {
+                            }
+                            binop {
+                              or: 1
+                            }
+                            rightexp {
+                              prefixexp {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                stepexp {
+                  prefixexp {
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        ifstat {
+                          condition {
+                            prefixexp {
+                            }
+                          }
+                          first {
+                            chunk {
+                            }
+                          }
+                        }
+                        semicolon: true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        explast {
+        }
+      }
+    }
+  }
+}

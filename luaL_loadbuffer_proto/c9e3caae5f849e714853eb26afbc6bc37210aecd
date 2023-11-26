@@ -1,0 +1,65 @@
+chunk {
+  stat {
+    semicolon: false
+  }
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                }
+                name {
+                  name: ""
+                  num: 0
+                }
+                args {
+                  explist {
+                    explist {
+                      expressions {
+                        binary {
+                          leftexp {
+                            prefixexp {
+                            }
+                          }
+                          binop {
+                          }
+                          rightexp {
+                          }
+                        }
+                      }
+                      explast {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+      }
+    }
+  }
+  laststat {
+    semicolon: true
+  }
+}

@@ -1,0 +1,76 @@
+chunk {
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+      explist {
+        expressions {
+          binary {
+            leftexp {
+              unary {
+                unop {
+                  length: 2
+                }
+                exp {
+                  tableconstructor {
+                  }
+                }
+              }
+            }
+            binop {
+            }
+            rightexp {
+              unary {
+                unop {
+                  negate: 42
+                }
+                exp {
+                  binary {
+                    leftexp {
+                      unary {
+                        unop {
+                          length: 10240
+                        }
+                        exp {
+                          tableconstructor {
+                          }
+                        }
+                      }
+                    }
+                    binop {
+                    }
+                    rightexp {
+                      unary {
+                        unop {
+                          length: 0
+                        }
+                        exp {
+                          tableconstructor {
+                            fieldlist {
+                              firstField {
+                                expression {
+                                  true: 10240
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        explast {
+        }
+      }
+    }
+    semicolon: true
+  }
+}

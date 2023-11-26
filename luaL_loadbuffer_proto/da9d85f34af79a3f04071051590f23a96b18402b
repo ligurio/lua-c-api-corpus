@@ -1,0 +1,81 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+          nil: 0
+        }
+        block {
+          chunk {
+            laststat {
+              explist {
+                explist {
+                  expressions {
+                    binary {
+                      leftexp {
+                      }
+                      binop {
+                        or: 4096
+                      }
+                      rightexp {
+                      }
+                    }
+                  }
+                  explast {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      last {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+              }
+              first {
+                chunk {
+                }
+              }
+              clauses {
+                condition {
+                  nil: 4096
+                }
+                block {
+                  chunk {
+                  }
+                }
+              }
+              clauses {
+                condition {
+                  nil: 0
+                }
+                block {
+                  chunk {
+                  }
+                }
+              }
+              last {
+                chunk {
+                  laststat {
+                    semicolon: true
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

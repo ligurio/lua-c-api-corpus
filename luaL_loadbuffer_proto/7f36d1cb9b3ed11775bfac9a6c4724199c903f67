@@ -1,0 +1,65 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+          }
+          exp {
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  functioncall {
+                    namedArgs {
+                      prefixexp {
+                      }
+                      name {
+                        name: ""
+                        num: 0
+                      }
+                      args {
+                        str: "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+                      }
+                    }
+                  }
+                }
+                args {
+                }
+              }
+            }
+          }
+          laststat {
+            break: 4
+          }
+        }
+      }
+      clauses {
+        condition {
+          prefixexp {
+            functioncall {
+              prefArgs {
+                prefixexp {
+                }
+                args {
+                }
+              }
+            }
+          }
+        }
+        block {
+          chunk {
+            laststat {
+              break: 4
+            }
+          }
+        }
+      }
+    }
+  }
+}

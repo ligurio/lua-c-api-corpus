@@ -1,0 +1,78 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        nil: 16
+      }
+      first {
+        chunk {
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                  stat {
+                    forcyclename {
+                      name {
+                        name: ""
+                        num: 0
+                      }
+                      startexp {
+                        str: "cal"
+                      }
+                      stopexp {
+                      }
+                      doblock {
+                        block {
+                          chunk {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              condition {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                or: 0
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            or: 255
+          }
+          rightexp {
+            prefixexp {
+              exp {
+                number: 0
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          laststat {
+            break: 16777216
+          }
+        }
+      }
+    }
+  }
+}

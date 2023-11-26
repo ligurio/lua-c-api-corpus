@@ -1,0 +1,40 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        nil: 8
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            number: -2
+          }
+          binop {
+            greaterEqual: 4
+          }
+          rightexp {
+            true: 4294967094
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      last {
+        chunk {
+          laststat {
+          }
+        }
+      }
+    }
+  }
+}

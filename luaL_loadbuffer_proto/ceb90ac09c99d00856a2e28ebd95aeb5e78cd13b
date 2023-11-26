@@ -1,0 +1,123 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            length: 4
+          }
+          exp {
+            prefixexp {
+              exp {
+                binary {
+                  leftexp {
+                    number: -5
+                  }
+                  binop {
+                    concat: 4
+                  }
+                  rightexp {
+                    str: "e3333"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    forcyclename {
+      name {
+        name: ""
+        num: 0
+      }
+      startexp {
+        number: 4
+      }
+      stopexp {
+        number: 4
+      }
+      stepexp {
+        number: -0
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclename {
+                name {
+                  name: ""
+                  num: 0
+                }
+                startexp {
+                  prefixexp {
+                  }
+                }
+                stopexp {
+                  binary {
+                    leftexp {
+                      number: -5
+                    }
+                    binop {
+                      concat: 4
+                    }
+                    rightexp {
+                      str: "e3333"
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+            stat {
+              forcyclename {
+                name {
+                  name: ""
+                  num: 0
+                }
+                startexp {
+                  number: 4
+                }
+                stopexp {
+                  number: -5
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+            stat {
+              block {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+            stat {
+              semicolon: false
+            }
+            laststat {
+            }
+          }
+        }
+      }
+    }
+  }
+}

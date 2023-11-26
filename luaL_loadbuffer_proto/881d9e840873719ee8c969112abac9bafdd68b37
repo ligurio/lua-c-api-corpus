@@ -1,0 +1,61 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+            length: 4
+          }
+          exp {
+          }
+        }
+      }
+      first {
+        chunk {
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      clauses {
+        condition {
+          tableconstructor {
+          }
+        }
+        block {
+          chunk {
+            stat {
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+          nil: 4
+        }
+        block {
+          chunk {
+            stat {
+              call {
+              }
+            }
+          }
+        }
+      }
+      last {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+  }
+}

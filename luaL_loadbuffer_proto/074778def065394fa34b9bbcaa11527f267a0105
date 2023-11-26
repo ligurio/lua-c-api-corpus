@@ -1,0 +1,108 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            negate: 0
+          }
+          exp {
+            prefixexp {
+              exp {
+                binary {
+                  leftexp {
+                    number: -5
+                  }
+                  binop {
+                    concat: 0
+                  }
+                  rightexp {
+                    str: "e3333"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  function {
+                    body {
+                      block {
+                        chunk {
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        whilecycle {
+                          condition {
+                            unary {
+                              unop {
+                                negate: 0
+                              }
+                              exp {
+                                prefixexp {
+                                  exp {
+                                    binary {
+                                      leftexp {
+                                        number: 1.5
+                                      }
+                                      binop {
+                                        concat: 0
+                                      }
+                                      rightexp {
+                                        str: "e3333"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                          doblock {
+                            block {
+                              chunk {
+                                stat {
+                                  whilecycle {
+                                    condition {
+                                      ellipsis: ""
+                                    }
+                                    doblock {
+                                      block {
+                                        chunk {
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              semicolon: true
+            }
+            stat {
+              call {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

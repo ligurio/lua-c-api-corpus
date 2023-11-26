@@ -1,0 +1,71 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            greaterEqual: 35
+          }
+          rightexp {
+            binary {
+              leftexp {
+                nil: 35
+              }
+              binop {
+                and: 35
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                    nil: 1818305280
+                  }
+                  binop {
+                    and: 35
+                  }
+                  rightexp {
+                    nil: 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+              }
+              doblock {
+                block {
+                  chunk {
+                    stat {
+                      semicolon: true
+                    }
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+        }
+      }
+      clauses {
+        condition {
+          number: 0
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      last {
+        chunk {
+        }
+      }
+    }
+  }
+}

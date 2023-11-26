@@ -1,0 +1,120 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            unary {
+              unop {
+              }
+              exp {
+              }
+            }
+          }
+          binop {
+          }
+          rightexp {
+            prefixexp {
+              functioncall {
+                prefArgs {
+                  prefixexp {
+                    functioncall {
+                      namedArgs {
+                        prefixexp {
+                          exp {
+                            ellipsis: "111111111111111111"
+                          }
+                        }
+                        name {
+                          name: ""
+                          num: 0
+                        }
+                        args {
+                        }
+                      }
+                    }
+                  }
+                  args {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+              }
+              semicolon: true
+            }
+            stat {
+              call {
+              }
+              semicolon: true
+            }
+            stat {
+              call {
+              }
+            }
+            stat {
+              call {
+              }
+            }
+            stat {
+              call {
+              }
+              semicolon: false
+            }
+            stat {
+              call {
+              }
+            }
+            stat {
+              call {
+              }
+            }
+            stat {
+              ifstat {
+                condition {
+                }
+                first {
+                  chunk {
+                    stat {
+                      whilecycle {
+                        condition {
+                          true: 2097152
+                        }
+                        doblock {
+                          block {
+                            chunk {
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                clauses {
+                  condition {
+                  }
+                  block {
+                    chunk {
+                      stat {
+                        semicolon: true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+  }
+}
