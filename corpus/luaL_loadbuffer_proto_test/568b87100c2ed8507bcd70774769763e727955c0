@@ -1,0 +1,83 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            or: 0
+          }
+          rightexp {
+            nil: 1
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            or: 0
+          }
+          rightexp {
+            nil: 0
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      clauses {
+        condition {
+          false: 1
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+}
