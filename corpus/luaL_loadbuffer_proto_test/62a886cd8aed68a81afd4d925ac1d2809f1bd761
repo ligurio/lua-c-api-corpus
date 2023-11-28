@@ -1,0 +1,76 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                }
+              }
+              condition {
+                nil: 1
+              }
+            }
+          }
+          stat {
+            whilecycle {
+              condition {
+                binary {
+                  leftexp {
+                    number: 9
+                  }
+                  binop {
+                    div: 1
+                  }
+                  rightexp {
+                    unary {
+                      unop {
+                        negate: 0
+                      }
+                      exp {
+                        prefixexp {
+                          exp {
+                            binary {
+                              leftexp {
+                                true: 1
+                              }
+                              binop {
+                                exp: 0
+                              }
+                              rightexp {
+                                unary {
+                                  unop {
+                                    length: 4
+                                  }
+                                  exp {
+                                    tableconstructor {
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        nil: 0
+      }
+    }
+  }
+}
