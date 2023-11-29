@@ -1,0 +1,123 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        nil: 0
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                }
+              }
+              condition {
+                nil: 0
+              }
+            }
+          }
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                  stat {
+                  }
+                  stat {
+                  }
+                  stat {
+                    list {
+                      varlist {
+                        var {
+                        }
+                      }
+                      explist {
+                        explast {
+                          prefixexp {
+                            functioncall {
+                              prefArgs {
+                                prefixexp {
+                                  var {
+                                    indexname {
+                                      prefixexp {
+                                      }
+                                      Name: "char"
+                                    }
+                                  }
+                                }
+                                args {
+                                  explist {
+                                    explist {
+                                      explast {
+                                        binary {
+                                          leftexp {
+                                            number: 44
+                                          }
+                                          binop {
+                                            exp: 8
+                                          }
+                                          rightexp {
+                                            unary {
+                                              unop {
+                                                length: 0
+                                              }
+                                              exp {
+                                                tableconstructor {
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  stat {
+                  }
+                  stat {
+                  }
+                  stat {
+                  }
+                  stat {
+                  }
+                }
+              }
+              condition {
+                nil: 0
+              }
+            }
+          }
+        }
+      }
+      condition {
+      }
+    }
+  }
+}
