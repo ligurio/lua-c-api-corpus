@@ -1,0 +1,80 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    forcyclename {
+      name {
+        name: ""
+        num: 4
+      }
+      startexp {
+        number: 0
+      }
+      stopexp {
+        number: 0
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  exp {
+                    prefixexp {
+                      var {
+                        indexexpr {
+                          prefixexp {
+                          }
+                          exp {
+                            true: 1025
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                args {
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        false: 2621440
+      }
+    }
+  }
+}
