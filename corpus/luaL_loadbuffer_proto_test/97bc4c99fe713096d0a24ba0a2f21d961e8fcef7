@@ -1,0 +1,95 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+            }
+            fields {
+              field {
+                expression {
+                  binary {
+                    leftexp {
+                      str: "`"
+                    }
+                    binop {
+                      lessEqual: 0
+                    }
+                    rightexp {
+                      binary {
+                        leftexp {
+                        }
+                        binop {
+                          concat: 4
+                        }
+                        rightexp {
+                          binary {
+                            leftexp {
+                              unary {
+                                unop {
+                                  length: 0
+                                }
+                                exp {
+                                  tableconstructor {
+                                  }
+                                }
+                              }
+                            }
+                            binop {
+                              and: 4
+                            }
+                            rightexp {
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              sep {
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      namedArgs {
+        prefixexp {
+        }
+        name {
+          name: ""
+          num: 0
+        }
+        args {
+          tableconstructor {
+            fieldlist {
+              firstField {
+              }
+              fields {
+                field {
+                }
+                sep {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+    }
+  }
+}
