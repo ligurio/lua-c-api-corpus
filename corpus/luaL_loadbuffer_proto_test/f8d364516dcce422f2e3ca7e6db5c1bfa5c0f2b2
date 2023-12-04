@@ -1,0 +1,57 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+          }
+          exp {
+            str: "+"
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+          binary {
+            leftexp {
+              number: 3
+            }
+            binop {
+              greaterEqual: 0
+            }
+            rightexp {
+            }
+          }
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      clauses {
+        condition {
+          binary {
+            leftexp {
+              number: 3
+            }
+            binop {
+              greaterEqual: 0
+            }
+            rightexp {
+            }
+          }
+        }
+        block {
+          chunk {
+            laststat {
+            }
+          }
+        }
+      }
+    }
+  }
+}

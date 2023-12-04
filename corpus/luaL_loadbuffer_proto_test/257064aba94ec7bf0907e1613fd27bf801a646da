@@ -1,0 +1,71 @@
+chunk {
+  stat {
+    localfunc {
+      name {
+        name: ""
+        num: 0
+      }
+      funcbody {
+        parlist {
+        }
+        block {
+          chunk {
+            laststat {
+              break: 0
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  unary {
+                    unop {
+                      negate: 0
+                    }
+                    exp {
+                      prefixexp {
+                        exp {
+                          binary {
+                            leftexp {
+                              number: -5
+                            }
+                            binop {
+                              concat: 0
+                            }
+                            rightexp {
+                              str: "e333"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+              semicolon: false
+            }
+            laststat {
+              break: 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
