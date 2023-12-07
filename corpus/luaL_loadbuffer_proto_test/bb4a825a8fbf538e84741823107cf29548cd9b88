@@ -1,0 +1,180 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+          }
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                }
+              }
+              condition {
+                prefixexp {
+                  exp {
+                    binary {
+                      leftexp {
+                        prefixexp {
+                          functioncall {
+                            prefArgs {
+                              prefixexp {
+                                var {
+                                  indexname {
+                                    prefixexp {
+                                    }
+                                    Name: "char"
+                                  }
+                                }
+                              }
+                              args {
+                                explist {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      binop {
+                        concat: 1
+                      }
+                      rightexp {
+                        prefixexp {
+                          functioncall {
+                            prefArgs {
+                              prefixexp {
+                                var {
+                                  indexname {
+                                    prefixexp {
+                                    }
+                                    Name: "char"
+                                  }
+                                }
+                              }
+                              args {
+                                explist {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            whilecycle {
+              condition {
+              }
+              doblock {
+                block {
+                  chunk {
+                    stat {
+                      repeatcycle {
+                        block {
+                          chunk {
+                            stat {
+                            }
+                            stat {
+                              repeatcycle {
+                                block {
+                                  chunk {
+                                  }
+                                }
+                                condition {
+                                  prefixexp {
+                                    exp {
+                                      binary {
+                                        leftexp {
+                                          prefixexp {
+                                            functioncall {
+                                              prefArgs {
+                                                prefixexp {
+                                                  var {
+                                                    indexname {
+                                                      prefixexp {
+                                                      }
+                                                      Name: "char"
+                                                    }
+                                                  }
+                                                }
+                                                args {
+                                                  explist {
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                        binop {
+                                          sub: 1024
+                                        }
+                                        rightexp {
+                                          prefixexp {
+                                            functioncall {
+                                              prefArgs {
+                                                prefixexp {
+                                                  var {
+                                                    indexname {
+                                                      prefixexp {
+                                                      }
+                                                      Name: "char"
+                                                    }
+                                                  }
+                                                }
+                                                args {
+                                                  explist {
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            stat {
+                              whilecycle {
+                                condition {
+                                }
+                                doblock {
+                                  block {
+                                    chunk {
+                                      stat {
+                                      }
+                                      laststat {
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        condition {
+                          nil: 0
+                        }
+                      }
+                    }
+                    laststat {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        nil: 0
+      }
+    }
+  }
+}
