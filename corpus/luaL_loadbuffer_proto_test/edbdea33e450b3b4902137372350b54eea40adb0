@@ -1,0 +1,54 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            concat: 0
+          }
+          rightexp {
+            ellipsis: ""
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                binary {
+                  leftexp {
+                    str: "+"
+                  }
+                  binop {
+                    concat: 256
+                  }
+                  rightexp {
+                    false: 8192
+                  }
+                }
+              }
+              first {
+                chunk {
+                  stat {
+                    ifstat {
+                      condition {
+                        false: 0
+                      }
+                      first {
+                        chunk {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
