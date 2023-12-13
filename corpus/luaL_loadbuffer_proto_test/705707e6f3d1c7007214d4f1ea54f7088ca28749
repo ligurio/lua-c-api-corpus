@@ -1,0 +1,65 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            negate: 0
+          }
+          exp {
+            prefixexp {
+              exp {
+                binary {
+                  leftexp {
+                    unary {
+                      unop {
+                        negate: 0
+                      }
+                      exp {
+                        prefixexp {
+                          exp {
+                            binary {
+                              leftexp {
+                                unary {
+                                  unop {
+                                  }
+                                  exp {
+                                  }
+                                }
+                              }
+                              binop {
+                                concat: 0
+                              }
+                              rightexp {
+                                str: "b0"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  binop {
+                    concat: 0
+                  }
+                  rightexp {
+                    str: "b0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            laststat {
+              break: 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
