@@ -408,17 +408,17 @@ lj_alloc_f:
  1475|   145k|  (void)osize;
  1476|   145k|  if (nsize == 0) {
   ------------------
-  |  Branch (1476:7): [True: 74.9k, False: 70.4k]
+  |  Branch (1476:7): [True: 74.9k, False: 70.5k]
   ------------------
  1477|  74.9k|    return lj_alloc_free(msp, ptr);
  1478|  74.9k|  } else if (ptr == NULL) {
   ------------------
-  |  Branch (1478:14): [True: 70.2k, False: 232]
+  |  Branch (1478:14): [True: 70.2k, False: 254]
   ------------------
  1479|  70.2k|    return lj_alloc_malloc(msp, nsize);
  1480|  70.2k|  } else {
- 1481|    232|    return lj_alloc_realloc(msp, ptr, nsize);
- 1482|    232|  }
+ 1481|    254|    return lj_alloc_realloc(msp, ptr, nsize);
+ 1482|    254|  }
  1483|   145k|}
 lj_alloc.c:mmap_probe:
   234|  1.17k|{
@@ -793,17 +793,17 @@ lj_alloc.c:lj_alloc_free:
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  |  Branch (1359:9): [True: 30.4k, False: 38.8k]
+  |  Branch (1359:9): [True: 30.2k, False: 39.0k]
   ------------------
- 1360|  30.4k|      size_t prevsize = p->prev_foot;
- 1361|  30.4k|      if ((prevsize & IS_DIRECT_BIT) != 0) {
+ 1360|  30.2k|      size_t prevsize = p->prev_foot;
+ 1361|  30.2k|      if ((prevsize & IS_DIRECT_BIT) != 0) {
   ------------------
-  |  |   74|  30.4k|#define IS_DIRECT_BIT		(SIZE_T_ONE)
+  |  |   74|  30.2k|#define IS_DIRECT_BIT		(SIZE_T_ONE)
   |  |  ------------------
-  |  |  |  |   55|  30.4k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |   55|  30.2k|#define SIZE_T_ONE		((size_t)1)
   |  |  ------------------
   ------------------
-  |  Branch (1361:11): [True: 0, False: 30.4k]
+  |  Branch (1361:11): [True: 0, False: 30.2k]
   ------------------
  1362|      0|	prevsize &= ~IS_DIRECT_BIT;
   ------------------
@@ -824,48 +824,48 @@ lj_alloc.c:lj_alloc_free:
   ------------------
  1364|      0|	CALL_MUNMAP((char *)p - prevsize, psize);
  1365|      0|	return NULL;
- 1366|  30.4k|      } else {
- 1367|  30.4k|	mchunkptr prev = chunk_minus_offset(p, prevsize);
+ 1366|  30.2k|      } else {
+ 1367|  30.2k|	mchunkptr prev = chunk_minus_offset(p, prevsize);
   ------------------
-  |  |  458|  30.4k|#define chunk_minus_offset(p, s)	((mchunkptr)(((char *)(p)) - (s)))
+  |  |  458|  30.2k|#define chunk_minus_offset(p, s)	((mchunkptr)(((char *)(p)) - (s)))
   ------------------
- 1368|  30.4k|	psize += prevsize;
- 1369|  30.4k|	p = prev;
+ 1368|  30.2k|	psize += prevsize;
+ 1369|  30.2k|	p = prev;
  1370|       |	/* consolidate backward */
- 1371|  30.4k|	if (p != fm->dv) {
+ 1371|  30.2k|	if (p != fm->dv) {
   ------------------
-  |  Branch (1371:6): [True: 30.4k, False: 0]
+  |  Branch (1371:6): [True: 30.2k, False: 0]
   ------------------
- 1372|  30.4k|	  unlink_chunk(fm, p, prevsize);
+ 1372|  30.2k|	  unlink_chunk(fm, p, prevsize);
   ------------------
-  |  |  820|  30.4k|  if (is_small(S)) { unlink_small_chunk(M, P, S)\
+  |  |  820|  30.2k|  if (is_small(S)) { unlink_small_chunk(M, P, S)\
   |  |  ------------------
-  |  |  |  |  604|  30.4k|#define is_small(s)		(((s) >> SMALLBIN_SHIFT) < NSMALLBINS)
+  |  |  |  |  604|  30.2k|#define is_small(s)		(((s) >> SMALLBIN_SHIFT) < NSMALLBINS)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  523|  30.4k|#define SMALLBIN_SHIFT		(3U)
+  |  |  |  |  |  |  523|  30.2k|#define SMALLBIN_SHIFT		(3U)
   |  |  |  |  ------------------
   |  |  |  |               #define is_small(s)		(((s) >> SMALLBIN_SHIFT) < NSMALLBINS)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  521|  30.4k|#define NSMALLBINS		(32U)
+  |  |  |  |  |  |  521|  30.2k|#define NSMALLBINS		(32U)
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (604:22): [True: 21.8k, False: 8.62k]
+  |  |  |  |  |  Branch (604:22): [True: 21.6k, False: 8.62k]
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                 if (is_small(S)) { unlink_small_chunk(M, P, S)\
   |  |  ------------------
-  |  |  |  |  690|  21.8k|#define unlink_small_chunk(M, P, S) {\
-  |  |  |  |  691|  21.8k|  mchunkptr F = P->fd;\
-  |  |  |  |  692|  21.8k|  mchunkptr B = P->bk;\
-  |  |  |  |  693|  21.8k|  bindex_t I = small_index(S);\
+  |  |  |  |  690|  21.6k|#define unlink_small_chunk(M, P, S) {\
+  |  |  |  |  691|  21.6k|  mchunkptr F = P->fd;\
+  |  |  |  |  692|  21.6k|  mchunkptr B = P->bk;\
+  |  |  |  |  693|  21.6k|  bindex_t I = small_index(S);\
   |  |  |  |  ------------------
-  |  |  |  |  |  |  605|  21.8k|#define small_index(s)		((s)  >> SMALLBIN_SHIFT)
+  |  |  |  |  |  |  605|  21.6k|#define small_index(s)		((s)  >> SMALLBIN_SHIFT)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  523|  21.8k|#define SMALLBIN_SHIFT		(3U)
+  |  |  |  |  |  |  |  |  523|  21.6k|#define SMALLBIN_SHIFT		(3U)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
-  |  |  |  |  694|  21.8k|  if (F == B) {\
+  |  |  |  |  694|  21.6k|  if (F == B) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (694:7): [True: 9.57k, False: 12.2k]
+  |  |  |  |  |  Branch (694:7): [True: 9.57k, False: 12.0k]
   |  |  |  |  ------------------
   |  |  |  |  695|  9.57k|    clear_smallmap(M, I);\
   |  |  |  |  ------------------
@@ -874,107 +874,107 @@ lj_alloc.c:lj_alloc_free:
   |  |  |  |  |  |  |  |  644|  9.57k|#define idx2bit(i)		((binmap_t)(1) << (i))
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
-  |  |  |  |  696|  12.2k|  } else {\
-  |  |  |  |  697|  12.2k|    F->bk = B;\
-  |  |  |  |  698|  12.2k|    B->fd = F;\
-  |  |  |  |  699|  12.2k|  }\
-  |  |  |  |  700|  21.8k|}
+  |  |  |  |  696|  12.0k|  } else {\
+  |  |  |  |  697|  12.0k|    F->bk = B;\
+  |  |  |  |  698|  12.0k|    B->fd = F;\
+  |  |  |  |  699|  12.0k|  }\
+  |  |  |  |  700|  21.6k|}
   |  |  ------------------
-  |  |  821|  21.8k|  } else { tchunkptr TP = (tchunkptr)(P); unlink_large_chunk(M, TP); }
+  |  |  821|  21.6k|  } else { tchunkptr TP = (tchunkptr)(P); unlink_large_chunk(M, TP); }
   |  |  ------------------
   |  |  |  |  767|  8.62k|#define unlink_large_chunk(M, X) {\
   |  |  |  |  768|  8.62k|  tchunkptr XP = X->parent;\
   |  |  |  |  769|  8.62k|  tchunkptr R;\
   |  |  |  |  770|  8.62k|  if (X->bk != X) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (770:7): [True: 196, False: 8.42k]
+  |  |  |  |  |  Branch (770:7): [True: 221, False: 8.40k]
   |  |  |  |  ------------------
-  |  |  |  |  771|    196|    tchunkptr F = X->fd;\
-  |  |  |  |  772|    196|    R = X->bk;\
-  |  |  |  |  773|    196|    F->bk = R;\
-  |  |  |  |  774|    196|    R->fd = F;\
-  |  |  |  |  775|  8.42k|  } else {\
-  |  |  |  |  776|  8.42k|    tchunkptr *RP;\
-  |  |  |  |  777|  8.42k|    if (((R = *(RP = &(X->child[1]))) != 0) ||\
+  |  |  |  |  771|    221|    tchunkptr F = X->fd;\
+  |  |  |  |  772|    221|    R = X->bk;\
+  |  |  |  |  773|    221|    F->bk = R;\
+  |  |  |  |  774|    221|    R->fd = F;\
+  |  |  |  |  775|  8.40k|  } else {\
+  |  |  |  |  776|  8.40k|    tchunkptr *RP;\
+  |  |  |  |  777|  8.40k|    if (((R = *(RP = &(X->child[1]))) != 0) ||\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (777:9): [True: 464, False: 7.96k]
+  |  |  |  |  |  Branch (777:9): [True: 475, False: 7.93k]
   |  |  |  |  ------------------
-  |  |  |  |  778|  8.42k|	((R = *(RP = &(X->child[0]))) != 0)) {\
+  |  |  |  |  778|  8.40k|	((R = *(RP = &(X->child[0]))) != 0)) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (778:2): [True: 377, False: 7.58k]
+  |  |  |  |  |  Branch (778:2): [True: 360, False: 7.57k]
   |  |  |  |  ------------------
-  |  |  |  |  779|    841|      tchunkptr *CP;\
-  |  |  |  |  780|    878|      while ((*(CP = &(R->child[1])) != 0) ||\
+  |  |  |  |  779|    835|      tchunkptr *CP;\
+  |  |  |  |  780|    865|      while ((*(CP = &(R->child[1])) != 0) ||\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (780:14): [True: 16, False: 862]
+  |  |  |  |  |  Branch (780:14): [True: 13, False: 852]
   |  |  |  |  ------------------
-  |  |  |  |  781|    878|	     (*(CP = &(R->child[0])) != 0)) {\
+  |  |  |  |  781|    865|	     (*(CP = &(R->child[0])) != 0)) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (781:7): [True: 21, False: 841]
+  |  |  |  |  |  Branch (781:7): [True: 17, False: 835]
   |  |  |  |  ------------------
-  |  |  |  |  782|     37|	R = *(RP = CP);\
-  |  |  |  |  783|     37|      }\
-  |  |  |  |  784|    841|      *RP = 0;\
-  |  |  |  |  785|    841|    }\
-  |  |  |  |  786|  8.42k|  }\
+  |  |  |  |  782|     30|	R = *(RP = CP);\
+  |  |  |  |  783|     30|      }\
+  |  |  |  |  784|    835|      *RP = 0;\
+  |  |  |  |  785|    835|    }\
+  |  |  |  |  786|  8.40k|  }\
   |  |  |  |  787|  8.62k|  if (XP != 0) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (787:7): [True: 8.51k, False: 111]
+  |  |  |  |  |  Branch (787:7): [True: 8.50k, False: 124]
   |  |  |  |  ------------------
-  |  |  |  |  788|  8.51k|    tbinptr *H = treebin_at(M, X->index);\
+  |  |  |  |  788|  8.50k|    tbinptr *H = treebin_at(M, X->index);\
   |  |  |  |  ------------------
-  |  |  |  |  |  |  611|  8.51k|#define treebin_at(M,i)		(&((M)->treebins[i]))
+  |  |  |  |  |  |  611|  8.50k|#define treebin_at(M,i)		(&((M)->treebins[i]))
   |  |  |  |  ------------------
-  |  |  |  |  789|  8.51k|    if (X == *H) {\
+  |  |  |  |  789|  8.50k|    if (X == *H) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (789:9): [True: 7.08k, False: 1.42k]
+  |  |  |  |  |  Branch (789:9): [True: 6.98k, False: 1.51k]
   |  |  |  |  ------------------
-  |  |  |  |  790|  7.08k|      if ((*H = R) == 0) \
+  |  |  |  |  790|  6.98k|      if ((*H = R) == 0) \
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (790:11): [True: 6.22k, False: 854]
+  |  |  |  |  |  Branch (790:11): [True: 6.14k, False: 840]
   |  |  |  |  ------------------
-  |  |  |  |  791|  7.08k|	clear_treemap(M, X->index);\
+  |  |  |  |  791|  6.98k|	clear_treemap(M, X->index);\
   |  |  |  |  ------------------
-  |  |  |  |  |  |  652|  6.22k|#define clear_treemap(M,i)	((M)->treemap  &= ~idx2bit(i))
+  |  |  |  |  |  |  652|  6.14k|#define clear_treemap(M,i)	((M)->treemap  &= ~idx2bit(i))
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  644|  6.22k|#define idx2bit(i)		((binmap_t)(1) << (i))
+  |  |  |  |  |  |  |  |  644|  6.14k|#define idx2bit(i)		((binmap_t)(1) << (i))
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
-  |  |  |  |  792|  7.08k|    } else {\
-  |  |  |  |  793|  1.42k|      if (XP->child[0] == X) \
+  |  |  |  |  792|  6.98k|    } else {\
+  |  |  |  |  793|  1.51k|      if (XP->child[0] == X) \
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (793:11): [True: 827, False: 601]
+  |  |  |  |  |  Branch (793:11): [True: 839, False: 680]
   |  |  |  |  ------------------
-  |  |  |  |  794|  1.42k|	XP->child[0] = R;\
-  |  |  |  |  795|  1.42k|      else \
-  |  |  |  |  796|  1.42k|	XP->child[1] = R;\
-  |  |  |  |  797|  1.42k|    }\
-  |  |  |  |  798|  8.51k|    if (R != 0) {\
+  |  |  |  |  794|  1.51k|	XP->child[0] = R;\
+  |  |  |  |  795|  1.51k|      else \
+  |  |  |  |  796|  1.51k|	XP->child[1] = R;\
+  |  |  |  |  797|  1.51k|    }\
+  |  |  |  |  798|  8.50k|    if (R != 0) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (798:9): [True: 926, False: 7.58k]
+  |  |  |  |  |  Branch (798:9): [True: 932, False: 7.57k]
   |  |  |  |  ------------------
-  |  |  |  |  799|    926|      tchunkptr C0, C1;\
-  |  |  |  |  800|    926|      R->parent = XP;\
-  |  |  |  |  801|    926|      if ((C0 = X->child[0]) != 0) {\
+  |  |  |  |  799|    932|      tchunkptr C0, C1;\
+  |  |  |  |  800|    932|      R->parent = XP;\
+  |  |  |  |  801|    932|      if ((C0 = X->child[0]) != 0) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (801:11): [True: 85, False: 841]
+  |  |  |  |  |  Branch (801:11): [True: 76, False: 856]
   |  |  |  |  ------------------
-  |  |  |  |  802|     85|	R->child[0] = C0;\
-  |  |  |  |  803|     85|	C0->parent = R;\
-  |  |  |  |  804|     85|      }\
-  |  |  |  |  805|    926|      if ((C1 = X->child[1]) != 0) {\
+  |  |  |  |  802|     76|	R->child[0] = C0;\
+  |  |  |  |  803|     76|	C0->parent = R;\
+  |  |  |  |  804|     76|      }\
+  |  |  |  |  805|    932|      if ((C1 = X->child[1]) != 0) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (805:11): [True: 36, False: 890]
+  |  |  |  |  |  Branch (805:11): [True: 33, False: 899]
   |  |  |  |  ------------------
-  |  |  |  |  806|     36|	R->child[1] = C1;\
-  |  |  |  |  807|     36|	C1->parent = R;\
-  |  |  |  |  808|     36|      }\
-  |  |  |  |  809|    926|    }\
-  |  |  |  |  810|  8.51k|  }\
+  |  |  |  |  806|     33|	R->child[1] = C1;\
+  |  |  |  |  807|     33|	C1->parent = R;\
+  |  |  |  |  808|     33|      }\
+  |  |  |  |  809|    932|    }\
+  |  |  |  |  810|  8.50k|  }\
   |  |  |  |  811|  8.62k|}
   |  |  ------------------
   ------------------
- 1373|  30.4k|	} else if ((next->head & INUSE_BITS) == INUSE_BITS) {
+ 1373|  30.2k|	} else if ((next->head & INUSE_BITS) == INUSE_BITS) {
   ------------------
   |  |  443|      0|#define INUSE_BITS		(PINUSE_BIT|CINUSE_BIT)
   |  |  ------------------
@@ -1040,8 +1040,8 @@ lj_alloc.c:lj_alloc_free:
   ------------------
  1376|      0|	  return NULL;
  1377|      0|	}
- 1378|  30.4k|      }
- 1379|  30.4k|    }
+ 1378|  30.2k|      }
+ 1379|  30.2k|    }
  1380|  69.3k|    if (!cinuse(next)) {  /* consolidate forward */
   ------------------
   |  |  449|  69.3k|#define cinuse(p)		((p)->head & CINUSE_BIT)
@@ -1052,37 +1052,37 @@ lj_alloc.c:lj_alloc_free:
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  |  Branch (1380:9): [True: 38.8k, False: 30.4k]
+  |  Branch (1380:9): [True: 39.0k, False: 30.2k]
   ------------------
- 1381|  38.8k|      if (next == fm->top) {
+ 1381|  39.0k|      if (next == fm->top) {
   ------------------
-  |  Branch (1381:11): [True: 4.29k, False: 34.5k]
+  |  Branch (1381:11): [True: 4.28k, False: 34.7k]
   ------------------
- 1382|  4.29k|	size_t tsize = fm->topsize += psize;
- 1383|  4.29k|	fm->top = p;
- 1384|  4.29k|	p->head = tsize | PINUSE_BIT;
+ 1382|  4.28k|	size_t tsize = fm->topsize += psize;
+ 1383|  4.28k|	fm->top = p;
+ 1384|  4.28k|	p->head = tsize | PINUSE_BIT;
   ------------------
-  |  |  441|  4.29k|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  441|  4.28k|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  ------------------
-  |  |  |  |   55|  4.29k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |   55|  4.28k|#define SIZE_T_ONE		((size_t)1)
   |  |  ------------------
   ------------------
- 1385|  4.29k|	if (p == fm->dv) {
+ 1385|  4.28k|	if (p == fm->dv) {
   ------------------
-  |  Branch (1385:6): [True: 0, False: 4.29k]
+  |  Branch (1385:6): [True: 0, False: 4.28k]
   ------------------
  1386|      0|	  fm->dv = 0;
  1387|      0|	  fm->dvsize = 0;
  1388|      0|	}
- 1389|  4.29k|	if (tsize > fm->trim_check)
+ 1389|  4.28k|	if (tsize > fm->trim_check)
   ------------------
-  |  Branch (1389:6): [True: 0, False: 4.29k]
+  |  Branch (1389:6): [True: 0, False: 4.28k]
   ------------------
  1390|      0|	  alloc_trim(fm, 0);
- 1391|  4.29k|	return NULL;
- 1392|  34.5k|      } else if (next == fm->dv) {
+ 1391|  4.28k|	return NULL;
+ 1392|  34.7k|      } else if (next == fm->dv) {
   ------------------
-  |  Branch (1392:18): [True: 0, False: 34.5k]
+  |  Branch (1392:18): [True: 0, False: 34.7k]
   ------------------
  1393|      0|	size_t dsize = fm->dvsize += psize;
  1394|      0|	fm->dv = p;
@@ -1101,112 +1101,112 @@ lj_alloc.c:lj_alloc_free:
   |  |  ------------------
   ------------------
  1396|      0|	return NULL;
- 1397|  34.5k|      } else {
- 1398|  34.5k|	size_t nsize = chunksize(next);
+ 1397|  34.7k|      } else {
+ 1398|  34.7k|	size_t nsize = chunksize(next);
   ------------------
-  |  |  451|  34.5k|#define chunksize(p)		((p)->head & ~(INUSE_BITS))
+  |  |  451|  34.7k|#define chunksize(p)		((p)->head & ~(INUSE_BITS))
   |  |  ------------------
-  |  |  |  |  443|  34.5k|#define INUSE_BITS		(PINUSE_BIT|CINUSE_BIT)
+  |  |  |  |  443|  34.7k|#define INUSE_BITS		(PINUSE_BIT|CINUSE_BIT)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  441|  34.5k|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  |  |  441|  34.7k|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|  34.5k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|  34.7k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |               #define INUSE_BITS		(PINUSE_BIT|CINUSE_BIT)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  442|  34.5k|#define CINUSE_BIT		(SIZE_T_TWO)
+  |  |  |  |  |  |  442|  34.7k|#define CINUSE_BIT		(SIZE_T_TWO)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   56|  34.5k|#define SIZE_T_TWO		((size_t)2)
+  |  |  |  |  |  |  |  |   56|  34.7k|#define SIZE_T_TWO		((size_t)2)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
- 1399|  34.5k|	psize += nsize;
- 1400|  34.5k|	unlink_chunk(fm, next, nsize);
+ 1399|  34.7k|	psize += nsize;
+ 1400|  34.7k|	unlink_chunk(fm, next, nsize);
   ------------------
-  |  |  820|  34.5k|  if (is_small(S)) { unlink_small_chunk(M, P, S)\
+  |  |  820|  34.7k|  if (is_small(S)) { unlink_small_chunk(M, P, S)\
   |  |  ------------------
-  |  |  |  |  604|  34.5k|#define is_small(s)		(((s) >> SMALLBIN_SHIFT) < NSMALLBINS)
+  |  |  |  |  604|  34.7k|#define is_small(s)		(((s) >> SMALLBIN_SHIFT) < NSMALLBINS)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  523|  34.5k|#define SMALLBIN_SHIFT		(3U)
+  |  |  |  |  |  |  523|  34.7k|#define SMALLBIN_SHIFT		(3U)
   |  |  |  |  ------------------
   |  |  |  |               #define is_small(s)		(((s) >> SMALLBIN_SHIFT) < NSMALLBINS)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  521|  34.5k|#define NSMALLBINS		(32U)
+  |  |  |  |  |  |  521|  34.7k|#define NSMALLBINS		(32U)
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (604:22): [True: 24.0k, False: 10.5k]
+  |  |  |  |  |  Branch (604:22): [True: 24.2k, False: 10.5k]
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                 if (is_small(S)) { unlink_small_chunk(M, P, S)\
   |  |  ------------------
-  |  |  |  |  690|  24.0k|#define unlink_small_chunk(M, P, S) {\
-  |  |  |  |  691|  24.0k|  mchunkptr F = P->fd;\
-  |  |  |  |  692|  24.0k|  mchunkptr B = P->bk;\
-  |  |  |  |  693|  24.0k|  bindex_t I = small_index(S);\
+  |  |  |  |  690|  24.2k|#define unlink_small_chunk(M, P, S) {\
+  |  |  |  |  691|  24.2k|  mchunkptr F = P->fd;\
+  |  |  |  |  692|  24.2k|  mchunkptr B = P->bk;\
+  |  |  |  |  693|  24.2k|  bindex_t I = small_index(S);\
   |  |  |  |  ------------------
-  |  |  |  |  |  |  605|  24.0k|#define small_index(s)		((s)  >> SMALLBIN_SHIFT)
+  |  |  |  |  |  |  605|  24.2k|#define small_index(s)		((s)  >> SMALLBIN_SHIFT)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  523|  24.0k|#define SMALLBIN_SHIFT		(3U)
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  ------------------
-  |  |  |  |  694|  24.0k|  if (F == B) {\
-  |  |  |  |  ------------------
-  |  |  |  |  |  Branch (694:7): [True: 13.5k, False: 10.4k]
-  |  |  |  |  ------------------
-  |  |  |  |  695|  13.5k|    clear_smallmap(M, I);\
-  |  |  |  |  ------------------
-  |  |  |  |  |  |  648|  13.5k|#define clear_smallmap(M,i)	((M)->smallmap &= ~idx2bit(i))
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  644|  13.5k|#define idx2bit(i)		((binmap_t)(1) << (i))
+  |  |  |  |  |  |  |  |  523|  24.2k|#define SMALLBIN_SHIFT		(3U)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
-  |  |  |  |  696|  13.5k|  } else {\
-  |  |  |  |  697|  10.4k|    F->bk = B;\
-  |  |  |  |  698|  10.4k|    B->fd = F;\
-  |  |  |  |  699|  10.4k|  }\
-  |  |  |  |  700|  24.0k|}
+  |  |  |  |  694|  24.2k|  if (F == B) {\
+  |  |  |  |  ------------------
+  |  |  |  |  |  Branch (694:7): [True: 13.6k, False: 10.6k]
+  |  |  |  |  ------------------
+  |  |  |  |  695|  13.6k|    clear_smallmap(M, I);\
+  |  |  |  |  ------------------
+  |  |  |  |  |  |  648|  13.6k|#define clear_smallmap(M,i)	((M)->smallmap &= ~idx2bit(i))
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  |  |  644|  13.6k|#define idx2bit(i)		((binmap_t)(1) << (i))
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  ------------------
+  |  |  |  |  696|  13.6k|  } else {\
+  |  |  |  |  697|  10.6k|    F->bk = B;\
+  |  |  |  |  698|  10.6k|    B->fd = F;\
+  |  |  |  |  699|  10.6k|  }\
+  |  |  |  |  700|  24.2k|}
   |  |  ------------------
-  |  |  821|  24.0k|  } else { tchunkptr TP = (tchunkptr)(P); unlink_large_chunk(M, TP); }
+  |  |  821|  24.2k|  } else { tchunkptr TP = (tchunkptr)(P); unlink_large_chunk(M, TP); }
   |  |  ------------------
   |  |  |  |  767|  10.5k|#define unlink_large_chunk(M, X) {\
   |  |  |  |  768|  10.5k|  tchunkptr XP = X->parent;\
   |  |  |  |  769|  10.5k|  tchunkptr R;\
   |  |  |  |  770|  10.5k|  if (X->bk != X) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (770:7): [True: 219, False: 10.3k]
+  |  |  |  |  |  Branch (770:7): [True: 212, False: 10.3k]
   |  |  |  |  ------------------
-  |  |  |  |  771|    219|    tchunkptr F = X->fd;\
-  |  |  |  |  772|    219|    R = X->bk;\
-  |  |  |  |  773|    219|    F->bk = R;\
-  |  |  |  |  774|    219|    R->fd = F;\
+  |  |  |  |  771|    212|    tchunkptr F = X->fd;\
+  |  |  |  |  772|    212|    R = X->bk;\
+  |  |  |  |  773|    212|    F->bk = R;\
+  |  |  |  |  774|    212|    R->fd = F;\
   |  |  |  |  775|  10.3k|  } else {\
   |  |  |  |  776|  10.3k|    tchunkptr *RP;\
   |  |  |  |  777|  10.3k|    if (((R = *(RP = &(X->child[1]))) != 0) ||\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (777:9): [True: 522, False: 9.78k]
+  |  |  |  |  |  Branch (777:9): [True: 572, False: 9.74k]
   |  |  |  |  ------------------
   |  |  |  |  778|  10.3k|	((R = *(RP = &(X->child[0]))) != 0)) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (778:2): [True: 418, False: 9.37k]
+  |  |  |  |  |  Branch (778:2): [True: 425, False: 9.31k]
   |  |  |  |  ------------------
-  |  |  |  |  779|    940|      tchunkptr *CP;\
-  |  |  |  |  780|    988|      while ((*(CP = &(R->child[1])) != 0) ||\
+  |  |  |  |  779|    997|      tchunkptr *CP;\
+  |  |  |  |  780|  1.06k|      while ((*(CP = &(R->child[1])) != 0) ||\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (780:14): [True: 23, False: 965]
+  |  |  |  |  |  Branch (780:14): [True: 31, False: 1.03k]
   |  |  |  |  ------------------
-  |  |  |  |  781|    988|	     (*(CP = &(R->child[0])) != 0)) {\
+  |  |  |  |  781|  1.06k|	     (*(CP = &(R->child[0])) != 0)) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (781:7): [True: 25, False: 940]
+  |  |  |  |  |  Branch (781:7): [True: 34, False: 997]
   |  |  |  |  ------------------
-  |  |  |  |  782|     48|	R = *(RP = CP);\
-  |  |  |  |  783|     48|      }\
-  |  |  |  |  784|    940|      *RP = 0;\
-  |  |  |  |  785|    940|    }\
+  |  |  |  |  782|     65|	R = *(RP = CP);\
+  |  |  |  |  783|     65|      }\
+  |  |  |  |  784|    997|      *RP = 0;\
+  |  |  |  |  785|    997|    }\
   |  |  |  |  786|  10.3k|  }\
   |  |  |  |  787|  10.5k|  if (XP != 0) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (787:7): [True: 10.4k, False: 120]
+  |  |  |  |  |  Branch (787:7): [True: 10.4k, False: 110]
   |  |  |  |  ------------------
   |  |  |  |  788|  10.4k|    tbinptr *H = treebin_at(M, X->index);\
   |  |  |  |  ------------------
@@ -1214,104 +1214,104 @@ lj_alloc.c:lj_alloc_free:
   |  |  |  |  ------------------
   |  |  |  |  789|  10.4k|    if (X == *H) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (789:9): [True: 8.91k, False: 1.49k]
+  |  |  |  |  |  Branch (789:9): [True: 8.93k, False: 1.48k]
   |  |  |  |  ------------------
-  |  |  |  |  790|  8.91k|      if ((*H = R) == 0) \
+  |  |  |  |  790|  8.93k|      if ((*H = R) == 0) \
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (790:11): [True: 7.93k, False: 975]
+  |  |  |  |  |  Branch (790:11): [True: 7.89k, False: 1.03k]
   |  |  |  |  ------------------
-  |  |  |  |  791|  8.91k|	clear_treemap(M, X->index);\
+  |  |  |  |  791|  8.93k|	clear_treemap(M, X->index);\
   |  |  |  |  ------------------
-  |  |  |  |  |  |  652|  7.93k|#define clear_treemap(M,i)	((M)->treemap  &= ~idx2bit(i))
+  |  |  |  |  |  |  652|  7.89k|#define clear_treemap(M,i)	((M)->treemap  &= ~idx2bit(i))
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  644|  7.93k|#define idx2bit(i)		((binmap_t)(1) << (i))
+  |  |  |  |  |  |  |  |  644|  7.89k|#define idx2bit(i)		((binmap_t)(1) << (i))
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
-  |  |  |  |  792|  8.91k|    } else {\
-  |  |  |  |  793|  1.49k|      if (XP->child[0] == X) \
+  |  |  |  |  792|  8.93k|    } else {\
+  |  |  |  |  793|  1.48k|      if (XP->child[0] == X) \
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (793:11): [True: 730, False: 769]
+  |  |  |  |  |  Branch (793:11): [True: 739, False: 742]
   |  |  |  |  ------------------
-  |  |  |  |  794|  1.49k|	XP->child[0] = R;\
-  |  |  |  |  795|  1.49k|      else \
-  |  |  |  |  796|  1.49k|	XP->child[1] = R;\
-  |  |  |  |  797|  1.49k|    }\
+  |  |  |  |  794|  1.48k|	XP->child[0] = R;\
+  |  |  |  |  795|  1.48k|      else \
+  |  |  |  |  796|  1.48k|	XP->child[1] = R;\
+  |  |  |  |  797|  1.48k|    }\
   |  |  |  |  798|  10.4k|    if (R != 0) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (798:9): [True: 1.03k, False: 9.37k]
+  |  |  |  |  |  Branch (798:9): [True: 1.09k, False: 9.31k]
   |  |  |  |  ------------------
-  |  |  |  |  799|  1.03k|      tchunkptr C0, C1;\
-  |  |  |  |  800|  1.03k|      R->parent = XP;\
-  |  |  |  |  801|  1.03k|      if ((C0 = X->child[0]) != 0) {\
+  |  |  |  |  799|  1.09k|      tchunkptr C0, C1;\
+  |  |  |  |  800|  1.09k|      R->parent = XP;\
+  |  |  |  |  801|  1.09k|      if ((C0 = X->child[0]) != 0) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (801:11): [True: 97, False: 942]
+  |  |  |  |  |  Branch (801:11): [True: 97, False: 1.00k]
   |  |  |  |  ------------------
   |  |  |  |  802|     97|	R->child[0] = C0;\
   |  |  |  |  803|     97|	C0->parent = R;\
   |  |  |  |  804|     97|      }\
-  |  |  |  |  805|  1.03k|      if ((C1 = X->child[1]) != 0) {\
+  |  |  |  |  805|  1.09k|      if ((C1 = X->child[1]) != 0) {\
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (805:11): [True: 40, False: 999]
+  |  |  |  |  |  Branch (805:11): [True: 54, False: 1.04k]
   |  |  |  |  ------------------
-  |  |  |  |  806|     40|	R->child[1] = C1;\
-  |  |  |  |  807|     40|	C1->parent = R;\
-  |  |  |  |  808|     40|      }\
-  |  |  |  |  809|  1.03k|    }\
+  |  |  |  |  806|     54|	R->child[1] = C1;\
+  |  |  |  |  807|     54|	C1->parent = R;\
+  |  |  |  |  808|     54|      }\
+  |  |  |  |  809|  1.09k|    }\
   |  |  |  |  810|  10.4k|  }\
   |  |  |  |  811|  10.5k|}
   |  |  ------------------
   ------------------
- 1401|  34.5k|	set_size_and_pinuse_of_free_chunk(p, psize);
+ 1401|  34.7k|	set_size_and_pinuse_of_free_chunk(p, psize);
   ------------------
-  |  |  473|  34.5k|  ((p)->head = (s|PINUSE_BIT), set_foot(p, s))
+  |  |  473|  34.7k|  ((p)->head = (s|PINUSE_BIT), set_foot(p, s))
   |  |  ------------------
-  |  |  |  |  441|  34.5k|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  441|  34.7k|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|  34.5k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|  34.7k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                 ((p)->head = (s|PINUSE_BIT), set_foot(p, s))
   |  |  ------------------
-  |  |  |  |  469|  34.5k|#define set_foot(p, s)	(((mchunkptr)((char *)(p) + (s)))->prev_foot = (s))
+  |  |  |  |  469|  34.7k|#define set_foot(p, s)	(((mchunkptr)((char *)(p) + (s)))->prev_foot = (s))
   |  |  ------------------
   ------------------
- 1402|  34.5k|	if (p == fm->dv) {
+ 1402|  34.7k|	if (p == fm->dv) {
   ------------------
-  |  Branch (1402:6): [True: 0, False: 34.5k]
+  |  Branch (1402:6): [True: 0, False: 34.7k]
   ------------------
  1403|      0|	  fm->dvsize = psize;
  1404|      0|	  return NULL;
  1405|      0|	}
- 1406|  34.5k|      }
- 1407|  38.8k|    } else {
- 1408|  30.4k|      set_free_with_pinuse(p, psize, next);
+ 1406|  34.7k|      }
+ 1407|  39.0k|    } else {
+ 1408|  30.2k|      set_free_with_pinuse(p, psize, next);
   ------------------
-  |  |  477|  30.4k|  (clear_pinuse(n), set_size_and_pinuse_of_free_chunk(p, s))
+  |  |  477|  30.2k|  (clear_pinuse(n), set_size_and_pinuse_of_free_chunk(p, s))
   |  |  ------------------
-  |  |  |  |  453|  30.4k|#define clear_pinuse(p)		((p)->head &= ~PINUSE_BIT)
+  |  |  |  |  453|  30.2k|#define clear_pinuse(p)		((p)->head &= ~PINUSE_BIT)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  441|  30.4k|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  |  |  441|  30.2k|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|  30.4k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|  30.2k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                 (clear_pinuse(n), set_size_and_pinuse_of_free_chunk(p, s))
   |  |  ------------------
-  |  |  |  |  473|  30.4k|  ((p)->head = (s|PINUSE_BIT), set_foot(p, s))
+  |  |  |  |  473|  30.2k|  ((p)->head = (s|PINUSE_BIT), set_foot(p, s))
   |  |  |  |  ------------------
-  |  |  |  |  |  |  441|  30.4k|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  |  |  441|  30.2k|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|  30.4k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|  30.2k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |                 ((p)->head = (s|PINUSE_BIT), set_foot(p, s))
   |  |  |  |  ------------------
-  |  |  |  |  |  |  469|  30.4k|#define set_foot(p, s)	(((mchunkptr)((char *)(p) + (s)))->prev_foot = (s))
+  |  |  |  |  |  |  469|  30.2k|#define set_foot(p, s)	(((mchunkptr)((char *)(p) + (s)))->prev_foot = (s))
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
- 1409|  30.4k|    }
+ 1409|  30.2k|    }
  1410|       |
  1411|  65.0k|    if (is_small(psize)) {
   ------------------
@@ -1418,94 +1418,94 @@ lj_alloc.c:lj_alloc_free:
   |  |  |  |  |  |  644|  19.1k|#define idx2bit(i)		((binmap_t)(1) << (i))
   |  |  |  |  ------------------
   |  |  ------------------
-  |  |  |  Branch (735:7): [True: 14.1k, False: 4.98k]
+  |  |  |  Branch (735:7): [True: 14.0k, False: 5.11k]
   |  |  ------------------
-  |  |  736|  14.1k|    mark_treemap(M, I);\
+  |  |  736|  14.0k|    mark_treemap(M, I);\
   |  |  ------------------
-  |  |  |  |  651|  14.1k|#define mark_treemap(M,i)	((M)->treemap  |=  idx2bit(i))
+  |  |  |  |  651|  14.0k|#define mark_treemap(M,i)	((M)->treemap  |=  idx2bit(i))
   |  |  |  |  ------------------
-  |  |  |  |  |  |  644|  14.1k|#define idx2bit(i)		((binmap_t)(1) << (i))
+  |  |  |  |  |  |  644|  14.0k|#define idx2bit(i)		((binmap_t)(1) << (i))
   |  |  |  |  ------------------
   |  |  ------------------
-  |  |  737|  14.1k|    *H = X;\
-  |  |  738|  14.1k|    X->parent = (tchunkptr)H;\
-  |  |  739|  14.1k|    X->fd = X->bk = X;\
-  |  |  740|  14.1k|  } else {\
-  |  |  741|  4.98k|    tchunkptr T = *H;\
-  |  |  742|  4.98k|    size_t K = S << leftshift_for_tree_index(I);\
+  |  |  737|  14.0k|    *H = X;\
+  |  |  738|  14.0k|    X->parent = (tchunkptr)H;\
+  |  |  739|  14.0k|    X->fd = X->bk = X;\
+  |  |  740|  14.0k|  } else {\
+  |  |  741|  5.11k|    tchunkptr T = *H;\
+  |  |  742|  5.11k|    size_t K = S << leftshift_for_tree_index(I);\
   |  |  ------------------
-  |  |  |  |  633|  4.98k|   ((i == NTREEBINS-1)? 0 : \
+  |  |  |  |  633|  5.11k|   ((i == NTREEBINS-1)? 0 : \
   |  |  |  |  ------------------
-  |  |  |  |  |  |  522|  4.98k|#define NTREEBINS		(32U)
+  |  |  |  |  |  |  522|  5.11k|#define NTREEBINS		(32U)
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (633:5): [True: 0, False: 4.98k]
+  |  |  |  |  |  Branch (633:5): [True: 0, False: 5.11k]
   |  |  |  |  ------------------
-  |  |  |  |  634|  4.98k|    ((SIZE_T_BITSIZE-SIZE_T_ONE) - (((i) >> 1) + TREEBIN_SHIFT - 2)))
+  |  |  |  |  634|  5.11k|    ((SIZE_T_BITSIZE-SIZE_T_ONE) - (((i) >> 1) + TREEBIN_SHIFT - 2)))
   |  |  |  |  ------------------
-  |  |  |  |  |  |   50|  4.98k|#define SIZE_T_BITSIZE		(sizeof(size_t) << 3)
+  |  |  |  |  |  |   50|  5.11k|#define SIZE_T_BITSIZE		(sizeof(size_t) << 3)
   |  |  |  |  ------------------
   |  |  |  |                   ((SIZE_T_BITSIZE-SIZE_T_ONE) - (((i) >> 1) + TREEBIN_SHIFT - 2)))
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|  4.98k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|  5.11k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  |  |                   ((SIZE_T_BITSIZE-SIZE_T_ONE) - (((i) >> 1) + TREEBIN_SHIFT - 2)))
   |  |  |  |  ------------------
-  |  |  |  |  |  |  525|  4.98k|#define TREEBIN_SHIFT		(8U)
+  |  |  |  |  |  |  525|  5.11k|#define TREEBIN_SHIFT		(8U)
   |  |  |  |  ------------------
   |  |  ------------------
-  |  |  743|  5.40k|    for (;;) {\
-  |  |  744|  5.40k|      if (chunksize(T) != S) {\
+  |  |  743|  5.53k|    for (;;) {\
+  |  |  744|  5.53k|      if (chunksize(T) != S) {\
   |  |  ------------------
-  |  |  |  |  451|  5.40k|#define chunksize(p)		((p)->head & ~(INUSE_BITS))
+  |  |  |  |  451|  5.53k|#define chunksize(p)		((p)->head & ~(INUSE_BITS))
   |  |  |  |  ------------------
-  |  |  |  |  |  |  443|  5.40k|#define INUSE_BITS		(PINUSE_BIT|CINUSE_BIT)
+  |  |  |  |  |  |  443|  5.53k|#define INUSE_BITS		(PINUSE_BIT|CINUSE_BIT)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  441|  5.40k|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  |  |  |  |  441|  5.53k|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  |  |   55|  5.40k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |  |  |   55|  5.53k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  |  |  ------------------
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |               #define INUSE_BITS		(PINUSE_BIT|CINUSE_BIT)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  442|  5.40k|#define CINUSE_BIT		(SIZE_T_TWO)
+  |  |  |  |  |  |  |  |  442|  5.53k|#define CINUSE_BIT		(SIZE_T_TWO)
   |  |  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  |  |   56|  5.40k|#define SIZE_T_TWO		((size_t)2)
+  |  |  |  |  |  |  |  |  |  |   56|  5.53k|#define SIZE_T_TWO		((size_t)2)
   |  |  |  |  |  |  |  |  ------------------
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  ------------------
-  |  |  |  Branch (744:11): [True: 4.98k, False: 415]
+  |  |  |  Branch (744:11): [True: 5.10k, False: 433]
   |  |  ------------------
-  |  |  745|  4.98k|	tchunkptr *C = &(T->child[(K >> (SIZE_T_BITSIZE-SIZE_T_ONE)) & 1]);\
+  |  |  745|  5.10k|	tchunkptr *C = &(T->child[(K >> (SIZE_T_BITSIZE-SIZE_T_ONE)) & 1]);\
   |  |  ------------------
-  |  |  |  |   50|  4.98k|#define SIZE_T_BITSIZE		(sizeof(size_t) << 3)
+  |  |  |  |   50|  5.10k|#define SIZE_T_BITSIZE		(sizeof(size_t) << 3)
   |  |  ------------------
   |  |               	tchunkptr *C = &(T->child[(K >> (SIZE_T_BITSIZE-SIZE_T_ONE)) & 1]);\
   |  |  ------------------
-  |  |  |  |   55|  4.98k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |   55|  5.10k|#define SIZE_T_ONE		((size_t)1)
   |  |  ------------------
-  |  |  746|  4.98k|	K <<= 1;\
-  |  |  747|  4.98k|	if (*C != 0) {\
+  |  |  746|  5.10k|	K <<= 1;\
+  |  |  747|  5.10k|	if (*C != 0) {\
   |  |  ------------------
-  |  |  |  Branch (747:6): [True: 414, False: 4.57k]
+  |  |  |  Branch (747:6): [True: 422, False: 4.67k]
   |  |  ------------------
-  |  |  748|    414|	  T = *C;\
-  |  |  749|  4.57k|	} else {\
-  |  |  750|  4.57k|	  *C = X;\
-  |  |  751|  4.57k|	  X->parent = T;\
-  |  |  752|  4.57k|	  X->fd = X->bk = X;\
-  |  |  753|  4.57k|	  break;\
-  |  |  754|  4.57k|	}\
-  |  |  755|  4.98k|      } else {\
-  |  |  756|    415|	tchunkptr F = T->fd;\
-  |  |  757|    415|	T->fd = F->bk = X;\
-  |  |  758|    415|	X->fd = F;\
-  |  |  759|    415|	X->bk = T;\
-  |  |  760|    415|	X->parent = 0;\
-  |  |  761|    415|	break;\
-  |  |  762|    415|      }\
-  |  |  763|  5.40k|    }\
-  |  |  764|  4.98k|  }\
+  |  |  748|    422|	  T = *C;\
+  |  |  749|  4.67k|	} else {\
+  |  |  750|  4.67k|	  *C = X;\
+  |  |  751|  4.67k|	  X->parent = T;\
+  |  |  752|  4.67k|	  X->fd = X->bk = X;\
+  |  |  753|  4.67k|	  break;\
+  |  |  754|  4.67k|	}\
+  |  |  755|  5.10k|      } else {\
+  |  |  756|    433|	tchunkptr F = T->fd;\
+  |  |  757|    433|	T->fd = F->bk = X;\
+  |  |  758|    433|	X->fd = F;\
+  |  |  759|    433|	X->bk = T;\
+  |  |  760|    433|	X->parent = 0;\
+  |  |  761|    433|	break;\
+  |  |  762|    433|      }\
+  |  |  763|  5.53k|    }\
+  |  |  764|  5.11k|  }\
   |  |  765|  19.1k|}
   ------------------
  1416|  19.1k|      if (--fm->release_checks == 0)
@@ -1515,97 +1515,97 @@ lj_alloc.c:lj_alloc_free:
  1417|      0|	release_unused_segments(fm);
  1418|  19.1k|    }
  1419|  65.0k|  }
- 1420|  70.8k|  return NULL;
+ 1420|  70.9k|  return NULL;
  1421|  75.1k|}
 lj_alloc.c:lj_alloc_malloc:
- 1270|  70.4k|{
- 1271|  70.4k|  mstate ms = (mstate)msp;
- 1272|  70.4k|  void *mem;
- 1273|  70.4k|  size_t nb;
- 1274|  70.4k|  if (nsize <= MAX_SMALL_REQUEST) {
+ 1270|  70.5k|{
+ 1271|  70.5k|  mstate ms = (mstate)msp;
+ 1272|  70.5k|  void *mem;
+ 1273|  70.5k|  size_t nb;
+ 1274|  70.5k|  if (nsize <= MAX_SMALL_REQUEST) {
   ------------------
-  |  |  528|  70.4k|#define MAX_SMALL_REQUEST  (MAX_SMALL_SIZE - CHUNK_ALIGN_MASK - CHUNK_OVERHEAD)
+  |  |  528|  70.5k|#define MAX_SMALL_REQUEST  (MAX_SMALL_SIZE - CHUNK_ALIGN_MASK - CHUNK_OVERHEAD)
   |  |  ------------------
-  |  |  |  |  527|  70.4k|#define MAX_SMALL_SIZE		(MIN_LARGE_SIZE - SIZE_T_ONE)
+  |  |  |  |  527|  70.5k|#define MAX_SMALL_SIZE		(MIN_LARGE_SIZE - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  526|  70.4k|#define MIN_LARGE_SIZE		(SIZE_T_ONE << TREEBIN_SHIFT)
+  |  |  |  |  |  |  526|  70.5k|#define MIN_LARGE_SIZE		(SIZE_T_ONE << TREEBIN_SHIFT)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|  70.4k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|  70.5k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |               #define MIN_LARGE_SIZE		(SIZE_T_ONE << TREEBIN_SHIFT)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  525|  70.4k|#define TREEBIN_SHIFT		(8U)
+  |  |  |  |  |  |  |  |  525|  70.5k|#define TREEBIN_SHIFT		(8U)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |               #define MAX_SMALL_SIZE		(MIN_LARGE_SIZE - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|  70.4k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|  70.5k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   |  |               #define MAX_SMALL_REQUEST  (MAX_SMALL_SIZE - CHUNK_ALIGN_MASK - CHUNK_OVERHEAD)
   |  |  ------------------
-  |  |  |  |   62|  70.4k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |   62|  70.5k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   39|  70.4k|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |   39|  70.5k|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  ------------------
   |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|  70.4k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|  70.5k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   |  |               #define MAX_SMALL_REQUEST  (MAX_SMALL_SIZE - CHUNK_ALIGN_MASK - CHUNK_OVERHEAD)
   |  |  ------------------
-  |  |  |  |  410|  70.4k|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
+  |  |  |  |  410|  70.5k|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   49|  70.4k|#define SIZE_T_SIZE		(sizeof(size_t))
+  |  |  |  |  |  |   49|  70.5k|#define SIZE_T_SIZE		(sizeof(size_t))
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  |  Branch (1274:7): [True: 65.3k, False: 5.15k]
+  |  Branch (1274:7): [True: 65.4k, False: 5.06k]
   ------------------
- 1275|  65.3k|    bindex_t idx;
- 1276|  65.3k|    binmap_t smallbits;
- 1277|  65.3k|    nb = (nsize < MIN_REQUEST)? MIN_CHUNK_SIZE : pad_request(nsize);
+ 1275|  65.4k|    bindex_t idx;
+ 1276|  65.4k|    binmap_t smallbits;
+ 1277|  65.4k|    nb = (nsize < MIN_REQUEST)? MIN_CHUNK_SIZE : pad_request(nsize);
   ------------------
-  |  |  429|  65.3k|#define MIN_REQUEST		(MIN_CHUNK_SIZE - CHUNK_OVERHEAD - SIZE_T_ONE)
+  |  |  429|  65.4k|#define MIN_REQUEST		(MIN_CHUNK_SIZE - CHUNK_OVERHEAD - SIZE_T_ONE)
   |  |  ------------------
-  |  |  |  |  419|  65.3k|  ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
+  |  |  |  |  419|  65.4k|  ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  408|  65.3k|#define MCHUNK_SIZE		(sizeof(mchunk))
-  |  |  |  |  ------------------
-  |  |  |  |                 ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
-  |  |  |  |  ------------------
-  |  |  |  |  |  |   62|  65.3k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   39|  65.3k|#define MALLOC_ALIGNMENT	((size_t)8U)
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|  65.3k|#define SIZE_T_ONE		((size_t)1)
-  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  408|  65.4k|#define MCHUNK_SIZE		(sizeof(mchunk))
   |  |  |  |  ------------------
   |  |  |  |                 ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   62|  65.3k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |   62|  65.4k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   39|  65.3k|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |  |  |   39|  65.4k|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|  65.3k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|  65.4k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  ------------------
+  |  |  |  |                 ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
+  |  |  |  |  ------------------
+  |  |  |  |  |  |   62|  65.4k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  |  |   39|  65.4k|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  |  |   55|  65.4k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  ------------------
   |  |               #define MIN_REQUEST		(MIN_CHUNK_SIZE - CHUNK_OVERHEAD - SIZE_T_ONE)
   |  |  ------------------
-  |  |  |  |  410|  65.3k|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
+  |  |  |  |  410|  65.4k|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   49|  65.3k|#define SIZE_T_SIZE		(sizeof(size_t))
+  |  |  |  |  |  |   49|  65.4k|#define SIZE_T_SIZE		(sizeof(size_t))
   |  |  |  |  ------------------
   |  |  ------------------
   |  |               #define MIN_REQUEST		(MIN_CHUNK_SIZE - CHUNK_OVERHEAD - SIZE_T_ONE)
   |  |  ------------------
-  |  |  |  |   55|  65.3k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |   55|  65.4k|#define SIZE_T_ONE		((size_t)1)
   |  |  ------------------
   ------------------
                   nb = (nsize < MIN_REQUEST)? MIN_CHUNK_SIZE : pad_request(nsize);
@@ -1641,48 +1641,48 @@ lj_alloc.c:lj_alloc_malloc:
   ------------------
   |  |  433|   130k|   (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  ------------------
-  |  |  |  |  410|  65.3k|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
+  |  |  |  |  410|  65.4k|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   49|  65.3k|#define SIZE_T_SIZE		(sizeof(size_t))
-  |  |  |  |  ------------------
-  |  |  ------------------
-  |  |                  (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
-  |  |  ------------------
-  |  |  |  |   62|  65.3k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
-  |  |  |  |  ------------------
-  |  |  |  |  |  |   39|  65.3k|#define MALLOC_ALIGNMENT	((size_t)8U)
-  |  |  |  |  ------------------
-  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
-  |  |  |  |  ------------------
-  |  |  |  |  |  |   55|  65.3k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   49|  65.4k|#define SIZE_T_SIZE		(sizeof(size_t))
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                  (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  ------------------
-  |  |  |  |   62|  65.3k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |   62|  65.4k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   39|  65.3k|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |   39|  65.4k|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  ------------------
   |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|  65.3k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|  65.4k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  ------------------
+  |  |  ------------------
+  |  |                  (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
+  |  |  ------------------
+  |  |  |  |   62|  65.4k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  ------------------
+  |  |  |  |  |  |   39|  65.4k|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  ------------------
+  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  ------------------
+  |  |  |  |  |  |   55|  65.4k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  |  Branch (1277:10): [True: 0, False: 65.3k]
+  |  Branch (1277:10): [True: 0, False: 65.4k]
   ------------------
- 1278|  65.3k|    idx = small_index(nb);
+ 1278|  65.4k|    idx = small_index(nb);
   ------------------
-  |  |  605|  65.3k|#define small_index(s)		((s)  >> SMALLBIN_SHIFT)
+  |  |  605|  65.4k|#define small_index(s)		((s)  >> SMALLBIN_SHIFT)
   |  |  ------------------
-  |  |  |  |  523|  65.3k|#define SMALLBIN_SHIFT		(3U)
+  |  |  |  |  523|  65.4k|#define SMALLBIN_SHIFT		(3U)
   |  |  ------------------
   ------------------
- 1279|  65.3k|    smallbits = ms->smallmap >> idx;
+ 1279|  65.4k|    smallbits = ms->smallmap >> idx;
  1280|       |
- 1281|  65.3k|    if ((smallbits & 0x3U) != 0) { /* Remainderless fit to a smallbin. */
+ 1281|  65.4k|    if ((smallbits & 0x3U) != 0) { /* Remainderless fit to a smallbin. */
   ------------------
-  |  Branch (1281:9): [True: 0, False: 65.3k]
+  |  Branch (1281:9): [True: 0, False: 65.4k]
   ------------------
  1282|      0|      mchunkptr b, p;
  1283|      0|      idx += ~smallbits & 1;       /* Uses next bin if idx empty */
@@ -1747,13 +1747,13 @@ lj_alloc.c:lj_alloc_malloc:
   |  |  ------------------
   ------------------
  1289|      0|      return mem;
- 1290|  65.3k|    } else if (nb > ms->dvsize) {
+ 1290|  65.4k|    } else if (nb > ms->dvsize) {
   ------------------
-  |  Branch (1290:16): [True: 65.3k, False: 0]
+  |  Branch (1290:16): [True: 65.4k, False: 0]
   ------------------
- 1291|  65.3k|      if (smallbits != 0) { /* Use chunk in next nonempty smallbin */
+ 1291|  65.4k|      if (smallbits != 0) { /* Use chunk in next nonempty smallbin */
   ------------------
-  |  Branch (1291:11): [True: 0, False: 65.3k]
+  |  Branch (1291:11): [True: 0, False: 65.4k]
   ------------------
  1292|      0|	mchunkptr b, p, r;
  1293|      0|	size_t rsize;
@@ -1960,97 +1960,97 @@ lj_alloc.c:lj_alloc_malloc:
   |  |  ------------------
   ------------------
  1310|      0|	return mem;
- 1311|  65.3k|      } else if (ms->treemap != 0 && (mem = tmalloc_small(ms, nb)) != 0) {
+ 1311|  65.4k|      } else if (ms->treemap != 0 && (mem = tmalloc_small(ms, nb)) != 0) {
   ------------------
-  |  Branch (1311:18): [True: 0, False: 65.3k]
+  |  Branch (1311:18): [True: 0, False: 65.4k]
   |  Branch (1311:38): [True: 0, False: 0]
   ------------------
  1312|      0|	return mem;
  1313|      0|      }
- 1314|  65.3k|    }
- 1315|  65.3k|  } else if (nsize >= MAX_REQUEST) {
+ 1314|  65.4k|    }
+ 1315|  65.4k|  } else if (nsize >= MAX_REQUEST) {
   ------------------
-  |  |  428|  5.15k|#define MAX_REQUEST		((~MIN_CHUNK_SIZE+1) << 2)
+  |  |  428|  5.06k|#define MAX_REQUEST		((~MIN_CHUNK_SIZE+1) << 2)
   |  |  ------------------
-  |  |  |  |  419|  5.15k|  ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
+  |  |  |  |  419|  5.06k|  ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  408|  5.15k|#define MCHUNK_SIZE		(sizeof(mchunk))
+  |  |  |  |  |  |  408|  5.06k|#define MCHUNK_SIZE		(sizeof(mchunk))
   |  |  |  |  ------------------
   |  |  |  |                 ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   62|  5.15k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |   62|  5.06k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   39|  5.15k|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |  |  |   39|  5.06k|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|  5.15k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|  5.06k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |                 ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   62|  5.15k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |   62|  5.06k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   39|  5.15k|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |  |  |   39|  5.06k|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|  5.15k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|  5.06k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  |  Branch (1315:14): [True: 0, False: 5.15k]
+  |  Branch (1315:14): [True: 0, False: 5.06k]
   ------------------
  1316|      0|    nb = MAX_SIZE_T; /* Too big to allocate. Force failure (in sys alloc) */
   ------------------
   |  |   38|      0|#define MAX_SIZE_T		(~(size_t)0)
   ------------------
- 1317|  5.15k|  } else {
- 1318|  5.15k|    nb = pad_request(nsize);
+ 1317|  5.06k|  } else {
+ 1318|  5.06k|    nb = pad_request(nsize);
   ------------------
-  |  |  433|  5.15k|   (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
+  |  |  433|  5.06k|   (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  ------------------
-  |  |  |  |  410|  5.15k|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
+  |  |  |  |  410|  5.06k|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   49|  5.15k|#define SIZE_T_SIZE		(sizeof(size_t))
+  |  |  |  |  |  |   49|  5.06k|#define SIZE_T_SIZE		(sizeof(size_t))
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                  (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  ------------------
-  |  |  |  |   62|  5.15k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |   62|  5.06k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   39|  5.15k|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |   39|  5.06k|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  ------------------
   |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|  5.15k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|  5.06k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                  (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  ------------------
-  |  |  |  |   62|  5.15k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |   62|  5.06k|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   39|  5.15k|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |   39|  5.06k|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  ------------------
   |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|  5.15k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|  5.06k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
- 1319|  5.15k|    if (ms->treemap != 0 && (mem = tmalloc_large(ms, nb)) != 0) {
+ 1319|  5.06k|    if (ms->treemap != 0 && (mem = tmalloc_large(ms, nb)) != 0) {
   ------------------
-  |  Branch (1319:9): [True: 44, False: 5.10k]
+  |  Branch (1319:9): [True: 44, False: 5.02k]
   |  Branch (1319:29): [True: 0, False: 44]
   ------------------
  1320|      0|      return mem;
  1321|      0|    }
- 1322|  5.15k|  }
+ 1322|  5.06k|  }
  1323|       |
- 1324|  70.4k|  if (nb <= ms->dvsize) {
+ 1324|  70.5k|  if (nb <= ms->dvsize) {
   ------------------
-  |  Branch (1324:7): [True: 0, False: 70.4k]
+  |  Branch (1324:7): [True: 0, False: 70.5k]
   ------------------
  1325|      0|    size_t rsize = ms->dvsize - nb;
  1326|      0|    mchunkptr p = ms->dv;
@@ -2161,54 +2161,54 @@ lj_alloc.c:lj_alloc_malloc:
   |  |  ------------------
   ------------------
  1339|      0|    return mem;
- 1340|  70.4k|  } else if (nb < ms->topsize) { /* Split top */
+ 1340|  70.5k|  } else if (nb < ms->topsize) { /* Split top */
   ------------------
-  |  Branch (1340:14): [True: 70.4k, False: 0]
+  |  Branch (1340:14): [True: 70.5k, False: 0]
   ------------------
- 1341|  70.4k|    size_t rsize = ms->topsize -= nb;
- 1342|  70.4k|    mchunkptr p = ms->top;
- 1343|  70.4k|    mchunkptr r = ms->top = chunk_plus_offset(p, nb);
+ 1341|  70.5k|    size_t rsize = ms->topsize -= nb;
+ 1342|  70.5k|    mchunkptr p = ms->top;
+ 1343|  70.5k|    mchunkptr r = ms->top = chunk_plus_offset(p, nb);
   ------------------
-  |  |  457|  70.4k|#define chunk_plus_offset(p, s)		((mchunkptr)(((char *)(p)) + (s)))
+  |  |  457|  70.5k|#define chunk_plus_offset(p, s)		((mchunkptr)(((char *)(p)) + (s)))
   ------------------
- 1344|  70.4k|    r->head = rsize | PINUSE_BIT;
+ 1344|  70.5k|    r->head = rsize | PINUSE_BIT;
   ------------------
-  |  |  441|  70.4k|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  441|  70.5k|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  ------------------
-  |  |  |  |   55|  70.4k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |   55|  70.5k|#define SIZE_T_ONE		((size_t)1)
   |  |  ------------------
   ------------------
- 1345|  70.4k|    set_size_and_pinuse_of_inuse_chunk(ms, p, nb);
+ 1345|  70.5k|    set_size_and_pinuse_of_inuse_chunk(ms, p, nb);
   ------------------
-  |  |  670|  70.4k|  ((p)->head = (s|PINUSE_BIT|CINUSE_BIT))
+  |  |  670|  70.5k|  ((p)->head = (s|PINUSE_BIT|CINUSE_BIT))
   |  |  ------------------
-  |  |  |  |  441|  70.4k|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  441|  70.5k|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|  70.4k|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|  70.5k|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                 ((p)->head = (s|PINUSE_BIT|CINUSE_BIT))
   |  |  ------------------
-  |  |  |  |  442|  70.4k|#define CINUSE_BIT		(SIZE_T_TWO)
+  |  |  |  |  442|  70.5k|#define CINUSE_BIT		(SIZE_T_TWO)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   56|  70.4k|#define SIZE_T_TWO		((size_t)2)
-  |  |  |  |  ------------------
-  |  |  ------------------
-  ------------------
- 1346|  70.4k|    mem = chunk2mem(p);
-  ------------------
-  |  |  422|  70.4k|#define chunk2mem(p)		((void *)((char *)(p) + TWO_SIZE_T_SIZES))
-  |  |  ------------------
-  |  |  |  |   57|  70.4k|#define TWO_SIZE_T_SIZES	(SIZE_T_SIZE<<1)
-  |  |  |  |  ------------------
-  |  |  |  |  |  |   49|  70.4k|#define SIZE_T_SIZE		(sizeof(size_t))
+  |  |  |  |  |  |   56|  70.5k|#define SIZE_T_TWO		((size_t)2)
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
- 1347|  70.4k|    return mem;
- 1348|  70.4k|  }
+ 1346|  70.5k|    mem = chunk2mem(p);
+  ------------------
+  |  |  422|  70.5k|#define chunk2mem(p)		((void *)((char *)(p) + TWO_SIZE_T_SIZES))
+  |  |  ------------------
+  |  |  |  |   57|  70.5k|#define TWO_SIZE_T_SIZES	(SIZE_T_SIZE<<1)
+  |  |  |  |  ------------------
+  |  |  |  |  |  |   49|  70.5k|#define SIZE_T_SIZE		(sizeof(size_t))
+  |  |  |  |  ------------------
+  |  |  ------------------
+  ------------------
+ 1347|  70.5k|    return mem;
+ 1348|  70.5k|  }
  1349|      0|  return alloc_sys(ms, nb);
- 1350|  70.4k|}
+ 1350|  70.5k|}
 lj_alloc.c:tmalloc_large:
  1131|     44|{
  1132|     44|  tchunkptr v = 0;
@@ -2797,122 +2797,122 @@ lj_alloc.c:tmalloc_large:
  1190|     44|  return NULL;
  1191|     44|}
 lj_alloc.c:lj_alloc_realloc:
- 1424|    232|{
- 1425|    232|  if (nsize >= MAX_REQUEST) {
+ 1424|    254|{
+ 1425|    254|  if (nsize >= MAX_REQUEST) {
   ------------------
-  |  |  428|    232|#define MAX_REQUEST		((~MIN_CHUNK_SIZE+1) << 2)
+  |  |  428|    254|#define MAX_REQUEST		((~MIN_CHUNK_SIZE+1) << 2)
   |  |  ------------------
-  |  |  |  |  419|    232|  ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
+  |  |  |  |  419|    254|  ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  408|    232|#define MCHUNK_SIZE		(sizeof(mchunk))
+  |  |  |  |  |  |  408|    254|#define MCHUNK_SIZE		(sizeof(mchunk))
   |  |  |  |  ------------------
   |  |  |  |                 ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   62|    232|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |   62|    254|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   39|    232|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |  |  |   39|    254|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|    232|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|    254|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |                 ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   62|    232|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |   62|    254|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   39|    232|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |  |  |   39|    254|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|    232|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|    254|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  |  Branch (1425:7): [True: 0, False: 232]
+  |  Branch (1425:7): [True: 0, False: 254]
   ------------------
  1426|      0|    return NULL;
- 1427|    232|  } else {
- 1428|    232|    mstate m = (mstate)msp;
- 1429|    232|    mchunkptr oldp = mem2chunk(ptr);
+ 1427|    254|  } else {
+ 1428|    254|    mstate m = (mstate)msp;
+ 1429|    254|    mchunkptr oldp = mem2chunk(ptr);
   ------------------
-  |  |  423|    232|#define mem2chunk(mem)		((mchunkptr)((char *)(mem) - TWO_SIZE_T_SIZES))
+  |  |  423|    254|#define mem2chunk(mem)		((mchunkptr)((char *)(mem) - TWO_SIZE_T_SIZES))
   |  |  ------------------
-  |  |  |  |   57|    232|#define TWO_SIZE_T_SIZES	(SIZE_T_SIZE<<1)
+  |  |  |  |   57|    254|#define TWO_SIZE_T_SIZES	(SIZE_T_SIZE<<1)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   49|    232|#define SIZE_T_SIZE		(sizeof(size_t))
+  |  |  |  |  |  |   49|    254|#define SIZE_T_SIZE		(sizeof(size_t))
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
- 1430|    232|    size_t oldsize = chunksize(oldp);
+ 1430|    254|    size_t oldsize = chunksize(oldp);
   ------------------
-  |  |  451|    232|#define chunksize(p)		((p)->head & ~(INUSE_BITS))
+  |  |  451|    254|#define chunksize(p)		((p)->head & ~(INUSE_BITS))
   |  |  ------------------
-  |  |  |  |  443|    232|#define INUSE_BITS		(PINUSE_BIT|CINUSE_BIT)
+  |  |  |  |  443|    254|#define INUSE_BITS		(PINUSE_BIT|CINUSE_BIT)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  441|    232|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  |  |  441|    254|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|    232|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|    254|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |               #define INUSE_BITS		(PINUSE_BIT|CINUSE_BIT)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  442|    232|#define CINUSE_BIT		(SIZE_T_TWO)
+  |  |  |  |  |  |  442|    254|#define CINUSE_BIT		(SIZE_T_TWO)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   56|    232|#define SIZE_T_TWO		((size_t)2)
+  |  |  |  |  |  |  |  |   56|    254|#define SIZE_T_TWO		((size_t)2)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
- 1431|    232|    mchunkptr next = chunk_plus_offset(oldp, oldsize);
+ 1431|    254|    mchunkptr next = chunk_plus_offset(oldp, oldsize);
   ------------------
-  |  |  457|    232|#define chunk_plus_offset(p, s)		((mchunkptr)(((char *)(p)) + (s)))
+  |  |  457|    254|#define chunk_plus_offset(p, s)		((mchunkptr)(((char *)(p)) + (s)))
   ------------------
- 1432|    232|    mchunkptr newp = 0;
- 1433|    232|    size_t nb = request2size(nsize);
+ 1432|    254|    mchunkptr newp = 0;
+ 1433|    254|    size_t nb = request2size(nsize);
   ------------------
-  |  |  437|    232|  (((req) < MIN_REQUEST)? MIN_CHUNK_SIZE : pad_request(req))
+  |  |  437|    254|  (((req) < MIN_REQUEST)? MIN_CHUNK_SIZE : pad_request(req))
   |  |  ------------------
-  |  |  |  |  429|    232|#define MIN_REQUEST		(MIN_CHUNK_SIZE - CHUNK_OVERHEAD - SIZE_T_ONE)
+  |  |  |  |  429|    254|#define MIN_REQUEST		(MIN_CHUNK_SIZE - CHUNK_OVERHEAD - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  419|    232|  ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
+  |  |  |  |  |  |  419|    254|  ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  408|    232|#define MCHUNK_SIZE		(sizeof(mchunk))
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |                 ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   62|    232|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
-  |  |  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  |  |   39|    232|#define MALLOC_ALIGNMENT	((size_t)8U)
-  |  |  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
-  |  |  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  |  |   55|    232|#define SIZE_T_ONE		((size_t)1)
-  |  |  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  |  |  408|    254|#define MCHUNK_SIZE		(sizeof(mchunk))
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |                 ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   62|    232|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |  |  |   62|    254|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  |  |   39|    232|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |  |  |  |  |   39|    254|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  |  |  |  |  ------------------
   |  |  |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  |  |   55|    232|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |  |  |   55|    254|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |                 ((MCHUNK_SIZE + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  |  |   62|    254|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  |  |  |  |   39|    254|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  |  |  |  |   55|    254|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  |  |  ------------------
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |               #define MIN_REQUEST		(MIN_CHUNK_SIZE - CHUNK_OVERHEAD - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  410|    232|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
+  |  |  |  |  |  |  410|    254|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   49|    232|#define SIZE_T_SIZE		(sizeof(size_t))
+  |  |  |  |  |  |  |  |   49|    254|#define SIZE_T_SIZE		(sizeof(size_t))
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |               #define MIN_REQUEST		(MIN_CHUNK_SIZE - CHUNK_OVERHEAD - SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|    232|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|    254|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                 (((req) < MIN_REQUEST)? MIN_CHUNK_SIZE : pad_request(req))
@@ -2946,48 +2946,48 @@ lj_alloc.c:lj_alloc_realloc:
   |  |  ------------------
   |  |                 (((req) < MIN_REQUEST)? MIN_CHUNK_SIZE : pad_request(req))
   |  |  ------------------
-  |  |  |  |  433|    232|   (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
+  |  |  |  |  433|    254|   (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  ------------------
-  |  |  |  |  |  |  410|    232|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
+  |  |  |  |  |  |  410|    254|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   49|    232|#define SIZE_T_SIZE		(sizeof(size_t))
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  ------------------
-  |  |  |  |                  (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
-  |  |  |  |  ------------------
-  |  |  |  |  |  |   62|    232|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   39|    232|#define MALLOC_ALIGNMENT	((size_t)8U)
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
-  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|    232|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   49|    254|#define SIZE_T_SIZE		(sizeof(size_t))
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |                  (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   62|    232|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |   62|    254|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   39|    232|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |  |  |   39|    254|#define MALLOC_ALIGNMENT	((size_t)8U)
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|    232|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|    254|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  ------------------
+  |  |  |  |                  (((req) + CHUNK_OVERHEAD + CHUNK_ALIGN_MASK) & ~CHUNK_ALIGN_MASK)
+  |  |  |  |  ------------------
+  |  |  |  |  |  |   62|    254|#define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  |  |   39|    254|#define MALLOC_ALIGNMENT	((size_t)8U)
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |               #define CHUNK_ALIGN_MASK	(MALLOC_ALIGNMENT - SIZE_T_ONE)
+  |  |  |  |  |  |  ------------------
+  |  |  |  |  |  |  |  |   55|    254|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  ------------------
-  |  |  |  Branch (437:4): [True: 0, False: 232]
+  |  |  |  Branch (437:4): [True: 0, False: 254]
   |  |  ------------------
   ------------------
  1434|       |
  1435|       |    /* Try to either shrink or extend into top. Else malloc-copy-free */
- 1436|    232|    if (is_direct(oldp)) {
+ 1436|    254|    if (is_direct(oldp)) {
   ------------------
-  |  |  480|    232|  (!((p)->head & PINUSE_BIT) && ((p)->prev_foot & IS_DIRECT_BIT))
+  |  |  480|    254|  (!((p)->head & PINUSE_BIT) && ((p)->prev_foot & IS_DIRECT_BIT))
   |  |  ------------------
-  |  |  |  |  441|    232|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  441|    254|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|    232|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|    254|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                 (!((p)->head & PINUSE_BIT) && ((p)->prev_foot & IS_DIRECT_BIT))
@@ -2997,14 +2997,14 @@ lj_alloc.c:lj_alloc_realloc:
   |  |  |  |  |  |   55|      0|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
-  |  |  |  Branch (480:4): [True: 0, False: 232]
+  |  |  |  Branch (480:4): [True: 0, False: 254]
   |  |  |  Branch (480:33): [True: 0, False: 0]
   |  |  ------------------
   ------------------
  1437|      0|      newp = direct_resize(oldp, nb);  /* this may return NULL. */
- 1438|    232|    } else if (oldsize >= nb) { /* already big enough */
+ 1438|    254|    } else if (oldsize >= nb) { /* already big enough */
   ------------------
-  |  Branch (1438:16): [True: 0, False: 232]
+  |  Branch (1438:16): [True: 0, False: 254]
   ------------------
  1439|      0|      size_t rsize = oldsize - nb;
  1440|      0|      newp = oldp;
@@ -3102,83 +3102,83 @@ lj_alloc.c:lj_alloc_realloc:
   |  |  ------------------
   ------------------
  1446|      0|      }
- 1447|    232|    } else if (next == m->top && oldsize + m->topsize > nb) {
+ 1447|    254|    } else if (next == m->top && oldsize + m->topsize > nb) {
   ------------------
-  |  Branch (1447:16): [True: 13, False: 219]
-  |  Branch (1447:34): [True: 13, False: 0]
+  |  Branch (1447:16): [True: 10, False: 244]
+  |  Branch (1447:34): [True: 10, False: 0]
   ------------------
  1448|       |      /* Expand into top */
- 1449|     13|      size_t newsize = oldsize + m->topsize;
- 1450|     13|      size_t newtopsize = newsize - nb;
- 1451|     13|      mchunkptr newtop = chunk_plus_offset(oldp, nb);
+ 1449|     10|      size_t newsize = oldsize + m->topsize;
+ 1450|     10|      size_t newtopsize = newsize - nb;
+ 1451|     10|      mchunkptr newtop = chunk_plus_offset(oldp, nb);
   ------------------
-  |  |  457|     13|#define chunk_plus_offset(p, s)		((mchunkptr)(((char *)(p)) + (s)))
+  |  |  457|     10|#define chunk_plus_offset(p, s)		((mchunkptr)(((char *)(p)) + (s)))
   ------------------
- 1452|     13|      set_inuse(m, oldp, nb);
+ 1452|     10|      set_inuse(m, oldp, nb);
   ------------------
-  |  |  660|     13|  ((p)->head = (((p)->head & PINUSE_BIT)|s|CINUSE_BIT),\
+  |  |  660|     10|  ((p)->head = (((p)->head & PINUSE_BIT)|s|CINUSE_BIT),\
   |  |  ------------------
-  |  |  |  |  441|     13|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  441|     10|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|     13|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|     10|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   |  |                 ((p)->head = (((p)->head & PINUSE_BIT)|s|CINUSE_BIT),\
   |  |  ------------------
-  |  |  |  |  442|     13|#define CINUSE_BIT		(SIZE_T_TWO)
+  |  |  |  |  442|     10|#define CINUSE_BIT		(SIZE_T_TWO)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   56|     13|#define SIZE_T_TWO		((size_t)2)
+  |  |  |  |  |  |   56|     10|#define SIZE_T_TWO		((size_t)2)
   |  |  |  |  ------------------
   |  |  ------------------
-  |  |  661|     13|  ((mchunkptr)(((char *)(p)) + (s)))->head |= PINUSE_BIT)
+  |  |  661|     10|  ((mchunkptr)(((char *)(p)) + (s)))->head |= PINUSE_BIT)
   |  |  ------------------
-  |  |  |  |  441|     13|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  441|     10|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   55|     13|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |   55|     10|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
- 1453|     13|      newtop->head = newtopsize |PINUSE_BIT;
+ 1453|     10|      newtop->head = newtopsize |PINUSE_BIT;
   ------------------
-  |  |  441|     13|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  441|     10|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  ------------------
-  |  |  |  |   55|     13|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |   55|     10|#define SIZE_T_ONE		((size_t)1)
   |  |  ------------------
   ------------------
- 1454|     13|      m->top = newtop;
- 1455|     13|      m->topsize = newtopsize;
- 1456|     13|      newp = oldp;
- 1457|     13|    }
+ 1454|     10|      m->top = newtop;
+ 1455|     10|      m->topsize = newtopsize;
+ 1456|     10|      newp = oldp;
+ 1457|     10|    }
  1458|       |
- 1459|    232|    if (newp != 0) {
+ 1459|    254|    if (newp != 0) {
   ------------------
-  |  Branch (1459:9): [True: 13, False: 219]
+  |  Branch (1459:9): [True: 10, False: 244]
   ------------------
- 1460|     13|      return chunk2mem(newp);
+ 1460|     10|      return chunk2mem(newp);
   ------------------
-  |  |  422|     13|#define chunk2mem(p)		((void *)((char *)(p) + TWO_SIZE_T_SIZES))
+  |  |  422|     10|#define chunk2mem(p)		((void *)((char *)(p) + TWO_SIZE_T_SIZES))
   |  |  ------------------
-  |  |  |  |   57|     13|#define TWO_SIZE_T_SIZES	(SIZE_T_SIZE<<1)
+  |  |  |  |   57|     10|#define TWO_SIZE_T_SIZES	(SIZE_T_SIZE<<1)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   49|     13|#define SIZE_T_SIZE		(sizeof(size_t))
+  |  |  |  |  |  |   49|     10|#define SIZE_T_SIZE		(sizeof(size_t))
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
- 1461|    219|    } else {
- 1462|    219|      void *newmem = lj_alloc_malloc(m, nsize);
- 1463|    219|      if (newmem != 0) {
+ 1461|    244|    } else {
+ 1462|    244|      void *newmem = lj_alloc_malloc(m, nsize);
+ 1463|    244|      if (newmem != 0) {
   ------------------
-  |  Branch (1463:11): [True: 219, False: 0]
+  |  Branch (1463:11): [True: 244, False: 0]
   ------------------
- 1464|    219|	size_t oc = oldsize - overhead_for(oldp);
+ 1464|    244|	size_t oc = oldsize - overhead_for(oldp);
   ------------------
-  |  |  484|    219| (is_direct(p)? DIRECT_CHUNK_OVERHEAD : CHUNK_OVERHEAD)
+  |  |  484|    244| (is_direct(p)? DIRECT_CHUNK_OVERHEAD : CHUNK_OVERHEAD)
   |  |  ------------------
-  |  |  |  |  480|    219|  (!((p)->head & PINUSE_BIT) && ((p)->prev_foot & IS_DIRECT_BIT))
+  |  |  |  |  480|    244|  (!((p)->head & PINUSE_BIT) && ((p)->prev_foot & IS_DIRECT_BIT))
   |  |  |  |  ------------------
-  |  |  |  |  |  |  441|    219|#define PINUSE_BIT		(SIZE_T_ONE)
+  |  |  |  |  |  |  441|    244|#define PINUSE_BIT		(SIZE_T_ONE)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |   55|    219|#define SIZE_T_ONE		((size_t)1)
+  |  |  |  |  |  |  |  |   55|    244|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |                 (!((p)->head & PINUSE_BIT) && ((p)->prev_foot & IS_DIRECT_BIT))
@@ -3188,7 +3188,7 @@ lj_alloc.c:lj_alloc_realloc:
   |  |  |  |  |  |  |  |   55|      0|#define SIZE_T_ONE		((size_t)1)
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (480:4): [True: 0, False: 219]
+  |  |  |  |  |  Branch (480:4): [True: 0, False: 244]
   |  |  |  |  |  Branch (480:33): [True: 0, False: 0]
   |  |  |  |  ------------------
   |  |  ------------------
@@ -3204,22 +3204,22 @@ lj_alloc.c:lj_alloc_realloc:
   |  |  ------------------
   |  |                (is_direct(p)? DIRECT_CHUNK_OVERHEAD : CHUNK_OVERHEAD)
   |  |  ------------------
-  |  |  |  |  410|    219|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
+  |  |  |  |  410|    244|#define CHUNK_OVERHEAD		(SIZE_T_SIZE)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   49|    219|#define SIZE_T_SIZE		(sizeof(size_t))
+  |  |  |  |  |  |   49|    244|#define SIZE_T_SIZE		(sizeof(size_t))
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
- 1465|    219|	memcpy(newmem, ptr, oc < nsize ? oc : nsize);
+ 1465|    244|	memcpy(newmem, ptr, oc < nsize ? oc : nsize);
   ------------------
-  |  Branch (1465:22): [True: 219, False: 0]
+  |  Branch (1465:22): [True: 244, False: 0]
   ------------------
- 1466|    219|	lj_alloc_free(m, ptr);
- 1467|    219|      }
- 1468|    219|      return newmem;
- 1469|    219|    }
- 1470|    232|  }
- 1471|    232|}
+ 1466|    244|	lj_alloc_free(m, ptr);
+ 1467|    244|      }
+ 1468|    244|      return newmem;
+ 1469|    244|    }
+ 1470|    254|  }
+ 1471|    254|}
 
 lua_settop:
   151|  2.34k|{
@@ -4084,21 +4084,21 @@ lj_api.c:index2adr_check:
    69|  1.17k|}
 
 lj_buf_more2:
-   61|  1.40k|{
-   62|  1.40k|  if (sbufisext(sb)) {
+   61|  1.42k|{
+   62|  1.42k|  if (sbufisext(sb)) {
   ------------------
-  |  |   56|  1.40k|#define sbufisext(sb)		(sbufflag((sb)) & SBUF_FLAG_EXT)
+  |  |   56|  1.42k|#define sbufisext(sb)		(sbufflag((sb)) & SBUF_FLAG_EXT)
   |  |  ------------------
-  |  |  |  |   55|  1.40k|#define sbufflag(sb)		(mrefu((sb)->L))
+  |  |  |  |   55|  1.42k|#define sbufflag(sb)		(mrefu((sb)->L))
   |  |  |  |  ------------------
-  |  |  |  |  |  |   37|  1.40k|#define mrefu(r)	((r).ptr64)
+  |  |  |  |  |  |   37|  1.42k|#define mrefu(r)	((r).ptr64)
   |  |  |  |  ------------------
   |  |  ------------------
   |  |               #define sbufisext(sb)		(sbufflag((sb)) & SBUF_FLAG_EXT)
   |  |  ------------------
-  |  |  |  |   43|  1.40k|#define SBUF_FLAG_EXT		1	/* Extended string buffer. */
+  |  |  |  |   43|  1.42k|#define SBUF_FLAG_EXT		1	/* Extended string buffer. */
   |  |  ------------------
-  |  |  |  Branch (56:24): [True: 0, False: 1.40k]
+  |  |  |  Branch (56:24): [True: 0, False: 1.42k]
   |  |  ------------------
   ------------------
    63|      0|    SBufExt *sbx = (SBufExt *)sb;
@@ -4188,29 +4188,29 @@ lj_buf_more2:
   |  |  ------------------
   ------------------
    79|      0|    }
-   80|  1.40k|  } else {
-   81|  1.40k|    MSize len = sbuflen(sb);
+   80|  1.42k|  } else {
+   81|  1.42k|    MSize len = sbuflen(sb);
   ------------------
-  |  |   36|  1.40k|#define sbuflen(sb)		((MSize)((sb)->w - (sb)->b))
+  |  |   36|  1.42k|#define sbuflen(sb)		((MSize)((sb)->w - (sb)->b))
   ------------------
-   82|  1.40k|    lj_assertG_(G(sbufL(sb)), sz > sbufleft(sb), "SBuf overflow");
+   82|  1.42k|    lj_assertG_(G(sbufL(sb)), sz > sbufleft(sb), "SBuf overflow");
   ------------------
-  |  |  363|  1.40k|#define lj_assertG_(g, c, ...)	lj_assert_check((g), (c), __VA_ARGS__)
+  |  |  363|  1.42k|#define lj_assertG_(g, c, ...)	lj_assert_check((g), (c), __VA_ARGS__)
   |  |  ------------------
-  |  |  |  |  355|  1.40k|  ((c) ? (void)0 : \
+  |  |  |  |  355|  1.42k|  ((c) ? (void)0 : \
   |  |  |  |  ------------------
-  |  |  |  |  |  Branch (355:4): [True: 1.40k, False: 0]
+  |  |  |  |  |  Branch (355:4): [True: 1.42k, False: 0]
   |  |  |  |  ------------------
-  |  |  |  |  356|  1.40k|   (lj_assert_fail((g), __FILE__, __LINE__, __func__, __VA_ARGS__), 0))
+  |  |  |  |  356|  1.42k|   (lj_assert_fail((g), __FILE__, __LINE__, __func__, __VA_ARGS__), 0))
   |  |  ------------------
   ------------------
-   83|  1.40k|    if (LJ_UNLIKELY(sz > LJ_MAX_BUF || len + sz > LJ_MAX_BUF))
+   83|  1.42k|    if (LJ_UNLIKELY(sz > LJ_MAX_BUF || len + sz > LJ_MAX_BUF))
   ------------------
-  |  |  146|  2.80k|#define LJ_UNLIKELY(x)	__builtin_expect(!!(x), 0)
+  |  |  146|  2.85k|#define LJ_UNLIKELY(x)	__builtin_expect(!!(x), 0)
   |  |  ------------------
-  |  |  |  Branch (146:24): [True: 0, False: 1.40k]
-  |  |  |  Branch (146:44): [True: 0, False: 1.40k]
-  |  |  |  Branch (146:44): [True: 0, False: 1.40k]
+  |  |  |  Branch (146:24): [True: 0, False: 1.42k]
+  |  |  |  Branch (146:44): [True: 0, False: 1.42k]
+  |  |  |  Branch (146:44): [True: 0, False: 1.42k]
   |  |  ------------------
   ------------------
    84|      0|      lj_err_mem(sbufL(sb));
@@ -4227,10 +4227,10 @@ lj_buf_more2:
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-   85|  1.40k|    buf_grow(sb, len + sz);
-   86|  1.40k|  }
-   87|  1.40k|  return sb->w;
-   88|  1.40k|}
+   85|  1.42k|    buf_grow(sb, len + sz);
+   86|  1.42k|  }
+   87|  1.42k|  return sb->w;
+   88|  1.42k|}
 lj_buf_putmem:
   133|  4.68k|{
   134|  4.68k|  char *w = lj_buf_more(sb, len);
@@ -4239,43 +4239,43 @@ lj_buf_putmem:
   137|  4.68k|  return sb;
   138|  4.68k|}
 lj_buf.c:buf_grow:
-   20|  1.40k|{
-   21|  1.40k|  MSize osz = sbufsz(sb), len = sbuflen(sb), nsz = osz;
+   20|  1.42k|{
+   21|  1.42k|  MSize osz = sbufsz(sb), len = sbuflen(sb), nsz = osz;
   ------------------
-  |  |   35|  1.40k|#define sbufsz(sb)		((MSize)((sb)->e - (sb)->b))
+  |  |   35|  1.42k|#define sbufsz(sb)		((MSize)((sb)->e - (sb)->b))
   ------------------
                 MSize osz = sbufsz(sb), len = sbuflen(sb), nsz = osz;
   ------------------
-  |  |   36|  1.40k|#define sbuflen(sb)		((MSize)((sb)->w - (sb)->b))
+  |  |   36|  1.42k|#define sbuflen(sb)		((MSize)((sb)->w - (sb)->b))
   ------------------
-   22|  1.40k|  char *b;
-   23|  1.40k|  GCSize flag;
-   24|  1.40k|  if (nsz < LJ_MIN_SBUF) nsz = LJ_MIN_SBUF;
+   22|  1.42k|  char *b;
+   23|  1.42k|  GCSize flag;
+   24|  1.42k|  if (nsz < LJ_MIN_SBUF) nsz = LJ_MIN_SBUF;
   ------------------
-  |  |   80|  1.40k|#define LJ_MIN_SBUF	32		/* Min. string buffer length. */
+  |  |   80|  1.42k|#define LJ_MIN_SBUF	32		/* Min. string buffer length. */
   ------------------
                 if (nsz < LJ_MIN_SBUF) nsz = LJ_MIN_SBUF;
   ------------------
   |  |   80|  1.17k|#define LJ_MIN_SBUF	32		/* Min. string buffer length. */
   ------------------
-  |  Branch (24:7): [True: 1.17k, False: 232]
+  |  Branch (24:7): [True: 1.17k, False: 254]
   ------------------
    25|  2.49k|  while (nsz < sz) nsz += nsz;
   ------------------
-  |  Branch (25:10): [True: 1.09k, False: 1.40k]
+  |  Branch (25:10): [True: 1.07k, False: 1.42k]
   ------------------
-   26|  1.40k|  flag = sbufflag(sb);
+   26|  1.42k|  flag = sbufflag(sb);
   ------------------
-  |  |   55|  1.40k|#define sbufflag(sb)		(mrefu((sb)->L))
+  |  |   55|  1.42k|#define sbufflag(sb)		(mrefu((sb)->L))
   |  |  ------------------
-  |  |  |  |   37|  1.40k|#define mrefu(r)	((r).ptr64)
+  |  |  |  |   37|  1.42k|#define mrefu(r)	((r).ptr64)
   |  |  ------------------
   ------------------
-   27|  1.40k|  if ((flag & SBUF_FLAG_COW)) {  /* Copy-on-write semantics. */
+   27|  1.42k|  if ((flag & SBUF_FLAG_COW)) {  /* Copy-on-write semantics. */
   ------------------
-  |  |   44|  1.40k|#define SBUF_FLAG_COW		2	/* Copy-on-write buffer. */
+  |  |   44|  1.42k|#define SBUF_FLAG_COW		2	/* Copy-on-write buffer. */
   ------------------
-  |  Branch (27:7): [True: 0, False: 1.40k]
+  |  Branch (27:7): [True: 0, False: 1.42k]
   ------------------
    28|      0|    lj_assertG_(G(sbufL(sb)), sb->w == sb->e, "bad SBuf COW");
   ------------------
@@ -4307,27 +4307,27 @@ lj_buf.c:buf_grow:
   |  |  ------------------
   ------------------
    32|      0|    memcpy(b, sb->b, osz);
-   33|  1.40k|  } else {
-   34|  1.40k|    b = (char *)lj_mem_realloc(sbufL(sb), sb->b, osz, nsz);
+   33|  1.42k|  } else {
+   34|  1.42k|    b = (char *)lj_mem_realloc(sbufL(sb), sb->b, osz, nsz);
   ------------------
-  |  |   48|  1.40k|  ((lua_State *)(void *)(uintptr_t)(mrefu((sb)->L) & SBUF_MASK_L))
+  |  |   48|  1.42k|  ((lua_State *)(void *)(uintptr_t)(mrefu((sb)->L) & SBUF_MASK_L))
   |  |  ------------------
-  |  |  |  |   37|  1.40k|#define mrefu(r)	((r).ptr64)
+  |  |  |  |   37|  1.42k|#define mrefu(r)	((r).ptr64)
   |  |  ------------------
   |  |                 ((lua_State *)(void *)(uintptr_t)(mrefu((sb)->L) & SBUF_MASK_L))
   |  |  ------------------
-  |  |  |  |   42|  1.40k|#define SBUF_MASK_L		(~(GCSize)SBUF_MASK_FLAG)
+  |  |  |  |   42|  1.42k|#define SBUF_MASK_L		(~(GCSize)SBUF_MASK_FLAG)
   |  |  |  |  ------------------
-  |  |  |  |  |  |   41|  1.40k|#define SBUF_MASK_FLAG		(7)
+  |  |  |  |  |  |   41|  1.42k|#define SBUF_MASK_FLAG		(7)
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-   35|  1.40k|  }
-   36|  1.40k|  if ((flag & SBUF_FLAG_EXT)) {
+   35|  1.42k|  }
+   36|  1.42k|  if ((flag & SBUF_FLAG_EXT)) {
   ------------------
-  |  |   43|  1.40k|#define SBUF_FLAG_EXT		1	/* Extended string buffer. */
+  |  |   43|  1.42k|#define SBUF_FLAG_EXT		1	/* Extended string buffer. */
   ------------------
-  |  Branch (36:7): [True: 0, False: 1.40k]
+  |  Branch (36:7): [True: 0, False: 1.42k]
   ------------------
    37|      0|    sbufX(sb)->r = sbufX(sb)->r - sb->b + b;  /* Adjust read pointer, too. */
   ------------------
@@ -4360,13 +4360,13 @@ lj_buf.c:buf_grow:
    38|      0|  }
    39|       |  /* Adjust buffer pointers. */
    40|      0|  sb->b = b;
-   41|  1.40k|  sb->w = b + len;
-   42|  1.40k|  sb->e = b + nsz;
-   43|  1.40k|  if ((flag & SBUF_FLAG_BORROW)) {  /* Adjust borrowed buffer pointers. */
+   41|  1.42k|  sb->w = b + len;
+   42|  1.42k|  sb->e = b + nsz;
+   43|  1.42k|  if ((flag & SBUF_FLAG_BORROW)) {  /* Adjust borrowed buffer pointers. */
   ------------------
-  |  |   45|  1.40k|#define SBUF_FLAG_BORROW	4	/* Borrowed string buffer. */
+  |  |   45|  1.42k|#define SBUF_FLAG_BORROW	4	/* Borrowed string buffer. */
   ------------------
-  |  Branch (43:7): [True: 0, False: 1.40k]
+  |  Branch (43:7): [True: 0, False: 1.42k]
   ------------------
    44|      0|    SBuf *bsb = mref(sbufX(sb)->bsb, SBuf);
   ------------------
@@ -4379,7 +4379,7 @@ lj_buf.c:buf_grow:
    46|      0|    bsb->w = b + len;
    47|      0|    bsb->e = b + nsz;
    48|      0|  }
-   49|  1.40k|}
+   49|  1.42k|}
 
 lj_state.c:lj_buf_init:
    75|  1.17k|{
@@ -4485,11 +4485,11 @@ lj_meta.c:lj_buf_more:
   ------------------
   |  |  146|  1.17k|#define LJ_UNLIKELY(x)	__builtin_expect(!!(x), 0)
   |  |  ------------------
-  |  |  |  Branch (146:24): [True: 219, False: 952]
+  |  |  |  Branch (146:24): [True: 244, False: 927]
   |  |  ------------------
   ------------------
-  109|    219|    return lj_buf_more2(sb, sz);
-  110|    952|  return sb->w;
+  109|    244|    return lj_buf_more2(sb, sz);
+  110|    927|  return sb->w;
   111|  1.17k|}
 lj_meta.c:lj_buf_str:
   194|  1.17k|{
@@ -7635,37 +7635,37 @@ lj_meta.c:setgcV:
   927|  1.17k|}
 
 lj_prng_u64:
-   48|  3.76k|{
-   49|  3.76k|  uint64_t z, r = 0;
-   50|  3.76k|  TW223_STEP(rs, z, r)
+   48|  3.73k|{
+   49|  3.73k|  uint64_t z, r = 0;
+   50|  3.73k|  TW223_STEP(rs, z, r)
   ------------------
-  |  |   41|  3.76k|  TW223_GEN(rs, z, r, 0, 63, 31, 18) \
+  |  |   41|  3.73k|  TW223_GEN(rs, z, r, 0, 63, 31, 18) \
   |  |  ------------------
-  |  |  |  |   36|  3.76k|  z = rs->u[i]; \
-  |  |  |  |   37|  3.76k|  z = (((z<<q)^z) >> (k-s)) ^ ((z&((uint64_t)(int64_t)-1 << (64-k)))<<s); \
-  |  |  |  |   38|  3.76k|  r ^= z; rs->u[i] = z;
+  |  |  |  |   36|  3.73k|  z = rs->u[i]; \
+  |  |  |  |   37|  3.73k|  z = (((z<<q)^z) >> (k-s)) ^ ((z&((uint64_t)(int64_t)-1 << (64-k)))<<s); \
+  |  |  |  |   38|  3.73k|  r ^= z; rs->u[i] = z;
   |  |  ------------------
-  |  |   42|  3.76k|  TW223_GEN(rs, z, r, 1, 58, 19, 28) \
+  |  |   42|  3.73k|  TW223_GEN(rs, z, r, 1, 58, 19, 28) \
   |  |  ------------------
-  |  |  |  |   36|  3.76k|  z = rs->u[i]; \
-  |  |  |  |   37|  3.76k|  z = (((z<<q)^z) >> (k-s)) ^ ((z&((uint64_t)(int64_t)-1 << (64-k)))<<s); \
-  |  |  |  |   38|  3.76k|  r ^= z; rs->u[i] = z;
+  |  |  |  |   36|  3.73k|  z = rs->u[i]; \
+  |  |  |  |   37|  3.73k|  z = (((z<<q)^z) >> (k-s)) ^ ((z&((uint64_t)(int64_t)-1 << (64-k)))<<s); \
+  |  |  |  |   38|  3.73k|  r ^= z; rs->u[i] = z;
   |  |  ------------------
-  |  |   43|  3.76k|  TW223_GEN(rs, z, r, 2, 55, 24,  7) \
+  |  |   43|  3.73k|  TW223_GEN(rs, z, r, 2, 55, 24,  7) \
   |  |  ------------------
-  |  |  |  |   36|  3.76k|  z = rs->u[i]; \
-  |  |  |  |   37|  3.76k|  z = (((z<<q)^z) >> (k-s)) ^ ((z&((uint64_t)(int64_t)-1 << (64-k)))<<s); \
-  |  |  |  |   38|  3.76k|  r ^= z; rs->u[i] = z;
+  |  |  |  |   36|  3.73k|  z = rs->u[i]; \
+  |  |  |  |   37|  3.73k|  z = (((z<<q)^z) >> (k-s)) ^ ((z&((uint64_t)(int64_t)-1 << (64-k)))<<s); \
+  |  |  |  |   38|  3.73k|  r ^= z; rs->u[i] = z;
   |  |  ------------------
-  |  |   44|  3.76k|  TW223_GEN(rs, z, r, 3, 47, 21,  8)
+  |  |   44|  3.73k|  TW223_GEN(rs, z, r, 3, 47, 21,  8)
   |  |  ------------------
-  |  |  |  |   36|  3.76k|  z = rs->u[i]; \
-  |  |  |  |   37|  3.76k|  z = (((z<<q)^z) >> (k-s)) ^ ((z&((uint64_t)(int64_t)-1 << (64-k)))<<s); \
-  |  |  |  |   38|  3.76k|  r ^= z; rs->u[i] = z;
+  |  |  |  |   36|  3.73k|  z = rs->u[i]; \
+  |  |  |  |   37|  3.73k|  z = (((z<<q)^z) >> (k-s)) ^ ((z&((uint64_t)(int64_t)-1 << (64-k)))<<s); \
+  |  |  |  |   38|  3.73k|  r ^= z; rs->u[i] = z;
   |  |  ------------------
   ------------------
-   51|  3.76k|  return r;
-   52|  3.76k|}
+   51|  3.73k|  return r;
+   52|  3.73k|}
 lj_prng_seed_secure:
   167|  1.17k|{
   168|       |#if LJ_TARGET_XBOX360
@@ -8627,30 +8627,30 @@ lj_str_new:
   ------------------
   338|      0|    }
   339|  58.5k|#endif
-  340|  63.8k|    while (o != NULL) {
+  340|  63.7k|    while (o != NULL) {
   ------------------
-  |  Branch (340:12): [True: 6.43k, False: 57.3k]
+  |  Branch (340:12): [True: 6.41k, False: 57.3k]
   ------------------
-  341|  6.43k|      GCstr *sx = gco2str(o);
+  341|  6.41k|      GCstr *sx = gco2str(o);
   ------------------
-  |  |  762|  6.43k|#define gco2str(o)	check_exp((o)->gch.gct == ~LJ_TSTR, &(o)->str)
+  |  |  762|  6.41k|#define gco2str(o)	check_exp((o)->gch.gct == ~LJ_TSTR, &(o)->str)
   |  |  ------------------
-  |  |  |  |  367|  6.43k|#define check_exp(c, e)		(lj_assertX((c), #c), (e))
+  |  |  |  |  367|  6.41k|#define check_exp(c, e)		(lj_assertX((c), #c), (e))
   |  |  |  |  ------------------
-  |  |  |  |  |  |  366|  6.43k|#define lj_assertX(c, ...)	lj_assert_check(NULL, (c), __VA_ARGS__)
+  |  |  |  |  |  |  366|  6.41k|#define lj_assertX(c, ...)	lj_assert_check(NULL, (c), __VA_ARGS__)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  355|  6.43k|  ((c) ? (void)0 : \
+  |  |  |  |  |  |  |  |  355|  6.41k|  ((c) ? (void)0 : \
   |  |  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  |  Branch (355:4): [True: 6.43k, False: 0]
+  |  |  |  |  |  |  |  |  |  Branch (355:4): [True: 6.41k, False: 0]
   |  |  |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  |  356|  6.43k|   (lj_assert_fail((g), __FILE__, __LINE__, __func__, __VA_ARGS__), 0))
+  |  |  |  |  |  |  |  |  356|  6.41k|   (lj_assert_fail((g), __FILE__, __LINE__, __func__, __VA_ARGS__), 0))
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  342|  6.43k|      if (sx->hash == hash && sx->len == len) {
+  342|  6.41k|      if (sx->hash == hash && sx->len == len) {
   ------------------
-  |  Branch (342:11): [True: 1.17k, False: 5.26k]
+  |  Branch (342:11): [True: 1.17k, False: 5.24k]
   |  Branch (342:31): [True: 1.17k, False: 0]
   ------------------
   343|  1.17k|	if (memcmp(str, strdata(sx), len) == 0) {
@@ -8707,15 +8707,15 @@ lj_str_new:
   346|  1.17k|	}
   347|      0|	coll++;
   348|      0|      }
-  349|  5.26k|      coll++;
-  350|  5.26k|      o = gcnext(o);
+  349|  5.24k|      coll++;
+  350|  5.24k|      o = gcnext(o);
   ------------------
-  |  |   90|  5.26k|#define gcnext(gc)	(gcref((gc)->gch.nextgc))
+  |  |   90|  5.24k|#define gcnext(gc)	(gcref((gc)->gch.nextgc))
   |  |  ------------------
-  |  |  |  |   67|  5.26k|#define gcref(r)	((GCobj *)(r).gcptr64)
+  |  |  |  |   67|  5.24k|#define gcref(r)	((GCobj *)(r).gcptr64)
   |  |  ------------------
   ------------------
-  351|  5.26k|    }
+  351|  5.24k|    }
   352|  57.3k|#if LUAJIT_SECURITY_STRHASH
   353|       |    /* Rehash chain if there are too many collisions. */
   354|  57.3k|    if (LJ_UNLIKELY(coll > LJ_STR_MAXCOLL) && !hashalg) {
@@ -8852,15 +8852,15 @@ lj_str.c:lj_str_alloc:
   296|       |#elif STRID_RESEED_INTERVAL
   297|  57.3k|  if (!g->str.idreseed--) {
   ------------------
-  |  Branch (297:7): [True: 1.42k, False: 55.9k]
+  |  Branch (297:7): [True: 1.39k, False: 55.9k]
   ------------------
-  298|  1.42k|    uint64_t r = lj_prng_u64(&g->prng);
-  299|  1.42k|    g->str.id = (StrID)r;
-  300|  1.42k|    g->str.idreseed = (uint8_t)(r >> (64 - STRID_RESEED_INTERVAL));
+  298|  1.39k|    uint64_t r = lj_prng_u64(&g->prng);
+  299|  1.39k|    g->str.id = (StrID)r;
+  300|  1.39k|    g->str.idreseed = (uint8_t)(r >> (64 - STRID_RESEED_INTERVAL));
   ------------------
-  |  |  276|  1.42k|#define STRID_RESEED_INTERVAL	8
+  |  |  276|  1.39k|#define STRID_RESEED_INTERVAL	8
   ------------------
-  301|  1.42k|  }
+  301|  1.39k|  }
   302|  57.3k|  s->sid = g->str.id++;
   303|       |#else
   304|       |  s->sid = (StrID)lj_prng_u64(&g->prng);
