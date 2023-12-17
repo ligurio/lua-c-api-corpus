@@ -1,0 +1,98 @@
+chunk {
+  stat {
+  }
+  stat {
+    semicolon: true
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        prefixexp {
+          exp {
+            binary {
+              leftexp {
+                prefixexp {
+                  functioncall {
+                    prefArgs {
+                      prefixexp {
+                        var {
+                          indexname {
+                            prefixexp {
+                            }
+                            Name: "char"
+                          }
+                        }
+                      }
+                      args {
+                        explist {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              binop {
+                concat: 1
+              }
+              rightexp {
+                prefixexp {
+                  functioncall {
+                    prefArgs {
+                      prefixexp {
+                        var {
+                          indexname {
+                            prefixexp {
+                            }
+                            Name: "char"
+                          }
+                        }
+                      }
+                      args {
+                        explist {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+              exprassign {
+                key {
+                  prefixexp {
+                  }
+                }
+                value {
+                  prefixexp {
+                    functioncall {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+}

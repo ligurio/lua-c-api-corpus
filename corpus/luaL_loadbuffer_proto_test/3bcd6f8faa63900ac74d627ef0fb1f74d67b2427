@@ -1,0 +1,75 @@
+chunk {
+  stat {
+  }
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            ellipsis: ""
+          }
+          binop {
+            or: 1
+          }
+          rightexp {
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                      nil: 2
+                    }
+                    binop {
+                      or: 1
+                    }
+                    rightexp {
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        whilecycle {
+                          condition {
+                            binary {
+                              leftexp {
+                                nil: 2
+                              }
+                              binop {
+                                or: 1
+                              }
+                              rightexp {
+                              }
+                            }
+                          }
+                          doblock {
+                            block {
+                              chunk {
+                                laststat {
+                                  break: 0
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+  }
+}
