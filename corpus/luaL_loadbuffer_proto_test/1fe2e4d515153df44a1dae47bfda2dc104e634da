@@ -1,0 +1,64 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+              }
+              doblock {
+                block {
+                  chunk {
+                    stat {
+                    }
+                  }
+                }
+              }
+            }
+          }
+          stat {
+          }
+        }
+      }
+      condition {
+        unary {
+          unop {
+            negate: 0
+          }
+          exp {
+            binary {
+              leftexp {
+                unary {
+                  unop {
+                    length: 2
+                  }
+                  exp {
+                    tableconstructor {
+                    }
+                  }
+                }
+              }
+              binop {
+                greaterEqual: 2
+              }
+              rightexp {
+                unary {
+                  unop {
+                    length: 2
+                  }
+                  exp {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+    }
+  }
+}
