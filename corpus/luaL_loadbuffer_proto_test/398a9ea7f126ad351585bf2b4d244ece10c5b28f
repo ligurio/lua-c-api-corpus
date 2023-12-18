@@ -1,0 +1,62 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        prefixexp {
+          functioncall {
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+          }
+        }
+      }
+      clauses {
+        condition {
+          prefixexp {
+          }
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        prefixexp {
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+          prefixexp {
+          }
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      clauses {
+        condition {
+          nil: 0
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+}
