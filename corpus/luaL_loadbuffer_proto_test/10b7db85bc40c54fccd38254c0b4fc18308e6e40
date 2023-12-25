@@ -1,0 +1,87 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        true: 0
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+          }
+          stat {
+            list {
+              varlist {
+                var {
+                }
+              }
+              explist {
+                explast {
+                  prefixexp {
+                    functioncall {
+                      prefArgs {
+                        prefixexp {
+                          var {
+                            indexname {
+                              prefixexp {
+                                functioncall {
+                                  prefArgs {
+                                    prefixexp {
+                                      var {
+                                        indexname {
+                                          prefixexp {
+                                          }
+                                          Name: "char"
+                                        }
+                                      }
+                                    }
+                                    args {
+                                      explist {
+                                        explist {
+                                          explast {
+                                            ellipsis: "match"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                              Name: "match"
+                            }
+                          }
+                        }
+                        args {
+                          explist {
+                            explist {
+                              expressions {
+                              }
+                              explast {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        nil: 0
+      }
+    }
+  }
+}
