@@ -1,0 +1,85 @@
+chunk {
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: "hot"
+          num: 0
+        }
+      }
+      explist {
+        expressions {
+          function {
+            body {
+              block {
+                chunk {
+                  laststat {
+                    semicolon: true
+                  }
+                }
+              }
+            }
+          }
+        }
+        explast {
+        }
+      }
+    }
+  }
+  stat {
+    forcyclelist {
+      names {
+        firstname {
+          name: "abort"
+          num: 0
+        }
+      }
+      expressions {
+        explast {
+          prefixexp {
+            var {
+              name {
+                name: "hot"
+                num: 0
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclelist {
+                names {
+                  firstname {
+                    name: ""
+                    num: 0
+                  }
+                }
+                expressions {
+                  explast {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "hot"
+                          num: 0
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
