@@ -1,0 +1,38 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            negate: 20
+          }
+          exp {
+            number: 0
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        str: ""
+      }
+      doblock {
+        block {
+          chunk {
+            laststat {
+              break: 268435456
+            }
+          }
+        }
+      }
+    }
+  }
+}
