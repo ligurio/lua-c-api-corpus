@@ -1,0 +1,60 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            negate: 0
+          }
+          exp {
+            prefixexp {
+              exp {
+                binary {
+                  leftexp {
+                    number: 5
+                  }
+                  binop {
+                    concat: 4
+                  }
+                  rightexp {
+                    str: "u"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        expressions {
+          prefixexp {
+            functioncall {
+              namedArgs {
+                prefixexp {
+                }
+                name {
+                  name: "\000\000\000\000\177\377\376\377"
+                  num: 0
+                }
+                args {
+                }
+              }
+            }
+          }
+        }
+        explast {
+        }
+      }
+    }
+  }
+}
