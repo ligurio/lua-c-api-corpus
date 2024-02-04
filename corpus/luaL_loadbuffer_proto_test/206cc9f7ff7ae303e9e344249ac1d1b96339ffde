@@ -1,0 +1,91 @@
+chunk {
+  stat {
+    forcyclename {
+      name {
+        name: ""
+        num: 4
+      }
+      startexp {
+      }
+      stopexp {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                add: 3
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            concat: 0
+          }
+          rightexp {
+            str: "03E2"
+          }
+        }
+      }
+      stepexp {
+        true: 1
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclename {
+                name {
+                  name: ""
+                  num: 0
+                }
+                startexp {
+                  unary {
+                    unop {
+                      length: 4
+                    }
+                    exp {
+                      prefixexp {
+                        exp {
+                          binary {
+                            leftexp {
+                            }
+                            binop {
+                              add: 3
+                            }
+                            rightexp {
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                stopexp {
+                  unary {
+                    unop {
+                      not: 32768
+                    }
+                    exp {
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+            laststat {
+              break: 0
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+}
