@@ -25,29 +25,29 @@
 
 
 LLVMFuzzerTestOneInput:
-   17|  1.12k|{
-   18|  1.12k|	lua_State *L = luaL_newstate();
-   19|  1.12k|	if (L == NULL)
+   17|     15|{
+   18|     15|	lua_State *L = luaL_newstate();
+   19|     15|	if (L == NULL)
   ------------------
-  |  Branch (19:6): [True: 0, False: 1.12k]
+  |  Branch (19:6): [True: 0, False: 15]
   ------------------
    20|      0|		return 0;
    21|       |
-   22|  1.12k|	char *buf = malloc(size + 1);
-   23|  1.12k|	if (buf == NULL)
+   22|     15|	char *buf = malloc(size + 1);
+   23|     15|	if (buf == NULL)
   ------------------
-  |  Branch (23:6): [True: 0, False: 1.12k]
+  |  Branch (23:6): [True: 0, False: 15]
   ------------------
    24|      0|		return 0;
-   25|  1.12k|	memcpy(buf, data, size);
-   26|  1.12k|	buf[size] = '\0';
+   25|     15|	memcpy(buf, data, size);
+   26|     15|	buf[size] = '\0';
    27|       |
-   28|  1.12k|	luaL_traceback(L, L, buf, 1);
+   28|     15|	luaL_traceback(L, L, buf, 1);
    29|       |
-   30|  1.12k|	free(buf);
-   31|  1.12k|	lua_settop(L, 0);
-   32|  1.12k|	lua_close(L);
+   30|     15|	free(buf);
+   31|     15|	lua_settop(L, 0);
+   32|     15|	lua_close(L);
    33|       |
-   34|  1.12k|	return 0;
-   35|  1.12k|}
+   34|     15|	return 0;
+   35|     15|}
 
