@@ -22,46 +22,46 @@
 
 
 LLVMFuzzerTestOneInput:
-   29|  1.57k|{
-   30|  1.57k|	FuzzedDataProvider fdp(data, size);
+   29|  1.51k|{
+   30|  1.51k|	FuzzedDataProvider fdp(data, size);
    31|       |
-   32|  1.57k|	lua_State *L = luaL_newstate();
-   33|  1.57k|	if (L == NULL)
+   32|  1.51k|	lua_State *L = luaL_newstate();
+   33|  1.51k|	if (L == NULL)
   ------------------
-  |  Branch (33:6): [True: 0, False: 1.57k]
+  |  Branch (33:6): [True: 0, False: 1.51k]
   ------------------
    34|      0|		return 0;
    35|       |
-   36|  1.57k|	auto str1 = fdp.ConsumeRandomLengthString(size);
-   37|  1.57k|	auto str2 = fdp.ConsumeRandomLengthString(size);
-   38|  1.57k|	auto str3 = fdp.ConsumeRandomLengthString(size);
-   39|  1.57k|	const char *c_str1 = str1.c_str();
-   40|  1.57k|	const char *c_str2 = str2.c_str();
-   41|  1.57k|	const char *c_str3 = str3.c_str();
-   42|  1.57k|	if (strlen(c_str1) == 0 ||
+   36|  1.51k|	auto str1 = fdp.ConsumeRandomLengthString(size);
+   37|  1.51k|	auto str2 = fdp.ConsumeRandomLengthString(size);
+   38|  1.51k|	auto str3 = fdp.ConsumeRandomLengthString(size);
+   39|  1.51k|	const char *c_str1 = str1.c_str();
+   40|  1.51k|	const char *c_str2 = str2.c_str();
+   41|  1.51k|	const char *c_str3 = str3.c_str();
+   42|  1.51k|	if (strlen(c_str1) == 0 ||
   ------------------
-  |  Branch (42:6): [True: 21, False: 1.55k]
+  |  Branch (42:6): [True: 13, False: 1.50k]
   ------------------
-   43|  1.57k|	    strlen(c_str2) == 0 ||
+   43|  1.51k|	    strlen(c_str2) == 0 ||
   ------------------
-  |  Branch (43:6): [True: 119, False: 1.43k]
+  |  Branch (43:6): [True: 103, False: 1.40k]
   ------------------
-   44|  1.57k|	    strlen(c_str3) == 0) {
+   44|  1.51k|	    strlen(c_str3) == 0) {
   ------------------
-  |  Branch (44:6): [True: 11, False: 1.42k]
+  |  Branch (44:6): [True: 10, False: 1.39k]
   ------------------
-   45|    151|		lua_settop(L, 0);
-   46|    151|		lua_close(L);
-   47|    151|		return -1;
-   48|    151|	}
-   49|  1.42k|	int top = lua_gettop(L);
-   50|  1.42k|	luaL_gsub(L, c_str1, c_str2, c_str3);
+   45|    126|		lua_settop(L, 0);
+   46|    126|		lua_close(L);
+   47|    126|		return -1;
+   48|    126|	}
+   49|  1.39k|	int top = lua_gettop(L);
+   50|  1.39k|	luaL_gsub(L, c_str1, c_str2, c_str3);
    51|       |	/* [-0, +1, m] */
-   52|  1.42k|	assert(lua_gettop(L) == top + 1);
+   52|  1.39k|	assert(lua_gettop(L) == top + 1);
    53|       |
    54|      0|	lua_settop(L, 0);
-   55|  1.42k|	lua_close(L);
+   55|  1.39k|	lua_close(L);
    56|       |
-   57|  1.42k|	return 0;
-   58|  1.57k|}
+   57|  1.39k|	return 0;
+   58|  1.51k|}
 

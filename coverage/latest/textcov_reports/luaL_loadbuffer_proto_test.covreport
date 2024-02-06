@@ -145,7 +145,6 @@
 
 
 
-
 luaL_loadbuffer_proto_test.cc:_ZL5setupv:
   212|      2|{
   213|      2|	metrics = {};
@@ -155,35 +154,35 @@ luaL_loadbuffer_proto_test.cc:_ZL5setupv:
   217|      2|	sigaction(SIGUSR1, &act, NULL);
   218|      2|}
 luaL_loadbuffer_proto_test.cc:_ZL17TestOneProtoInputRKN11lua_grammar5BlockE:
-  324|  13.0k|{
-  325|  13.0k|	lua_State *L = luaL_newstate();
-  326|  13.0k|	if (!L)
+  324|    695|{
+  325|    695|	lua_State *L = luaL_newstate();
+  326|    695|	if (!L)
   ------------------
-  |  Branch (326:6): [True: 0, False: 13.0k]
+  |  Branch (326:6): [True: 0, False: 695]
   ------------------
   327|      0|		return;
   328|       |
-  329|  13.0k|	std::string code = luajit_fuzzer::MainBlockToString(message);
+  329|    695|	std::string code = luajit_fuzzer::MainBlockToString(message);
   330|       |
-  331|  13.0k|	if (::getenv("LPM_DUMP_NATIVE_INPUT") && code.size() != 0) {
+  331|    695|	if (::getenv("LPM_DUMP_NATIVE_INPUT") && code.size() != 0) {
   ------------------
-  |  Branch (331:6): [True: 0, False: 13.0k]
+  |  Branch (331:6): [True: 0, False: 695]
   |  Branch (331:43): [True: 0, False: 0]
   ------------------
   332|      0|		std::cout << "-------------------------" << std::endl;
   333|      0|		std::cout << code << std::endl;
   334|      0|	}
   335|       |
-  336|  13.0k|	luaL_openlibs(L);
+  336|    695|	luaL_openlibs(L);
   337|       |
-  338|  13.0k|#ifdef LUAJIT
-  339|  13.0k|	enable_lj_metrics(L, &metrics);
+  338|    695|#ifdef LUAJIT
+  339|    695|	enable_lj_metrics(L, &metrics);
   340|       |
   341|       |	/* See https://luajit.org/running.html. */
-  342|  13.0k|	luaL_dostring(L, "jit.opt.start('hotloop=1')");
-  343|  13.0k|	luaL_dostring(L, "jit.opt.start('hotexit=1')");
-  344|  13.0k|	luaL_dostring(L, "jit.opt.start('recunroll=1')");
-  345|  13.0k|	luaL_dostring(L, "jit.opt.start('callunroll=1')");
+  342|    695|	luaL_dostring(L, "jit.opt.start('hotloop=1')");
+  343|    695|	luaL_dostring(L, "jit.opt.start('hotexit=1')");
+  344|    695|	luaL_dostring(L, "jit.opt.start('recunroll=1')");
+  345|    695|	luaL_dostring(L, "jit.opt.start('callunroll=1')");
   346|       |
   347|       |	/*
   348|       |	 * The `mode` argument is a string holding options:
@@ -191,12 +190,12 @@ luaL_loadbuffer_proto_test.cc:_ZL17TestOneProtoInputRKN11lua_grammar5BlockE:
   350|       |	 * l - Profile with precision down to the line level.
   351|       |	 * i<number> - Sampling interval in milliseconds (default 10ms).
   352|       |	 */
-  353|  13.0k|	char mode[] = "fli15";
-  354|  13.0k|	size_t depth = 5;
-  355|  13.0k|	int len = 5;
+  353|    695|	char mode[] = "fli15";
+  354|    695|	size_t depth = 5;
+  355|    695|	int len = 5;
   356|       |
   357|       |	/* Start profiler. */
-  358|  13.0k|	luaJIT_profile_start(L, mode, (luaJIT_profile_callback)profiler_cb, NULL);
+  358|    695|	luaJIT_profile_start(L, mode, (luaJIT_profile_callback)profiler_cb, NULL);
   359|       |
   360|       |	/*
   361|       |	 * Function allows taking stack dumps in an efficient manner, returns a
@@ -208,12 +207,12 @@ luaL_loadbuffer_proto_test.cc:_ZL17TestOneProtoInputRKN11lua_grammar5BlockE:
   367|       |	 *   l - Dump module:line.
   368|       |	 *   Z - Zap the following characters for the last dumped frame.
   369|       |	 */
-  370|  13.0k|	luaJIT_profile_dumpstack(L, "pfFlz", len, &depth);
-  371|  13.0k|#endif /* LUAJIT */
+  370|    695|	luaJIT_profile_dumpstack(L, "pfFlz", len, &depth);
+  371|    695|#endif /* LUAJIT */
   372|       |
-  373|  13.0k|	if (luaL_loadbuffer(L, code.c_str(), code.size(), "fuzz") != LUA_OK) {
+  373|    695|	if (luaL_loadbuffer(L, code.c_str(), code.size(), "fuzz") != LUA_OK) {
   ------------------
-  |  Branch (373:6): [True: 0, False: 13.0k]
+  |  Branch (373:6): [True: 0, False: 695]
   ------------------
   374|      0|		report_error(L, "luaL_loadbuffer()");
   375|      0|		goto end;
@@ -226,9 +225,9 @@ luaL_loadbuffer_proto_test.cc:_ZL17TestOneProtoInputRKN11lua_grammar5BlockE:
   382|       |	 * needed to describe Lua semantics for more interesting
   383|       |	 * results and fuzzer tests.
   384|       |	 */
-  385|  13.0k|	if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
+  385|    695|	if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
   ------------------
-  |  Branch (385:6): [True: 0, False: 13.0k]
+  |  Branch (385:6): [True: 0, False: 695]
   ------------------
   386|      0|		report_error(L, "lua_pcall()");
   387|      0|		goto end;
@@ -238,344 +237,344 @@ luaL_loadbuffer_proto_test.cc:_ZL17TestOneProtoInputRKN11lua_grammar5BlockE:
   391|       |	 * With luaL_loadbytecode we build a bytecode from a Lua code and then
   392|       |	 * execute produced bytecode chunk.
   393|       |	 */
-  394|  13.0k|	if (luaL_loadbytecode(L, code.c_str(), code.size(), "fuzz") != LUA_OK)
+  394|    695|	if (luaL_loadbytecode(L, code.c_str(), code.size(), "fuzz") != LUA_OK)
   ------------------
-  |  Branch (394:6): [True: 0, False: 13.0k]
+  |  Branch (394:6): [True: 0, False: 695]
   ------------------
   395|      0|		goto end;
   396|       |
-  397|  13.0k|	if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
+  397|    695|	if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
   ------------------
-  |  Branch (397:6): [True: 0, False: 13.0k]
+  |  Branch (397:6): [True: 0, False: 695]
   ------------------
   398|      0|		report_error(L, "lua_pcall()");
   399|      0|	}
   400|       |
-  401|  13.0k|end:
-  402|  13.0k|	metrics_increment_num_samples(&metrics);
-  403|  13.0k|#ifdef LUAJIT
-  404|  13.0k|	disable_lj_metrics(L, &metrics);
+  401|    695|end:
+  402|    695|	metrics_increment_num_samples(&metrics);
+  403|    695|#ifdef LUAJIT
+  404|    695|	disable_lj_metrics(L, &metrics);
   405|       |	/* Stop profiler. */
-  406|  13.0k|	luaJIT_profile_stop(L);
-  407|  13.0k|#endif /* LUAJIT */
+  406|    695|	luaJIT_profile_stop(L);
+  407|    695|#endif /* LUAJIT */
   408|       |
-  409|  13.0k|	lua_settop(L, 0);
-  410|  13.0k|	lua_close(L);
-  411|  13.0k|}
+  409|    695|	lua_settop(L, 0);
+  410|    695|	lua_close(L);
+  411|    695|}
 luaL_loadbuffer_proto_test.cc:_ZL17enable_lj_metricsP9lua_StateP7metrics:
-  240|  13.0k|{
-  241|  13.0k|	reset_lj_metrics(metrics);
-  242|  13.0k|	jit_attach(L, (void *)bc_cb, "bc");
-  243|  13.0k|	jit_attach(L, (void *)record_cb, "record");
-  244|  13.0k|	jit_attach(L, (void *)texit_cb, "texit");
-  245|  13.0k|	jit_attach(L, (void *)trace_cb, "trace");
-  246|  13.0k|}
+  240|    695|{
+  241|    695|	reset_lj_metrics(metrics);
+  242|    695|	jit_attach(L, (void *)bc_cb, "bc");
+  243|    695|	jit_attach(L, (void *)record_cb, "record");
+  244|    695|	jit_attach(L, (void *)texit_cb, "texit");
+  245|    695|	jit_attach(L, (void *)trace_cb, "trace");
+  246|    695|}
 luaL_loadbuffer_proto_test.cc:_ZL16reset_lj_metricsP7metrics:
-  229|  13.0k|{
-  230|  13.0k|	metrics->is_trace_start = false;
-  231|  13.0k|	metrics->is_trace_stop = false;
-  232|  13.0k|	metrics->is_trace_abort = false;
-  233|  13.0k|	metrics->is_trace_record = false;
-  234|  13.0k|	metrics->is_bc = false;
-  235|  13.0k|	metrics->is_texit = false;
-  236|  13.0k|}
+  229|    695|{
+  230|    695|	metrics->is_trace_start = false;
+  231|    695|	metrics->is_trace_stop = false;
+  232|    695|	metrics->is_trace_abort = false;
+  233|    695|	metrics->is_trace_record = false;
+  234|    695|	metrics->is_bc = false;
+  235|    695|	metrics->is_texit = false;
+  236|    695|}
 luaL_loadbuffer_proto_test.cc:_ZL10jit_attachP9lua_StatePvPKc:
-   57|   104k|{
-   58|   104k|	lua_getglobal(L, "jit");
-   59|   104k|	lua_getfield(L, -1, "attach");
-   60|   104k|	lua_pushcfunction(L, (lua_CFunction)func);
-   61|   104k|	if (event != NULL) {
+   57|  5.56k|{
+   58|  5.56k|	lua_getglobal(L, "jit");
+   59|  5.56k|	lua_getfield(L, -1, "attach");
+   60|  5.56k|	lua_pushcfunction(L, (lua_CFunction)func);
+   61|  5.56k|	if (event != NULL) {
   ------------------
-  |  Branch (61:6): [True: 52.3k, False: 52.3k]
+  |  Branch (61:6): [True: 2.78k, False: 2.78k]
   ------------------
-   62|  52.3k|		lua_pushstring(L, event);
-   63|  52.3k|	} else {
-   64|  52.3k|		lua_pushnil(L);
-   65|  52.3k|	}
-   66|   104k|	if (lua_pcall(L, 2, 0, 0)) {
+   62|  2.78k|		lua_pushstring(L, event);
+   63|  2.78k|	} else {
+   64|  2.78k|		lua_pushnil(L);
+   65|  2.78k|	}
+   66|  5.56k|	if (lua_pcall(L, 2, 0, 0)) {
   ------------------
-  |  Branch (66:6): [True: 0, False: 104k]
+  |  Branch (66:6): [True: 0, False: 5.56k]
   ------------------
    67|      0|		const char *msg = lua_tostring(L, -1);
    68|      0|		fprintf(stderr, "ERR: %s\n", msg);
    69|      0|		lua_error(L);
    70|      0|	}
-   71|   104k|}
+   71|  5.56k|}
 luaL_loadbuffer_proto_test.cc:_ZL5bc_cbP9lua_State:
-   93|   757k|bc_cb(lua_State *L) {
-   94|   757k|	if (!metrics.is_bc) {
+   93|  68.5k|bc_cb(lua_State *L) {
+   94|  68.5k|	if (!metrics.is_bc) {
   ------------------
-  |  Branch (94:6): [True: 13.0k, False: 744k]
+  |  Branch (94:6): [True: 695, False: 67.8k]
   ------------------
-   95|  13.0k|		metrics.bc_num++;
-   96|  13.0k|		metrics.is_bc = true;
-   97|  13.0k|	}
-   98|   757k|	return 0;
-   99|   757k|}
+   95|    695|		metrics.bc_num++;
+   96|    695|		metrics.is_bc = true;
+   97|    695|	}
+   98|  68.5k|	return 0;
+   99|  68.5k|}
 luaL_loadbuffer_proto_test.cc:_ZL9record_cbP9lua_State:
-   79|  8.14M|record_cb(lua_State *L) {
-   80|  8.14M|	if (!metrics.is_trace_record) {
+   79|  1.73M|record_cb(lua_State *L) {
+   80|  1.73M|	if (!metrics.is_trace_record) {
   ------------------
-  |  Branch (80:6): [True: 11.4k, False: 8.13M]
+  |  Branch (80:6): [True: 596, False: 1.73M]
   ------------------
-   81|  11.4k|		metrics.jit_trace_record++;
-   82|  11.4k|		metrics.is_trace_record = true;
-   83|  11.4k|	}
-   84|  8.14M|	return 0;
-   85|  8.14M|}
+   81|    596|		metrics.jit_trace_record++;
+   82|    596|		metrics.is_trace_record = true;
+   83|    596|	}
+   84|  1.73M|	return 0;
+   85|  1.73M|}
 luaL_loadbuffer_proto_test.cc:_ZL8texit_cbP9lua_State:
-  107|   239k|texit_cb(lua_State *L) {
-  108|   239k|	if (!metrics.is_texit) {
+  107|   124k|texit_cb(lua_State *L) {
+  108|   124k|	if (!metrics.is_texit) {
   ------------------
-  |  Branch (108:6): [True: 9.82k, False: 229k]
+  |  Branch (108:6): [True: 572, False: 123k]
   ------------------
-  109|  9.82k|		metrics.texit_num++;
-  110|  9.82k|		metrics.is_texit = true;
-  111|  9.82k|	}
-  112|   239k|	return 0;
-  113|   239k|}
+  109|    572|		metrics.texit_num++;
+  110|    572|		metrics.is_texit = true;
+  111|    572|	}
+  112|   124k|	return 0;
+  113|   124k|}
 luaL_loadbuffer_proto_test.cc:_ZL8trace_cbP9lua_State:
-  121|   718k|trace_cb(lua_State *L) {
-  122|   718k|	const char *what = lua_tostring(L, 1);
-  123|   718k|	if (strcmp(what, "abort") == 0 && !metrics.is_trace_abort) {
+  121|   278k|trace_cb(lua_State *L) {
+  122|   278k|	const char *what = lua_tostring(L, 1);
+  123|   278k|	if (strcmp(what, "abort") == 0 && !metrics.is_trace_abort) {
   ------------------
-  |  Branch (123:6): [True: 70.4k, False: 647k]
-  |  Branch (123:36): [True: 10.5k, False: 59.9k]
+  |  Branch (123:6): [True: 17.8k, False: 260k]
+  |  Branch (123:36): [True: 562, False: 17.3k]
   ------------------
-  124|  10.5k|		metrics.jit_trace_abort++;
-  125|  10.5k|		metrics.is_trace_abort = true;
-  126|  10.5k|	}
-  127|   718k|	if (strcmp(what, "start") == 0 && !metrics.is_trace_start) {
+  124|    562|		metrics.jit_trace_abort++;
+  125|    562|		metrics.is_trace_abort = true;
+  126|    562|	}
+  127|   278k|	if (strcmp(what, "start") == 0 && !metrics.is_trace_start) {
   ------------------
-  |  Branch (127:6): [True: 306k, False: 411k]
-  |  Branch (127:36): [True: 11.4k, False: 295k]
+  |  Branch (127:6): [True: 136k, False: 141k]
+  |  Branch (127:36): [True: 596, False: 135k]
   ------------------
-  128|  11.4k|		metrics.jit_trace_start++;
-  129|  11.4k|		metrics.is_trace_start = true;
-  130|  11.4k|	}
-  131|   718k|	if (strcmp(what, "stop") == 0 && !metrics.is_trace_stop) {
+  128|    596|		metrics.jit_trace_start++;
+  129|    596|		metrics.is_trace_start = true;
+  130|    596|	}
+  131|   278k|	if (strcmp(what, "stop") == 0 && !metrics.is_trace_stop) {
   ------------------
-  |  Branch (131:6): [True: 236k, False: 481k]
-  |  Branch (131:35): [True: 10.8k, False: 225k]
+  |  Branch (131:6): [True: 118k, False: 159k]
+  |  Branch (131:35): [True: 587, False: 117k]
   ------------------
-  132|  10.8k|		metrics.jit_trace_stop++;
-  133|  10.8k|		metrics.is_trace_stop = true;
-  134|  10.8k|	}
-  135|   718k|	return 0;
-  136|   718k|}
+  132|    587|		metrics.jit_trace_stop++;
+  133|    587|		metrics.is_trace_stop = true;
+  134|    587|	}
+  135|   278k|	return 0;
+  136|   278k|}
 luaL_loadbuffer_proto_test.cc:_ZL11profiler_cbP9lua_StatePvPm:
-  178|  4.66k|{
-  179|  4.66k|	(void)L;
-  180|  4.66k|	(void)data;
-  181|  4.66k|	(void)size;
+  178|  1.10k|{
+  179|  1.10k|	(void)L;
+  180|  1.10k|	(void)data;
+  181|  1.10k|	(void)size;
   182|       |	/* Do nothing. */
-  183|  4.66k|}
+  183|  1.10k|}
 luaL_loadbuffer_proto_test.cc:_ZL17luaL_loadbytecodeP9lua_StatePKcmS2_:
-  293|  13.0k|{
+  293|    695|{
   294|       |	/* Compile Lua source code to bytecode. */
-  295|  13.0k|	int rc = luaL_loadstring(L, buff);
-  296|  13.0k|	if (rc != 0) {
+  295|    695|	int rc = luaL_loadstring(L, buff);
+  296|    695|	if (rc != 0) {
   ------------------
-  |  Branch (296:6): [True: 0, False: 13.0k]
+  |  Branch (296:6): [True: 0, False: 695]
   ------------------
   297|      0|		return LUA_ERRSYNTAX;
   298|      0|	}
   299|       |
   300|       |	/* Dump a Lua bytecode to a buffer. */
-  301|  13.0k|	struct str_Writer state = {0};
-  302|  13.0k|#if LUA_VERSION_NUM < 503
-  303|  13.0k|	rc = lua_dump(L, writer, &state);
+  301|    695|	struct str_Writer state = {0};
+  302|    695|#if LUA_VERSION_NUM < 503
+  303|    695|	rc = lua_dump(L, writer, &state);
   304|       |#else /* Lua 5.3+ */
   305|       |	rc = lua_dump(L, writer, &state, 1);
   306|       |#endif /* LUA_VERSION_NUM */
-  307|  13.0k|	if (rc != 0) {
+  307|    695|	if (rc != 0) {
   ------------------
-  |  Branch (307:6): [True: 0, False: 13.0k]
+  |  Branch (307:6): [True: 0, False: 695]
   ------------------
   308|      0|		return rc;
   309|      0|	}
   310|       |
   311|       |	/* Leave final result on top. */
-  312|  13.0k|	lua_settop(L, 1);
-  313|  13.0k|	const char *bc = lua_tolstring(L, -1, &state.bufsize);
+  312|    695|	lua_settop(L, 1);
+  313|    695|	const char *bc = lua_tolstring(L, -1, &state.bufsize);
   314|       |	/* Load Lua bytecode. */
-  315|  13.0k|	rc = luaL_loadbuffer(L, bc, state.bufsize, "bytecode");
-  316|  13.0k|	if (rc != 0) {
+  315|    695|	rc = luaL_loadbuffer(L, bc, state.bufsize, "bytecode");
+  316|    695|	if (rc != 0) {
   ------------------
-  |  Branch (316:6): [True: 0, False: 13.0k]
+  |  Branch (316:6): [True: 0, False: 695]
   ------------------
   317|      0|		return rc;
   318|      0|	}
   319|       |
-  320|  13.0k|	return 0;
-  321|  13.0k|}
+  320|    695|	return 0;
+  321|    695|}
 luaL_loadbuffer_proto_test.cc:_ZL6writerP9lua_StatePKvmPv:
-  265|   372k|writer(lua_State *L, const void *b, size_t size, void *ud) {
-  266|   372k|	struct str_Writer *state = (struct str_Writer *)ud;
-  267|   372k|	if (!state->init) {
+  265|  33.9k|writer(lua_State *L, const void *b, size_t size, void *ud) {
+  266|  33.9k|	struct str_Writer *state = (struct str_Writer *)ud;
+  267|  33.9k|	if (!state->init) {
   ------------------
-  |  Branch (267:6): [True: 13.0k, False: 359k]
+  |  Branch (267:6): [True: 695, False: 33.2k]
   ------------------
-  268|  13.0k|		state->init = 1;
-  269|  13.0k|		luaL_buffinit(L, &state->B);
-  270|  13.0k|	}
+  268|    695|		state->init = 1;
+  269|    695|		luaL_buffinit(L, &state->B);
+  270|    695|	}
   271|       |	/* Finishing dump? */
-  272|   372k|	if (b == NULL) {
+  272|  33.9k|	if (b == NULL) {
   ------------------
-  |  Branch (272:6): [True: 0, False: 372k]
+  |  Branch (272:6): [True: 0, False: 33.9k]
   ------------------
   273|      0|		luaL_pushresult(&state->B);
   274|       |		/* Move result to reserved slot. */
   275|      0|		lua_replace(L, 1);
   276|      0|	}
-  277|   372k|	else {
-  278|   372k|		luaL_addlstring(&state->B, (const char *)b, size);
-  279|   372k|		state->bufsize += size;
-  280|   372k|	}
-  281|   372k|	return 0;
-  282|   372k|}
+  277|  33.9k|	else {
+  278|  33.9k|		luaL_addlstring(&state->B, (const char *)b, size);
+  279|  33.9k|		state->bufsize += size;
+  280|  33.9k|	}
+  281|  33.9k|	return 0;
+  282|  33.9k|}
 luaL_loadbuffer_proto_test.cc:_ZL29metrics_increment_num_samplesP7metrics:
-  166|  13.0k|{
-  167|  13.0k|	metrics->total_num++;
-  168|  13.0k|}
+  166|    695|{
+  167|    695|	metrics->total_num++;
+  168|    695|}
 luaL_loadbuffer_proto_test.cc:_ZL18disable_lj_metricsP9lua_StateP7metrics:
-  250|  13.0k|{
-  251|  13.0k|	jit_attach(L, (void *)bc_cb, NULL);
-  252|  13.0k|	jit_attach(L, (void *)record_cb, NULL);
-  253|  13.0k|	jit_attach(L, (void *)texit_cb, NULL);
-  254|  13.0k|	jit_attach(L, (void *)trace_cb, NULL);
-  255|  13.0k|}
+  250|    695|{
+  251|    695|	jit_attach(L, (void *)bc_cb, NULL);
+  252|    695|	jit_attach(L, (void *)record_cb, NULL);
+  253|    695|	jit_attach(L, (void *)texit_cb, NULL);
+  254|    695|	jit_attach(L, (void *)trace_cb, NULL);
+  255|    695|}
 
 _ZN13luajit_fuzzer17MainBlockToStringERKN11lua_grammar5BlockE:
- 1216|  13.0k|{
- 1217|  13.0k|	GetCounterIdProvider().clean();
+ 1216|    695|{
+ 1217|    695|	GetCounterIdProvider().clean();
  1218|       |
- 1219|  13.0k|	std::string block_str = BlockToString(block);
- 1220|  13.0k|	std::string retval = preamble_lua;
+ 1219|    695|	std::string block_str = BlockToString(block);
+ 1220|    695|	std::string retval = preamble_lua;
  1221|       |
- 1222|   122k|	for (size_t i = 0; i < GetCounterIdProvider().count(); ++i) {
+ 1222|  29.7k|	for (size_t i = 0; i < GetCounterIdProvider().count(); ++i) {
   ------------------
-  |  Branch (1222:21): [True: 109k, False: 13.0k]
+  |  Branch (1222:21): [True: 29.0k, False: 695]
   ------------------
- 1223|   109k|		retval += GetCounterName(i);
- 1224|   109k|		retval += " = 0\n";
- 1225|   109k|	}
- 1226|  13.0k|	retval += block_str;
+ 1223|  29.0k|		retval += GetCounterName(i);
+ 1224|  29.0k|		retval += " = 0\n";
+ 1225|  29.0k|	}
+ 1226|    695|	retval += block_str;
  1227|       |
- 1228|  13.0k|	return retval;
- 1229|  13.0k|}
+ 1228|    695|	return retval;
+ 1229|    695|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_120GetCounterIdProviderEv:
-  215|   244k|{
-  216|   244k|	static CounterIdProvider provider;
-  217|   244k|	return provider;
-  218|   244k|}
+  215|  59.4k|{
+  216|  59.4k|	static CounterIdProvider provider;
+  217|  59.4k|	return provider;
+  218|  59.4k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_117CounterIdProvider5cleanEv:
-  204|  13.0k|	{
-  205|  13.0k|		id_ = 0;
-  206|  13.0k|	}
+  204|    695|	{
+  205|    695|		id_ = 0;
+  206|    695|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_113BlockToStringERKN11lua_grammar5BlockE:
-  478|  80.3k|{
-  479|  80.3k|	return ChunkToString(block.chunk());
-  480|  80.3k|}
+  478|  25.7k|{
+  479|  25.7k|	return ChunkToString(block.chunk());
+  480|  25.7k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_113ChunkToStringERKN11lua_grammar5ChunkE:
-  483|   144k|{
-  484|   144k|	std::string chunk_str;
-  485|   382k|	for (int i = 0; i < chunk.stat_size(); ++i)
+  483|  38.2k|{
+  484|  38.2k|	std::string chunk_str;
+  485|   124k|	for (int i = 0; i < chunk.stat_size(); ++i)
   ------------------
-  |  Branch (485:18): [True: 237k, False: 144k]
+  |  Branch (485:18): [True: 86.0k, False: 38.2k]
   ------------------
-  486|   237k|		chunk_str += StatementToString(chunk.stat(i)) + "\n";
+  486|  86.0k|		chunk_str += StatementToString(chunk.stat(i)) + "\n";
   487|       |
-  488|   144k|	if (chunk.has_laststat())
+  488|  38.2k|	if (chunk.has_laststat())
   ------------------
-  |  Branch (488:6): [True: 14.1k, False: 130k]
+  |  Branch (488:6): [True: 5.39k, False: 32.8k]
   ------------------
-  489|  14.1k|		chunk_str += LastStatementToString(chunk.laststat()) + "\n";
+  489|  5.39k|		chunk_str += LastStatementToString(chunk.laststat()) + "\n";
   490|       |
-  491|   144k|	return chunk_str;
-  492|   144k|}
+  491|  38.2k|	return chunk_str;
+  492|  38.2k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_117StatementToStringERKN11lua_grammar9StatementE:
-  550|   237k|{
-  551|   237k|	std::string stat_str;
-  552|   237k|	using StatType = Statement::StatOneofCase;
-  553|   237k|	switch (stat.stat_oneof_case()) {
-  554|  15.8k|	case StatType::kList:
+  550|  86.0k|{
+  551|  86.0k|	std::string stat_str;
+  552|  86.0k|	using StatType = Statement::StatOneofCase;
+  553|  86.0k|	switch (stat.stat_oneof_case()) {
+  554|  2.83k|	case StatType::kList:
   ------------------
-  |  Branch (554:2): [True: 15.8k, False: 221k]
+  |  Branch (554:2): [True: 2.83k, False: 83.2k]
   ------------------
-  555|  15.8k|		stat_str = AssignmentListToString(stat.list());
-  556|  15.8k|		break;
-  557|  82.4k|	case StatType::kCall:
+  555|  2.83k|		stat_str = AssignmentListToString(stat.list());
+  556|  2.83k|		break;
+  557|  51.8k|	case StatType::kCall:
   ------------------
-  |  Branch (557:2): [True: 82.4k, False: 155k]
+  |  Branch (557:2): [True: 51.8k, False: 34.1k]
   ------------------
-  558|  82.4k|		stat_str = FunctionCallToString(stat.call());
-  559|  82.4k|		break;
-  560|  7.37k|	case StatType::kBlock:
+  558|  51.8k|		stat_str = FunctionCallToString(stat.call());
+  559|  51.8k|		break;
+  560|  3.64k|	case StatType::kBlock:
   ------------------
-  |  Branch (560:2): [True: 7.37k, False: 230k]
+  |  Branch (560:2): [True: 3.64k, False: 82.4k]
   ------------------
-  561|  7.37k|		stat_str = DoBlockToString(stat.block());
-  562|  7.37k|		break;
-  563|  20.6k|	case StatType::kWhilecycle:
+  561|  3.64k|		stat_str = DoBlockToString(stat.block());
+  562|  3.64k|		break;
+  563|  3.28k|	case StatType::kWhilecycle:
   ------------------
-  |  Branch (563:2): [True: 20.6k, False: 216k]
+  |  Branch (563:2): [True: 3.28k, False: 82.7k]
   ------------------
-  564|  20.6k|		stat_str = WhileCycleToString(stat.whilecycle());
-  565|  20.6k|		break;
-  566|  19.2k|	case StatType::kRepeatcycle:
+  564|  3.28k|		stat_str = WhileCycleToString(stat.whilecycle());
+  565|  3.28k|		break;
+  566|  5.23k|	case StatType::kRepeatcycle:
   ------------------
-  |  Branch (566:2): [True: 19.2k, False: 218k]
+  |  Branch (566:2): [True: 5.23k, False: 80.8k]
   ------------------
-  567|  19.2k|		stat_str = RepeatCycleToString(stat.repeatcycle());
-  568|  19.2k|		break;
-  569|  8.30k|	case StatType::kIfstat:
+  567|  5.23k|		stat_str = RepeatCycleToString(stat.repeatcycle());
+  568|  5.23k|		break;
+  569|  2.61k|	case StatType::kIfstat:
   ------------------
-  |  Branch (569:2): [True: 8.30k, False: 229k]
+  |  Branch (569:2): [True: 2.61k, False: 83.4k]
   ------------------
-  570|  8.30k|		stat_str = IfStatementToString(stat.ifstat());
-  571|  8.30k|		break;
-  572|  19.4k|	case StatType::kForcyclename:
+  570|  2.61k|		stat_str = IfStatementToString(stat.ifstat());
+  571|  2.61k|		break;
+  572|  3.03k|	case StatType::kForcyclename:
   ------------------
-  |  Branch (572:2): [True: 19.4k, False: 218k]
+  |  Branch (572:2): [True: 3.03k, False: 83.0k]
   ------------------
-  573|  19.4k|		stat_str = ForCycleNameToString(stat.forcyclename());
-  574|  19.4k|		break;
-  575|  4.85k|	case StatType::kForcyclelist:
+  573|  3.03k|		stat_str = ForCycleNameToString(stat.forcyclename());
+  574|  3.03k|		break;
+  575|    943|	case StatType::kForcyclelist:
   ------------------
-  |  Branch (575:2): [True: 4.85k, False: 232k]
+  |  Branch (575:2): [True: 943, False: 85.1k]
   ------------------
-  576|  4.85k|		stat_str = ForCycleListToString(stat.forcyclelist());
-  577|  4.85k|		break;
-  578|  5.63k|	case StatType::kFunc:
+  576|    943|		stat_str = ForCycleListToString(stat.forcyclelist());
+  577|    943|		break;
+  578|  2.59k|	case StatType::kFunc:
   ------------------
-  |  Branch (578:2): [True: 5.63k, False: 231k]
+  |  Branch (578:2): [True: 2.59k, False: 83.4k]
   ------------------
-  579|  5.63k|		stat_str = FunctionToString(stat.func());
-  580|  5.63k|		break;
-  581|  9.56k|	case StatType::kLocalfunc:
+  579|  2.59k|		stat_str = FunctionToString(stat.func());
+  580|  2.59k|		break;
+  581|  3.99k|	case StatType::kLocalfunc:
   ------------------
-  |  Branch (581:2): [True: 9.56k, False: 227k]
+  |  Branch (581:2): [True: 3.99k, False: 82.0k]
   ------------------
-  582|  9.56k|		stat_str = LocalFuncToString(stat.localfunc());
-  583|  9.56k|		break;
-  584|  3.66k|	case StatType::kLocalnames:
+  582|  3.99k|		stat_str = LocalFuncToString(stat.localfunc());
+  583|  3.99k|		break;
+  584|    409|	case StatType::kLocalnames:
   ------------------
-  |  Branch (584:2): [True: 3.66k, False: 233k]
+  |  Branch (584:2): [True: 409, False: 85.6k]
   ------------------
-  585|  3.66k|		stat_str = LocalNamesToString(stat.localnames());
-  586|  3.66k|		break;
-  587|  40.5k|	default:
+  585|    409|		stat_str = LocalNamesToString(stat.localnames());
+  586|    409|		break;
+  587|  5.60k|	default:
   ------------------
-  |  Branch (587:2): [True: 40.5k, False: 197k]
+  |  Branch (587:2): [True: 5.60k, False: 80.4k]
   ------------------
   588|       |		/**
   589|       |		 * Chosen arbitrarily more for simplicity.
   590|       |		 * TODO: Choose "more interesting" defaults.
   591|       |		 */
-  592|  40.5k|		stat_str = AssignmentListToString(stat.list());
-  593|  40.5k|		break;
-  594|   237k|	}
+  592|  5.60k|		stat_str = AssignmentListToString(stat.list());
+  593|  5.60k|		break;
+  594|  86.0k|	}
   595|       |
   596|       |	/*
   597|       |	 * Always add a semicolon regardless of grammar
@@ -585,1045 +584,1045 @@ serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_117StatementToStringERKN11lua_gramm
   601|       |	 * (nil):Name0()
   602|       |	 * (nil)() -- ambiguous syntax (function call x new statement) near '('
   603|       |	 */
-  604|   237k|	stat_str += "; ";
+  604|  86.0k|	stat_str += "; ";
   605|       |
-  606|   237k|	return stat_str;
-  607|   237k|}
+  606|  86.0k|	return stat_str;
+  607|  86.0k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_122AssignmentListToStringERKN11lua_grammar14AssignmentListE:
-  613|  56.4k|{
-  614|  56.4k|	std::string list_str = VariableListToString(assignmentlist.varlist());
-  615|  56.4k|	list_str += " = " + ExpressionListToString(assignmentlist.explist());
-  616|  56.4k|	return list_str;
-  617|  56.4k|}
+  613|  8.43k|{
+  614|  8.43k|	std::string list_str = VariableListToString(assignmentlist.varlist());
+  615|  8.43k|	list_str += " = " + ExpressionListToString(assignmentlist.explist());
+  616|  8.43k|	return list_str;
+  617|  8.43k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_120VariableListToStringERKN11lua_grammar27AssignmentList_VariableListE:
-  620|  56.4k|{
-  621|  56.4k|	std::string varlist_str = VariableToString(varlist.var());
-  622|  88.1k|	for (int i = 0; i < varlist.vars_size(); ++i) {
+  620|  8.43k|{
+  621|  8.43k|	std::string varlist_str = VariableToString(varlist.var());
+  622|  14.0k|	for (int i = 0; i < varlist.vars_size(); ++i) {
   ------------------
-  |  Branch (622:18): [True: 31.6k, False: 56.4k]
+  |  Branch (622:18): [True: 5.65k, False: 8.43k]
   ------------------
-  623|  31.6k|		varlist_str += ", " + VariableToString(varlist.vars(i));
-  624|  31.6k|		varlist_str += " ";
-  625|  31.6k|	}
-  626|  56.4k|	return varlist_str;
-  627|  56.4k|}
+  623|  5.65k|		varlist_str += ", " + VariableToString(varlist.vars(i));
+  624|  5.65k|		varlist_str += " ";
+  625|  5.65k|	}
+  626|  8.43k|	return varlist_str;
+  627|  8.43k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_116VariableToStringERKN11lua_grammar8VariableE:
-  933|   206k|{
-  934|   206k|	using VarType = Variable::VarOneofCase;
-  935|   206k|	switch (var.var_oneof_case()) {
-  936|  4.98k|	case VarType::kName:
+  933|  75.2k|{
+  934|  75.2k|	using VarType = Variable::VarOneofCase;
+  935|  75.2k|	switch (var.var_oneof_case()) {
+  936|    877|	case VarType::kName:
   ------------------
-  |  Branch (936:2): [True: 4.98k, False: 201k]
+  |  Branch (936:2): [True: 877, False: 74.4k]
   ------------------
-  937|  4.98k|		return NameToString(var.name());
-  938|  12.0k|	case VarType::kIndexexpr:
+  937|    877|		return NameToString(var.name());
+  938|  3.59k|	case VarType::kIndexexpr:
   ------------------
-  |  Branch (938:2): [True: 12.0k, False: 194k]
+  |  Branch (938:2): [True: 3.59k, False: 71.6k]
   ------------------
-  939|  12.0k|		return IndexWithExpressionToString(var.indexexpr());
-  940|  2.92k|	case VarType::kIndexname:
+  939|  3.59k|		return IndexWithExpressionToString(var.indexexpr());
+  940|    642|	case VarType::kIndexname:
   ------------------
-  |  Branch (940:2): [True: 2.92k, False: 203k]
+  |  Branch (940:2): [True: 642, False: 74.6k]
   ------------------
-  941|  2.92k|		return IndexWithNameToString(var.indexname());
-  942|   186k|	default:
+  941|    642|		return IndexWithNameToString(var.indexname());
+  942|  70.1k|	default:
   ------------------
-  |  Branch (942:2): [True: 186k, False: 19.9k]
+  |  Branch (942:2): [True: 70.1k, False: 5.11k]
   ------------------
   943|       |		/*
   944|       |		 * Can be generated too nested expressions with other options,
   945|       |		 * though they can be enabled for more variable fuzzing.
   946|       |		 */
-  947|   186k|		return NameToString(var.name());
-  948|   206k|	}
-  949|   206k|}
+  947|  70.1k|		return NameToString(var.name());
+  948|  75.2k|	}
+  949|  75.2k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_112NameToStringERKN11lua_grammar4NameE:
- 1207|   365k|{
- 1208|   365k|	std::string ident = ConvertToStringDefault(name.name());
- 1209|   365k|	return ident + std::to_string(name.num() % kMaxIdentifiers);
- 1210|   365k|}
+ 1207|   144k|{
+ 1208|   144k|	std::string ident = ConvertToStringDefault(name.name());
+ 1209|   144k|	return ident + std::to_string(name.num() % kMaxIdentifiers);
+ 1210|   144k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_122ConvertToStringDefaultERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE:
-  469|   546k|{
-  470|   546k|	std::string ident = ClearIdentifier(s);
-  471|   546k|	ident = clamp(ident);
-  472|   546k|	if (ident.empty())
+  469|   174k|{
+  470|   174k|	std::string ident = ClearIdentifier(s);
+  471|   174k|	ident = clamp(ident);
+  472|   174k|	if (ident.empty())
   ------------------
-  |  Branch (472:6): [True: 538k, False: 7.78k]
+  |  Branch (472:6): [True: 171k, False: 2.88k]
   ------------------
-  473|   538k|		return std::string(kDefaultIdent);
-  474|  7.78k|	return ident;
-  475|   546k|}
+  473|   171k|		return std::string(kDefaultIdent);
+  474|  2.88k|	return ident;
+  475|   174k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_115ClearIdentifierERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE:
-  437|   546k|{
-  438|   546k|	std::string cleared;
+  437|   174k|{
+  438|   174k|	std::string cleared;
   439|       |
-  440|   546k|	bool has_first_not_digit = false;
-  441|   546k|	for (char c : identifier) {
+  440|   174k|	bool has_first_not_digit = false;
+  441|   174k|	for (char c : identifier) {
   ------------------
-  |  Branch (441:14): [True: 166k, False: 546k]
+  |  Branch (441:14): [True: 49.0k, False: 174k]
   ------------------
-  442|   166k|		if (has_first_not_digit && (std::iswalnum(c) || c == '_')) {
+  442|  49.0k|		if (has_first_not_digit && (std::iswalnum(c) || c == '_')) {
   ------------------
-  |  Branch (442:7): [True: 89.7k, False: 76.4k]
-  |  Branch (442:31): [True: 74.0k, False: 15.7k]
-  |  Branch (442:51): [True: 3.31k, False: 12.3k]
+  |  Branch (442:7): [True: 25.9k, False: 23.0k]
+  |  Branch (442:31): [True: 25.4k, False: 508]
+  |  Branch (442:51): [True: 40, False: 468]
   ------------------
-  443|  77.3k|			cleared += c;
-  444|  88.7k|		} else if (std::isalpha(c) || c == '_') {
+  443|  25.4k|			cleared += c;
+  444|  25.4k|		} else if (std::isalpha(c) || c == '_') {
   ------------------
-  |  Branch (444:14): [True: 7.46k, False: 81.3k]
-  |  Branch (444:33): [True: 322, False: 81.0k]
+  |  Branch (444:14): [True: 2.85k, False: 20.6k]
+  |  Branch (444:33): [True: 36, False: 20.6k]
   ------------------
-  445|  7.78k|			has_first_not_digit = true;
-  446|  7.78k|			cleared += c;
-  447|  7.78k|		}
-  448|   166k|	}
-  449|   546k|	return cleared;
-  450|   546k|}
+  445|  2.88k|			has_first_not_digit = true;
+  446|  2.88k|			cleared += c;
+  447|  2.88k|		}
+  448|  49.0k|	}
+  449|   174k|	return cleared;
+  450|   174k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_15clampENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEm:
-  454|   546k|{
-  455|   546k|	if (s.size() > maxSize)
+  454|   174k|{
+  455|   174k|	if (s.size() > maxSize)
   ------------------
-  |  Branch (455:6): [True: 1.74k, False: 544k]
+  |  Branch (455:6): [True: 959, False: 173k]
   ------------------
-  456|  1.74k|		s.resize(maxSize);
-  457|   546k|	return s;
-  458|   546k|}
+  456|    959|		s.resize(maxSize);
+  457|   174k|	return s;
+  458|   174k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_127IndexWithExpressionToStringERKN11lua_grammar28Variable_IndexWithExpressionE:
-  952|  12.0k|{
-  953|  12.0k|	std::string indexexpr_str = PrefixExpressionToString(
-  954|  12.0k|		indexexpr.prefixexp());
-  955|  12.0k|	indexexpr_str += "[" + ExpressionToString(indexexpr.exp()) + "]";
-  956|  12.0k|	return indexexpr_str;
-  957|  12.0k|}
+  952|  3.59k|{
+  953|  3.59k|	std::string indexexpr_str = PrefixExpressionToString(
+  954|  3.59k|		indexexpr.prefixexp());
+  955|  3.59k|	indexexpr_str += "[" + ExpressionToString(indexexpr.exp()) + "]";
+  956|  3.59k|	return indexexpr_str;
+  957|  3.59k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_124PrefixExpressionToStringERKN11lua_grammar16PrefixExpressionE:
-  911|   147k|{
-  912|   147k|	using PrefExprType = PrefixExpression::PrefixOneofCase;
-  913|   147k|	switch (prefixexp.prefix_oneof_case()) {
-  914|  3.76k|	case PrefExprType::kVar:
+  911|  67.9k|{
+  912|  67.9k|	using PrefExprType = PrefixExpression::PrefixOneofCase;
+  913|  67.9k|	switch (prefixexp.prefix_oneof_case()) {
+  914|    757|	case PrefExprType::kVar:
   ------------------
-  |  Branch (914:2): [True: 3.76k, False: 143k]
+  |  Branch (914:2): [True: 757, False: 67.2k]
   ------------------
-  915|  3.76k|		return VariableToString(prefixexp.var());
-  916|  10.8k|	case PrefExprType::kFunctioncall:
+  915|    757|		return VariableToString(prefixexp.var());
+  916|  5.09k|	case PrefExprType::kFunctioncall:
   ------------------
-  |  Branch (916:2): [True: 10.8k, False: 136k]
+  |  Branch (916:2): [True: 5.09k, False: 62.8k]
   ------------------
-  917|  10.8k|		return FunctionCallToString(prefixexp.functioncall());
-  918|  18.0k|	case PrefExprType::kExp:
+  917|  5.09k|		return FunctionCallToString(prefixexp.functioncall());
+  918|  1.70k|	case PrefExprType::kExp:
   ------------------
-  |  Branch (918:2): [True: 18.0k, False: 129k]
+  |  Branch (918:2): [True: 1.70k, False: 66.2k]
   ------------------
-  919|  18.0k|		return "(" + ExpressionToString(prefixexp.exp()) + ")";
-  920|   114k|	default:
+  919|  1.70k|		return "(" + ExpressionToString(prefixexp.exp()) + ")";
+  920|  60.4k|	default:
   ------------------
-  |  Branch (920:2): [True: 114k, False: 32.5k]
+  |  Branch (920:2): [True: 60.4k, False: 7.55k]
   ------------------
   921|       |		/*
   922|       |		 * Can be generated too nested expressions with other options,
   923|       |		 * though they can be enabled for more variable fuzzing.
   924|       |		 */
-  925|   114k|		return VariableToString(prefixexp.var());
-  926|   147k|	}
-  927|   147k|}
+  925|  60.4k|		return VariableToString(prefixexp.var());
+  926|  67.9k|	}
+  927|  67.9k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_118ExpressionToStringERKN11lua_grammar10ExpressionE:
-  976|   460k|{
-  977|   460k|	using ExprType = Expression::ExprOneofCase;
-  978|   460k|	switch (expr.expr_oneof_case()) {
-  979|  16.7k|	case ExprType::kNil:
+  976|  77.8k|{
+  977|  77.8k|	using ExprType = Expression::ExprOneofCase;
+  978|  77.8k|	switch (expr.expr_oneof_case()) {
+  979|  5.13k|	case ExprType::kNil:
   ------------------
-  |  Branch (979:2): [True: 16.7k, False: 444k]
+  |  Branch (979:2): [True: 5.13k, False: 72.7k]
   ------------------
-  980|  16.7k|		return "nil";
-  981|  5.89k|	case ExprType::kFalse:
+  980|  5.13k|		return "nil";
+  981|    737|	case ExprType::kFalse:
   ------------------
-  |  Branch (981:2): [True: 5.89k, False: 455k]
+  |  Branch (981:2): [True: 737, False: 77.1k]
   ------------------
-  982|  5.89k|		return "false";
-  983|  4.09k|	case ExprType::kTrue:
+  982|    737|		return "false";
+  983|    779|	case ExprType::kTrue:
   ------------------
-  |  Branch (983:2): [True: 4.09k, False: 456k]
+  |  Branch (983:2): [True: 779, False: 77.0k]
   ------------------
-  984|  4.09k|		return "true";
-  985|  66.6k|	case ExprType::kNumber: {
+  984|    779|		return "true";
+  985|  9.50k|	case ExprType::kNumber: {
   ------------------
-  |  Branch (985:2): [True: 66.6k, False: 394k]
+  |  Branch (985:2): [True: 9.50k, False: 68.3k]
   ------------------
   986|       |		/* Clamp number between given boundaries. */
-  987|  66.6k|		double number = clamp(expr.number(), kMaxNumber, kMinNumber);
-  988|  66.6k|		return std::to_string(number);
+  987|  9.50k|		double number = clamp(expr.number(), kMaxNumber, kMinNumber);
+  988|  9.50k|		return std::to_string(number);
   989|      0|	}
-  990|  4.97k|	case ExprType::kStr:
+  990|  1.91k|	case ExprType::kStr:
   ------------------
-  |  Branch (990:2): [True: 4.97k, False: 455k]
+  |  Branch (990:2): [True: 1.91k, False: 75.9k]
   ------------------
-  991|  4.97k|		return "'" + ConvertToStringDefault(expr.str()) + "'";
-  992|  9.73k|	case ExprType::kEllipsis:
+  991|  1.91k|		return "'" + ConvertToStringDefault(expr.str()) + "'";
+  992|  3.22k|	case ExprType::kEllipsis:
   ------------------
-  |  Branch (992:2): [True: 9.73k, False: 451k]
+  |  Branch (992:2): [True: 3.22k, False: 74.6k]
   ------------------
-  993|  9.73k|		if (GetContext().vararg_is_possible()) {
+  993|  3.22k|		if (GetContext().vararg_is_possible()) {
   ------------------
-  |  Branch (993:7): [True: 9.36k, False: 377]
+  |  Branch (993:7): [True: 2.93k, False: 288]
   ------------------
-  994|  9.36k|			return " ... ";
-  995|  9.36k|		} else {
-  996|    377|			return " nil";
-  997|    377|		}
-  998|  29.9k|	case ExprType::kFunction:
+  994|  2.93k|			return " ... ";
+  995|  2.93k|		} else {
+  996|    288|			return " nil";
+  997|    288|		}
+  998|  9.94k|	case ExprType::kFunction:
   ------------------
-  |  Branch (998:2): [True: 29.9k, False: 430k]
+  |  Branch (998:2): [True: 9.94k, False: 67.9k]
   ------------------
-  999|  29.9k|		return AnonFuncToString(expr.function());
- 1000|  38.8k|	case ExprType::kPrefixexp:
+  999|  9.94k|		return AnonFuncToString(expr.function());
+ 1000|  6.77k|	case ExprType::kPrefixexp:
   ------------------
-  |  Branch (1000:2): [True: 38.8k, False: 422k]
+  |  Branch (1000:2): [True: 6.77k, False: 71.0k]
   ------------------
- 1001|  38.8k|		return PrefixExpressionToString(expr.prefixexp());
- 1002|  49.6k|	case ExprType::kTableconstructor:
+ 1001|  6.77k|		return PrefixExpressionToString(expr.prefixexp());
+ 1002|  4.08k|	case ExprType::kTableconstructor:
   ------------------
-  |  Branch (1002:2): [True: 49.6k, False: 411k]
+  |  Branch (1002:2): [True: 4.08k, False: 73.7k]
   ------------------
- 1003|  49.6k|		return TableConstructorToString(expr.tableconstructor());
- 1004|  46.1k|	case ExprType::kBinary:
+ 1003|  4.08k|		return TableConstructorToString(expr.tableconstructor());
+ 1004|  5.83k|	case ExprType::kBinary:
   ------------------
-  |  Branch (1004:2): [True: 46.1k, False: 414k]
+  |  Branch (1004:2): [True: 5.83k, False: 72.0k]
   ------------------
- 1005|  46.1k|		return ExpBinaryOpExpToString(expr.binary());
- 1006|  15.9k|	case ExprType::kUnary:
+ 1005|  5.83k|		return ExpBinaryOpExpToString(expr.binary());
+ 1006|  2.76k|	case ExprType::kUnary:
   ------------------
-  |  Branch (1006:2): [True: 15.9k, False: 444k]
+  |  Branch (1006:2): [True: 2.76k, False: 75.0k]
   ------------------
- 1007|  15.9k|		return UnaryOpExpToString(expr.unary());
- 1008|   172k|	default:
+ 1007|  2.76k|		return UnaryOpExpToString(expr.unary());
+ 1008|  27.1k|	default:
   ------------------
-  |  Branch (1008:2): [True: 172k, False: 288k]
+  |  Branch (1008:2): [True: 27.1k, False: 50.7k]
   ------------------
  1009|       |		/**
  1010|       |		 * Arbitrary choice.
  1011|       |		 * TODO: Choose "more interesting" defaults.
  1012|       |		 */
- 1013|   172k|		return "'" + ConvertToStringDefault(expr.str()) + "'";
- 1014|   460k|	}
- 1015|   460k|}
+ 1013|  27.1k|		return "'" + ConvertToStringDefault(expr.str()) + "'";
+ 1014|  77.8k|	}
+ 1015|  77.8k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_15clampEddd:
-  462|  66.6k|{
-  463|  66.6k|	return number <= lower ? lower :
+  462|  9.50k|{
+  463|  9.50k|	return number <= lower ? lower :
   ------------------
-  |  Branch (463:9): [True: 1.07k, False: 65.5k]
+  |  Branch (463:9): [True: 86, False: 9.41k]
   ------------------
-  464|  66.6k|	       number >= upper ? upper : number;
+  464|  9.50k|	       number >= upper ? upper : number;
   ------------------
-  |  Branch (464:9): [True: 1.42k, False: 64.1k]
+  |  Branch (464:9): [True: 95, False: 9.32k]
   ------------------
-  465|  66.6k|}
+  465|  9.50k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_110GetContextEv:
-  357|   352k|{
-  358|   352k|	static Context context;
-  359|   352k|	return context;
-  360|   352k|}
+  357|  95.7k|{
+  358|  95.7k|	static Context context;
+  359|  95.7k|	return context;
+  360|  95.7k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_17Context18vararg_is_possibleEv:
-  306|  9.73k|	{
-  307|  9.73k|		return (returnable_stack_.empty() ||
+  306|  3.22k|	{
+  307|  3.22k|		return (returnable_stack_.empty() ||
   ------------------
-  |  Branch (307:11): [True: 6.51k, False: 3.22k]
+  |  Branch (307:11): [True: 1.01k, False: 2.21k]
   ------------------
-  308|  9.73k|			(!returnable_stack_.empty() &&
+  308|  3.22k|			(!returnable_stack_.empty() &&
   ------------------
-  |  Branch (308:5): [True: 3.22k, False: 0]
+  |  Branch (308:5): [True: 2.21k, False: 0]
   ------------------
-  309|  3.22k|			 returnable_stack_.top() ==
+  309|  2.21k|			 returnable_stack_.top() ==
   ------------------
-  |  Branch (309:5): [True: 2.84k, False: 377]
+  |  Branch (309:5): [True: 1.92k, False: 288]
   ------------------
-  310|  3.22k|				BlockType::kReturnableWithVararg));
-  311|  9.73k|	}
+  310|  2.21k|				BlockType::kReturnableWithVararg));
+  311|  3.22k|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_116AnonFuncToStringERKN11lua_grammar19Expression_AnonFuncE:
- 1018|  29.9k|{
- 1019|  29.9k|	GetContext().step_in(GetFuncBodyType(func.body()));
+ 1018|  9.94k|{
+ 1019|  9.94k|	GetContext().step_in(GetFuncBodyType(func.body()));
  1020|       |
- 1021|  29.9k|	std::string retval = "function ";
- 1022|  29.9k|	retval += FuncBodyToStringReqProtected(func.body());
+ 1021|  9.94k|	std::string retval = "function ";
+ 1022|  9.94k|	retval += FuncBodyToStringReqProtected(func.body());
  1023|       |
- 1024|  29.9k|	GetContext().step_out();
- 1025|  29.9k|	return retval;
- 1026|  29.9k|}
+ 1024|  9.94k|	GetContext().step_out();
+ 1025|  9.94k|	return retval;
+ 1026|  9.94k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_17Context7step_inENS1_9BlockTypeE:
-  268|   109k|	{
-  269|   109k|		block_stack_.push(type);
-  270|   109k|		if (block_type_is_returnable_(type)) {
+  268|  29.0k|	{
+  269|  29.0k|		block_stack_.push(type);
+  270|  29.0k|		if (block_type_is_returnable_(type)) {
   ------------------
-  |  Branch (270:7): [True: 45.2k, False: 64.1k]
+  |  Branch (270:7): [True: 16.5k, False: 12.4k]
   ------------------
-  271|  45.2k|			returnable_stack_.push(type);
-  272|  45.2k|		}
-  273|   109k|	}
+  271|  16.5k|			returnable_stack_.push(type);
+  272|  16.5k|		}
+  273|  29.0k|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_17Context25block_type_is_returnable_ENS1_9BlockTypeE:
-  316|   218k|	{
-  317|   218k|		switch (type) {
+  316|  58.0k|	{
+  317|  58.0k|		switch (type) {
   ------------------
-  |  Branch (317:11): [True: 0, False: 218k]
+  |  Branch (317:11): [True: 0, False: 58.0k]
   ------------------
-  318|   128k|		case BlockType::kBreakable:
+  318|  24.9k|		case BlockType::kBreakable:
   ------------------
-  |  Branch (318:3): [True: 128k, False: 90.4k]
+  |  Branch (318:3): [True: 24.9k, False: 33.0k]
   ------------------
-  319|   128k|			return false;
-  320|  83.0k|		case BlockType::kReturnable:
+  319|  24.9k|			return false;
+  320|  27.5k|		case BlockType::kReturnable:
   ------------------
-  |  Branch (320:3): [True: 83.0k, False: 135k]
+  |  Branch (320:3): [True: 27.5k, False: 30.5k]
   ------------------
-  321|  90.4k|		case BlockType::kReturnableWithVararg:
+  321|  33.0k|		case BlockType::kReturnableWithVararg:
   ------------------
-  |  Branch (321:3): [True: 7.30k, False: 211k]
+  |  Branch (321:3): [True: 5.56k, False: 52.4k]
   ------------------
-  322|  90.4k|			return true;
-  323|   218k|		}
+  322|  33.0k|			return true;
+  323|  58.0k|		}
   324|      0|		unreachable();
   ------------------
   |  |   17|      0|#  define unreachable() (assert(0), __builtin_unreachable())
   ------------------
-  325|   218k|	}
+  325|  58.0k|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_115GetFuncBodyTypeERKN11lua_grammar8FuncBodyE:
-  429|  45.2k|{
-  430|  45.2k|	return FuncBodyHasVararg(body) ?
+  429|  16.5k|{
+  430|  16.5k|	return FuncBodyHasVararg(body) ?
   ------------------
-  |  Branch (430:9): [True: 3.65k, False: 41.5k]
+  |  Branch (430:9): [True: 2.78k, False: 13.7k]
   ------------------
-  431|  3.65k|		Context::BlockType::kReturnableWithVararg :
-  432|  45.2k|		Context::BlockType::kReturnable;
-  433|  45.2k|}
+  431|  2.78k|		Context::BlockType::kReturnableWithVararg :
+  432|  16.5k|		Context::BlockType::kReturnable;
+  433|  16.5k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_117FuncBodyHasVarargERKN11lua_grammar8FuncBodyE:
-  412|  45.2k|{
-  413|  45.2k|	if (!body.has_parlist()) {
+  412|  16.5k|{
+  413|  16.5k|	if (!body.has_parlist()) {
   ------------------
-  |  Branch (413:6): [True: 37.8k, False: 7.32k]
+  |  Branch (413:6): [True: 11.8k, False: 4.68k]
   ------------------
-  414|  37.8k|		return false;
-  415|  37.8k|	}
-  416|  7.32k|	const FuncBody::ParList &parlist = body.parlist();
-  417|  7.32k|	switch (parlist.parlist_oneof_case()) {
-  418|  2.26k|	case FuncBody::ParList::ParlistOneofCase::kNamelist:
+  414|  11.8k|		return false;
+  415|  11.8k|	}
+  416|  4.68k|	const FuncBody::ParList &parlist = body.parlist();
+  417|  4.68k|	switch (parlist.parlist_oneof_case()) {
+  418|  1.45k|	case FuncBody::ParList::ParlistOneofCase::kNamelist:
   ------------------
-  |  Branch (418:2): [True: 2.26k, False: 5.06k]
+  |  Branch (418:2): [True: 1.45k, False: 3.23k]
   ------------------
-  419|  2.26k|		return parlist.namelist().has_ellipsis();
-  420|  3.15k|	case FuncBody::ParList::ParlistOneofCase::kEllipsis:
+  419|  1.45k|		return parlist.namelist().has_ellipsis();
+  420|  2.53k|	case FuncBody::ParList::ParlistOneofCase::kEllipsis:
   ------------------
-  |  Branch (420:2): [True: 3.15k, False: 4.16k]
+  |  Branch (420:2): [True: 2.53k, False: 2.14k]
   ------------------
-  421|  3.15k|		return true;
-  422|  1.90k|	default:
+  421|  2.53k|		return true;
+  422|    694|	default:
   ------------------
-  |  Branch (422:2): [True: 1.90k, False: 5.41k]
+  |  Branch (422:2): [True: 694, False: 3.99k]
   ------------------
-  423|  1.90k|		return parlist.namelist().has_ellipsis();
-  424|  7.32k|	}
-  425|  7.32k|}
+  423|    694|		return parlist.namelist().has_ellipsis();
+  424|  4.68k|	}
+  425|  4.68k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_128FuncBodyToStringReqProtectedERKN11lua_grammar8FuncBodyE:
-  396|  45.2k|{
-  397|  45.2k|	std::string body_str = "( ";
-  398|  45.2k|	if (body.has_parlist()) {
+  396|  16.5k|{
+  397|  16.5k|	std::string body_str = "( ";
+  398|  16.5k|	if (body.has_parlist()) {
   ------------------
-  |  Branch (398:6): [True: 7.32k, False: 37.8k]
+  |  Branch (398:6): [True: 4.68k, False: 11.8k]
   ------------------
-  399|  7.32k|		body_str += ParListToString(body.parlist());
-  400|  7.32k|	}
-  401|  45.2k|	body_str += " )\n\t";
+  399|  4.68k|		body_str += ParListToString(body.parlist());
+  400|  4.68k|	}
+  401|  16.5k|	body_str += " )\n\t";
   402|       |
-  403|  45.2k|	body_str += GetContext().get_next_block_setup();
+  403|  16.5k|	body_str += GetContext().get_next_block_setup();
   404|       |
-  405|  45.2k|	body_str += BlockToString(body.block());
-  406|  45.2k|	body_str += "end\n";
-  407|  45.2k|	return body_str;
-  408|  45.2k|}
+  405|  16.5k|	body_str += BlockToString(body.block());
+  406|  16.5k|	body_str += "end\n";
+  407|  16.5k|	return body_str;
+  408|  16.5k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_115ParListToStringERKN11lua_grammar16FuncBody_ParListE:
-  843|  7.32k|{
-  844|  7.32k|	using ParListType = FuncBody::ParList::ParlistOneofCase;
-  845|  7.32k|	switch (parlist.parlist_oneof_case()) {
-  846|  2.26k|	case ParListType::kNamelist:
+  843|  4.68k|{
+  844|  4.68k|	using ParListType = FuncBody::ParList::ParlistOneofCase;
+  845|  4.68k|	switch (parlist.parlist_oneof_case()) {
+  846|  1.45k|	case ParListType::kNamelist:
   ------------------
-  |  Branch (846:2): [True: 2.26k, False: 5.06k]
+  |  Branch (846:2): [True: 1.45k, False: 3.23k]
   ------------------
-  847|  2.26k|		return NameListWithEllipsisToString(parlist.namelist());
-  848|  3.15k|	case ParListType::kEllipsis:
+  847|  1.45k|		return NameListWithEllipsisToString(parlist.namelist());
+  848|  2.53k|	case ParListType::kEllipsis:
   ------------------
-  |  Branch (848:2): [True: 3.15k, False: 4.16k]
+  |  Branch (848:2): [True: 2.53k, False: 2.14k]
   ------------------
-  849|  3.15k|		return "...";
-  850|  1.90k|	default:
+  849|  2.53k|		return "...";
+  850|    694|	default:
   ------------------
-  |  Branch (850:2): [True: 1.90k, False: 5.41k]
+  |  Branch (850:2): [True: 694, False: 3.99k]
   ------------------
   851|       |		/* Chosen as default in order to decrease number of ellipses. */
-  852|  1.90k|		return NameListWithEllipsisToString(parlist.namelist());
-  853|  7.32k|	}
-  854|  7.32k|}
+  852|    694|		return NameListWithEllipsisToString(parlist.namelist());
+  853|  4.68k|	}
+  854|  4.68k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_128NameListWithEllipsisToStringERKN11lua_grammar29FuncBody_NameListWithEllipsisE:
-  835|  4.16k|{
-  836|  4.16k|	std::string namelist_str = NameListToString(namelist.namelist());
-  837|  4.16k|	if (namelist.has_ellipsis())
+  835|  2.14k|{
+  836|  2.14k|	std::string namelist_str = NameListToString(namelist.namelist());
+  837|  2.14k|	if (namelist.has_ellipsis())
   ------------------
-  |  Branch (837:6): [True: 498, False: 3.67k]
+  |  Branch (837:6): [True: 244, False: 1.90k]
   ------------------
-  838|    498|		namelist_str += ", ...";
-  839|  4.16k|	return namelist_str;
-  840|  4.16k|}
+  838|    244|		namelist_str += ", ...";
+  839|  2.14k|	return namelist_str;
+  840|  2.14k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_116NameListToStringERKN11lua_grammar8NameListE:
-  827|  12.6k|{
-  828|  12.6k|	std::string namelist_str = NameToString(namelist.firstname());
-  829|  20.0k|	for (int i = 0; i < namelist.names_size(); ++i)
+  827|  3.50k|{
+  828|  3.50k|	std::string namelist_str = NameToString(namelist.firstname());
+  829|  5.04k|	for (int i = 0; i < namelist.names_size(); ++i)
   ------------------
-  |  Branch (829:18): [True: 7.37k, False: 12.6k]
+  |  Branch (829:18): [True: 1.54k, False: 3.50k]
   ------------------
-  830|  7.37k|		namelist_str += ", " + NameToString(namelist.names(i));
-  831|  12.6k|	return namelist_str;
-  832|  12.6k|}
+  830|  1.54k|		namelist_str += ", " + NameToString(namelist.names(i));
+  831|  3.50k|	return namelist_str;
+  832|  3.50k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_17Context20get_next_block_setupEv:
-  286|   109k|	{
-  287|   109k|		std::size_t id = GetCounterIdProvider().next();
-  288|   109k|		std::string counter_name = GetCounterName(id);
+  286|  29.0k|	{
+  287|  29.0k|		std::size_t id = GetCounterIdProvider().next();
+  288|  29.0k|		std::string counter_name = GetCounterName(id);
   289|       |
-  290|   109k|		return GetCondition(counter_name, get_exit_statement_()) +
-  291|   109k|		       GetCounterIncrement(counter_name);
-  292|   109k|	}
+  290|  29.0k|		return GetCondition(counter_name, get_exit_statement_()) +
+  291|  29.0k|		       GetCounterIncrement(counter_name);
+  292|  29.0k|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_117CounterIdProvider4nextEv:
-  195|   109k|	{
-  196|   109k|		return id_++;
-  197|   109k|	}
+  195|  29.0k|	{
+  196|  29.0k|		return id_++;
+  197|  29.0k|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_112GetConditionERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_:
-  243|   109k|{
-  244|   109k|	std::string retval = "if ";
-  245|   109k|	retval += counter_name;
-  246|   109k|	retval += " > ";
-  247|   109k|	retval += std::to_string(kMaxCounterValue);
-  248|   109k|	retval += " then ";
-  249|   109k|	retval += then_block;
-  250|   109k|	retval += " end\n";
-  251|   109k|	return retval;
-  252|   109k|}
+  243|  29.0k|{
+  244|  29.0k|	std::string retval = "if ";
+  245|  29.0k|	retval += counter_name;
+  246|  29.0k|	retval += " > ";
+  247|  29.0k|	retval += std::to_string(kMaxCounterValue);
+  248|  29.0k|	retval += " then ";
+  249|  29.0k|	retval += then_block;
+  250|  29.0k|	retval += " end\n";
+  251|  29.0k|	return retval;
+  252|  29.0k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_17Context19get_exit_statement_Ev:
-  328|   109k|	{
-  329|   109k|		assert(!block_stack_.empty());
+  328|  29.0k|	{
+  329|  29.0k|		assert(!block_stack_.empty());
   330|      0|		switch (block_stack_.top()) {
   ------------------
-  |  Branch (330:11): [True: 0, False: 109k]
+  |  Branch (330:11): [True: 0, False: 29.0k]
   ------------------
-  331|  64.1k|		case BlockType::kBreakable:
+  331|  12.4k|		case BlockType::kBreakable:
   ------------------
-  |  Branch (331:3): [True: 64.1k, False: 45.2k]
+  |  Branch (331:3): [True: 12.4k, False: 16.5k]
   ------------------
-  332|  64.1k|			return "break";
-  333|  41.5k|		case BlockType::kReturnable:
+  332|  12.4k|			return "break";
+  333|  13.7k|		case BlockType::kReturnable:
   ------------------
-  |  Branch (333:3): [True: 41.5k, False: 67.8k]
+  |  Branch (333:3): [True: 13.7k, False: 15.2k]
   ------------------
-  334|  45.2k|		case BlockType::kReturnableWithVararg:
+  334|  16.5k|		case BlockType::kReturnableWithVararg:
   ------------------
-  |  Branch (334:3): [True: 3.65k, False: 105k]
+  |  Branch (334:3): [True: 2.78k, False: 26.2k]
   ------------------
-  335|  45.2k|			return "return";
-  336|   109k|		}
+  335|  16.5k|			return "return";
+  336|  29.0k|		}
   337|      0|		unreachable();
   ------------------
   |  |   17|      0|#  define unreachable() (assert(0), __builtin_unreachable())
   ------------------
-  338|   109k|	}
+  338|  29.0k|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_119GetCounterIncrementERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE:
-  229|   109k|{
-  230|   109k|	std::string retval = counter_name;
-  231|   109k|	retval += " = ";
-  232|   109k|	retval += counter_name;
-  233|   109k|	retval += " + 1\n";
-  234|   109k|	return retval;
-  235|   109k|}
+  229|  29.0k|{
+  230|  29.0k|	std::string retval = counter_name;
+  231|  29.0k|	retval += " = ";
+  232|  29.0k|	retval += counter_name;
+  233|  29.0k|	retval += " + 1\n";
+  234|  29.0k|	return retval;
+  235|  29.0k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_17Context8step_outEv:
-  276|   109k|	{
-  277|   109k|		assert(!block_stack_.empty());
-  278|   109k|		if (block_type_is_returnable_(block_stack_.top())) {
+  276|  29.0k|	{
+  277|  29.0k|		assert(!block_stack_.empty());
+  278|  29.0k|		if (block_type_is_returnable_(block_stack_.top())) {
   ------------------
-  |  Branch (278:7): [True: 45.2k, False: 64.1k]
+  |  Branch (278:7): [True: 16.5k, False: 12.4k]
   ------------------
-  279|  45.2k|			assert(!returnable_stack_.empty());
+  279|  16.5k|			assert(!returnable_stack_.empty());
   280|      0|			returnable_stack_.pop();
-  281|  45.2k|		}
+  281|  16.5k|		}
   282|      0|		block_stack_.pop();
-  283|   109k|	}
+  283|  29.0k|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_124TableConstructorToStringERKN11lua_grammar16TableConstructorE:
- 1069|   139k|{
- 1070|   139k|	std::string table_str = " (setmetatable({ ";
- 1071|   139k|	if (table.has_fieldlist())
+ 1069|  59.8k|{
+ 1070|  59.8k|	std::string table_str = " (setmetatable({ ";
+ 1071|  59.8k|	if (table.has_fieldlist())
   ------------------
-  |  Branch (1071:6): [True: 34.6k, False: 104k]
+  |  Branch (1071:6): [True: 2.61k, False: 57.2k]
   ------------------
- 1072|  34.6k|		table_str += FieldListToString(table.fieldlist());
- 1073|   139k|	table_str += " }, table_mt))()";
- 1074|   139k|	return table_str;
- 1075|   139k|}
+ 1072|  2.61k|		table_str += FieldListToString(table.fieldlist());
+ 1073|  59.8k|	table_str += " }, table_mt))()";
+ 1074|  59.8k|	return table_str;
+ 1075|  59.8k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_117FieldListToStringERKN11lua_grammar9FieldListE:
- 1078|  34.6k|{
- 1079|  34.6k|	std::string fieldlist_str = FieldToString(fieldlist.firstfield());
- 1080|  73.8k|	for (int i = 0; i < fieldlist.fields_size(); ++i)
+ 1078|  2.61k|{
+ 1079|  2.61k|	std::string fieldlist_str = FieldToString(fieldlist.firstfield());
+ 1080|  7.50k|	for (int i = 0; i < fieldlist.fields_size(); ++i)
   ------------------
-  |  Branch (1080:18): [True: 39.1k, False: 34.6k]
+  |  Branch (1080:18): [True: 4.89k, False: 2.61k]
   ------------------
- 1081|  39.1k|		fieldlist_str += FieldWithFieldSepToString(fieldlist.fields(i));
- 1082|  34.6k|	if (fieldlist.has_lastsep())
+ 1081|  4.89k|		fieldlist_str += FieldWithFieldSepToString(fieldlist.fields(i));
+ 1082|  2.61k|	if (fieldlist.has_lastsep())
   ------------------
-  |  Branch (1082:6): [True: 3.63k, False: 31.0k]
+  |  Branch (1082:6): [True: 331, False: 2.27k]
   ------------------
- 1083|  3.63k|		fieldlist_str += FieldSepToString(fieldlist.lastsep());
- 1084|  34.6k|	return fieldlist_str;
- 1085|  34.6k|}
+ 1083|    331|		fieldlist_str += FieldSepToString(fieldlist.lastsep());
+ 1084|  2.61k|	return fieldlist_str;
+ 1085|  2.61k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_113FieldToStringERKN11lua_grammar5FieldE:
- 1098|  73.8k|{
- 1099|  73.8k|	using FieldType = Field::FieldOneofCase;
- 1100|  73.8k|	switch (field.field_oneof_case()) {
- 1101|  21.6k|	case FieldType::kExprassign:
+ 1098|  7.50k|{
+ 1099|  7.50k|	using FieldType = Field::FieldOneofCase;
+ 1100|  7.50k|	switch (field.field_oneof_case()) {
+ 1101|  2.07k|	case FieldType::kExprassign:
   ------------------
-  |  Branch (1101:2): [True: 21.6k, False: 52.2k]
+  |  Branch (1101:2): [True: 2.07k, False: 5.43k]
   ------------------
- 1102|  21.6k|		return ExpressionAssignmentToString(field.exprassign());
- 1103|  1.14k|	case FieldType::kNamedassign:
+ 1102|  2.07k|		return ExpressionAssignmentToString(field.exprassign());
+ 1103|     76|	case FieldType::kNamedassign:
   ------------------
-  |  Branch (1103:2): [True: 1.14k, False: 72.6k]
+  |  Branch (1103:2): [True: 76, False: 7.42k]
   ------------------
- 1104|  1.14k|		return NameAssignmentToString(field.namedassign());
- 1105|  24.1k|	case FieldType::kExpression:
+ 1104|     76|		return NameAssignmentToString(field.namedassign());
+ 1105|  3.22k|	case FieldType::kExpression:
   ------------------
-  |  Branch (1105:2): [True: 24.1k, False: 49.6k]
+  |  Branch (1105:2): [True: 3.22k, False: 4.28k]
   ------------------
- 1106|  24.1k|		return ExpressionToString(field.expression());
- 1107|  26.8k|	default:
+ 1106|  3.22k|		return ExpressionToString(field.expression());
+ 1107|  2.13k|	default:
   ------------------
-  |  Branch (1107:2): [True: 26.8k, False: 46.9k]
+  |  Branch (1107:2): [True: 2.13k, False: 5.36k]
   ------------------
  1108|       |		/* More common case of using fields. */
- 1109|  26.8k|		return NameAssignmentToString(field.namedassign());
- 1110|  73.8k|	}
- 1111|  73.8k|}
+ 1109|  2.13k|		return NameAssignmentToString(field.namedassign());
+ 1110|  7.50k|	}
+ 1111|  7.50k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_128ExpressionAssignmentToStringERKN11lua_grammar26Field_ExpressionAssignmentE:
- 1114|  21.6k|{
+ 1114|  2.07k|{
  1115|       |	/* Prevent error 'table index is nil' and 'table index is NaN'. */
- 1116|  21.6k|	std::string assignment_str = "[ " +
- 1117|  21.6k|		AllowedIndexExpressionToString(assignment.key()) + " ]";
- 1118|  21.6k|	assignment_str += " = " + ExpressionToString(assignment.value());
- 1119|  21.6k|	return assignment_str;
- 1120|  21.6k|}
+ 1116|  2.07k|	std::string assignment_str = "[ " +
+ 1117|  2.07k|		AllowedIndexExpressionToString(assignment.key()) + " ]";
+ 1118|  2.07k|	assignment_str += " = " + ExpressionToString(assignment.value());
+ 1119|  2.07k|	return assignment_str;
+ 1120|  2.07k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_130AllowedIndexExpressionToStringERKN11lua_grammar10ExpressionE:
-  172|  21.6k|{
-  173|  21.6k|	std::string retval;
-  174|  21.6k|	retval += kNotNaNAndNilWrapperName;
-  175|  21.6k|	retval += "(";
-  176|  21.6k|	retval += ExpressionToString(expr);
-  177|  21.6k|	retval += ")";
-  178|  21.6k|	return retval;
-  179|  21.6k|}
+  172|  2.07k|{
+  173|  2.07k|	std::string retval;
+  174|  2.07k|	retval += kNotNaNAndNilWrapperName;
+  175|  2.07k|	retval += "(";
+  176|  2.07k|	retval += ExpressionToString(expr);
+  177|  2.07k|	retval += ")";
+  178|  2.07k|	return retval;
+  179|  2.07k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_122NameAssignmentToStringERKN11lua_grammar20Field_NameAssignmentE:
- 1123|  28.0k|{
- 1124|  28.0k|	std::string assignment_str = NameToString(assignment.name());
- 1125|  28.0k|	assignment_str += " = " + ExpressionToString(assignment.value());
- 1126|  28.0k|	return assignment_str;
- 1127|  28.0k|}
+ 1123|  2.21k|{
+ 1124|  2.21k|	std::string assignment_str = NameToString(assignment.name());
+ 1125|  2.21k|	assignment_str += " = " + ExpressionToString(assignment.value());
+ 1126|  2.21k|	return assignment_str;
+ 1127|  2.21k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_125FieldWithFieldSepToStringERKN11lua_grammar27FieldList_FieldWithFieldSepE:
- 1088|  39.1k|{
- 1089|  39.1k|	std::string field_str = FieldSepToString(field.sep());
- 1090|  39.1k|	field_str += " " + FieldToString(field.field());
- 1091|  39.1k|	return field_str;
- 1092|  39.1k|}
+ 1088|  4.89k|{
+ 1089|  4.89k|	std::string field_str = FieldSepToString(field.sep());
+ 1090|  4.89k|	field_str += " " + FieldToString(field.field());
+ 1091|  4.89k|	return field_str;
+ 1092|  4.89k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_116FieldSepToStringERKN11lua_grammar8FieldSepE:
- 1130|  42.7k|{
- 1131|  42.7k|	using FieldSepType = FieldSep::SepOneofCase;
- 1132|  42.7k|	switch (sep.sep_oneof_case()) {
- 1133|  4.25k|	case FieldSepType::kComma:
+ 1130|  5.22k|{
+ 1131|  5.22k|	using FieldSepType = FieldSep::SepOneofCase;
+ 1132|  5.22k|	switch (sep.sep_oneof_case()) {
+ 1133|    477|	case FieldSepType::kComma:
   ------------------
-  |  Branch (1133:2): [True: 4.25k, False: 38.4k]
+  |  Branch (1133:2): [True: 477, False: 4.74k]
   ------------------
- 1134|  4.25k|		return ",";
- 1135|  2.62k|	case FieldSepType::kSemicolon:
+ 1134|    477|		return ",";
+ 1135|    287|	case FieldSepType::kSemicolon:
   ------------------
-  |  Branch (1135:2): [True: 2.62k, False: 40.1k]
+  |  Branch (1135:2): [True: 287, False: 4.93k]
   ------------------
- 1136|  2.62k|		return ";";
- 1137|  35.8k|	default:
+ 1136|    287|		return ";";
+ 1137|  4.46k|	default:
   ------------------
-  |  Branch (1137:2): [True: 35.8k, False: 6.87k]
+  |  Branch (1137:2): [True: 4.46k, False: 764]
   ------------------
- 1138|  35.8k|		return ",";
- 1139|  42.7k|	}
- 1140|  42.7k|}
+ 1138|  4.46k|		return ",";
+ 1139|  5.22k|	}
+ 1140|  5.22k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_122ExpBinaryOpExpToStringERKN11lua_grammar25Expression_ExpBinaryOpExpE:
- 1029|  46.1k|{
- 1030|  46.1k|	std::string leftexp_str = ExpressionToString(binary.leftexp());
- 1031|  46.1k|	std::string binop_str = BinaryOperatorToString(binary.binop());
- 1032|  46.1k|	std::string rightexp_str = ExpressionToString(binary.rightexp());
+ 1029|  5.83k|{
+ 1030|  5.83k|	std::string leftexp_str = ExpressionToString(binary.leftexp());
+ 1031|  5.83k|	std::string binop_str = BinaryOperatorToString(binary.binop());
+ 1032|  5.83k|	std::string rightexp_str = ExpressionToString(binary.rightexp());
  1033|       |
- 1034|  46.1k|	std::string binary_str;
- 1035|  46.1k|	if (binop_str == "<" ||
+ 1034|  5.83k|	std::string binary_str;
+ 1035|  5.83k|	if (binop_str == "<" ||
   ------------------
-  |  Branch (1035:6): [True: 201, False: 45.9k]
+  |  Branch (1035:6): [True: 10, False: 5.82k]
   ------------------
- 1036|  46.1k|	    binop_str == ">" ||
+ 1036|  5.83k|	    binop_str == ">" ||
   ------------------
-  |  Branch (1036:6): [True: 166, False: 45.7k]
+  |  Branch (1036:6): [True: 14, False: 5.80k]
   ------------------
- 1037|  46.1k|	    binop_str == "<=" ||
+ 1037|  5.83k|	    binop_str == "<=" ||
   ------------------
-  |  Branch (1037:6): [True: 1.05k, False: 44.7k]
+  |  Branch (1037:6): [True: 187, False: 5.62k]
   ------------------
- 1038|  46.1k|	    binop_str == ">=") {
+ 1038|  5.83k|	    binop_str == ">=") {
   ------------------
-  |  Branch (1038:6): [True: 190, False: 44.5k]
+  |  Branch (1038:6): [True: 7, False: 5.61k]
   ------------------
- 1039|  1.60k|		binary_str = kBinOpWrapperName;
- 1040|  1.60k|		binary_str += "(" + leftexp_str;
- 1041|  1.60k|		binary_str += ", '" + binop_str + "', ";
- 1042|  1.60k|		binary_str += rightexp_str + ")";
- 1043|  1.60k|		return binary_str;
- 1044|  1.60k|	}
+ 1039|    218|		binary_str = kBinOpWrapperName;
+ 1040|    218|		binary_str += "(" + leftexp_str;
+ 1041|    218|		binary_str += ", '" + binop_str + "', ";
+ 1042|    218|		binary_str += rightexp_str + ")";
+ 1043|    218|		return binary_str;
+ 1044|    218|	}
  1045|       |
- 1046|  44.5k|	binary_str = leftexp_str;
- 1047|  44.5k|	binary_str += " " + binop_str + " ";
- 1048|  44.5k|	binary_str += rightexp_str;
+ 1046|  5.61k|	binary_str = leftexp_str;
+ 1047|  5.61k|	binary_str += " " + binop_str + " ";
+ 1048|  5.61k|	binary_str += rightexp_str;
  1049|       |
- 1050|  44.5k|	return binary_str;
- 1051|  46.1k|}
+ 1050|  5.61k|	return binary_str;
+ 1051|  5.83k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_122BinaryOperatorToStringERKN11lua_grammar14BinaryOperatorE:
- 1146|  46.1k|{
- 1147|  46.1k|	using BinopType = BinaryOperator::BinaryOneofCase;
- 1148|  46.1k|	switch (op.binary_oneof_case()) {
- 1149|  1.40k|	case BinopType::kAdd:
+ 1146|  5.83k|{
+ 1147|  5.83k|	using BinopType = BinaryOperator::BinaryOneofCase;
+ 1148|  5.83k|	switch (op.binary_oneof_case()) {
+ 1149|    193|	case BinopType::kAdd:
   ------------------
-  |  Branch (1149:2): [True: 1.40k, False: 44.7k]
+  |  Branch (1149:2): [True: 193, False: 5.64k]
   ------------------
- 1150|  1.40k|		return "+";
- 1151|  1.60k|	case BinopType::kSub:
+ 1150|    193|		return "+";
+ 1151|    351|	case BinopType::kSub:
   ------------------
-  |  Branch (1151:2): [True: 1.60k, False: 44.5k]
+  |  Branch (1151:2): [True: 351, False: 5.48k]
   ------------------
- 1152|  1.60k|		return "-";
- 1153|  1.01k|	case BinopType::kMult:
+ 1152|    351|		return "-";
+ 1153|    314|	case BinopType::kMult:
   ------------------
-  |  Branch (1153:2): [True: 1.01k, False: 45.1k]
+  |  Branch (1153:2): [True: 314, False: 5.51k]
   ------------------
- 1154|  1.01k|		return "*";
- 1155|  1.23k|	case BinopType::kDiv:
+ 1154|    314|		return "*";
+ 1155|     18|	case BinopType::kDiv:
   ------------------
-  |  Branch (1155:2): [True: 1.23k, False: 44.8k]
+  |  Branch (1155:2): [True: 18, False: 5.81k]
   ------------------
- 1156|  1.23k|		return "/";
- 1157|  2.54k|	case BinopType::kExp:
+ 1156|     18|		return "/";
+ 1157|     90|	case BinopType::kExp:
   ------------------
-  |  Branch (1157:2): [True: 2.54k, False: 43.5k]
+  |  Branch (1157:2): [True: 90, False: 5.74k]
   ------------------
- 1158|  2.54k|		return "^";
- 1159|  3.90k|	case BinopType::kMod:
+ 1158|     90|		return "^";
+ 1159|    471|	case BinopType::kMod:
   ------------------
-  |  Branch (1159:2): [True: 3.90k, False: 42.2k]
+  |  Branch (1159:2): [True: 471, False: 5.36k]
   ------------------
- 1160|  3.90k|		return "%";
+ 1160|    471|		return "%";
  1161|       |
- 1162|  17.5k|	case BinopType::kConcat:
+ 1162|  1.94k|	case BinopType::kConcat:
   ------------------
-  |  Branch (1162:2): [True: 17.5k, False: 28.6k]
+  |  Branch (1162:2): [True: 1.94k, False: 3.88k]
   ------------------
- 1163|  17.5k|		return "..";
+ 1163|  1.94k|		return "..";
  1164|       |
- 1165|    201|	case BinopType::kLess:
+ 1165|     10|	case BinopType::kLess:
   ------------------
-  |  Branch (1165:2): [True: 201, False: 45.9k]
+  |  Branch (1165:2): [True: 10, False: 5.82k]
   ------------------
- 1166|    201|		return "<";
- 1167|  1.05k|	case BinopType::kLessEqual:
+ 1166|     10|		return "<";
+ 1167|    187|	case BinopType::kLessEqual:
   ------------------
-  |  Branch (1167:2): [True: 1.05k, False: 45.0k]
+  |  Branch (1167:2): [True: 187, False: 5.64k]
   ------------------
- 1168|  1.05k|		return "<=";
- 1169|    166|	case BinopType::kGreater:
+ 1168|    187|		return "<=";
+ 1169|     14|	case BinopType::kGreater:
   ------------------
-  |  Branch (1169:2): [True: 166, False: 45.9k]
+  |  Branch (1169:2): [True: 14, False: 5.81k]
   ------------------
- 1170|    166|		return ">";
- 1171|    190|	case BinopType::kGreaterEqual:
+ 1170|     14|		return ">";
+ 1171|      7|	case BinopType::kGreaterEqual:
   ------------------
-  |  Branch (1171:2): [True: 190, False: 45.9k]
+  |  Branch (1171:2): [True: 7, False: 5.82k]
   ------------------
- 1172|    190|		return ">=";
- 1173|    237|	case BinopType::kEqual:
+ 1172|      7|		return ">=";
+ 1173|     12|	case BinopType::kEqual:
   ------------------
-  |  Branch (1173:2): [True: 237, False: 45.8k]
+  |  Branch (1173:2): [True: 12, False: 5.82k]
   ------------------
- 1174|    237|		return "==";
- 1175|    275|	case BinopType::kNotEqual:
+ 1174|     12|		return "==";
+ 1175|     13|	case BinopType::kNotEqual:
   ------------------
-  |  Branch (1175:2): [True: 275, False: 45.8k]
+  |  Branch (1175:2): [True: 13, False: 5.82k]
   ------------------
- 1176|    275|		return "~=";
- 1177|  1.55k|	case BinopType::kAnd:
+ 1176|     13|		return "~=";
+ 1177|    142|	case BinopType::kAnd:
   ------------------
-  |  Branch (1177:2): [True: 1.55k, False: 44.5k]
+  |  Branch (1177:2): [True: 142, False: 5.69k]
   ------------------
- 1178|  1.55k|		return "and";
- 1179|  2.90k|	case BinopType::kOr:
+ 1178|    142|		return "and";
+ 1179|    318|	case BinopType::kOr:
   ------------------
-  |  Branch (1179:2): [True: 2.90k, False: 43.2k]
+  |  Branch (1179:2): [True: 318, False: 5.51k]
   ------------------
- 1180|  2.90k|		return "or";
- 1181|  10.3k|	default:
+ 1180|    318|		return "or";
+ 1181|  1.74k|	default:
   ------------------
-  |  Branch (1181:2): [True: 10.3k, False: 35.8k]
+  |  Branch (1181:2): [True: 1.74k, False: 4.08k]
   ------------------
  1182|       |		/* Works in most cases. */
- 1183|  10.3k|		return "==";
- 1184|  46.1k|	}
- 1185|  46.1k|}
+ 1183|  1.74k|		return "==";
+ 1184|  5.83k|	}
+ 1185|  5.83k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_118UnaryOpExpToStringERKN11lua_grammar21Expression_UnaryOpExpE:
- 1054|  15.9k|{
- 1055|  15.9k|	std::string unary_str = UnaryOperatorToString(unary.unop());
+ 1054|  2.76k|{
+ 1055|  2.76k|	std::string unary_str = UnaryOperatorToString(unary.unop());
  1056|       |	/*
  1057|       |	 * Add a whitespace before an expression with unary minus,
  1058|       |	 * otherwise double hyphen comments the following code
  1059|       |	 * and it breaks generated programs syntactically.
  1060|       |	 */
- 1061|  15.9k|	unary_str += " " + ExpressionToString(unary.exp());
- 1062|  15.9k|	return unary_str;
- 1063|  15.9k|}
+ 1061|  2.76k|	unary_str += " " + ExpressionToString(unary.exp());
+ 1062|  2.76k|	return unary_str;
+ 1063|  2.76k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_121UnaryOperatorToStringERKN11lua_grammar13UnaryOperatorE:
- 1188|  15.9k|{
- 1189|  15.9k|	using UnaryopType = UnaryOperator::UnaryOneofCase;
- 1190|  15.9k|	switch (op.unary_oneof_case()) {
- 1191|  1.97k|	case UnaryopType::kNegate:
+ 1188|  2.76k|{
+ 1189|  2.76k|	using UnaryopType = UnaryOperator::UnaryOneofCase;
+ 1190|  2.76k|	switch (op.unary_oneof_case()) {
+ 1191|    195|	case UnaryopType::kNegate:
   ------------------
-  |  Branch (1191:2): [True: 1.97k, False: 13.9k]
+  |  Branch (1191:2): [True: 195, False: 2.57k]
   ------------------
- 1192|  1.97k|		return "-";
- 1193|    483|	case UnaryopType::kNot:
+ 1192|    195|		return "-";
+ 1193|    115|	case UnaryopType::kNot:
   ------------------
-  |  Branch (1193:2): [True: 483, False: 15.4k]
+  |  Branch (1193:2): [True: 115, False: 2.65k]
   ------------------
- 1194|    483|		return "not ";
- 1195|  10.3k|	case UnaryopType::kLength:
+ 1194|    115|		return "not ";
+ 1195|  1.76k|	case UnaryopType::kLength:
   ------------------
-  |  Branch (1195:2): [True: 10.3k, False: 5.56k]
+  |  Branch (1195:2): [True: 1.76k, False: 1.00k]
   ------------------
- 1196|  10.3k|		return "#";
- 1197|  3.10k|	default:
+ 1196|  1.76k|		return "#";
+ 1197|    692|	default:
   ------------------
-  |  Branch (1197:2): [True: 3.10k, False: 12.8k]
+  |  Branch (1197:2): [True: 692, False: 2.07k]
   ------------------
  1198|       |		/* Works in most cases. */
- 1199|  3.10k|		return "not ";
- 1200|  15.9k|	}
- 1201|  15.9k|}
+ 1199|    692|		return "not ";
+ 1200|  2.76k|	}
+ 1201|  2.76k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_121IndexWithNameToStringERKN11lua_grammar22Variable_IndexWithNameE:
-  960|  2.92k|{
-  961|  2.92k|	std::string indexname_str = PrefixExpressionToString(
-  962|  2.92k|		indexname.prefixexp());
-  963|  2.92k|	std::string idx_str = ConvertToStringDefault(indexname.name());
+  960|    642|{
+  961|    642|	std::string indexname_str = PrefixExpressionToString(
+  962|    642|		indexname.prefixexp());
+  963|    642|	std::string idx_str = ConvertToStringDefault(indexname.name());
   964|       |	/* Prevent using reserved keywords as indices. */
-  965|  2.92k|	if (KReservedLuaKeywords.find(idx_str) != KReservedLuaKeywords.end()) {
+  965|    642|	if (KReservedLuaKeywords.find(idx_str) != KReservedLuaKeywords.end()) {
   ------------------
-  |  Branch (965:6): [True: 15, False: 2.90k]
+  |  Branch (965:6): [True: 0, False: 642]
   ------------------
-  966|     15|		idx_str += "_1";
-  967|     15|	}
-  968|  2.92k|	indexname_str += "." + idx_str;
-  969|  2.92k|	return indexname_str;
-  970|  2.92k|}
+  966|      0|		idx_str += "_1";
+  967|      0|	}
+  968|    642|	indexname_str += "." + idx_str;
+  969|    642|	return indexname_str;
+  970|    642|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_122ExpressionListToStringERKN11lua_grammar14ExpressionListE:
-  894|  71.8k|{
-  895|  71.8k|	std::string explist_str;
-  896|   128k|	for (int i = 0; i < explist.expressions_size(); ++i)
+  894|  13.9k|{
+  895|  13.9k|	std::string explist_str;
+  896|  29.0k|	for (int i = 0; i < explist.expressions_size(); ++i)
   ------------------
-  |  Branch (896:18): [True: 56.6k, False: 71.8k]
+  |  Branch (896:18): [True: 15.1k, False: 13.9k]
   ------------------
-  897|  56.6k|		explist_str += ExpressionToString(explist.expressions(i)) +
-  898|  56.6k|				", ";
-  899|  71.8k|	explist_str += ExpressionToString(explist.explast()) + " ";
-  900|  71.8k|	return explist_str;
-  901|  71.8k|}
+  897|  15.1k|		explist_str += ExpressionToString(explist.expressions(i)) +
+  898|  15.1k|				", ";
+  899|  13.9k|	explist_str += ExpressionToString(explist.explast()) + " ";
+  900|  13.9k|	return explist_str;
+  901|  13.9k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_120FunctionCallToStringERKN11lua_grammar12FunctionCallE:
-  633|  93.2k|{
-  634|  93.2k|	using FuncCallType = FunctionCall::CallOneofCase;
-  635|  93.2k|	switch (call.call_oneof_case()) {
-  636|  8.57k|	case FuncCallType::kPrefArgs:
+  633|  56.9k|{
+  634|  56.9k|	using FuncCallType = FunctionCall::CallOneofCase;
+  635|  56.9k|	switch (call.call_oneof_case()) {
+  636|  3.74k|	case FuncCallType::kPrefArgs:
   ------------------
-  |  Branch (636:2): [True: 8.57k, False: 84.6k]
+  |  Branch (636:2): [True: 3.74k, False: 53.2k]
   ------------------
-  637|  8.57k|		return PrefixArgsToString(call.prefargs());
-  638|  2.72k|	case FuncCallType::kNamedArgs:
+  637|  3.74k|		return PrefixArgsToString(call.prefargs());
+  638|    948|	case FuncCallType::kNamedArgs:
   ------------------
-  |  Branch (638:2): [True: 2.72k, False: 90.5k]
+  |  Branch (638:2): [True: 948, False: 56.0k]
   ------------------
-  639|  2.72k|		return PrefixNamedArgsToString(call.namedargs());
-  640|  81.9k|	default:
+  639|    948|		return PrefixNamedArgsToString(call.namedargs());
+  640|  52.2k|	default:
   ------------------
-  |  Branch (640:2): [True: 81.9k, False: 11.2k]
+  |  Branch (640:2): [True: 52.2k, False: 4.69k]
   ------------------
   641|       |		/* Chosen for more variability of generated programs. */
-  642|  81.9k|		return PrefixNamedArgsToString(call.namedargs());
-  643|  93.2k|	}
-  644|  93.2k|}
+  642|  52.2k|		return PrefixNamedArgsToString(call.namedargs());
+  643|  56.9k|	}
+  644|  56.9k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_118PrefixArgsToStringERKN11lua_grammar23FunctionCall_PrefixArgsE:
-  664|  8.57k|{
-  665|  8.57k|	std::string prefixargs_str = PrefixExpressionToString(
-  666|  8.57k|		prefixargs.prefixexp());
-  667|  8.57k|	prefixargs_str += " " + ArgsToString(prefixargs.args());
-  668|  8.57k|	return prefixargs_str;
-  669|  8.57k|}
+  664|  3.74k|{
+  665|  3.74k|	std::string prefixargs_str = PrefixExpressionToString(
+  666|  3.74k|		prefixargs.prefixexp());
+  667|  3.74k|	prefixargs_str += " " + ArgsToString(prefixargs.args());
+  668|  3.74k|	return prefixargs_str;
+  669|  3.74k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_112ArgsToStringERKN11lua_grammar17FunctionCall_ArgsE:
-  647|  93.2k|{
-  648|  93.2k|	using ArgsType = FunctionCall::Args::ArgsOneofCase;
-  649|  93.2k|	switch (args.args_oneof_case()) {
-  650|  2.89k|	case ArgsType::kExplist:
+  647|  56.9k|{
+  648|  56.9k|	using ArgsType = FunctionCall::Args::ArgsOneofCase;
+  649|  56.9k|	switch (args.args_oneof_case()) {
+  650|  1.11k|	case ArgsType::kExplist:
   ------------------
-  |  Branch (650:2): [True: 2.89k, False: 90.3k]
+  |  Branch (650:2): [True: 1.11k, False: 55.8k]
   ------------------
-  651|  2.89k|		return "(" + OptionalExpressionListToString(args.explist()) +
-  652|  2.89k|		       ")";
-  653|  1.03k|	case ArgsType::kTableconstructor:
+  651|  1.11k|		return "(" + OptionalExpressionListToString(args.explist()) +
+  652|  1.11k|		       ")";
+  653|    189|	case ArgsType::kTableconstructor:
   ------------------
-  |  Branch (653:2): [True: 1.03k, False: 92.2k]
+  |  Branch (653:2): [True: 189, False: 56.7k]
   ------------------
-  654|  1.03k|		return TableConstructorToString(args.tableconstructor());
-  655|    582|	case ArgsType::kStr:
+  654|    189|		return TableConstructorToString(args.tableconstructor());
+  655|    111|	case ArgsType::kStr:
   ------------------
-  |  Branch (655:2): [True: 582, False: 92.6k]
+  |  Branch (655:2): [True: 111, False: 56.8k]
   ------------------
-  656|    582|		return "'" + ConvertToStringDefault(args.str()) + "'";
-  657|  88.7k|	default:
+  656|    111|		return "'" + ConvertToStringDefault(args.str()) + "'";
+  657|  55.5k|	default:
   ------------------
-  |  Branch (657:2): [True: 88.7k, False: 4.50k]
+  |  Branch (657:2): [True: 55.5k, False: 1.41k]
   ------------------
   658|       |		/* For more variability. */
-  659|  88.7k|		return TableConstructorToString(args.tableconstructor());
-  660|  93.2k|	}
-  661|  93.2k|}
+  659|  55.5k|		return TableConstructorToString(args.tableconstructor());
+  660|  56.9k|	}
+  661|  56.9k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_130OptionalExpressionListToStringERKN11lua_grammar22OptionalExpressionListE:
-  904|  2.89k|{
-  905|  2.89k|	if (explist.has_explist())
+  904|  1.11k|{
+  905|  1.11k|	if (explist.has_explist())
   ------------------
-  |  Branch (905:6): [True: 2.39k, False: 506]
+  |  Branch (905:6): [True: 1.00k, False: 109]
   ------------------
-  906|  2.39k|		return ExpressionListToString(explist.explist());
-  907|    506|	return "";
-  908|  2.89k|}
+  906|  1.00k|		return ExpressionListToString(explist.explist());
+  907|    109|	return "";
+  908|  1.11k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_123PrefixNamedArgsToStringERKN11lua_grammar28FunctionCall_PrefixNamedArgsE:
-  672|  84.6k|{
-  673|  84.6k|	std::string predixnamedargs_str = PrefixExpressionToString(
-  674|  84.6k|		prefixnamedargs.prefixexp());
-  675|  84.6k|	predixnamedargs_str += ":" + NameToString(prefixnamedargs.name());
-  676|  84.6k|	predixnamedargs_str += " " + ArgsToString(prefixnamedargs.args());
-  677|  84.6k|	return predixnamedargs_str;
-  678|  84.6k|}
+  672|  53.2k|{
+  673|  53.2k|	std::string predixnamedargs_str = PrefixExpressionToString(
+  674|  53.2k|		prefixnamedargs.prefixexp());
+  675|  53.2k|	predixnamedargs_str += ":" + NameToString(prefixnamedargs.name());
+  676|  53.2k|	predixnamedargs_str += " " + ArgsToString(prefixnamedargs.args());
+  677|  53.2k|	return predixnamedargs_str;
+  678|  53.2k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_115DoBlockToStringERKN11lua_grammar7DoBlockE:
-  684|  7.37k|{
-  685|  7.37k|	return "do\n" + BlockToString(block.block()) + "end\n";
-  686|  7.37k|}
+  684|  3.64k|{
+  685|  3.64k|	return "do\n" + BlockToString(block.block()) + "end\n";
+  686|  3.64k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_118WhileCycleToStringERKN11lua_grammar10WhileCycleE:
-  692|  20.6k|{
-  693|  20.6k|	GetContext().step_in(Context::BlockType::kBreakable);
+  692|  3.28k|{
+  693|  3.28k|	GetContext().step_in(Context::BlockType::kBreakable);
   694|       |
-  695|  20.6k|	std::string whilecycle_str = "while ";
-  696|  20.6k|	whilecycle_str += ExpressionToString(whilecycle.condition());
-  697|  20.6k|	whilecycle_str += " ";
-  698|  20.6k|	whilecycle_str += DoBlockToStringCycleProtected(whilecycle.doblock());
+  695|  3.28k|	std::string whilecycle_str = "while ";
+  696|  3.28k|	whilecycle_str += ExpressionToString(whilecycle.condition());
+  697|  3.28k|	whilecycle_str += " ";
+  698|  3.28k|	whilecycle_str += DoBlockToStringCycleProtected(whilecycle.doblock());
   699|       |
-  700|  20.6k|	GetContext().step_out();
-  701|  20.6k|	return whilecycle_str;
-  702|  20.6k|}
+  700|  3.28k|	GetContext().step_out();
+  701|  3.28k|	return whilecycle_str;
+  702|  3.28k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_129DoBlockToStringCycleProtectedERKN11lua_grammar7DoBlockE:
-  382|  44.9k|{
-  383|  44.9k|	std::string retval = "do\n";
-  384|  44.9k|	retval += BlockToStringCycleProtected(block.block());
-  385|  44.9k|	retval += "end\n";
-  386|  44.9k|	return retval;
-  387|  44.9k|}
+  382|  7.25k|{
+  383|  7.25k|	std::string retval = "do\n";
+  384|  7.25k|	retval += BlockToStringCycleProtected(block.block());
+  385|  7.25k|	retval += "end\n";
+  386|  7.25k|	return retval;
+  387|  7.25k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_127BlockToStringCycleProtectedERKN11lua_grammar5BlockE:
-  369|  64.1k|{
-  370|  64.1k|	std::string retval = GetContext().get_next_block_setup();
-  371|  64.1k|	retval += ChunkToString(block.chunk());
-  372|  64.1k|	return retval;
-  373|  64.1k|}
+  369|  12.4k|{
+  370|  12.4k|	std::string retval = GetContext().get_next_block_setup();
+  371|  12.4k|	retval += ChunkToString(block.chunk());
+  372|  12.4k|	return retval;
+  373|  12.4k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_119RepeatCycleToStringERKN11lua_grammar11RepeatCycleE:
-  708|  19.2k|{
-  709|  19.2k|	GetContext().step_in(Context::BlockType::kBreakable);
+  708|  5.23k|{
+  709|  5.23k|	GetContext().step_in(Context::BlockType::kBreakable);
   710|       |
-  711|  19.2k|	std::string repeatcycle_str = "repeat\n";
-  712|  19.2k|	repeatcycle_str += BlockToStringCycleProtected(repeatcycle.block());
-  713|  19.2k|	repeatcycle_str += "until ";
-  714|  19.2k|	repeatcycle_str += ExpressionToString(repeatcycle.condition());
+  711|  5.23k|	std::string repeatcycle_str = "repeat\n";
+  712|  5.23k|	repeatcycle_str += BlockToStringCycleProtected(repeatcycle.block());
+  713|  5.23k|	repeatcycle_str += "until ";
+  714|  5.23k|	repeatcycle_str += ExpressionToString(repeatcycle.condition());
   715|       |
-  716|  19.2k|	GetContext().step_out();
-  717|  19.2k|	return repeatcycle_str;
-  718|  19.2k|}
+  716|  5.23k|	GetContext().step_out();
+  717|  5.23k|	return repeatcycle_str;
+  718|  5.23k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_119IfStatementToStringERKN11lua_grammar11IfStatementE:
-  724|  8.30k|{
-  725|  8.30k|	std::string statement_str = "if " +
-  726|  8.30k|		ExpressionToString(statement.condition());
-  727|  8.30k|	statement_str += " then\n\t" + BlockToString(statement.first());
+  724|  2.61k|{
+  725|  2.61k|	std::string statement_str = "if " +
+  726|  2.61k|		ExpressionToString(statement.condition());
+  727|  2.61k|	statement_str += " then\n\t" + BlockToString(statement.first());
   728|       |
-  729|  11.2k|	for (int i = 0; i < statement.clauses_size(); ++i)
+  729|  3.41k|	for (int i = 0; i < statement.clauses_size(); ++i)
   ------------------
-  |  Branch (729:18): [True: 2.97k, False: 8.30k]
+  |  Branch (729:18): [True: 805, False: 2.61k]
   ------------------
-  730|  2.97k|		statement_str += ElseIfBlockToString(statement.clauses(i));
+  730|    805|		statement_str += ElseIfBlockToString(statement.clauses(i));
   731|       |
-  732|  8.30k|	if (statement.has_last())
+  732|  2.61k|	if (statement.has_last())
   ------------------
-  |  Branch (732:6): [True: 3.39k, False: 4.91k]
+  |  Branch (732:6): [True: 1.44k, False: 1.16k]
   ------------------
-  733|  3.39k|		statement_str += "else\n\t" + BlockToString(statement.last());
+  733|  1.44k|		statement_str += "else\n\t" + BlockToString(statement.last());
   734|       |
-  735|  8.30k|	statement_str += "end\n";
-  736|  8.30k|	return statement_str;
-  737|  8.30k|}
+  735|  2.61k|	statement_str += "end\n";
+  736|  2.61k|	return statement_str;
+  737|  2.61k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_119ElseIfBlockToStringERKN11lua_grammar23IfStatement_ElseIfBlockE:
-  740|  2.97k|{
-  741|  2.97k|	std::string elseifblock_str = "elseif ";
-  742|  2.97k|	elseifblock_str += ExpressionToString(elseifblock.condition());
-  743|  2.97k|	elseifblock_str += " then\n\t";
-  744|  2.97k|	elseifblock_str += BlockToString(elseifblock.block());
-  745|  2.97k|	return elseifblock_str;
-  746|  2.97k|}
+  740|    805|{
+  741|    805|	std::string elseifblock_str = "elseif ";
+  742|    805|	elseifblock_str += ExpressionToString(elseifblock.condition());
+  743|    805|	elseifblock_str += " then\n\t";
+  744|    805|	elseifblock_str += BlockToString(elseifblock.block());
+  745|    805|	return elseifblock_str;
+  746|    805|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_120ForCycleNameToStringERKN11lua_grammar12ForCycleNameE:
-  755|  19.4k|{
-  756|  19.4k|	GetContext().step_in(Context::BlockType::kBreakable);
+  755|  3.03k|{
+  756|  3.03k|	GetContext().step_in(Context::BlockType::kBreakable);
   757|       |
-  758|  19.4k|	std::string forcyclename_str = "for ";
-  759|  19.4k|	forcyclename_str += NameToString(forcyclename.name());
-  760|  19.4k|	forcyclename_str += " = ";
-  761|  19.4k|	forcyclename_str += NumberWrappedExpressionToString(
-  762|  19.4k|		forcyclename.startexp());
-  763|  19.4k|	forcyclename_str += ", ";
-  764|  19.4k|	forcyclename_str += NumberWrappedExpressionToString(
-  765|  19.4k|		forcyclename.stopexp());
+  758|  3.03k|	std::string forcyclename_str = "for ";
+  759|  3.03k|	forcyclename_str += NameToString(forcyclename.name());
+  760|  3.03k|	forcyclename_str += " = ";
+  761|  3.03k|	forcyclename_str += NumberWrappedExpressionToString(
+  762|  3.03k|		forcyclename.startexp());
+  763|  3.03k|	forcyclename_str += ", ";
+  764|  3.03k|	forcyclename_str += NumberWrappedExpressionToString(
+  765|  3.03k|		forcyclename.stopexp());
   766|       |
-  767|  19.4k|	if (forcyclename.has_stepexp())
+  767|  3.03k|	if (forcyclename.has_stepexp())
   ------------------
-  |  Branch (767:6): [True: 8.67k, False: 10.7k]
+  |  Branch (767:6): [True: 1.52k, False: 1.50k]
   ------------------
-  768|  8.67k|		forcyclename_str += ", " + NumberWrappedExpressionToString(
-  769|  8.67k|			forcyclename.stepexp());
+  768|  1.52k|		forcyclename_str += ", " + NumberWrappedExpressionToString(
+  769|  1.52k|			forcyclename.stepexp());
   770|       |
-  771|  19.4k|	forcyclename_str += " ";
-  772|  19.4k|	forcyclename_str += DoBlockToStringCycleProtected(
-  773|  19.4k|		forcyclename.doblock());
+  771|  3.03k|	forcyclename_str += " ";
+  772|  3.03k|	forcyclename_str += DoBlockToStringCycleProtected(
+  773|  3.03k|		forcyclename.doblock());
   774|       |
-  775|  19.4k|	GetContext().step_out();
-  776|  19.4k|	return forcyclename_str;
-  777|  19.4k|}
+  775|  3.03k|	GetContext().step_out();
+  776|  3.03k|	return forcyclename_str;
+  777|  3.03k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_131NumberWrappedExpressionToStringERKN11lua_grammar10ExpressionE:
-  160|  47.6k|{
-  161|  47.6k|	std::string retval;
-  162|  47.6k|	retval += kNumberWrapperName;
-  163|  47.6k|	retval += "(";
-  164|  47.6k|	retval += ExpressionToString(expr);
-  165|  47.6k|	retval += ")";
+  160|  7.59k|{
+  161|  7.59k|	std::string retval;
+  162|  7.59k|	retval += kNumberWrapperName;
+  163|  7.59k|	retval += "(";
+  164|  7.59k|	retval += ExpressionToString(expr);
+  165|  7.59k|	retval += ")";
   166|       |
-  167|  47.6k|	return retval;
-  168|  47.6k|}
+  167|  7.59k|	return retval;
+  168|  7.59k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_120ForCycleListToStringERKN11lua_grammar12ForCycleListE:
-  783|  4.85k|{
-  784|  4.85k|	GetContext().step_in(Context::BlockType::kBreakable);
+  783|    943|{
+  784|    943|	GetContext().step_in(Context::BlockType::kBreakable);
   785|       |
-  786|  4.85k|	std::string forcyclelist_str = "for ";
-  787|  4.85k|	forcyclelist_str += NameListToString(forcyclelist.names());
-  788|  4.85k|	forcyclelist_str += " in ";
-  789|  4.85k|	forcyclelist_str += ExpressionListToString(forcyclelist.expressions());
-  790|  4.85k|	forcyclelist_str += " ";
-  791|  4.85k|	forcyclelist_str += DoBlockToStringCycleProtected(
-  792|  4.85k|		forcyclelist.doblock());
+  786|    943|	std::string forcyclelist_str = "for ";
+  787|    943|	forcyclelist_str += NameListToString(forcyclelist.names());
+  788|    943|	forcyclelist_str += " in ";
+  789|    943|	forcyclelist_str += ExpressionListToString(forcyclelist.expressions());
+  790|    943|	forcyclelist_str += " ";
+  791|    943|	forcyclelist_str += DoBlockToStringCycleProtected(
+  792|    943|		forcyclelist.doblock());
   793|       |
-  794|  4.85k|	GetContext().step_out();
-  795|  4.85k|	return forcyclelist_str;
-  796|  4.85k|}
+  794|    943|	GetContext().step_out();
+  795|    943|	return forcyclelist_str;
+  796|    943|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_116FunctionToStringERKN11lua_grammar8FunctionE:
-  802|  5.63k|{
-  803|  5.63k|	GetContext().step_in(GetFuncBodyType(func.body()));
+  802|  2.59k|{
+  803|  2.59k|	GetContext().step_in(GetFuncBodyType(func.body()));
   804|       |
-  805|  5.63k|	std::string func_str = "function ";
-  806|  5.63k|	func_str += FuncNameToString(func.name());
-  807|  5.63k|	func_str += FuncBodyToStringReqProtected(func.body());
+  805|  2.59k|	std::string func_str = "function ";
+  806|  2.59k|	func_str += FuncNameToString(func.name());
+  807|  2.59k|	func_str += FuncBodyToStringReqProtected(func.body());
   808|       |
-  809|  5.63k|	GetContext().step_out();
-  810|  5.63k|	return func_str;
-  811|  5.63k|}
+  809|  2.59k|	GetContext().step_out();
+  810|  2.59k|	return func_str;
+  811|  2.59k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_116FuncNameToStringERKN11lua_grammar17Function_FuncNameE:
-  814|  5.63k|{
-  815|  5.63k|	std::string funcname_str = NameToString(funcname.firstname());
+  814|  2.59k|{
+  815|  2.59k|	std::string funcname_str = NameToString(funcname.firstname());
   816|       |
-  817|  11.9k|	for (int i = 0; i < funcname.names_size(); ++i)
+  817|  5.50k|	for (int i = 0; i < funcname.names_size(); ++i)
   ------------------
-  |  Branch (817:18): [True: 6.31k, False: 5.63k]
+  |  Branch (817:18): [True: 2.90k, False: 2.59k]
   ------------------
-  818|  6.31k|		funcname_str += "." + NameToString(funcname.names(i));
+  818|  2.90k|		funcname_str += "." + NameToString(funcname.names(i));
   819|       |
-  820|  5.63k|	if (funcname.has_lastname())
+  820|  2.59k|	if (funcname.has_lastname())
   ------------------
-  |  Branch (820:6): [True: 508, False: 5.12k]
+  |  Branch (820:6): [True: 182, False: 2.41k]
   ------------------
-  821|    508|		funcname_str += ":" + NameToString(funcname.lastname());
+  821|    182|		funcname_str += ":" + NameToString(funcname.lastname());
   822|       |
-  823|  5.63k|	return funcname_str;
-  824|  5.63k|}
+  823|  2.59k|	return funcname_str;
+  824|  2.59k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_117LocalFuncToStringERKN11lua_grammar9LocalFuncE:
-  860|  9.56k|{
-  861|  9.56k|	GetContext().step_in(GetFuncBodyType(localfunc.funcbody()));
+  860|  3.99k|{
+  861|  3.99k|	GetContext().step_in(GetFuncBodyType(localfunc.funcbody()));
   862|       |
-  863|  9.56k|	std::string localfunc_str = "local function ";
-  864|  9.56k|	localfunc_str += NameToString(localfunc.name());
-  865|  9.56k|	localfunc_str += " ";
-  866|  9.56k|	localfunc_str += FuncBodyToStringReqProtected(localfunc.funcbody());
+  863|  3.99k|	std::string localfunc_str = "local function ";
+  864|  3.99k|	localfunc_str += NameToString(localfunc.name());
+  865|  3.99k|	localfunc_str += " ";
+  866|  3.99k|	localfunc_str += FuncBodyToStringReqProtected(localfunc.funcbody());
   867|       |
-  868|  9.56k|	GetContext().step_out();
-  869|  9.56k|	return localfunc_str;
-  870|  9.56k|}
+  868|  3.99k|	GetContext().step_out();
+  869|  3.99k|	return localfunc_str;
+  870|  3.99k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_118LocalNamesToStringERKN11lua_grammar10LocalNamesE:
-  876|  3.66k|{
-  877|  3.66k|	std::string localnames_str = "local ";
-  878|  3.66k|	localnames_str += NameListToString(localnames.namelist());
+  876|    409|{
+  877|    409|	std::string localnames_str = "local ";
+  878|    409|	localnames_str += NameListToString(localnames.namelist());
   879|       |
-  880|  3.66k|	if (localnames.has_explist())
+  880|    409|	if (localnames.has_explist())
   ------------------
-  |  Branch (880:6): [True: 840, False: 2.82k]
+  |  Branch (880:6): [True: 130, False: 279]
   ------------------
-  881|    840|		localnames_str += " = " + ExpressionListToString(
-  882|    840|			localnames.explist());
-  883|  3.66k|	return localnames_str;
-  884|  3.66k|}
+  881|    130|		localnames_str += " = " + ExpressionListToString(
+  882|    130|			localnames.explist());
+  883|    409|	return localnames_str;
+  884|    409|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_121LastStatementToStringERKN11lua_grammar13LastStatementE:
-  498|  14.1k|{
-  499|  14.1k|	std::string laststat_str;
-  500|  14.1k|	using LastStatType = LastStatement::LastOneofCase;
-  501|  14.1k|	switch (laststat.last_oneof_case()) {
-  502|  8.13k|	case LastStatType::kExplist:
+  498|  5.39k|{
+  499|  5.39k|	std::string laststat_str;
+  500|  5.39k|	using LastStatType = LastStatement::LastOneofCase;
+  501|  5.39k|	switch (laststat.last_oneof_case()) {
+  502|  3.63k|	case LastStatType::kExplist:
   ------------------
-  |  Branch (502:2): [True: 8.13k, False: 6.05k]
+  |  Branch (502:2): [True: 3.63k, False: 1.76k]
   ------------------
-  503|  8.13k|		laststat_str = ReturnOptionalExpressionListToString(
-  504|  8.13k|			laststat.explist());
-  505|  8.13k|		break;
-  506|  1.80k|	case LastStatType::kBreak:
+  503|  3.63k|		laststat_str = ReturnOptionalExpressionListToString(
+  504|  3.63k|			laststat.explist());
+  505|  3.63k|		break;
+  506|    383|	case LastStatType::kBreak:
   ------------------
-  |  Branch (506:2): [True: 1.80k, False: 12.3k]
+  |  Branch (506:2): [True: 383, False: 5.01k]
   ------------------
-  507|  1.80k|		if (GetContext().break_is_possible()) {
+  507|    383|		if (GetContext().break_is_possible()) {
   ------------------
-  |  Branch (507:7): [True: 1.12k, False: 677]
+  |  Branch (507:7): [True: 178, False: 205]
   ------------------
-  508|  1.12k|			laststat_str = "break";
-  509|  1.12k|		}
-  510|  1.80k|		break;
-  511|  4.25k|	default:
+  508|    178|			laststat_str = "break";
+  509|    178|		}
+  510|    383|		break;
+  511|  1.38k|	default:
   ------------------
-  |  Branch (511:2): [True: 4.25k, False: 9.93k]
+  |  Branch (511:2): [True: 1.38k, False: 4.01k]
   ------------------
   512|       |		/* Chosen as default in order to decrease number of 'break's. */
-  513|  4.25k|		laststat_str = ReturnOptionalExpressionListToString(
-  514|  4.25k|			laststat.explist());
-  515|  4.25k|		break;
-  516|  14.1k|	}
+  513|  1.38k|		laststat_str = ReturnOptionalExpressionListToString(
+  514|  1.38k|			laststat.explist());
+  515|  1.38k|		break;
+  516|  5.39k|	}
   517|       |
   518|       |	/*
   519|       |	 * Add a semicolon when last statement is not empty
@@ -1633,54 +1632,54 @@ serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_121LastStatementToStringERKN11lua_g
   523|       |	 * (nil):Name0()
   524|       |	 * (nil)() -- ambiguous syntax (function call x new statement) near '('
   525|       |	 */
-  526|  14.1k|	if (!laststat_str.empty())
+  526|  5.39k|	if (!laststat_str.empty())
   ------------------
-  |  Branch (526:6): [True: 10.0k, False: 4.12k]
+  |  Branch (526:6): [True: 4.45k, False: 948]
   ------------------
-  527|  10.0k|		laststat_str += "; ";
+  527|  4.45k|		laststat_str += "; ";
   528|       |
-  529|  14.1k|	return laststat_str;
-  530|  14.1k|}
+  529|  5.39k|	return laststat_str;
+  530|  5.39k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_136ReturnOptionalExpressionListToStringERKN11lua_grammar42LastStatement_ReturnOptionalExpressionListE:
-  533|  12.3k|{
-  534|  12.3k|	if (!GetContext().return_is_possible()) {
+  533|  5.01k|{
+  534|  5.01k|	if (!GetContext().return_is_possible()) {
   ------------------
-  |  Branch (534:6): [True: 3.44k, False: 8.93k]
+  |  Branch (534:6): [True: 743, False: 4.27k]
   ------------------
-  535|  3.44k|		return "";
-  536|  3.44k|	}
+  535|    743|		return "";
+  536|    743|	}
   537|       |
-  538|  8.93k|	std::string explist_str = "return";
-  539|  8.93k|	if (explist.has_explist()) {
+  538|  4.27k|	std::string explist_str = "return";
+  539|  4.27k|	if (explist.has_explist()) {
   ------------------
-  |  Branch (539:6): [True: 7.34k, False: 1.59k]
+  |  Branch (539:6): [True: 3.38k, False: 887]
   ------------------
-  540|  7.34k|		explist_str += " " + ExpressionListToString(explist.explist());
-  541|  7.34k|		explist_str += " ";
-  542|  7.34k|	}
-  543|  8.93k|	return explist_str;
-  544|  12.3k|}
+  540|  3.38k|		explist_str += " " + ExpressionListToString(explist.explist());
+  541|  3.38k|		explist_str += " ";
+  542|  3.38k|	}
+  543|  4.27k|	return explist_str;
+  544|  5.01k|}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_17Context18return_is_possibleEv:
-  301|  12.3k|	{
-  302|  12.3k|		return !returnable_stack_.empty();
-  303|  12.3k|	}
+  301|  5.01k|	{
+  302|  5.01k|		return !returnable_stack_.empty();
+  303|  5.01k|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_17Context17break_is_possibleEv:
-  295|  1.80k|	{
-  296|  1.80k|		return !block_stack_.empty() &&
+  295|    383|	{
+  296|    383|		return !block_stack_.empty() &&
   ------------------
-  |  Branch (296:10): [True: 1.50k, False: 296]
+  |  Branch (296:10): [True: 354, False: 29]
   ------------------
-  297|  1.80k|		       block_stack_.top() == BlockType::kBreakable;
+  297|    383|		       block_stack_.top() == BlockType::kBreakable;
   ------------------
-  |  Branch (297:10): [True: 1.12k, False: 381]
+  |  Branch (297:10): [True: 178, False: 176]
   ------------------
-  298|  1.80k|	}
+  298|    383|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_117CounterIdProvider5countEv:
-  189|   122k|	{
-  190|   122k|		return id_;
-  191|   122k|	}
+  189|  29.7k|	{
+  190|  29.7k|		return id_;
+  191|  29.7k|	}
 serializer.cc:_ZN13luajit_fuzzer12_GLOBAL__N_114GetCounterNameEm:
-  222|   218k|{
-  223|   218k|	return kCounterNamePrefix + std::to_string(id);
-  224|   218k|}
+  222|  58.0k|{
+  223|  58.0k|	return kCounterNamePrefix + std::to_string(id);
+  224|  58.0k|}
 

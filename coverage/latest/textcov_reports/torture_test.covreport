@@ -32,146 +32,146 @@
 
 
 LLVMFuzzerTestOneInput:
- 1886|  1.67k|{
- 1887|  1.67k|	lua_State *L = luaL_newstate();
- 1888|  1.67k|	if (L == NULL)
+ 1886|  1.53k|{
+ 1887|  1.53k|	lua_State *L = luaL_newstate();
+ 1888|  1.53k|	if (L == NULL)
   ------------------
-  |  Branch (1888:6): [True: 0, False: 1.67k]
+  |  Branch (1888:6): [True: 0, False: 1.53k]
   ------------------
  1889|      0|		return 0;
  1890|       |
- 1891|  1.67k|#if LUA_VERSION_NUM == 501
- 1892|  1.67k|	luaL_register(L, TYPE_NAME_TORTURE, TORTURE_meta);
+ 1891|  1.53k|#if LUA_VERSION_NUM == 501
+ 1892|  1.53k|	luaL_register(L, TYPE_NAME_TORTURE, TORTURE_meta);
   ------------------
-  |  |   43|  1.67k|#define TYPE_NAME_TORTURE "torture_test"
+  |  |   43|  1.53k|#define TYPE_NAME_TORTURE "torture_test"
   ------------------
  1893|       |#else
  1894|       |	luaL_newmetatable(L, TYPE_NAME_TORTURE);
  1895|       |	luaL_setfuncs(L, TORTURE_meta, 0);
  1896|       |#endif /* LUA_VERSION_NUM */
  1897|       |
- 1898|  1.67k|	FuzzedDataProvider fdp(data, size);
- 1899|  1.67k|	int start_slots = 2;
- 1900|  5.02k|	for (int i = 1; i <= start_slots; i++)
+ 1898|  1.53k|	FuzzedDataProvider fdp(data, size);
+ 1899|  1.53k|	int start_slots = 2;
+ 1900|  4.60k|	for (int i = 1; i <= start_slots; i++)
   ------------------
-  |  Branch (1900:18): [True: 3.35k, False: 1.67k]
+  |  Branch (1900:18): [True: 3.07k, False: 1.53k]
   ------------------
- 1901|  3.35k|		if (fdp.remaining_bytes() != 0)
+ 1901|  3.07k|		if (fdp.remaining_bytes() != 0)
   ------------------
-  |  Branch (1901:7): [True: 3.18k, False: 165]
+  |  Branch (1901:7): [True: 2.89k, False: 178]
   ------------------
- 1902|  3.18k|			lua_pushrandom(L, &fdp);
+ 1902|  2.89k|			lua_pushrandom(L, &fdp);
  1903|       |
- 1904|  1.67k|	if (lua_gettop(L) != 0 &&
+ 1904|  1.53k|	if (lua_gettop(L) != 0 &&
   ------------------
-  |  Branch (1904:6): [True: 1.67k, False: 0]
+  |  Branch (1904:6): [True: 1.53k, False: 0]
   ------------------
- 1905|  1.67k|	    fdp.remaining_bytes() != 0) {
+ 1905|  1.53k|	    fdp.remaining_bytes() != 0) {
   ------------------
-  |  Branch (1905:6): [True: 1.37k, False: 305]
+  |  Branch (1905:6): [True: 1.21k, False: 316]
   ------------------
- 1906|  1.37k|		__lua_gc(L, &fdp);
- 1907|  1.37k|		__lua_sethook(L, &fdp);
- 1908|  1.37k|		uint8_t idx = fdp.ConsumeIntegralInRange<uint8_t>(0, (int)ARRAY_SIZE(func) - 1);
+ 1906|  1.21k|		__lua_gc(L, &fdp);
+ 1907|  1.21k|		__lua_sethook(L, &fdp);
+ 1908|  1.21k|		uint8_t idx = fdp.ConsumeIntegralInRange<uint8_t>(0, (int)ARRAY_SIZE(func) - 1);
   ------------------
-  |  |   33|  1.37k|#define ARRAY_SIZE(arr)     (sizeof(arr) / sizeof((arr)[0]))
+  |  |   33|  1.21k|#define ARRAY_SIZE(arr)     (sizeof(arr) / sizeof((arr)[0]))
   ------------------
- 1909|  1.37k|		func[idx](L, &fdp);
- 1910|  1.37k|	}
+ 1909|  1.21k|		func[idx](L, &fdp);
+ 1910|  1.21k|	}
  1911|       |
- 1912|  1.67k|	lua_settop(L, 0);
- 1913|  1.67k|	lua_close(L);
+ 1912|  1.53k|	lua_settop(L, 0);
+ 1913|  1.53k|	lua_close(L);
  1914|       |
- 1915|  1.67k|	return 0;
- 1916|  1.67k|}
+ 1915|  1.53k|	return 0;
+ 1916|  1.53k|}
 torture_test.cc:_ZL9cfunctionP9lua_State:
-   38|    207|cfunction(lua_State *L) {
-   39|    207|	lua_gettop(L);
-   40|    207|	return 0;
-   41|    207|}
+   38|    191|cfunction(lua_State *L) {
+   39|    191|	lua_gettop(L);
+   40|    191|	return 0;
+   41|    191|}
 torture_test.cc:_ZL14lua_pushrandomP9lua_StateP18FuzzedDataProvider:
- 1721|  3.18k|{
- 1722|  3.18k|	uint8_t idx = fdp->ConsumeIntegralInRange(0, (int)ARRAY_SIZE(push_func) - 1);
+ 1721|  2.89k|{
+ 1722|  2.89k|	uint8_t idx = fdp->ConsumeIntegralInRange(0, (int)ARRAY_SIZE(push_func) - 1);
   ------------------
-  |  |   33|  3.18k|#define ARRAY_SIZE(arr)     (sizeof(arr) / sizeof((arr)[0]))
+  |  |   33|  2.89k|#define ARRAY_SIZE(arr)     (sizeof(arr) / sizeof((arr)[0]))
   ------------------
- 1723|  3.18k|	push_func[idx](L, fdp);
+ 1723|  2.89k|	push_func[idx](L, fdp);
  1724|       |
- 1725|  3.18k|	bool is_set_mt = fdp->ConsumeBool();
- 1726|  3.18k|	if (is_set_mt) {
+ 1725|  2.89k|	bool is_set_mt = fdp->ConsumeBool();
+ 1726|  2.89k|	if (is_set_mt) {
   ------------------
-  |  Branch (1726:6): [True: 1.47k, False: 1.71k]
+  |  Branch (1726:6): [True: 1.31k, False: 1.57k]
   ------------------
- 1727|  1.47k|		luaL_getmetatable(L, TYPE_NAME_TORTURE);
- 1728|  1.47k|		lua_setmetatable(L, -2);
- 1729|  1.47k|	}
- 1730|  3.18k|}
+ 1727|  1.31k|		luaL_getmetatable(L, TYPE_NAME_TORTURE);
+ 1728|  1.31k|		lua_setmetatable(L, -2);
+ 1729|  1.31k|	}
+ 1730|  2.89k|}
 torture_test.cc:_ZL14__lua_newtableP9lua_StateP18FuzzedDataProvider:
-  611|    674|{
-  612|    674|	int top = lua_gettop(L);
-  613|    674|	lua_newtable(L);
-  614|    674|	assert(lua_gettop(L) == top + 1);
-  615|    674|}
+  611|    685|{
+  612|    685|	int top = lua_gettop(L);
+  613|    685|	lua_newtable(L);
+  614|    685|	assert(lua_gettop(L) == top + 1);
+  615|    685|}
 torture_test.cc:_ZL15__lua_newthreadP9lua_StateP18FuzzedDataProvider:
-  621|    743|{
-  622|    743|	int top = lua_gettop(L);
-  623|    743|	lua_newthread(L);
-  624|    743|	assert(lua_gettop(L) == top + 1);
-  625|    743|}
+  621|    630|{
+  622|    630|	int top = lua_gettop(L);
+  623|    630|	lua_newthread(L);
+  624|    630|	assert(lua_gettop(L) == top + 1);
+  625|    630|}
 torture_test.cc:_ZL17__lua_pushbooleanP9lua_StateP18FuzzedDataProvider:
-   67|    117|{
-   68|    117|	uint8_t n = fdp->ConsumeIntegral<uint8_t>();
-   69|    117|	int top = lua_gettop(L);
-   70|    117|	lua_pushboolean(L, n);
-   71|    117|	assert(lua_gettop(L) == top + 1);
-   72|    117|}
+   67|    103|{
+   68|    103|	uint8_t n = fdp->ConsumeIntegral<uint8_t>();
+   69|    103|	int top = lua_gettop(L);
+   70|    103|	lua_pushboolean(L, n);
+   71|    103|	assert(lua_gettop(L) == top + 1);
+   72|    103|}
 torture_test.cc:_ZL19__lua_pushcfunctionP9lua_StateP18FuzzedDataProvider:
-  589|    565|{
-  590|    565|	(void)fdp;
-  591|    565|	int top = lua_gettop(L);
-  592|    565|	lua_pushcfunction(L, cfunction);
-  593|    565|	assert(lua_gettop(L) == top + 1);
-  594|    565|}
+  589|    574|{
+  590|    574|	(void)fdp;
+  591|    574|	int top = lua_gettop(L);
+  592|    574|	lua_pushcfunction(L, cfunction);
+  593|    574|	assert(lua_gettop(L) == top + 1);
+  594|    574|}
 torture_test.cc:_ZL17__lua_pushintegerP9lua_StateP18FuzzedDataProvider:
-  260|    165|{
-  261|    165|	int top = lua_gettop(L);
-  262|    165|	uint8_t n = fdp->ConsumeIntegral<uint8_t>();
-  263|    165|	lua_pushinteger(L, n);
-  264|    165|	assert(lua_gettop(L) == top + 1);
-  265|    165|}
+  260|    163|{
+  261|    163|	int top = lua_gettop(L);
+  262|    163|	uint8_t n = fdp->ConsumeIntegral<uint8_t>();
+  263|    163|	lua_pushinteger(L, n);
+  264|    163|	assert(lua_gettop(L) == top + 1);
+  265|    163|}
 torture_test.cc:_ZL17__lua_pushlstringP9lua_StateP18FuzzedDataProvider:
-  271|    175|{
-  272|    175|	int top = lua_gettop(L);
-  273|    175|	auto str = fdp->ConsumeRandomLengthString(max_str_len);
-  274|    175|	lua_pushlstring(L, str.c_str(), str.size());
-  275|    175|	assert(lua_gettop(L) == top + 1);
-  276|    175|}
+  271|    149|{
+  272|    149|	int top = lua_gettop(L);
+  273|    149|	auto str = fdp->ConsumeRandomLengthString(max_str_len);
+  274|    149|	lua_pushlstring(L, str.c_str(), str.size());
+  275|    149|	assert(lua_gettop(L) == top + 1);
+  276|    149|}
 torture_test.cc:_ZL13__lua_pushnilP9lua_StateP18FuzzedDataProvider:
-  282|    292|{
-  283|    292|	int top = lua_gettop(L);
-  284|    292|	lua_pushnil(L);
-  285|    292|	assert(lua_gettop(L) == top + 1);
-  286|    292|}
+  282|    280|{
+  283|    280|	int top = lua_gettop(L);
+  284|    280|	lua_pushnil(L);
+  285|    280|	assert(lua_gettop(L) == top + 1);
+  286|    280|}
 torture_test.cc:_ZL16__lua_pushnumberP9lua_StateP18FuzzedDataProvider:
-  292|    141|{
-  293|    141|	int top = lua_gettop(L);
-  294|    141|	uint8_t n = fdp->ConsumeIntegral<uint8_t>();
-  295|    141|	lua_pushnumber(L, n);
-  296|    141|	assert(lua_gettop(L) == top + 1);
-  297|    141|}
+  292|    134|{
+  293|    134|	int top = lua_gettop(L);
+  294|    134|	uint8_t n = fdp->ConsumeIntegral<uint8_t>();
+  295|    134|	lua_pushnumber(L, n);
+  296|    134|	assert(lua_gettop(L) == top + 1);
+  297|    134|}
 torture_test.cc:_ZL16__lua_pushstringP9lua_StateP18FuzzedDataProvider:
-   56|    450|{
-   57|    450|	auto str = fdp->ConsumeRandomLengthString(max_str_len);
-   58|    450|	int top = lua_gettop(L);
-   59|    450|	lua_pushstring(L, str.c_str());
-   60|    450|	assert(lua_gettop(L) == top + 1);
-   61|    450|}
+   56|    299|{
+   57|    299|	auto str = fdp->ConsumeRandomLengthString(max_str_len);
+   58|    299|	int top = lua_gettop(L);
+   59|    299|	lua_pushstring(L, str.c_str());
+   60|    299|	assert(lua_gettop(L) == top + 1);
+   61|    299|}
 torture_test.cc:_ZL8__lua_gcP9lua_StateP18FuzzedDataProvider:
-  662|  1.50k|{
-  663|  1.50k|	int top = lua_gettop(L);
-  664|  1.50k|	uint8_t idx = fdp->ConsumeIntegralInRange<uint8_t>(0, ARRAY_SIZE(gc_mode) - 1);
+  662|  1.32k|{
+  663|  1.32k|	int top = lua_gettop(L);
+  664|  1.32k|	uint8_t idx = fdp->ConsumeIntegralInRange<uint8_t>(0, ARRAY_SIZE(gc_mode) - 1);
   ------------------
-  |  |   33|  1.50k|#define ARRAY_SIZE(arr)     (sizeof(arr) / sizeof((arr)[0]))
+  |  |   33|  1.32k|#define ARRAY_SIZE(arr)     (sizeof(arr) / sizeof((arr)[0]))
   ------------------
   665|       |#if LUA_VERSION_NUM > 503
   666|       |	if (gc_mode[idx] == LUA_GCGEN) {
@@ -186,117 +186,117 @@ torture_test.cc:_ZL8__lua_gcP9lua_StateP18FuzzedDataProvider:
   675|       |	} else
   676|       |		lua_gc(L, gc_mode[idx], 0);
   677|       |#else
-  678|  1.50k|	lua_gc(L, gc_mode[idx], 0);
-  679|  1.50k|#endif /* LUA_VERSION_NUM */
-  680|  1.50k|	assert(lua_gettop(L) == top);
-  681|  1.50k|}
+  678|  1.32k|	lua_gc(L, gc_mode[idx], 0);
+  679|  1.32k|#endif /* LUA_VERSION_NUM */
+  680|  1.32k|	assert(lua_gettop(L) == top);
+  681|  1.32k|}
 torture_test.cc:_ZL13__lua_sethookP9lua_StateP18FuzzedDataProvider:
-  702|  1.37k|{
-  703|  1.37k|	int top = lua_gettop(L);
-  704|  1.37k|	uint8_t idx = fdp->ConsumeIntegralInRange<uint8_t>(0, ARRAY_SIZE(hook_mode) - 1);
+  702|  1.21k|{
+  703|  1.21k|	int top = lua_gettop(L);
+  704|  1.21k|	uint8_t idx = fdp->ConsumeIntegralInRange<uint8_t>(0, ARRAY_SIZE(hook_mode) - 1);
   ------------------
-  |  |   33|  1.37k|#define ARRAY_SIZE(arr)     (sizeof(arr) / sizeof((arr)[0]))
+  |  |   33|  1.21k|#define ARRAY_SIZE(arr)     (sizeof(arr) / sizeof((arr)[0]))
   ------------------
-  705|  1.37k|	lua_sethook(L, Hook, hook_mode[idx], 1);
-  706|  1.37k|	assert(lua_gettop(L) == top);
-  707|  1.37k|}
+  705|  1.21k|	lua_sethook(L, Hook, hook_mode[idx], 1);
+  706|  1.21k|	assert(lua_gettop(L) == top);
+  707|  1.21k|}
 torture_test.cc:_ZL4HookP9lua_StateP9lua_Debug:
-  693|     26|{
-  694|     26|	(void)L;
-  695|     26|	(void)ar;
-  696|     26|}
+  693|     14|{
+  694|     14|	(void)L;
+  695|     14|	(void)ar;
+  696|     14|}
 torture_test.cc:_ZL10__lua_callP9lua_StateP18FuzzedDataProvider:
- 1647|    190|{
- 1648|    190|	int top = lua_gettop(L);
+ 1647|    183|{
+ 1648|    183|	int top = lua_gettop(L);
  1649|       |	/* Function to be called. */
- 1650|    190|	lua_pushcfunction(L, cfunction);
- 1651|    190|	int nargs = 0;
- 1652|    190|	int nresults = 0;
- 1653|    190|	lua_call(L, nargs, nresults);
- 1654|    190|	assert(lua_gettop(L) == top + nresults - nargs);
- 1655|    190|}
+ 1650|    183|	lua_pushcfunction(L, cfunction);
+ 1651|    183|	int nargs = 0;
+ 1652|    183|	int nresults = 0;
+ 1653|    183|	lua_call(L, nargs, nresults);
+ 1654|    183|	assert(lua_gettop(L) == top + nresults - nargs);
+ 1655|    183|}
 torture_test.cc:_ZL16__lua_checkstackP9lua_StateP18FuzzedDataProvider:
-  124|     99|{
-  125|     99|	uint8_t n = fdp->ConsumeIntegral<uint8_t>();
-  126|     99|	int rc = lua_checkstack(L, n);
-  127|     99|	assert(rc != 0);
-  128|     99|}
+  124|    106|{
+  125|    106|	uint8_t n = fdp->ConsumeIntegral<uint8_t>();
+  126|    106|	int rc = lua_checkstack(L, n);
+  127|    106|	assert(rc != 0);
+  128|    106|}
 torture_test.cc:_ZL12__lua_concatP9lua_StateP18FuzzedDataProvider:
   134|     14|{
   135|     14|	int top = lua_gettop(L);
   136|     14|	uint8_t n = fdp->ConsumeIntegralInRange<uint8_t>(0, top);
-  137|     30|	for (int i = 1; i <= n; i++) {
+  137|     32|	for (int i = 1; i <= n; i++) {
   ------------------
-  |  Branch (137:18): [True: 20, False: 10]
+  |  Branch (137:18): [True: 22, False: 10]
   ------------------
-  138|     20|		int t = lua_type(L, -i);
-  139|     20|		if (t != LUA_TNUMBER &&
+  138|     22|		int t = lua_type(L, -i);
+  139|     22|		if (t != LUA_TNUMBER &&
   ------------------
-  |  Branch (139:7): [True: 12, False: 8]
+  |  Branch (139:7): [True: 11, False: 11]
   ------------------
-  140|     20|		    t != LUA_TSTRING)
+  140|     22|		    t != LUA_TSTRING)
   ------------------
-  |  Branch (140:7): [True: 4, False: 8]
+  |  Branch (140:7): [True: 4, False: 7]
   ------------------
   141|      4|			return;
-  142|     20|	}
+  142|     22|	}
   143|     10|	lua_concat(L, n);
   144|     10|	assert(lua_gettop(L) == top - n + 1);
   145|     10|}
 torture_test.cc:_ZL17__lua_createtableP9lua_StateP18FuzzedDataProvider:
- 1736|     23|{
- 1737|     23|	int nrows = fdp->ConsumeIntegral<uint8_t>();
+ 1736|     18|{
+ 1737|     18|	int nrows = fdp->ConsumeIntegral<uint8_t>();
  1738|       |	/* XXX: Lua associative arrays. */
- 1739|     23|	lua_createtable(L, nrows, 0);
- 1740|  2.78k|	for (int i = 0; i < nrows; i++) {
+ 1739|     18|	lua_createtable(L, nrows, 0);
+ 1740|  1.91k|	for (int i = 0; i < nrows; i++) {
   ------------------
-  |  Branch (1740:18): [True: 2.75k, False: 23]
+  |  Branch (1740:18): [True: 1.89k, False: 18]
   ------------------
- 1741|  2.75k|		lua_pushnumber(L, i);
- 1742|  2.75k|		lua_rawseti(L, -2, i + 1);
- 1743|  2.75k|	}
- 1744|     23|	assert(lua_gettop(L) != 0);
- 1745|     23|}
+ 1741|  1.89k|		lua_pushnumber(L, i);
+ 1742|  1.89k|		lua_rawseti(L, -2, i + 1);
+ 1743|  1.89k|	}
+ 1744|     18|	assert(lua_gettop(L) != 0);
+ 1745|     18|}
 torture_test.cc:_ZL15__lua_getallocfP9lua_StateP18FuzzedDataProvider:
- 1581|      2|{
- 1582|      2|	int top = lua_gettop(L);
- 1583|      2|	void *state;
- 1584|      2|	lua_getallocf(L, &state);
- 1585|      2|	assert(lua_gettop(L) == top);
- 1586|      2|}
+ 1581|      3|{
+ 1582|      3|	int top = lua_gettop(L);
+ 1583|      3|	void *state;
+ 1584|      3|	lua_getallocf(L, &state);
+ 1585|      3|	assert(lua_gettop(L) == top);
+ 1586|      3|}
 torture_test.cc:_ZL14__lua_getfieldP9lua_StateP18FuzzedDataProvider:
- 1256|     17|{
- 1257|     17|	int top = lua_gettop(L);
- 1258|     17|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
- 1259|     17|	if (lua_type(L, index) != LUA_TTABLE)
+ 1256|     10|{
+ 1257|     10|	int top = lua_gettop(L);
+ 1258|     10|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1259|     10|	if (lua_type(L, index) != LUA_TTABLE)
   ------------------
-  |  Branch (1259:6): [True: 2, False: 15]
+  |  Branch (1259:6): [True: 2, False: 8]
   ------------------
  1260|      2|		return;
- 1261|     15|	auto k = fdp->ConsumeRemainingBytesAsString();
- 1262|     15|	lua_getfield(L, index, k.c_str());
- 1263|     15|	assert(lua_gettop(L) == top + 1);
- 1264|     15|}
+ 1261|      8|	auto k = fdp->ConsumeRemainingBytesAsString();
+ 1262|      8|	lua_getfield(L, index, k.c_str());
+ 1263|      8|	assert(lua_gettop(L) == top + 1);
+ 1264|      8|}
 torture_test.cc:_ZL15__lua_getglobalP9lua_StateP18FuzzedDataProvider:
-  447|      5|{
-  448|      5|	auto name = fdp->ConsumeRandomLengthString(max_str_len);
-  449|      5|	int top = lua_gettop(L);
-  450|      5|	lua_getglobal(L, name.c_str());
-  451|      5|	assert(lua_gettop(L) == top + 1);
-  452|      5|}
+  447|      6|{
+  448|      6|	auto name = fdp->ConsumeRandomLengthString(max_str_len);
+  449|      6|	int top = lua_gettop(L);
+  450|      6|	lua_getglobal(L, name.c_str());
+  451|      6|	assert(lua_gettop(L) == top + 1);
+  452|      6|}
 torture_test.cc:_ZL13__lua_gethookP9lua_StateP18FuzzedDataProvider:
-  713|      7|{
-  714|      7|	int top = lua_gettop(L);
-  715|      7|	lua_gethook(L);
-  716|      7|	assert(lua_gettop(L) == top);
-  717|      7|}
+  713|      2|{
+  714|      2|	int top = lua_gettop(L);
+  715|      2|	lua_gethook(L);
+  716|      2|	assert(lua_gettop(L) == top);
+  717|      2|}
 torture_test.cc:_ZL18__lua_gethookcountP9lua_StateP18FuzzedDataProvider:
-  723|      5|{
-  724|      5|	int top = lua_gettop(L);
-  725|      5|	int hook_count = lua_gethookcount(L);
-  726|      5|	assert(hook_count >= 0);
+  723|      4|{
+  724|      4|	int top = lua_gettop(L);
+  725|      4|	int hook_count = lua_gethookcount(L);
+  726|      4|	assert(hook_count >= 0);
   727|      0|	assert(lua_gettop(L) == top);
-  728|      5|}
+  728|      4|}
 torture_test.cc:_ZL17__lua_gethookmaskP9lua_StateP18FuzzedDataProvider:
   734|      6|{
   735|      6|	int top = lua_gettop(L);
@@ -305,15 +305,15 @@ torture_test.cc:_ZL17__lua_gethookmaskP9lua_StateP18FuzzedDataProvider:
   738|      0|	assert(lua_gettop(L) == top);
   739|      6|}
 torture_test.cc:_ZL13__lua_getinfoP9lua_StateP18FuzzedDataProvider:
-  551|      6|{
-  552|      6|	int top = lua_gettop(L);
-  553|      6|	lua_Debug ar;
-  554|      6|	lua_pushcfunction(L, cfunction);
-  555|      6|	const char *what = ">nSltufLr";
-  556|      6|	lua_getinfo(L, what, &ar);
-  557|      6|	assert(lua_gettop(L) >= top - 1 &&
-  558|      6|	       lua_gettop(L) <= top + 2);
-  559|      6|}
+  551|      4|{
+  552|      4|	int top = lua_gettop(L);
+  553|      4|	lua_Debug ar;
+  554|      4|	lua_pushcfunction(L, cfunction);
+  555|      4|	const char *what = ">nSltufLr";
+  556|      4|	lua_getinfo(L, what, &ar);
+  557|      4|	assert(lua_gettop(L) >= top - 1 &&
+  558|      4|	       lua_gettop(L) <= top + 2);
+  559|      4|}
 torture_test.cc:_ZL18__lua_getmetatableP9lua_StateP18FuzzedDataProvider:
   600|      3|{
   601|      3|	int top = lua_gettop(L);
@@ -322,48 +322,48 @@ torture_test.cc:_ZL18__lua_getmetatableP9lua_StateP18FuzzedDataProvider:
   604|      3|	assert(lua_gettop(L) - top <= 1);
   605|      3|}
 torture_test.cc:_ZL14__lua_getstackP9lua_StateP18FuzzedDataProvider:
-  565|      3|{
-  566|      3|	int top = lua_gettop(L);
-  567|      3|	int level = fdp->ConsumeIntegral<int8_t>();
-  568|      3|	lua_Debug ar;
-  569|      3|	lua_getstack(L, level, &ar);
-  570|      3|	assert(lua_gettop(L) == top);
-  571|      3|}
+  565|      9|{
+  566|      9|	int top = lua_gettop(L);
+  567|      9|	int level = fdp->ConsumeIntegral<int8_t>();
+  568|      9|	lua_Debug ar;
+  569|      9|	lua_getstack(L, level, &ar);
+  570|      9|	assert(lua_gettop(L) == top);
+  571|      9|}
 torture_test.cc:_ZL14__lua_gettableP9lua_StateP18FuzzedDataProvider:
  1049|      8|{
  1050|      8|	int top = lua_gettop(L);
  1051|      8|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
  1052|      8|	if (!lua_istable(L, index))
   ------------------
-  |  Branch (1052:6): [True: 3, False: 5]
+  |  Branch (1052:6): [True: 1, False: 7]
   ------------------
- 1053|      3|		return;
- 1054|      5|	uint8_t key = fdp->ConsumeIntegral<uint8_t>();
- 1055|      5|	lua_pushnumber(L, key);
- 1056|      5|	lua_gettable(L, index);
+ 1053|      1|		return;
+ 1054|      7|	uint8_t key = fdp->ConsumeIntegral<uint8_t>();
+ 1055|      7|	lua_pushnumber(L, key);
+ 1056|      7|	lua_gettable(L, index);
  1057|       |	/* XXX: Wrong number of elements. */
  1058|       |	/* assert(lua_gettop(L) == top); */
- 1059|      5|}
+ 1059|      7|}
 torture_test.cc:_ZL12__lua_gettopP9lua_StateP18FuzzedDataProvider:
-  151|      4|{
-  152|      4|	int rc = lua_gettop(L);
-  153|      4|	assert(rc >= 0);
-  154|      4|}
+  151|      2|{
+  152|      2|	int rc = lua_gettop(L);
+  153|      2|	assert(rc >= 0);
+  154|      2|}
 torture_test.cc:_ZL16__lua_getupvalueP9lua_StateP18FuzzedDataProvider:
-  470|      7|{
-  471|      7|	int top = lua_gettop(L);
-  472|      7|	int funcindex = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  473|      7|	int n = fdp->ConsumeIntegral<uint8_t>();
-  474|      7|	lua_getupvalue(L, funcindex, n);
-  475|      7|	assert(lua_gettop(L) == top || lua_gettop(L) == top + 1);
-  476|      7|}
+  470|      6|{
+  471|      6|	int top = lua_gettop(L);
+  472|      6|	int funcindex = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  473|      6|	int n = fdp->ConsumeIntegral<uint8_t>();
+  474|      6|	lua_getupvalue(L, funcindex, n);
+  475|      6|	assert(lua_gettop(L) == top || lua_gettop(L) == top + 1);
+  476|      6|}
 torture_test.cc:_ZL12__lua_insertP9lua_StateP18FuzzedDataProvider:
-  160|      5|{
-  161|      5|	int top = lua_gettop(L);
-  162|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  163|      5|	lua_insert(L, index);
-  164|      5|	assert(lua_gettop(L) == top - 1 + 1);
-  165|      5|}
+  160|      4|{
+  161|      4|	int top = lua_gettop(L);
+  162|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  163|      4|	lua_insert(L, index);
+  164|      4|	assert(lua_gettop(L) == top - 1 + 1);
+  165|      4|}
 torture_test.cc:_ZL15__lua_isbooleanP9lua_StateP18FuzzedDataProvider:
   171|      3|{
   172|      3|	int top = lua_gettop(L);
@@ -372,83 +372,83 @@ torture_test.cc:_ZL15__lua_isbooleanP9lua_StateP18FuzzedDataProvider:
   175|      3|	assert(rc == 0 || rc == 1);
   176|      3|}
 torture_test.cc:_ZL17__lua_iscfunctionP9lua_StateP18FuzzedDataProvider:
-  182|      6|{
-  183|      6|	int top = lua_gettop(L);
-  184|      6|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  185|      6|	int rc = lua_iscfunction(L, index);
-  186|      6|	assert(rc == 0 || rc == 1);
-  187|      6|}
+  182|      5|{
+  183|      5|	int top = lua_gettop(L);
+  184|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  185|      5|	int rc = lua_iscfunction(L, index);
+  186|      5|	assert(rc == 0 || rc == 1);
+  187|      5|}
 torture_test.cc:_ZL16__lua_isfunctionP9lua_StateP18FuzzedDataProvider:
-  193|      4|{
-  194|      4|	int top = lua_gettop(L);
-  195|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  196|      4|	int rc = lua_isfunction(L, index);
-  197|      4|	assert(rc == 0 || rc == 1);
-  198|      4|}
+  193|      8|{
+  194|      8|	int top = lua_gettop(L);
+  195|      8|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  196|      8|	int rc = lua_isfunction(L, index);
+  197|      8|	assert(rc == 0 || rc == 1);
+  198|      8|}
 torture_test.cc:_ZL21__lua_islightuserdataP9lua_StateP18FuzzedDataProvider:
-  493|      2|{
-  494|      2|	int top = lua_gettop(L);
-  495|      2|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  496|      2|	int rc = lua_islightuserdata(L, index);
-  497|      2|	assert(rc == 0 || rc == 1);
-  498|      2|}
+  493|      5|{
+  494|      5|	int top = lua_gettop(L);
+  495|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  496|      5|	int rc = lua_islightuserdata(L, index);
+  497|      5|	assert(rc == 0 || rc == 1);
+  498|      5|}
 torture_test.cc:_ZL11__lua_isnilP9lua_StateP18FuzzedDataProvider:
-  204|      2|{
-  205|      2|	int top = lua_gettop(L);
-  206|      2|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  207|      2|	int rc = lua_isnil(L, index);
-  208|      2|	assert(rc == 0 || rc == 1);
-  209|      2|}
+  204|      4|{
+  205|      4|	int top = lua_gettop(L);
+  206|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  207|      4|	int rc = lua_isnil(L, index);
+  208|      4|	assert(rc == 0 || rc == 1);
+  209|      4|}
 torture_test.cc:_ZL12__lua_isnoneP9lua_StateP18FuzzedDataProvider:
-  215|      3|{
-  216|      3|	int top = lua_gettop(L);
-  217|      3|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  218|      3|	int rc = lua_isnone(L, index);
-  219|      3|	assert(rc == 0 || rc == 1);
+  215|      4|{
+  216|      4|	int top = lua_gettop(L);
+  217|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  218|      4|	int rc = lua_isnone(L, index);
+  219|      4|	assert(rc == 0 || rc == 1);
   220|      0|	assert(lua_gettop(L) == top);
-  221|      3|}
+  221|      4|}
 torture_test.cc:_ZL17__lua_isnoneornilP9lua_StateP18FuzzedDataProvider:
-  227|      5|{
-  228|      5|	int top = lua_gettop(L);
-  229|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  230|      5|	lua_isnoneornil(L, index);
-  231|      5|	assert(lua_gettop(L) == top);
-  232|      5|}
+  227|      3|{
+  228|      3|	int top = lua_gettop(L);
+  229|      3|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  230|      3|	lua_isnoneornil(L, index);
+  231|      3|	assert(lua_gettop(L) == top);
+  232|      3|}
 torture_test.cc:_ZL14__lua_isnumberP9lua_StateP18FuzzedDataProvider:
-   89|      6|{
-   90|      6|	int top = lua_gettop(L);
-   91|      6|	uint8_t n = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-   92|      6|	lua_isnumber(L, n);
-   93|      6|	assert(lua_gettop(L) == top);
-   94|      6|}
+   89|      8|{
+   90|      8|	int top = lua_gettop(L);
+   91|      8|	uint8_t n = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+   92|      8|	lua_isnumber(L, n);
+   93|      8|	assert(lua_gettop(L) == top);
+   94|      8|}
 torture_test.cc:_ZL14__lua_isstringP9lua_StateP18FuzzedDataProvider:
-  238|      7|{
-  239|      7|	int top = lua_gettop(L);
-  240|      7|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  241|      7|	int rc = lua_isstring(L, index);
-  242|      7|	assert(rc == 0 || rc == 1);
-  243|      7|}
+  238|      5|{
+  239|      5|	int top = lua_gettop(L);
+  240|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  241|      5|	int rc = lua_isstring(L, index);
+  242|      5|	assert(rc == 0 || rc == 1);
+  243|      5|}
 torture_test.cc:_ZL13__lua_istableP9lua_StateP18FuzzedDataProvider:
-  249|      3|{
-  250|      3|	int top = lua_gettop(L);
-  251|      3|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  252|      3|	int rc = lua_istable(L, index);
-  253|      3|	assert(rc == 0 || rc == 1);
-  254|      3|}
+  249|      2|{
+  250|      2|	int top = lua_gettop(L);
+  251|      2|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  252|      2|	int rc = lua_istable(L, index);
+  253|      2|	assert(rc == 0 || rc == 1);
+  254|      2|}
 torture_test.cc:_ZL14__lua_isthreadP9lua_StateP18FuzzedDataProvider:
-  515|      2|{
-  516|      2|	int top = lua_gettop(L);
-  517|      2|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  518|      2|	int rc = lua_isthread(L, index);
-  519|      2|	assert(rc == 0 || rc == 1);
-  520|      2|}
+  515|      3|{
+  516|      3|	int top = lua_gettop(L);
+  517|      3|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  518|      3|	int rc = lua_isthread(L, index);
+  519|      3|	assert(rc == 0 || rc == 1);
+  520|      3|}
 torture_test.cc:_ZL16__lua_isuserdataP9lua_StateP18FuzzedDataProvider:
-  504|      4|{
-  505|      4|	int top = lua_gettop(L);
-  506|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  507|      4|	int rc = lua_isuserdata(L, index);
-  508|      4|	assert(rc == 0 || rc == 1);
-  509|      4|}
+  504|      2|{
+  505|      2|	int top = lua_gettop(L);
+  506|      2|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  507|      2|	int rc = lua_isuserdata(L, index);
+  508|      2|	assert(rc == 0 || rc == 1);
+  509|      2|}
 torture_test.cc:_ZL15__luaL_callmetaP9lua_StateP18FuzzedDataProvider:
  1687|      2|{
  1688|      2|	int top = lua_gettop(L);
@@ -460,32 +460,32 @@ torture_test.cc:_ZL15__luaL_callmetaP9lua_StateP18FuzzedDataProvider:
  1691|      2|	assert(lua_gettop(L) == top || lua_gettop(L) == top + 1);
  1692|      2|}
 torture_test.cc:_ZL15__luaL_checkanyP9lua_StateP18FuzzedDataProvider:
- 1375|      5|{
- 1376|      5|	int top = lua_gettop(L);
- 1377|      5|	uint8_t arg = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1375|      4|{
+ 1376|      4|	int top = lua_gettop(L);
+ 1377|      4|	uint8_t arg = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
  1378|       |	/*
  1379|       |	 * Functions called luaL_check* always raise an error
  1380|       |	 * if the check is not satisfied.
  1381|       |	 */
- 1382|      5|	luaL_checkany(L, arg);
- 1383|      5|	assert(lua_gettop(L) == top);
- 1384|      5|}
+ 1382|      4|	luaL_checkany(L, arg);
+ 1383|      4|	assert(lua_gettop(L) == top);
+ 1384|      4|}
 torture_test.cc:_ZL19__luaL_checkintegerP9lua_StateP18FuzzedDataProvider:
- 1325|      5|{
- 1326|      5|	int top = lua_gettop(L);
- 1327|      5|	uint8_t arg = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1325|      4|{
+ 1326|      4|	int top = lua_gettop(L);
+ 1327|      4|	uint8_t arg = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
  1328|       |	/*
  1329|       |	 * Functions called luaL_check* always raise an error
  1330|       |	 * if the check is not satisfied.
  1331|       |	 */
- 1332|      5|	if (lua_type(L, arg) != LUA_TNUMBER)
+ 1332|      4|	if (lua_type(L, arg) != LUA_TNUMBER)
   ------------------
-  |  Branch (1332:6): [True: 3, False: 2]
+  |  Branch (1332:6): [True: 3, False: 1]
   ------------------
  1333|      3|		return;
- 1334|      2|	luaL_checkinteger(L, arg);
- 1335|      2|	assert(lua_gettop(L) == top);
- 1336|      2|}
+ 1334|      1|	luaL_checkinteger(L, arg);
+ 1335|      1|	assert(lua_gettop(L) == top);
+ 1336|      1|}
 torture_test.cc:_ZL18__luaL_checknumberP9lua_StateP18FuzzedDataProvider:
  1308|      5|{
  1309|      5|	int top = lua_gettop(L);
@@ -503,93 +503,93 @@ torture_test.cc:_ZL18__luaL_checknumberP9lua_StateP18FuzzedDataProvider:
  1318|      1|	assert(lua_gettop(L) == top);
  1319|      1|}
 torture_test.cc:_ZL17__luaL_checkstackP9lua_StateP18FuzzedDataProvider:
- 1605|      1|{
- 1606|      1|	int top = lua_gettop(L);
- 1607|      1|	int sz = top + 1;
- 1608|      1|	char err_msg[] = "shit happens";
- 1609|      1|	luaL_checkstack(L, sz, err_msg);
- 1610|      1|	assert(lua_gettop(L) == top);
- 1611|      1|}
+ 1605|      3|{
+ 1606|      3|	int top = lua_gettop(L);
+ 1607|      3|	int sz = top + 1;
+ 1608|      3|	char err_msg[] = "shit happens";
+ 1609|      3|	luaL_checkstack(L, sz, err_msg);
+ 1610|      3|	assert(lua_gettop(L) == top);
+ 1611|      3|}
 torture_test.cc:_ZL18__luaL_checkstringP9lua_StateP18FuzzedDataProvider:
- 1342|      9|{
- 1343|      9|	int top = lua_gettop(L);
- 1344|      9|	uint8_t arg = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1342|      6|{
+ 1343|      6|	int top = lua_gettop(L);
+ 1344|      6|	uint8_t arg = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
  1345|       |	/*
  1346|       |	 * Functions called luaL_check* always raise an error
  1347|       |	 * if the check is not satisfied.
  1348|       |	 */
- 1349|      9|	if (lua_type(L, arg) != LUA_TSTRING)
+ 1349|      6|	if (lua_type(L, arg) != LUA_TSTRING)
   ------------------
-  |  Branch (1349:6): [True: 7, False: 2]
+  |  Branch (1349:6): [True: 4, False: 2]
   ------------------
- 1350|      7|		return;
+ 1350|      4|		return;
  1351|      2|	luaL_checkstring(L, arg);
  1352|      2|	assert(lua_gettop(L) == top);
  1353|      2|}
 torture_test.cc:_ZL16__luaL_checktypeP9lua_StateP18FuzzedDataProvider:
- 1359|      9|{
- 1360|      9|	int top = lua_gettop(L);
- 1361|      9|	uint8_t arg = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1359|      5|{
+ 1360|      5|	int top = lua_gettop(L);
+ 1361|      5|	uint8_t arg = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
  1362|       |	/*
  1363|       |	 * Functions called luaL_check* always raise an error
  1364|       |	 * if the check is not satisfied.
  1365|       |	 */
- 1366|      9|	int type = lua_type(L, arg);
- 1367|      9|	luaL_checktype(L, arg, type);
- 1368|      9|	assert(lua_gettop(L) == top);
- 1369|      9|}
+ 1366|      5|	int type = lua_type(L, arg);
+ 1367|      5|	luaL_checktype(L, arg, type);
+ 1368|      5|	assert(lua_gettop(L) == top);
+ 1369|      5|}
 torture_test.cc:_ZL19__luaL_getmetafieldP9lua_StateP18FuzzedDataProvider:
- 1635|      9|{
- 1636|      9|	int top = lua_gettop(L);
- 1637|      9|	auto obj = fdp->ConsumeIntegralInRange(1, top);
- 1638|      9|	const char e[] = "xxx";
- 1639|      9|	luaL_getmetafield(L, obj, e);
- 1640|      9|	assert(lua_gettop(L) == top || lua_gettop(L) == top + 1);
- 1641|      9|}
+ 1635|     15|{
+ 1636|     15|	int top = lua_gettop(L);
+ 1637|     15|	auto obj = fdp->ConsumeIntegralInRange(1, top);
+ 1638|     15|	const char e[] = "xxx";
+ 1639|     15|	luaL_getmetafield(L, obj, e);
+ 1640|     15|	assert(lua_gettop(L) == top || lua_gettop(L) == top + 1);
+ 1641|     15|}
 torture_test.cc:_ZL17__luaL_loadstringP9lua_StateP18FuzzedDataProvider:
- 1676|     29|{
- 1677|     29|	int top = lua_gettop(L);
- 1678|     29|	int res = luaL_loadstring(L, "a = a + 1");
- 1679|     29|	assert(res == LUA_OK);
+ 1676|     19|{
+ 1677|     19|	int top = lua_gettop(L);
+ 1678|     19|	int res = luaL_loadstring(L, "a = a + 1");
+ 1679|     19|	assert(res == LUA_OK);
  1680|      0|	assert(lua_gettop(L) == top + 1);
- 1681|     29|}
+ 1681|     19|}
 torture_test.cc:_ZL10__luaL_refP9lua_StateP18FuzzedDataProvider:
- 1592|     17|{
- 1593|     17|	int top = lua_gettop(L);
- 1594|     17|	auto idx = fdp->ConsumeIntegralInRange(1, top);
- 1595|     17|	if (lua_type(L, idx) != LUA_TTABLE)
+ 1592|     18|{
+ 1593|     18|	int top = lua_gettop(L);
+ 1594|     18|	auto idx = fdp->ConsumeIntegralInRange(1, top);
+ 1595|     18|	if (lua_type(L, idx) != LUA_TTABLE)
   ------------------
-  |  Branch (1595:6): [True: 2, False: 15]
+  |  Branch (1595:6): [True: 1, False: 17]
   ------------------
- 1596|      2|		return;
- 1597|     15|	luaL_ref(L, idx);
- 1598|     15|	assert(lua_gettop(L) == top - 1);
- 1599|     15|}
+ 1596|      1|		return;
+ 1597|     17|	luaL_ref(L, idx);
+ 1598|     17|	assert(lua_gettop(L) == top - 1);
+ 1599|     17|}
 torture_test.cc:_ZL16__luaL_tolstringP9lua_StateP18FuzzedDataProvider:
- 1465|     11|{
- 1466|     11|	int top = lua_gettop(L);
- 1467|     11|	auto idx = fdp->ConsumeIntegralInRange(1, top);
- 1468|     11|#if LUA_VERSION_NUM < 503
- 1469|     11|	lua_tolstring(L, idx, NULL);
+ 1465|     13|{
+ 1466|     13|	int top = lua_gettop(L);
+ 1467|     13|	auto idx = fdp->ConsumeIntegralInRange(1, top);
+ 1468|     13|#if LUA_VERSION_NUM < 503
+ 1469|     13|	lua_tolstring(L, idx, NULL);
  1470|       |#else
  1471|       |	luaL_tolstring(L, idx, NULL);
  1472|       |#endif /* LUA_VERSION_NUM */
  1473|       |	/* XXX: Wrong number of elements. */
  1474|       |	/* assert(lua_gettop(L) == top + 1); */
- 1475|     11|}
+ 1475|     13|}
 torture_test.cc:_ZL16__luaL_tracebackP9lua_StateP18FuzzedDataProvider:
- 1454|      6|{
- 1455|      6|	int top = lua_gettop(L);
- 1456|      6|	auto buf = fdp->ConsumeRandomLengthString(max_str_len);
- 1457|      6|	luaL_traceback(L, L, buf.c_str(), 1);
- 1458|      6|	assert(lua_gettop(L) == top + 1);
- 1459|      6|}
+ 1454|      3|{
+ 1455|      3|	int top = lua_gettop(L);
+ 1456|      3|	auto buf = fdp->ConsumeRandomLengthString(max_str_len);
+ 1457|      3|	luaL_traceback(L, L, buf.c_str(), 1);
+ 1458|      3|	assert(lua_gettop(L) == top + 1);
+ 1459|      3|}
 torture_test.cc:_ZL12__luaL_whereP9lua_StateP18FuzzedDataProvider:
- 1698|      4|{
- 1699|      4|	int top = lua_gettop(L);
- 1700|      4|	luaL_where(L, 1);
- 1701|      4|	assert(lua_gettop(L) == top + 1);
- 1702|      4|}
+ 1698|      5|{
+ 1699|      5|	int top = lua_gettop(L);
+ 1700|      5|	luaL_where(L, 1);
+ 1701|      5|	assert(lua_gettop(L) == top + 1);
+ 1702|      5|}
 torture_test.cc:_ZL17__lua_newuserdataP9lua_StateP18FuzzedDataProvider:
  1270|      5|{
  1271|      5|	uint8_t size = fdp->ConsumeIntegral<uint8_t>();
@@ -609,146 +609,146 @@ torture_test.cc:_ZL10__lua_nextP9lua_StateP18FuzzedDataProvider:
   544|      9|	assert(lua_gettop(L) - top - 1 <= 2);
   545|      9|}
 torture_test.cc:_ZL11__lua_pcallP9lua_StateP18FuzzedDataProvider:
- 1661|      6|{
- 1662|      6|	int top = lua_gettop(L);
+ 1661|      4|{
+ 1662|      4|	int top = lua_gettop(L);
  1663|       |	/* Function to be called. */
- 1664|      6|	lua_pushcfunction(L, cfunction);
- 1665|      6|	int nargs = 0;
- 1666|      6|	int nresults = 0;
- 1667|      6|	int res = lua_pcall(L, nargs, nresults, 0);
- 1668|      6|	assert(res == LUA_OK);
+ 1664|      4|	lua_pushcfunction(L, cfunction);
+ 1665|      4|	int nargs = 0;
+ 1666|      4|	int nresults = 0;
+ 1667|      4|	int res = lua_pcall(L, nargs, nresults, 0);
+ 1668|      4|	assert(res == LUA_OK);
  1669|      0|	assert(lua_gettop(L) == top + nresults - nargs);
- 1670|      6|}
+ 1670|      4|}
 torture_test.cc:_ZL9__lua_popP9lua_StateP18FuzzedDataProvider:
-   78|      9|{
-   79|      9|	int top = lua_gettop(L);
-   80|      9|	uint8_t n = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-   81|      9|	lua_pop(L, n);
-   82|      9|	assert(lua_gettop(L) == top - n);
-   83|      9|}
+   78|      3|{
+   79|      3|	int top = lua_gettop(L);
+   80|      3|	uint8_t n = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+   81|      3|	lua_pop(L, n);
+   82|      3|	assert(lua_gettop(L) == top - n);
+   83|      3|}
 torture_test.cc:_ZL18__lua_pushcclosureP9lua_StateP18FuzzedDataProvider:
-  577|     14|{
+  577|     15|{
   578|       |	/* Maximum n is 255 in lua_pushcclosure(3). */
-  579|     14|	int n = fdp->ConsumeIntegralInRange<uint8_t>(1, 10);
-  580|     66|	for (int i = 1; i < n; i++)
+  579|     15|	int n = fdp->ConsumeIntegralInRange<uint8_t>(1, 10);
+  580|     59|	for (int i = 1; i < n; i++)
   ------------------
-  |  Branch (580:18): [True: 52, False: 14]
+  |  Branch (580:18): [True: 44, False: 15]
   ------------------
-  581|     52|		lua_pushnumber(L, i);
-  582|     14|	lua_pushcclosure(L, cfunction, n);
-  583|     14|}
+  581|     44|		lua_pushnumber(L, i);
+  582|     15|	lua_pushcclosure(L, cfunction, n);
+  583|     15|}
 torture_test.cc:_ZL17__lua_pushfstringP9lua_StateP18FuzzedDataProvider:
- 1279|    246|{
- 1280|    246|	int top = lua_gettop(L);
- 1281|    246|	auto arg1 = fdp->ConsumeRandomLengthString(max_str_len);
- 1282|    246|	auto arg2 = fdp->ConsumeRandomLengthString(max_str_len);
- 1283|    246|	auto arg3 = fdp->ConsumeRandomLengthString(max_str_len);
- 1284|    246|	auto arg4 = fdp->ConsumeRandomLengthString(max_str_len);
- 1285|    246|	auto arg5 = fdp->ConsumeRandomLengthString(max_str_len);
- 1286|    246|	char fmt_str[] = "%s %f %p %d %c";
- 1287|    246|	lua_pushfstring(L, fmt_str, arg1.c_str(), arg2.c_str(),
- 1288|    246|	                            arg3.c_str(), arg4.c_str(),
- 1289|    246|	                            arg5.c_str());
- 1290|    246|	assert(lua_gettop(L) == top + 1);
- 1291|    246|}
+ 1279|    166|{
+ 1280|    166|	int top = lua_gettop(L);
+ 1281|    166|	auto arg1 = fdp->ConsumeRandomLengthString(max_str_len);
+ 1282|    166|	auto arg2 = fdp->ConsumeRandomLengthString(max_str_len);
+ 1283|    166|	auto arg3 = fdp->ConsumeRandomLengthString(max_str_len);
+ 1284|    166|	auto arg4 = fdp->ConsumeRandomLengthString(max_str_len);
+ 1285|    166|	auto arg5 = fdp->ConsumeRandomLengthString(max_str_len);
+ 1286|    166|	char fmt_str[] = "%s %f %p %d %c";
+ 1287|    166|	lua_pushfstring(L, fmt_str, arg1.c_str(), arg2.c_str(),
+ 1288|    166|	                            arg3.c_str(), arg4.c_str(),
+ 1289|    166|	                            arg5.c_str());
+ 1290|    166|	assert(lua_gettop(L) == top + 1);
+ 1291|    166|}
 torture_test.cc:_ZL16__lua_pushthreadP9lua_StateP18FuzzedDataProvider:
-  526|      5|{
-  527|      5|	int top = lua_gettop(L);
-  528|      5|	int rc = lua_pushthread(L);
-  529|      5|	assert(rc == 1);
+  526|      3|{
+  527|      3|	int top = lua_gettop(L);
+  528|      3|	int rc = lua_pushthread(L);
+  529|      3|	assert(rc == 1);
   530|      0|	assert(lua_gettop(L) == top + 1);
-  531|      5|}
+  531|      3|}
 torture_test.cc:_ZL15__lua_pushvalueP9lua_StateP18FuzzedDataProvider:
-  303|      8|{
-  304|      8|	int top = lua_gettop(L);
-  305|      8|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  306|      8|	lua_pushvalue(L, index);
-  307|      8|	assert(lua_gettop(L) == top + 1);
-  308|      8|}
+  303|      6|{
+  304|      6|	int top = lua_gettop(L);
+  305|      6|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  306|      6|	lua_pushvalue(L, index);
+  307|      6|	assert(lua_gettop(L) == top + 1);
+  308|      6|}
 torture_test.cc:_ZL14__lua_rawequalP9lua_StateP18FuzzedDataProvider:
- 1440|      8|{
- 1441|      8|	int top = lua_gettop(L);
- 1442|      8|	if (top < 2)
+ 1440|     11|{
+ 1441|     11|	int top = lua_gettop(L);
+ 1442|     11|	if (top < 2)
   ------------------
-  |  Branch (1442:6): [True: 0, False: 8]
+  |  Branch (1442:6): [True: 0, False: 11]
   ------------------
  1443|      0|		return;
- 1444|      8|	uint8_t index1 = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
- 1445|      8|	uint8_t index2 = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
- 1446|      8|	lua_rawequal(L, index1, index2);
- 1447|      8|	assert(lua_gettop(L) == top);
- 1448|      8|}
+ 1444|     11|	uint8_t index1 = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1445|     11|	uint8_t index2 = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1446|     11|	lua_rawequal(L, index1, index2);
+ 1447|     11|	assert(lua_gettop(L) == top);
+ 1448|     11|}
 torture_test.cc:_ZL12__lua_rawgetP9lua_StateP18FuzzedDataProvider:
-  745|      5|{
-  746|      5|	int top = lua_gettop(L);
-  747|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  748|      5|	if (!lua_istable(L, index))
+  745|      4|{
+  746|      4|	int top = lua_gettop(L);
+  747|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  748|      4|	if (!lua_istable(L, index))
   ------------------
-  |  Branch (748:6): [True: 2, False: 3]
+  |  Branch (748:6): [True: 2, False: 2]
   ------------------
   749|      2|		return;
-  750|      3|	uint8_t key = fdp->ConsumeIntegral<uint8_t>();
-  751|      3|	lua_pushnumber(L, key);
-  752|      3|	lua_rawget(L, index);
+  750|      2|	uint8_t key = fdp->ConsumeIntegral<uint8_t>();
+  751|      2|	lua_pushnumber(L, key);
+  752|      2|	lua_rawget(L, index);
   753|       |	/* XXX: Wrong number of elements. */
   754|       |	/* assert(lua_gettop(L) == top); */
-  755|      3|}
+  755|      2|}
 torture_test.cc:_ZL13__lua_rawgetiP9lua_StateP18FuzzedDataProvider:
-  797|      7|{
-  798|      7|	int top = lua_gettop(L);
-  799|      7|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  800|      7|	if (!lua_istable(L, index))
+  797|      6|{
+  798|      6|	int top = lua_gettop(L);
+  799|      6|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  800|      6|	if (!lua_istable(L, index))
   ------------------
-  |  Branch (800:6): [True: 2, False: 5]
+  |  Branch (800:6): [True: 2, False: 4]
   ------------------
   801|      2|		return;
-  802|      5|	int i = fdp->ConsumeIntegral<uint8_t>();
-  803|      5|	lua_rawgeti(L, index, i);
-  804|      5|	assert(lua_gettop(L) == top + 1);
-  805|      5|}
+  802|      4|	int i = fdp->ConsumeIntegral<uint8_t>();
+  803|      4|	lua_rawgeti(L, index, i);
+  804|      4|	assert(lua_gettop(L) == top + 1);
+  805|      4|}
 torture_test.cc:_ZL12__lua_rawsetP9lua_StateP18FuzzedDataProvider:
-  761|     14|{
-  762|     14|	int top = lua_gettop(L);
-  763|     14|	if (top == 0)
+  761|     18|{
+  762|     18|	int top = lua_gettop(L);
+  763|     18|	if (top == 0)
   ------------------
-  |  Branch (763:6): [True: 0, False: 14]
+  |  Branch (763:6): [True: 0, False: 18]
   ------------------
   764|      0|		return;
-  765|     14|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  766|     14|	if (!lua_istable(L, index))
+  765|     18|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  766|     18|	if (!lua_istable(L, index))
   ------------------
-  |  Branch (766:6): [True: 3, False: 11]
+  |  Branch (766:6): [True: 2, False: 16]
   ------------------
-  767|      3|		return;
-  768|     11|	uint8_t key = fdp->ConsumeIntegral<uint8_t>();
-  769|     11|	uint8_t value = fdp->ConsumeIntegral<uint8_t>();
-  770|     11|	lua_pushnumber(L, value);
-  771|     11|	lua_pushnumber(L, key);
-  772|     11|	lua_rawset(L, index);
+  767|      2|		return;
+  768|     16|	uint8_t key = fdp->ConsumeIntegral<uint8_t>();
+  769|     16|	uint8_t value = fdp->ConsumeIntegral<uint8_t>();
+  770|     16|	lua_pushnumber(L, value);
+  771|     16|	lua_pushnumber(L, key);
+  772|     16|	lua_rawset(L, index);
   773|       |	/* XXX: Wrong number of elements. */
   774|       |	/* assert(lua_gettop(L) == top - 2); */
-  775|     11|}
+  775|     16|}
 torture_test.cc:_ZL13__lua_rawsetiP9lua_StateP18FuzzedDataProvider:
-  781|     16|{
-  782|     16|	int top = lua_gettop(L);
-  783|     16|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  784|     16|	if (!lua_istable(L, index))
+  781|     11|{
+  782|     11|	int top = lua_gettop(L);
+  783|     11|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  784|     11|	if (!lua_istable(L, index))
   ------------------
-  |  Branch (784:6): [True: 2, False: 14]
+  |  Branch (784:6): [True: 1, False: 10]
   ------------------
-  785|      2|		return;
-  786|     14|	int n = fdp->ConsumeIntegral<uint8_t>();
-  787|     14|	__lua_pushnumber(L, fdp);
-  788|     14|	lua_rawseti(L, index, n);
+  785|      1|		return;
+  786|     10|	int n = fdp->ConsumeIntegral<uint8_t>();
+  787|     10|	__lua_pushnumber(L, fdp);
+  788|     10|	lua_rawseti(L, index, n);
   789|       |	/* XXX: Wrong number of elements. */
   790|       |	/* assert(lua_gettop(L) == top - 1); */
-  791|     14|}
+  791|     10|}
 torture_test.cc:_ZL14__lua_registerP9lua_StateP18FuzzedDataProvider:
- 1153|      5|{
- 1154|      5|	int top = lua_gettop(L);
- 1155|      5|	lua_register(L, "cfunction", cfunction);
- 1156|      5|	assert(lua_gettop(L) == top);
- 1157|      5|}
+ 1153|      6|{
+ 1154|      6|	int top = lua_gettop(L);
+ 1155|      6|	lua_register(L, "cfunction", cfunction);
+ 1156|      6|	assert(lua_gettop(L) == top);
+ 1157|      6|}
 torture_test.cc:_ZL12__lua_removeP9lua_StateP18FuzzedDataProvider:
   314|      4|{
   315|      4|	int top = lua_gettop(L);
@@ -757,19 +757,19 @@ torture_test.cc:_ZL12__lua_removeP9lua_StateP18FuzzedDataProvider:
   318|      4|	assert(lua_gettop(L) == top - 1);
   319|      4|}
 torture_test.cc:_ZL13__lua_replaceP9lua_StateP18FuzzedDataProvider:
-  325|      4|{
-  326|      4|	int top = lua_gettop(L);
-  327|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  328|      4|	lua_replace(L, index);
-  329|      4|	assert(lua_gettop(L) == top - 1);
-  330|      4|}
+  325|      5|{
+  326|      5|	int top = lua_gettop(L);
+  327|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  328|      5|	lua_replace(L, index);
+  329|      5|	assert(lua_gettop(L) == top - 1);
+  330|      5|}
 torture_test.cc:_ZL12__lua_resumeP9lua_StateP18FuzzedDataProvider:
- 1168|     20|{
- 1169|     20|	lua_State *co = lua_newthread(L);
- 1170|     20|	lua_pushcfunction(co, cfunction);
- 1171|     20|	int res = -1;
- 1172|     20|#if LUA_VERSION_NUM == 501
- 1173|     20|	res = lua_resume(L, 0);
+ 1168|     16|{
+ 1169|     16|	lua_State *co = lua_newthread(L);
+ 1170|     16|	lua_pushcfunction(co, cfunction);
+ 1171|     16|	int res = -1;
+ 1172|     16|#if LUA_VERSION_NUM == 501
+ 1173|     16|	res = lua_resume(L, 0);
  1174|       |#elif LUA_VERSION_NUM == 503 || LUA_VERSION_NUM == 502
  1175|       |	res = lua_resume(co, L, 0);
  1176|       |#else
@@ -778,22 +778,22 @@ torture_test.cc:_ZL12__lua_resumeP9lua_StateP18FuzzedDataProvider:
  1179|       |#endif /* LUA_VERSION_NUM */
  1180|       |	/* XXX: Wrong exit code. */
  1181|       |	/* assert(res == LUA_OK); */
- 1182|     20|	(void)res;
- 1183|     20|	lua_settop(co, 0);
- 1184|     20|}
+ 1182|     16|	(void)res;
+ 1183|     16|	lua_settop(co, 0);
+ 1184|     16|}
 torture_test.cc:_ZL14__lua_setfieldP9lua_StateP18FuzzedDataProvider:
- 1190|     15|{
- 1191|     15|	int top = lua_gettop(L);
- 1192|     15|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
- 1193|     15|	if (lua_type(L, index) != LUA_TTABLE)
+ 1190|     14|{
+ 1191|     14|	int top = lua_gettop(L);
+ 1192|     14|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1193|     14|	if (lua_type(L, index) != LUA_TTABLE)
   ------------------
-  |  Branch (1193:6): [True: 2, False: 13]
+  |  Branch (1193:6): [True: 2, False: 12]
   ------------------
  1194|      2|		return;
- 1195|     13|	auto k = fdp->ConsumeRemainingBytesAsString();
- 1196|     13|	lua_setfield(L, index, k.c_str());
- 1197|     13|	assert(lua_gettop(L) == top - 1);
- 1198|     13|}
+ 1195|     12|	auto k = fdp->ConsumeRemainingBytesAsString();
+ 1196|     12|	lua_setfield(L, index, k.c_str());
+ 1197|     12|	assert(lua_gettop(L) == top - 1);
+ 1198|     12|}
 torture_test.cc:_ZL15__lua_setglobalP9lua_StateP18FuzzedDataProvider:
   336|      1|{
   337|      1|	int top = lua_gettop(L);
@@ -802,32 +802,32 @@ torture_test.cc:_ZL15__lua_setglobalP9lua_StateP18FuzzedDataProvider:
   340|      1|	assert(lua_gettop(L) == top - 1);
   341|      1|}
 torture_test.cc:_ZL18__lua_setmetatableP9lua_StateP18FuzzedDataProvider:
- 1002|      4|{
- 1003|      4|	luaL_getmetatable(L, TYPE_NAME_TORTURE);
- 1004|      4|	int top = lua_gettop(L);
- 1005|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
- 1006|      4|	lua_setmetatable(L, index);
- 1007|      4|	assert(lua_gettop(L) == top - 1);
- 1008|      4|}
+ 1002|      7|{
+ 1003|      7|	luaL_getmetatable(L, TYPE_NAME_TORTURE);
+ 1004|      7|	int top = lua_gettop(L);
+ 1005|      7|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1006|      7|	lua_setmetatable(L, index);
+ 1007|      7|	assert(lua_gettop(L) == top - 1);
+ 1008|      7|}
 torture_test.cc:_ZL14__lua_settableP9lua_StateP18FuzzedDataProvider:
- 1241|      6|{
- 1242|      6|	int top = lua_gettop(L);
- 1243|      6|	lua_createtable(L, 0, 1);
+ 1241|      5|{
+ 1242|      5|	int top = lua_gettop(L);
+ 1243|      5|	lua_createtable(L, 0, 1);
  1244|       |
- 1245|      6|	lua_pushstring(L, "language");
- 1246|      6|	lua_pushstring(L, "Lua");
- 1247|      6|	lua_settable(L, -3);
+ 1245|      5|	lua_pushstring(L, "language");
+ 1246|      5|	lua_pushstring(L, "Lua");
+ 1247|      5|	lua_settable(L, -3);
  1248|       |
- 1249|      6|	assert(lua_gettop(L) == top + 1);
- 1250|      6|}
+ 1249|      5|	assert(lua_gettop(L) == top + 1);
+ 1250|      5|}
 torture_test.cc:_ZL12__lua_settopP9lua_StateP18FuzzedDataProvider:
-  347|      2|{
-  348|      2|	int top = lua_gettop(L);
-  349|      2|	int grow_slots = 2;
-  350|      2|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top + grow_slots);
-  351|      2|	lua_settop(L, index);
-  352|      2|	assert(lua_gettop(L) == index);
-  353|      2|}
+  347|      5|{
+  348|      5|	int top = lua_gettop(L);
+  349|      5|	int grow_slots = 2;
+  350|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top + grow_slots);
+  351|      5|	lua_settop(L, index);
+  352|      5|	assert(lua_gettop(L) == index);
+  353|      5|}
 torture_test.cc:_ZL16__lua_setupvalueP9lua_StateP18FuzzedDataProvider:
   458|      4|{
   459|      4|	int top = lua_gettop(L);
@@ -837,24 +837,24 @@ torture_test.cc:_ZL16__lua_setupvalueP9lua_StateP18FuzzedDataProvider:
   463|      4|	assert(lua_gettop(L) == top);
   464|      4|}
 torture_test.cc:_ZL12__lua_statusP9lua_StateP18FuzzedDataProvider:
-  359|      3|{
-  360|      3|	int rc = lua_status(L);
-  361|      3|	assert(rc == 0 || rc == LUA_YIELD);
-  362|      3|}
+  359|      4|{
+  360|      4|	int rc = lua_status(L);
+  361|      4|	assert(rc == 0 || rc == LUA_YIELD);
+  362|      4|}
 torture_test.cc:_ZL15__lua_tobooleanP9lua_StateP18FuzzedDataProvider:
-  368|      5|{
-  369|      5|	int top = lua_gettop(L);
-  370|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  371|      5|	int rc = lua_toboolean(L, index);
-  372|      5|	assert(rc == 0 || rc == 1);
-  373|      5|}
+  368|      2|{
+  369|      2|	int top = lua_gettop(L);
+  370|      2|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  371|      2|	int rc = lua_toboolean(L, index);
+  372|      2|	assert(rc == 0 || rc == 1);
+  373|      2|}
 torture_test.cc:_ZL17__lua_tocfunctionP9lua_StateP18FuzzedDataProvider:
- 1230|      9|{
- 1231|      9|	int top = lua_gettop(L);
- 1232|      9|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
- 1233|      9|	lua_tocfunction(L, index);
- 1234|      9|	assert(lua_gettop(L) == top);
- 1235|      9|}
+ 1230|      4|{
+ 1231|      4|	int top = lua_gettop(L);
+ 1232|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1233|      4|	lua_tocfunction(L, index);
+ 1234|      4|	assert(lua_gettop(L) == top);
+ 1235|      4|}
 torture_test.cc:_ZL15__lua_tointegerP9lua_StateP18FuzzedDataProvider:
   379|      7|{
   380|      7|	int top = lua_gettop(L);
@@ -863,65 +863,65 @@ torture_test.cc:_ZL15__lua_tointegerP9lua_StateP18FuzzedDataProvider:
   383|      7|	assert(lua_gettop(L) == top);
   384|      7|}
 torture_test.cc:_ZL16__lua_tointegerxP9lua_StateP18FuzzedDataProvider:
-  390|      6|{
-  391|      6|	int top = lua_gettop(L);
-  392|      6|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  393|      6|	int isnum;
-  394|      6|	lua_tointegerx(L, index, &isnum);
-  395|      6|	assert(isnum == 0 || isnum == 1);
+  390|      8|{
+  391|      8|	int top = lua_gettop(L);
+  392|      8|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  393|      8|	int isnum;
+  394|      8|	lua_tointegerx(L, index, &isnum);
+  395|      8|	assert(isnum == 0 || isnum == 1);
   396|      0|	assert(lua_gettop(L) == top);
-  397|      6|}
+  397|      8|}
 torture_test.cc:_ZL15__lua_tolstringP9lua_StateP18FuzzedDataProvider:
-  403|      2|{
-  404|      2|	int top = lua_gettop(L);
-  405|      2|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  406|      2|	lua_tolstring(L, index, NULL);
-  407|      2|	assert(lua_gettop(L) == top);
-  408|      2|}
+  403|      4|{
+  404|      4|	int top = lua_gettop(L);
+  405|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  406|      4|	lua_tolstring(L, index, NULL);
+  407|      4|	assert(lua_gettop(L) == top);
+  408|      4|}
 torture_test.cc:_ZL14__lua_tonumberP9lua_StateP18FuzzedDataProvider:
-  100|      5|{
-  101|      5|	int top = lua_gettop(L);
-  102|      5|	uint8_t n = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  103|      5|	lua_tonumber(L, n);
-  104|      5|	assert(lua_gettop(L) == top);
-  105|      5|}
+  100|      7|{
+  101|      7|	int top = lua_gettop(L);
+  102|      7|	uint8_t n = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  103|      7|	lua_tonumber(L, n);
+  104|      7|	assert(lua_gettop(L) == top);
+  105|      7|}
 torture_test.cc:_ZL15__lua_topointerP9lua_StateP18FuzzedDataProvider:
- 1204|      8|{
- 1205|      8|	int top = lua_gettop(L);
- 1206|      8|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
- 1207|      8|	const void *p = lua_topointer(L, index);
+ 1204|      6|{
+ 1205|      6|	int top = lua_gettop(L);
+ 1206|      6|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1207|      6|	const void *p = lua_topointer(L, index);
  1208|       |	/*
  1209|       |	 * The value can be a userdata, a table, a thread, or a function;
  1210|       |	 * otherwise, lua_topointer returns NULL.
  1211|       |	 */
- 1212|      8|	int type = lua_type(L, index);
- 1213|      8|	if (type == LUA_TUSERDATA  ||
+ 1212|      6|	int type = lua_type(L, index);
+ 1213|      6|	if (type == LUA_TUSERDATA  ||
   ------------------
-  |  Branch (1213:6): [True: 0, False: 8]
+  |  Branch (1213:6): [True: 0, False: 6]
   ------------------
- 1214|      8|	    type == LUA_TTHREAD    ||
+ 1214|      6|	    type == LUA_TTHREAD    ||
   ------------------
-  |  Branch (1214:6): [True: 3, False: 5]
+  |  Branch (1214:6): [True: 1, False: 5]
   ------------------
- 1215|      8|	    type == LUA_TTABLE     ||
+ 1215|      6|	    type == LUA_TTABLE     ||
   ------------------
   |  Branch (1215:6): [True: 2, False: 3]
   ------------------
- 1216|      8|#if LUA_VERSION_NUM > 503 || defined(LUAJIT)
- 1217|      8|	    type == LUA_TSTRING    ||
+ 1216|      6|#if LUA_VERSION_NUM > 503 || defined(LUAJIT)
+ 1217|      6|	    type == LUA_TSTRING    ||
   ------------------
   |  Branch (1217:6): [True: 1, False: 2]
   ------------------
- 1218|      8|#endif /* LUA_VERSION_NUM */
- 1219|      8|	    type == LUA_TFUNCTION)
+ 1218|      6|#endif /* LUA_VERSION_NUM */
+ 1219|      6|	    type == LUA_TFUNCTION)
   ------------------
   |  Branch (1219:6): [True: 1, False: 1]
   ------------------
- 1220|      7|		assert(p);
+ 1220|      5|		assert(p);
  1221|      1|	else
  1222|      1|		assert(p == NULL);
  1223|      0|	assert(lua_gettop(L) == top);
- 1224|      8|}
+ 1224|      6|}
 torture_test.cc:_ZL14__lua_tostringP9lua_StateP18FuzzedDataProvider:
   414|      3|{
   415|      3|	int top = lua_gettop(L);
@@ -930,149 +930,149 @@ torture_test.cc:_ZL14__lua_tostringP9lua_StateP18FuzzedDataProvider:
   418|      3|	assert(lua_gettop(L) == top);
   419|      3|}
 torture_test.cc:_ZL14__lua_tothreadP9lua_StateP18FuzzedDataProvider:
- 1297|      2|{
- 1298|      2|	int top = lua_gettop(L);
- 1299|      2|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
- 1300|      2|	lua_tothread(L, index);
- 1301|      2|	assert(lua_gettop(L) == top);
- 1302|      2|}
+ 1297|      3|{
+ 1298|      3|	int top = lua_gettop(L);
+ 1299|      3|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+ 1300|      3|	lua_tothread(L, index);
+ 1301|      3|	assert(lua_gettop(L) == top);
+ 1302|      3|}
 torture_test.cc:_ZL16__lua_touserdataP9lua_StateP18FuzzedDataProvider:
-  482|      5|{
-  483|      5|	int top = lua_gettop(L);
-  484|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  485|      5|	lua_touserdata(L, index);
-  486|      5|	assert(lua_gettop(L) == top);
-  487|      5|}
+  482|      3|{
+  483|      3|	int top = lua_gettop(L);
+  484|      3|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  485|      3|	lua_touserdata(L, index);
+  486|      3|	assert(lua_gettop(L) == top);
+  487|      3|}
 torture_test.cc:_ZL10__lua_typeP9lua_StateP18FuzzedDataProvider:
-  425|     13|{
-  426|     13|	int top = lua_gettop(L);
-  427|     13|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  428|     13|	int type = lua_type(L, index);
-  429|     13|	assert(type == LUA_TBOOLEAN       ||
-  430|     13|	       type == LUA_TFUNCTION      ||
-  431|     13|	       type == LUA_TLIGHTUSERDATA ||
-  432|     13|	       type == LUA_TNIL           ||
-  433|     13|	       type == LUA_TNONE          ||
-  434|     13|	       type == LUA_TNUMBER        ||
-  435|     13|	       type == LUA_TSTRING        ||
-  436|     13|	       type == LUA_TTABLE         ||
-  437|     13|	       type == LUA_TTHREAD        ||
-  438|     13|	       type == LUA_TUSERDATA      ||
-  439|     13|	       type == LUA_TNONE);
+  425|      9|{
+  426|      9|	int top = lua_gettop(L);
+  427|      9|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  428|      9|	int type = lua_type(L, index);
+  429|      9|	assert(type == LUA_TBOOLEAN       ||
+  430|      9|	       type == LUA_TFUNCTION      ||
+  431|      9|	       type == LUA_TLIGHTUSERDATA ||
+  432|      9|	       type == LUA_TNIL           ||
+  433|      9|	       type == LUA_TNONE          ||
+  434|      9|	       type == LUA_TNUMBER        ||
+  435|      9|	       type == LUA_TSTRING        ||
+  436|      9|	       type == LUA_TTABLE         ||
+  437|      9|	       type == LUA_TTHREAD        ||
+  438|      9|	       type == LUA_TUSERDATA      ||
+  439|      9|	       type == LUA_TNONE);
   440|      0|	assert(lua_gettop(L) == top);
-  441|     13|}
+  441|      9|}
 torture_test.cc:_ZL14__lua_typenameP9lua_StateP18FuzzedDataProvider:
-  631|      2|{
-  632|      2|	int top = lua_gettop(L);
-  633|      2|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  634|      2|	const char* name = lua_typename(L, index);
-  635|      2|	assert(name);
+  631|      3|{
+  632|      3|	int top = lua_gettop(L);
+  633|      3|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  634|      3|	const char* name = lua_typename(L, index);
+  635|      3|	assert(name);
   636|      0|	assert(lua_gettop(L) == top);
-  637|      2|}
+  637|      3|}
 torture_test.cc:_ZL15__lua_upvalueidP9lua_StateP18FuzzedDataProvider:
- 1421|      6|{
- 1422|      6|	int funcindex = -1;
- 1423|      6|	lua_Debug ar;
- 1424|      6|	lua_pushcfunction(L, cfunction);
- 1425|      6|	int n = fdp->ConsumeIntegral<uint8_t>();
- 1426|      6|	lua_setupvalue(L, funcindex, n);
- 1427|      6|	assert(lua_getinfo(L, ">u", &ar) == 1);
- 1428|      6|	if (ar.nups == 0)
+ 1421|      4|{
+ 1422|      4|	int funcindex = -1;
+ 1423|      4|	lua_Debug ar;
+ 1424|      4|	lua_pushcfunction(L, cfunction);
+ 1425|      4|	int n = fdp->ConsumeIntegral<uint8_t>();
+ 1426|      4|	lua_setupvalue(L, funcindex, n);
+ 1427|      4|	assert(lua_getinfo(L, ">u", &ar) == 1);
+ 1428|      4|	if (ar.nups == 0)
   ------------------
-  |  Branch (1428:6): [True: 6, False: 0]
+  |  Branch (1428:6): [True: 4, False: 0]
   ------------------
- 1429|      6|		return;
+ 1429|      4|		return;
  1430|      0|	int top = lua_gettop(L);
  1431|      0|	void *p = lua_upvalueid(L, funcindex, n);
  1432|      0|	assert(p);
  1433|      0|	assert(lua_gettop(L) == top);
  1434|      0|}
 torture_test.cc:_ZL11__lua_xmoveP9lua_StateP18FuzzedDataProvider:
- 1140|      7|{
- 1141|      7|	lua_State *co1 = lua_newthread(L);
- 1142|      7|	lua_State *co2 = lua_newthread(L);
- 1143|      7|	__lua_pushnumber(co1, fdp);
- 1144|      7|	lua_xmove(co1, co2, 1);
- 1145|      7|	lua_settop(co1, 0);
- 1146|      7|	lua_settop(co2, 0);
- 1147|      7|}
+ 1140|      6|{
+ 1141|      6|	lua_State *co1 = lua_newthread(L);
+ 1142|      6|	lua_State *co2 = lua_newthread(L);
+ 1143|      6|	__lua_pushnumber(co1, fdp);
+ 1144|      6|	lua_xmove(co1, co2, 1);
+ 1145|      6|	lua_settop(co1, 0);
+ 1146|      6|	lua_settop(co2, 0);
+ 1147|      6|}
 torture_test.cc:_ZL12__lua_cpcallP9lua_StateP18FuzzedDataProvider:
- 1037|     11|{
- 1038|     11|	int top = lua_gettop(L);
- 1039|     11|	int rc = lua_cpcall(L, cfunction, NULL);
- 1040|     11|	assert(rc == 0);
+ 1037|      4|{
+ 1038|      4|	int top = lua_gettop(L);
+ 1039|      4|	int rc = lua_cpcall(L, cfunction, NULL);
+ 1040|      4|	assert(rc == 0);
  1041|      0|	assert(lua_gettop(L) - top <= 1);
- 1042|     11|}
+ 1042|      4|}
 torture_test.cc:_ZL11__lua_equalP9lua_StateP18FuzzedDataProvider:
-  812|     10|{
-  813|     10|	int top = lua_gettop(L);
-  814|     10|	if (top < 2)
+  812|      7|{
+  813|      7|	int top = lua_gettop(L);
+  814|      7|	if (top < 2)
   ------------------
-  |  Branch (814:6): [True: 0, False: 10]
+  |  Branch (814:6): [True: 0, False: 7]
   ------------------
   815|      0|		return;
-  816|     10|	uint8_t index1 = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  817|     10|	uint8_t index2 = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  818|     10|	lua_equal(L, index1, index2);
-  819|     10|	assert(lua_gettop(L) == top);
-  820|     10|}
+  816|      7|	uint8_t index1 = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  817|      7|	uint8_t index2 = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  818|      7|	lua_equal(L, index1, index2);
+  819|      7|	assert(lua_gettop(L) == top);
+  820|      7|}
 torture_test.cc:_ZL13__lua_getfenvP9lua_StateP18FuzzedDataProvider:
-  909|      3|{
-  910|      3|	int top = lua_gettop(L);
-  911|      3|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  912|      3|	lua_getfenv(L, index);
-  913|      3|	assert(lua_gettop(L) == top + 1);
-  914|      3|}
+  909|      5|{
+  910|      5|	int top = lua_gettop(L);
+  911|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  912|      5|	lua_getfenv(L, index);
+  913|      5|	assert(lua_gettop(L) == top + 1);
+  914|      5|}
 torture_test.cc:_ZL14__lua_lessthanP9lua_StateP18FuzzedDataProvider:
-  828|     13|{
-  829|     13|	int top = lua_gettop(L);
-  830|     13|	uint8_t index1 = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  831|     13|	int type1 = lua_type(L, index1);
-  832|     13|	switch (type1) {
+  828|     11|{
+  829|     11|	int top = lua_gettop(L);
+  830|     11|	uint8_t index1 = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  831|     11|	int type1 = lua_type(L, index1);
+  832|     11|	switch (type1) {
   833|      2|	case LUA_TNUMBER:
   ------------------
-  |  Branch (833:2): [True: 2, False: 11]
+  |  Branch (833:2): [True: 2, False: 9]
   ------------------
   834|      2|		__lua_pushnumber(L, fdp);
   835|      2|		break;
-  836|      5|	case LUA_TSTRING:
+  836|      4|	case LUA_TSTRING:
   ------------------
-  |  Branch (836:2): [True: 5, False: 8]
+  |  Branch (836:2): [True: 4, False: 7]
   ------------------
-  837|      5|		__lua_pushstring(L, fdp);
-  838|      5|		break;
-  839|      6|	default:
+  837|      4|		__lua_pushstring(L, fdp);
+  838|      4|		break;
+  839|      5|	default:
   ------------------
-  |  Branch (839:2): [True: 6, False: 7]
+  |  Branch (839:2): [True: 5, False: 6]
   ------------------
-  840|      6|		return;
-  841|     13|	}
-  842|      7|	int rc = lua_lessthan(L, index1, -1);
-  843|      7|	assert(rc == 0 || rc == 1);
-  844|      7|}
+  840|      5|		return;
+  841|     11|	}
+  842|      6|	int rc = lua_lessthan(L, index1, -1);
+  843|      6|	assert(rc == 0 || rc == 1);
+  844|      6|}
 torture_test.cc:_ZL12__lua_objlenP9lua_StateP18FuzzedDataProvider:
-  852|      5|{
-  853|      5|	int top = lua_gettop(L);
-  854|      5|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  855|      5|#if LUA_VERSION_NUM == 501
-  856|      5|	lua_objlen(L, index);
+  852|      4|{
+  853|      4|	int top = lua_gettop(L);
+  854|      4|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  855|      4|#if LUA_VERSION_NUM == 501
+  856|      4|	lua_objlen(L, index);
   857|       |#else
   858|       |	lua_rawlen(L, index);
   859|       |#endif /* LUA_VERSION_NUM */
-  860|      5|	assert(lua_gettop(L) == top);
-  861|      5|}
+  860|      4|	assert(lua_gettop(L) == top);
+  861|      4|}
 torture_test.cc:_ZL13__lua_setfenvP9lua_StateP18FuzzedDataProvider:
-  922|      6|{
-  923|      6|	int top = lua_gettop(L);
-  924|      6|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
-  925|      6|	if (!lua_istable(L, -1))
+  922|      7|{
+  923|      7|	int top = lua_gettop(L);
+  924|      7|	uint8_t index = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
+  925|      7|	if (!lua_istable(L, -1))
   ------------------
-  |  Branch (925:6): [True: 3, False: 3]
+  |  Branch (925:6): [True: 3, False: 4]
   ------------------
   926|      3|		return;
-  927|      3|	lua_setfenv(L, index);
-  928|      3|	assert(lua_gettop(L) == top - 1);
-  929|      3|}
+  927|      4|	lua_setfenv(L, index);
+  928|      4|	assert(lua_gettop(L) == top - 1);
+  929|      4|}
 torture_test.cc:_ZL10__lua_copyP9lua_StateP18FuzzedDataProvider:
  1482|      4|{
  1483|      4|	int top = lua_gettop(L);
@@ -1080,12 +1080,12 @@ torture_test.cc:_ZL10__lua_copyP9lua_StateP18FuzzedDataProvider:
  1485|      4|	uint8_t toidx = fdp->ConsumeIntegralInRange<uint8_t>(1, top);
  1486|      4|	if (fromidx == toidx)
   ------------------
-  |  Branch (1486:6): [True: 3, False: 1]
+  |  Branch (1486:6): [True: 2, False: 2]
   ------------------
- 1487|      3|		return;
- 1488|      1|	lua_copy(L, fromidx, toidx);
- 1489|      1|	assert(lua_gettop(L) == top);
- 1490|      1|}
+ 1487|      2|		return;
+ 1488|      2|	lua_copy(L, fromidx, toidx);
+ 1489|      2|	assert(lua_gettop(L) == top);
+ 1490|      2|}
 torture_test.cc:_ZL17__lua_isyieldableP9lua_StateP18FuzzedDataProvider:
  1025|      1|{
  1026|      1|	(void)fdp;
@@ -1093,14 +1093,14 @@ torture_test.cc:_ZL17__lua_isyieldableP9lua_StateP18FuzzedDataProvider:
  1028|      1|	assert(rc == 0 || rc == 1);
  1029|      1|}
 torture_test.cc:_ZL19__luaL_setmetatableP9lua_StateP18FuzzedDataProvider:
- 1014|      6|{
- 1015|      6|	int top = lua_gettop(L);
- 1016|      6|	luaL_setmetatable(L, TYPE_NAME_TORTURE);
+ 1014|     10|{
+ 1015|     10|	int top = lua_gettop(L);
+ 1016|     10|	luaL_setmetatable(L, TYPE_NAME_TORTURE);
   ------------------
-  |  |   43|      6|#define TYPE_NAME_TORTURE "torture_test"
+  |  |   43|     10|#define TYPE_NAME_TORTURE "torture_test"
   ------------------
- 1017|      6|	assert(lua_gettop(L) == top);
- 1018|      6|}
+ 1017|     10|	assert(lua_gettop(L) == top);
+ 1018|     10|}
 torture_test.cc:_ZL15__lua_tonumberxP9lua_StateP18FuzzedDataProvider:
   111|      7|{
   112|      7|	int top = lua_gettop(L);
