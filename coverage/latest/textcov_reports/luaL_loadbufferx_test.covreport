@@ -38,11 +38,11 @@
 
 
 LLVMFuzzerTestOneInput:
-   22|  2.31k|{
-   23|  2.31k|	lua_State *L = luaL_newstate();
-   24|  2.31k|	if (L == NULL)
+   22|  2.26k|{
+   23|  2.26k|	lua_State *L = luaL_newstate();
+   24|  2.26k|	if (L == NULL)
   ------------------
-  |  Branch (24:6): [True: 0, False: 2.31k]
+  |  Branch (24:6): [True: 0, False: 2.26k]
   ------------------
    25|      0|		return 0;
    26|       |
@@ -54,12 +54,12 @@ LLVMFuzzerTestOneInput:
    32|       |	 * Seed corpus is shared by different Lua runtimes (PUC Rio Lua and LuaJIT),
    33|       |	 * enabling binary mode could lead false positive crashes in LuaJIT.
    34|       |	 */
-   35|  2.31k|	const char *mode = "t";
-   36|  2.31k|	luaL_loadbufferx(L, (const char *)data, size, "fuzz", mode);
+   35|  2.26k|	const char *mode = "t";
+   36|  2.26k|	luaL_loadbufferx(L, (const char *)data, size, "fuzz", mode);
    37|       |
-   38|  2.31k|	lua_settop(L, 0);
-   39|  2.31k|	lua_close(L);
+   38|  2.26k|	lua_settop(L, 0);
+   39|  2.26k|	lua_close(L);
    40|       |
-   41|  2.31k|	return 0;
-   42|  2.31k|}
+   41|  2.26k|	return 0;
+   42|  2.26k|}
 
