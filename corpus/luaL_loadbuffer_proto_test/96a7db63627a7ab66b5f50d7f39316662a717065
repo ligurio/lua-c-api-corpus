@@ -1,0 +1,67 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                  stat {
+                    ifstat {
+                      condition {
+                        unary {
+                          unop {
+                          }
+                          exp {
+                            number: 0
+                          }
+                        }
+                      }
+                      first {
+                        chunk {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              condition {
+                unary {
+                  unop {
+                    length: 0
+                  }
+                  exp {
+                    false: 0
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            whilecycle {
+              condition {
+                unary {
+                  unop {
+                    length: 0
+                  }
+                  exp {
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        nil: 0
+      }
+    }
+  }
+}

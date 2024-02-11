@@ -1,0 +1,56 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                less: 4
+              }
+              rightexp {
+                number: -2.5
+              }
+            }
+          }
+          binop {
+            div: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+                nil: 41
+              }
+              binop {
+                div: 4
+              }
+              rightexp {
+                nil: 41
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+    }
+  }
+  laststat {
+  }
+}
