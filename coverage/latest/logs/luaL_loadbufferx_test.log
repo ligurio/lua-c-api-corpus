@@ -1,62 +1,30 @@
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 1673507953
+INFO: Seed: 2160870272
 INFO: Loaded 1 modules   (19731 inline 8-bit counters): 19731 [0x6d1ae0, 0x6d67f3), 
 INFO: Loaded 1 PC tables (19731 PCs): 19731 [0x60db88,0x65acb8), 
-MERGE-OUTER: 2118 files, 0 in the initial corpus, 0 processed earlier
+MERGE-OUTER: 2225 files, 0 in the initial corpus, 0 processed earlier
 MERGE-OUTER: attempt 1
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 1673524430
+INFO: Seed: 2160887259
 INFO: Loaded 1 modules   (19731 inline 8-bit counters): 19731 [0x6d1ae0, 0x6d67f3), 
 INFO: Loaded 1 PC tables (19731 PCs): 19731 [0x60db88,0x65acb8), 
 INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
-MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge451.txt'
-MERGE-INNER: 2118 total files; 0 processed earlier; will process 2118 files now
-#1	pulse  cov: 374 ft: 375 exec/s: 0 rss: 28Mb
-#2	pulse  cov: 392 ft: 409 exec/s: 0 rss: 28Mb
-#4	pulse  cov: 421 ft: 461 exec/s: 0 rss: 28Mb
-#8	pulse  cov: 476 ft: 581 exec/s: 0 rss: 28Mb
-#16	pulse  cov: 497 ft: 637 exec/s: 0 rss: 28Mb
-#32	pulse  cov: 687 ft: 1014 exec/s: 0 rss: 29Mb
-#64	pulse  cov: 813 ft: 1185 exec/s: 0 rss: 29Mb
-#128	pulse  cov: 953 ft: 1460 exec/s: 0 rss: 29Mb
-#256	pulse  cov: 1178 ft: 1986 exec/s: 0 rss: 29Mb
-#512	pulse  cov: 1428 ft: 2985 exec/s: 0 rss: 29Mb
-#1024	pulse  cov: 1540 ft: 4901 exec/s: 0 rss: 29Mb
-#2048	pulse  cov: 1757 ft: 8370 exec/s: 0 rss: 30Mb
-UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==454==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x0017ffffffe7 (pc 0x000000500647 bp 0x7fff545f4f40 sp 0x7fff545f4ee0 T454)
-==454==The signal is caused by a READ memory access.
-    #0 0x500647 in lj_gc_finalize_cdata /src/lua-c-api-tests/build/luajit-v2.1/source/src/lj_gc.c:595:12
-    #1 0x4c049e in cpfinalize /src/lua-c-api-tests/build/luajit-v2.1/source/src/lj_state.c:311:3
-    #2 0x4fdb63 in lj_vm_cpcall /src/lua-c-api-tests/build/luajit-v2.1/source/src/lj_vm.S:1250
-    #3 0x4c0401 in lua_close /src/lua-c-api-tests/build/luajit-v2.1/source/src/lj_state.c:338:9
-    #4 0x4bf3be in LLVMFuzzerTestOneInput /src/lua-c-api-tests/tests/capi/luaL_loadbufferx_test.c:39:2
-    #5 0x4264b3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
-    #6 0x42f2a4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
-    #7 0x417349 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
-    #8 0x4409f2 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
-    #9 0x7f1af3fc9082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: eebe5d5f4b608b8a53ec446b63981bba373ca0ca)
-    #10 0x407ddd in _start (build-out/luaL_loadbufferx_test+0x407ddd)
-
-DEDUP_TOKEN: lj_gc_finalize_cdata--cpfinalize--lj_vm_cpcall
-UndefinedBehaviorSanitizer can not provide additional info.
-SUMMARY: UndefinedBehaviorSanitizer: SEGV /src/lua-c-api-tests/build/luajit-v2.1/source/src/lj_gc.c:595:12 in lj_gc_finalize_cdata
-==454==ABORTING
-MS: 0 ; base unit: 0000000000000000000000000000000000000000
-artifact_prefix='./'; Test unit written to ./crash-98169821dc346b1c9d649673ae0a12907d4d75ab
-MERGE-OUTER: attempt 2
-INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 1674408768
-INFO: Loaded 1 modules   (19731 inline 8-bit counters): 19731 [0x6d1ae0, 0x6d67f3), 
-INFO: Loaded 1 PC tables (19731 PCs): 19731 [0x60db88,0x65acb8), 
-INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
-MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge451.txt'
-MERGE-INNER: '/github/workspace/cifuzz-corpus/luaL_loadbufferx_test/98169821dc346b1c9d649673ae0a12907d4d75ab' caused a failure at the previous merge step
-MERGE-INNER: 2118 total files; 2115 processed earlier; will process 3 files now
-#1	pulse  cov: 708 ft: 709 exec/s: 0 rss: 28Mb
-#2	pulse  cov: 711 ft: 881 exec/s: 0 rss: 29Mb
-#3	DONE   cov: 787 ft: 1025 exec/s: 0 rss: 29Mb
-MERGE-OUTER: successful in 2 attempt(s)
-MERGE-OUTER: the control file has 337075 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge453.txt'
+MERGE-INNER: 2225 total files; 0 processed earlier; will process 2225 files now
+#1	pulse  cov: 393 ft: 394 exec/s: 0 rss: 28Mb
+#2	pulse  cov: 399 ft: 417 exec/s: 0 rss: 28Mb
+#4	pulse  cov: 418 ft: 470 exec/s: 0 rss: 28Mb
+#8	pulse  cov: 474 ft: 596 exec/s: 0 rss: 28Mb
+#16	pulse  cov: 497 ft: 648 exec/s: 0 rss: 28Mb
+#32	pulse  cov: 601 ft: 812 exec/s: 0 rss: 28Mb
+#64	pulse  cov: 815 ft: 1181 exec/s: 0 rss: 29Mb
+#128	pulse  cov: 971 ft: 1488 exec/s: 0 rss: 29Mb
+#256	pulse  cov: 1231 ft: 2035 exec/s: 0 rss: 29Mb
+#512	pulse  cov: 1427 ft: 2962 exec/s: 0 rss: 29Mb
+#1024	pulse  cov: 1538 ft: 4840 exec/s: 0 rss: 29Mb
+#2048	pulse  cov: 1726 ft: 8165 exec/s: 0 rss: 29Mb
+#2225	DONE   cov: 1764 ft: 8453 exec/s: 0 rss: 29Mb
+MERGE-OUTER: successful in 1 attempt(s)
+MERGE-OUTER: the control file has 341054 bytes
 MERGE-OUTER: consumed 0Mb (28Mb rss) to parse the control file
-MERGE-OUTER: 1930 new files with 8457 new features added; 1761 new coverage edges
+MERGE-OUTER: 1930 new files with 8453 new features added; 1764 new coverage edges
