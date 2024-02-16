@@ -1,0 +1,106 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                notEqual: 0
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            notEqual: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                notEqual: 0
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    notEqual: 0
+                  }
+                  rightexp {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      last {
+        chunk {
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                notEqual: 0
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                    prefixexp {
+                    }
+                  }
+                  binop {
+                    concat: 0
+                  }
+                  rightexp {
+                  }
+                }
+              }
+            }
+          }
+          binop {
+            notEqual: 16
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                notEqual: 0
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+}
