@@ -1,65 +1,68 @@
 INFO: found LLVMFuzzerCustomMutator (0x4c61a0). Disabling -len_control by default.
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 3405572815
+INFO: Seed: 3719374710
 INFO: Loaded 1 modules   (21133 inline 8-bit counters): 21133 [0xc69338, 0xc6e5c5), 
 INFO: Loaded 1 PC tables (21133 PCs): 21133 [0x9ea720,0xa3cff0), 
-MERGE-OUTER: 4830 files, 0 in the initial corpus, 0 processed earlier
+MERGE-OUTER: 6423 files, 0 in the initial corpus, 0 processed earlier
 MERGE-OUTER: attempt 1
 INFO: found LLVMFuzzerCustomMutator (0x4c61a0). Disabling -len_control by default.
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 3405621791
+INFO: Seed: 3719425737
 INFO: Loaded 1 modules   (21133 inline 8-bit counters): 21133 [0xc69338, 0xc6e5c5), 
 INFO: Loaded 1 PC tables (21133 PCs): 21133 [0x9ea720,0xa3cff0), 
 INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
-MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge359.txt'
-MERGE-INNER: 4830 total files; 0 processed earlier; will process 4830 files now
-#1	pulse  cov: 1539 ft: 1540 exec/s: 0 rss: 35Mb
-[libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 1:2: Expected identifier, got: 
-#2	pulse  cov: 1539 ft: 1540 exec/s: 0 rss: 35Mb
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge348.txt'
+MERGE-INNER: 6423 total files; 0 processed earlier; will process 6423 files now
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 1:1: Invalid control characters encountered in text.
-#4	pulse  cov: 1546 ft: 1577 exec/s: 0 rss: 35Mb
-#8	pulse  cov: 1564 ft: 1697 exec/s: 0 rss: 35Mb
-#16	pulse  cov: 1862 ft: 2104 exec/s: 0 rss: 36Mb
-#32	pulse  cov: 1956 ft: 2530 exec/s: 0 rss: 36Mb
+#1	pulse  exec/s: 0 rss: 34Mb
+[libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 1:2: Expected identifier, got: 
+#2	pulse  exec/s: 0 rss: 34Mb
+#4	pulse  cov: 1555 ft: 1590 exec/s: 0 rss: 35Mb
+#8	pulse  cov: 1563 ft: 1707 exec/s: 0 rss: 35Mb
+#16	pulse  cov: 1853 ft: 2090 exec/s: 0 rss: 36Mb
+#32	pulse  cov: 1954 ft: 2504 exec/s: 0 rss: 36Mb
 [libprotobuf WARNING /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:352] Warning parsing text-format lua_grammar.Block: 3:10: Message type "lua_grammar.Statement" has no field named "stat".
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 14:1: Expected identifier, got: 
-#64	pulse  cov: 2082 ft: 2918 exec/s: 0 rss: 36Mb
-#128	pulse  cov: 2205 ft: 3312 exec/s: 0 rss: 36Mb
-#256	pulse  cov: 2421 ft: 4226 exec/s: 0 rss: 36Mb
-#512	pulse  cov: 2786 ft: 5399 exec/s: 0 rss: 36Mb
-#1024	pulse  cov: 3132 ft: 7187 exec/s: 1024 rss: 36Mb
-#2048	pulse  cov: 3264 ft: 9953 exec/s: 682 rss: 37Mb
-[libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 129:33: Expected identifier, got: 
+#64	pulse  cov: 2082 ft: 2898 exec/s: 0 rss: 36Mb
+#128	pulse  cov: 2205 ft: 3310 exec/s: 0 rss: 36Mb
+#256	pulse  cov: 2405 ft: 4161 exec/s: 0 rss: 36Mb
+#512	pulse  cov: 2780 ft: 5314 exec/s: 512 rss: 36Mb
+#1024	pulse  cov: 3114 ft: 6928 exec/s: 1024 rss: 37Mb
+#2048	pulse  cov: 3254 ft: 9482 exec/s: 682 rss: 37Mb
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 154:16: Expected identifier, got: 
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 267:10: Expected identifier, got: 
-==364== ERROR: libFuzzer: out-of-memory (used: 2682Mb; limit: 2048Mb)
+[libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 129:33: Expected identifier, got: 
+==354== ERROR: libFuzzer: out-of-memory (used: 3028Mb; limit: 2048Mb)
    To change the out-of-memory limit use -rss_limit_mb=<N>
 
 MS: 0 ; base unit: 0000000000000000000000000000000000000000
-artifact_prefix='./'; Test unit written to ./oom-00b1518e93b6c5b3674fbd84b2a357ff477af217
+
+
+artifact_prefix='./'; Test unit written to ./oom-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 
 SUMMARY: libFuzzer: out-of-memory
 MERGE-OUTER: attempt 2
 INFO: found LLVMFuzzerCustomMutator (0x4c61a0). Disabling -len_control by default.
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 3413646978
+INFO: Seed: 3729454580
 INFO: Loaded 1 modules   (21133 inline 8-bit counters): 21133 [0xc69338, 0xc6e5c5), 
 INFO: Loaded 1 PC tables (21133 PCs): 21133 [0x9ea720,0xa3cff0), 
 INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
-MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge359.txt'
-MERGE-INNER: '/github/workspace/cifuzz-corpus/luaL_loadbuffer_proto_test/00b1518e93b6c5b3674fbd84b2a357ff477af217' caused a failure at the previous merge step
-MERGE-INNER: 4830 total files; 2975 processed earlier; will process 1855 files now
-#1	pulse  cov: 1741 ft: 1742 exec/s: 0 rss: 35Mb
-#2	pulse  cov: 1970 ft: 2371 exec/s: 0 rss: 36Mb
-#4	pulse  cov: 2071 ft: 3125 exec/s: 0 rss: 674Mb
-#8	pulse  cov: 2390 ft: 4000 exec/s: 0 rss: 674Mb
-#16	pulse  cov: 2733 ft: 5374 exec/s: 0 rss: 674Mb
-#32	pulse  cov: 2954 ft: 6491 exec/s: 0 rss: 674Mb
-#64	pulse  cov: 3081 ft: 7771 exec/s: 0 rss: 674Mb
-#128	pulse  cov: 3184 ft: 9179 exec/s: 128 rss: 676Mb
-#256	pulse  cov: 3247 ft: 10404 exec/s: 256 rss: 676Mb
-#512	pulse  cov: 3329 ft: 11901 exec/s: 512 rss: 676Mb
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge348.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/luaL_loadbuffer_proto_test/f61890705eb5c13a4d34166e40bdfcb804f9301e' caused a failure at the previous merge step
+MERGE-INNER: 6423 total files; 3928 processed earlier; will process 2495 files now
+#1	pulse  cov: 2051 ft: 2052 exec/s: 0 rss: 36Mb
+#2	pulse  cov: 2139 ft: 2682 exec/s: 0 rss: 36Mb
+#4	pulse  cov: 2253 ft: 3418 exec/s: 0 rss: 36Mb
+#8	pulse  cov: 2431 ft: 4637 exec/s: 0 rss: 37Mb
+#16	pulse  cov: 2661 ft: 5555 exec/s: 0 rss: 37Mb
+#32	pulse  cov: 2865 ft: 6668 exec/s: 0 rss: 37Mb
+#64	pulse  cov: 2954 ft: 7866 exec/s: 0 rss: 37Mb
+#128	pulse  cov: 3074 ft: 9057 exec/s: 0 rss: 37Mb
+#256	pulse  cov: 3210 ft: 10426 exec/s: 0 rss: 38Mb
+#512	pulse  cov: 3285 ft: 12087 exec/s: 256 rss: 1056Mb
+#1024	pulse  cov: 3363 ft: 13712 exec/s: 341 rss: 1056Mb
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 103:209: Message is too deep, the parser exceeded the configured recursion limit of 100.
-#1024	pulse  cov: 3389 ft: 14111 exec/s: 256 rss: 1049Mb
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 131:212: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 105:211: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 113:212: Message is too deep, the parser exceeded the configured recursion limit of 100.
@@ -87,6 +90,7 @@ MERGE-INNER: 4830 total files; 2975 processed earlier; will process 1855 files n
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 210:212: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 227:206: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 195:212: Message is too deep, the parser exceeded the configured recursion limit of 100.
+#2048	pulse  cov: 3402 ft: 15759 exec/s: 85 rss: 1831Mb
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 303:211: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 165:206: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 166:218: Message is too deep, the parser exceeded the configured recursion limit of 100.
@@ -113,22 +117,23 @@ MERGE-INNER: 4830 total files; 2975 processed earlier; will process 1855 files n
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 291:207: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 159:209: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 215:212: Message is too deep, the parser exceeded the configured recursion limit of 100.
+[libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 105:212: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 411:207: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 535:209: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 289:207: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 355:211: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 206:205: Message is too deep, the parser exceeded the configured recursion limit of 100.
 [libprotobuf ERROR /src/lua-c-api-tests/build/tests/capi/external.protobuf_mutator/src/external.protobuf_mutator-build/external.protobuf/src/external.protobuf/src/google/protobuf/text_format.cc:337] Error parsing text-format lua_grammar.Block: 230:211: Message is too deep, the parser exceeded the configured recursion limit of 100.
-#1855	DONE   cov: 3427 ft: 16205 exec/s: 68 rss: 1788Mb
-Total number of samples: 1795
+#2495	DONE   cov: 3408 ft: 16188 exec/s: 56 rss: 1831Mb
+Total number of samples: 2434
 Total number of samples with errors: 0 (0%)
-Total number of samples with record traces: 1455 (81%)
-Total number of samples with start traces: 1455 (81%)
-Total number of samples with stop traces: 993 (55%)
-Total number of samples with abort traces: 1422 (79%)
-Total number of samples with exit traces: 282 (15%)
-Total number of samples with compiled bc: 1795 (100%)
+Total number of samples with record traces: 2025 (83%)
+Total number of samples with start traces: 2025 (83%)
+Total number of samples with stop traces: 1467 (60%)
+Total number of samples with abort traces: 1984 (81%)
+Total number of samples with exit traces: 466 (19%)
+Total number of samples with compiled bc: 2434 (100%)
 MERGE-OUTER: successful in 2 attempt(s)
-MERGE-OUTER: the control file has 858120 bytes
+MERGE-OUTER: the control file has 1079335 bytes
 MERGE-OUTER: consumed 0Mb (34Mb rss) to parse the control file
-MERGE-OUTER: 3588 new files with 17675 new features added; 3519 new coverage edges
+MERGE-OUTER: 3773 new files with 17831 new features added; 3517 new coverage edges
