@@ -1,0 +1,104 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                greater: 0
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    greater: 0
+                  }
+                  rightexp {
+                  }
+                }
+              }
+            }
+          }
+          binop {
+            greater: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                greater: 0
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      last {
+        chunk {
+          laststat {
+            break: 2048
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+          }
+          exp {
+            prefixexp {
+              exp {
+                nil: 0
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            greater: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                greater: 0
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+}
