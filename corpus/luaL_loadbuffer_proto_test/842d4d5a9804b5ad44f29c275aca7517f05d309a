@@ -1,0 +1,41 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        nil: 0
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    whilecycle {
+      condition {
+        function {
+          body {
+            parlist {
+            }
+            block {
+              chunk {
+                stat {
+                  semicolon: true
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+}
