@@ -1,0 +1,59 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            and: 4
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                notEqual: 64
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            and: 4
+          }
+          rightexp {
+            binary {
+              leftexp {
+                ellipsis: "09\000\0051"
+              }
+              binop {
+                and: 4
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+}
