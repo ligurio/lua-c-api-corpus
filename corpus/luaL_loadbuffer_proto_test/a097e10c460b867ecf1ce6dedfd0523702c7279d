@@ -1,0 +1,106 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            greaterEqual: 1
+          }
+          rightexp {
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+          binary {
+            leftexp {
+            }
+            binop {
+              greaterEqual: 1
+            }
+            rightexp {
+            }
+          }
+        }
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  tableconstructor {
+                    fieldlist {
+                      firstField {
+                        expression {
+                          ellipsis: ""
+                        }
+                      }
+                      fields {
+                        field {
+                          expression {
+                            ellipsis: ""
+                          }
+                        }
+                        sep {
+                        }
+                      }
+                      fields {
+                        field {
+                          expression {
+                            ellipsis: ""
+                          }
+                        }
+                        sep {
+                          semicolon: 0
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+          binary {
+            leftexp {
+            }
+            binop {
+              greaterEqual: 0
+            }
+            rightexp {
+              binary {
+                leftexp {
+                }
+                binop {
+                  greaterEqual: 1
+                }
+                rightexp {
+                }
+              }
+            }
+          }
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+}
