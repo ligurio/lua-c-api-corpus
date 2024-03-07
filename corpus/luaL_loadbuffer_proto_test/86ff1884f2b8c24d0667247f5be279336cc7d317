@@ -1,0 +1,81 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+      }
+      first {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                prefixexp {
+                  exp {
+                    true: 0
+                  }
+                }
+              }
+              first {
+                chunk {
+                }
+              }
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+          number: -1.5
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+            stat {
+            }
+            laststat {
+              explist {
+                explist {
+                  explast {
+                    false: 536870912
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+            stat {
+            }
+          }
+        }
+      }
+      last {
+        chunk {
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        expressions {
+          str: "call"
+        }
+        explast {
+          nil: 0
+        }
+      }
+    }
+  }
+}
