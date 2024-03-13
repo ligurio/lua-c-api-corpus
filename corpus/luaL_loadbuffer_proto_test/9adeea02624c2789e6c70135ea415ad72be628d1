@@ -1,0 +1,25 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        str: "!"
+      }
+      first {
+        chunk {
+          stat {
+            semicolon: true
+          }
+          laststat {
+          }
+        }
+      }
+      last {
+        chunk {
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+}
