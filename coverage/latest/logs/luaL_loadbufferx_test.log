@@ -1,32 +1,71 @@
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 4019934739
+INFO: Seed: 38838296
 INFO: Loaded 1 modules   (19741 inline 8-bit counters): 19741 [0x6d1b48, 0x6d6865), 
 INFO: Loaded 1 PC tables (19741 PCs): 19741 [0x60db90,0x65ad60), 
-MERGE-OUTER: 11776 files, 0 in the initial corpus, 0 processed earlier
+MERGE-OUTER: 11570 files, 0 in the initial corpus, 0 processed earlier
 MERGE-OUTER: attempt 1
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 4020025030
+INFO: Seed: 38901258
 INFO: Loaded 1 modules   (19741 inline 8-bit counters): 19741 [0x6d1b48, 0x6d6865), 
 INFO: Loaded 1 PC tables (19741 PCs): 19741 [0x60db90,0x65ad60), 
 INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
-MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge421.txt'
-MERGE-INNER: 11776 total files; 0 processed earlier; will process 11776 files now
-#1	pulse  cov: 373 ft: 374 exec/s: 0 rss: 30Mb
-#2	pulse  cov: 389 ft: 436 exec/s: 0 rss: 30Mb
-#4	pulse  cov: 396 ft: 481 exec/s: 0 rss: 30Mb
-#8	pulse  cov: 484 ft: 618 exec/s: 0 rss: 30Mb
-#16	pulse  cov: 526 ft: 684 exec/s: 0 rss: 30Mb
-#32	pulse  cov: 559 ft: 752 exec/s: 0 rss: 30Mb
-#64	pulse  cov: 748 ft: 1081 exec/s: 0 rss: 30Mb
-#128	pulse  cov: 845 ft: 1233 exec/s: 0 rss: 30Mb
-#256	pulse  cov: 1010 ft: 1551 exec/s: 0 rss: 30Mb
-#512	pulse  cov: 1254 ft: 2135 exec/s: 0 rss: 31Mb
-#1024	pulse  cov: 1482 ft: 3136 exec/s: 0 rss: 31Mb
-#2048	pulse  cov: 1601 ft: 4609 exec/s: 0 rss: 31Mb
-#4096	pulse  cov: 1687 ft: 6157 exec/s: 4096 rss: 31Mb
-#8192	pulse  cov: 1724 ft: 8325 exec/s: 4096 rss: 31Mb
-#11776	DONE   cov: 1931 ft: 10113 exec/s: 1962 rss: 31Mb
-MERGE-OUTER: successful in 1 attempt(s)
-MERGE-OUTER: the control file has 1586865 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge452.txt'
+MERGE-INNER: 11570 total files; 0 processed earlier; will process 11570 files now
+#1	pulse  cov: 385 ft: 386 exec/s: 0 rss: 30Mb
+#2	pulse  cov: 402 ft: 452 exec/s: 0 rss: 30Mb
+#4	pulse  cov: 412 ft: 503 exec/s: 0 rss: 30Mb
+#8	pulse  cov: 460 ft: 578 exec/s: 0 rss: 30Mb
+#16	pulse  cov: 521 ft: 692 exec/s: 0 rss: 30Mb
+#32	pulse  cov: 558 ft: 747 exec/s: 0 rss: 30Mb
+#64	pulse  cov: 678 ft: 906 exec/s: 0 rss: 30Mb
+#128	pulse  cov: 833 ft: 1229 exec/s: 0 rss: 31Mb
+#256	pulse  cov: 977 ft: 1511 exec/s: 0 rss: 31Mb
+#512	pulse  cov: 1263 ft: 2150 exec/s: 0 rss: 31Mb
+#1024	pulse  cov: 1485 ft: 3174 exec/s: 0 rss: 31Mb
+#2048	pulse  cov: 1608 ft: 4678 exec/s: 0 rss: 31Mb
+#4096	pulse  cov: 1690 ft: 6240 exec/s: 0 rss: 31Mb
+#8192	pulse  cov: 1730 ft: 8380 exec/s: 4096 rss: 31Mb
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==455==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x00180000001b (pc 0x000000500677 bp 0x7ffde2d54a90 sp 0x7ffde2d54a30 T455)
+==455==The signal is caused by a READ memory access.
+    #0 0x500677 in lj_gc_finalize_cdata /src/lua-c-api-tests/build/luajit-v2.1/source/src/lj_gc.c:598:12
+    #1 0x4c049e in cpfinalize /src/lua-c-api-tests/build/luajit-v2.1/source/src/lj_state.c:311:3
+    #2 0x4fdb93 in lj_vm_cpcall /src/lua-c-api-tests/build/luajit-v2.1/source/src/lj_vm.S:1250
+    #3 0x4c0401 in lua_close /src/lua-c-api-tests/build/luajit-v2.1/source/src/lj_state.c:338:9
+    #4 0x4bf3be in LLVMFuzzerTestOneInput /src/lua-c-api-tests/tests/capi/luaL_loadbufferx_test.c:39:2
+    #5 0x4264b3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #6 0x42f2a4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #7 0x417349 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #8 0x4409f2 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #9 0x7feb1f125082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: eebe5d5f4b608b8a53ec446b63981bba373ca0ca)
+    #10 0x407ddd in _start (build-out/luaL_loadbufferx_test+0x407ddd)
+
+DEDUP_TOKEN: lj_gc_finalize_cdata--cpfinalize--lj_vm_cpcall
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV /src/lua-c-api-tests/build/luajit-v2.1/source/src/lj_gc.c:598:12 in lj_gc_finalize_cdata
+==455==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+artifact_prefix='./'; Test unit written to ./crash-5cc1b8dcbdf9af70f35dfec031ef52be48a8b43a
+MERGE-OUTER: attempt 2
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 43120751
+INFO: Loaded 1 modules   (19741 inline 8-bit counters): 19741 [0x6d1b48, 0x6d6865), 
+INFO: Loaded 1 PC tables (19741 PCs): 19741 [0x60db90,0x65ad60), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge452.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/luaL_loadbufferx_test/5cc1b8dcbdf9af70f35dfec031ef52be48a8b43a' caused a failure at the previous merge step
+MERGE-INNER: 11570 total files; 11229 processed earlier; will process 341 files now
+#1	pulse  cov: 1095 ft: 1096 exec/s: 0 rss: 31Mb
+#2	pulse  cov: 1097 ft: 1138 exec/s: 0 rss: 31Mb
+#4	pulse  cov: 1189 ft: 1769 exec/s: 0 rss: 31Mb
+#8	pulse  cov: 1274 ft: 2274 exec/s: 0 rss: 31Mb
+#16	pulse  cov: 1377 ft: 3226 exec/s: 0 rss: 31Mb
+#32	pulse  cov: 1428 ft: 3963 exec/s: 0 rss: 31Mb
+#64	pulse  cov: 1518 ft: 5171 exec/s: 0 rss: 31Mb
+#128	pulse  cov: 1588 ft: 5980 exec/s: 0 rss: 31Mb
+#256	pulse  cov: 1628 ft: 6926 exec/s: 0 rss: 31Mb
+#341	DONE   cov: 1643 ft: 7209 exec/s: 0 rss: 31Mb
+MERGE-OUTER: successful in 2 attempt(s)
+MERGE-OUTER: the control file has 1610373 bytes
 MERGE-OUTER: consumed 0Mb (31Mb rss) to parse the control file
-MERGE-OUTER: 2920 new files with 10113 new features added; 1931 new coverage edges
+MERGE-OUTER: 2946 new files with 10147 new features added; 1934 new coverage edges
