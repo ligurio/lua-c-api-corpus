@@ -1,0 +1,71 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        expressions {
+          unary {
+            unop {
+            }
+            exp {
+              binary {
+                leftexp {
+                  prefixexp {
+                  }
+                }
+                binop {
+                }
+                rightexp {
+                  prefixexp {
+                    exp {
+                      binary {
+                        leftexp {
+                        }
+                        binop {
+                          or: 0
+                        }
+                        rightexp {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        expressions {
+          unary {
+            unop {
+            }
+            exp {
+              binary {
+                leftexp {
+                  prefixexp {
+                  }
+                }
+                binop {
+                }
+                rightexp {
+                  prefixexp {
+                    exp {
+                      ellipsis: "coroutine.yield"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        expressions {
+          ellipsis: "coroutine.yield"
+        }
+        explast {
+        }
+      }
+    }
+  }
+}
