@@ -1,0 +1,102 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+            }
+          }
+        }
+      }
+      condition {
+        nil: 4
+      }
+    }
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        expressions {
+          binary {
+            leftexp {
+              binary {
+                leftexp {
+                  prefixexp {
+                    var {
+                      indexexpr {
+                        prefixexp {
+                          functioncall {
+                            namedArgs {
+                              prefixexp {
+                                exp {
+                                  binary {
+                                    leftexp {
+                                    }
+                                    binop {
+                                    }
+                                    rightexp {
+                                      ellipsis: "start"
+                                    }
+                                  }
+                                }
+                              }
+                              name {
+                                name: ""
+                                num: 0
+                              }
+                              args {
+                              }
+                            }
+                          }
+                        }
+                        exp {
+                        }
+                      }
+                    }
+                  }
+                }
+                binop {
+                  concat: 0
+                }
+                rightexp {
+                  prefixexp {
+                  }
+                }
+              }
+            }
+            binop {
+              concat: 0
+            }
+            rightexp {
+              unary {
+                unop {
+                }
+                exp {
+                  function {
+                    body {
+                      parlist {
+                        ellipsis: "sink"
+                      }
+                      block {
+                        chunk {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        explast {
+          true: 5
+        }
+      }
+    }
+  }
+}
