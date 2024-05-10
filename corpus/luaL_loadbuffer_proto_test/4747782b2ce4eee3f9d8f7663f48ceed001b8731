@@ -1,0 +1,50 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        unary {
+          unop {
+          }
+          exp {
+            nil: 1
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+                unary {
+                  unop {
+                  }
+                  exp {
+                    nil: 1
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                    laststat {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+          true: 0
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}
