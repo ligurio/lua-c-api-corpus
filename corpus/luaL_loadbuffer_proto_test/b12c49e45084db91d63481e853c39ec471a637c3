@@ -1,0 +1,93 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+          indexexpr {
+            prefixexp {
+            }
+            exp {
+              unary {
+                unop {
+                }
+                exp {
+                  binary {
+                    leftexp {
+                    }
+                    binop {
+                    }
+                    rightexp {
+                      true: 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      explist {
+        explast {
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          functioncall {
+            prefArgs {
+              prefixexp {
+                exp {
+                  true: 0
+                }
+              }
+              args {
+                explist {
+                  explist {
+                    expressions {
+                      nil: 0
+                    }
+                    explast {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        args {
+          explist {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          explist {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          explist {
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+}
