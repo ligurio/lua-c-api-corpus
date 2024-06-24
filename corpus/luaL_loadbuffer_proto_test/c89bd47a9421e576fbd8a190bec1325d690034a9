@@ -1,0 +1,62 @@
+chunk {
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          explist {
+            explist {
+              explast {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    add: 8224
+                  }
+                  rightexp {
+                    binary {
+                      leftexp {
+                        nil: 0
+                      }
+                      binop {
+                        div: 0
+                      }
+                      rightexp {
+                        number: 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          exp {
+          }
+        }
+        args {
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          str: "debug.getmetatable"
+        }
+      }
+    }
+  }
+}
