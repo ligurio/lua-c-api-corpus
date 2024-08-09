@@ -1,0 +1,103 @@
+chunk {
+  stat {
+    semicolon: false
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          functioncall {
+            prefArgs {
+              prefixexp {
+                functioncall {
+                }
+              }
+              args {
+              }
+            }
+          }
+        }
+        args {
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "require"
+              num: 0
+            }
+          }
+        }
+        args {
+          tableconstructor {
+            fieldlist {
+              firstField {
+                expression {
+                }
+              }
+              fields {
+                field {
+                  exprassign {
+                    key {
+                      number: 3
+                    }
+                    value {
+                      binary {
+                        leftexp {
+                        }
+                        binop {
+                        }
+                        rightexp {
+                        }
+                      }
+                    }
+                  }
+                }
+                sep {
+                }
+              }
+              fields {
+                field {
+                  exprassign {
+                    key {
+                      ellipsis: "loop"
+                    }
+                    value {
+                    }
+                  }
+                }
+                sep {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          laststat {
+            explist {
+              explist {
+                explast {
+                  nil: 0
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+      }
+    }
+  }
+}
