@@ -1,0 +1,43 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        prefixexp {
+          exp {
+            str: "o\\377\\003l"
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        prefixexp {
+          exp {
+            binary {
+              leftexp {
+              }
+              binop {
+                sub: 1
+              }
+              rightexp {
+                str: "N"
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+}
