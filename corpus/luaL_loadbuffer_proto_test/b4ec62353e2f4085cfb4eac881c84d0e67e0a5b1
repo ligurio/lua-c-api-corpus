@@ -1,0 +1,72 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            true: 0
+          }
+          binop {
+            concat: 8388608
+          }
+          rightexp {
+            nil: 1024
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            nil: 0
+          }
+          binop {
+            equal: 1024
+          }
+          rightexp {
+            prefixexp {
+              exp {
+                unary {
+                  unop {
+                  }
+                  exp {
+                    prefixexp {
+                      exp {
+                        binary {
+                          leftexp {
+                            number: -8.371160997541313e+298
+                          }
+                          binop {
+                            sub: 0
+                          }
+                          rightexp {
+                            false: 0
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+}

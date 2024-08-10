@@ -1,0 +1,68 @@
+chunk {
+  stat {
+    semicolon: false
+  }
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: "+oadfile"
+          num: 0
+        }
+      }
+    }
+  }
+  stat {
+    forcyclelist {
+      names {
+        firstname {
+          name: ""
+          num: 4
+        }
+      }
+      expressions {
+        explast {
+          prefixexp {
+            var {
+              name {
+                name: "loadfile"
+                num: 0
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  unary {
+                    unop {
+                      length: 2
+                    }
+                    exp {
+                      tableconstructor {
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+    }
+  }
+}
