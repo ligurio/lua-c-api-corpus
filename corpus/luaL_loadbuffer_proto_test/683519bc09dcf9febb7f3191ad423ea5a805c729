@@ -1,0 +1,38 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        str: "2\\000\\000\\000\\000\\000\\000\\000"
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    block {
+      block {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                str: "2\\000\\000\\000\\000\\000\\0sink00"
+              }
+              first {
+                chunk {
+                  laststat {
+                    break: 1
+                  }
+                }
+              }
+            }
+          }
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+}

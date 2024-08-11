@@ -1,0 +1,110 @@
+chunk {
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+                binary {
+                  leftexp {
+                    function {
+                      body {
+                        block {
+                          chunk {
+                          }
+                        }
+                      }
+                    }
+                  }
+                  binop {
+                    sub: 1024
+                  }
+                  rightexp {
+                    function {
+                      body {
+                        block {
+                          chunk {
+                            laststat {
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            tableconstructor {
+              fieldlist {
+                firstField {
+                }
+                fields {
+                  field {
+                    exprassign {
+                      key {
+                      }
+                      value {
+                        tableconstructor {
+                          fieldlist {
+                            firstField {
+                              exprassign {
+                                key {
+                                  function {
+                                    body {
+                                      parlist {
+                                        ellipsis: "/"
+                                      }
+                                      block {
+                                        chunk {
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                value {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  sep {
+                  }
+                }
+              }
+            }
+          }
+          binop {
+          }
+          rightexp {
+          }
+        }
+      }
+    }
+  }
+}

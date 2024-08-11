@@ -1,0 +1,93 @@
+chunk {
+  stat {
+    block {
+      block {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                str: "2\\000\\000\\000\\000\\000\\000\\000"
+              }
+              first {
+                chunk {
+                  stat {
+                    ifstat {
+                      condition {
+                        str: "2\\000\\000\\000\\000\\000\\000\\000"
+                      }
+                      first {
+                        chunk {
+                        }
+                      }
+                      last {
+                        chunk {
+                          stat {
+                            ifstat {
+                              condition {
+                                str: "2\\000\\000\\000\\000\\000\\000\\000"
+                              }
+                              first {
+                                chunk {
+                                }
+                              }
+                            }
+                          }
+                          laststat {
+                            semicolon: true
+                          }
+                        }
+                      }
+                    }
+                  }
+                  laststat {
+                    semicolon: true
+                  }
+                }
+              }
+              last {
+                chunk {
+                  stat {
+                    call {
+                    }
+                  }
+                  laststat {
+                  }
+                }
+              }
+            }
+          }
+          laststat {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    block {
+      block {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                str: "2\\000\\000\\000\\000\\000\\000\\000"
+              }
+              first {
+                chunk {
+                  laststat {
+                    break: 1
+                  }
+                }
+              }
+            }
+          }
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    break: 1
+  }
+}

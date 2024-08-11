@@ -1,0 +1,64 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            number: -2.8125
+          }
+          binop {
+            concat: 8388612
+          }
+          rightexp {
+            binary {
+              leftexp {
+                true: 2147483648
+              }
+              binop {
+                exp: 0
+              }
+              rightexp {
+                number: -2.8125
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            laststat {
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    block {
+      block {
+        chunk {
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+  }
+  stat {
+    ifstat {
+      condition {
+        ellipsis: "\010\000\000\000\000\000\000\000"
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  laststat {
+  }
+}
