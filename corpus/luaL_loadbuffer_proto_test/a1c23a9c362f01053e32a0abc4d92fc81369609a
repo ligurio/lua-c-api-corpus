@@ -1,0 +1,54 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            negate: 0
+          }
+          exp {
+            prefixexp {
+              exp {
+                binary {
+                  leftexp {
+                    number: 5
+                  }
+                  binop {
+                    concat: 0
+                  }
+                  rightexp {
+                    str: "e333 "
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "require"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
