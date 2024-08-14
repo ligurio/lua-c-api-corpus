@@ -1,0 +1,82 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        ellipsis: "\000\002"
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        explast {
+          prefixexp {
+            var {
+              indexexpr {
+                prefixexp {
+                  var {
+                    indexexpr {
+                      prefixexp {
+                      }
+                      exp {
+                        nil: 0
+                      }
+                    }
+                  }
+                }
+                exp {
+                  nil: 2
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        expressions {
+          function {
+            body {
+              parlist {
+              }
+              block {
+                chunk {
+                  laststat {
+                    explist {
+                      explist {
+                        explast {
+                          prefixexp {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        explast {
+          false: 0
+        }
+      }
+    }
+  }
+}
