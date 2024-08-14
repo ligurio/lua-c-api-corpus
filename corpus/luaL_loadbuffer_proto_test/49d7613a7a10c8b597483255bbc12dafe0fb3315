@@ -1,0 +1,89 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            negate: 0
+          }
+          exp {
+            str: "\001\000\000\000\000\000\000\004"
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        explast {
+          prefixexp {
+            functioncall {
+              namedArgs {
+                prefixexp {
+                }
+                name {
+                  name: "("
+                  num: 0
+                }
+                args {
+                  explist {
+                    explist {
+                      explast {
+                        prefixexp {
+                          functioncall {
+                            namedArgs {
+                              prefixexp {
+                              }
+                              name {
+                                name: ""
+                                num: 0
+                              }
+                              args {
+                                explist {
+                                  explist {
+                                    expressions {
+                                      unary {
+                                        unop {
+                                        }
+                                        exp {
+                                          function {
+                                            body {
+                                              block {
+                                                chunk {
+                                                  laststat {
+                                                    break: 0
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                    explast {
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
