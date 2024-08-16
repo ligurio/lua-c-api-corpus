@@ -1,0 +1,48 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+                number: 84
+              }
+              binop {
+                exp: 0
+              }
+              rightexp {
+                number: 84
+              }
+            }
+          }
+          binop {
+            concat: 65536
+          }
+          rightexp {
+            prefixexp {
+              exp {
+                nil: 8192
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        ellipsis: ""
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+}
