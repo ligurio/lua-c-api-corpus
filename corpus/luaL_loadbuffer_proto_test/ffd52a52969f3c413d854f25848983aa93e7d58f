@@ -1,0 +1,77 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+              }
+              rightexp {
+                ellipsis: "tryside"
+              }
+            }
+          }
+          binop {
+          }
+          rightexp {
+            prefixexp {
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+                str: "<="
+              }
+              binop {
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    exp: 0
+                  }
+                  rightexp {
+                    str: "i\014\000\000\000\000\000\000"
+                  }
+                }
+              }
+            }
+          }
+          binop {
+          }
+          rightexp {
+            prefixexp {
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+}
