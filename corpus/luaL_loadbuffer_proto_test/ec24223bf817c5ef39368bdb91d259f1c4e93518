@@ -1,0 +1,75 @@
+chunk {
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+      explist {
+        explast {
+          true: 0
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          exp {
+            str: "UUUUUUUUUUUUUUUUU"
+          }
+        }
+        args {
+          str: "/"
+        }
+      }
+    }
+  }
+  stat {
+    forcyclelist {
+      names {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+      expressions {
+        explast {
+          prefixexp {
+            exp {
+              str: "UUUUUUUUUUUUUUUUU"
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "loadfile"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    str: "/"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
