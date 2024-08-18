@@ -1,0 +1,71 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                div: 2
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            div: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                sub: 0
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          laststat {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        false: 4
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+            }
+            lastSep {
+              comma: 131072
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+}
