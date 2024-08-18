@@ -1,0 +1,140 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        expressions {
+          prefixexp {
+            exp {
+              prefixexp {
+                exp {
+                  prefixexp {
+                  }
+                }
+              }
+            }
+          }
+        }
+        explast {
+        }
+      }
+    }
+  }
+  stat {
+  }
+  stat {
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            list {
+              varlist {
+                var {
+                }
+              }
+              explist {
+                expressions {
+                  binary {
+                    leftexp {
+                      prefixexp {
+                        functioncall {
+                        }
+                      }
+                    }
+                    binop {
+                      concat: 4
+                    }
+                    rightexp {
+                      binary {
+                        leftexp {
+                        }
+                        binop {
+                          add: 4
+                        }
+                        rightexp {
+                          prefixexp {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                expressions {
+                }
+                explast {
+                }
+              }
+            }
+          }
+          stat {
+            list {
+              varlist {
+                var {
+                  name {
+                    name: "tonumber"
+                    num: 0
+                  }
+                }
+              }
+              explist {
+                expressions {
+                  binary {
+                    leftexp {
+                      prefixexp {
+                        functioncall {
+                        }
+                      }
+                    }
+                    binop {
+                      concat: 4
+                    }
+                    rightexp {
+                      binary {
+                        leftexp {
+                          prefixexp {
+                            functioncall {
+                            }
+                          }
+                        }
+                        binop {
+                          concat: 4
+                        }
+                        rightexp {
+                          binary {
+                            leftexp {
+                            }
+                            binop {
+                              mod: 0
+                            }
+                            rightexp {
+                              prefixexp {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                explast {
+                  true: 4
+                }
+              }
+            }
+          }
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        nil: 0
+      }
+    }
+  }
+}

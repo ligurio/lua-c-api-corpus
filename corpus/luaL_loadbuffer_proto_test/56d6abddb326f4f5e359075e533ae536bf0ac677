@@ -1,0 +1,84 @@
+chunk {
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "next"
+              num: 4
+            }
+          }
+        }
+        args {
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            prefixexp {
+              functioncall {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "next"
+                        num: 4
+                      }
+                    }
+                  }
+                  args {
+                  }
+                }
+              }
+            }
+          }
+          binop {
+            sub: 2
+          }
+          rightexp {
+            function {
+              body {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                    }
+                    binop {
+                      add: 2
+                    }
+                    rightexp {
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
