@@ -1,0 +1,74 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            prefixexp {
+              functioncall {
+                prefArgs {
+                  prefixexp {
+                    exp {
+                      nil: 4
+                    }
+                  }
+                  args {
+                    str: "\000\000\000\000\000\000\000\000"
+                  }
+                }
+              }
+            }
+          }
+          binop {
+            add: 262144
+          }
+          rightexp {
+            false: 59648
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              list {
+                varlist {
+                  var {
+                  }
+                }
+                explist {
+                  expressions {
+                    binary {
+                      leftexp {
+                        nil: 16777216
+                      }
+                      binop {
+                        add: 262144
+                      }
+                      rightexp {
+                        prefixexp {
+                          exp {
+                            unary {
+                              unop {
+                                not: 16777216
+                              }
+                              exp {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  explast {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+}
