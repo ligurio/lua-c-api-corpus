@@ -1,0 +1,80 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        prefixexp {
+          var {
+            indexname {
+              prefixexp {
+                functioncall {
+                  prefArgs {
+                    prefixexp {
+                    }
+                    args {
+                      explist {
+                        explist {
+                          explast {
+                            binary {
+                              leftexp {
+                              }
+                              binop {
+                                div: 0
+                              }
+                              rightexp {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              Name: ""
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  unary {
+                    unop {
+                      negate: 0
+                    }
+                    exp {
+                      prefixexp {
+                        exp {
+                          binary {
+                            leftexp {
+                              number: 0
+                            }
+                            binop {
+                              concat: 0
+                            }
+                            rightexp {
+                              str: "b0"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
