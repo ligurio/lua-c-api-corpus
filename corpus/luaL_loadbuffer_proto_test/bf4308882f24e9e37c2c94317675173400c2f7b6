@@ -1,0 +1,91 @@
+chunk {
+  stat {
+    forcyclelist {
+      names {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+      expressions {
+        explast {
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            list {
+              varlist {
+                var {
+                }
+              }
+              explist {
+                expressions {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "loadfile"
+                        num: 0
+                      }
+                    }
+                  }
+                }
+                explast {
+                }
+              }
+            }
+          }
+          stat {
+          }
+          stat {
+            list {
+              varlist {
+                var {
+                }
+              }
+              explist {
+                expressions {
+                  binary {
+                    leftexp {
+                      ellipsis: "loadfile"
+                    }
+                    binop {
+                      concat: 4
+                    }
+                    rightexp {
+                      prefixexp {
+                        var {
+                          name {
+                            name: "loadfile"
+                            num: 0
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                expressions {
+                  nil: 0
+                }
+                explast {
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+      }
+    }
+  }
+}
