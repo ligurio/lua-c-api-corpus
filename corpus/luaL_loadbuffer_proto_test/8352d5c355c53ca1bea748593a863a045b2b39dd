@@ -1,0 +1,111 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+          name {
+            name: "tonumber"
+            num: 0
+          }
+        }
+      }
+      explist {
+        expressions {
+          binary {
+            leftexp {
+              number: 4.0700695264838e+251
+            }
+            binop {
+              exp: 0
+            }
+            rightexp {
+              number: 4
+            }
+          }
+        }
+        explast {
+          binary {
+            leftexp {
+            }
+            binop {
+              concat: 5
+            }
+            rightexp {
+              binary {
+                leftexp {
+                  number: 4.0700695264838e+251
+                }
+                binop {
+                  exp: 0
+                }
+                rightexp {
+                  number: 4
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            semicolon: true
+          }
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                }
+                name {
+                  name: ""
+                  num: 0
+                }
+                args {
+                  explist {
+                    explist {
+                      explast {
+                        unary {
+                          unop {
+                            not: 0
+                          }
+                          exp {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            list {
+              varlist {
+                var {
+                  name {
+                    name: "tonumber"
+                    num: 0
+                  }
+                }
+              }
+              explist {
+                explast {
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        nil: 0
+      }
+    }
+    semicolon: true
+  }
+}
