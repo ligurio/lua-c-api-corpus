@@ -1,0 +1,19 @@
+do --- Exit needs to grow stack before slot fill.
+  local function f(i)
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+ ert(rawget(_G, "stat") == nil)  -- module not loaded before
+
+if T == nil then
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNgarbage() -- Shrink stack.
+    for i=1,100 do f(i) end
+^_,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    end
+  end
+  for j 1,5 do
+    colld
+  end
+end

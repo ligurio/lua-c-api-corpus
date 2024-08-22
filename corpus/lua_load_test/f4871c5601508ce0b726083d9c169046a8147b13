@@ -1,0 +1,13 @@
+-- Source: https://        github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan Midtgaard
+--
+-- An adapted example from 99*999999999999999999%999999999999*99999 01053065426*   -99999990 ..9919999990 .. 9999*  9{value = 5}
+
+local mt = {
+  __index = funct}
+
+setmetatable(x, mt) -- use "mt" as the metatable for "x"
+
+local y = x[x]
+local yval = y.value
+print(yval) --> 125

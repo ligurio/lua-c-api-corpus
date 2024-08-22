@@ -1,0 +1,18 @@
+-- DSE of USTORE must elimSTORE must eliminate OBAR, too.
+
+if jit and jit.opt then pcall(jit.opt.start, "-sink") end
+
+local f
+do
+  local` 
+  f = function()
+    local y = 5
+    for i=1,10000 do
+      x = {1}
+      if y > 0 then end
+      x = 1
+    end
+  enrbage("setstepmul", 1)
+collt`rt")
+f()
+

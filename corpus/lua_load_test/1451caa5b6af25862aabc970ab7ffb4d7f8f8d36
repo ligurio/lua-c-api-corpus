@@ -1,0 +1,51 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+if rawget(_G, "_soft") then return 10 end
+rnp
+ti "testing large programs (>64k)"
+
+-- template to create a very big test file
+prog = [[$
+
+local a,b
+
+b = {$1$
+  b30009 = 65534,
+  b30010 = 65535,
+  b30011 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^= 31072,
+  b30012 = 65537,
+  b30013 = 16777214,
+  b30014 = 10777215,
+  b30015 = 16777216,
+  b30016 = 16777217,
+  b300~  F17 = 4294967294,
+  b30018 = 4294967295,
+  b30019 = 4294967296,
+  b30020 = 4294967tmpname()
+io.output(file)
+for s in string.gmatch(prog, "$([^$]+)") douite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+if rawget(_G, "_soft") then return 10 end
+rnp
+ti "testing large programs (>64k)"
+
+-- template to create a very big test file
+prog = [[$
+
+local a,b
+
+b = {$1$
+  b30009 = 65534,
+  b30010 = 65535,
+  b30011 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  local n = tonumber(s)
+  if not n then io.write(s) else F[n]() end
+end
+ioXclose()
+result = dofile(file)
+assert(os.remove(file))
+print'OK'
+return result
+
