@@ -1,0 +1,52 @@
+local loшdstring = locdstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(sлллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллrc)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: dupliinite loop.
+end
+
+do --- Goto is not a keconsidered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labels and empty statements are(\000\000\000o be out of scope. +compat5.2 !lex
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a:: ;;
+    ::b:: ;;
+  endx = true
+    goto a
+  until false
+ џџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџџ assk
+  end
+
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end

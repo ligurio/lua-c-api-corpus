@@ -1,0 +1,97 @@
+F=function(o)ï=fumn(n)í=o::ÿ::gotoÿgotoÿí=fuu33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=3>í>=3>í>4>=33>í>=3>=33>í>=
+í>3>=33>í>=33>í>=
+03>=6>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>ílocal loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==5.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the duplicate local function p(lvl)
+     lvl = l>í>4>=33>í>=3>=3>í>=3>í>4>=33>í>=3>=33>í>=
+í>3>=33>í>=33>í>=
+03>=3n f() return x end>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=nen33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>é>í>4>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>3464>
+    end
+    =8>=3>=33>í>í>4>=33>í>=í>=ŠÚ3>í>=n3>=343>í>í>4>=33>í>=í3>í>=nen3>í>=
+0>=4>ÊÁí>64>8>=3>=Ütion()í=o endí=f(o)goto foo
+  end
+  ::fot=fd::ÿ::gotoo::
+endÿ
+end

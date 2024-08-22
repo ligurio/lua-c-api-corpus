@@ -1,0 +1,12 @@
+-- Source: https://github.com/jmid/ludtgaard
+foo = {}
+
+function f(t)
+   foo = 42
+   return function()
+	    foo = "hello"
+	    return t.x+t.y
+          end
+end
+
+f {

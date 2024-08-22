@@ -1,0 +1,90 @@
+F=function(o)О=fumn(n)М=o::Ъ::gotoЪgotoЪМ=fuu33>М>=
+03>33>М>=
+03>34>=3>=33>М>=3>М>4>=33>М>=3>=3>М>=3>М>4>=33>М>=3>=33>М>=
+М>3>=33>М>=33>М>=
+03>=6>=34>М>
+0>=4>=8>=3>=33>М>64>=8>=03>33>М>=
+03>34>=3>=33>М>=3>М>4>=33>М>=3>=33>М>=
+М>34>3>=33>М>=
+03>33>М>=
+03>34>=3>=33>М>=М>=
+М>34>3>=33>М>=
+03>33>М>=
+03>34>=3>=33>М>=3>М>4>=33>М>=3>=33>М>=
+М>34>3>=33>М>=
+03>33>Мlocal loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 2
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KTIL. -lua==5.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 0
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the duplicate locaиииииииииииииииииииииииииииииииииииииииииииииииииииl function p(lvl)
+     lvl = l>М>4>=33>М>=3>=3>М>=3>М>4>=33>М>=3>=33>М>=
+М>3>=33>М>=33>М>=
+03>=3n f() return x end>=34>М>
+0>=4>=8>=3>=33>М>64>=8>=3>=33>М>М>4>=33>М>=М>=
+з3>en3>М>=
+0>=4>йаМ>64>8>=3>=эtion()М=o endМ=f(o)goto foo
+  end
+  ::fot=fd::Ъ::gotoo::
+endЪ
+end

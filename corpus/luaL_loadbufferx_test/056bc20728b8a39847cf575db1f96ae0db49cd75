@@ -1,0 +1,80 @@
+-- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyright (c) 2020 rxi
+--
+-- Permission i\\", "/", '"', "b", "f", "n", "r", "t", "u")
+local literals      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negate)
+  for i = idx, #str do
+    if set[str:sub(i, i)] ~= negÿÿe then
+      return i
+    end
+  end
+  return #str + 1
+end
+
+
+local function decode_error(str, idx, msg)
+  local line_count = 1
+  local col_count = 1
+  for i = 1, idx - 1 do
+    col_count = col_count + 1
+    if str:sub(i, i) == "`n" then
+      line_count = line_count + 1
+      col_count = 1
+    end
+  end
+  error( string.format("%s at line %d col %d", msg, line_count, col_count) )
+end
+
+
+local function codepoint_to_utf8(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff th4>=33>ν>=ν>=
+Ϊ33>ν>=
+03>34>=3>=33>ν>=ν>=
+ν>34>3>=33>ν>=
+03>33>ν>=
+03>34>=3>=33>ν>ÿÿÿÿtrue>7I>ueue>truf>t.rue>Ϊ''>true>=Κ''>=8>=3>=33>ν>ν>4>=33>ν>=ν>=
+Ϊ3ÿÿÿÿÿÿÿÿÿÿÿ3Ρ{Ϊ{{{ult{{{ÿÿÿÿ{{{{{xΒ{I,‹I
+{ÿÿÿ,υ,ÿ΅ÿ,4-44>44402143/4>44447*#444441448I>44,ÿÿÿ,κκκ,,υκκκκÿ,υ,,υυ,,4,,τ8,,υκκ,,8,κκκυυ,<3,,8,,υκκÿ΅΅=Μ==
+ώÿω;ÿχ΅=Μ==
+ώυ,444>444en
+    return codepois      = create_set("true", "false", "null")
+
+local literal_map = {
+nt_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, iencode(s) ) )
+  local s = "\0 \13 \27"
+  assert( s == json.decode( json.encode(s) ) )
+  local s = "\0\r\n\8"
+  assert( s == json.decode( json.encode(s) ) )
+end)
+
+
+test("unicode", functi
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str,tus, fm7t("'%s' was pa

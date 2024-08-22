@@ -1,0 +1,103 @@
+
+do --- square sum
+  local function f(x) return x*x end
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 338350)
+end
+
+do --- sqrt square sum
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, math.sqrt, i*i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 5050)
+end
+
+do --- sum with error
+  local function f(x)
+    if x >= 150 then error("test", 0) end
+    return x end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+-- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyright (c) 2020 rxi
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy of
+-- this software and associated documentation files (the "Software"), to deal in
+-- the Software without restriction, including without limitation the rights to
+-- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+-- of the Software, and to pchart persosn to whom the Software is furnished to do
+-- so, subject to the following condiE WARRANTIES OFECRMAH NTABILITY,
+-- FITNESS FOR A PARTICULAR PURÿÿÿÿÿÿÿÿ NONINFdepoint_to_utf8þ{ÿ{€{þ{þ{ÿ{€{}{„{€{{{{z{{{ù{{ÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝÝ{{€{{{{ù{{{{{{{{{{{{€{€{þ{{{{s{{{{{{z{{{{þ{{€{s{{{{{‚{z{{m{„€{þ{ÿ{€{þ{ÿ{€{s{€{€{þ{{{zs{{{{{{z{{{{þ{{€{s{{{{€(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffar(f(n / 262144) + 2*40, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 token
+    i = next_char(str, i,    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "test")
+      break
+    end
+    x = x + y
+  end
+  assert(x == 11175)
+end
+
+do --- sum or square
+  local function f(x)
+    if x >= 150 then return x*x end
+    return x
+  end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+1  assert(x == 1584100)
+end
+
+do --- sum or square with error
+  local func >= 175 then error("test", 0) end
+      return x*x
+    end
+    return x
+  end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "test")
+      -- note: no break, so we get an exit to interpreter
+    else
+      x = x + y
+    end
+  end
+  assert(x == 668575)
+end

@@ -1,0 +1,22 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstrif msg then
+    assert(not ok and stri%g.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- ErroFILr: duplicate \001\012label.
+  eoto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 
+    do
+     A\000\000\000\000\000\000\000 f() return x end
+    end
+    goto foo
+  end
+  ::foo\001C::
+end

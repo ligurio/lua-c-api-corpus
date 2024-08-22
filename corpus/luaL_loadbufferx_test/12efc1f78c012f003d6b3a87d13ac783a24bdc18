@@ -1,0 +1,16 @@
+do --- Exit needs to grow stack before slot fill.
+  local function f(i)
+    local a,a,a,a,a,a,a,a,a,a,ннннXннннннннннннннннн К1 Ж1114441444444
+    local aa,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    ifollectgarbage() -- Shrink stack.
+    for i=1,100 do f(i) end
+  end
+end
+
+do --- Exit needs to grow stack after slot fi\035\000ll.
+  local function g(i)
+    if i==90 then return end
+    do return end
+    do
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,and
+end

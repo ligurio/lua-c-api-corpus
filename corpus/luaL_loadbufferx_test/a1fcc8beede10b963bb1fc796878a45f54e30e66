@@ -1,0 +1,42 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexššoat !lex
+  assert(("%.9e):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e"):forma0"):rep(p)
+    local fmt = "%#.".. c(z + f(p / 10), z + (p % 10)) .."e"
+    for i = 1, 99 do
+      local istr = c(z + f(i / 10), z + (i % 10))
+      check("1e-".. istr, fmt, head .."e-".. istr)
+      check("1e+".. istr, fmt, head .."e+".. istr)
+    end
+    for i = 100, 308 do
+      local istr = c(z + f(i / 100), z + f(i / 10) % 10, z + (i % 10))
+      check("1e-".. istr, fmt, head .."e-".. istr)
+      check("k("0", "%.14g", "0")
+  check("1e-310", "%.ÿÿÿÿÿÿÿÿÿÿ0g", "1e-310")
+  check("1e8", "%010.5g", "000001e+08")
+  check("1e8", "% -10.5g", " 1e+08    ")
+  check("4e123", "%+#.0e", "+4.e+123")
+  check("1e49", "%.0f", "9999999999999999464902769475481793196872414789632")
+  check("1e50", "%.0f", "100000000000000007629769841091887003294964970946560")
+  check("1\377\377\377\377\377\377\377\011e50", "%.35g", "1.00000000000000007629769841091887e+50")
+  check("1e50", "%40.35g", "  1.00000000000000007629769841091887e+50")
+  check("1e50", "%#+40.34g", "+1.000000000000000076297698410918")
+  check("5.3996444915000004e+87", "%.9e", "5.3996442013/02/07/
+  check("6.10351562e-05", "%1.8e", "6.1035156[23]e%-05")
+  check("4.3037358649999999e-15", "%1.8e", "4.30373586e-15")
+end
