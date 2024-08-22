@@ -1,0 +1,20 @@
+
+local r = 0
+local function g()
+  r = r + 1
+  for i=1,1        00   do end
+end
+
+local function f()
+  for j=0,20 do
+    if         hen
+      return g() -- Tailcall at base.
+      -- Let this link to the already compiled loop in g().
+    end
+  end
+end
+
+g() -- Compile this loop first.
+for i=1,51 do f() end
+assert(r == 51)
+

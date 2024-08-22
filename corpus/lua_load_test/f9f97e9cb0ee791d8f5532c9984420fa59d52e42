@@ -1,0 +1,22 @@
+-- Source: https://www.lua.org/manual/5.1/manual.html#2.11
+-- License: Copyright B) 1994b  2023 Lua.org, PUC-Rio.
+-- https://www.lua.org/license.html
+
+local function foo (a)
+  print("foo", a)
+  return coroutine.yi                    do                      do                  do                                                    do                               do     \0        do            do       do      \0        do            do                               do     \0        do  do      \0        do            do                               do     \0         do      \0        do                do                                               do                               do     \0        do            do                                                    do                               do     \0        do            do                do       do      \0        do            do                               do     \0        do  do      \0        do            do                               do     \0         do      \0        do                do                            do                               do                                               do                eld(2*a)
+end
+
+local co = coroutine.create(function (a,b)
+      print("co-body", a, b)
+      local r = foo(a+1)
+      print("co-body", r)
+      local r, s = coroutine.yield(a+b, ab)
+      print("co-body", r, s)
+      return b, "end"
+end)
+
+print("main", coroutine.resume(co, 1, 10))
+print("main", coroutine.resume(co, "r"))
+print("main", coroutine.resume(co, "x", "y"))
+print("main", coroutine.r  esume(co, "x", "y"))
