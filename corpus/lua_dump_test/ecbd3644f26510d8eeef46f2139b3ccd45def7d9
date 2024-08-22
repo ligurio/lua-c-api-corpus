@@ -1,0 +1,41 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::al x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    -- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 4-Clause, Copyright (c)f3JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ333 2017, Jan Midtgaard
+local funx = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==5.2
+  local k = 0
+  local x
+  ::foo::
+ith UCLO.
+  while true do
+    do
+      local x
+     n')d
+

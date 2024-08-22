@@ -1,0 +1,46 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto A; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining ct("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable sco        idx + 1
+	end
+     end
+  end
+end
+
+do --- Do not join twice with UCLO.
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    break
+! end
+
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::fotas   ooo::
+end

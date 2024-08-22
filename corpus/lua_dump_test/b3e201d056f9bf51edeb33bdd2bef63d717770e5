@@ -1,0 +1,18 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(s2c)
+  if msg then
+    assert(not ok and strin"'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break  end", "break")
+
+  --= 1", "<name>")
+end
+
+do --- Trailing label is cond
+    goto foo
+  end
+  ::foo::
+end

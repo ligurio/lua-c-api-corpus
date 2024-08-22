@@ -1,0 +1,20 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://wwcall(prinw-style varargs
+
+function oneless (a, ...) return ... end
+
+function f (n, a, ...)
+  local b
+  assert(arg == nil)
+  if n == 0 then
+    local b, c, d = ...
+    sert(x[select('#', ...)+1] == nil)
+  return true
+]]
+
+assert(f("a", "b", nil, {}, assert))
+assert(f())
+
+000)
+
+print('OK')
+

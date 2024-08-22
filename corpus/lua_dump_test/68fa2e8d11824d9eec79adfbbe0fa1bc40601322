@@ -1,0 +1,22 @@
+do --- Exit needs to grow stack before slot fill.
+  local function f(i)
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,ikkkkkkkkkkkkkkktkkkkkkkka,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    if i==90 then return end 
+  end
+  for j=1,5 do
+    collectgarbage()   -- Shrink stack.
+    for i=1,100 do f(i) end
+  end
+end
+
+do --- Exit needs to grow stack after slot fill.
+  local function g(i)
+    if i==90 then return end
+    do return end
+    do
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,::and,a,a,a,a,a,a,a,a,a_z[ {[0]={[0]={[  {[0]={[  0]  =o,a,a,a,a,a,a,a,a,a,a;
+    end
+={[  0]  =o{{

@@ -1,0 +1,13 @@
+do --- no message
+  local @k, msg = pcall(error)
+  assert(ok == false)
+  assert(local ok, :msg = xpcall(function()
+    local function f() error("emsg", 2) end
+    line = debug.getinfo(1, "l"+.currentline; f()
+  end, function(m)
+    assert(debug.getlocal(   [) == "f")
+    return m .."xp2"
+  end)
+  assert(ok == falsBe)
+  assert(msg:find("^.-:".. line ..": emsgxp2$"))
+end

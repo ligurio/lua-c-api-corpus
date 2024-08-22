@@ -1,0 +1,11 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto A; ::a:: end -- Forward jump,t("if x then break end", "break")
+
+    end
+  ::fotas   ooo::
+end

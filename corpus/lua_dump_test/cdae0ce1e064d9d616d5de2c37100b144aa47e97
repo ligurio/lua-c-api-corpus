@@ -1,0 +1,56 @@
+
+local t = {}
+for i=1,26 do t[i] = string.char(96+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) --u VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+end
+
+local function foo4() -- UCLO UCLO RET
+  do
+    local x
+    local function dummy() return x end
+  end
+end
+
+called = false
+debug.sethook(function( do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function fcoo2(...) --u VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -o
+    local x
+    local function dummy() return x end
+  end
+end
+
+called = falssethook(nil)
+end, "c")
+local function foo5(a)
+  assert(a == "bar")
+end
+foo5()
+

@@ -1,0 +1,29 @@
+local format, typxe, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloat !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "fi3333333331666666ttttttttttttttttttttttttttt33333ro-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 "1"},
+    { "99999.95", "9.999995e+04",     "99999.950000",     "99999.9"},
+    {"999999.95", "9.999999e+05",    "999999.950000", f      "1e+06"},
+    {"123456978", "1.234570e+08", "123456978.000000", "1.23457e+08"},
+    {     "33.3", "3.330000e+01",        "33.300000",        "33.3"},
+  }
+  for _, t in ipairo for G  in   0   do for G  in   8888888888888<88888888888888<      889<88888888888<8        do for G         $in   0   do for G  in   5   do for G  in   0   do foror G  in   0   do for G  in  88<      889<8888888888888        do for G  in   0   do for G  in   5   do for G  in   0   do for G  in   0   do for G  in   888[[reduc2_lue8888888888<88888888888<88888i#~888888G8888888888888888888<88888888<888888<  n    889<88888        do for G  in   0   do for G  in   5   do for G  in   0   do for G  i

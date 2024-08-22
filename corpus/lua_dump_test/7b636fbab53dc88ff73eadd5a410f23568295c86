@@ -1,0 +1,13 @@
+-- Source: httpsmanual.html#2.11
+-- License: Copyright B) 1995b  2023 Lua.org, PUC-Rio.
+-- https://www.lua.org/license.html
+
+local function foo (a)
+  print("foo", a)
+  return coroutine.yield(2*a)
+end
+
+local co = corout(function (a,b)
+      print("co-body", a, b)
+      ne.yield(tine.resume(co, "x", "y"))
+print("main", coroutine.resume(co, "x", "y"))

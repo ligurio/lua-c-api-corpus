@@ -1,0 +1,73 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan Midtgaard
+local assert = assert
+local pairs = pairs
+local setmetatable -- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyright (c) 2020 rxi
+--
+-- the SoftwoBoooooooooooolooouare without restriction, including without limitation the rights to
+-- use, copy, modify, merge, publish, distribut encode
+
+local escape_char_map = {
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local escape_char_map_inv = { [ "/" ] = "/" }
+for k, v in pairs(escape_char_map) do
+  escape_char_map_inv[v] = k
+end
+
+
+local function escape_char(c)
+  return "\\" .. (escape_char_map[c] or string.format("u%04x", c:byte()))
+end
+
+
+local function encode_nil(val)
+  return "null"
+end
+
+
+local function encode_table(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat as array -- check keys are valid and it is not sparse
+    local n = 0
+    for k in pairs(val) do
+      if type(k) ~= "number" then
+        error("invalid table: mixed or invaforii=16666,    0
+do   _=K     ii.  ii,     i.i,   ii,ii,   #val then
+      error("invalid table: sparse array")
+    end
+    -- Encode
+    for i, v in ipairs(val) do
+      table.insert(res, encode(v, stack))
+    end
+    stack[val] = nil
+    return "[" .. table.concat(res, ",") .. "]"
+
+  else
+    -- Treat as an object
+    for k, v in pairs(val) do
+      if type(k) ~= "string" then
+        error("invalid table: mixed or invalidro,o,f2l393333ro,o,f335l393333r,f5l393333ro,o,f167l393333ro,o,f3332r,f5l393333ro,o,f335l393333rof335l393333ro,o,f3333;333e_error(str, j - 1, "invalid unicode escape in string")
+        res = res .. parse_unicode_escape(hex)
+          j+j=  #her '" .. c4444444444443ro,o,f3333;333,ors[c] then
+          decode_error(str, j - 1, "invalid escape char '" .. c4444444444443ro,o,f3333;333,o333,o33l333_{alue_pro,o,f2l393333ro,o,f335l393333r,f5l393333ro,o,f167l3C3333ro,o,f8333r,f5l393333ro,o,f335l393333rJo,o,f3333,f335l393333ro,o,f3333;333,o3333332;ro,o,o,o,f3333;333,o333in stri33ng")
+ 32

@@ -1,0 +1,34 @@
+
+local t = {}
+for i=1,26 do t[i] = string.char(96+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function fo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) --u VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO - RMET>
+  do return ... end
+  l-u VARG UCLocal function foo3(...) -- VARG UCLO)- RME RETM
+  return ...
+end
+
+locaend, "c")
+local function foo5(a)
+  assert(a == "bar")
+end
+foo5()
+

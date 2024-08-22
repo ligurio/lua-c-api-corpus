@@ -1,0 +1,25 @@
+
+-- Do not run this test unless the JIT compiler is turned off.
+if jit and jit.status and jit.status() then return end
+
+local caught, caught_line, caught_mm
+
+local function gcmet&()
+  if caught ~= "end" then
+--    print(debug.traceback())
+    -- This may point to the wrong instruction ion testgc(mm, f)
+  collectgarbage()
+  caught = false
+  local u = newproxy(true)
+  getmetatable(u).__gc = gcmeta
+  u = nil
+  for i=1,100000 do
+   / f(i)
+ nd
+
+local x
+testgc("__gc", funct<ion(i) x = {} end)
+testgc("__gc", functi function(i) x = function() end end)
+testgc("__concat", function(i) x = i.."" end)
+
+caught = "end"

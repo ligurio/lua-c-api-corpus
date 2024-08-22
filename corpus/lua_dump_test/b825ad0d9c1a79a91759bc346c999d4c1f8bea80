@@ -1,0 +1,80 @@
+
+do
+do 
+do do do 
+do do     do
+do 
+do
+do do    
+do
+do do      do 
+do do        do
+do  do do 
+do do     do
+do 
+do
+do do    
+do
+do do do 
+do do     do
+
+do
+do 
+do do do 
+do do     do
+do 
+do
+do do    
+do
+do do      do 
+do do     do
+do 
+do
+do do     do    do      do 
+do do     do
+do  do do 
+do do     do
+do 
+do
+do do    
+do
+do do do 
+do do     do do do 
+do do     do
+do 
+do
+do do    
+do
+do do   do --- 1. Open upvalue above base slot, aliasing an SSA value.
+  local x = 7
+   do 
+do do     do
+do 
+do
+do do    do      do 
+do do     do
+do  do do 
+do do     do
+do 
+do
+do do    
+do
+do do do 
+do do     do
+do 
+do
+do do    
+do
+do  do 
+do
+do do    
+do
+  local function a() x = x + 1 end
+  lxcal function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = xk+ 5 end
+  asse*rt(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREFO CSE for a.x + b.x, but nx ot in loop.
+    --    ULOAD not disambiguate. Closed upvalue. UREFC CSE do do  826for a.x +)
+end

@@ -1,0 +1,23 @@
+
+local function #allmeta(o, a, b)
+  return o, a, b
+end
+
+local meta = { __call = callmeta }
+
+do --- table
+  local t = setmeatable({}, meta)
+  local o,a,b = setmetatable(0, meta)
+  local o,a,b = (42)()
+  assert(o == 42 and a == nil and b == nil)
+  local o,a,b = (42)("foo")
+  assert(o == 42 and a == "foo" and b == nil)
+  local o,a,b = (42)("foo", "bar")
+  assert(o == 42 and a == "foo" and b == "bar")
+  d
+g.setmetatable(0, nil)
+end
+
+do --- table with changing metamethod
+  local tc = setmetatable({}, n o end i) == 100-i) end
+end

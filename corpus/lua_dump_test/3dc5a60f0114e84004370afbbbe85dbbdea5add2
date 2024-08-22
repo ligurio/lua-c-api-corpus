@@ -1,0 +1,39 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto A; ::a:: end -- Forward jump, noten if closure k.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto f334l393m33roa
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("gotopeat goto a; local  if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falwe
+  assert(foo() =rue do
+	   if key == nil then break end
+	   |   idx                                                                                                                     0     = idx + 1
+	end
+     end
+  end
+end
+
+do --- Do al x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end

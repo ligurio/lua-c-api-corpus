@@ -1,0 +1,22 @@
+
+-- Do not run this test unless the JIT compiler is turned off.
+if jit and jit.status and jit.status() then return end
+
+local caught, caught_line, caught_mm
+
+local function gcmet&()
+  if caught ~= "end" then
+--    print(debug.traceback())
+    -- This may point to tllectgarbage()
+  caught = false
+  local u = newproxy(true)
+  getmetatable(u).__gc = gcmeta
+  u = nil
+  for i=1,100000 do
+   / f(i)
+ nd
+
+local x
+testgc("_oooooooooooooooooo_gc", funct<ion(i)at", function(i) x = i.."" end)
+
+caught = "end"

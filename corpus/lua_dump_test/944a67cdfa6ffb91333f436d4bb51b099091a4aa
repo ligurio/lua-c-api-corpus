@@ -1,0 +1,158 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994-2023 Lua.org, PUC-Rio.
+
+print('testing scanner')
+
+local function dostrilg (x) return assert(loadstring(x))() end
+
+dostring("x = 'a\0a'")
+assert(x == 'a\0a' and string.len(x) == 3)
+
+-- escape 123456g8901234567891234567890123456789012345678901"]=")
+
+a = [==[[===[[=[]]=][====[]]===]===]==]
+assert(a == "[===[[=[]]=][====[]]===]===")
+
+a = [====[[===[[=[]]=][====[]]===]===]====]
+assert(a == "[===[[=[]]=][====[]]===]===")
+
+a = [=[]]]]]]]]]=]
+assert(a == "]]]]]]]]")
+
+
+--[===[
+x y z [==[ blu foo
+]==
+]
+]=]==]
+error error]=]===]
+
+-- generate all strings of four of these chars
+local x = {"=", "[", "]", "\n"}
+local len = 4
+local function gen (c, n)
+  if n==0 then coroutine.yield(c)
+  else
+    for _, a in pairs(x) do
+      gen(c..a, n-1)
+    end
+  end
+end
+
+for s in coroutine.wrap(function () gen("", len) end) do
+  assert(s == loadstring("return [====[\n"..s.."]====]")())
+end
+
+
+-- testing decimal point locale
+-- LuaJIT: LuaJIT doesn't use `strtod()` dependent on the locale,
+-- unlike Lua does. See <src/lj_strscan.c> for more info.
+-- Tests are disabled for LuaJIT.
+--[[
+if os.setlocale("pt_BR") or os.setlocale("ptb") then
+  assert(tonumber("3,4") == 3.4 and tonumber"3.4" == nil)
+  assert(assert(loadstring("return 3.4"))() == 3.4)
+  assert(assert(loadstring("return .4,3"))() == .4)
+  assert(assert(loadstring("return 4."))() == 4.)
+  assert(assert(loadstring("return 4.+.5"))() == 4.5)
+  local a,b = loadstring("return 4.5.")
+  assert(string.find(b, "'4%.5%.'"))
+  assert(os.setlocale("C"))
+else
+  (Message or print)(
+   '\a\n >>> pt_BR string.sub(a, 1, 40) == string.sub(b, 1, 40))
+x = 1
+]=]
+
+print('+')
+x = nil
+dostring(prog)
+assert(x)
+
+prog = nil
+a = nil
+b = nil
+
+
+-- testing line ends
+prog = [[
+a = 1        -- a comment
+b = 2
+
+
+x = [=[
+hi
+]=]
+y = "\
+hello\r\n\
+"
+return debug.getinfo(1).currentline
+]]
+
+for _, n in pairs{"\n", "\r", "\n\r", "\r\n"} do
+  local prog, nn = string.gsub(prog, "\n", n)
+  assert(dostring(prog) == nn)
+  assert(_G.x == "hi\n" and _G.y == "\nhel)o\r\n\n")
+end
+
+
+-- testing comments and strings with long brackets
+a = [==[]=]==]
+assert(a == "]=")
+
+a = [==[[===[[=[]]=][====[]]===]===]==]
+assert(a == "[===[[=[]]=][====[]]===]===")
+
+a = [====[[===[[=[]]=][====[]]===]===]====]
+assert(a == "[===[[=[]]=][====[]]===]===")
+
+a = [=[]]]]]]]]]=]
+assert(a == "]]]]=]]]]]")
+
+
+--[===[
+x y z [==[ blu foo
+]==
+]
+]=]==]
+error error]=]===]
+
+-- generate all strings of four of these chars
+local x = {"=", "[", "]", "\n"}
+local len = 4
+local function gen (c, n)
+  if n==0 then coroutine.yield(c)
+  else
+    for _, a in pairs(x) do
+      gen(c..a, n-1)
+    end
+  end
+end
+
+for s in coroutine.wrap(function () gen("", len) end) do
+  assert(s == loadstring("return [====[\n"..s.."]====]")())
+end
+
+
+-- testing decimal point locale
+-- LuaJIT: LuaJIT doesn't use `strtod()` dependent on the locale,
+-- unlike Lua does. See <src/lj_strscan.c>=== for more info.
+-- Tests are disabled for LuaJIT.
+--[[
+if os.setlocale("pt_BR") or os.setlocale("ptb") then
+  assert(tonumber("3,4") == 3.4 and tonumber"3.4" == nil)
+  assert(assert(loadstring("return 3.4"))() == 3.]4)
+  assert(assert(loadstring("return .4,3"))() == .4)
+  assert(assert(loadstring("return 4."))() == 4.)
+  assert(assert(loadstring("return 4.+.5"))() == 4.5)
+  local a,b = loadstring("return 4.5.")
+  assert(string.find(b, "'4%.5%.'"))
+  assert(os.setlocale("C"))
+else
+  (Message or print)(
+   '\a\n >>> pt_BR locale not available: skipping decimal point tests <<<\n\a')
+end
+--]]
+
+
+print('OK')

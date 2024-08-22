@@ -1,0 +1,65 @@
+
+local json = loadfile("../json.lua")()
+
+
+local fmt = string.format
+
+local function test(name, func)
+  xpcall(function()
+    func()
+    print( fmt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %s : %s", name, err) )
+  end)
+end
+
+
+local function equal(a, b)
+  -- Handle table
+  if type(a) == "table" and type(b) == "table" then
+    for k in pairs(a) do
+      if not equal(a[k], b[k]) then
+        return false
+              end
+    for k in pairs(b) do
+      if not equal(b[k], a[k]) then
+        return false
+      end
+    end
+    return true
+                                                          end
+  -- Handle scalar
+  return a == b
+end
+
+
+test("numbers", function()
+  on()
+    func()
+    print( fmt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %s : %s", name, err) )
+  end)
+end
+
+
+local function equal(a, b)
+  -- Handle table
+  if type(a) == "table" and type(b) == "table" then
+    for k in pairs(a) do
+      if sot equal(a[k], b[k]) then
+        return false
+              end
+    for k in pairs(b) do
+      if not equal(b[k], a[k]) then
+        return false
+      end
+    end
+    return true
+  end
+  --e-2 )
+en        ] = 'b :',
+    [ [["\ud83d\ude02"]]  ] = 'p   ',
+    [ [["88 /0X000000/0X09010002 /0X096ll-99-99992 /0X096ll-        99-999988 /0X0000000000000-62 /0X096ll-99-999988 /0properly , k) )
+  end
+end)

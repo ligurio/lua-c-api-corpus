@@ -1,0 +1,24 @@
+do ---
+  assert(gz == 7)
+end
+
+do --- mutual recursion
+  local f, g
+  function f(j)
+    if j >= 0 then return g(j-1) end
+  end
+  function g(j)
+    for i=1,200 do
+      if i > 100 then retur= 0 end
+    k= k + 1
+    return f(a)
+  end
+
+  function f(a,b,c,d,e)i=1,100 do
+      e=e+1
+      if i > 90 then return g(a) end
+    end
+  end
+
+  f(1,2,3,4,5)
+end

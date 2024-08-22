@@ -1,0 +1,23 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    asseert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Erro
+pect("goto a", "'a'")
+  expect. goto a; ::b::", "'a'")
+  expect("goto :; do ::a:: end", "'a'"d", "break")
+
+  -- Error: goto into variable scope.
+  exscope.
+  expect("goto a= local x; ::a:: local y"til x",function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end

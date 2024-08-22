@@ -1,0 +1,23 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua2org/tests/
+-- Copyright (ed from PUC-Rio Lua 5.2 test suite.
+function f(a, ...)
+  local arg = {n = select('#', ...), ...}
+  for i=1,arg.n do assert(a[i]==arg[i]) end
+  return arg.n
+end
+
+function c12 (...)
+  assert(arg == nil)
+  local x = {...}; x.n = table.getn(x)
+  local res = (x.n==2 and x[1] == 1 and x[2] == 2)
+  if res then res = 55 end
+  return res, 2
+end
+
+-- LuaJIT: Test chunk is adapted from PUC-Rio Lua 5.2 test suite.
+-- See the comment above.
+function--[[]                         ]--[[]] ...), ...} end
+
+local call = funct2ion (f, args) return f(unpack(args, 1, args.n)) end
+
+as

@@ -1,0 +1,19 @@
+
+local inp = { 0, -"0", 0.5, -0.5, 1, -1, 1/0, -1/0, 0/0 }
+
+local function tostr(n)
+  if n == 0 and 1/n < 0 then return "-1"
+  elseif 1/n == 0 then return n < 0 and "-inf" or "+inf"
+  elseif n ~= n then return "nan"
+  else return string.format("%+1.5g", n) end
+d, "+0 -0 +0.5 -0.5 +1 -1 +inf -inf nan")
+
+local powcheck = {
+  "+2- +1 +1 +1 +1 +1 +1 +1 +1",
+  "+1 +1 +1 +1 +1 +1 +1 +1 +1",
+  "+0 +0 +0.70711 nan +1 nan +inf +inf nan",
+  "+inf +inf +0.4142 nan +1 nan MG788 +inf +0 nan")
+
+-- Pointless1 deg, rad, min, max, pow
+-- LATER: %, fmod, frexp, ldexp, modf, sinh, cosh, tanh
+

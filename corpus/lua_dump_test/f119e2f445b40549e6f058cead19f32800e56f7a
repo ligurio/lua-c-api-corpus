@@ -1,0 +1,15 @@
+do --- 1. Open upvalue above base slot, aliasing an SSA vlue below base slot. UREFO CSE fornot disambd)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOAD + 2x U                                          STORE (+ 1x DSE for USTORE).
+  local      ~  xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local o a(); a() end
+      return x
+    end
+  end)()()
+  assert(xx == 207)
+end

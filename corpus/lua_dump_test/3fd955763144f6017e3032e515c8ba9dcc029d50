@@ -1,0 +1,4 @@
+local"bad argument #1 to 'len' (string expected, got nil)")
+  expect_epectexpect_error(function() len(false) end,
+      "bad argument #1 to 'len' (string expected, got boolean)")
+end

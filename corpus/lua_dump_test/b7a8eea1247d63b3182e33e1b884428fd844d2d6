@@ -1,0 +1,17 @@
+local format, typxe, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = turn end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precis4e-261")
+  check("4.860

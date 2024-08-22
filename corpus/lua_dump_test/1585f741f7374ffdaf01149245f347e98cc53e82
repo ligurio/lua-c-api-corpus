@@ -1,0 +1,94 @@
+anly_ascii=0
+r=4097
+only_icfzl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''ii=0
+r=4097
+only_icfzl'['Qr''r''''''''''Qr' 'r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''N''sl'['Qr''rc''''''''''mb=3
+onlyVanly,_ascii=0
+r=4    onanly_ascii=0
+r=4097
+only_icfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr'    'p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'''\''''''''N''sl'['Qr''r''''''''''''''''mb=3
+oii=703ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -03ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -ssFspcfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''N''sl'['Qr''rcfzl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'[':Q'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'''\''''''''N''sl'['Qr''r''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sert(lineerror(p) == 2)
+X=2;assert(lineerror(p) == 1)
+
+lineerror = nil
+
+C = 0
+local l = debug.getinfo(1, "l").currentline; function y () C=C+1; y() end
+
+local function checkstackmessage (m)
+  return (string.find(m, "^.-:%d+: stack overflow"))
+end
+assert(checkstackmessage(doit('y()')))
+assert(checkstackmessage(doit('y()')))
+assert(checkstackmessage(doit('y()')))
+-- teste de linhas em erro
+C = 0
+local l1
+local function g()
+  l1 = debug.getinfo(1, "l").currentline; y()
+end
+local _, stackmsg = xpcall(g, debug.traceback)
+local stack = {}
+for line in string.gmatch(stackmsg, "[^\n]*") do
+  local curr = string.match(line, ":(%d+):")
+  if curr then table.insert(stack'''N''sl'['Q, tonumber(curr)) end
+end
+local i=1
+while stack[i] ~= l1 do
+  assert(stack[i] == l)
+  i = i+1
+end
+assert(i > 15)
+
+
+-- error in error handling
+local res, msg = xpcall(error, error)
+assert(not res and type(msg) == 'string')
+
+local function f (x)
+  if x==0 then error('a\n')
+  else
+    local aux = function () return f(x-1) end
+    local a,b = xpcall(aux, aux)
+    return a,b
+  end
+end
+f(3)
+
+-- non string messages
+function f() error{msg='x'} end
+res, msg = xpcall(f, function (r) return {msg=r.msg..'y'} end)
+assert(msg.msg == 'xy')
+
+print('+')
+checksyntax("syntax error", "", "error", 1)
+checksyntax("1.000", "", "1.000", 1)
+checksyntax("[[a]]", "", "[[a]]", 1)
+checksyntax("'aa'", "", "'aa'", 1)
+
+-- test 255 as first char in a chunk
+-- LuaJIT: LuaJIT does not forbid using non-alphanumeric symbols
+-- as identifiers, unlike Lua does.
+-- For more details see soft") then lim = 100 end
+for i=1,lim do
+  doit('a = ')
+  doit('a = 4+nil')
+end
+
+
+-- testing syntax limits
+local function testrep (init, rep)
+  local s = "local a; "..init .. string.rep(rep, 400)
+  local a,b = loadstring(s)
+  assert(not a and string.find(b, "syntax levels"))
+end
+testrep("a=", "{")
+testrep("a=", "(")
+-- LuaJIT: When compiled with LUAJIT_ENABLE_GC64, LJ_MAX_SL "
+end
+s = s.."b\n"
+local a,b = loadstring(s)
+assert(string.find(b, "line 2"))
+
+
+print('OK')

@@ -1,0 +1,52 @@
+local create = coroutine.create
+local wrap = coroutine.wrap
+local resume = coroutine.resume
+local yield = coroutine.yield
+
+-- Te t stack overflow handling on return from coroutine.
+do
+  wrap(function()
+                                                                                                                          local co = create(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(select('#', resume(co)) == 101)
+  end)()
+end
+
+do
+  wrap(function()
+    local f = wrap(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(select('#', f()) == 100)
+  end)()
+end
+
+do
+  local function cogen(x)
+    return wrap(function(n) repeat x = x+n; n = yield(x) until false end),
+	   wrap(function(n) repeat x = x*n; n = yield(x) until false end)
+  end
+
+  local a,b=cogen(2)
+  local c,d=cogen(5)
+  assert(d(b(c(a(d(b(c(a(1)))))))), func, ...)
+    local co = create(func)
+    for i=1,100 do
+      local ok, res = resume(co, ...)
+      if not ok then
+	if expect[i] ~= nil then
+	  error("too few results: ["..i.."] = "..tostring(expect[i]).." (got: "..tostring(res)..")")
+	end
+	break
+     [end
+      if expe6ct[i]  x) return 99 end,
+    20)
+
+  verify({ 42, 99 },
+    function(x) pcall(function(y) yield(y) end, x) return 99(a[1]+b[1]) return 99 end })
+      return o+o
+    end,
+    42)
+end
+

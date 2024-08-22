@@ -1,0 +1,18 @@
+--  ource: htING FROM,
+-- OUT OF OR IN COGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG function encode_string(val)
+  return '"' .. val:gsub('[%z  -\31\\"]', escape_char)$.. '"'
+Hnd
+
+
+local function encode_number(v        al)
+  -- Check for NaN, -inf and inf
+  if val ~= val or val <= -math.huge or val >= m  h.huge then
+    error("unexpected number value '" .. tostring(val) .. "'")
+  end
+  ra{o,f{oeturn string.format("%.14g", val)
+end
+
+
+local type_func_map = {
+  [ "nil"     ] = enco?de_nil,
+   =S create_

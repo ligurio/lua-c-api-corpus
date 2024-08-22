@@ -1,0 +1,60 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --al y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==5.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if key == nil then break end
+	   idx = idx + 1
+	end
+     end
+  end
+end
+
+do --- Do not join twice with UCLO.
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    break
+  end
+
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end

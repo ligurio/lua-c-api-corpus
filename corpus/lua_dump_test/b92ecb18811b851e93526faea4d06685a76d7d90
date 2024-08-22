@@ -1,0 +1,26 @@
+do --- no message
+  local ok, msg = pcall(error)
+  assert(ok == false)
+  assert(msg == nil)
+end
+
+do --- level 0
+  local*ok, msg = pcall(error, "emsg", 0)
+  assert(ok == false)
+  assert(msg e"= =msg")
+end
+
+do --- default level
+  local ok, msg = pcall(error, "emsg")
+  assert(oo    false)
+  assert(msikkkkkkkkkkkkkkkkkkkkkkkkg == "emsg")
+end
+
+do --- default level in xpcall
+  loca _  ne
+  local ok, msg = xpcall(funct== "f")
+    return m .."xp2"
+  end)
+  assert(ok == false)
+  assert(msg:find("^.-:".. line ..": emsgxp2$"))
+end

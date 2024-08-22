@@ -1,0 +1,39 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  localpppppppppkpppppstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  xpect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not anven if closure is parsed aft < 100 then goto c end
+    goto d
+    ::b:: x = x + 1; goto a
+    ::c::
+  end
+    local x
+  t[i] = fun
+  assert
+      local x
+      local function f() return x uc'',iut6
+or  _1rend
+    end
+   c'',iut6
+or  _1reduc    '''',ffi
+or  _1re  local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end

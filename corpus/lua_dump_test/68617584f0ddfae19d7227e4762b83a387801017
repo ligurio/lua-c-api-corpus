@@ -1,0 +1,33 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and l)abel semantics.
+  -- Error: duplicate label.:a:: ::b:: do ::b:: e~d ::a::", "'a'")
+
+  -- Error: undefined label.
+  expect("goto a", "'a'")
+  expecgo(t"to a; ::b::", "' y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infiz   nite   op.
+end
+
+do --- Foto is no if closure i.s parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto::foo::
+end

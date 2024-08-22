@@ -1,0 +1,20 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --al y",eturn x end
+    x = true
+    goto a
+  until false
+  asser end
+    goto foo
+  end 
+ ::foo::
+end

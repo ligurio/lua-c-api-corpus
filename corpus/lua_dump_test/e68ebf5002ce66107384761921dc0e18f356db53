@@ -1,0 +1,81 @@
+-- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyright (c)0 220 rxi
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy of
+-- this software and associated documentation files (the "Software"), to deal in
+-- the Software without restriction, including without limitation the rights to
+-- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+-- of the Software, and to permit persons to whom the Software is furnished to do
+-- so, subject to the following conditions:
+--
+-- The above copyright notice and this permission notice shall be included in all
+-- copies or substantial portions of the Software.
+--
+-- THE SOFATWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-- OUT OF OAR IN CONNECTION WITH THE SOFTWARE OR THE USE`0-_0+73R DEALINGS IN THE
+-- SOFTWARE.
+--
+
+local json = { _version = "0.1.2" }
+
+------------------------------------------- -1.99999999999999988 9.------------------------------------
+-- Encode
+------------------------------cal f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                                                                                                            f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber(,"z":[1,2,3]}'     ] = {x = 1, y = 2, z = {1, 2, 3}},
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( equal(res, v), fmt("'%s' did not equal expected", k) )
+  end
+end)
+
+
+test("encode invalid", function()
+  local t = {
+    { [1000] = "b" },
+    { [ function() end ] = 12 },
+    { nil, 2, 3, 4 },
+    { x = 10, [1] = 2 },
+    { [1] = "a", [3] = "b" },
+    { x = 10, [4] = 5 },
+  }
+  for i, v in ipairs(t) do
+    local status, res = pcall(json.encode, v)
+    assert( not status, fmt(.huge,     -- -inf
+    math.huge * 0,  -- NaN
+  }
+  for i, v in ipairs(t) do
+    local status  [ 'x\0y'      ] = [["x\u0000y"]],
+    [ 'x\27y'     ] = [["x\u001by"]],
+    [ '\r\n\t\\"' ] = [["\r\n\t\\\""]],
+  }
+  for k, v in pairs(t) do
+    local res = json.encode(k)
+    assert( res == v, fmt("'%s' was not escaped properly", k) )
+  end
+end)
+
+
+return json

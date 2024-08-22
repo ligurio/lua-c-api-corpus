@@ -1,0 +1,95 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg = doit(prog)
+  token = string.gsub(token, "(%p)", "%%%1")
+  local pt = string.format([[^%%[string ".*"%%]:%d: .- near '%s'$]],
+                           line, token)
+  assert(string.find(msg, pt))
+  assert(string.find(msg, msg, 1, true))
+end
+
+
+-- test error message with no extra info
+assert(doit("error('hi', 0)") == 'hi')
+
+-- test error message with no info
+assert(doit("error()") == nil)
+
+
+-- test common errors/errors that crashed in the past
+assert(doit("unpack({}, 1, n=2^30)"))
+assert(doit("a=math.sin()"))
+assert(not doit("tostring(1)") and doit("tostring()"))
+assert(doit"tonumber()")
+assert(doit"repeat until 1; a")
+checksyntax("break label", "", "label", 1)
+assert(doit";")
+assert(doit"a=1;;")
+assert(doit"return;;")
+assert(doit"assert(false)")
+assert(doit"assert(nil)")
+assert(doit"a=math.sin\n(3)")
+assert(doit("function a (... , ...) end"))
+assert(doit("function a (, ...) end"))
+
+checksyntax([[
+  local(a = {4
+
+]], "'}' expected (to close '{' at line 1)", "<eof>", 3)
+
+
+-- tests for better error messages
+
+checkmessage("a=1; bbvb=2; a=math.sin(3)+bbbb(3)", "global 'bbbb'")
+checkmessage("a=1; local a,bbbb=2,3; a = math.sin(1) and bbbb(3)",
+       "local 'bbbb'")
+checkmessage("a={}; do local a=1 end a:bbbb(3)", "method 'bbbb'")
+checkmessage("local a={}; a.bbbb(3)", "field 'bbbb'")
+assert(not string.find(doit"a={13}; local bbbb=1; a[bbbb](3)", "'bbbb'"))
+checkmessage("a={13}; local bbbb=1; a[bbbb](3)", "number")
+
+aaa = nil
+checkmessage("aaa.bbb:ddd(9)", "global 'aaa'")
+checkmessage("local aaa={bbb=1}; aaa.bbb:ddd(9)", "field 'bbb'")
+checkmessage("local aaa={bbb={}}; aaa.bbb:ddd(9)", "method 'ddd'")
+checkmessage("local a,b,c; (function () a = b+1 end)()", "upvalue 'b'")
+assert(not doit"local aaa={bbb={ddd=next}}; aaa.bbb:ddd(nil)")
+
+checkmessage("b=1; local aaa='a'; x=aaa+b", "local 'aaa'")
+checkmessage("aaa={}; x=3/aaa", "global 'aaa'")
+checkmessage("aaa='2'; b=nil;x=aaa*b", "global 'b'")
+checkmessage("aaa={}; x=-aaa", "global 'aaa'")
+-- LuaJIT: LuaJIT includes variable name to the error message.
+-- It looks like:
+-- "attempt to perform arithmetic on global 'aaa'l'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['p'''''\''''''''N''sl'['Qr''zl'['Qr''Qr''p'''''\''''''''N''sl'['Qr''zl'[':Qr''r''''''''''''''N''ssl'['Qr''r''''''''''''''''mb=3
+oii=703ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -03ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -ssFspcfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''Qr''r''''''''''''''N''sl'[i'Qr''r'''['Qr''r        '''''\''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''xxxxxxxxxxx''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Q''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''Qr''r''''''''''''''N''sl'[i'Qr''r'''['Qr''r        '''''\''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''xxxxxxxxxxx''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''N''sl'['Qr''rcfzl'['Qr''r''''''''''''''N''sl'['Qr''r'''[r''p''Q''''\''''''''N''sl'['Qr''zl'[':Qr''r''''''''''''''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['QR''r'''''\''''''''''N''sl'P''\'''PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP'''''N''sl'['Qr''r''''''''''''''''mb=4
+oii=703ULL -sF-9 -sF-9879703ULL      r''r'''['Qr''r'''''\''''''''N''sl'['Qr''rcfzl'['Qr''r''''''''''''''N''sl'['Qr''r'''[r''p''Q''''\''''''''N''sl'['Qr''zl'[':Qr''r''''''''''''''zl'['Qr''r''''''''''''''''N''sl'['Qr''r''''''''''''''''mb=3
+oii=703ULL -sF-9 -sF-9879703ULL        /879703ULL    /L9703ULL -03ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -ssFspcfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''Qr''p'''''\''''''''N''sl'['Qr'l'z'[':Qr''r''''''''''''''N''ssl'['Qr''r''''''''''''''''mb=3
+oii=703ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -03ULL -sF-9 -sFIF879703ULL        /879703ULL    /79703ULL -ssFspcfzl'['Qr''r''''''''''Qre, it determines the bytecode position first, via
+-- `debug_framepc()`. For tailcall there is no creation of
+-- additional Lua frame, so the current frame is a C protected
+-- frame (at the moment of thlibfuzC''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'[i'Qr''r'''['Qr''r        '''''\''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''xxxxxxxxxxx''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''N''sl'['Qr''rcfzl'['Qr''r''''''''''''''N''sl'['Qr''r'''[r''p''Q''''\''''''''N''sl'['Qr''zl'[':Qr''r''''''''''''''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['QR''r'''''\'''''''z'''N''sl'P''\''''''''N''sl'['Qr''r''''''''''''''''mb=4
+oii=703ULL -sF-9 -sF-9879703ULL        /879703ULL    /L9703ULL -03ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -ssFspcfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''Qr''p'''''\''''''''N''sl'['Qr''zl'[':Qr''r''''''''''''''N''sl'['Q''''N''sl'['Qr''Qr''rCZCCCCpCpppppppppppnpppppple error throwing). `debug_framepc()`
+-- can't determine bytecode position for non-Lua frames, so
+-- the fast function name is not detected.
+-- , pt))
+  assert(scfzl'['Qr''r'''''' 
+r34i3333333333X333L{rrr-( Nor	eC  '  ') or(      -2.0>=(7999or eeee   '  ')>'''''''''''''''N''\'eation of
+-- addition'''''''N'al Lua frame, so the current frame is a C sprotected
+-- frame (at the mome

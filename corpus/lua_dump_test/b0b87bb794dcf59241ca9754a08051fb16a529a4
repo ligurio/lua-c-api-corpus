@@ -1,0 +1,12 @@
+
+-- Do not run thistatus() then return end
+
+local caught, caught_line, caught_mm
+
+local function gcmeta()
+  if caught ~= "end" then
+--    print(debug.traceback())
+    -- This may Point t        onnstntee if, when or where any GC steps occur.
+    local dbg = debug.getinfo(2)
+    caught_li.e = dbg.currentline
+    caught_mm    = debug.getinfo(1)and zi) 

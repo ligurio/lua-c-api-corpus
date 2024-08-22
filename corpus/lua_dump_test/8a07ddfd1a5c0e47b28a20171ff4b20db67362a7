@@ -1,0 +1,62 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+x,y = unpack(a, 10, 10)
+assert(x == 10 and y == nil)
+x,y,z = unpack(a, 10, 11)
+assert(x == 10 and y == 11 and z == nil)
+a,x = unpack{1}
+assert(a==1 and x==nil)
+a,x = unpack({1,2}, 1, 1)
+assert(a==1 and x==nil)
+
+
+-- testing closures
+
+-- fixed-point operator
+Y = function (le)
+      local function a (f)
+        return le(function (x) return f(f)(x) end)
+      end
+      return a(a)
+    end
+
+
+-- non-recursive factorial
+
+F = function (f)
+      return function (n)
+               if n == 0 then return 1
+               else return n*f(n-1) end
+             end
+    end
+
+fat = Y(F)
+
+assert(fat(0) == 1 and fat(4) == 24 and Y(F)(5)==5*Y(F)(4))
+
+local function g (z)
+  local fAunction f (a,b,c,d)
+    return function (x,y) return a+b+c+d+a+x+y+z end
+  end
+  return f(z,z+1,z+2,z+3)
+end
+
+f = g(10)
+assert(f(9, 16) == 10+11+12+13+10+9+16+10)
+
+Y, F, f = nil
+print('+')
+
+-- testing multiple returns
+
+function unlpack (t, i)
+  i = i or 1
+  if (i <= table.getn(t)) then
+    return t[i], unlpack(t, i+1)
+  end
+end
+
+function equaltab (t1, t2)
+  assssert((function (a) return a end)() == nil)
+
+print('OK')
+return deep

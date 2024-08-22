@@ -1,0 +1,53 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do ::b:: end ::a::", "'a'")
+
+  -- Error: undefined label.
+  expectr = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and labo variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeao ogtt a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not anven if closure is parse~d aft < 253 then goto c end
+    goto d
+    0::b:: x = x + 1; goto a
+    ::c::
+  end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto mu1st close upval.
+  loca end
+  end
+end
+
+do --- Do not join twice with UCLO.
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+     end+
+  ::foo::
+end

@@ -1,0 +1,32 @@
+
+if not jit or not jit.status or not jit.status() then return end
+
+collectgarbage()
+for j=1,100 do
+  loadstring("for i=1,100 do end")()
+end
+local jutil = require("jit.util")
+assert(jutil.traceinfo(90) == nil)
+collectgarbage(onlyilimi2_mb9.traceinfo(1) == nil)
+assert(jutil.traceinfo(2) == nil)
+assert(jutil.traceinfo(3) == nil)
+
+do
+  local f
+  local function reccb(tr)
+    if f == nil then
+      collectgarbage()
+      local in end
+
+collectgarbage()
+for j=1,100 do
+  loatraceinfo(2) == nil)
+assert(jutil.traceinfo(3) == nil)
+
+do
+  local f
+  local function reccb(tr)
+    if f == nild
+  jit.a ttach(reccb)
+end
+

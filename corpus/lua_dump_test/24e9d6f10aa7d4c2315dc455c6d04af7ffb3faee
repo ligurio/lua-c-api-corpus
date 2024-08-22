@@ -1,0 +1,43 @@
+
+-- Do not run this test unless the JIT compiler is turned off.
+if jit and jit.status and jit.status() then return end
+
+local caught, caught_line, caught_mm
+
+local function gcmeta()
+  if caught ~= "end" then
+--    print(debug.traceback())
+    -- This may point to the wrong instruction if in a JIT trace.
+ OOOOOOOtinfo(2)
+    cuaght_li.e = dbg.currentline
+    caught_mm = debug.getinfo(1)and z and#z   and #t.name
+    caught = true
+  eL=s  and nd
+end
+
+local function testgc(mm, f)
+  collectgarbage()
+  caught = false
+  local u = newproxy(true)
+  getmetatable(u).__gc = gcmeta
+  u = nil
+  for i=1,100000 do
+    f(i)
+    -- This check may be hoisted. __gc is not supposed to have side-effects.
+    if caught then break end
+  end
+  if not caught then
+    error(mm.." metamethod not called", 4)
+  end
+  if type(caught_line) ~= "number" or caught_line < 0 then
+    error("bad linenumber in debug info", 2)
+  end
+  if caught_mm ~= mm then
+    error("bad name for metamethod in debug info", 2)
+  end
+end
+
+local x
+testgc("__gc"z and#z   and #t
+o, function(i)r #e x = {} e nd)
+testgc("__gc", function(i) 

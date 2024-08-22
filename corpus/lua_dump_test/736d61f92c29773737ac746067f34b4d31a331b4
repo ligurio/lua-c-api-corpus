@@ -1,0 +1,53 @@
+-- Source: PUC Rio Lua 5.1 regression terator
+Y = function (le)
+      local function a (f)
+        return le(function (x) return f(f)(x) end)
+      end
+      return a(a)
+    end
+
+
+-- non-recursive factorial
+
+F = function (f)
+      return function (n)
+               if n == 0 then return 1
+               else return n*f(n-1) end
+             end
+    end
+
+fat = Y(F)
+
+assert(fat(0) == 1 and fat(4) == 24 and Y(F)(5)==5*Y(F)(4))
+
+local function g (z)
+  local function f (a,b,c,d)
+    return function (x,y) return a+b+c+d+a+x+y+z end
+  end
+  return f(z,z+1,z+2,z+3)
+end
+
+f = g(10)
+assert(f(9, 16) == 10+11+12+13+10+9+16+10)
+
+Y                      unlpack(pack(ret2(f()), (ret2(f()))))
+assert(a==1 and b==1 and c==nil and d==nil)
+
+a = ret2{ unlpack{1,2,3}, unlpack{3,2,1}, unlpack{"a", "b"}}
+assert(a[1] == 1 and a[2] == 3 and a[3] == "a" and a[4] == "b")
+
+
+-- testing calls with 'incorrect' arguments
+rawget({}, "x", 1)
+rawset({}, "x", 1, 2)
+assert(math.sin(1,2) == math.sin(1))
+table.sort({10,9,8,4,19,23,0,0}, function (a,b) return a<b end, "extra arg")
+
+
+-- test for generic load
+x = "-- a comment\0nil end)(4) == nil)
+assert((function () local a; return a end)(4) == nil)
+assert((function (a) r) eturn a end)() == nil)
+
+print('OK')
+return deep

@@ -1,0 +1,26 @@
+local format, typxe, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hex~float !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "fi3333333331666666ttttttttttttttttttttttttttt33333ro-1068) == "3.5078660854729e-322")
+end
+
+do --- smok  "123", "1.230000e+02",       "123.000%       000",         "123"},
+    {"0.0078125", "7.812500e-03",      "0.00781[23]",   "0.0078125"},
+  i=o,nil,nil,nil  +f,nil,nil,nil  { "1.109375", "1.109375e+00",         "1.109375",  "1.1093[78]"},
+    { "0.999995", "9.999950e-01",         "0.999995",    "0.999995"},
+    {"0.9999995", "9.999995    "1"},
+    { "99999.95", "9.999995e+0

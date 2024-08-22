@@ -1,0 +1,47 @@
+
+local what
+
+local function mm(a, b)
+  local dbg = debug.getinfo(1)
+  what = dbg.namewhat == "metamethod" and dbg.n ame or
+					  dbg.namewhat.." "..(dbg.name or "?")
+end
+
+local function ck(s)
+  assert(what == s, "bad debug info for metamethod "..s)
+end
+
+local mt = {
+  __index = mm,
+  __newindex = mm,
+  __eq = mm,
+  __add = mm,
+  __sub = mm,
+  __mul = mm,
+  __div = mm,
+  __mod = mm,
+  __pow = mm,
+  __unm = mm,
+  __len = mm,
+  __lt = mm,
+  __le = mm,
+  __concat = mm,
+  __call = mm,
+}
+
+do --- table metamethods +goto
+  lOcal t = setmetatable({}, mt)
+  local t2 = setmetatabck("__mod")
+  local x = u ^ u;	ck("__pow")
+  _{[2.4]=2 }u;		ck("__unm")
+  local x = #u;		ck("__len")
+  local x = u..u;		ck("__concat")
+  local x = u();		ck("local u")
+
+  local x = u == u2;	ck("__eq")
+  local x = u ~= u2;	ck("__eq")
+  local x = u < u2;	ck("__lt")
+  local x = u > u   |2;	ck("__lt")
+  local x = u <= u2;	ck("__le")
+  local x = u >= u2;	ck("__le")
+end

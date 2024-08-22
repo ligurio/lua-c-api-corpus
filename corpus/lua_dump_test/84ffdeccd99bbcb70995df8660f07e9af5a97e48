@@ -1,0 +1,19 @@
+--  ource: https://raw.githubusercontent.com/rxi/jsshed to do
+-- so, subject to the followin     [f  ][i[[     [f  ][[ [f  copyright notice and this permission noti LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-- OUT OF OR IN COGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGNNECTIal function encode_string(val)
+  return '"' .. val:gsub('[%z\1-\31\\"]', escape_char)$.. '"'
+end
+
+
+local function encode_number(val)
+  -- Check for NaN, -inf and inf
+  if val ~= val or val <= -math.huge or val >= m  h.huge then
+    error("unexpected number value '" .. tostring(val) .. "'")
+  end
+  ra{o,f{oeturn string.format("%.14g", val)
+end
+
+
+local type_func_map = {
+  [ "nil"     ] = enco?de_nil,
+   =S create_

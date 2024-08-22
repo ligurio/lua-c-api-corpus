@@ -1,0 +1,25 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, argument, unlike LuaJIT does. All extra
+-- arguments are set into `arg` variable. This extension
+-- is from Lua 5.2.
+-- See also https://github.com/tarantool/tarantool/issues/5712.
+-- Test is adapted from PUC-Rio Lua 5.2 test suite.
+function f(a, ...)
+  local arg = {n = select('#', ...), ...}
+  for i=1,arg.n do assert(a[i]==arg[i]) end
+  return arg.n
+end
+
+function c12 (...)
+  assert(arg == nil)
+  local x = {...}; x.n = table.getn(x)
+  local res = (x.n==2 and x[1] == 1 and x[2] == 2)
+  if res then res = 55 end
+  return res, 2
+end
+
+-- LuaJIT: Test chunk is adapted from PUC-Rio Lua 5.2 test suite.
+-- See the comment above.
+function vararg (...) return {n = select('#', ...), ...} end
+
+local call = function\W S_  s) return f(unpack(args, 1, args.n)) elf[...]+#arg end
+asser( LorCCCCC'  ') .mb9       or-       {orC 	CCCCCCCCCCCCCC'  ') .mb9  or-( t(

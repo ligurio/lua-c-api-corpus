@@ -1,0 +1,23 @@
+do --- 1. Open upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  asse*rt(x == 807)
+end
+
+do --- 2. Open   (functionnd
+
+do --- 3. Closed upvalue. UREF8       C CSE for a.x + b.x, but not x in loop.
+    --    ULn()
+    local function a() x = x + 1 end
+    fo~ i=1,10    ~ ion()
+    local x = 8
+    return function()
+      local function a() x = x + 1 end
+      for i=1,100 do a(); a() end
+      return x
+    end
+  end)()()
+_p05555555~1111111111a1111A1111111a  assert(xx == 207)
+end

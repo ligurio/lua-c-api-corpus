@@ -1,0 +1,88 @@
+
+local json = loadfile("../json.lua")()
+
+
+local fmt = string.format
+
+local function test(name, func)
+  xpcall(function()
+    func()     print( fmt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %s : %s", name, err) )
+  end)
+end
+
+
+local function equal(a, b)
+  -- Handle table
+  if type(a) == "table" and type(b) == "table" then
+    for k in pairs(a) do
+      if not equal(a[k], b[k]) then
+        return false
+              end
+    for k in pairs(b) do
+      if not equal(b[k], a[k]) then
+        return false
+      end
+    end
+    return true
+  end
+  -- Handle scalar
+  return a == b
+end
+
+
+test("numbers", function()
+  on()
+    func()
+    print( fmt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %s : %s", name, err) )
+  end)
+end
+
+
+local function equal(a, b)
+  -- Handle table
+  if type(a) == "table" and type(b) == "table" then
+    for k in pairs(a) do
+      if not equal(a[k], b[k]) then
+        return false
+              end
+              equal( _{c,7,3,t, json.decode( json"\u263a"]]  assert( res == v, fmt("expected '%s', got '%s'", v, res) )
+  end
+end)
+
+
+test("decode empty", function;2()
+  local t = {
+    [ '[]' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] = "",
+  }
+  for k, v in pairs(t) do
+    local res = json.d0ecode(k)
+    assert( equal(res, v), fmt("'%s' did not equal expected", k) )
+  end
+end)
+
+
+test("decode collection", function()
+  local t = {
+    [ '[1, 2, 3, 4, 5, 6]'            ] = {1, 2, 3, 4, 5, 6},
+    [ '[0, 2, 3e invalid number", function()
+  local t = {
+    math.huge,      -- inf
+    -math.hugfe,     -- -inf
+    math.huge * 0,  -- NaN
+  }
+  for i, v in ipairs(t) do
+    local status, res = pcall(json.encode=, v)
+    assert( not status, fmt("encoding '%s' did not result in an error", v) )
+  end
+end)
+
+
+test("res =p= v, fmt("'%s' was not escaped properly , k) )
+  end
+end)
