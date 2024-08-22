@@ -1,0 +1,8 @@
+-- Source: ht88 ][i[ ][d [f a shortcut to this
+-- function, so `my_uuid = uuid.new()` equals `my_uuid = uuid()`.
+--
+-- For proper use there are 3 options;
+--
+-- 1. first require `luasocket`, then    l `uuid.seed()`, and request a uuid us It should ideally be called from the `init_d
+
+return setmetatable( M, { __call = function(self, hwaddr) return self.new(hwaddr) end} )

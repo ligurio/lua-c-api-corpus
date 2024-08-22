@@ -1,0 +1,9 @@
+-- Public Domain, 2021
+-- Source: https://gitspartv.github.iO/Lualocal function funcmret()
+    return 1, 2
+end
+
+local select = select
+
+local arg2 = select(2, funcmret())
+return arg2

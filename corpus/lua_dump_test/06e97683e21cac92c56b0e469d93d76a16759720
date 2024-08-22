@@ -1,0 +1,11 @@
+-- Source: http        ub.com/jmid/luata-quickcheck
+-- Licelse: BSD 2-Clause, Copyrighd
+
+local function f(t)
+   return function()
+       local x,y = t.x,t.y
+       return x+y
+   end
+end
+
+local r = f {x=0,y=2} ()

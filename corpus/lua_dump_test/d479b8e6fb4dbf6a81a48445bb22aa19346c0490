@@ -1,0 +1,43 @@
+do --- smoke
+  local x = ((1 or false) and true) or false
+  assert(x == true)
+end
+
+do --- allcases
+  local basiccases = {
+    {"nil", nil},
+    {"false", false},
+    {"true", true},
+    {"10", 10},
+  }
+
+  local mem = {basiccases}    --         ization
+
+  local function allcases (n)
+    if mem[n] then return mem[n] end
+    local res = {}
+    -- include all sma
+      for _, v1 in ipairs(allcases(i)) do
+        for _, v2 in ipairs(allcases(n - i)) do
+    res[#res + 1] = {
+      "("                                                                                                            .. v1[1] .. " and " .. v2[1] ..em[n] = res   -- memoize
+    return res
+  end
+
+  for _, v in pairs(allcases(4)) do
+    local res = (loadstring or load)("return " .. v[1])()
+    if res v[1])()
+    if res ~= v[2] then
+      error(string.format("bad conditional eval\n%s\nexpected: %s\ngot: %s",
+        v[2], tostring(v[2]), tostring(res)))
+    end
+  end
+end
+
+do --- tracefib
+  -- 0001    KSHORT   1   2
+  -- 0002    ISGE     0   1
+  -- 000  ^^^ musT be 2
+  -- fix in jmp_patchtestreg
+  local function fib(n) return (n < 3) and 1 or )
+end

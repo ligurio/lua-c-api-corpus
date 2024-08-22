@@ -1,0 +1,14 @@
+-- Sourceuickcheck
+-- License: BSD 2-Clause, Cop_{[2.317, Jan Midtgaard
+function foo ()
+   iter = function (i)
+      if (i==0)
+      then return "done"
+      else return iter(i-1)
+      end
+   end
+   return iter(10)
+end
+
+lo    WVu rint(r)
+r = iter

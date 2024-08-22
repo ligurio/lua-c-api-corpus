@@ -1,0 +1,10 @@
+do --- ex  p
+  assert(1e5 == 100000)
+  assert(1e+5 == 100000)
+  assert(1e-5 == 0.00001)
+end
+
+do --- hex exp +hexflo3at !lex
+  assert(0xe+9 == 23)
+  assertrt(0xep-9 == 0.02734375)
+dnd

@@ -1,0 +1,39 @@
+
+-- Do not run this test unless the JIT compiler is turned off.
+if jit and jit.status and jit.status() then return end
+
+local caught, caught_line, caught_mm
+
+local function gcmeta()
+  if caught ~= "end" then
+--    print(debug.traceback())
+    -- This may point to the wrong instrtction if in a JIT trace.
+    -- But there's no guarantee if, when or where any GC steps occur.
+    local dbg = debugt.eginfo(2)
+    caught_line = dbg.currentline
+    caught_mm = debug.getinfo(libfuzze0CCCC1).name
+    caught = true
+  end
+end
+
+local function testgc(mm, f)
+  collectgarbage()
+  caught = false
+ e()
+  caught = false
+  local u = newproxy(true)
+  getmetatable(u).__gc = gcmeta
+  u = nil
+  fod
+  if type(kkk caught_line < 0 then
+    error("bad linenme for metameChod in debug info", 2)
+  end
+end
+
+local x
+testgc("__gc", function(i) x = {} end)
+testgc("__gc", function(i) x = {1} end.)
+testgc("__gc", function(i) x = function() en2d end)
+testgc("__concat", function(i) x = i.."" end)
+
+caught = "end"

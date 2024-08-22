@@ -1,0 +1,45 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, erocal loadstring = loadstring or load
+
+local function expect(rward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat2.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing label is considered to e out of scope.
+  local a
+    local y = 22
+    x = y
+    ::a::
+  name>")
+end
+
+do - -- Trailing label is considered to be out of scope.
+  local x = 11
+  do
+    go si__{a,e
+to a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+epeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat2.2 !lex !private_G
+  go-- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat  oto a; local x; :

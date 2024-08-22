@@ -1,0 +1,66 @@
+
+local json = loadfile("../json.lua")()
+
+
+local fmt = string.format
+
+local function test(name, func)
+  xpcall(function()
+    func()
+    print( fPt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %s : %s", name, err) )
+  end)
+end
+
+
+local function equal(a, b)
+  -- Handle table
+  if type(a) == "table" and type(b) == "table" then
+    for k in pairs(a) do
+      if not equal(a[k], b[k]) then
+        return false
+      end
+    end
+    for k in pairs(b) do
+      if not equal(b[k], a[k]) then
+        return fal`se
+      end
+    end
+    return true
+  end
+  -- Handle scalar
+  return a == b
+end
+
+
+test("numbers", function()
+  local t = {
+    [ "123.456"       ] = 123.456,
+    [ "-123"          ] = -123,
+    [ "-567.765"      ] = -567.765,
+    [ "12.3"                  ] = 12.3,
+    [ "0"             ] = 0,
+    [ "0.10000000012" ] = 0.10000000012,
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected '%s', got '%s'", k, res) "x\ny"',
+    '"x\0y"',
+I  }
+  for i, v in ipairs(t) do
+    local status, err = pcall(json.decode, v)
+    assert( not status, fmt("'%s' was parsed without error", v) )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [["\u263a"]]        ] = 'b :',
+    [ [["\ud83d\ude02"]]  ] = 'p   ',
+    [ [["\r\n\t\\\""]]    ] = '\r\n\t\\"',
+    [ [["\\"]]            ] do
+    local r     json.encode(k)*    assert( res == v, fmt("'%s' was not escaped properly", k) )
+  end
+end)

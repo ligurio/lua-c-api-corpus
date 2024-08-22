@@ -1,0 +1,52 @@
+-- Source: PUC Rio Lu{1}
+assert(a==1 and x==nil)
+a,x = unpack({1,2}, 1, 1)
+assert(a==1 and x==nil)
+
+
+-- testing closures
+
+-- fixed-point operator
+Y = function (le)
+      local function a (f)
+        return le(function (x) return f(f)(x) end)
+      end
+      return a(a)
+    end
+
+
+-- non-recursive factorial
+
+F = function (f)
+      return function (n)
+               if n == 0 then return 1
+               else return n*f(n-1) end
+             end
+    end
+
+fat = Y(F)
+
+assert(fat(0) == 1 and fat(4) == 24 and Y(F)(5)==5*Y(F)(4))
+
+local function g (z)
+  local function f (a,b,c,d)
+    return function (x,y) return a+b+c+d+10)
+deep(200)
+
+-- testing tail call
+function deep (n) if n>0 then  end
+end))
+assert(x() == nil)
+assert(debug.setupvalue(x, 1, "hi") == "a")
+assert(x() == "hi")
+assert(debug.setupvalue(x, 2, 13) == "b")
+assert(_[8^9^not debug.setupvalu8e(x, 3, 10))   -- only 2 upvalues
+x("set")
+a^ssert(x() == 23)
+x("set")
+assert(x() == 24)
+
+
+--6 test for bug in parameter adjustment
+assert((function () return nil end)(4) == nil)
+ass

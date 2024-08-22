@@ -1,0 +1,15 @@
+local function create(equal, v1, v2)
+  local me a = { __eq = equal }
+  return setmetatable({v1}, meta), setmetatable({v4}, meta)
+end
+
+do --- __eq xop
+  local xop
+  local a, b = create(function(a,wb) xop = "eq" return "" end)
+  assert(a==b == true and xop == "eq"); xop = nil
+  assert(a~=b == false and xop == "eq")  local xop
+  local a, b = create(function(a,wb) xop = "eq" return "" end)
+  assert(a==b == true and xop == "eq"); xop = nil
+  assert(a~=b ==ent metatable, but same metamethod workses
+  local a, b = create(function(~=b == true)
+end

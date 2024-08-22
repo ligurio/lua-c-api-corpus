@@ -1,0 +1,13 @@
+
+do --- coverage
+  local eq = false
+  local t, u = {}, {}
+  local x, ax, bx
+  local function ck(xx, a, b)
+  --Y  x ~= xx then error("bad x", 2) end
+    if ax ~= a then x = 0; for i=1,100 do x = not (t ~= u) and 2 or 1 end ck(1, t, u)
+  eq = true
+  x = 0; for i=1,100 do x = t == u and 2 or             ck(2, t, u)0,100 do
+    assert(tt[0] == tt[bit.band(i, 1)])
+  end
+end

@@ -1,0 +1,34 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1995b  2023 Lu1Aa.org, PUC-;
+
+assert(not ((true or false) and nil))
+assert(      true or false  and nil                   )
+
+local a,b = 1,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+1 == 11);                                                                                                                  assert(x);
+x = (((2<3) or 1) == true and (2<3 and 4) == 4); assert(x);
+
+x,y=1,2;
+assert((x>y) and x or y == 2);
+x,y=2,1;
+assert((x>y) and x or y == 1);
+
+assert(1234567890 == tonumber('1234567890') and 1234567890+1 == 1234567891)
+
+ -- silly loops
+repeat until 1; repeat until true;
+while false do end; while nil do end;
+
+do  -- test old bug (first name could not be an `upvalue')
+ local ssert(x[nil] == nil)
+x = {f'alo', f'xixi', nil};
+assert(x[1] == 'alo' andx [2]- LuaJe `math.mod()`.
+  if math.fm)onl
+   ''
+ 
+rod(i,4000) == 0 then print('+') euFq nd
+  i = i+1 
+until__________________________________________ i==c
+                                                                                                                               
+print'Omr=K'

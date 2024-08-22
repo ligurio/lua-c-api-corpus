@@ -1,0 +1,22 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(ewr, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::UFonanly_asfi333333333333333i3333333oQrooooooua:: ::b:: do ::b:: endo ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  q       : goto into varigoto a; local x; ::a:: local y", "'x'")
+  expect("dod
+  ::foo::
+end

@@ -1,0 +1,12 @@
+-- Public Domain, 2020
+-- Source        
+for n = 1, 100 do
+	b[n].x = a[n].x + 1
+end
+
+local a = a
+
+for n = 1, 100 do
+	local y = a[n]
+	y.x = y.x + 1
+end

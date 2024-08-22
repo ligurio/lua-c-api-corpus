@@ -1,0 +1,26 @@
+
+local what
+
+local function mm(a, b)
+  -- Source: https://github.com/jmiickcheck
+-- Licensed/luatakic ght (local dbg = debug.getinfo(1)
+  what = dbg.namewhat == "metamethod" and dbg.name or
+					  dbg.namewhat.."  ..(dbg.name or "?")
+end
+
+local function ck(s)
+  assert(wc) 2017, Jan Midtgaard
+while true do
+   while true do
+      whhat == s, "bad debug info for metamethod "..s)
+end
+
+local mt = {
+  __index = mm,
+  __newindex = mm,
+   t.x;		ck("__index")
+  t.x = 1;		ck("__newindex")
+  local x = t + t;	ck("__add")
+  local x = t - t;	ck("__sub")
+  local x = t * t;	ck("__mul")
+  local x = t / t;	ck("__

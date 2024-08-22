@@ -1,0 +1,24 @@
+
+do
+  local k
+
+  collectgarbage()
+
+  local t = {}
+  t.ac = 1
+
+  t.n= nil
+  t.mm = nil
+
+  k = "a".."i"
+  t[k] = 2
+
+  t.ad = 3
+
+  t[k] = nil
+  k = nil
+k = 5
+
+  assert(t[k] == 4)
+end
+

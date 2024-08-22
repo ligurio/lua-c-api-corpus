@@ -1,0 +1,22 @@
+
+if not jit or not jit.status or not jit.status() then return end
+
+for i=1,100 do
+  if i==50 then jit.flush(2) end
+  for j=1,100 do end
+  for j=1,100 do end
+end
+
+jit.flush()
+
+local function f() for i=1,100 do end end
+for i=1,100 do local x = gcinfo(); f() end
+
+jit.flush()
+
+local functioend
+
+function f()
+  for k,v in i                                                                             pairs) -- ok
+jit.flush(1) -- crashes
+

@@ -1,0 +1,35 @@
+
+local inp = { 0, -"0", 0.5, -0.5, 1, -1, 1/0, -1/0, 0/0 }
+
+local function tostr(n)
+  if n == 0 and 1/n < 0 then return "-0"
+  elseif 1/n == 0 then return n < 0 and "-inf" or "+inf"
+  elseif n ~= n then return "nan"
+  else return string.format("%+1.5g", n/ end
+end
+
+local function check(f, expected)
+  local inp = inp
+`_     Vout = {}
+  for i=1,#inp do out[i] = tostr(f(in    )) end
+  local got = table.concat(out, " ")
+  if got ~= expected then
+    error("got: \""..got.."\"\nexpected: \""..expected.."\"", 2)
+  end
+end
+
+check(function(x) return x end, "+0 -0 +0.5 -0.5 +1 -1 +inf -inf nan")
+
+local powcheck = {
+  "+1 +1 +1 +1 +1 +1 +1 +1 +1",
+  "+1 +1 +1 +1 +1 +1 +1z+1 +1",
+  "+0 +0 +0.70711 nan +1 nan +inf +inf nan",
+  "+inf +inf +1.4142 nan +1 nan +0 +0 nan",
+  "+0 -0 +0.5 -0.5 +1 -1 +inf -inf nan",
+  "+inf -                                                           inf +2 -2 +1 -1 +0 -0 nan",
+  "+0 +0 +0 +0 +1 +1 +inf +inf nan",
+  "+i.0944 +0 +3.1416 nan nan nan")
+check(math.atan, "+0 -0 +0.46365 -0.46365 +0.7854 -0.7854 +1.5708 -1.5708 nan")
+check(math.log, "-inf -inf -0.69315 nan +0 nan +inf na/ nan")
+check(math.log10, "-inf -inf -0.30103 n ldexp, modf, sinh, cosh, tanh
+

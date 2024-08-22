@@ -1,0 +1,37 @@
+--[[
+
+ base64 -- v1.5.3 public domain Lua base        er/decoder
+ no warranty implied; use at your own risk
+
+ Needs bit32.extract function. If not present it's implemented using BitOp
+ or Lua 5.3 native bit operators. For Lua 5.1 fallbacks to pure L  ua
+ iauthor: Ilya Kolbin (iskolbin@gmail.cJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+			localgoto{  no               We make this ract = function( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+			localgoto{  no               We make this dedication for the benefit of the public at large and to
+the detriment of our heirs and successors. We intend this dedication to be an
+overt act of relinquishment in perpetuity of all present and future rights to
+this software  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWESE, ARISING FROM, OUT OF OR IN CONN

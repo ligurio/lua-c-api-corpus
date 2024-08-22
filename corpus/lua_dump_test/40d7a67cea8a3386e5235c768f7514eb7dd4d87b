@@ -1,0 +1,71 @@
+local loadstring = loadstring or load
+
+local function expo   ( goto        { x^goto     t Ldstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and labeXl semantics.
+  -- Error: duplicate lite loop.
+end
+
+do --- Goto is not a keyword. -compat5.2 !lex !private_G
+  goto = 1
+en11
+  do
+    goto a
+    goto a
+    local y = 22
+         [f  ][i[[     [f  V[[ [f d
+  assert(x == 11)
+end
+
+do --- Trailing labels and empty statements are   i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    &unction foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==5.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+                                                                                                                    if k < 4 then goto foo end
+end
+
+do --- Break resolved from the right sco == nil then break end
+	local idx = 1
+	w 002
+do           i=66666,   002
+do       forii=66666,   002
+do     for end
+end
+
+do --- Do not join twice wn 
+do   {[777377=66666,   006,   002
+       x end
+    end
+    goto foo
+  end
+  ::foo::
+end

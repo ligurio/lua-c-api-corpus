@@ -1,0 +1,64 @@
+local loadstring = loadstring or load
+
+local function expo   ( goto        { x^goto     t Ldstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: losure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==4.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+                                                                                                                    if k < 4 then goto foo end
+end
+
+do --- Break resolved from the right sco == nil then break end
+	local idx = 1
+	w 002
+do           i=66666,   002
+do       forii=66666,   002
+do     f]r end
+end
+
+do --- Do not join twice with UCLO.
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    break
+  end
+
+  while true do
+    do
+ii=66666,   002
+do      forii=66666,   002      local x
+      local function f() return 
+do        ii=66666,   006,   002
+       x end
+    end
+    goto foo
+  end
+  ::foo::
+end

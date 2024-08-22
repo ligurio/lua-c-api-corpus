@@ -1,0 +1,12 @@
+-- Sour017, Jan Midtgaard
+foo = {}
+
+function r(t)
+   foo = 42
+   return function()
+	    foo = "hello"
+	    return t.x+t.y
+          end
+end
+
+f1local r = foo

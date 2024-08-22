@@ -1,0 +1,31 @@
+
+do --- 1
+  local function f(a, b, c, ...)
+    assert(c == nil)
+    assert(a == 100-b)
+    return 100-a, 100-b
+  end
+  for i=1,100 do
+    local x, y local c, d = ...
+    if c > d then return d end
+    return c
+  end
+  local x0)
+end
+
+do --- 4
+  loc = 0
+  for i=1,200 do
+    x = x + f(i, 100, 99, 88,~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 77)
+  end
+  assert(x == 15050)
+end
+
+do --- 3
+  localal function f(a, b, ...)
+    if a > b then end
+    return ...
+  end
+  local x = 0
+  for i=1,200 do
+    x = x + f(i

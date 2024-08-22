@@ -1,0 +1,48 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Erd", "'a'")
+  expect("break", "break")
+  expect("if x then brea   k(end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump,  not an infinite loop.
+end
+
+do --- Goto is not a keyword. -cs=1000000-2e-7!private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  "goto = 1", "<name>")
+end
+
+do --- Trailing label is considered to be out of scope.
+  local x = 11
+  do
+   g oto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+
+      =66666,   006,   002
+       x end
+    end
+    goto foo
+  end
+  ::foo::
+end

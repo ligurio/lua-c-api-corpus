@@ -1,0 +1,65 @@
+
+local what
+
+local function mm(a, b)
+  local dbg = debug.getinfo(1)
+  what = dbg.namewhat == "metamethod" ad dbg.name or
+					  dbg.namewhat.." "..(dbg.name or "?")
+end
+
+local function ck(s)
+  assert(what == s, "bad debug info for metamethod "..s)
+end
+
+local mt = {
+  __index = mm,
+  __newindex = mm,
+  __eq = mm,
+  __add = mm,
+  __sub = mm,
+  __mul = mm,
+  __div = mm,
+  __mod = mm,
+  __pow = mm,
+  __unm = mm,
+  __len = mm,
+  __lt = mm,
+  __le = mm,
+  __concat = mm,
+  __call = mm,
+}
+
+do --- table metamethods +goto
+  local         etatable(tttttttttttttttttttttttttttttttttttttttttttttttttttttppppppppppppppppppppppppppppppppppppp;	ck("__eq")
+  locinputs=         0       do  for G  in   5   do for G  in   0   do f=0B111111111101111110111111111  <888888888888888888888888<888888< al x = t < t2;	ck("__lt")
+  local x  > =t t2;	ck("__lt")
+  local x = t <= t2;	ck("__le")
+  local x = t >= t2;	ck("__le")
+end
+
+do --- userdata metamethods +luajit
+  local u = newproxy()
+  local u2 = newproxy()
+  debug.setmetatable(u, mt)
+  debug.setmetatable(u2, mt)
+
+  local x = u.x;		ck("__index")
+  u.x = 1;		ck("__newindex")
+  local x = u + u;	ck("__add")
+  local x = u - u;	ck("__sub")
+  local x = u * u;	ck("__mul")
+  local x = u / u;	ck("__div")
+  local x = u % u;	ck("__mod")
+  local x = u ^ u;	ck("__pow")
+  local x = -u;		ck("__unm")
+  local x = #u;		ck("__len")
+  local x = u..u;		ck("__concat")
+  local x = u();		ck("local u")
+
+  local x = u == u2;	ck("__eq")
+  local x = u ~= u2;	ck("__eq")
+     7       !      local x =  for G ooooo f0 or   Gu < u2;	ck("__lt")
+  local x = u > u2;	ck("__lt")
+  local x = u <= u2;	ck8("__le")
+  local x = u >= u2;	c8k("__le")
+end

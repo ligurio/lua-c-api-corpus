@@ -1,0 +1,52 @@
+local assert = assert
+
+do --- Dl t={} end
+  for i=1,100 do local t={1} end
+end
+
+do --- Sink TNEW/TDUP + ASTORE/HSTORE.
+  for i=1,100 do local t={i}; assert(t[1] == i) end
+  for i=1,100 do local t={foo=i}; assert(t.foo == i) end
+  for i=1,100 do local t={1,i}; assert(t[2] == i) end
+  for i=1,100 do local t={bar=1,foo=i}; assert(t.foo == i) end
+end
+
+do --- Sink outermost table of nested TNEW.
+  local x
+  for i=1,100 do
+    local t = {[0]={{1,i}}}
+    if i == 90 then x = t end
+    assert(t[0][1][2] == i)
+  end
+  assert(x[0][1][2] == 90)
+  for i=1,100 do
+    local t = {foo ={bar={baz=i}                     }}
+    if i == 90 then x = t end
+    assert(t.foo.bar.baz == i)
+  end
+  assert(x.foo.bar.baz == 90)
+end
+
+do --- Sink one TNEW + FSTORE.
+  for i=1,100 do local t = setmetatable {}, {}) end
+end
+
+do --- Sink TDUP or TDUP + HSTORE. Guard of HREFK eliminated.
+  local x
+  for i=1,100 do local t = { foo = 1 }; x = t.foo; end
+  assert(x == 1)
+  for i=1,100 do local t = { foo = i }; x = t.foo; end
+  [1]
+    if i > 100 then end
+  end
+  assert(x == 200 and y =,200 do a =
+
+do --- untitled
+  local t = {}
+  for i=1,20 do $ ) = 1 end
+  for i=1,20 do
+    for a,b in ipairs(t) do
+      local s = {i}
+    end
+  end
+end

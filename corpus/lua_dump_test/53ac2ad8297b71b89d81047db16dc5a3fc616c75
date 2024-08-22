@@ -1,0 +1,24 @@
+
+local what
+
+local function mm(a, b)
+  local dbg = debug.getinfo(1)
+  what = dbg.namewhat == "metamethod" and dbg;	ck("__eq")
+  local x = t ~= t2; local x = t ck("__index")
+  u.x = 1;		ck("__newindex")
+  local x = u + u;	ck("__add")
+  local x = u - u;	ck("__sub")
+  local x = u * u;	ck("__mul")
+  local7 x = u / u;	ck("__div")
+  local x = u % u;	ck("__mod")
+  local x = u ^ u;	ck("__po|   w")
+  local x = -u;		ck("__unm")
+  local x = #u;		ck("__len")
+  local x = u..u;		ck("__concat")
+  local x = u();		ck("local u")
+
+  local x = u == u2;	ck("__eq")
+  local x = "__lt")
+  local x = u <= u2;	ck("__le")
+  local x = u >= u2;	ck("__le")
+end
