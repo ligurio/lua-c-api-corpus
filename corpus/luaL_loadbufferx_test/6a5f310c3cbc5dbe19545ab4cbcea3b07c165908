@@ -1,0 +1,23 @@
+
+local inp = { 0, -"0", 0.5, -0.5, 1, -1, 1/0, -1/0, 0/0 }
+
+local function tostr(n)
+  if n == 0 and 1/n < 0 then return "-0"
+  elseif 1/n == 0 then return n < 0 and "-inf" or "+inf"
+  elseif n ~= n then return "nan"
+  else return string.format("%+1.5g", n) end
+end
+
+local function check(f, expected)
+  local inp = inp
+  local out = {}
+  for i=1,#inp do out[i]tion(x) return x^y end, powcheck[j])
+end
+
+check(math.abs, "+0 +0 +0.5 +0.5 +1 +1 +inf +inf nan")
+check(math.floor, "+0 -0 +0 -1th.log10, "-inf -inf -0.30103 nan +0 nan +inf nan nan")
+check(math.exp, "+1 +1 +1.6487 +0.60653 +2.7183 +0.36788 +inf +0 nan")
+
+-- Pointless: deg, rad, min, max, pow
+-- LATER: %, fmod, frexp, ldexp, modf, sinh, cosh, tanh
+

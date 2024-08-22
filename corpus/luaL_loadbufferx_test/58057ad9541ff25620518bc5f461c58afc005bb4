@@ -1,0 +1,79 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994â€“2023 Lua.org, PUC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg = doit(prog)
+  token = string.gsub(token, "(%p)", "%%%1")
+  local pt = string.format([[^%%[string ".*"%%]:%d: .- near '%s'$]],
+                           line, token)
+  assert(string.find(msg, pt))
+  assert(string.find(msg, msg, 1, true))
+end
+
+
+-- test error message with no extra info
+assert(doit("error('hi', 0)") == 'hi')
+
+-- test error message with no info
+assert(doit("error()") == nil)
+
+
+-- test bal 'aaa' (a table value)"
+-- Lua 5.1 dests/
+-- Copyright (c) 1994â€“2023 Lua.org, PUC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg = doit(prog)
+  token = string.gineerror(p) == 2)
+X=2;assert(lineerror(p) == 1)
+
+lineerror = nil
+
+C = 0
+local l = debug.getinfo(1, "l").currentline; function y () C=C+1; y() end
+
+local function checkstackmessage (m)
+  return (string.find(m, "^.-:%d+: stack overflow"))
+end
+assert(checkstackmessage(doit('y()')))
+assert(checkstackmessage(doit('y()')))
+assert(checkstackmessage(doit('y()')))
+-- teste de linhas em erro
+C = 0
+local l1
+local fÚ.ÿŠ1ÿd11[444444+4<43/­­­­­­µ­­­­­­­­­­­­­­­ÿŠ0ÿ†11114444z4444­­­4<43/0X.000000000000000000000000000000000000000000000000000000000003286<43/­0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\001\00100000000000000000000000004944<43o­­ýÿ4<43/0X.0000000Ì00000000000000000000Ü00000000~000000000000000000000000000000000000forí=°Â,údo
+í=function0000000000000000000000000000Š,00000000000000000000000000000unction g()
+  l1 = debug.getinfo(1, "l").currentline0; y()
+end
+local _, stackmsg = xpcall(g, debug.traceback)
+local stack = {}
+for line in string.gmatch(stackmsg, "[^\n]*") do
+  local curr = string.match(line, ":(%d+):"

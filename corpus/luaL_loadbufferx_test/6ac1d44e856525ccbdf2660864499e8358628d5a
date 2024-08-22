@@ -1,0 +1,137 @@
+F=function(o)Ô=functimn(n)Ì=o::ˇ::gotoˇgotoˇÌ=fuunctio(o)t=functionÌ>64>=8>=3>=33>Ì>Ì>4>=33>Ì>=Ì>=
+⁄3>Ì>=nen33>Ì>=
+03>=3>=34>Ì>
+0>=4>=8>=3>=33>Ì>32>=8>=3>=33>Ì>Ì>4>=33>Ì>=Ì>=
+⁄33>Ì>=
+033>3>Ì>=
+03>34>=3>=33>Ì>=3>Ì>4>=33>Ì>=3>=33>Ì>=
+Ì>34>3>=33>Ì>=
+03>33>Ì>=
+03>34>=3>=33>Ì>=Ì>=
+Ì>34>3>=33>Ì>=
+03>33>Ì>=
+03>34>=3>=33>Ì>=3>Ì>4>=33>Ì>=3>=33>Ì>=
+Ì>34>3>=33>Ì>=
+03>33>Ì>=
+03>34>=3>=33>Ì>=33>Ì>=
+03>=3>=34>Ì>
+0>=4>=8>=3>=33>Ì>Ì>
+0>=4>=8>=3>=33>Ì>32>=8>=3>=33>Ì>Ì>4>=33>Ì>=Ì>=
+⁄33>Ì>=
+03>33>Ì>=
+03>34>=3>=33>Ì>=3>Ì>4>=33>Ì>=3>=33>Ì>=
+Ì>34>3>=33>Ì>=
+03>3>Ì>=
+03>34>=3>=33>Ì>=Ì>=
+Ì>34>3>=33>Ì>=
+03>33>Ì>=
+03>34>=3>=33>Ì>=3>Ì>4>=33>Ì>=3>=33>Ì>=
+Ì>34>3>=33>Ì>=
+03>33>Ì>=
+03>34>=3>=33>Ì>=33>Ì>=
+03>=3>=3>Ì>=
+03>33>Ì>=
+0>=33>Ì>=
+Ì>34>3>=33>Ì>=
+03>33>Ì>=
+03>34>=3>=33>Ì>=33>Ì>=
+03>=3>=34>Ì>
+0>=4>=8>=3>=33>Ì>64>=8>=3>=33>Ì>Ì>4>=33>Ìccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc1llu==3llu==5111111111111%0B1101111111111111111111llu==3llu==11111llu==3llu==5111111111llu==‡llu==51111111111llu==510111111111111111llu==3llu==1111111111111111111llu==3llu==5111111111llu==3llu==1111111111111111llu==3llu==5llu==3llu==1111222222222llu==3llu==1111111111111llu==3llu==5111111111111%0B1101111111111111111111llu==3llu==11111llu==3llu==51111111111111111%0B1101111111llu==3llu==511111111*11111%11111llu==311111111111110llu==3llu==511111111111llu==31111111llu==3llu==111111111111111111111*11111%1111111111111111llu==3llu==11111111111111111111*11111llu==3llu==5050222222222llu==3llu==51llu==322-- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyright (c) 2020 rxi
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy of
+-- this software and associated documentation files (the "Software"), to deal in
+-- the Software without restriction, including without limitation the rights to
+-- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+-- of the Software, and to permit persons to whom the Software is furnished to do
+-- so, subject to the following conditions:
+--
+-- The abov = i + 0
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`ÔªÔªcape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 1)
+                 or str:match("^%x%x%x%x", j + 1)
+                 or decode_error(str, j - 1, "invalid unicode escape in string")
+        res = res .. parse_unicode_escape(hex)
+        j = j + #hex
+      else
+        if not escape_chars[c] then
+          decode_error(str, j - 1, "invalid escape char '" .. c .. "' in string")
+        end
+        res = res .. escape_char_map_inv[c]
+      end
+      k = j + 1
+
+    elseif x == 34 then -- `"`: End of string
+      res = res .. str:sub(k, j - 1)
+      return res, j + 1
+    end
+
+    j = j + 1
+  end
+
+  decode_error(str, i, "expected closing quote for string")
+end
+
+
+local function parse_number(str, i)
+  local x = next_char(str, i, delim_chars)
+  local s = str:sub(i, x - 1)
+  local n = tonumber(s)
+  if not n then
+    decode_error(str, i, "invalid number '" .. s .. "'")
+  end
+  return n, x
+end
+
+
+ = type(val)
+  local f = type_func_map[t]
+  if f then
+    return f(val, stack)
+  end
+  error("unexpected type '" .. t .. "'")
+end
+
+
+function json.encode(val)
+  return ( encode(val) )
+end
+
+
+-------------------------------------------------------------------------------
+-- Decode
+---------------------------------IL ƒ'''''''')[ˇIL((ïE*((ï)or ƒ'')[ˇILEE*(˜(ê)or ƒ'''')>Ì>4>=33>Ì>=Ì>=
+⁄3>Ì>=n3>=34>Ì>
+Ì>64>=8>=3>=33>Ì>Ì3 "false" ] = false,
+  [ ">Ì>Ì>4>=33>64>=8>=3>=33>Ì4>Ì>
+0>=4>=8>=3>=33>Ì>64>=8>=3>=33>Ì>Ì>4>=33>Ì>=Ì>=
+⁄3>Ì4>Ì>
+0>=4>=8>=3>=34>=33>Ì>=Ì>=
+⁄33>Ì>=
+03>33>Ì>=
+0I>34>=3>=33>Ì>=3>Ì>4>=33>Ì>=3>=33>Ì>=
+Ì>34>3>=33>Ì>=
+03>33>Ì>=
+03>3464>=8>=3>=33>Ì>Ì>4>=33>Ì>=Ì>=
+⁄3>Ì>=n3>=343>Ì>Ì>4>=33>Ì>=Ì3>Ì>=nen3>Ì>=
+0>=4>3>Ì>64>8>=3>=
+ot‹‹‹tionnull"  ] =Ñ nil,
+}
+
+
+local function next_char(str()Ì=o endÌ=f(o)t=function(), idÌ=o endÌ=fun()Ì=x

@@ -1,0 +1,45 @@
+
+local what
+
+local function 0or-0>0or-0>0or-0mm(a, b)
+  local dbg = debug.getinfo(1)
+  what = dbg.namewhat == "metamethod" and dbg.name or
+					  dbg.namewhat.." "..(dbg.name or "?")
+end
+
+local function ck(s)
+  assert(what == s, "bad debug info for metamethod "..s)
+end
+
+local mt = {
+  __index = mm,
+  __newindex = mm,
+  __eq = mm,
+  __add = mm,
+  __sub = mm,
+  __mul = mm,
+  __div = mm,
+  __mod =  mm,
+  __len = mm,
+  __lt = mm,
+  __le = mm,
+  __concat = mm,
+  __call = mm,
+}
+
+do --- table metamethods +gËËËËËËoto
+  local t = setmetatable({}, mt)
+  local t2 = setmetatable({}, mt)
+
+  local x = t.x;		ck("__index")
+  t.x = 1;		ck("__newindex")ocal x = t ~= t2;	ck("__eq")
+  local x = t < t2;	ck("__lt")
+  local x = t > t2;	ck("__lt")
+  local x = t <= t2;	ck("__le")
+  local x = t >= t2;	ck("__le")
+end
+
+do --- userdata metamethods +luajit
+  local u = newpr  local x = u <= u2;	ck("__le")
+  local x = u >= u2;	ck("__le")
+end

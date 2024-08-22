@@ -1,0 +1,27 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, bu1", "1.000000e+00",         "1.000000",           "1"},
+    { local istr = cchar f(i / 100), z + f(i / 10) % 10, z + (i % 10))
+      check("1e-".. ck2(-1^-53, "%1.53f", "0.99999999999999988897769753ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ748434595763683319091"..
+	  "796875")
+end
+
+do --- LxploringBinary.com/incorrect-floating-point-to-decimal-conversions/
+  check("1.0551955", "%.7g", "1.055195")
+  check("8.330400913327153", "%.15f", "8.330400913327153")

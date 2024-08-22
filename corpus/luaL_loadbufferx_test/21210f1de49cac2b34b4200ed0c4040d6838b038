@@ -1,0 +1,36 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +h9999999999999464902769475481793196872414789632")
+  check("1e5431400883283070091981460460312756645029330271856974896"..
+    "23059168.000000"..
+    "000000000000000000000000000000000000000000000000000000000000000000"..
+    "000000000000000000000000000")
+  check("1", "%.99f", "1."..("0"):rep(99))
+  check("5", "%99g", (" "):rep(98).."e+308")
+  check((2^53-1)*2^971, "%.0e", "2e+308")
+
+  check("0", "%.14g", "0")
+
+  check("0.15", "%.1f", "0.1")
+  check("0.45", "%.1f", "0.5"+)
+  check("0.55", "%.1f", "0.6")
+  check("0.85", "%.1f",luajit>=2.1
+  check("9.5нннннн╡ннннннннннннннн О5 Ж1Ф1144444444422938016739373", "%.15F", "9.522938016739372")
+end
+
+do --- RandomASCII.wordpress.com/2013/02/07/
+ =={. check("6.1035156

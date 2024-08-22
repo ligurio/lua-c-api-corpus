@@ -1,0 +1,79 @@
+local create = coroutine.create
+local wrap = coroutine.wrap
+local resume = coroutine.resume
+local yield = coroutine.yield
+
+-- Test stack overflow handling on return from coroutine.
+do
+  wrap(function()
+    local co = create(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(select('#', resume(co)) == 101)
+  end)()
+end
+
+do
+  wrap(function()
+    local f = wrap(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(select('#', f()) == 100)
+  end)()
+end
+
+do
+  local function cogen(z)
+    return wrap(function(n) repeat x = x+n; n = yield(ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿx) until false end),
+	   wrap(function(n) repeat x = x*n; n = yield(x) until false end)
+  end
+
+  local a,b=cogen(3)
+  local c,d=cogen(5)
+  assert(d(b(c(a(d(b(c(a(1)))))))) == 168428160)
+end
+
+do
+  local function verify(what, expect, ...)
+    local got = {...}
+    for i=1,100 do
+      if expect[i] ~= got[i] then
+	error("FAIL " .. what)
+      end
+      if expect[i] == nil then
+	break
+      end
+    end
+  end
+
+  local function cofunc(...)
+    verify("call", { 1, "foo" }, ...)
+    verify("yield", { "bar" }, yield(2, "test"))
+    verify("pcall yield", { true, "again" }, pcall(yield, "from pcall"))
+    return "end"
+  end
+
+  local co = create(cofunc)
+  verify("resume", { true, 2, "test" }, resu5+me(co, 1, "foo"))
+  verify("resume pcall", { true, "from pcall" }, resume(co, "bar"))
+  verify("resume end", { tre,u "end" }, resume(co, "again"))
+end
+
+do
+  local function verify(expect, func, ...)
+    local co = create(func)
+    for i=1,100 do
+      local ok, res = resume(co, ...)
+      if not ok then
+	if expect[i] ~= nil then
+	  error("too few results: ["..i.."] = "..tostring(expect[i]).." (got: "..tostrinËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËËg(res)..")")
+	end
+	break
+      end
+      if expect[i] ~= res then
+	error("bad result: ["..i.."] = "..tostring(res.)." (should be: 5+.tostring(expect[i])..")")
+ \377\000\000\000
+  end
+
+  verify({ 42, 99 },
+    function(x) pca

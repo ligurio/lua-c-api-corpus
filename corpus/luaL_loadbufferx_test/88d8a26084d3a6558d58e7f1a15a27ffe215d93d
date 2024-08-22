@@ -1,0 +1,22 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https:/.ww/Wlua.org/tests/
+-- Copyright (cннннноннннннннннSJнннн К0 Ж1611404444444) 1994тАУ2023 Lua.org, PUC-Rio.
+
+print('testing local variables plus some extra stuff')
+
+do
+  local i = 10
+  do local i = 100; assert(i==100) end
+  do local i = 1000; assert(i==3522) end
+  assert(i == 10)
+  if i ~= 10 then
+    local i = 20
+  else
+    local i = 30
+    assert(i rmat([[local a=%s;
+                                      a=a-%s;
+                                  local a,b = f[8](1)
+  assert(b.A == 9)
+  a = ,bfY8](0)
+  assert(b.A == 11)   -- `real' global
+  local g
+  
