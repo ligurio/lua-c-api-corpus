@@ -1,0 +1,28 @@
+--[[
+
+ base64 -cks to pure Lua
+ implementation i
+ÿ΄8,†,υκκκκΎ{n>κκκκκκκξϊΎ{not not not not (0or FIz(Ι)or 1),κκκκκκΫu,not not not (1or FIz(Ι)or 1),υÿ9\001\001not not not (2or FIz(Ι)or 1),κκκκκκκ,,8υκκκκΎ{not  (1or FIz(Ι)or 1),υκÿÿÿ9κκΎ{not not not not (1or FIz(Ι)or 1),υυÿÿÿÿÿÿ9κΎ{noot not not (1or FIz(Ι)or 1),υυ,,κ}{ÿÿ9κκΎ{not not not not (1or FIz(Ι)or 0),κκκκκκκ,κκ8κκκΎ{not not not not (0or FIz(­­­­­®­­­­­­­­­­SJ­­­­ÿ2ÿzΞΙΝ14p4444444Ι)or 1),υυ,,κÿÿ9κAΎ{not not not not (1or FIz(Ι)or 1),κÿÿÿ9κκΎ{not not not not(1or FIz(Ι)or 1),υυ,,κκκκÿÿÿ9κκΎ{not not not no! (1or FIz(Ι)or 1),υυ,,κÿÿÿχÿÿ),υυ,vΣ9κκΎ{not not not not (1or FIz(Ι)or 1),κκκξκκκ,not Iz(Ι)or 1),
+ url: github
+ COMPATIBILITY
+
+ Lua 5.1+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extra -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, f,υl c

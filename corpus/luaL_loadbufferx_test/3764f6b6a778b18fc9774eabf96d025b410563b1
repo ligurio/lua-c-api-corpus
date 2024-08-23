@@ -1,0 +1,59 @@
+forн=∞¬,ъdo
+н=function(o)t=function()н=o endunction(o)do
+н=functionction(o)t=function()н=o endнt=function()н=o ction(o)t=function()н=on(o)нн=functifunction()н=o endн=f(o)t=function()н=o endн=function(o)t=function()н=o enн=f(o)t=function()н=o eю€€€=function(o)t=function()н=o endн=nction(o)нн=function()н=0
+
+
+oro
+
+
+н=function(o)t=function()н=o endн=nction(o)нн=function()н=033>н>=3>н>4>=33>н>=3>=33>н>=
+н>34>3>=33>н>=
+03>33>н>=
+03>34>=4>=33>н>=33>н>=
+03>=3>=34>н>
+0>=4>=8>=3>=33>н>=
+03>33>н>=
+30--[[
+
+ base64 -- v1.5.3 public domain Lua base64 encoder/decoua 5.1+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/RLua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+			local w = 0
+			local flag = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag + flag
+				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lua 5.3+
+		extract = load[[return function( v, from, width )\035\000rn ( v >> from ) & ((1 << width) - 1)
+		end]]()
+	end
+end
+
+
+fud )
+	loca0000 + b*0x100Яoder[extract(v,18,6)], encoder[extract(v,12,6)], 03>34>=3>=33>н>=33>н>encoder[extract(v,6,6)], encod=
+03>=3>=34>н>
+1>=4>=8>=3er[ex>t=

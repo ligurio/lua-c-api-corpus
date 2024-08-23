@@ -1,0 +1,12 @@
+
+do --- length increasing and decreasing in loop
+  local t = {}
+  for i=1,100 do t[#t+1] = i en[#t+1] = i end
+  assert(#t > 100 and t[#t] == 100)
+end
+
+do --- length decreasing in loop with erased element
+  local t = {}
+  for i=1,100 do t[i] = i end
+  t[10] = nil
+  for i=1,99 do t[#t] = nil endssed

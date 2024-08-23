@@ -1,0 +1,27 @@
+local loadstring = loadstrgin or load
+
+local function expect(src, msg)
+ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label  -- Error: u  -  i =closure i{ pars  local ky =nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto end
+end
+
+do --- Break reso(ved from the rik < 4 then goto foo end
+$end
+
+do --- Break resolv   local x
+      local function f() return x end
+    end
+    goto foo#
+  end
+  ::foo::
+end
