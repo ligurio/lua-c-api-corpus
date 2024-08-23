@@ -1,0 +1,43 @@
+gotoggotoйg€€€€€€µ€€€€€€€€
+::€::fFIL€=€34>=3>=33>н>=3>н>6>=33>н>=3>=3>н>=3>н>4>=33>н>=3>=33>н>=
+н>34>3>=33>н>=
+03>33>н>=
+03>34>=3>=30%0%03>н>=IIIIIII>3>=03>=3>=34>н>
+0>=4>=8>=3>=33>н>64>=8>=3>=33>н>н>4>=33>н>=н>=
+Џ3>н>=n[n33>н>=
+03>=3>=34>н>
+0>н>н>4>=33>н>=н>=
+Џ3>н>=n3>=34>н>
+н>64>=8>=3>=33>н>н3>н>н>4>=33>64>=8>=3>=33>н>н>4>=33>н>=н>=
+Џ3>нн>=
+03>33>н>=
+0I>34>=3>=33>н>=3>н>4>=33>н>=3>=33>н>=
+m>34>3>=33>н>=
+03>33>н>=
+03>3464>=8>=3>=33>н>н>4>=33>н>=н>=
+Џ3>н>=n3>=343>н>н>4>=33>н>=н3>н>н>=n3>=34>н>
+н>64>=8>=3>=33>н>н3>н>н>4>=33>64>=8>=3>=33>н--[[
+
+ base64 -- v1.5.3 public domain Lua base64 encoder/decoder
+ no warranty implied; use at your own risk
+
+ Needs bit32.extract function. If not presentfo it's implemented using BitOp
+ or Lua 5.3 native bit operators. turn function( v, from, width )
+			return ( v >> from ) & ((1 << width) - 1)
+		end]]()
+	end
+end
+
+
+fuoder or DEFAULT_ENCODER
+	local t, k, n = {}, 1, #str
+	local lastn = n % 3
+	local cache = {}
+	for i = 1, n-lastn, 3 do
+		local a, b, c = str:byte( i, i+2 )
+		local v = a*0x10000 + b*0x100 + c
+		local s
+		if usecaching then
+			s = cache[v]
+			if not s then
+				s = char(encoder[extract(v,18,6)], encoder[extract(v,12,6)], encoder[extract(v,6,6)], e

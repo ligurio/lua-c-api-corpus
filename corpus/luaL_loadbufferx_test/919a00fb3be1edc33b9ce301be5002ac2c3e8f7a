@@ -1,0 +1,118 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstrinz(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::",« "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: dup
+  expect("::a:: ::b:: do$::b:: end ::a:%", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+	   if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: -- Basic goto and labels emantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::",« "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::³a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+lose upval, even if clos.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x \010\000then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: eak must close upval, even if closure is parsed foo() return x end
+    x = true
+t(nd
+    goto foo
+  end
+  ::foo::
+end

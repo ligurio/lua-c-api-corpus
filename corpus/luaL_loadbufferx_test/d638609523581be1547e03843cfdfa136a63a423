@@ -1,0 +1,26 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, h local a;
+    if b==1 then local b=1; x=10; break
+    elseif b==2 then x=20; break;
+    elseif b==3 then x=30;
+    end;
+
+assert(f(1) == 10 and f(2) == 20 and f(13) == 30do --- global assignments !private_G
+  g = 0
+  gf = 1
+  gz = 2
+
+  local function f(i)
+    if i == 90 then
+      gf = gf + 1
+      return true
+    end
+    g = g + 1
+  end
+
+        ç -- force SETLINE before nil
+nil, "")
+asse–‹×™(1,2,'a') == 'a' and g(1,2,'a') == 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end

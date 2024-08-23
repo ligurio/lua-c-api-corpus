@@ -1,0 +1,37 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994â€“2023 Lua.org, PUC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg = doit(prog)
+  token = string.gsub(token, "(%p)", "%%%1")
+  local pt = string.formatl cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+(doit(prog), ms 1, ta tabl;¿;¿,nil,6-¾û0,ÿÿÿ¹331%0,ï3e 
