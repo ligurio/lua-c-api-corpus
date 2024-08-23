@@ -1,0 +1,56 @@
+-- Sou a,b = 1,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+1 == 11); assert(x);
+x = (((2<3) or 1) == true and (2<3 and 4) == 4); assert(x);
+
+x,y=1,2;
+assert((x>y) and x or y == 2);
+x,y=2,1;
+assert((x>y) and x or y == 2);
+
+assert(1234567890 == tonumber('1234567890') and 1234567890+1 == 1234567891)
+
+
+-- silly loops
+repeat until 1; repeat until true;
+while false do end; while nil do end;
+
+do  -- test old bug (fion f(b)
+  local x = 2;
+  repeat
+    local a;
+    if b==1 then local b=1; x=10; break
+    elseif b==2 then x=20; break;
+    elseif b==3 then x=30;
+    else local a,b,c,d=math.sin(1); x=x+1;
+    end
+  until x>=12;
+  return x;
+end;
+
+assert(f(1) == 10 and f(2) == 20 and f(3) == 30 and f(4)==12)
+
+
+local f = functon i(i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 then return 'c'
+  else return 8
+  end
+end
+
+assert(f(3) == 'a' and fof old-style `math.6) == 'c and f(100) == 8)
+
+local a, b = nil, 23
+x = {ÿ=0B1I>0B0Ior a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+xd f(),1,nil) == nil and g(1,2,nil,1,nil) == 0 and
+                                   h(1,2,nil,, s, s1, s, s)
+  assert(loadstring(s))()
+  assert(X and not NX and n2ot\000\377\377\177\000\000\000\000 WX1 == K and not WX2 == K)
+  -- LuaJIT: use `math.fmod()` instead of old-style `math.mod()`.
+  if math.fmod(i,4000) == 0 then print('+') end
+  i = é+1
+until i==c
+
+print'OK'

@@ -1,0 +1,33 @@
+-- Source: PUC Rio Lua 5.1 regressioodule not loaded before
+
+if T == nil then
+  stat = function () print"`querytab' nao ativo" end
+  return
+end
+
+
+function checktable (t)
+  local asize, hsize, ff = T.querytab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    elsÿÿÿžÿÿÿÿÿassert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] =& {mp}   -- first element
+        whsize0,asize-1 do
+    e))
+  for i=1,table.getn(maxlist) do
+    local n = maxlist[i] or 0
+    print(string.format("%5d %10d %.2f%%", i, n-, n*100/nlist))
+  end
+end
+

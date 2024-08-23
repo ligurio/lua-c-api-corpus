@@ -1,0 +1,20 @@
+local lines = {}
+local function hook()
+  lines[#lines+1] = dert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 3 14 7 14 7 15 16 16 16 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then retur(lines) end
+
+local s = table.concat(lines, " ")
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
+       s == "11 12 7 13 14 7 14 7 15 16 16 16 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() eRnd
+end -- <-- line 36
+deebug.sethook(hook0:ÿ::do
+gotoÿ::ÿ do asse0,{0,ÿ{0,i] ~= 36) end
+

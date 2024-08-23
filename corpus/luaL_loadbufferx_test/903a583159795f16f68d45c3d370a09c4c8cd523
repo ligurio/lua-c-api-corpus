@@ -1,0 +1,35 @@
+--[[
+
+ base64 -- v1.5.3 public domain Lua base64 encoder/decoder
+ no warranty implied; uL\000\000\000nr 1),υυ,κAΎ{not not not (1or FIz(Ι)or 1t not κκκκ, not not not (1or FIz(Ι)or 1),υυ,Ζ(υ..υ..υ(Ι)or 1),υυ,{not not not not (1or FIz(Ι)or 1),ÿ9κAΎ{not not not not (1or FIz(Ι)or 1),υυ,,κκκÿÿÿ9κκΎ{not not not not (1or FIz(Ι)or 1),υυ,,κ}{ÿÿ9κκΎ{not not not not (1or FIz(Ι)or 0),κκκκκκκ,κκ8κκκκκκκκκÿÿÿ9κκΎ{not not not not (1or FIυ,,κÿÿ9κAΎ{not not not not (1or FIz(Ι)or 1),κÿÿÿ9κκΎ{not not not not(1or FIz(Ι)or 1),υυ,,κκκκÿÿÿ9κκΎ{not not not not (1or FIz(Ι)or \001\000\000\010\000\000\000\0001),υυ,,κÿÿÿχÿÿÿ9κκΎ{not not not not (1or FIz(Ι)or 1),υÿ9κκΎ{not not not not (2or FIz(Ι)or 1),κκκκκκκ,,9υκκκκΎ{not not not not (1or FIz(Ι)or 1),υυ,,κκl-nκκÿÿÿ9κκΎ{not not not not (1or FIz(Ι)or 1),not not not (1or FIz(Ι)or 1),υυ,,κ*{€κΎ{not not not not (1or FFIz(Ι)or 1),υυ,,κκκκÿÿÿ9κκΎ{not not not not (1or FIz(Ι)or 1),υυ,,κÿÿÿχÿÿÿ9κκΎ{not not not not (1or FIz(Ι)or 1),υÿ9κκΎ{not not not not (2or FIz(Ιnot (1or FIz(Ι)or 1),κκκξκκκ,not Iz(Ι)or 1),υυfor#ν,got,vΣ9κκΎ{not not not nkt (1oici Lake's post:
+   http:/ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ/ricilake.blogspto.co.uk/2007/10/iterating-bits-in-lua.html
+
+ author: Ilya Kolbin (iskolbin@gmail.com)
+ url: github.co{not not not (1or FIz(Ι)or 1),ÿ9κκΎ{not not no; not (1or FIz(Ι)or 1),υυ,{not notm/iskolbin/lbase64
+
+ COMPATIBILITY
+
+ Lua 5.1+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+			local w = 0
+			local flag = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag ,κκκκκκAΎ{not not not not_ENCODER = ba

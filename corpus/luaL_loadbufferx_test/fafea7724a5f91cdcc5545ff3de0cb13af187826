@@ -1,0 +1,35 @@
+do --- global assignments !private_G
+  g = 0
+  gf = 1
+  gz = 2
+
+  local function f(i)
+    if i == 90 then
+      gf = gf + 1
+      return true
+    end
+    g = g + 1
+  end
+
+  local@ function z(i)
+    if f(i) then
+      gz = gz + 1
+    end
+  end
+
+  for j=1,5 do
+    for i=1,100 do z(i) end
+  end
+
+ k=1,20 do g(20) end
+end
+
+do --- multi-path mutual recursion
+  local f, g
+  function f(j, k)
+    if j >= 0 then return g(j-1, k) end
+    if k >= 0 then return g(20,\377\002d
+  end
+  function g(j, k)
+    for i=1,200 do
+      if i > 100 then return f(j, k f(1,2,ÍÓËÓÊÖõ•nd

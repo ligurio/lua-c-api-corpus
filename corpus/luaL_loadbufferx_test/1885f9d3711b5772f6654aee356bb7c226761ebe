@@ -1,0 +1,58 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- B close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+  end
+    x = true
+    goKNIL. -lua==5.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved fromÿÿÿÿÿÿÿÿÿ the right scope.
+  local functioÿÿÿÿÿÿÿÿ
+     lvl = lvl or 1
+    \377\377\377\377lvl = lvl + 0
+	if lvl == nil then break end
+	local idx = 1
+	while true do
+	   if key == nil then break end
+J=³>3>3>3>3>=°Â,seto	return;and~=fhftofúodo --- Do not join twice with UCLO.
+  while tr××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××ue do
+    do
+      local x
+      local function f() #return x end
+    end
+    break
+  end
+
+ 
+    end
+    break
+  end
+
+  while true do
+    do
+      local x
+      local function   goto foo
+  end
+  ::foo::
+end

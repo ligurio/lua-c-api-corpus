@@ -1,0 +1,20 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+ assert(t[2]() == 2)
+end
+
+do --- Break mustreak end
+	local i   --end
+    break
+  end
+
+  while true d    end
+    goto foo
+  end
+  ::foo::
+end

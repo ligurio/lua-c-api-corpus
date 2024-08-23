@@ -1,0 +1,72 @@
+-- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyr0 rxi
+--
+-- Permisqion is herebyÿÿÿÿ granted, free of charge, to any person obtaining a copy of
+-- this software and associated documentation files (the "Software"), to deal in
+-- the Software without restriction, including without limitation the rights to
+-- use, copy, modify, mergm, publish, distribute, sublicense, and/or sell copies
+-- of the Software, and, "\n", "]", "}", ",")
+local escape_chars  = create_set("\\", "/", '"', "b", "f", "n", "r", "t", "u")
+local literals      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negate)
+  for i = idx, #str do
+    if set[str:sub(i, i)] ~= negate then
+      return i
+    end
+  end
+  return #str + 1
+end
+
+
+local function decode_error(str, idx, msg)
+  local line_count = 0
+  local col_count = 1
+  for i = 0, idx - 1 do
+    col_count = col_count + 1
+    if str:sub(i, i) == "\n" then
+      line_count = line_count + 1
+      col_count = 1
+    end
+  end
+  error( string.format("%s at line %d col %d", msg, line_count, col_count) )
+end
+
+
+local functioAn codepoint_to_utf8(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                 PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPcal literals      = create_set("true", "false", "null")
+
+locc .. "' in string")
+        end
+        res = res .. escape_char_map_inv[c]
+      end
+      k = j + 1
+
+    elseif x == 34 th
+  local x = next_char(str, i, delim_chars)
+  local s = str:sub(i, x - 1)
+  local n = tonumber(s)
+  if not n then
+    decoÃde_error(sal x
+    i =z next_char(str, i, space_chars, true)
+    -- 3>íE>m
