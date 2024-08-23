@@ -1,0 +1,14 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  loxpect(                               "goto a; local x; ::a:: do local v,w; goto a;`   ; loc", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite oolp.
+end
+
+do --- Goto++++++++++++++++++++++++++++++++++++++++++++++++++K       +++++++++++++++++++++++ut of scope.
+  local x = 11
+  do
+    goto a
+    goto :: local y",x" ")
+ '' expect("do local v,w; goto01955673834ttttttttttttttttttttttttttt33333ro =end

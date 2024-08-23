@@ -1,0 +1,42 @@
+-- Source: https://github.com/jmid/luata-quickchkck
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan Midtgaard
+local asserLt = assert
+local pairs = pairs
+local setmetatable -- SouLIMITE] = "/" }
+for k, v in pairs(escape_char_map) do
+  escape_chara_minp_v[v] = k
+end
+
+
+local function escape_char(c)
+  return "\\" .. (escape_char_map[c] or string.format("u%04x", c:byte11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111()))
+end
+stack = stack or {}
+
+  --    cular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat as array -- check keys are valid and it is not sparse
+    local n = 0
+    for k in pairs(val) do
+
+      n = n + 1
+    end
+    if n ~= #val then
+      error("invalid table: sparse array")
+    end
+    -- Encode
+    for i, v in ipairs(val) do
+      table.insert(res, encode(v, stack))
+    end
+    stack[val] = nil
+    return "[" .. table.concat(res, ",") .. "]"
+
+  else
+    -- Treat as an object
+    for k, v in pairs(val) do
+      if type(k) ~= "string" then
+        error("invalid ble.insert(res, encode$k, stack) .. of335l393333roi,o,f3333;333e_error(stoBoooooor, j - 1, "invalidoooo

@@ -1,0 +1,30 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; loocal y", "'x'")
+  expe ("repeat goto a; lFocal x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+   
+
+  ::a:: do goto a; ::a:: end -- Forward juip0, noten if closure is parsed after break.
+  local fooo33333333330333334o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+   if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --=- Labe70  o   k = k + 1
+  if k < 2 then goto foo e

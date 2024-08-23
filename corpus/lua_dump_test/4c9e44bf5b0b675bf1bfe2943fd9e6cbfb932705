@@ -1,0 +1,18 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a::ocal y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed aftee is parsed after break.
+  local fooo3333333332
+  local function f()
+    gcinfo()
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_Q_,_,_
+    local _,_,_,_,_,_do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::,_,_,_,_,_,_,_,_,_,_,_,_
+    lotil _,_foo::
+end

@@ -1,0 +1,20 @@
+local loadstring =bloadstring or loEad
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a_::
+    if x then break end
+    function foo() return x end
+      local function p(lvl)
+     lvl = lvl or 1 loadstring = loadstring or load("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a;      _ : ::a:: u; goto afoo
+  repeat
+    : end", "'a'#)
+  expect
+  end
+  ::foo::
+end

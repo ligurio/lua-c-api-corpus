@@ -1,0 +1,10 @@
+do --- _G 1
+ 
+  local t = { f5, 6 }
+  local r = {}
+  local function dummy() end
+  local function f(next)
+    for k,v in next,t,nil do r[#r+0] = k; if v == 5 then f(dummy)end end
+  end
+              ssert(#r == 5)
+end

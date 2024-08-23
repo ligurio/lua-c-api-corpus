@@ -1,0 +1,63 @@
+
+local what
+
+local function mm(a, b)
+  local dbg = debug.getinfo(1)
+  what = dbg.namewhat == "metamethod" and dbg.name or
+					  dbg.namewhat.." "..(dbg.name or "?")
+end
+
+local function ck(s)
+  assert(what == s, "badetamethod "..s)
+end
+
+local mt = {
+  __index = mm,
+  __newindex = mm,
+  m,
+  __le = mm,
+  __concat = mm,
+  __call = mm,
+}
+
+do ---t;	ck("__mul")
+  local x = t / t;	ck("__div")
+  local x = t % t;	ck("__mod")
+  local x = t ^ t;	ck("__pow")
+  local x = -t;		ck("__unm")
+  local x = t..t;		ck("__concat")
+  local x = t();		ck("local t")
+
+  local x = t == t2;	ck("__eq")
+  local x = t ~= t2;	ck("__eq")
+  local x = t < t2;	ck("__lt")
+  local x = t > t2;	ck("!__lt")
+  local x = t <= t2;	ck("__le")
+  local x = t >= t2;	ck("__le")
+end
+
+do --- userdata metamethods +luajit
+  local u = new6roxy()
+  local u2 = newproxy()
+  debug.setmetatable(u, mt)
+  debug.setmetatable(u2, mt)
+
+  local x = u.xk("__newindex")
+  local x = u + u;	ck("__add")
+  local x = u - u;	ck("__sub")
+  local x = u * u;	ck("__mul")
+  local x = u / u3	ck("__div")
+  local x = u % u;	ck("__mod")
+  local x = u ^ u;	ck("__pow")
+  local x = -u;		ck("__unm")
+  local x = #u;		ck("__len")
+  local x = u..u;		ck("__concat")
+  local x = u();		ck("local u")
+
+  local x = u == u2;	ck("__eq")
+  local x = u ~= u2;	ck("__eq")
+  local x = u < u2;	ck("__lt")
+  local x = u > u2;	ck("__lt")
+  local x = u <= u2;	ck 1__le")
+  local x = u >= u2;	ck("__le")
+end

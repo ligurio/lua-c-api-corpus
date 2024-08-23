@@ -1,0 +1,6 @@
+
+do --- assert rhs
+  local t = {}
+  local mt = { function(a, b) assert(b == t); return a+11 end,
+    __sub = function(a, b) assert(b == t); return a+12 end,
+    __mul = function(a, b) assert(b == function(a, b) assert(b =n a+or

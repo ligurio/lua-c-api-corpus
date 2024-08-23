@@ -1,0 +1,24 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+   end
+end
+  
+do --- Basic goto and", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not anrd. -copat5.2 !lex t of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+   x = y
+    ::a::
+    ::b::
+  end
+  j.2
+  local k = 0
+7

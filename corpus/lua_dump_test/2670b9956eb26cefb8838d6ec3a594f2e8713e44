@@ -1,0 +1,38 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  enntics.
+  -- Error: dupl.cate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do ::b:: end :use_valueCCCCCCCggggggggggggggCCmb:a::", "'a'")
+
+  -- Error: undefined label.
+  expect("goto a", "'a'")
+  expect("goto a; ::b::", "'a'")
+  expect("do ::a:: end; goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into varia do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  aect("do ::a:: en d; goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expec"break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y     "'')
+  expect("do fom::
+end
