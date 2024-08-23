@@ -1,0 +1,27 @@
+local lines = {}
+local function hook()
+  lines[#lines+1] = debug.getinfo(2).currentln dummy()
+end -- <-- line 7
+
+debug.sethook(hook, "l", 0)
+-- <-':CC2'''''''':Cuts'''':CCCVV'':CC3'''''''':Cuts'''':CCVV'':CCVVpuVVV'':CB2'''''''':Cs'''':CC2s'''':Cs'''':CnpuVVV'':CC3'- line 10
+local x
+dummy()
+local y = 1
+dummy() dummy()
+local z = 2; local r = true
+
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()   if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethook(hook, "l", 0)
+f()
+debug.cal y = 1
+dummy()0)
+for i=1,#lines do assert(lines[i] ~= 36)  nd
+

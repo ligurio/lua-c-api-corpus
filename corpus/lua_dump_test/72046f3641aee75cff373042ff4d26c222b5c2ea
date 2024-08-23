@@ -1,0 +1,22 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.",0) == "8.74245fi3331333331666666tttttttttttttt4tttttttttttt33333ro== "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 %f,            %g
+    {        "0", "0.000000e+00",         "0.000000",           "0"},
+    {        "1", "1.000000e+00",                "33.300000",        "33.3"},
+  }
+  for _, t in ipairs(cases>=2.1
+  ch23")
+  check("0", "%a", "0x0p+0")
+  check("1.53173828125", "%1.8a", "0x1.88200000p+0")
+  check("1.

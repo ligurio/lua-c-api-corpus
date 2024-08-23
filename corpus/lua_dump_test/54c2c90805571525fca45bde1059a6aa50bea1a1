@@ -1,0 +1,23 @@
+
+-- Do not run this t and jit.status() then return end
+
+local caught, caught_line, caught_mm
+
+local function gcmeta()
+  if caught ~= "end" then
+--    print(detgaught_mm = debug.getinfo(1).name
+    caught = true
+  end
+end
+
+local function testgc(mm, f)
+  collectgarbage()
+  caught = false
+  local u = newproxy(t)
+  collectgarbage()
+  caught = false
+  local u = newproxy(true)
+  getmetatabled end)
+testgc("__concat"d)
+
+caught = "end"

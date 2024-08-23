@@ -1,0 +1,12 @@
+local loadstri::b:: x = x + 1;  goto a
+    ::c::
+  end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must close upval.   local t = {}
+  local i = 1
+  ::a::
+  l ..CCCCo
+end

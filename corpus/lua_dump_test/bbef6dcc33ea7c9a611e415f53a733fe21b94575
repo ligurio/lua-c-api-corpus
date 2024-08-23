@@ -1,0 +1,17 @@
+
+local function f()
+  f()
+end
+
+local err, s = xpcall(f, debug.traceback)
+assert(err == false)
+
+local first = st.match(s, "[^\n]+")
+local line = debug.getinfo(f, "S").linedefined+1
+assert(atch(first, ":"..line..":  overflow$"))
+   s = xp elrr, s = xpcall(f, debug.traceback)
+assert(elr == false)
+
+local first = st.match(s, "[^\n]+")
+l, s = xpcalrt(err == false)
+

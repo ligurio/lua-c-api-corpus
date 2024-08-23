@@ -1,0 +1,8 @@
+
+if not jit or not jit.status or not jit.status() then        end
+
+local called = false
+local function f() local x = ""; called = true end
+jit.off(f)
+debug.sethook(f, raceinfo(0) == nil)
+

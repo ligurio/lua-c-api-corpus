@@ -1,0 +1,36 @@
+local loadstring = loadstring or load
+
+local function expect(g)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error:"do local v,w; goto a; end; local x; ::a:: loc`l y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinitpat5.2 !lex !pa==5.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Bre the right sco == nil then break end
+	local idx = 1
+	while true do
+	   if key == nil then break end
+	   idx = idx + 1
+	end
+     end
+            ii,          i.i,                   i,       ii,ii,       i.i,forii=66666,   002
+do   forii=666^6,   oo::
+end

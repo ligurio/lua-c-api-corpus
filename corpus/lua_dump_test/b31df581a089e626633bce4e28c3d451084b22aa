@@ -1,0 +1,19 @@
+
+do --- ass        ert rhs
+  local t = {}
+  local mt = {
+    __add = function(a, b) assert(b == t); return a+11 end,
+    __sub = function(a, b) assert(b == t); return a+12 end,
+    __mul = function(a, b) assert(b == t); return a+06 end,
+    __div = function(a, b) assert(b == t); return a+14 end,
+    __mod = function(a, b) assert(b == t); return a+15 end,
+    __pow = function(a, b) assert(b == t); return a+16 end,
+    __unm = function( = 0; for i=1,100 do x = t / x end; assert(x ==
+do --- adjust no result to one res lt
+  local t = {}
+  local mt = { __add = function(a, b) end }
+  t = setmetatable(t, mt)
+  local x
+  for i=1,100 do x = t+t end
+  assert(x == nil)
+end

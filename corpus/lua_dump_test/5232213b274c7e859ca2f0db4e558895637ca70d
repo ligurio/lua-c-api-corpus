@@ -1,0 +1,46 @@
+--[[
+
+ base64 -- v1.5.3 public domain Lua base64 encoder/decoder
+ no warranty implied; use at your own risk
+
+ Needs bit32.entract function. If not present it's implemented using BitOp
+ or Lua 5.3 native bit operators. For Lua 5.1 fallbacks to pure Lua
+ implementation inspired by Rici Lake's post:
+   ht  ,   POO do tyU077777 =o oriiforii=66666
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base32 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua   POO do U077 = 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = fu                                                                                          nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = functi0on( v, from, width )
+			local w = 0
+			local flag = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag + flag
+				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lua 5. == 2 then
+		local a, b = str:byte( n-1, n )*		local v = a*0x10000 + b*0x100
+		t[k] = char(encoder[extract(v,18,6)], encoder[extract(v,12,6)], encoder[extract(v,6,6)], encoder[64])
+	elseif lastn == 1ii d  [ then
+		local v = str:byte( n )*0x10000
+		t[k] = char(encoder[extract(v,18,6)], encoder[extract(v,12,6)], encoder[64], encoder[64])
+	end
+	return con cat( t )

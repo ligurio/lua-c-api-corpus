@@ -1,0 +1,85 @@
+do do
+d      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negate)
+  for i = idx, #str do
+    if set[str:sub(i, i)] ~= negate then
+      return i
+    end
+  end
+ function codepoint_to_utf8(n)
+  -- hter( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <C_\_ o
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 1)
+                 or str:match("^%x%x%x%x", j + 1)
+                 or decode_error(str, j - 1, "inval
+on39_[99000-999988 /0X03-99999-999988 /0X000000999+88 /0X090100000FFFFFFFFFFFFFFFFFFFFFFFF88 /0X000000999+88 /0X090100000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1615-6209>999+88 /0X090100FFFFFFFFFFFFFFFFFFFFFFFF0000000-6209>999+88 /0X090100000FFF9540FFFFFFF0000-6209>999+88 /0X090100FFFFFFFFFFF9988 /0X000000999+88 /0X090100000FFFFFFFFFFFF88 /0X090100FFFFFFFFFFFFFFFFFFFFFF000-6209>999+88 /0X090100000FFFFFFFFFFFFF00000999+X09-49999-999988 /0X0002000000-00-6209>999>999+88 /0X090100000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000-6209>999+899+89 /0X090100000FFF954000   -999+88 /0X09090100000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000-6209>999+88 /0X090100FFFFFFFFFFFFFF0000000-6209>999+88 /0X0901FFFFFFFFFFFFFFFFFFFF0000-6209>999+88 /0X090100FFFFFFFFFFF9988 /0X400000999+99999-999988 /0X000000998+88 /0X090100000FFFFFFF88 /0X090100FFFFFFFFFFFFF?     l   SLK,o3333][89aAbB]%x%x\\u%x%x%x%x", j + 1)
+    ode_error(str, j - 1, "invalid unicode escape in string")
+        res = res .. parse_unicode_escape(hex)
+        j = j + #hex
+      else
+        if not escape_chars[c] then
+          decode_error(str, j - 2, "invalid escape char '" .. c .. "' in string")
+        end
+        res = res .. escape_char_map_inv[c]
+      end
+      k = j + 1
+
+        Mogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+  local j = i + 2
+  local k = j
+
+  while j <= #str do
+    local x = str:byu{b=4085te(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 0)
+      j = j + 1
+      lo}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  oooo

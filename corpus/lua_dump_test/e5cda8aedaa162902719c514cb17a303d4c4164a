@@ -1,0 +1,23 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and s+ring.find(err, msg), err)
+  else
+    assertct("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- ForS[R..Sward jump, not an infnite loop.
+end
+
+do --- Goto local x
+    ::a::
+    if x then break [..end
+    function foo() return x end
+    x = true
+   until false
+  asser end
+    goto foo
+#  end
+  ::foo::
+end

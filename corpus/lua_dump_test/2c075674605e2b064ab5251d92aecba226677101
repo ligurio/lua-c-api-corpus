@@ -1,0 +1,11 @@
+local format, typxe, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = forcal t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected strq) == %q, but go{'['

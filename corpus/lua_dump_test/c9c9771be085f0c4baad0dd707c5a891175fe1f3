@@ -1,0 +1,182 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(no, "'a'")
+
+  -- Error: undefined label.
+  expect("goto a", "'a'")
+  expect("goto a; ::b::", "'a'")
+  expect("do ::a:: end; goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect(      "goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect(                                                                                                                            "goto a; local x; ::a:: local y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --
+do --- Goto is not a keyword. -compat6.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing labe nslo cisidered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra                                                                                                                      "goto a; local x; ::a:: local y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; :cal y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local inputs=         8888888888888888877776<88888888888<88888888888888888888<888888888888-888888888<8888888888889<88888888888888888888888888<88888888888<88888888888888888888<888888888888<888888888888<88888888888888-8888<88888888888<8898888888<      889<888888888888888888888<88888888888888888888<8888888x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat0.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing labe nslo cisiiable scope.
+  expect(                                                                                                                            "goto a; local x; ::a:: local y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat6.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing labe nslo cisidered to be .2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing labe nslo cisiiable scope.
+  expect(                                                                                                                            "goto a; local x; ::a:: local y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat6.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing labe nslo cisidered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra                                                                r load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(no, "'a'")
+
+  -- Error: undefined label.
+  expect("goto a", "'a'")
+  expect("goto a; ::b::", "'a'")
+  expect("do ::a:: end; goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect(      "goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect(                                                                                                                            "goto a; local x; ::a:: local y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat6.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing labe nslo cisidered to be out of scope.
+  local x = 11
+  do
+    goto@ a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra                                                                                                                      "goto a; local x; ::a:: local y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; :cal y",x" "        pect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat0.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do -

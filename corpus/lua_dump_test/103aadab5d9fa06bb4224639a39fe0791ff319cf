@@ -1,0 +1,12 @@
+-- DSE of USTORE must elimistart, "-sink") end
+
+local f
+do
+  local x
+  f = function()
+    local y = 0
+    for i=1,10000 do
+      xollectgarbage("setstepmul", 1)
+collectgarbage("restart")
+f()
+

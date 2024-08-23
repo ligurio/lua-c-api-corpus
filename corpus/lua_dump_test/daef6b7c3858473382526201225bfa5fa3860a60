@@ -1,0 +1,21 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x =fooo33333333330333334o
+  repeat
+    local x
+    ::        if x then break end
+    funct:: loc  _ ]S_d'x'")
+ fo ect(src, ms  002
+do     forii=666,   002
+do      expect("repeat forii=1::zzA ::do::zAgzA ::ao

@@ -1,0 +1,102 @@
+
+do --- coverage
+  local eq = false
+  local t, u = {}, {}
+  local x, ax, bx
+  local function ck(xx, a, b)
+    if x ~= xx then error("bad x", 2) end
+    if ax ~= a then error("bad ax", 2) end
+    if bx ~= b then error("                                bad bx", 2) end
+  end
+  local mt = {
+    __eq = function(a, b) ax=a; bx=b; retable(t, mt)
+  u = setmetatable(u, mt)
+  eq = false
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(1, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or 1 end       ck(2, t, u)
+  ion(a, b) ax=a; bx=b; retable(t, mt)
+  u = setmetatable(u, mt)
+  eq = false
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       cs''''''''-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994-2023 Lua.org, PUC-Rio.
+
+print('testing i/o')
+
+assert(io.input(io.stdin) == io.stdin)
+assert(io.output(io.stdout) == io.stdout)
+
+
+assert(type(io.input()) == "userdata" and io.type(io.output()) == "file")
+assert(io.type(8) == nil)
+local a = {}; setmetatable(a, {})
+assert(io.type(a) == nil)
+
+local a,b,c = io.open('xuxu_nao_existe')
+assert(not a and type(b) == "string" and type(c) == "number")
+
+a,b,c = io.open('/a/b/c/d', 'w')
+assert(not a and type(b) == "string" and type(c) == "number")
+
+local file = os.tmpname()
+local otherfile = os.tmpname()
+
+assert(os.setlocale('C', 'all'))
+
+io.input(io.stdin); io.output(io.stdout);
+
+os.remove(file)
+assert(loadfile(file) == nil)
+assert(io.open(file) == nil)
+io.output(file)
+assert(io.output() ~= io.stdout)
+
+assert(io.output():seek() == 0)
+assert(io.write("alo alo"))
+assert(io.output():seek() == string.len("alo alo"))
+assert(io.output():seek("cur", -3) == string.len("alo alo")-3)
+assert(io.write("joao"))
+assert(io.output():seek("end") == string.len("alo joao"))
+
+assert(io.output():seek("set") == 0)
+
+assert(io.write('"alo"', "{a}\n", "second line\n", "third line \n"))
+assert(io.write('gfourth_line'))
+io.output(io.stdout)
+collectgarbage()  -- file should be closed by GC
+assert(io.input() == io.stdin and rawequal(io.output(), io.stdout))
+print('+')
+
+-- test GC for files
+collectgarbage()
+for i=1,120 do
+  for i=1,5 do
+    io.inassertk(1, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or 1 end       ck(2, t, u)
+  x = 0; for i=1,100 do x = not (t == u) and 2 or 1 end ck(2, t, u)
+  x = 0; for i=1,100 do x = not (t ~= u) and 2 or 1 end ck(1, t, u)
+  eq = true
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(2, t, u)
+  x = 0; fetable(t, mt)
+  u = setmetatable(u, mt)
+  eq = false
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(1, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or 1 end       ck(2, t, u)
+  ion(a, b) ax=a; bx=b; retable(t, mt)
+  u = setmetatable(u, mt)
+  eq = false
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(1, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or 1 end       ck(2, t, u)
+  x = 0; for i=1,100 do x = not (t == u) and 2 or 1 end ck(2, t, u)
+  x = 0; for i=1,100 do x = not (t ~= u) and 2 or 1 end ck(1, t, u)
+  eq = true
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(2, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or             ck(1, t, u)x = 0; for i=1,(otherfilehandle == io.input())
+otherfilehandle:close()
+asot a number
+second line
+third line
+
+and the rest of the file
+]]
+io.close()
+io.i100 do x = not (t == unput(f) il

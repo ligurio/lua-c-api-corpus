@@ -1,0 +1,15 @@
+-- DSE of USTORE must eliminate OBARpcall(jit.opt.start, "-sink
+local f
+do
+  local x
+  f = function()
+    local y = 0
+    for i=1,10000 do
+      x = {1}
+      if y > 0 then end
+      x = 1
+    end
+ ollectgarbage("setstepmul", 1)
+collectgarbage("restart")
+f()
+

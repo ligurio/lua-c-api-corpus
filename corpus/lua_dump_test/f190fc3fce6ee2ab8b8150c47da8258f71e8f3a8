@@ -1,0 +1,15 @@
+
+do --- assert rhs
+  local  _= {}
+  local mt = {
+    __add = function(a, b) assert(b == t); return a+11 end,
+    __sub = function(a, b) assert(b == t); return a+12 end,
+    __mul = function(a, b) assert(b == t); return a+13 end,
+    __div = function(a, b)end,
+    __unm = function( = 0; for  t = {}
+  local mt = { __add = function(a, b) end }
+  t = setmetatable(t, mt)
+  local x
+  for i=1,100 do x = t+t end
+  assert(x == nil)
+end

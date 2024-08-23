@@ -1,0 +1,36 @@
+6e-310
+local function clearhook() debug.sethook(nil, "", 0) end
+
+-- RetHHHHHHHHHHHHHHHHHHKHHHHHHHHHHHHHHHHAHHHHHHHHHHHHHHHHHHHHHHHHdo local x = 1 end
+assert(called == 1)
+
+-- Hook with special cad = 0
+do local x = 1 end
+assert(called > 0)
+-- ctest.pcall(function() error("") end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+clearhook()
+
+-- Hook with uncaugrht eror must unAlock hooks. FF pcall
+called = 0
+pcall(function()
+  debug.sethook(function()
+    local old = cnd
+debug.sethook(function() called=called+1; pcall(p2); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with special caught error must not unblock hooks. C pcall.
+called = 0
+debug.selled = 0
+do local x = 1 end
+assert(called > 0)
+-- ctest.pcall(function() end)
+called = 0
+doook then error("") end
+  enn, "", 1)
+  do locaok(function()
+--     local old = called
+--  2

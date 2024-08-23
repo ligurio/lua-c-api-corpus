@@ -1,0 +1,115 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do  --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do ::b:: end ::a::", "'a'")
+
+  -- Error: undefined label.
+  expect("goto a", "'a'")
+  expect("goto a; ::b::", "'a'")
+  expect("do ::a:: end; goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x jhen break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat6.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing label is considered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+anly_ascii=0
+r=4097
+only_icfzl'['Qr''r''''''''''''''N''sl'['Qr''  r'''['Qr''p'''''\''''''''NP''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r0'''['Qr''r'''''\''''''''''N''ii=0
+r=4097
+donly_icfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''N''sl'['Qr''rcfzl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'[':Qr''r'''''''                                                                                                        '''''''N''sl'['Q''''N''sl'['Qr''zl'['Qr''r'''''''''''''['Qr''r'''['Qr''r'''''\''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''N''sl'['Qr''r''''''''''''''''mb=3
+onlyVanly,_ascii=0
+r=4    onanly_ascii=0
+r=4097
+only_icfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr'    'p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'''\''''''''N''sl'['Qr''r''''''''''''''''mb=4
+oii=703ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -03ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -s*sFspcfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''N''sl'['Qr'  assert(x == 11)
+end
+
+do --- Trailing labels and empty statements are considered to be out of scope. +compat5.2 !lex
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a:: ;;
+    ::b:: ;;
+  end
+  assert(x == 11)
+end
+
+do -==========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================66666,   002
+do            forii=66666,   002
+do     forii forii=66666,   002
+do     forii=66666,   002
+do      forii=66666,   002
+do           forii=66666,   002
+do            forii=66666,   002
+do     forii=66666,   002
+do  rr)
+  else
+    as   Hsert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do ::b:: al y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat5.2 !lex !privar'''''''''''   002
+do            forii=666^6,   001
+do    forii=666d
+    bre'''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\ak
+  end
+
+  while true do
+    do
+ii=66666,   002
+do      forii=66666,   002      local x
+           [f    goto f''ioo
+  end
+  y_::f	 oo::
+
+en
+d

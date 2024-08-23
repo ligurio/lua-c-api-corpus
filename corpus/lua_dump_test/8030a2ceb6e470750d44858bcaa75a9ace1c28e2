@@ -1,0 +1,46 @@
+do do
+d      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negate)
+  for i = idx, #str do
+    if set[str:sub(i, i)] ~= negate then
+      return i
+    end
+  end
+ function codepoint_to_utf8(n)
+  -- http://point_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in s               tring")
+
+    elseif x == 92 then -- `\`: Escaror( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n0 = tonumber( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoin    ~  {8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+           Qret   es=0/   -uooooooooooou,sFut-us
+}se{UFuts=1/   -u,  

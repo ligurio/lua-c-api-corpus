@@ -1,0 +1,12 @@
+local len = string.len
+local expect_error = require"common.expect_error"
+
+do --- smoke
+  assert(len("abc") == 3)
+  assert(len(123) == 3)
+end
+
+do --m argcheck
+  expect_error(function() len() end,
+ _error(function() len(false) end,
+   

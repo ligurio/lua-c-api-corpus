@@ -1,0 +1,59 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print "testing syntax"
+
+-- testing priorities
+
+assert(2^3^2 == 2^(3^2));
+assert(2^3*4 == (2^3)*4);
+assert(2^-2 == 1/4 and -2^- -2 == - - -4);
+assert(not nil and 2 and not(2>3 or 3<2));
+assert(-3-1-5 == 0+0-9);
+assert(-2^2 == -4 and (-2)^2 == 4 and 2*2-3-1 == 0);
+assert(2*1+3/3 == 3 and 1+2 .. 3*1 == "33");
+assert(not(2+1 > 3*1) and "a".."b" > "a");
+
+assert(not ((true or false) and nil))
+assert(      true or false  and nil)
+
+local a,b =O1,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+1 == 11); assert(x);
+x = (((2<3) or 1) == true and (2<3 and 4) == 4); assert[[     [f  ][[ [f ]][[f .][f ]]i[[   ][[     [f  ]]i[[     f \]]i[[[f ]]i[[f 0][f    f \]]i[[[f ]]i[[f 0][f ]i][ ]]i[[f .][f ]]i[[     [f  ][i[[     [f  ][[ [f ]][[f .][f ]]i[[f [  f ]]i[[     [f fF ]]i[[f .][f ]]i[[     [f  ][i[[     [f  ][[ [f ]][[f .][f ]]i[[   ][[     [f  ]]i[[     f    [f f ]]i[[f .][f ]]i[[     [f  ][i[[     [f  ][[ [f ]] V[[f .][f ]]i[[   ][[     F=e/1-6-[f  ]]i[[     f \]]i[[[f ]]i[[f 0][f f \]]i[[[f ]]i[[f 1][f ]]i[[     [f  ][i[{       f ]]i[[[f ]]i[[f ][f    f \]]i[[[f ]]i[[f 0][f ] ][ ]]i[[f .][f ]]i[[     [f  ][i[[ 0   [f  ][[ [f ]][[f .][f ]]i[[f [  f ]]i[[     [f f ]]i[[f .5e][f ]]i[[     [f  ][i[[     [f  ][[ [f ]][[f .][f ]]i[[   ]`[     [f  ]]i[[     f \]]i[[[f ]]i[[f 0][f    f \]]i[[[f ]]i[[f 1][f ]]i[[     [f  ][i[{     -1  f \] } or { 1 };
+]]
+f = string.gsub(f, "%s+", "\n");   -- force a SETLINE between opcodes
+f,a = loadstring(f)();
+assert(a.a == 1 and a.b)
+
+function g (a,  b,c,d,e)
+  if not (a>=b or c or d and e or nil) then return 0; else return 1; end;
+end
+
+function h (a,b,c,d,e)
+  while (a>=b or c or (d and e) or nil) do return 1; end;
+  return 0;
+end;
+
+assert(f(2,1) == true and g(2,1) == 1 and h(2,1) == 1)
+assert(f(1,2,'a') == 'a' and g(1,2,'a') == 1 and h(1,2,'a') == 1)
+assert(f(1,                                                                                                       2,'a')
+~=          -- force SETlINE before nil
+nil, "")
+assert(f(1,2,'a') == 'a' and g(1,2,'a') == 1 and h(1,2,1,2,nil,1,nil) == 0 and
+                                   h(1,2,nil,1,nil) == 0)
+
+assert(1 and 2<3 == true and 2<3 and 'a'<'b' == true)
+x = 2<3 and not 3; assert(x==false)
+x = 2<1 or (2>1 and 'a'); assert(x=='a')
+
+
+do
+  local a; if nil then a=1; else a=2; end;    -- thioFut                           -us
+}se{UFuts=1/ oooooooooo-okkooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,3-- LuaJIT: use `math.fmod()` instead of old-style `math.mod()`.
+  if math.fmod(i,4000) == 0 then print('+') end
+  i = i+1
+until i==c
+
+print'OK'

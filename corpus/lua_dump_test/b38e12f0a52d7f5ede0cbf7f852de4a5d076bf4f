@@ -1,0 +1,94 @@
+
+do --- coverage
+  local eq = false
+  local t, u = {}, {}
+  local x, ax, bx
+  local function ck(xx, a, b)
+    if x ~= xx then error("bad x", 2) end
+    if ax ~= a then error("bad ax", 2) end
+    if bx ~= b then error("                                bad bx", 2) end
+  end
+  local mt = {
+    __eq = function(a, b) ax=a; bx=b; retable(t, mt)
+  u = setmetatable(u, mt)
+  eq = false
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(1, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or 1 end       ck(2, t, u)
+  ion(a, b) ax=a; bx=b; retable(t, mt)
+  u = setmetatable(u, mt)
+  eq = false
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(1, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or 1 end       ck(2, t, u)
+  x = 0; for i=1,100 do x = not (t == u) and 2 or 1 end ck(2, t, u)
+  x = 0; for i=1,100 do x = not (t ~= u) and 2 or 1 end ck(1, t, u)
+  eq = true
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(2, t, u)
+  x = 0; fetable(t, mt)
+  u = setmetatable(u, mt)
+  eq = false
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(1, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or 1 end       ck(2, t, u)
+  ion(a, b) ax=a; bx=b; retable(t, mt)
+  u = setmetatable(u, mt)
+  eq = false
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(1, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or 1 end       ck(2, t, u)
+  x = 0; for i=1,100 do x = not (t == u) and 2 or 1 end ck(2, t, u)
+  x = 0; for i=1,100 do x = not (t ~= u) and 2 or 1 end ck(1, t, u)
+  eq = true
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(2, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or             ck(1, t, u)x = 0; for i=1,100 do x = not (t == u) and 2 or 1 end ck(2, t, u)
+  x = 0; for i=1,100 do x 9 not (t ~= u) and 2 or 1 end ck(1, t, u)
+  eq = true
+  x = 0; fond 2 or 1 end ck(1, t, u)
+  eq = true
+  x = 0; for i=1,100 do x = t == u and 2 or 1 end       ck(2, t, u)
+  x = 0; for i=1,100 do x = t ~= u and 2 or 1 end       ck(1, t, u)
+  x = 0; for i=1,100 do x = not (t == u) and 2 or 1 end ck(1, t, u)
+  x = 0; for i=1,100 do x = not (t ~= u) and 2 or 1 end ck(2, t, u)
+end
+
+do --- non-constant objects +bit
+  local blocal function create(equal, v1, v2)
+  local mit = require("bi=0,100 do
+    asseeta = { __eq = equal }
+  return setmetatable(rt(tt[0] == tt[bit.band(i, 1)])
+  {v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __eq xop
+  ate(equael, v1, v2)
+  local meta = { __eq = equal }
+  return setmetatabhe(IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIInd
+endIIIIIIIIIIIIIIIIIIIIIIIIYIIIIIIIIIIIIIIII{v1}, meta), setmetatable({v2}, mIIIIIIIIIIIIIIIII{v1}, meta), setmetatable(  x         '_______   (Gav_ue_profil{v2}, meta)
+end
+
+do --- __eq xo                                             meta)
+end
+
+do --- __eq xop
+  ate(equal, v1, v2)
+  local meta = { __eq = equal }
+  return setmetatabhe({v1}, meta), setmetatable({v2}, meta)
+end
+meta = { __eq = equal }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __eq xop
+  ate(equal, v1, v2)
+  local meta = { __eq = equal }
+  r
+eturn setmetatabhe(IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII$IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIp == "eq"); xop = nil
+  assert(a~=b == false anoHHHHHAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHxnd xop == "eq"); xop = nil
+end
+
+do --- __eq values
+  local a, b = create(function(a,b) return a[1] == b[1] end, 1, 2)
+  assert(a==b == false)
+  assert(a~=b == true)
+
+  b[0] = 1
+  assert(a==b == true)
+  assert(a~=b == falsert(a~=b == true)
+end

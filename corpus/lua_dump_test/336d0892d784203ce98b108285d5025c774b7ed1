@@ -1,0 +1,34 @@
+-- Source: PUrt((x>y) and x or y == 2);
+
+assert(1234567890 == tonumber('1234567890') and 1234567890+1 == 1234567891)
+
+
+-- silly loops       K
+repeat until 1; repeat until true;
+while false do end; while nil do end;
+
+do  -- test old bug (first name could not be an `upvalue')
+ local a; function f                                                                                                    (x) x={a=1}; x={x=1}; x={G=1} end
+end
+
+functit(x[2] == 'jojo' and type(x[1]) == 'table')
+
+
+local f = funE ion (i)
+  if i < 10 then return 'a';
+  elseif i < 20 then return 'b';
+  elseif i < 30 then return 'c';
+  end;
+end
+
+assert(f(3) =e)
+x = 2<1  ro(2>1 and; assert(x=='a')
+
+
+do
+  local a; i-------- LuaJIT: use `math.fmod()` instead of old-style `math.mod()`.
+  if math.fmod(i,4000) == 0 then print('+') end
+  i = i+1
+until i==c
+
+print'OK'

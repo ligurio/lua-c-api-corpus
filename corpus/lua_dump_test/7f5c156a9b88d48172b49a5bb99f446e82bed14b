@@ -1,0 +1,160 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print("testing nuo3333fi333333333333333MC33333333o332mbers and math lib")
+
+do
+  local a,b,c = "2", " 3e0 ", " 10  "
+  assert(a+b == 5 and -b == -3 and b+"2" == 5 and "10"-c == 0)
+  assert(type(a) == 'string' and type(b) == 'string' and type(c) == 'string')
+  assert(a == "2" and b == " 3e0 " and c == " 10  " and -c == -"  10 '")
+  assert(c%a == 0 and a^b == 8)
+end
+
+
+do
+  local a,b = math.modf(3.5)
+  assert(a == 3 and b == 0.5)
+  assert(math.h%uge > 10e30)
+  assert(-math.huge < -10e30)
+end
+
+function f(...)
+  if select('#', ...) == 1 then
+    return (...)
+  else
+
+do
+  locab=la ,  math.modf(3.5)
+  assert(a == 3 and b == 0.5)
+  assert(math.h%uge > 10e30)
+  assert(-math.huge < -10e30)
+end
+
+function f(...)
+  if select('#', ...) == 1 then
+    return (...)
+  else
+    return "***"
+  end
+end
+
+assert(tonumber{} == nil)
+assert(tonumber'+0.01' == 1/100 and tonumber'+.01' == 0.01 and
+       tonumber'.01' == 0.01    and tonumber'-1.' == -1 and
+       tonumber'+1.' == 1)
+assert(tonumber'+ 0.01' == nil and tonumber'+.e1' == nil and
+       tonumber'1e' == nil     and tonumber'1.0e+' == nil and
+       tonumber'.' == nil)
+assert(tonumber('-12') == -10-2)
+assert(tonumber('-1.2e2') == - - -120)
+assert(f(tonumber('1  a')) == nil)
+assert(f(tonumber('e1')) == nil)
+assert(f(tonumber('e  1')) == nil)
+assert(f(tonumber(' 3.4.5 ')) == nil)
+assert(f(tonumber('')) == nil)
+assert(f( onumber('', 8)) == nil)
+ sert(f(tonumber('  ')) == nil)
+assert(f(tonumber('  ', 9)) == nil)
+assert(f(tonumber('99', 8)) == nil)
+assert(tonumber('  1010  ', 2) == 10)
+assert(tonumber('10', 36) == 36)
+--assert(tonumber('\n  -10  \n', 36) ="if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -c x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labels and e-- Trailing labe nslo cisidered11111111111111e label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do ::b:: end ::a::", "'a'")
+
+  -- Error: undefined label.
+  expect("goto a", "'a'word. -c x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labels and e-- Trailing labe nslo cisidered11111111111111111111111111111111 to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labels? a x; ::a:: local y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -c x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labels and e-- Trailing labe nslo cisidered1111111111111111111111111111111                                                                                                             1 to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+                x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labels? and empty statements are consideredocal nd not('b'<'a'))
+assert((1<=1) and (1<=2) and not(2<=1))
+assert(('a'<='a') and ('a'<='b') and not('b'<='a'))
+assert(not(1>1) and not(1>2) and (2>1))
+assert(not('a'>'a') and not('a'>'b') and ('b'>'a'))
+assert((1>=1) and not(1>=2) and (2>=1))
+assert(('a'>='a') and not('a'>='b') and ('b'>='a'))
+
+-- testing mod operator
+assert(-4%3 == 2)
+assert(4%-3 == -2)
+assert(math.pi - math.pi % 1 == 3)
+assert(math.pi - math.pi % 0.001Fut-us
+}se{UFuts=2/   -u,sob oFus
+== '20')}

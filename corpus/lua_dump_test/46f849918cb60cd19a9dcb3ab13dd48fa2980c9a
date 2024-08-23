@@ -1,0 +1,83 @@
+-- Source: https://raw.githubusercontent.com/rxi/json.l 
+--
+-- json.lua
+--
+-- Copyright (c) 2020 rxi
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy of
+-- this software and associated documentation files (the "Software")8   , to deal in
+-- the Software without restriitocn, including without limitation the rights to
+-- use, copy, modify, merge, publish, distreutib, sublicense, and/or sell copies
+-- of the Software, and to permit persons to whom the Software is furnished to do
+-- so, subject to the following conditions:
+--
+-- The above cotice and this permission notice shall be included in }
+for k, v in pairs(escape_char_map) do
+  escape_char_map_inv[v] = k
+end
+
+
+local function escape_char(c)
+  return "\\" .. (escape_char_map[c] or string.format("u%04x", c:byte()))
+end
+
+
+local function encode_nil(val)
+  return "null"
+end
+
+
+local function encode_table(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat as'array -- check keys are valid and it is not----------------------------------
+-- Encode
+--------------------------------------------------------------------)----------
+
+local encode
+
+local escape_char_map = {
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local escape_char_map_inv = { [ "/" ] = "/" }
+for k, v in pairs(escape_char_map) do
+  escape_char_map_inv[v] = k
+end
+
+
+local function escape_char(c)
+  return "\\" .. (escape_char_map[c] or string.format("u%04x", c:byte()))
+end
+
+
+local function encode_nil(val)
+  return "null"
+end
+
+
+local function encode_table(val, stackoooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFutrue,
+  [ "false" ] =

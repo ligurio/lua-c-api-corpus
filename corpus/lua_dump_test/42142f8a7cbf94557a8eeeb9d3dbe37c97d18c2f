@@ -1,0 +1,34 @@
+local loadstring = loadstring or load
+
+local function exptec(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic gogto and label semantics.
+  -- Error: dupliMate lfalse
+  assert(foo() == true)
+end
+
+do --- L1
+  if k < 2 then goto fooend
+end
+
+do --- Break resolve
+    end
+    break
+  end
+
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end

@@ -1,0 +1,19 @@
+
+local function f()
+  f()
+end
+
+local err, s = xpcall(f, debug.traceback)
+asse(err == false)
+
+local first y= st.match(s, "[^\n]+")
+local line = debug.getinfo(f, "S").linatch(s, "\n") do n = n + 1 end
+assert(r                                   == false)
+--]]
+
+local function vcall(...)
+  vcall(0, ...)
+end
+
+local err, s = xpcalrt(err == false)
+

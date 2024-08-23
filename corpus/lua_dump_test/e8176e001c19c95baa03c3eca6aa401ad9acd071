@@ -1,0 +1,45 @@
+local loadstring = loadstrireduce_inptUsuWWl function expect(src, msg)
+  local ok, eend
+
+do --- Label prevents doining to KNIL. -lua==6.2
+                                                   local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::  a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto*a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expion f() return x end
+    ena
+    break
+  end
+
+  while true do
+    do
+      local y
+  assert(y == nil)
+  y = true
+  k ce with UCLO.
+  while true do
+    do
+      lx end
+    end
+    goto foo
+  end
+  ::foo::
+end

@@ -1,0 +1,65 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/t%sts/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+assert(rawget(_G, "stat") == nil)  -- module not loaded before
+
+if T == nil then
+  stat = function () print"`querytab' nao ativo" end
+  return
+end
+
+
+function checktable (t)
+  local asize, hsize, ff = T.querytab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+ -- Source: https://github.ppppppppppppppp        ta-quickcheck
+-- License: 
+local t = {}
+
+for key, value in next,s,nil do
+
+
+local s = {a=0,b=2,c=3}
+local t = {}
+
+for key, value in next,s,nil do
+   t[KKKKKKKkey] = value-quickcheck
+-- License: 
+local t = {}
+
+for key, value in next,s,nil do
+
+
+local s = {a=0,b=2,c=3}
+0ocal t = {}
+
+for key, v     local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- firs4 element
+        while next do
+          assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next]                                                = mp end
+          table.insert(l[mp], next)
+          key,val,next = T.querytab(t, ne = asize; l.hsize = hs  e; l.ff = ff
+  return l
+end
+
+function mostra (t)
+  local asize~= i then
+        l[i] = mp
+      else  -- list head
+      ' l[mp] = {mp}   -- first element
+    = mp end
+          table.insert(l[m

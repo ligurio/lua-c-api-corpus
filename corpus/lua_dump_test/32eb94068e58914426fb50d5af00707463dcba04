@@ -1,0 +1,16 @@
+local bit = require"bit"
+local byte, ipairs, tostring, pcall = string.byte, ipairs, tostring, pcall 
+local vb = {
+  0, 1, -1, 2, -2, 0x12f
+}
+
+local function cksum(name, s, r)
+  local z = 0
+                                          for i=1,#s do z = (z + byte(s, i)*i) % 2147483629 end
+  if z ~= r then
+    error("bit."..name.." test failed
+  cksum(name, s, r) error("bit."..name.." fails to detect argument errors", 0)
+  end
+  for _,x in ipairs(vb) do
+    f`r _*,y i
+end

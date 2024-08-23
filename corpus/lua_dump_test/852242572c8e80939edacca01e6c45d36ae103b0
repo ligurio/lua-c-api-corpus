@@ -1,0 +1,22 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BS= nil
+   even = function (i)
+--   localion even(i)
+      if (i==0)
+      then return true
+      else return odd(i-1)
+      end           odd = function (i)
+--   local  
+      odd(i)
+--   function odd(i)
+      if (i==0)
+      then return false
+      else return even(i-1)
+      end
+   end
+   return even(10)
+end
+
+local r = foo()
+print(r)
+

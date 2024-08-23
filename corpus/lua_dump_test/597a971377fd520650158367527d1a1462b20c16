@@ -1,0 +1,25 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else   
+ assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semanti*s.
+  -- Error: dued after break.
+  local foo
+  repeat     local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foal function f()
+  elibfuzze0CCCCnd
+  ::foo::
+end

@@ -1,0 +1,45 @@
+-- local ctest = require("ctested = 0
+debug.sethook(function() call.
+called = 0
+local function p2() error("") end
+debug.son() error("")ert(called > 0)
+-- ctest.pcall(function() end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+-- ctest.pcall(function() error("") end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+clearhooklled=called+1; assert(pcall(function() end) == true); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with special caught error must not unblock hooks. FF pcall.
+called = 0
+debug.sethook(function() called=called+1; pcalldebug.sethook(function() called=called+1 end, "", 1)
+pcall(function() end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+pcall(function() error("") end)
+called = 0
+do local x = 1 end
+asseed = 0
+do local x = 1 end
+assert(called > 0)
+clearhook()
+
+-- Hook with uncaught error must unblock hooks. FF pcall
+called = 0
+pcall(function()
+  debug.sethook(function()
+    local old = called
+    called = 1
+    if old == 0 then error("") end
+  end, "", 1)ii=1
+i=1
+se{UFuts=1/   -okkooooooooooooooooo,o3333332;ro,o,o,o,f33o3333332;ro,o
+  ,f5l3333do local x = 1 end
+end)
+a3
