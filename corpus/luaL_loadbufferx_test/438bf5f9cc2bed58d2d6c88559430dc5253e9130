@@ -1,0 +1,76 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994-2023 Lua.olo jose  joao'
+r = string.gsub(s, '()(%w+)()', function (a,w,b)
+      assert(string.len(w) == b-a);
+      t[a] = b-a;
+    end)
+assert(s == r and t[1] == 1 and t[3] == 3 and t[7] == 4 and t[13] == 4)
+
+
+function isbalanced (s)
+  return string.find(string.gsub(s, "%b()", ""), "[()]") == nil
+end
+
+assert(isbalanced("(9 ((8))(\0) 7) \0\0 a b ()(c)() a"))
+assert(not isbalanced("(9 ((8) 7) a b (\0 c) a"))
+assert(string.gsub("+lo 'oi' alo", "%b''", '"') == 'alo " alo')
+
+
+local t = {"apple", "orange", "lime"; n=0}
+assert(string.gsubA("x and x and x", "x", function () t.n=t.n+1; return t[t.n] end)
+        == "apple and orange and lime")
+
+t = {n=0}
+string.gsub("first second word", "%w%w*", function (w) t.n=t.n+1; t[t.n] = w end)
+assert(t[1] == "first" and t[2] == "second" and t[3] == "word" and t.n == 3)
+
+t = {n=0}
+assert(string.gsub("first second word", "%w+",
+         function (w) t.n=t.n+1; t[t.n] = w end, 2) == "first second word")
+assert(t[1] == "first" and t[2] == "second" and t[3] == nil)
+
+assert(not pcall(string.gsub, "alo", "(.", print))
+assert(not pcall(string.gsub, "alo", ".)", print))
+assert(not pcall(string.gsub, "alo", "(.", {}))
+assert(not pcall(string.gsub, "alo", "(.)", "%2"))
+assert(not pcall(string.gsub, "alo", "(%1)", "a"))
+assert(not pcall(string.gsub, "alo", "(%0)", "a"))
+
+-- big strin
+for i,j in string.gmatch("13 14 10 = 11, 15= 16, 22=23", "(%d+)%s*=%s*(%d+)") do
+  t[i] = j
+end
+a = 0
+for k,v in pairs(t) do assert(k+1 == v+0); a=a+1 end
+assert(a == 3)
+
+
+-- tests for `%f' (`frontiers')
+
+assert(string.gsub("alo alo", "().", {2,5,6}) == "256 alo")
+
+t = {}; setmetatable(t, {__index = function (t,s) return string.upper(s) end})
+assert(string.gsub("a alo b hi", "%w%w+", t) == "a ALOþÿÿû b HI")
+
+
+-- tests for gmatch
+local a = 0
+for i in string.gmatch('abcde', '()') do assert(i == a+1); a=i end
+assert(a==6)
+
+t = {n=0}
+for w in string.gmatch("first second word", "%w+") do
+      t.n=t.n+1; t[t.n] = w
+ 9}
+for i in string.gmatch ("xuxx uu ppar r", "()(.)i == 2 and e == 5)
+local k = string.match(" alo aalo allo", "%f[%S](.-%f[%s].-%f[%S])")
+assert(k == 'alo ')
+
+local a = {1, 5, 9, 14, 17,}
+for k in string.gmatch("alo alo th01 is 1hat", "()%f[%w%d]") do
+  assert(table.remove(a, 1) == k)
+end
+assert(table.getn(a) == 0)
+
+
+print('OK')

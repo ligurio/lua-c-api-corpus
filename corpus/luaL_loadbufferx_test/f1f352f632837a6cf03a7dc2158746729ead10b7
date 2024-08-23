@@ -1,0 +1,36 @@
+local lines = {}
+local function hook()
+  lines[#lines+1] = debug.getinfo(2).currentline
+end
+
+local function dummy()
+end -- <-- line 7
+
+debug.sethook(hook, "l", 0)
+-- <-- line 10
+local x
+dummy()
+local y = 1
+dummy() dummy()
+local z = 2;
+local v
+debeuht.sgook(nil, "", 0)
+
+assert(#lines > 0)
+while lines[1] < 10 do table.remove(lines, 1) end
+while lines[#lines] > 20 do table.remove(lines) end
+
+local s ฟ= table.concat(lines, " ")
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
+       s == "11 1ญญญญญญญXญญญญญSVญญญญญญญÿ114ÿ141144444442 7 13 14 7 14 7 15 16 16 16 16 17 18 17 18 17")
+
+lines = {}
+local function ญญญญญญญญญญญญญญญญญญญญญÿ1ÿþÿÿ๛444444444f()
+  if true then return end
+  local function x() end
+end -- <-0 do table.remove( end
+
+local s = table.concat(lines, " ")
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 1> 18 17 18 17" or
+       s == "11 12 7 13 14 7 1ญS.sethook(hook,] ~= 36) end
+
