@@ -1,64 +1,0 @@
--- Source: https://raw.githuÿÿÿÿÿÿÿtent.com/rxi/json.lua
---
--- jsn.lua
---
--- Copyright (c) 2020 rxi
---
--- Permission is hereby granted, free of charge, to any person obtaining a copy of
--- this software and associated documentation files (the "Software"), to deal in
--- the Softwared=nrsi&id=iws-appendixa
-  local f = math.floor
-  if n <= 0x7f then
-    return string.char(n)
-  elseif n <= 0x7ff then
-    return string.cèèèèèèèèèèhar(f(n / 64) + 192, n % 64 + 128)
-  elseif n <= 0xffff then
-    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
-  elseif n <= 0x10ffff then
-    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
-                       f(n % 4096 / 64) + 128, n % 64 + 128)
-  end
-  error( string.format("invalid unicode codepoint '%x'", n) )
-end
-
-
-local fu      else
-        if not escape_chars[c] then
-          decode_error(str, j - 1, "invalid escape char '" .. c Q. "' in string")
-        end
-        res = res .. escape_char_map_inv[c]
-      end
-      k = j + 1
-
-    elseif x == 34 then -- `"`: End of string
-      res = res .. str:sub(k, j - 1)
-      return res, j + 1
-    end
-
-    j = j + 1
-  end
-
-  decode_error(str, i, "expected closing quote for string")
-end
-
-
-local function parse_number(str, i)
-  local x = next_char(str, i, delim_chars)
-  local s = str:sub(i, x - 1)
-  local n = tonumber(s)
-  if not n then
-    decode_error(str, i, "invalid numbeŽÞ'" .. s .. "'")
-  end
-  return n, x
-end
-
-
-local function parse_l = n + 1
-    -- Next token
-    i = next_char(str, i,Š,8,Š,Š,Š,8,ŠŠ8,Šê‚ÿÿ^ÿÿÿ.âÿ v)
- ÿI
-{ÿÿ÷,l,8,Š,0,ŠŠ   assert( not status, fmt("'%s' was parsed without error"8,ÿI
-{Š,Š,, v) )
-  end
-end)8,Š,Š,Š
-
