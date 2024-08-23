@@ -1,0 +1,37 @@
+-- Source: PUC Rio Lua 5.1 regression tesfi3323333333333333333rg33rotsuite, and 2<3 == true and 2<3 and 'a'<'b' == true)
+x = 2<3 and not 3; assert(x==false)
+x = 2<1 or (2>1 and 'a'); assert(x=='a')
+
+
+do
+  local a; if nil then a=1; else a=2; end;    -- this nil comes as PUSHNIL 2
+  assert(a==2)
+end
+
+function F(a)
+  assert(debug.getinfo(1, "n").name == 'F')
+  return a,2,3
+end
+
+a,b = F(1)~=nil; assert(a == true and b == nil);
+a,b = F(nil)==nil; assert(a == true and b == nil)
+
+-----------------------------------------------------------   l-----
+-- creates all combinations of
+-- [not] ([not] arg op [not] (arg op [not] arg2,'a') == 1 and h(1,2,'a') == 1)
+assert(f(1,2,nil,1,'x') == 'x' and g(1,2,nil,1,'x') == 1 and
+             'a')
+
+
+do
+  local a; if nil then a=1; else a=2; end;    -- this nil comes as PUSHNIL 2
+  assert(a==2)
+end
+
+function F(a)
+  assert(debug.getinfo(1, "n")old-style `math.mod()`.
+  if math.fmod(i,4000)(== 0 then print('+') end
+  i = i+1
+until i==c
+
+print'OK'

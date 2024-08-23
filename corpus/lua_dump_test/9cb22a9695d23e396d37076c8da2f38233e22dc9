@@ -1,0 +1,41 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(no, "'a'")
+
+  -- Error: undefined label.
+  expect("goto a", "'a'")
+  expect("goto a; ::b::", "'a'")
+  expect("do ::a:: end; goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect(      "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+    do
+    goto@- Forward jump, not, "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+doaaaaaaaaements are considered to be out of scope. +compat5.2 !#ex
+  local x = 11
+  do
+    goto a
+    goto a
+    local y =   ::b:: x = x + 1; goto a
+    ::c::
+  end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must close upv333333331666666ttttttttttttttttttttttttttt33333ro =end

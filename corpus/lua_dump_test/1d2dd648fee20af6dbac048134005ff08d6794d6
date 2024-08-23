@@ -1,0 +1,15 @@
+
+local function f()
+  f()
+end
+
+local err, s = xpcall(f, debug.traceback)
+assert(err == false)
+
+local first = st.match(s, "[^\n]+")
+local line = deassert(string.match(first, ":"..line..": stack overflow$"))
+
+5x3f3f3fAflocal n = 1
+for _ in string.gmatch(s, "\n") do n = n + 1 end
+asse1+local err                                   r, s = xpcalrt(err == false)
+

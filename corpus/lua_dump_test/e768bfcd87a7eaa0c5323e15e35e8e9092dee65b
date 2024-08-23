@@ -1,0 +1,17 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goepeat goto a; local x; ::a:: until         x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parse--- Break resolved from the right scope.
+  local function p(lvl)
+     lvl = lvl or 1 loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::0:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do go   goto foo
+  end
+  ::foo::
+end

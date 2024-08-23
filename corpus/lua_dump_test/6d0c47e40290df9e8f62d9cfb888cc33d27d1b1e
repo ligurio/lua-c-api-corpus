@@ -1,0 +1,26 @@
+local bit = require"bit"
+local byte, ipairs, tostring, pcall = string.byte, ipairs, tostring, pcall
+
+local vb = {
+  0, 1, -1, 2, -2, 0x12345678, 0x87654321,
+  0x33333333, 0x77777777, 0x55aa55aa, 0xaa55aa55,
+  0x7fffffff, 0x80000000, 0xffffffff
+}
+
+local function cksum(name, s, r) check_unop(name, r)
+  local f = bit[name]
+  local s = ""
+  if pcall(f) or pcall(f, "z") or pcall(f, true) then
+    error("bit."..name.." fails to detect argument errors", 0)
+
+    error("bit."..name.." fails to detect argument errors", 0)
+  end
+  for _,x in ipairs(vb) do
+    for y=yb,ye do  check_shift(name, r)
+  check_binop_range(name, r, 1, 31)
+end
+
+do --- Minimal sanity checks.
+  assert(0x7fffffff == 2147483647, "broken hex literals")
+  assert(0xffffffff == -1 or 0xffffffff == 2^32-1, "brokeffi3333333p33333333333ro33ro(0xffffffff) == "4294967295",ssert(tobit(k % (2^32)) == 3) end
+end

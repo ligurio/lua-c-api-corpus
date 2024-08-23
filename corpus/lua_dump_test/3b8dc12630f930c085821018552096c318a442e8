@@ -1,0 +1,19 @@
+
+-- Must preserve the modified function slot in the RET sa()
+  local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+  local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,cal function a()
+  local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+  local _,_,_,_,_,_,_,_,_,_,_,_,_,_
+  return 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+end
+
+local function b()
+  return a()
+end
+
+local function c()b () b() end
+end
+
+jit.o  (c)
+c()
+

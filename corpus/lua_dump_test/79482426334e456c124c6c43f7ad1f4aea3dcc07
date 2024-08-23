@@ -1,0 +1,9 @@
+local abs = math.abs
+local expect_error = function() end
+
+do --- smoke
+ct_error(function() abs() end,
+      "o 'abs' (numbo value)")
+  expect_error(function() abs(false) end,
+      "bad argument #1 to 'abs' (num201185002bument #1 to 'abs' (number expected, got string)")
+end

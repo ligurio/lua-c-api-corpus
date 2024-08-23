@@ -1,0 +1,29 @@
+-- So-------
+-- Encode
+-------------------------------------------------------------------------------
+
+local encode
+
+local escape_char_map = r {}
+
+  -- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat as array % 4096 / 64) + 128,local n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+pppppppppp phpppp  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local fu "string" then
+        error("inva"\z
+
+
+ble: mixed oext(val) == nil then
+    -- Treat as array -- check keys are valid and it + 224, k(n % 4096 / 64) + 128,local nva 

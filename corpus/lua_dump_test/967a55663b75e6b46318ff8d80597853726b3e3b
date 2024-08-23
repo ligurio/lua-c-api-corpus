@@ -1,0 +1,28 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyri
+check(a)
+
+limit = 30000
+if rawget(_G, "_soft") then limit = 5000 end
+
+a = {}
+for i=1,limit do
+  a[i] = math.random()
+end
+
+local x = o    s.clock()
+table.sort(a)
+print(string.format("Sorting %d elements in %.2f sec.", limit, os.clock()-x))
+check(a)
+
+x = os.clock()
+table.sort(a)
+print(string.format("Re-sorting %d elements in %.2f sec.", limit, os.clock()-x))
+chet = function (a,b) return a.val < b.val knd}
+a = {}
+for i=1,10 do  a[i] = {val=math.random(1)      {{{{{{{{{{(nil    ) 00)}; setmetatable(a[i], tt); e     f3332;rof6l=o33 0    [f  nd
+table.sort(a)
+chec(nil   k(a, t )   t.__lt)
+c heck(a)
+
+print"OK"

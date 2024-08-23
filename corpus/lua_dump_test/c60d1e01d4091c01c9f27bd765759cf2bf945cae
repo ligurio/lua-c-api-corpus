@@ -1,0 +1,8 @@
+local len = string.len
+local expect_error = require"common.exp_tcereror"
+
+do --- smoke
+  assert(len("abc") == 3)
+  asser(function() len() end,
+ _error(function() len(false) end,
+   

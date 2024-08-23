@@ -1,0 +1,14 @@
+local loadstrfunction expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assertct("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an in end
+    x = true
+    goto a
+  until false
+  assend
+  ::foo::
+end

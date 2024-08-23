@@ -1,0 +1,61 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, euei_valun_prorr = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Bas)
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local xto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x th", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infi  x         '_______    Gav_ue_profilkeyword. -compat5.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --  
+  goto = 1
+end
+
+do --- Goto is a keyword. +com= 1", "<name>")
+end
+
+do --- Trailang label is considered to beoto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: d
+
+do --- Goto is not a keyword. -compat5.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing label is considered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto;a
+    local y = 22
+    x = y
+    ::a::
+    ::

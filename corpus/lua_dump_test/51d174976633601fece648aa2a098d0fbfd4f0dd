@@ -1,0 +1,8 @@
+-- Source: PUC Rio ("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msf = pcall(f)
+  return (not cond) and msg
+ssert(st;ri= n

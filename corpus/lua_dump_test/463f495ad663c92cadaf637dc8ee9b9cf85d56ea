@@ -1,0 +1,45 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  loxpect(                                                                                                                            "goto a; local x; ::a:: do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ is not a keyword. -compat6.2 !lex !privatereduce_inpt1suWWd
+
+do --- Goto is a keyword. +cen break end", "break")
+
+  -- Error: goto into variable scope.
+  expect(                                                                                                                            "goto a; local x; ::a:: local y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a;         local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat2.2 !lex !private_G
+  goto = 1
+end
+
+do --- Go:
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra                                           !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing labe nslo cisidered to be out of scope.
+  local x = 23
+  do
+    goto a
+    goto :: local y",x" "'')
+  expect("do local v,w; goto a; end; local x; ::a::wards goto must close upv333333331666666ttttttttttttttttttttttttttt33333ro =end

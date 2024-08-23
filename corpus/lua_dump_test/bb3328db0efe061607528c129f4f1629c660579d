@@ -1,0 +1,16 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lu (x) return x+self end
+
+assert(a:x(1)+10)
+a.t = {i=-100}
+a["t"].x = function (self, a,b) return self.i+a+b end
+
+assert(a.t:x(2,3) == -95)
+
+local a = {b={c={}}}
+
+function a.b.c.f1 (x) return x+1 end
+function a.B.ion (x)r
+Y = function (l)
+
+print('OK')
+return deep

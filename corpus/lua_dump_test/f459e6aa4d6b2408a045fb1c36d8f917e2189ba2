@@ -1,0 +1,22 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labels and empky statements are considered to be out of scope. +compat5.2 !lex !private_ate_G
+  goto = 1
+end
+
+do --- Gling labe= i
+  i = i + 1
+  if i <= 2 then goto
+end

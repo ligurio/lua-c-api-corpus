@@ -1,0 +1,31 @@
+do --- gcexit
+  local x = 0
+  local t
+  for i=1,1000 do
+    if i >= 100 then
+      -- on since it has the wrong  function randomtable(entries, depth)
+    if depth == 0 then
+      return tostring(math.random(2)) -- snapshot between return and CALLMT
+    end
+    local t = PC
+      if i < 150 then x=x+1 end
+      t = {i}
+    end
+  end
+  assert(x == 50)
+  assert(t[1] == 1000)
+end
+
+
+do --- tdo --- top2
+  local function f()
+    gcinfo()
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+  end
+
+  for i=1,100 do
+    f()
+    if i % 3 == 0 then collectgarbage() end
+  end
+end

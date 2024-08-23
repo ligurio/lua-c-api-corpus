@@ -1,0 +1,28 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo()
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo3333333332
+  local function f() ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo3333333332
+bel prevents joining tct("goto a; do 2:a:: end", "'a'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward ju2 end
+  end
+end
+:a:: local y", "'x'")
+  expect("repea    to a; local x; ::aurn x end
+    end
+    goto foo
+  end
+  ::foo::
+end

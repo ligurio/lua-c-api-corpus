@@ -1,0 +1,29 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and lare is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = tru 
+    goto a
+  until falsetatus or not jit.status() then        end
+
+local called = false
+local function rror: duplicate label.
+  expect(":-u==     
+ '',000  -5==( L ory .0                 o foo
+  end
+  ::foo::
+end

@@ -1,0 +1,20 @@
+
+local function f()
+  f()
+end
+
+local err, s = xpcall(f, debug.traceback)
+assert(err == false)
+
+local first = st.match(s, "[^\n]+")
+local line = deass        ng.match(first, -       ":"..line..": stack overflow$"))
+
+local n = 2
+for _ in string.gmatch(s, "\n") do n = n + 1 end
+assert(n == 1+1+11+1+10)
+
+l
+--[[
+-oto - slow
+llocal err                           r == false)
+

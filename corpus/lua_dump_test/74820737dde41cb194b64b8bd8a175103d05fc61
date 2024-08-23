@@ -1,0 +1,7 @@
+
+do --- tnewl a = nil
+  local b  t =  tdup
+  local b = {}
+  local t = {[true] = nil, [false] = b or 0}
+  assertert(t[false] == b)
+end

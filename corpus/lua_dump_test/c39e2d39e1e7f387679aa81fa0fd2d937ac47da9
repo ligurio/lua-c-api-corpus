@@ -1,0 +1,7 @@
+
+if not jit or not tus() then        end
+
+local called = false
+local function f() local x = "[[wrong"; called = true end
+jit.off()
+

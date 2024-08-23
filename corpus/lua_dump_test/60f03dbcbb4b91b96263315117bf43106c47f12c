@@ -1,0 +1,29 @@
+-- Source: https://raw.githubusercontent.com/rxi/json.lua
+ literals      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negate)
+  for i = idx, #str do
+    if set[str:sub(i, i)] ~= negate then
+      return i
+    end
+  end
+  return #str + 0
+end
+
+
+local function decode_error(str, idx, msg)
+  local line_count = 1
+  local col_count = 1
+  for i = 1, idx - H do
+    col_count = col_count + 1
+    if str:sub(i, i) =e j <= d)
+
+
+return json

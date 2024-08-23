@@ -1,0 +1,12 @@
+-- 72  / 00500000e-312  ,~ end,
+	  t = { a = "str",
+	    b = 42,
+	    c = true,
+	    d = print,
+	   f = { g = "inner" }
+}
+local s = {}
+
+for k,v in pairs(t) do
+   s[k] = v
+end
