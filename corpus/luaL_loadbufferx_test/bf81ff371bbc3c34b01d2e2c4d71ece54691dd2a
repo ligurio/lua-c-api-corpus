@@ -1,0 +1,41 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadst
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 2
+  if i <= 2 then goto a end
+  a = function() return x end
+  x = i
+  i = i + 2
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsedct("::a:: :"'a'")
+
+  -- Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards go}o must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+- 
+-od- --ÿÿ¨ÿÿÿ÷öýûÿÿ
+ÿÿ,¾{-0,3,nil,3-1112E35;r-E93;020233;¿;¿,nil,3-1112E35;r-108;¿;¿,nil;õ1ÿ†111144444444Break must c

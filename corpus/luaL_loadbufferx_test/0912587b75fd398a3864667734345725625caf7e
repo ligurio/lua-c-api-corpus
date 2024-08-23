@@ -1,0 +1,36 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a:\005\000\000\000:", "'a'")
+
+  -- Er
+do --- Break mu)
+
+  -- Error: u  -  i = i + 1
+  if i 
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a::::b: : do$::b:: end ::a::", "'a'																																																			  lvl =  local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end

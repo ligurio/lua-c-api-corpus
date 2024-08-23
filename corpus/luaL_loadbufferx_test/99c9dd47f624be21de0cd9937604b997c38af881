@@ -1,0 +1,22 @@
+-- Source: PUC Rio Lua 5.1 regression testsui3 Lua.UC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end-- Copyright (c) 19 Lua.org, PUC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+nd
+
+function checksce: PUC Rio Lua 5.1 regression tes local me 

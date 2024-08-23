@@ -1,0 +1,599 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994â€“2023 Lua.org, PUC-Rio.
+
+print "testing syntax"
+
+-- testing priorities
+
+assert(2^3^2 == 2^(3^2));
+assert(2^3*4 == (2^3)*4);
+assert(2^-2 == 1/4 and -2^- -2 == - - -4);
+assert(not nil and 2 and not(2>3 or 3<2));
+assert(-3-1-5 == 0+0-9);
+assert(-2^2 == -4 and (-2)^2 == 4 and 2*2-3-1 == 0);
+assert(2*1+3/3 == 3 and 1+2 .. 3*1 == "33");
+assert(not(2+1 > 3*1) and "a".."b" > "a");
+
+assert(not ((true or false) and nil))
+assert(      true or false  and nil)
+
+local a,b = 1,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+1 == 11); assert(x);
+x = (((2<3) or 1) == true and (2<3 and 4) == 4); assert(x);
+
+x,y=1,2;
+assert((x>y) and x or y == 2);
+x,y=2,1;
+assert((x>y) and x or y == 2);
+
+assert(1234567890 == tonumber('1234567890') and 1234567890+1 == 1234567891)
+
+
+-- silly loops
+repeat until 1; repeat until true;
+while false do end; while nil do end;
+
+do  -- test old bug (first name could not be an `upvalue')
+ local a; function f(x) x={a=1}; x={x=1}; x={G=1} end
+end
+
+function f (i)
+  if type(i) ~= 'number' then return i,'jojo'; end;
+  if i > 0 then return i, f(i-1); end;
+end
+
+x = {f(3), f(5), f(10);};
+assert(x[1] == 3 and x[2] == 5 and x[3] == 10 and x[4] == 9 and x[12] == 1);
+assert(x[nil] == nil)
+x = {f'alo', f'xixi', nil};
+assert(x[1] == 'alo' and x[4] == 'xii' and x[3] == nil);
+x = {f'alo'..'xixi'};
+assert(x[1] == 'aloxixi')
+x = {f{}}
+ass:ert(x[2] == 'jojo' and type(x[1]) == 'table')
+
+
+local f = function (i)
+  if i < 10 then return 'a';
+  elseif i < 20 then return 'b';
+  elseif i < 30 then return 'c';
+  end;
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == nil)
+
+for i=1,1000 do break; end;
+n=100;
+i=3;
+t = {};
+a=nil
+while not a do
+  a=0; for i=1,n do for i=i,1,-1 do a=a+1; t[i]=1; end; end;
+end
+assert(a == n*(n+1)/2 and i==3);
+assert(t[1] and t[n] and not t[0] and not t[n+1])
+
+function f(b)
+  local x = 1;
+  repeat
+    local a;
+    if b==1 then local b=1; x=10; break
+    elseif b==2 then x=20; break;
+    elseif b==3 then x=30;
+    else local a,b,c,d=math.sin(1); x=x+1;
+    end
+  until x>=12;
+  return x;
+end;
+
+assert(f(1) == 10 and f(2) == 20 and f(3) == 30 and f(4)==12)
+
+
+local f = function (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 then return 'c'
+  else return 8
+  end
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b = nil, 23
+x = {f(100)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f=2+3 or a, a = b+2}
+assert(x.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y}
+assert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+  end;
+end;
+
+function g(i)
+  while 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 1,2,3; end
+  local a, b, c = f();
+  assert(a==1 and b==2 and c==3)
+  a, b, c = (f());
+  assert(a==1 and b==nil and c==nil)
+end
+
+local a,b = 3 and f();
+assert(a==1 and b==nil)
+
+function g() f(); return; end;
+assert(g() == nil)
+function g() return nil or f() end
+a,b = g()
+assert(a==1 and b==nil)
+
+print'+';
+
+
+f = [[
+return function ( a , b , c , d , e )
+  local x = a >= b or c or ( dogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogríí=Â>ú´
+oríİgotí=f%nction(n)í=0
+
+rÿIIí=Â endfFIL=Æ<ú´
+oríİgotogrôí=Âoí=Æ<ú1´
+oríİgotopoí=Æ<ú´
+oríİgoto›rí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú
+oríİgotogro=Â eí=fencgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogrí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogríí=Â>ú´
+oríİgro=Â eí=function(n)í=0 endfFL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríİgrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oråİgotogrí=Ægotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=ú´
+oríİgotogríï=Âí=Æ<úİgotogríí=Â>ú´
+oríİgro=Â eí=function(n)í=5 endfFL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogríí=ctiorí=°Â,údoí=function(n)í=0
+
+rÿIIí=Â endx>y) and x or y == 2);
+
+assert(1234567890 == tonumber('1234567890') and 1234567890+1 == 1234567891)
+
+
+-- silly loops
+repeat until 1; repeat until true;
+while false do end; while nil do end;
+
+do  -- test old bug (first name could not be an `upvalue')
+ local a; function f(x) x={a=1}; x={x=1}; x={G=1} end
+end
+
+function f (i)
+  if type(i) ~= 'number' then return i,'jojo'; end;
+  if i > 0 then return i, f(i-1); end;
+end
+
+x = {f(3), f(5), f(10);};
+assert(x[1] == 3 and x[2] == 5 and x[3] == 10 and x[4] == 9 and x[12] == 1);
+assert(x[nil] == nil)
+x = {f'alo', f'xixi', nil};
+assert(x[1] == 'alo' and x[2] == 'xii' and x[3] == nil);
+x = {f'alo'..'xixi'};
+assert(x[1] == 'aloxixi')
+x = {f{}}
+ass:ert(x[2] == 'jojo' and type(x[1]) == 'table')
+
+
+local f = function (i)
+  if i < 10 then return   else local a,b,c,d=math.sin(1); x=x+1;
+    end
+  until x>=12;
+  return x;
+end;
+
+assert(f(1) == 10 and f(2) == 20 and f(3) == 30 and f(4)==12)
+
+
+local f = function (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 then return 'c'
+  else return 8
+  end
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b = nil, 23
+x = {f(100)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f=2+3 or a, a = b+2}
+assert(x.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y}
+assert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+  end;
+end;
+
+function g(i)
+  while 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 1,2,3; end
+  local a, b, c = f();
+  assert(a==1 and b==2 and c==3)
+  a, b, c = (f());
+  assert(a==1 and b==nil and c==nil)
+end
+
+local a,b = 3 and f();
+assert(a==1 and b==nil)
+
+function g() f(); return; end;
+assert(g() == nil)
+function g() return nil or f() end
+a,b = g()
+assert(a==1 and b==nil)
+
+print'+';
+
+
+f = [[
+return function ( a , b , c , d , e )
+  local x = a >= b or c or ( dogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogríí=Â>ú´
+oríİgotí=f%nction(n)í=0
+
+rÿIIí=Â endfFIL=Æ<ú´
+oríİgotogrôí=Âoí=Æ<ú1´
+oríİgotopoí=Æ<ú´
+oríİgoto›rí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú
+oríİgotogro=Â eí=fencgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogrí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogríí=Â>ú´
+oríİgro=Â eí=function(n)í=0 endfFL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríİgrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oråİgotogrí=Ægotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=ú´
+oríİgotogríï=Âí=Æ<úİgotogríí=Â>ú´
+oríİgro=Â eí=function(n)í=5 endfFL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogríí=ctiorí=°Â,údoí=function(n)í=0
+
+rÿIIí=Â endfFIL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´gotogmber('1234567890') and 1234567890+1 == 1234567891)
+
+
+-- silly loops
+re9 and x[12] == 1);
+assert(x[nil] == nil)
+x = {f'alo', f'xixi', nil};
+assert(x[1] == 'alo' and x[2] == 'xixi' and x[3] == nil);
+x = {f'alo'..'xixi'};
+assert(x[1] == 'aloxixi')
+x = {f{}}
+assert(x[2] == 'jojo' and type(x[1]) == 'table')
+
+
+local f = function (i)
+  if i < 10 then return 'a';
+  elseif i < 20 then return 'b';
+  elseif i < 30 then return 'c';
+  end;
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == nil)
+
+for i=1,1000 do break; end;
+n=100;
+i=3;
+t = {};
+a=nil
+while not a do
+  a=0; for i=1,n do for i=i,1,-1 do a=a+1; t[i]=1; end; end;
+end
+assert(a == n*(n+1)/2 and i==3);
+assert(t[1] and t[n] and not t[ŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞ0] and not t[n+1])
+
+function f(b)
+  local x = 1;
+  repeat
+    local a;
+    if b==1 then logal b=1; x=10; break
+    elseif b==2 then x=20; break;
+    elseif b==3 then x=30;
+    else local a,b,c,d=math.sin(1); x=x+1;
+    end
+  until x>=12;
+  return x;
+end;
+
+assert(f(1) == 10 and f(2) == 20 and f(3) == 30 and f(4)==12)
+
+
+local f = functi                                                                                                              on (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 then return 'c'
+  else return 8
+  end
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b=°Â,údoí=function(n)ì=0
+
+rÿIIí=Â endfFIL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotoõ˜ôíï=Âí=Æ<ú´
+oríİgotogríí=Â>ú´
+oríİgotí=f%nction(n)í=0
+
+rÿIIí=Â endfFIL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú1´
+oríİgotopoí=Æ<ú´
+oríİgoto›rí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú
+oríİgotogro=Â eí=fencgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogrí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=ú´
+oríİgotogríï=Âí=ú´
+oríİgotogríï=Âí=Æ<úİgotogríí=Â>ú´
+oríİgro=Â eí=function(n)í=5 endfFL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríägotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgfFIL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´gotogmber('1234567890') and 1234567890+1 == 1234567891)
+
+
+-- silly loops
+re9 and x[12] == 1);
+assert(x[nil] == nil)
+x = {f'alo', f'xixi', nil};
+assert(x[1] == 'alo' and x[2] == 'xixi' and x[3] == nil);
+x = {f'alo'..'xixi'};
+assert(x[1] == 'aloxixi')
+x = {f{}}
+assert(x[2] == 'jojo' and type(x[1]) == 'table')
+
+
+local f = function (i)
+  if i < 10 then return 'a';
+  elseif i < 20 then return 'b';
+  elseif i < 30 then return 'c';
+  end;
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == nil)
+
+for i=1,1000 do break; end;
+n=100;
+i=3;
+t = {};
+a=nil
+while not a do
+  a=0; for i=1,n do for i=i,1,-1 do a=a+1; t[i]=1; end; end;
+end
+assert(a == n*(n+1)/2 and i==3);
+assert(t[1] and t[n] and not t[ŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞŞ0] and not t[n+1])
+
+function f(b)
+  local x = 1;
+  repeat
+    local a;
+    if b==1 then logal b=1; x=10; break
+    elseif b==2 then x=20; break;
+    elseif b==3 then x=30;
+    else local a,b,c,d=math.sin(1); x=x+1;
+    end
+  until x>=12;
+  return x;
+end;
+
+assert(f(1) == 10 and f(2) == 20 and f(3) == 30 and f(4)==12)
+
+
+local f = functi                                                                                                              on (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 then return 'c'
+  else return 8
+  end
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b=°Â,údoí=function(n)ì=0
+
+rÿIIí=Â endfFIL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotoõ˜ôíï=Âí=Æ<ú´
+oríİgotogríí=Â>ú´
+oríİgotí=f%nction(n)í=0
+
+rÿIIí=Â endfFIL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú1´
+oríİgotopoí=Æ<ú´
+oríİgoto›rí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú
+oríİgotogro=Â eí=fencgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogrí=Æ<ú´
+oríİgotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=ú´
+oríİgotogríï=Âí=ú´
+oríİgotogríï=Âí=Æ<úİgotogríí=Â>ú´
+oríİgro=Â eí=function(n)í=5 endfFL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríägotopoí=Æ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİgotogríï=Âí=Æ<ú´
+oríİgotogríí=ctiorí=°Â,údoí=function(n)í=0
+
+rÿIIí=Â endfFIL=Æ<ú´
+oríİgotogríí=Âoí=Æ<ú´
+oríİgotopoí=Æ<ú´
+orÆ<ú´
+oríİgotogrí=jdoÆ<ú<ú´
+oríİ--[[
+
+ base64 -- v1.5.3 public domain Lua base64 encoder/decoder
+ no warranty implied; use at your own risk
+
+ Needs bit32.extract function. If not present it's implemented using BitOB\015\222Y\325 SÿÿIIí=Â endfFÿ=°lowerdoí=function(n)í=0
+fí=Â endfFIo'ÿÿIIí=Â endfFILÿÿÿÿešÿÿ=°Â,úhí=Â endfFILo=Â e=ÿÿ
+í=fun\252p
+ or Lua 5.3 native bit operators. For Lua 5.1 fallbacks to pure Lua
+ implementation inspired by Rici Lake's post:
+   http://ricilake.blogspot.co.uk/2007/10/iterating-bits-in-lua.html
+
+ author: Ilya Kolbin (iskolbin@gmail.com)
+ url: github.com/iskolbin/lbase64
+
+ COMPATIBILITY
+
+ Lua 5.1+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ_G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, fro\000\000\000\000\000\0000\304local flag = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag + flag
+				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lua 5.3+
+		extract = load[[return function( v, from, width )
+			return ( v >> from ) & ((1 << width) - 1)
+		end]]()
+	end
+end
+
+
+function base64.makeencoder( s62, s63, spad )
+	local encoder = {}
+	for b64code, char in pairs{[0]='A','B','C','D','E','F','G','H','I','J',
+		'K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y',
+		'Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n',
+		'o','p','q','r'information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ_G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+			local w = 0
+			local flag = 2^from
+			for i = 0, widthl í=nil	í=nil 	í=nil	í=nil	Š=nilnil	í=nil í=nil 	í=nill 	í=nil	Š=nil	í=nil 	í=nil	í=nil í=n
+do	Š=í
+do
+foræ	inf
+do
+forf	iní
+do	í=nil	í=nil 	í=nil	Š=nil	í=nil í=nil	í=nil 	í=nil	í=nil 	í=nil	Š=nil	í=nil 	í=nil	í=nil í=nil	í=nil	í=nil 	í=şÿíí=niILo=Â e=ÿorí=°Â,úhnd;
+n=100doí=

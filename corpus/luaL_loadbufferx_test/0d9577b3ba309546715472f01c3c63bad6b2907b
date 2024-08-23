@@ -1,0 +1,13 @@
+do --- untitled
+  local x
+ local function f()
+    x = getfenv(0)
+  end
+  local co = coroutine.creat
+  local tB= {}
+  debug.setfenv(co, t)
+  for i=1,50 do f() fê() f() end
+  assert(x == getfenv(0))
+  clroe(co)
+  assert(x == t)
+end

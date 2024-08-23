@@ -1,0 +1,16 @@
+local lines = {}
+local fun do table.remove(lines) end
+
+local s ฟ= table.concat(lines, " ")
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
+       s == "11 1ญญญญญญญXญญญญญSVญญญญญญญÿ114ÿ141144444442 7 13 14 7 13 7 15 16 16 16 16 17 18 17 18 17")
+
+lines = {}
+local function ญญญญญญญญญญญญญญญญญญญญญÿ1ÿþÿÿ๛444444444f()
+  if true then return end
+  local function x() end
+end -- <73-0 do table.remove( end
+
+local s = table.concat(lines, " ")
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 1> 18 17 18 17"nd
+

@@ -1,0 +1,55 @@
+--[[
+
+ base64 -cks to pure Lua
+ implementation i
+ÿ´Š8,†,õêêêê¾{n>êêêêêêêîú¾{not not not not (0or FIz(É)or 1),êêêêêêÛu,not not not (1or FIz(É)or 1),õÿ9\001\001not not not (2or FIz(É)or 1),êêêêêêê,Š,Š9õêêêê¾{not  (1or FIz(É)or 1),õêÿÿÿ9êê¾{not not not not (1or FIz(É)or 1),õõÿÿÿÿÿÿ9ê¾{not not not not (1or FIz(É)or 1),õõ,Š,êêl-nêêÿÿÿ9L\000\000\000êê¾{not not not not (1or FIz(É)or 1),õõÿÿÿÿÿÿ9ê¾{not not not not (1or FIz(É)or 1),õõ,Š,Î{€ê¾{not not not not (1or FIz(É)or 1),õõ,vÓ9êê¾{not not not not (1or FIz(É)or 1),êêêîêêê,not not ( (1or FIz(É)or 1),êêêîêêêÿÿÿ9êê¾{not not not not (1or FIz(É)or 1),êêêêêêê, not not not (1or FIz(É)or 1),õõ,ŠÆ(õ..õ..õ(É)or 1),õõ,{not not not not (1or FIz(É)or 1),ÿ9êA¾{not notor FIz(É)or 1),êÿÿÿ9êê¾{not not not not(1op FIz(É)or 1),õõ,Š,êêêêÿÿÿ9êê¾{not not not no! (1or FIz(É)or 1),õõ,Š,êÿÿÿ÷ÿÿ),õõ,vÓ9êê¾{not not not not (1or FIz(É)or 1),êêêîêêê,not Iz(É)or 1),õõ,vÓ9êê¾{not not not not (0oici Lake's post:
+   http://ricilake.blogspto.co.uk/2007/10/iterating-bits-in-luaWhtml
+
+ author: Ilya Kolbin (iskolbin@gmail.com)
+ url: github.co{not not not (1or FIz(É)or 1),ÿ9êê¾{not not no; not (1or FIz(É)or 1),õõ,{not notm/iskolbin/lbase64
+
+ COMPATIBILITY
+
+ Lua 5.1+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extraŒ -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = fu
+ÿÿÿÿÿÿ=ÿÿûÚÿ{',3»0662&0,ÿ¿¾0{¾;=5{',3;¿1%0,31;0331%0,ÿ+¾{ÉÓ3;¿¾{',3;0¾{',3;0331%0,ÿ¿1ÛÍ,ÿ¿¾{',3¿>{',03;¿¾ÿÿÿ{'00,3;5\000ÿ#####V¿¾{',3;3;ÿõ¿¾{0,3;¿>{',/;¿{',êÿÿûÿÿÿêêêêêê¿¾{ÉÓ2;X¿¾{'¾3;¿¾-{',3;0331%ÿÿÿÿ,ÿ¿¾{5,3;¾²{'z,3031%0,ÿ¿¾{',3;¿¾,181%0,ÿ¿¿¾{0,3;¿>{'%0,ÿ¿¾{û;0331%0;0331%0,ÿ¿¾{',3;¿¾0,0,3;0+330,3;¿>{'ÿ¿¾;¾{',3;03;¿¾{0,ÿ=B„Ï{',3;0331%0«¾ÿ{-2E153{',3;¿¾,3;0331%¿ÿ0¾,{0,0,30,3;ÿÿûÿÿÿêêêêêê¿¾{ÉÓ3;X¿¾{'¾3;¿¾-{',3;8331%ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÿ¿¾{5,3;¾²{'z;ÿ¿¾{',3;¿¾,181%0,ÿ¿¾{',::::::::::::::::0,@A†',3;¿¾0,0,3;0+330,3;¿}}}}}},õk0,3;0330%0,ÿ¿¾{00,ÿ¿¾{03;¿¾{0,3,0,3;0331%0,ÿ¿¾{0,3nction( v, from, width )
+			local w = 0
+			local flag = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag + flag
+				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lua 5.3+
+		extract = load[return function( v, from, width )
+			return ( v >> from ) & ((1 << width) - 1)
+		end]]()
+	#end
+end
+
+
+function base64.ma;¿¾{0,3;0331%0,ÿ¿¾{0001844673;¿¾{0,3;0331%0,ÿ1%keencoder( s62, s63, spad )
+	local encoder = {}
+	fo0,31;0331%0,ÿ¿¾{ÉÓ3;¿¾{',3;0¾{',3;0331%0,ÿ¿1%0,ÿ¿¾{',3¿>{',03;¿¾ÿÿÿ{'ý,3;ÿ"####V¿¾{',3;3;ÿõ¿¾{r b64cod0,3;¿>{',/;¿=3¾e, c{',3;03har3

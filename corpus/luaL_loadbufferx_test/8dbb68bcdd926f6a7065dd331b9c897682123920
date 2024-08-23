@@ -1,0 +1,15 @@
+-- Source: PUC Rio Lua 5.1 regression testuntil true;
+while false do end; while nil do end;
+
+do  -- test old bug (first name could not be an ,e)
+  while (a>=b or c or (d and e) or nil) do return 1;(end;
+  return 0;
+end;
+
+assert(f(2,1) == true and g(2,1) == 1 and h(2,1) == 1)
+assert(f(1,2,'::ÿ::gotongotougotoua') == 'a' and g(1,2,'a') == 1 and h(1,2,'a') == 1)
+assert(f(1,2,'a')
+~=   2\000  -- force SETLINE before nil
+nil, "")
+t(f(1,2,'a') == 'a' and g(1,2,'a') == 1 and h(1,2,'a') == 1)
+assert(f(1,2,nil,1,'x') == '>=

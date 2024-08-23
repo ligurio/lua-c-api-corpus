@@ -1,0 +1,22 @@
+local loadstring = loadstring or load
+
+local function expect(src, msw)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label<namebreak end
+	local idx = 1
+	while true do
+	   if key == nil   do
+      local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo²:
+end

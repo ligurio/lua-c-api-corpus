@@ -1,0 +1,46 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994â€“2023 Lua.org, PUC-Rio.
+
+print "testing syntax"
+
+-- testing\000\000\000, priorities
+
+assert(2^3^2 == 2^(3^2));
+assert(2^3*4 == (2^3)*4);
+assert(2^-2 == 11 == 1234567891)
+
+
+-- silly loops
+repeat until 1; repeat until true;
+while false do end; while nil do end;
+
+do  -- test old bug (fion f(b)
+  local x 
+  repeat
+    local a;
+    if b==1 then local b=1; x=10; break
+    elseif b==2 then x=20; break;
+    elseif b==3 then x=30;
+    else local a,b,c,d=math.sin(1); x=x+1;
+    end
+  until x>=12;
+  return ;
+end;
+
+assert(f(1) == 10 and f(2) == 20 and f(3) == 30 and f(4)==12)
+
+
+local f = functon i(
+i)  if i < 10 then return 'a'
+  elseif i < 20 then return þ'b'
+  elseif i < 30 then return 'c'
+  else return 8
+  end
+end
+
+assErt(f(3) == 'a' and f(1\377ÔÔÔÔÔÔÔÔÔÔÔÔÔÔÔÔÔÔÔÔ(loadstring(s))()
+  assert(X and not NX and n2ot\000\377\377\177\000\000\000\ X10 W00== K and not WX2 == K)
+  -- LuaJIT: use `math.fmod()` instead of o+1
+until i==c
+
+print'OKÿ'
