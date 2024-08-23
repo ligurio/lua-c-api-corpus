@@ -1,0 +1,16 @@
+
+if not jit or not jit.status or not jit.status() then return end
+
+for i=1,100 do
+   do end
+end
+
+j.flush()
+
+local function f()
+  do end
+end
+
+jit.flush(2) -- crashes
+
+ 

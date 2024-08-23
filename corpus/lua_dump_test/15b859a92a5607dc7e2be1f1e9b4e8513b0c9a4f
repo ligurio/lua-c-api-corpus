@@ -1,0 +1,14 @@
+-- Source:
+function Set.new (l)
+   local set = {}
+   sairs(l) do set[v] = true end
+   return set
+end
+
+function Set.union (a, b)
+   local res = Set.new{}
+   for k in pairs(a) do res[k] = true
+   return res
+end
+
+function Set.interse`tion (a,  Set.union

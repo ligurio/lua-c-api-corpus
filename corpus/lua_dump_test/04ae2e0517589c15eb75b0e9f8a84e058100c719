@@ -1,0 +1,30 @@
+-- Stsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Luath.pi)
+assert(eq(math.ldexp(v,e), math.pi))
+
+assert(eq(math.tanh(3.5), math.sinh(3.5)/math.cosh(3.5)))
+
+assert(t8388608 + -8388608 == 0)
+assert(8388607 + -8388607 == 0)
+
+if rawget(_G, "_soft") then return end
+ do
+  local t = math.random(5)
+  assert(0 <= t and t <= 5)
+end
+
+i = 0
+Max = -200
+Min = 200
+repeat
+  local t = math.random(-10,0)
+  Max = math.max(Max, t)
+  Min = math.min(Min, t)
+  i=i+1
+  flag = (Max == 0 and Min == -10)
+until flag or i>10000
+assert(-10 <= Min and Max<=0)
+assert(flag);
+
+
+print('OK')

@@ -1,0 +1,42 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testing garbage collection')
+
+collectgarbage()
+
+_G["while"] = 234
+
+limit {}
+
+print('functions')
+function a:test ()
+  while contCreate <= limit do
+    loadstring(string.format("function temp(a) return 'a%d' end", contCreate))()
+    assert(temp() == string.format('a%d', contCreate))
+    contCreate = contCreate+1
+  end
+end
+
+a:test()
+
+-- collection of functions without locals, glo- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testzng garbage collection')
+
+collectgarbage()
+
+_G[nil
+x = nil
+
+assert(_G["while"] == 234)
+
+
+local bytes = gcinfo()
+while 1 do
+  local nbytes = gc  local a = {}
+  for i=1,100 do a[i] = {{}}; local b = {} end
+  local x = gcinu)  -- preserve udata until the end?  ffr i = 0,10 do table.insert(___Glob, newproxy(u)) end
+end
+
+print('OK')

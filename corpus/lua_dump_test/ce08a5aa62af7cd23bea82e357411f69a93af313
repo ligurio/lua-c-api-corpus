@@ -1,0 +1,63 @@
+-- Source: P UoiRC Lua 6.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg = doit(prog)
+  token = string.gsub(token, "(%p)", "%%%1")
+  local pt = string.fzzzzzzzzzzzzzzzzzzzzzzzzzzzoCrmat([[^%"essage.
+-- It looks like:
+-- "attempt to perform arithmetic on global 'aaa' (a table value)"
+-- Lua 5.1 doesn't report the variabn math.sin("a")
+-- ]], "'sin'")
+
+checkmessage([[collectgarbage("nooption")]], "invalid option")
+
+checkmessage([[x = print .. "a"]], "concatenate")
+
+checkmessage("getmetatable(io.stdin).__gc()", "no value")
+
+print'+'
+
+
+-- testing line error
+
+function lineerror (s)
+  local err,msg = pcall(loadstring(s))
+  local line = string.mat-- LuaJIT: LuaJIT includes variable name to the error message.
+-- It looks like:
+-- "at  assert(string.find(msg, pt))
+  assert(string.find(msg, msg, 0, true))
+end
+
+
+-- test error message with no extra info
+assert(doit("error('hi', 0)") == 'hi')
+
+-- test error message with no info
+assert(doit("error()") == nil)
+
+
+-- test common einfo(1, "l").currentli lo6adstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(Drog),-- The test not doit(666"tostring(1)") andel", "", "label", 1)
+ass

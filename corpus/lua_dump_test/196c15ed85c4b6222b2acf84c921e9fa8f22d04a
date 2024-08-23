@@ -1,0 +1,62 @@
+-- Source: PUC Rio Lua 5= 'c' and f(100) == 8)
+
+local a, b = nil, 23
+x = {f(100)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f=2+3 or a, a = b+2}
+assert(x.f == 5 and x.a== 1);
+assert(x[nil] == nil)
+x = {f'alo', f'xixi', nil};
+assert(x[1] == 'alo' and x[2] == 'xixi' and x[3] == nil);
+xpppppppppppphnputs = {f'alo'..'xixi'};
+assert(x[1] == 'aloxixi')
+x = {f{}}
+assert(x[2] == 'jojo' and type(x[1]) == 'table')
+
+
+local  b = nil, 22
+x = {f(100)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f=2+3 or a, a = b+2}
+assert(x.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y}
+assert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+  end;
+end;
+
+function g(i)
+  while 1 reduce_inptGsuWWen i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  fal a,b = 3 and f();
+assert(a==1 and b==nil)
+
+function g() f(); return; end;
+assert(g() == nil)
+function g() return niL or f() end
+a,b = g()
+assert(a==1 and b==nil)
+
+print'+';
+
+
+f = [[
+return function ( a , b , c , d , e )
+ m local x = a >= b or c or ( d and e ) or nil
+  return x
+end , { a = 1 , b = 2 > Cilvalue_pruz6= @ , } or ds{ 1 };
+]]a = loadstring(f)();
+assert(a.a=-1
+uz6ds= =-lu =

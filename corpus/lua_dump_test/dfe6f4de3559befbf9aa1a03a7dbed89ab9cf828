@@ -1,0 +1,88 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- ak end", "break")
+
+  -- Err considered |o be outocal x = 12
+
+do --- Backwards goto m+st close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == oooooooooooooooooou2)
+end
+
+do --- lv loop6
+end
+
+do --- Goto is not a keyword. -compat5.2 !lex !private_G
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- lv loop6
+end
+
+do --- Goto is not a keyword. -compat5.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keo = 1", "<name>")
+end
+
+do --- Trailing label is considered to be outocal x = 11
+
+do --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- lvl == nil then break erue do
+	   if key == ni
+  ::foo::
+end
+
+do --- Backwards goto must close upval.
+  local t = {hen goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- lvl ==  + 1
+  if i <= 2 then goto aert(t[1]() ==[2]() == 2)
+end
+
+do --- lvl == nil then break end
+	local idx = 1
+	while true do
+	   if key == ni
+  ::foo::
+end

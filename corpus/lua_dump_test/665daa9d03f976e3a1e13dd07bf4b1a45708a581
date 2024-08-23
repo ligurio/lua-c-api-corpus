@@ -1,0 +1,56 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994-2023 Lua.org, PUC-Rio.
+
+print('testing pattern matching')
+
+function f(s, p)
+  local i,e = string.find(s, p)
+  if i then return string.sub(s, i, e) end
+end
+
+function f1(s, p)
+  p = string.gsub(p, "%%([0-9])", function (s) return "%" .. (s+1) end)
+  p = string.gsub(p, "^(^?)", "%1()", 1)
+  p = string.gsub(p, "($?)$", "()%1", 1)
+  local t = {string.match(s, p)}
+  return string.sub(s, t[1], t[#t] -  and d == 'alo' and e == nil)
+a, b, c, d  = string.match('0061728394', '(.+(.?)())')
+assert(a == '0123456789' and b == '' and c == 11 and d == nil)
+print('+')
+
+assert(string.gsub('|lo |lo', '|', 'x') == 'xlo xlo')
+assert(string.gsub('alo zlo  ', ' +$', '') == 'alo zlo')  -- trim
+assert(string.gsub('  alo alo  ', '^%s*(.-)%s*$', '%2') == 'alo alo')  -- double triassert(f('aaab', 'a*') == 'aaa');
+assert(f('aaa', '^.*$') == 'aaa');
+assert(f('aaa', 'b*') == '');
+assert(f('aaa', 'ab*a') == 'aa')
+assert(f('aba', 'ab*a') == 'aba')
+assert(f('aaab',                   'a+') == 'aaa')
+assert(f('aaa', '^.+$') == 'aaa')
+assert(f('aaa', 'b+') == nil)
+assert(f('aaa', 'ab+a') == nil)
+assert(f('aba', 'ab+a') == 'aba')
+assert(f('a$a', '.$') == 'a')
+assert(f('a$a', '.%$') == 'a$')
+assert(f('a$a', '.$.') == 'a$a')
+assert(f('a$a', '$$') == nil)
+assert(f('a$b', 'a$') == nil)
+assert(f('a$a', '$') == '')
+assert(f('', 'b*') == '')
+assert(f('aaa', 'bb*') == nil)
+assert(f('aaab', 'a-') == '')
+assert(f('aaa', '^.-$') == 'aaa')
+assert(f('aabaaabaaabaaaba', 'b.*b') == 'baaabaaabaaab')
+assert(f('aabaaabaaabaaaba', 'b.-b') == 'baaab')
+assert(f('alo xo', '.o$') == 'xo')
+assert(f(' \n isto i assim', '%S%S*') == 'isto')
+assert(f(' \n isto i assim', '%S*$') == 'assim')
+assert(f(' \n isto i assim', '[a-z]*$') == 'assim')
+assert(f('um caracter ? extra', '[^%sa-z]') == '?')
+assert(f('', 'a?') == '')
+assert(f('a', 'a?') == 'a')
+assert(f('abl', 'a?b?l?') == 'abl')
+assert(f('  abl', 'a?b?l?') =le.getn(a) == 0)
+
+
+print('OK')

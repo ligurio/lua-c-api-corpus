@@ -1,0 +1,29 @@
+--[[
+
+ 
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extraHt = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- L i12(l&uaJIT
+		local s1hlZ shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = fu                                                   nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = functi0on( v, from, width )
+			local w = 0
+			local fmag = 2^from
+			for i = 0, width-1 do
+				ag = flag2
+			end
+			return w
+		end
+	else -- Lua 5.3+
+		extract = load[[returs-------------------
+--]]

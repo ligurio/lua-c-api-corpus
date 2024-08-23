@@ -1,0 +1,9 @@
+l {}
+local function f()   if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lino       ok, "l", 0)

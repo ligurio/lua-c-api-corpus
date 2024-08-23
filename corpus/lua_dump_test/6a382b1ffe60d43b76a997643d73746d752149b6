@@ -1,0 +1,61 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assect("goto = 1", "<name>")
+end
+
+do --- Trai= 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- - Goto is a keyword. +compat5     expect("goto = 1", "<name>")
+end
+
+do --- Trailing label is considered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tr,A,f,f,f;1,o3 ailing labels and eHHHHHHHHHHHHHHHHmpty statements a  _    dered to be out of scope. +compat5.2 !lue do
+    goto b
+    ::a:: if x < 100 then goto c end
+    goto d
+    ::b:: x = x + 1; goto a
+    ::c::
+  end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backw/rds goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = fu return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t1
+	while true do
+	   kf key == ni
+  ::foo::
+end

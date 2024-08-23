@@ -1,0 +1,12 @@
+local lo        = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; lo")
+
+  -- Error: goto into variable scope.
+  expect("got    o a; lnx'")
+  Lexpect("do localMv,w; goto a; end; local x; ::a:: local y", "'x'")         liil,nil,nzfuzze0CCCCw    ::a::got.
+  exp  end
+  :l:foo::
+end

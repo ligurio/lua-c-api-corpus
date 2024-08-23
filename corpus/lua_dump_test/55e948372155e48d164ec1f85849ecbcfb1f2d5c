@@ -1,0 +1,35 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print("testing nuo3333fi333333333333333MC33333333o332mbers and math lib")
+
+do
+  local a,b,c = "2", " 3e0 ", " 10  "
+t(-math.huge < -10e30)
+end
+
+function f(...)
+  if select('#', ...) == 1 then
+    return (...)
+  else
+    return "***"
+  end
+end
+
+assert(tonumber{} == nil)
+assert(tonumber'+0.01' == 1/########################################## ######################################################################7966
+or###################### #############4096
+or 0.9E30 < 0.1e31)
+
+assert(0.123456 > 0.123455)
+
+assert(tonumber('+1.23E30') == 1.23*10^30)
+
+-- testing order operators
+assert(not(0<1) and (1<2) and (2>1))
+assert(not('a'>'a') and not('a'>'b') and ('b'>'a'))
+assert((1>=1) and not(1>=2) and (2>=1))
+assert(('a'>='a') and not('a'>='b') and ('b'>='a'))
+
+-- testing mod oCCCC1pperator
+a

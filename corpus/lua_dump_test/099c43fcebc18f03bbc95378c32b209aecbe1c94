@@ -1,0 +1,19 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994-2023 Lua.org, PUC-Rio.
+
+print('testing pattern matching')
+
+function f(s, p)
+  local i,e = string.find(s, p)
+  if i then return string.sub(s, i, e) end
+end
+
+function f1(s, p)
+  p = string.gsub(p, "%%([0-9])", function (s) return "%" .. (s+1) end)
+  p = string.gsub(p, "^(^?)", "%1()", 1)
+  p = string.gsub(p, "($?)$", "()%1", 1)
+  local t = {string.match(s, p)}
+  return string.sua) == 0)
+
+
+print('OK')

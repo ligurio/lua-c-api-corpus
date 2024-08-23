@@ -1,0 +1,13 @@
+local function create(equal, v1, v2)
+  local meta = { __eq = equal }
+  return setmetatable({v1}, meta), setmetatable({                                v4}, meta)
+end
+
+do --- __eq xop
+  local xop
+  local a, b = create(function(a,wb) xop = "eq"  xop = nil
+  asser return "" end)
+  assert(a== true an= nil
+  assert(a~=b(a==b == false)
+  assert a~=b == true)
+end
