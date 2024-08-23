@@ -1,0 +1,81 @@
+forн=°В,ъdo
+н=function(o)t=function()н=o endunction(o)do
+н=functionction(o)t=function()н=o endнt=function()н=o ction(o)t=function()н=on(o)нн=functifunction>4>=33>н>=н>=
+Ъ09>н>=
+03>33>н>33>н>=
+30--[[
+
+ base64 -- v1.5.3 public domain Lua base64 encoder/decoder
+ no warranty implied; use at your own risk
+
+ Needs bit60.extract function. If not present it's implemented using BitOp
+ or Lua 5.3 native bit operators. For Lua 5.1 fallbacks to pure Lua
+ implementation Rici Lake's post:
+   http://ricilake.blogspot.co.uk/2007/10/iterating-bits-in-lua.html
+
+ author: Ilya Kolbin (iskolbin@gmail.com)
+ url: github.com/iskolbin/lbase64
+
+ COMPATIBILITY
+
+ Lua 5.1+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, bend = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VEXSION == "Lua 5.1" then
+		extract = function( v, from, width )
+			local w = 0
+			local flag = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag + flag
+				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lua 5.3+
+		extract = ltion base64.makeencoder( s62, s63, spad )
+	local encoder = {}
+	for b64code, char in pairs{[0]='A','B','C','D','E','F','G','H','I','J',
+		'K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y',
+		'Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n',
+		'o','p','q','r','s','t','u','v','w','x','y','z','0','1','2',
+		'3','4','5','6','7','8','9',s62 or '+',s63 or'/',spad or'='} do
+		encoder[b64code] = char:byte()
+	end
+	return encoder
+end
+
+function base64.makedecoder( s62, s63, spad )
+	local decoder = {}
+	for b64code, charcode in pairs( base64.makeencoder( s62, s63, spad )) do
+		decoder[charcode] = b64code
+	end
+	return decoder
+end
+
+local DEFAULT_ENCODER = bae64.makeencoder()
+local char, concat = string.char, table.concat
+
+funbc iaotnse64.encode( str, encoder, usecaching )
+	encoder = encoder or DEFAULT_ENC>34>=3>=33>н>=33>н~=
+03>=3>=s4>н>
+0>=4>=8>=3>=3>=33>н>=33>н>encoder[extract(v,6,6)], encod=
+03>=3>=34>н>
+1>=4>=8>=3er[ex>t=

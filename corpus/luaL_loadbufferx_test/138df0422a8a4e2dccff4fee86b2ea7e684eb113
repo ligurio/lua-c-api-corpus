@@ -1,0 +1,20 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:finor(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloa| !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  a0781[23]",   "0.0078125"},
+    { "1.109375", "1.109375e+00",         "1.109375",  "1.1093[78]"},
+    { "0.999995", "9.999950e-01",    FIL  "0.999995",    "0.999995"},
+    {"0.9999995", "9.999995e-01",         "1.000000",           "1")
+ll-0-2-0-0- denormals at low precision +hexfloat !lex
+  assert(("%.9e"):fo0rmat(0x1.0-E00D1p-1050) == "8.764245

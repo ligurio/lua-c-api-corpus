@@ -1,0 +1,56 @@
+-- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyright (c) 2020 rxi
+--
+-- Permission is hereby granted, free of charge, to any person obtaininš a copy of
+-- this software and associated documentation files (the "Software"), to deal in
+-- ppendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f, "expected closing quote for string")
+end
+
+
+local function parse_num(name, func)
+  xpcall(function()
+    func()
+    print( fmt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %s : %s", name, err) )
+  end)
+end
+
+
+local function equal(a, b)
+  -- Handle table
+  if type(a) == "table" and type(b) == "table" then
+    for k in pairs(a) do
+      if not equal(a[k], b[k]) then
+        return false
+      end
+    end
+    for k in pairs(b) do
+      if not equal(b[k], a[k]) then
+        return false
+     {
+  ŸßØÝØß¢ß= parse_string,
+  [ "0" ] = parse_number,
+  [ "1" ] = parse_number,
+    xpcall(function()
+    func()
+    print( fmt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %s : %s",r(straped properly", k) )
+  end
+end)
+
+
+return json
