@@ -1,0 +1,24 @@
+
+local t = {}
+for i=1,26 do t[i] = string.char(96+i) end
+
+local funct
+
+local function fo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) --u VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO n ...
+end
+
+local function foo2(...) --u VARG UCLocal function foo3(...) -al function foo1(...) -- VARG RETM
+  return ...
+end
+
+locaend, "c")
+local function foo5 @,   

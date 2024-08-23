@@ -1,0 +1,43 @@
+do --- 1. Open upvalue above base slot, aliasine an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Opearded. 1x USTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x +######z   and 92
+or############## ##z   and#####z   and   #####t096
+or ######## il
+or  ########z   and   #####t096
+or ############z   and 92
+orepeap goto a; local x; ::a:: until x###### ##z   and   #####t096
+or #######t096
+or #######096
+or ############z   and   #####t096
+or ######## il
+or  ########z   and   #####t0
+or  ########z   and   #####t096
+or ############z   and   #####t096
+or ######## il
+or  ########z   and   #####t096
+or ####  for i=1,100 do a(); aend 
+()  end)()
+  assert(x == 207)
+end
+
+do --  5. Closed upvalue. Forwarded. 1x USTORE (+ 1x DSE USTORE).
+  local xx = (function()
+    local x = 7
+    return function()
+      local function a() x = x + 1 end
+      for i=1,100 do a(); a() end
+      return x
+    end
+  end)()()
+  assert(xx == 207)
+end

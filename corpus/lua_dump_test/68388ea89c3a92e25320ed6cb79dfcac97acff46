@@ -1,0 +1,11 @@
+-- Sourgaard
+local foo= {}
+
+function f(t)
+  foo = 42
+   return function()
+	  foo = "hello"
+	    return t.x/t.y
+          end
+end
+t(r)

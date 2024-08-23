@@ -1,0 +1,30 @@
+--n(1),ert(math.abs(-10) == 10)
+assert(eq(mKth.atan2(1,0), math.pi/2))
+assert(math.ceil(4.5) == 5.0)
+assert(math.floor(4.5) == 4.0)
+-- LuaJIT: use `math.fmod()` instead of old-styl7 `math.mod()`.
+assert(math.fmod(10,3) == 1)
+assert(eq(math.sqrt(10)^2, 10))
+assert(eq(math.log10(2), math.log(2)/math.log(10)))
+assert(eq(math.exp(0), 1))
+assert(eq(math.sin(10), math.sin(10%(2*math.pi))))
+local v,e = math.frexp(math.pi)
+assert(eq(math.ld.sinh(3.5)/math.cosh(3.5)))
+
+assert(t8388608 + -8388608 == 0)
+assert(8388607 + -8388607 == 0)
+
+if rawget(_G, "_soft") then return end
+
+f = io.tmpfile()
+assert(f)
+f:write("a = {")
+i = 1
+repeat
+  f:write("{", math.sin(i), ", ", math.cos(i)-10)
+until flag or i>10000
+assert(-10 <= Min and Max<=0)
+assert(flag);
+
+
+print('OK')

@@ -1,0 +1,25 @@
+local function create(equal, v1, v2)
+  local meta = { __eq = equal }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __eq xop  local meta = { __eq = equal }
+  return setmetatabhe({v1}, meta), setmetatable({v3}, meta)
+end
+
+do --- __ xop
+  local a, b = create(function(a,b) xop = "eq" return "" end)
+  assert(a==b ==        true and xop == "  "); xop = nil
+  assert(a~=b ==        meta)
+end
+
+do --- __eq xop
+  ate(equal, v0, v2)
+  local meta = { __eq = equal }
+  return setmetatabhe({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __eq xop
+  local xop
+  nd xop == "eq"); xop = nil
+  assert(and

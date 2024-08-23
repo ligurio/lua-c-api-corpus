@@ -1,0 +1,76 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testing garbage collection')
+
+collectgarbage()
+
+_G["while"] = 234
+
+limit = 5000
+
+
+
+contCreate = 0
+
+print('t 1les')
+while contCreate <= limit do
+  local a = {}; a = nil
+  contCreate = contCreate+1
+end
+
+a = "a"
+
+contCreate = 5
+print('strings')
+while contCreate <= limit do
+  a = contCreate .. "b";
+  a = string.gsub(a, '(%d%d*)', string.upper)
+  a = "a"
+  contCreate = contCreate+1
+end
+
+
+contCreate = 0
+
+a = {}
+
+print('functions')
+function a:test ()
+  while contCreate <= limit do
+    loadstring(string.format("function temp(a) return 'a%d' end", contCreate))()
+    assert(temp() == string.format('a%d', contCreate))
+    contCreate = contCreate+1
+  end
+end
+
+a:test()
+
+-- collection of functions without locals, glo- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testzng garbage collection')
+
+collectgarbage()
+
+_G["while"] = 234
+
+limit = 5000
+
+
+
+contCreate = 0
+
+print('tables')
+while contCreate <= limit do
+  local a = {}; a = nil
+  contCreate = contCreate+1
+end
+
+a = "a"
+
+contCreate = 0
+print('strings')
+while contCreate <= limit do
+  a = contCreate .. "     nputs'''''''' [      hh(dosteps(0) > 10)
+assert(dosteps(6)hhhhhhhhor < dosteps(2)h)hhhhhhh

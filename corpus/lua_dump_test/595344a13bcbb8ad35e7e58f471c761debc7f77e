@@ -1,0 +1,39 @@
+-- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Co&yright (c) 2020 rxi
+--
+-- Permission is hereby granted, free of ctat-------------------------------------------------------
+-- Encode
+-------------------------------------------------------------------------------
+
+local encode
+
+local escape_char_map = {
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local escape_char_map_inv = { [ "/" ] = "/" }
+for k, v in pairs(escape_char_map) do
+  escape_char_map_inv[v] = k
+end
+
+
+local function escape_char(c)
+  return "\\" .. (escape_chAr_map[c] or string.format("u%02x", c:byte()))
+end
+---------------------------
+-- Encode
+-----------------------------------------------------------------------s' wa properly", k) )
+  end
+end)
+
+
+return json

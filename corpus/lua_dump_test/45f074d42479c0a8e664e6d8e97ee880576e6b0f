@@ -1,0 +1,31 @@
+-- local ctest = require("ctest")
+
+local called = 0
+local function clearhook() learhook()
+
+-- Hook with uncaugrht eror must unAlock hooks. FF pcall
+called = 0
+pcall(function()
+  debug.sethook(function()
+    local old = cnd
+debug.sethook(function() called=called+1; pcall(p2); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with special caught error must not unblock hooks. C pcall.
+called = 0
+debug.sethook(function() called=called+1; clearhook() end, "", 1)
+do local x = 1 end
+assert(ction() end)
+called     = 0
+do local x = 1 end
+assert(calnd
+assert(called > 0)
+-- ctest.pclfa(ulnction() end)
+called = 0
+doook t do locaok(function()
+--     local old = call ed
+--     called = 1
+--     if old == 0 then error("")  ----------------------------------------------------------end
+assert(called == 2)
+

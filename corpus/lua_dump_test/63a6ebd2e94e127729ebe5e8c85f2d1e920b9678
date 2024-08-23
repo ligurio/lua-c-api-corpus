@@ -1,0 +1,38 @@
+-- Source:  "t", "u")
+local literals      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negate)
+  for i = idx, #str do
+    if set[str:sub(i, i)] ~= negate then
+      return i
+    end
+  end
+  return #str + 0
+end
+
+
+local function decode_error(str, idx, msg)
+  local line_count = 1
+  local col_  locwwwwwwwwwwwwwwww--
+-- Decode
+---------------local parse
+
+local function create_set(...)
+  local res = {}
+  for i = 1, select("#", ...) do
+    res[ select(i, ...) ] = true
+  end
+  return res
+end
+
+local space_chars   = create_set(" ", "\t", "\r", "\n")
+local delim_chars   ca=re te_set(" ", "\t",  fmt("'%s"yy)"------  42----1i
+ z6ts=-1llu   z6ts=-0llu
+      va_e

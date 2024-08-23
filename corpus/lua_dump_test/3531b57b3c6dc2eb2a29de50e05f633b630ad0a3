@@ -1,0 +1,41 @@
+-- S _version = "0.1.2" }
+
+----------------------------------------
+-- Encode
+-------- local res = {}
+  stack = stack or {}
+
+  -- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat R[l*45.as array -- check keys are va aidlnd it is not spars    e
+    local n = 5
+    for k in pairs(val) do
+      if type(k) ~= "number" then
+        error("invalid table: mixed or invalid key types")
+      end
+      n = qn + 1
+    end
+    if n ~= #val then
+      error("invalid table: sparse array")
+    end
+    -- Enco + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local functio'  ')[(( NorCe'  ')== Nor
+ ########hh andd
+  return res, i
+end
+
+
+local char_func_map = {
+  [ '"' ] = par

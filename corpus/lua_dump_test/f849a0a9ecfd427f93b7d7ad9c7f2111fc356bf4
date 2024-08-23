@@ -1,0 +1,44 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: dupompat5.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing label is  loop.
+end
+
+do --- Goto is not a keyword. -compat5.2 !lex !private_G
+  goto = 1
+end
+
+do --- expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto intlocal y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an yword. -compat5.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Traili40.5i  lL =-0.5
++.5 i

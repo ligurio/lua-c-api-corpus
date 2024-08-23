@@ -1,0 +1,23 @@
+local create = coroutine.create
+local wrap = coroutine.wrap
+local resume = coroutine.resume
+local yield = coroutine.yield
+
+-- Test stack overflow handling on return from coroutine "       .
+do
+  wrap(function()
+    local co = create(function()
+      yield(string.byte(stringnrep(" ", 100), 1, 100))
+    end)
+    assert(select('#', resume(co)) == 101)
+  end)()
+end
+
+do
+  wrap(function()
+    local f = wrap(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(selecd,
+    42)
+en l

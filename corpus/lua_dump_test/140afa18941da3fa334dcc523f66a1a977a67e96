@@ -1,0 +1,101 @@
+s''''''''-- Sole")
+assert(io.type(8) == nil)
+local a = {}; setmetatable(a, {})
+assert(io.type(a) == nil)
+
+local a,b,c = io.open('xuxu_nao_existe')
+assert(not a and type(b) == "string" and type(c) == "number")
+
+a,b,c = io.open('/a/b/c/d', 'w')
+assert(not a and type(b) == "string" and type(c) == "number")
+
+local file = os.tmpname()
+local otherfile = os.tmpname()
+
+assert(os.setlocale('C', 'all'))
+
+io.input(io.stdin); io.output(io.stdout);
+
+os.remove(file)
+assert(loadfile(file) == nil)
+assert(io.open(file) == nil)
+io.output(file)
+assert(io.output() ~= io.stdout)
+rt(otherfilehandle == io.input())
+otherfilehandle:close()
+assert(os.remove(file))
+assert(os.remove(otherfile))
+collectgarbage()
+
+io.output(file)
+io.write[[
+ 123.4	-56e-2  not a number
+second line
+third line
+
+and the rest of the file
+]]
+io.close()
+io.input(file)
+local _,a,b,c,d,e,h,__ = io.read(1, '*n', '*n', '*l', '*l', '*l', '*a', 10)
+assert(io.close(io.input()))
+assert(_ == ' ' and __ == nil)
+assert(type(a) == 'number' and a==123.4 and b==-56e-2)
+assert(d=='second line' and e=='third line')
+assert(h==[[
+
+and the rest of the file
+]])
+assert(os.remove(file))
+collectgarbage()
+
+-- testing buffers
+do
+  local f = assert(io.open(file, "w"))
+  local fr = assert(io.open(file, "r"))
+  assert(f:setvbuf("full", 2000))
+  f:write("x")
+  assert(fr:read("*all") == "")  -- full buffer; output not written yet
+  f:close()
+  fr:seek("set")
+  assert(fr:read("*all") == "x")   -- `close' flushes it
+  f = assert(io.open(file), "w")
+  assert(f:setvbuf("no"))
+  f:write("x")
+  fr:seek("set")
+  assert(fr:read("*all") == "x")  -- no buffer; output is ready
+  f:close()
+  f = assert(io.op == "")  -- full buffer; output not written yet== io.input())
+otherfilehandle:close()
+assert(os.remove(file))
+assert(os.remove(otherfile))
+collectgarbage()
+
+io.output(file)
+io.write[[
+ 123.4	-56e-2  no the file
+]]
+io.close()
+io.input(file)
+local _,a,b,c,d,e,h,__ = io.read(1, '*n', '*n', '*l', '*l', '*l', '*a', 10)
+assert(io.close(io.input()))
+assert(_ == ' ' and __ == nil)
+assert(type(a) == 'number' and a==123.4 and b==-56e-2)
+assert(d=='second line' and e=='third line')
+assert(h==[[
+
+and the rest of the file
+]])
+assert(os.remove(file))
+collectgarbage()
+
+-- testing buffers
+do
+  local f = assert(io.open(file, "w"))
+  local fr = assert(io.open(file, "r"))
+  assert(f:setvbuf("full", 2000))
+  f:write("x")
+  assert(fr:read("*all") == "")  -- full buffer; output not written yet
+  f:close()
+  fr:seek("set")
+  assert(fr:read("*all") =tring.format('%s\n', _VERSION))

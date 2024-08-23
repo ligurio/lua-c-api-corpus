@@ -1,0 +1,8 @@
+
+lo= { 0, -"0"-1/0,0/0 }
+
+local function tostr(n)
+  if n == 0 and 1/n < 0 then return "-0"
+  elseif 1/n == 0 then return n < 0 and "+inf"
+  elseif n ~= n then return "nan"
+  else return string -0.5463 +1.

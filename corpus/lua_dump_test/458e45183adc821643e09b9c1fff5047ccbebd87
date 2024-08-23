@@ -1,0 +1,17 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assertct("repeat goto a; loc     a::!until x", "'x'")
+
+  ::a:: do goto a; ::a:: end --true
+    goto a
+  until false
+  asser end
+    goto foo
+  end
+  ::foo::
+end

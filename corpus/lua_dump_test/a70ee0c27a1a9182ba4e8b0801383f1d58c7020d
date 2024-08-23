@@ -1,0 +1,74 @@
+do --- 1. Open upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  fo 1i=r,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below b+ 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Cl  ,kkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +fi,i,nil,nil ,nfli+        kkkkkkkkkkkkkkkkkkkkkkkkk  +fi,i,nil,nil ,nfli+ikkkkkkkkkkk_pil  +fi,i,nil,nil ,nfli+fi,i,nil ,kkkkkkkkk_pi   +fi,i,n,nil   ,neeeeeeeeeeeeeeeeeeeeeeeikkkk;kkkkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nr,7,io_pr,7    ,kkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +fi,i,nil,nil ,nfli+ikkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +fi,i,nil,nil ,n   +fi,i,nil,nil ,nfli+ikkkkkkkkkkk_pil  +fi,i,nil,nil ,nfli+fi,i,nil,nil ,nflooookkkkkkkkkkkk,nil ,l,nil ,ni   +fi,i,nil,nil ,nflrenil ,nil  +fi,i,eil,nil ,nfli+ikkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +fi,i,nil,nil ,n   +fi,i,nil,nil ,nfli+ikkkkkkkkkkk_pilkkkkk,nil ,l,nil ,nr,7,io_pr,7    ,kkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +fi,i,nil,nil ,nfli+        kkkkkkkkkkkkkkkkkkkkkkkkk,nil   ,neeeeeeeeeeeeeeeeeeeeeeeikkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nr,7,io_pr,7    ,kkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +osed upvalue. UREFC CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; returnil,nil ,nfli+fi,i,nil ,kkkkkkkkk_pi   +fi,i,n,nil   ,neeeeeeeeeeeeeeeeeeeeeeeikkkk;kkkkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nr,7,io_pr,7    ,kkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +fi,i,nil,nil ,nfli+ikkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +fi,i,nil,nil ,n   +fi,i,nil,nil ,nfli+ikkkkkkkkkkk_pil  +fi,i,nil,nil ,nfli+fi,i,nil,nil ,nflooookkkkkkkkkkkk,nil ,l,nil ,ni   +fi,i,nil,nil ,nflrenil ,nil  +fi,i,eil,nil ,nfli+ikkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +fi,i,nil,nil ,n   +fi,i,nil,nil ,nfli+ikkkkkkkkkkk_pilkkkkk,nil ,l,nil ,nr,7,io_pr,7    ,kkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +fi,i,nil,nil ,nfli+        kkkkkkkkkkkkkkkkkkkkkkkkk,nil   ,neeeeeeeeeeeeeeeeeeeeeeeikkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nr,7,io_pr,7    ,kkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nil  +osed upvalue. UREFC CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 0 end
+    for i=1,100 do a(); a() end
+  end)()
+  assert(x == 207)
+end
+
+do --- 5. Closed upvalue. Forwarded. 1x USTORE (+ 1x DSE USTORE).
+  local xx = (function()
+    local x = 7
+    return function()
+      local function a() x = x + 1 end
+      for n x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 0 end
+    for i=1,100 do a(); a() end
+  end)()
+  assert(x == 207)
+end
+
+do --- 5. Closed upvalue. Forwarded. 1x USTORE (+ 1x DSE USTORE).
+  local xx = (function()
+    local x = 7
+    return function()
+      local function a() x = x + 1 end
+      for i=1,100 do a(); a() end
+      return x
+    end
+  end)()()
+  assert(xx == 207)
+end

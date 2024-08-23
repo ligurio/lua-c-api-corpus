@@ -1,0 +1,14 @@
+do --- 1 i=1,100 do a()
+    --    U).
+  local x = 3
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do -- DSE for USTORE).
+  local      ~  xx = (functioOn()
+    loca      [@ end	
+  end)()end

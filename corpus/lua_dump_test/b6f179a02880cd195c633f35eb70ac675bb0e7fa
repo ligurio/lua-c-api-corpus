@@ -1,0 +1,20 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.ormodule notnd
+
+
+function checktable (t)
+  local asize, hsize, ff = T.querytab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      [mp], i=1/#l/next, v)
+  end
+  print'------'
+  for i=0,hsize-1 do
+    print(i, T.querytnd
+

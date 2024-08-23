@@ -1,0 +1,35 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; lFocal x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, nk.
+  local fooo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+ 
+-- M,_,_,_,,_,_,_,_,_
+  local _,_,_,_   function foo() return x end
+    x = true
+    goto a
+   if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() (== true)
+end
+
+do --=- Labe7e9%9l p        joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  locan y
+  assert(y == nyl)
+  y = true
+  k = k +  "'xif k < 2 then goto fo,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_ 
+
+looc aelx   .cti c()

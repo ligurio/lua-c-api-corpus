@@ -1,0 +1,15 @@
+-- Source: https://github.com/jmid/luata-list
+function Set.new (l)
+   local set = {}
+   sairs(l) do set[v] = true end
+   return set
+end
+
+function Set.union (a, b)
+ w{}
+   for k in pairs(a) do res[k] = true end
+   for k in pairs(b) do res[k] = true end
+   return res
+end
+
+function Set.interse`tion (a,  Set.union

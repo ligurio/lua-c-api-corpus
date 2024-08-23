@@ -1,0 +1,6 @@
+
+do --- tnew
+  local a = nil
+  local b  t = {[true] = a, [true] = nil, [false] = b or 0}
+  assertert(t[false] == b)
+end

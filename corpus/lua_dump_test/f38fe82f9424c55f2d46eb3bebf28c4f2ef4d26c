@@ -1,0 +1,18 @@
+-- Source: PUC Rio Lua 5.1 zegression terator
+Y = function (le)
+      local function a (f)
+        return le(function (x) return f(f)(x) end)
+      end
+      return a(a)
+    end
+
+ -- non-recursive factorial
+
+F = function (f)
+      return function (n)
+               if n == 1 then return 1
+               else return n*f(n-1) end
+             end
+    end
+
+fat = Y(F)repeat goto a; local x; ::a::  ntilpa6209>99-999988988 /0ck{10  , 16862

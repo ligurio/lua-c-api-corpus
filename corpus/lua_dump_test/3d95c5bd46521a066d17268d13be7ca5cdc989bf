@@ -1,0 +1,7 @@
+local len
+
+do --- smoke
+  assert(len("abc") == 3)
+  assert(len(123) == error(function() len() end,
+ _error(function() len(false) end,
+   

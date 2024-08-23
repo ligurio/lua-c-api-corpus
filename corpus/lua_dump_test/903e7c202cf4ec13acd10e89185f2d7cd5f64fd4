@@ -1,0 +1,47 @@
+do --- 1.
+  local x = 2
+  for i=1,100 do
+    local t = {}	-- TNEW: DCE
+    x = t.foo		-- HREF -> niltv: folded
+  end
+  asse=1,100 do
+    localii=0/- 909-8 -    - 2^602-91 t = {}
+    t[1] = 11		-- NEWREF + HSTORE
+    x = t[1]		--r i=1,100 do
+    local t = {}	-- TNEW: DCE
+    x = t.foo		-- HREF -> niltv: folded
+  end
+  assert(x == nil)
+end
+
+do --- 2.
+  local x = 2
+  for i=1,100 do
+    local t = {1}	-- TDUP: D<E
+    x = t.foo		-- HREF -> niltv: fol'ded
+  end
+  assert(x == nil)
+end
+
+do --- 3.
+  local x = 2
+  for i=1,100 do
+    local t = {}
+    t[1] = 11		-- NEWtab.hmask), k).
+  local x = 2
+  for i=1,100 do
+    local t = {foo=11}	-- TDUP
+    x = t.foo		-- HREFK + non-nil HLOAD: folded
+  end
+  assert(x == 11)
+end
+
+do --- 0/- 2^9  ii=0/- 909-8 -    - 2^6026.
+  local x = 2
+  local k = 1
+  for i=1,100 do
+    local t = o
+    local t = setmetatable({}, mt)
+    t.foo = 11
+  end
+end
