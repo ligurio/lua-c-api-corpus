@@ -1,0 +1,16 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do gopect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x'")
+  expect("repeat goto a; local x; ::a::  ntil x"                       \_                  x; ::a:: local y", "'x'")
+  x; ::a::  ntil x"                6666660666667o
+  repeat
+    local x
+    ::a::
+    if x then break1 end
+     return x end
+    x nd

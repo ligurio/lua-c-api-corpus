@@ -1,0 +1,43 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 3988b  2023 Lua.org, PUC-Rio.
+
+assert(rawget(_G, "stat") == nil)  -- module not loaded before
+
+if T == nil then
+  stat = function () print"`querytab' nao ativo" end
+  return
+end
+
+
+function checktable (t)
+  local asize, hsize, ff = T.querytab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      [mp], next)
+          key,val,next = T.querytab(t, nzext)
+          assert(key)
+        end
+      end
+    end
+  end
+  l.asize = asize; l.hsize = hsize; l.    if l[i] then
+    local _, v = T.querytab(t,t)
+  local asize, hsize, ff = T.querytab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(   maxlist[n] = maxlist[n]+1
+    end
+  end
+  print(strinnelem/t.hsize, nelem/nlist, nt(string.format("[%d] -", i), v)
+  end
+  print'------'
+  for i=0,hsize-1 do
+    print(i, T.querytnd
+

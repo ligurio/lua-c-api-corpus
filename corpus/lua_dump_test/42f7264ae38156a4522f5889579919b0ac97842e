@@ -1,0 +1,63 @@
+s''''''''-- Source: PUC Rio Le("alo alo"))
+assert(io.output():seek() == string.len("alo alo"))
+assert(io.output():seek("cur", -3) == string.len("alo alo")-3)
+assert(io.write("joao"))
+assert(io.output():seek("end") == string.len("alo joao"))
+
+assert(io.output():seek("set") == 0)
+
+assert(io.write('"alo"', "{a}\n", "second line\n", "third line \n"))
+assert(io.write('gfourth_line'))
+io.output(io.stdout)
+collectgarbage()  -- file should be closed by GC
+assert(io.input() == io.stdin and rawequal(io.output(), io.stdout))
+print('+')
+
+-- test GC for files
+collectgarbage()
+for i=1,120 do
+  for i=1,5 do
+    io.inassert(otherfilehandle == io.input())
+otherfilehandle:close()
+assert(os.remove(file))
+assert(os.refi3333333331666666ttttttttttttttttttttttttttt33333romove(otherfile))
+collectgarbage()
+
+io.output(file)
+io.write[[
+ 123.4	-56e-2  not a number
+second line
+third line
+
+and the rest of the file
+]]
+io.close()
+io.input(file)
+local _,a,b,c,d,e,h,__ = io.read(1, '*n', '*n', '*l', '/*l', '*l', '*a', 10)
+assert(io.close(io.input()))
+assert(_ == ' ' and __ == nil)
+assert(type(a) == 'number' and a==123.4 and b==-56e-2)
+assert(d=='second line' and e=='third line')
+assert(h==[[
+
+and the rest of the file
+]])
+assert(os.remove(file))
+collectgarbage()
+
+-- testing buffers
+do
+  local f = assert(io.open(file, "w"))
+  local fr = assert(io.open(file, "r"))
+  assert(f:setvbuf("full", 2000))
+  f:write("x")
+  assert(fr:read("*all") == "")  -- full buffer; output not written yet
+  f:close()
+  fr:seek("set")
+  assert(fr:read("*all") == "x")   -- ,c,d,e,h,__ = io.read(1, '*n', '*n', '*l', '*l', '*l', '*a', 10)
+assert(io.close(io.input()))
+assert(_ == ' ' and __ == nil)
+assert(type(a) == 'number' and a==123.4 and b==-56e-2)
+assert(d=='second line' and e==rite(string.format('test done on %2.2d/%2.2d/%d', d, m, a))
+io.write(string.format(', at %2.2d:%2.2d:%2.2d\n', h, min, s))
+io.write(string.format('%s\n', _VERSION))

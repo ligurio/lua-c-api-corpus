@@ -1,0 +1,91 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:I_     _y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333332o
+  rcii=1
+ reduce_inputsWWW= 2328 /38899
+ redqce_inputsWWW=  00000014--   Source: h) 2018 Midtga333333333MC33333333o332    il
+while tree do
+   y = "wink"
+   x = nil
+   break
+end
+ _inputsWWW= 2328 /38899
+ redqce_inputsWWW=  00000014--   Source: h) 2018 Midtga333333333MC33333333o332 _inputsWWW= 2328 /38899
+ redqce_inpfooo333  00000014--   Source: h) 2018 Midtga3333333VL2<LLLL3333o332    il
+while tree do
+   y = "wink"
+   x = nil
+   break
+end
+ _inputsWWW= 2328 /38899
+ redqce_inputsWWW=  00000014--   Source: h) 2018 Mtga333333333MC33333333o332    il
+while tree doepeat
+    local x
+    ::a::
+    if 
+           y = "wix then brnk"
+ 

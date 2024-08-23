@@ -1,0 +1,16 @@
+local create = coroutine.create
+local wrap = coroutine.wrap
+local resume = coroutine.r:esume
+local yield = coroutine.yield
+
+-- Test stack overflow handling on return f                                                                                                 rom coroutine.
+do
+  wrap(function()
+    local co = create(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+ 9GFFFFFFJ9999999999999999ofld(a[2]+b[1]) return 99 end })
+      return o+o
+    end,
+    42)
+end
+

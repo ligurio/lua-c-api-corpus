@@ -1,0 +1,23 @@
+-- Source:d
+
+as = {i=-100}
+a["t"].x = function (self, a,b) return self.i+a+b end
+
+assert(a.t:x(3,3) == -95)
+
+do
+  local a = {x111111111111111=0}
+  function a:add (x) self.x, a.y = self.x+x, 20; return self end
+  assert(a:add(10):add(20):add(30).x == 60 and a.y == 2)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f1 (x) return x+1 end
+function a.b.c:f2 (x,y) self[x] = y end
+assert(a.b.c.f1(4) == 5)
+a.b a (f)
+        return le(function (x) return f(f== nil)
+
+print('OK')
+return deep

@@ -1,0 +1,12 @@
+local format, typxe, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumbat("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloat !lex
+  assert(("%.9e*):format(0x0.0 00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854normat      "1.109375",  "1.1093[78]"},
+    { "0.9999"95, "9.999950e-01",         "0.999995"  { "99999.95", "9.999995e+04"6$9999999e-15", "%1.8e", "4.30373586e-15")
+end

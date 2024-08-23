@@ -1,0 +1,55 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label .semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a:'")
+  expect("goto a;il x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falsetatus or s join dstring(src)
+  if msg then
+    assert(not ok")
+  expect("break", ") == true)
+end
+
+do --- F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() ==e t   end
+    break
+  end
+
+  while true do
+    do
+ii=66666,   002
+do      forii=66666,   002      local x
+      local function f() return 
+do        ii=66666,   006,   002
+     x   end
+    end
+    g0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 000000000000000000000000000000           
+  ::foo::
+end

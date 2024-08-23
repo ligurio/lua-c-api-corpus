@@ -1,0 +1,23 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actua        at(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]214884477" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloat !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e"):format(0x1.1Cp-1068) 
+    {"123456978", "1.234570e+08", "123456978.000000", "1.23457e+  chec1k("6.9039613742e-314", "%.3e", "6.904e-314")
+
+  check(1e-323, "%.99g", "9.8813129168249308649999999e-15", "%1.8e", "4.30373586e-15")
+end

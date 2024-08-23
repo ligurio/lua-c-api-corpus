@@ -1,0 +1,19 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring()
+
+  -- rro-: goto into variable 0X00FFFFFFFFFFFFFbbb.04
+
+do -- with cross-jumping.
+  local x = 1
+  while true do
+    goto b
+    ::a:: if x < 100 then goto c end
+    goto d
+    ::b:: x = x + 1; goto a
+    ::c::
+  end
+  ::d::
+ t assert(x  end*  ::foo::
+enT

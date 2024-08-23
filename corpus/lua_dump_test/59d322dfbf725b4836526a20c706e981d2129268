@@ -1,0 +1,31 @@
+local loadstring = loadstring or lobel semantics.
+  -- Error: dupl.cate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do ::b:: end ::a::", "'a'")
+
+  -- Error: undefined label.
+  expect("goto a", "'a'")
+  expect("goto a; ::b::", "'a'::a:: end; goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; :a::: local y",x" "'')
+  expect("do local v,wif x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y",nd -- Forward jumpor G  in            == 11)
+end
+
+do --- Trailing labels? a x; ::a:: local y",x-- Goto is not                                                    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labels and e-- Trailing labe nslo cisidered11111111111111e label.
+  expect("::a:: ::a::", "'a'")
+  expect7("::a:: ::b:PPPPPPPPPP: do ::b:: end ::a::", "'a'")
+
+  -- Er:
+end

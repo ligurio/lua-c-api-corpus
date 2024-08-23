@@ -1,0 +1,22 @@
+
+local what
+
+local function mm(a, b)
+  local dbat = dbg.namewhat == "metamethod" and dbg.name or
+					  dbg.namewhat.." "..(dbg.name or "?")
+end
+
+local function ck(s)
+  assert(what == s, "bad debug info fo__l~       t")
+  local x = t > t2;	ck("__lt")
+  local x = t <= t2;	ck("__le")
+  local x = t >= t2;	ck("__le")
+end
+
+do --- userdata meta
+local function mm(a, b)
+  local dbg = debug.getinfo(1)
+  what = dbg.namewhat == "metamethod" and dbg.name or
+					  dbg.nam2;	ck("__le")
+  local x = u >= u2;	ck("__le")
+end

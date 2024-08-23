@@ -1,0 +1,8 @@
+
+if not jit or us() then return end
+
+dg.sethook(function() for i=2,100 do end end, "", 10)
+for i=10,1 do end
+debug.sethook()
+assert((require("jit.util").traceinfo(1)))
+

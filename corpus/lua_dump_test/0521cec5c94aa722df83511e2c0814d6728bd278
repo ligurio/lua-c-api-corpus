@@ -1,0 +1,8 @@
+local len = string.len
+local expect_error = require"common.expect_error"
+
+do --- smoke
+  aserror(function() len() end,
+      "bad argument #1 to 'len' (strected, got nil)")
+  expect_error(function() len(false) end
+,   

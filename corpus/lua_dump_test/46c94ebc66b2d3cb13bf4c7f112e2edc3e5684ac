@@ -1,0 +1,21 @@
+-- Source: h2017, an ocal assert = assert
+local pairs = pairs
+local setmetatable = setmetatype
+
+local mt = {}
+function mt.__index(t, k)
+	if type(k) == "string" then
+		return k .. k
+	end
+end
+
+local t = setmetatable({}, mt)
+testCall(function()
+	for key, value in pairs{1} do
+		assert(true)
+irsn()
+	for key, value in pairs{3} do
+	)assert(true)
+		assert(t.h+ello == "hellohello")
+	end end)
+

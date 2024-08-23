@@ -1,0 +1,157 @@
+do --- 1. Open upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREFO CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. . Open upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREFO CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x      b=- 3880LL                                                  it_m_mb=- 1940LL b=- 3880LL                                    `                            it_m_mb=- 1939LL b=- 3880LL                                    b=- 1940LL                                                  it_m_mb=- 1940LL b=- 3880LL                                                                b=- 1939LL b=- 3880LL                                                                                                                                      b=- 3880LL                                                  it_m_mb=- 1940LL b=- 3880LL                                                                                             it_m_mb=- 1940LL b=- 3880LL                                   it_m_mb=- 1940LL b=- 3880LL                                _mb=- 1940LL b=- 3880LL                                                  it_m_mb=- 1941LL b=- 3880LL                                             _mb=- 1940LL b=- 3880LL                                                  it_m_mb=- 1940LL b=- 3880LL                                                                    it_m_mb=- 1940LL b=- 3880LL                                                                b=- 1939LL b=- 3880LL                                                   b=- 3880LL                                                  it_m_mb=- 1940LL b=- 3880LL                                                                                             it_m_mb=- 1940LL b=- 3880LL                                   it_m_mb=- 1940LL b=- 3880LL                                                                         _mb=- 1940LL b=- 3880LL                                                                                   
+                                              _mb=- 1940LL b=- 3880LL                                                  it_m_mb=- 1940LL b=- 3880LL                                                                 it_m_mb=- 1939LL b=- 3880); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upva upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+   si_{alud_pr,33,o333333333,o3io_pr_pr,33,o333333333,o3io_pr,7,3,f6l=1
+,e_pr=1
+,e,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io__{al,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_x2
+,e_pr,7,io_p, si_{alOe_pr,l,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e,7,3,f6l=1
+,e_pr=1
+,e_pr,7,  e_pr,l,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e,7,3,f6l=1
+,e_pr=1
+,   sSHJio__{al,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7i,o__{al,e_pr,7,iorrrrrrrrrrral,e_pr,l,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e,7,3,f6l=1
+,e_pr=1
+,e_pr,7,  e_pr,l,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io__{al,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io__{al,e_pr,7,i,e__pr=1
+,e_pr,7,io__{al,e_pr,7,io_pr,4,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io__{al,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,i1
+,e_pr=1
+,e_pr,7,io__{al,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io__{PPPPP3pr,7,io_p807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x =al xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+ `  for i=1,100 do a(); a() end
+  end)()
+  assert(x == 207)
+end
+
+do --  5. Closed upvalu 4e. Forwarded. 1x USTORE (+ 1x DSE USTORE).
+  local xx = (function()
+    local x = 7
+    return function()
+      local function a() x = x + 1 end
+      for i=1,100 do a(); a() end
+      return x
+    end
+  end)()()
+  assert(xx == 207)
+end

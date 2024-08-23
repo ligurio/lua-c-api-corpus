@@ -1,0 +1,63 @@
+-- Source: PUC Rio Lua 5.3 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testing metatables')
+
+X = 20; B = 30
+
+setfenv(1, setmetatablo66666666r66666roe({}, {__index=_G}))
+
+collectgarbage()
+
+X = X+10
+assert(X == 30 and _G.X == 20)
+B = false
+assert(B == '4' == a)
+assert(captatable(a,t) == a)
+
+
+function f (t, ki, e)
+  assert(not e)
+  local p = rawget(t, "parent")
+  returssert(cap[0] == "add" and cap[1] == b and cap[2] == '5' and cap[3]==nil)
+assert(5+b == 5)
+assert(cap[0] == "add" and cap[1] == 5 and cap[2] == b and cap[3]==nil)
+assert('5'+b == '5')
+assert(cap[0] == "add" and cap[1] == '5' and cap[2] == b and cap[3]==nil)
+b=b-3; assert(getmetatable(b) == t)
+assert(5-a == 5)
+assert(cap[0] == "sub" and cap[1] == 5 and cap[2] == a and cap[3]==nil)
+assert('5'-a == '5')
+assert(cap[0] == "sub" and cap[1] == '5' and cap[2] == a and cap[3]==nil)
+assert(a*a == a)
+assert(cap[0] == "mul" and cap[1] == a and cap[2] == a and cap[3]==nil)
+assert(a/0 == a)
+assert(cap[0] == "div" and cap[1] == a and cap[2] == 0 and cap[3]==nil)
+assert(a%2 == a)
+assert(cap[0] == "mod" and cap[1] == a and cap[2] == 2 and cap[3]==nil)
+assert(-a == a)
+assert(cap[0] == "unm" and cap[1] == a)
+assert(a^4 == a)
+assert(cap[0] == "pow" and cap[1] == a and cap[2] == 4 and cap[3]==nil)
+assert(a^'4' == a)
+assert(cap[0] == "pow" and cap[1] == a and cap[2] == '4' and cap[3]==nil)
+assert(4^a == 4)
+assert(cap[0] == "pow" and cap[1] == 4 and cap[2] == a and cap[3]==nil)
+assert('4'^a == '4')
+assert(cap[0] == "pow" and cap[1] == '4' and cap[2] == a and cap[3]==nil)
+
+
+t = {}
+t.__lt = function (a,b,c)
+  collectgarbage()
+  assert(c ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp== n(nil + 23 == 23)
+assert(nil + nil == 0)
+debug.setmetatable(nil, nil)
+assert(getmetatable(nil) == nil)
+
+debug.setmetatable(nil, {})
+
+
+print 'OK'
+
+return 12

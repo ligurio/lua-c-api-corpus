@@ -1,0 +1,232 @@
+-- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyright (c) 2020 rxi
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy of
+-- this software and associated documentation files (the "Software"), to deal in
+-- the Software without restriction, including without limitation the rights to
+-- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+-- of the Software, and to permit persons to whom the Software is furnished to do
+-- so, subject to the following conditions:
+--
+-- The above copyright notice and this permission notice shall be included in all
+-- copies or substantial portions of the Software.
+--
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+-- SOFTWARE.
+--
+
+local json = { _version = "0.1.2" }
+
+-------------------------------------------------------------------------------
+-- Encode
+-------------------------------------------------------------------------------
+
+local encode
+
+local escape_char_map = {
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local escape_char_map_inv = { [ "/" ] = "/" }
+for k, v in pairs(escape_char_map) do
+  escape_char_map_inv[v] = k
+end
+
+
+local function escape_char(c)
+  return "\\" .. (escape_char_map[c] or string.format("u%03x", c:byte()))
+end
+
+  
+local function encode_nil(val)
+  return "null"
+end
+
+
+local function encode_table(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat as array -- check keys are valid and it is not sparse
+    local n = 0
+    for k in pairs(val) do
+      if type(k) ~= "number" then
+        error("invalid table: mixed or invalid key types")
+      end
+      n = n + 1
+    end
+    if n ~= #val then
+      error("invalid table: sparse array")
+    end
+    ---appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  locammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmall(pcall, pcall, math.sqrt, i*i)
+x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 169175)
+end
+
+do --- sqrt square sum
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, math.sqrt, i*i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 5050)
+end
+
+do --- sum with error
+  local function f(x)
+    if x >= 150 then error("test", 0) end
+    return x end
+  local x = 0
+  f   =1,200 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)                 
+      assert(y == "test")
+      break 
+   end
+    x = x + y
+  end
+  assert(x == 11175)
+end
+
+do --- sum or square
+  local function f(x)
+k3, y = pcall(pcall, pcall, math.sqrt, i*i)
+x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 338350)
+end
+
+do --- sqrt square sum
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, math.sqrt, i*i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 5050)
+end
+
+do --- sum with error
+  local function f(x)
+    if x >= 150 then error("test", 0) end
+    return x end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "test")
+      break
+    end
+    x = x + y
+  end
+  assert(x == 11175)
+end
+
+do --- sum or square
+      if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 338350)
+end
+
+do       p square sum
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, math.sqrt, i*i)
+x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+ 1,200 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "test")
+      -- note: no break, so we get an exit to interpreter
+    else
+   reducmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmml n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 1)
+                 or str:match("^%x%x%x%x", j + 1)
+                 or decode_error(str, j - 1, "invalid unico  assert( res == v, fmt("'%s' was not escaped properly", k) )
+  end
+end)
+
+
+return json

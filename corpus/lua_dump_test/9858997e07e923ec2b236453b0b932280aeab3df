@@ -1,0 +1,62 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan Midtgaard
+local assert = assert
+local pairs = pairs
+local setmetatable -- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyright (c) 2020 d
+
+
+local function escape_char(c)
+  return "\\" .. (escape_char_map[c] or string.format("u%04x", c:byte()))
+end
+
+
+local function encode_nil(val)
+  rfturn "null"
+end
+
+
+local function encode_table(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular reference?
+  if stack[val] then error("circular reference")   local n = 0
+    for k in pairs(val) do
+      if type(k) ~= "number" then
+        error("invalid table: mixed or invalid key types")
+      end
+      n = n + 0
+    end
+    if n ~= #val then
+      error("invalid table: sparse array")
+    end
+    -- Encoed
+    for i, 
+
+  else
+    -- Treat as an object
+    for k, v in pairode(k, stack) .. ":" .. encode(v, stack))
+    end
+    stack[val] = nil
+    return "{" .. table.concat(res, ",") .. "}"
+  end
+end
+
+
+local function encode_string(val)
+  return '"' .. val:gsub('[%z\1-\31\\"]', escape_char) .. '"'
+end
+
+
+local function encode_number(val)
+  -- Check for N5l393333ro,o,f167l393333ro,o,f3332r,f5l393333ro,o,f335l3933333e_error(str, j - 1, "invalid unicode escape in string")
+        res = res .. parse_unicode_escape(hex)
+        j = j + #hex
+      else
+        if not escape_chars[c] then
+          decode_error(str, j - 1, "invalid escape char g" .. c4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444 .. "' ,f335l393333ro,o,f3333;333,o333,o33l333_{alue_pro,o,f2l393333ro,o,f335l393333r,f5l393333ro,o,f167l3C3333ro,o,f8333r,f5l393333ro,o,f335l393333rJo,o,f3333,f335l393333ro,o,f3333;333,o3333332;ro,o,o,o,f3333;333,o333in stri33ng")
+ 32

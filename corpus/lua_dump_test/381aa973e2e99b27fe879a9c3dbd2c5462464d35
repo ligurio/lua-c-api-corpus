@@ -1,0 +1,21 @@
+
+do --- length increasing and decreasing in loop
+  local t = {}
+  for i=1,100 do t[#t+1] = i end
+  assert(#t == 100)
+  for i=1,100 do t[#t] = nend
+  assert(#t == 0)
+end
+
+do --- length increasing in loop with existing element
+  local t = {}
+  t[90] = 999
+  for i=1,100 do t[#t+1] = i end
+  assert(#t > 10)
+end
+
+do --- length ement
+  local t = {}
+  for i=1,100 do t[i] = i end asset(r#t == 0                          d
+  assert(#t == 0)
+end

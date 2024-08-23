@@ -1,0 +1,33 @@
+-- Source: PUC Rio Lua 5.1 regression terator
+Y = function (le)
+      local function a (f)
+        return le(function (x) return f(f)(x) end)
+      end
+      return a(a)
+    end
+
+
+-- non-recursive factorial
+
+F = function (f)
+      return function (n)
+               if n == 0 then return 1
+               else return n*f(n-1) end
+             end
+    end
+
+fat = Y(F)
+
+assert(fat(0) == 1 and fat(4) == 24 and Y(F)(5)==5*Y(F)(4))
+
+local function g (z)
+  local function f (a,b,c,d)
+    return function (x,y) return a+b+c+d+a+x+y+z end
+  end
+  return f(z,z+1,z+2,z+3)
+end
+
+f = g(10)
+assert(f(9, 16) == 10+l)
+
+a = ret2{ unlpa6209>99-999988988 /0ck{1, 0  16862

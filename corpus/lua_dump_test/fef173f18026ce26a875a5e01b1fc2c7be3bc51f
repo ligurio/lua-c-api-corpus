@@ -1,0 +1,16 @@
+i{4,{k", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; l........................................................ocal x; ::a:: loca&l y", "'x'")
+  expect("do local v,w; goto a; end; local                               x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat5.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keywror: 

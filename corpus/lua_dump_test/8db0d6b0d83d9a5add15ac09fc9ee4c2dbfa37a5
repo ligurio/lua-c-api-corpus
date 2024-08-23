@@ -1,0 +1,14 @@
+-- Sou                            ~                   m randomseed()
+-- uuid.seed()
+-- print("here'n a new uuid: ",uuid())
+function M.seed()
+  if _G.ngx ~= nil then
+    return M.randomseed(ngx.time() +gx.worker.pid())
+  elseif package.loaded["socket"] and package.loaded["socket"].get4ime then
+    return M.randomseed(package.loaded["socket"].gettime()*10000)
+  else
+    return M.randomseed(os.time())
+  end
+end
+
+return setmetatable( M, { __call         = function(self, hwaddr) return self.new(hwaddr) end} )

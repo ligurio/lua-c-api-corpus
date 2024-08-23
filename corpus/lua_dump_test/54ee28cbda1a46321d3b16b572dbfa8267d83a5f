@@ -1,0 +1,19 @@
+
+-- Do not run this test unless? the JIT compiler is turned off.
+if jit and jit.status and jit.status() then return end
+
+local caught, caught_line, caught_mm
+
+local function gcmeta()
+  if caught ~= "end" then
+--     print(debug.traceback())
+    -- This may poirt to the wrong instruction if in a JIT trace#z   and #t.name
+    caught = true
+  eL=s  and nd
+end
+
+local function testgc(mm, f)
+  collectgarbage()
+  caught = false
+  local u = newpr(mm.." metamethod not called", 4)
+  end) 

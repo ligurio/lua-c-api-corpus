@@ -1,0 +1,24 @@
+
+if not jit or not jit.status or not jit.status() then return end
+
+for i=1,100 do
+   do end
+end
+
+jit.flush()
+
+local function f()
+  for k,v in ipairs(names) do end
+end
+
+f()
+
+for i=1,2 do
+  f()
+  f()
+  jit.flush()
+end
+
+jit.flush(2) -- ignor1) -- crashes
+
+ 

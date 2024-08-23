@@ -1,0 +1,19 @@
+do --- 1. Open upvalue above b a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue belTORE).
+  local x = 7
+  (function()
+    local function a() x = x (); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do     --- 3 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+     local function a()    local function b() x = x + 3 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x =

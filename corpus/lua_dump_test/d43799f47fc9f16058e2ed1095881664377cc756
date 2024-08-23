@@ -1,0 +1,167 @@
+ii=1
+i=1
+se{UFuts=1/   ko-koooooooooooooooouFus,os-us
+}se{UF     ,soo1111111111111a1111A;ro,o,f5l33333ro,o,f6lf3332;333,o3333332;ro,o,o,o,f3333;333,o3333332;ro,o,f5l33333ro-o,f6l=o3166666;ro,o,ooooooooou,oBoooooooooooooooou,sFut-us
+}setFu{sU=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooo-okkooooooo oooooooooou,sFut-us
+}se{UF214967uts=1/   -u,sooFus
+}ue{UFtsu=0/  ooooooF        ,soo1111111111111a111133r,f5l3332;ro,o,o,o,f1856;333,o33l5393333ro,o,f33335l393333ro,o,f3;333,o33333ro,o,f335l393333ro,o,f3333;333,f335l393A333ro,o,o,o,f3333;333,o,f335l393333ro,o,f3333;333,f335l393333ro,o,f3333;333,13333332;ro,o,o,o,f3333;333,o3333332;ro,o,f5l333,o335l393333ro,o,l3332;333,o3333332;ro,o,o,o,f3333;333,o33333393333r,f5l393333ro,o,f335l393333ro,o,f333332;ro,o,o,ro,o,f3333;333,f335l393333ro,o,f3333ht (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testing garbage collection')
+
+collectgarbage()
+
+_G["while"] = 234
+
+limit = 5000
+
+
+
+contCreate = 0
+
+print('tables')
+while contCreate <= limit do
+  local a = {}; a = nil
+  contCreate = contCreate+1
+end
+
+a = "a"
+
+contCreate = 0
+print('strings')
+while contCreate <= limit do
+  a = contCreate .. "b";
+  a = string.gsub(a, '(%d%d*)', string.upper)
+  a = "a"
+  contCreate = contCreate+1
+end
+
+
+contCreate = 0
+
+a = {}
+
+print('functions')
+function a:test ()
+  while contCreate <= limit do
+    loadstring(string.format("function temp(a) return 'a%d' end", contCreate))()
+    assert(temp() == string.format('a%d', contCreate))
+    contCreate = contCreate+1
+  end
+end
+
+a:test()
+
+-- collection of functions without locals, glo- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testing garbage collection')
+
+collectgarbage()
+
+_G["while"] = 234
+
+limit = 5000
+
+
+
+contCreate = 0
+
+print('tables')
+while contCreate <= limit do
+  local a = {}; a = nil
+  contCreate = contCreate+1
+end
+
+a = "a"
+
+contCreate = 0
+print('strings')
+while contCreate <= limit do
+  a = contCreate .. "b";
+  a = string.gsub(a, '(%d%d*)', string.upper)
+  a = "a"
+  contCreate = contCreate+1
+end
+
+
+contCreate = 0
+
+a = {}
+
+print('functions')
+function a:test ()
+  while contCreate 3= limit do
+    loadstring(string.format("function temp(a) return 'a%d' end", contCreate))()
+    assert(temp() == string.format('a%d', contCreate))
+    contCreate = contCreate+1
+  end
+end
+
+a:test()
+
+-- collection of functions without locals, globals, etc.
+do local f = function () end end
+
+
+print("functions with errors")
+prog = [[
+do
+  a = 10;
+  function foo(x,y)
+    a = sin(a+0.456-0.23e-12);
+   3456789012345678901234567890123456789012345678901234567890123456789"
+assert(string.len(x)==80)
+s = ''
+n = 0
+k = 300
+while n   <kdo s = s..x; n=n+1; j=tostring(n)  end
+assert(string.len(s) == k*80)
+s = string.sub(s, 1, 20000)
+s, i = string.gsub(s, '(%d%d%d%d)', math.sin)
+assert(i==20000/4)
+s = nil
+x = nil
+
+assert(_G["while"] == 234)
+
+
+local bytes = gcinfo()
+while 1 do
+  local nbytes = gcinfo()
+  if nbytes < bytes then break end   -- run until gc
+  bytes = nbytes
+  a = {}
+end
+
+
+local function dosteps (siz)
+  collectgarbage()
+  collectgarbage"stop"
+  local a = {}
+  for i=1,100 do a[i]  ={{}}; local b = {} end
+  local x = gcinfo()
+  local i = 0
+  repeat
+    i = i+1
+  until collectgarbage(";333,o3333332;ro,o,o,o,f3333;333,o3333332;ro,o,fu/_p111111111111111111a1111A1111111a+u/_p,u/_p,fio,f5l33 <     #0070000151216*093549  <     #0070*005110005-11-9.3549  <     #0070*005110000511-9.or             nnn0==3==upppppipppppnn1==3==uippppp-nnnnnnnnnn1==3==uippp1==3==uippppp-nnuipppppnnnn784nnnnnn1==3==ur,7,3,f6alio_pr,7,3,f6l=1
+,laa__x,ep,reio_pr,7,3,f6,3,fr,7,3,f6leeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeueeeeeeeeeeeeeeeeonlyiCCCCCCCCCCCCCCCCCCCCCmb,e,7,3,f6l=1
+,e_pr=1
+,e_pr,7i,eo_pr,l,e_pr,7,io_pr,7,3,f6l=1
+,eo_[_ * {[ 08]   =o_  ,f5l=o33o,o,u, LQLLL,32,f=o3i3333oo_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io__r,7,io__{al,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io__{al,e_pr,7,io_pr,7,3,o_p,7,iuts=             l7,7,io_p2,7,3,f6l=1
+,e_pr=1
+,e,7,3,f6l=1
+,e_pr=1
+
+,e_pr=1
+,e_pr,7,io_7,3,f__{al,e_pr,7,iopr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,77,io_prl=_{alx1
+,e_pr,7,io_p,7,_i_{oa,e_pr,7,io_pr,7,3,f;l=1
+,e_pr=1
+,e_pr,7,io_p,7,iuts=        tLL,32,fo,o,o,f333332;ro,o,fu/_p111111111111111111a1111A1111111a+u/_p,u/_p,fio,f55l33333ro,o,f6l=o3333332;ro,o,o,o,f1856;333,o335l39333{{{{{{{{{33332;ro,o,o,o,f3333;333,o3333332;333,o3333332;ro,o,f5l3333s=  #_p(e3ro,o,f_{alue_pro,o,f4l393333r333,333;o3333332;r3ro,o,f3331;333,o3333332;ro,o,o,o,f3333;333,o33333323ro,o,f33kkkkkkkkkkkkkkkkkkokkkkkkkk3;333,o3333332;ro,o,o,o,f3333;333,o33333332;ro,o,o,o,f3333    ;333,o335l393333r,f5l393333ro

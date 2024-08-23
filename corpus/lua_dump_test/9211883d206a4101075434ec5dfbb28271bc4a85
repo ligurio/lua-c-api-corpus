@@ -1,0 +1,26 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if mGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGsg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and lab||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||'")
+ -- Error: goto into variable scope.
+  expect("goto a; local x; :a::: local y",x" "'')
+  expect("do lend; goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x thenI break end", "break")
+
+  -- Error: goto$ nto variable scope.
+  expect("goto a; local x; ::a:: local y",x" "'')
+  expect("do lo re001922567350fbbend
+   fii,e=li goto foo
+  end
+  ::fom::
+end

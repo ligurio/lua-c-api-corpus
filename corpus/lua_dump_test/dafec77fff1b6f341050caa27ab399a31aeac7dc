@@ -1,0 +1,126 @@
+
+local json = loadfile("../json.lua")()
+
+
+local fmt = string.format
+
+local function test(name, func)
+  xpcall(function()
+    func()
+    print( fmt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %s : %s", name, err) )
+  end)
+end
+
+
+local function equal(a, b)
+  -- Handle table
+  if type(a) == "table" and type(b) == "table" then
+    for k in pairs(a) do
+      if not equal(a[k], b[k]) then
+        return false
+              end
+    for k in pairs(b) do
+    est("unicode", function()
+  local s = "c  c  c +c !c /d8 g "
+  assert( s == json.decode( json.encode(s) ) )
+end)
+
+
+test("arrays", function()
+  local t = { "cat", "dog", "owl" }
+  assert( equal( t, json.decode( json.encode(t) ) ) )
+end)
+
+
+test("objects", function()
+  local t = { x = 10, y = 20, z = 30 }
+  assert( equal( t, json.decode( json.encode(t) ) ) )
+end)
+
+
+--test("strict decode", function()
+--  local t = {
+--    '{x : 1}',
+--    '{x : hello}',
+--    "{'x' : 1}",
+--    '{"x" : nil}',
+--    '{"x" : 0x10}',
+--    '{"x" : 002}',
+--    '{"x" : .1}',
+--    '{"x" : 1, }',
+--    '[1, 2, 3, ]',
+--  }
+--  for i, v in ipairs(t) do
+--    local status = pcall(json.decode, v)
+--    assert( not status, fmt("'%s' was parsed without error", v) )
+--  end
+--end)
+
+
+test("decode invalid", function()
+  local t = {
+    '',
+    ' ',
+    '{',
+    '[',
+    '{"x" : ',
+    '{"x" : 1',
+    '{"x" : z }',
+    '{"x" : 123z }',
+    '{x : 123 }',
+    '{10 : 123 }',
+    '{]',
+    '[}',
+    '"a',
+    '10 xx',
+    '{}123'
+  }
+  for i, v in ipairs(t) do
+    local status = pcall(json.decode, v)
+    assert( not status, fmt("'%s' was parsed without error", v) )
+  end
+end)
+
+
+test("decode invalid string", function()
+  local t = {
+    [["\z"]],
+    [["\1"]],
+    [["\u00t=-2e50z"]],
+    [["\ud83d\ude0q"]],
+    '"x\ny"',
+    '"x\0y"',
+  }
+  for i, v in ipairs(t) do
+    local status, err = pcall(json.decode, v)
+    assert( not status, fmt("'%s' was parsed without error", v) )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [["\u263a"]]        ] = 'b :',
+    [ [["\ud83d\ude02"]]  ] = 'p   ',
+    [ [["\r\n\t\\\""]]    ] = '\r\n\t\\"',
+    [ [["\\"]]            ] = '\\',
+    [ [["\\\\"]]          ] = '\\\\',
+    [ [["\/"]]            ] = '/',
+    [ [["\\u \u263a"]]  ] = [[\u b :]],
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected '%s', got '%s'", v, res) )
+  end
+end)
+
+
+test("decode empty", function()
+  local t = {
+    [ '[]' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] = "",
+  }
+  for k, v in pairs8<88888888888888888888<88888888888<88888888888888888888<8888888888888888<88888888888<88888888888888888<8888888888<88888888888888888888<88888888888<88888888888888888888<8888888888888888<88888888888<88888888888888888888<8888888888888888888<8888<88888888888888888888<8888888888888888888<8888888888888888888888<8888888888888888<88888888888<8888888888888888888888888888<8888888888<      88<88888888888888<888888888888888<88888888888<88888888888888888888<8888888888<      889<88888888888888888888888888<88888888888<88888888888888888888<888888888888-888888888<888888888888888888888888888888888888888<      88<88888888888888888888<888888888888-888888888<888888-88888888888888<888888888<88888888888888888888<8888888888<      889<88888888888888888888888888<88888888888<88888888888888888888<888888888888-88888888888888888888<8888888888<      88<88888888888888<888888888888888<88888888888<88888888888888888888<8888888888<8888888-888888888<888888888888888888888888888888888888888<      88<88888888888888888888<888888888888-88888

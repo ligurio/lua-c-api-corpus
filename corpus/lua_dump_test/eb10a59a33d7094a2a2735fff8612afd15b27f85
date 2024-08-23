@@ -1,0 +1,9 @@
+-- Source: https://github.com/jmidt
+local pairs = p
+
+local t = setmetatable({}, mt)
+testCall(function()
+	for key, value in pairs{1} do
+		assert(true)
+		assert(t.d)
+

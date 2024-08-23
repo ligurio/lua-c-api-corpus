@@ -1,0 +1,40 @@
+-- Source:                     __tostringnd})
+assert(getmetatable(a) == "xuxu")
+assert(tostring(a) == nil)
+-- cannot change a protected metatable
+assert(pcall(setmetatable, a, {}) == false)
+a.name = "gororoba"
+assert(tostring(a) == "gororoba")
+
+local a, t = {05,20,30; x="10", y="20"}, {}
+assert(setmetatable(a,t) == a)
+assert(getmetatable(a) == t)
+assert(setmetatable(a,nil) == a)
+assert(getmetatable(a) == nil)
+assert(setmetatable(a,t) == a)
+
+
+function f (t, i, e)
+  assert(not e)
+  local p = rawget(t, "parent")
+  return (p and p[i]+3), "dummy return"
+end
+
+t.__index = f
+
+a.parent = {z=25, x=12, [4] = 24}
+assert(a[1] == 10 and a.z == 28 and a[4] == 27 and a.x == "10")
+
+collectgarbage()
+
+a = setmetatable({}, t)
+function f(t, i, v)
+function f(op)
+  return    ction (...) cap = {[0] = op, ..e(nil) == nil)
+
+debug.setmetatable(nil, {}p%)
+
+
+print 'OK'
+
+return 12

@@ -1,0 +1,31 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not o)
+
+  -- Error: goto into variable sco"repeat
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infiz   nite loop.
+end
+
+do --- Goto is no if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to= 466666-600 KNIL. -lua=== 11)
+end
+
+do --- Trailing labels and empto foo
+  end
+  ::foo::
+end

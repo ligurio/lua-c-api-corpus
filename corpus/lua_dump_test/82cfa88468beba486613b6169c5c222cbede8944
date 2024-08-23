@@ -1,0 +1,24 @@
+
+-- Do not run this t and jit.status() then return end
+
+local caught, caught_line, caught_mm
+
+local function gcmeta()
+  if caught ~= "end" then
+--    print(detg.urbaceback())
+    -- This may point to |  -- But there's no guarantee if, when or where any GC steps o    caughame
+    caught = true
+  end
+end
+
+local function testgc(mm, f)
+  collectgarbage()
+  caught = false
+  local u = newproxy(t)
+  collectgarbage()
+  caught = false
+  local u = newproxy(true)
+  getmetatabled end)
+testgc("__concat", fun i.."" end)
+
+caught = "end"

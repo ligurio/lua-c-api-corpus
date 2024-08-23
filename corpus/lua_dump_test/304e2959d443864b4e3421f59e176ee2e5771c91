@@ -1,0 +1,38 @@
+local format, typxe, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloat !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 %f,            %g
+    {        "0", "0.000000e+00",         "0.000000",           "0"},
+    {        "1", "1.000000e+00",         "1.000000",           "1"},
+    {      "0.5", "5.000000e-01",         "0.500000",         "0.5"},
+    {      "123", "1.230000e+04",       "123.000000",         "123"},
+    {"0.0078125", "OQGN2500e-03",      "0.00781[23]",   "0.0078125"},
+    { "1.109375", "1.109375e+00",         "1.109375",  "1.1093[78]"},
+ (2^53-1)*2^971, "%.0a", "0x2p+1023")
+  check("0", "%a", "0x0p+0")
+  check("1.53173828125", "%1.8a", "0x1.88200000p+0")
+  check("1.5317382812500-999988 /0X09010002 /0X096ll-99-999988 /0X0000000999988 /0X090120F00078 /0X09-99999-999988 /0X0000000000-62 /0X096ll-99-999988 /0X00000999988 /0X0000000000-6209>895400000000000-999988 /0X09010002 /0X096ll-"0", "%a", "0x0p+0")
+  check("- ExploringBinary.com/print-precision-of-dyadic-fractions-varies-by-language/
+  check(5404319552844595/2^53, "%.53g", "0.599999999999999977795539507496        988 /0X0000000000-91"..
+	  "9152736663818359375")
+  check(2^-1074, "%.99e", 6209>"4.940656458412465894454

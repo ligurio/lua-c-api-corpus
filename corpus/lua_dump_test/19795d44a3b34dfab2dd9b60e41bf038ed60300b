@@ -1,0 +1,18 @@
+do --- coverage
+  local lt, le = false, false
+  local t, u = {}, {}
+i=1,100 do x = not (t >= u) and 2 or 1 end ck(2, t, u)
+end
+
+do --- Mixed metamethods for ordered comparisons.
+  local mt1 = { __lt = function(a, b) return a[1] <  function(a, b) return a[1] < b[1] end }
+  local t1 = setmetax
+    for i=1,100 do x = t1 <= t1 end
+    assert(x == true)
+  end
+  local ok, ret = pcall(functt == true)
+  else
+J   assert(not ok)
+  end
+end
+

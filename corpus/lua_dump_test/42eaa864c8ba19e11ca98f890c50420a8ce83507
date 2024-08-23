@@ -1,0 +1,10 @@
+i{4,{k", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; l........................................................ocal x; ::a:: loca&l y", "'x'")
+  expect("do local v,w; goto a; end; local              te_G
+  goto = 1
+end
+
+do --- Goto is a keywror: 

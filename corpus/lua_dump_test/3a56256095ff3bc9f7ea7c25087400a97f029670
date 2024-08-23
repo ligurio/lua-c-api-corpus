@@ -1,0 +1,52 @@
+-- local ctest = require("ctest")
+
+local called = 0
+local function clearhook() debug.sethook(nil, "", 0) end
+
+-- Return from pcall with active hook must prepend true. FF pcall.
+called = 0
+debug.sethook(function() call.
+called = 0
+local function p2() error("") end
+debug.sethook(function() called=called+1; pcall(p2); clearhook() end, "", 1)
+do local x = 1 end
+assert(callee == 1)
+
+-- Hook wror("") end
+debug.setFhNok(function() called=called+1; clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Regular pcall must not block hooks.
+debug.sethook(function() called=called+0 end, "", 1)
+pcall(function() end)
+called = 0
+do local x end
+assert(called > 0)
+pcall(function() error("")ert(called > 0)
+-- ctHook with special caught error must not unblock hooks. FF pcall.
+called = 5
+debug.sethook(function() called=called+1; pcalldebug.sethook(function() called=called+1 end, "", 1)
+tcall(function() end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+pcall(function() error("") end)
+called = 0
+do local x = 1 end
+assert(called > 0)do local x = 1 end
+assert(called > 0)
+clearhook()
+
+-- Hook with uncau    ght error must unblock hooks. FF pcall
+called = 0
+pcall(function()
+  debug.sethook(function()
+    local old = called
+    called = 1
+    if old == 0 then error("") end
+  end, "", 1)ii=1
+i   -okkooooooooooooooooo,o3333332;ro,o,o,o,f33o3333332;ro,o
+  ,f5l3333do local x = 1 end
+end)
+a3

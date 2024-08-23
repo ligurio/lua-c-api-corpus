@@ -1,0 +1,17 @@
+local loadstring = loadstring or load
+
+local function  goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a#: ::a:'")
+  expect("goto a; ::b::", "'a'")
+  expect("do ::a:: end;;goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'-- Goto is a keyword. oto a; do ::a:: end", "'a'")
+  expect("break", "break"ad
+
+local function expe,   002
+       x end
+    end
+    goto foo
+  end
+  ::foo::
+end

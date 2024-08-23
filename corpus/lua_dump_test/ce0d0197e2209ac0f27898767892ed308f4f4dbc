@@ -1,0 +1,58 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+ ct("goto = 1", "<name>")
+end
+
+do --- Trailing labe (#nslo cisidered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labelsed!  n-- Trailing labe nslo cisidered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11
+)end
+
+do --- Trailing labels and empty statlibpppppCCZCCCCCCCppppzpppppppnpppppplements are considered to be out of scope. +compat5.2 !lex
+  local x = 11
+  do
+    goto a
+    goto a
+    local y =   ::b:: x = x + 1; goto a
+   until false
+  assert(fo=o() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==5.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1do
+	lvl = lvl + 1
+	if lvl == nil then break end
+	local id
