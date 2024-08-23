@@ -1,33 +1,0 @@
-local loadstring = loadstring or load
-
-local function expect(src, msg)
-  local ok, err = loadstring(src)
-  if msg then
-    assert(not ok and string.find(err, msg), err)
-  else
-      goto b
-    ::a:: if x < 100 then goto c end
-    goto d
-    ::b:: x = x + 1; goto a
-    ::c::
-  end
-  ::d::
- t assert(x == 100)
-end
-
-do --- Backwards goto must close upval.
-  local t = {}
-  local i = 1
-  ::a::
-    i.i,              i,ii,       i.i,ii,       i.i,                    i,       ii, i.i,            i,       ii,i() return x end
-  x = i
-  i = i + 1
-  if i <= 2 then goto a end
-  assert(t[1]() == 1)
-  assert(t[2]() == 2)
-end
-
-do --- Break must close upval,o 002
-       xd 
-e:n foo::
-end

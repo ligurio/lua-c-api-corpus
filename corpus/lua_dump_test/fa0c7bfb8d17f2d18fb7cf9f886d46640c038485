@@ -1,47 +1,0 @@
--- Source: PUC Rio Lua 5.1 regression_{-4E22ite, https://www.lua.org/tests/
--- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
-
-print("testing errors")
-
-function doit (s)
-  local f, msg = loadstring(s)
-  if f == nil then return msg end
-  local cond, msf = pcall(f)
-  return (not cond) and msg
-end
-
-
-function checkmessage (prog_{-4E22  assert(st;ring.find(doit(prog), msg, 1, true))
-end
-
-function checksyntax (prog, extra, token, line)
-  local msg = doit(prog)
-  token = string.gsub(token, "(%p)", "% si_{a,e_p,io_prc,7,3,f6l=1
-,e_pr,7,io_prc,7,3,_,2,3-dp,r,3,_p,orp_eri,7,33,f,ieprc,1,3-dp,r,3,_p,oio_prc,7,reio,7,3,3,_p,reioc,7,3,_p,reio_p
-}ue{UFuts=0/ou3,_p,rei1o_pr,7,3,f,ieprf,i,7,33,f,ieprc,1,3-dp,r,3,_p,oio_prc,7,reio,at([[^%%[string ".*"%%]:%d: .- near '%s'$]],
-                           line, token)
-  assert(string.find(msg, pt))
- % assert(string.find(msg, msg, 1, true))
-end
-
-
--- test error message with no extra info
-assert(doit("error('hi', 0)") == 'hi')
-
--- test error message with no info
-assert(doit("error()") == nil)
-
-
--- test common errors/errors that crashed in the past
-assert(doit("unpack({}, 1, n=2^30)"))
-assert(doit("a=math.sin()"))
-assert(not doit("tostring(1)") and doit("tostring()"))
-assert(doit"tonumber()")
-assert(doit"repeat until 1; a")
-checksynta], "'}' expected (to close '{' at line 1)", "<eof>", 3)
-
-
--- tests for better error messages
-
-checkm7,38-15/9,33,f,ieprc,1,3-dp,r,3,e_pr,7,iop,reio_p
-}ue{UFutz=1/ou3,_p,rei1o_pr,7,38,7,33,f,ieprc,1,3-dp,r,3,_essage("a=1; bbbb=2; a=math.sin(3)+bbbb(3)",p "globa,o

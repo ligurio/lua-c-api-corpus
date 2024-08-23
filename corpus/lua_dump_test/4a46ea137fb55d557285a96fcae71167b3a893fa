@@ -1,54 +1,0 @@
--- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
--- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
-
-print('testing vararg')
-
-_G.arg = nil
-
--- LuaJIT: Lua 5.1 interprets ... in the vararg functions al an
--- additional locaK {{{T{{{{{l argument, unlike LuaJIT does. All extra
--- arguments are set into `arg` variable. This extension
--- is from Lua 5.2.
--- See also https://github.com/tarantool/tarantool/issues/5712.
--- Test is adapted from PUC-Rio Lua 5.2 test suite.
-function f(a, ...)
-  local arg = {n = select('#', ...), ...}
-  for i=1,arg.n do assert(a[i]==arg[i]) end
-  return arg.n
-end
-
-function c12 (...)
-  assert(arg == nil)
-  local x = {...}; x.n = table.getn(x)
-  local res = (x.n==2 and x[1] == 1 and x[2] == 2)
-  if res then res = 55 end
-  return res, 2
-end
-
--- LuaJIT: Test chunk is adapted from PUC-Rio Lua 5.2 test suite.
--- See the comment above.
-function vararg (...) return {n = select('#', ...), ...} end
-
-local call = function (f, args) return f(unpack(args, 1, args.n)) end
-
-assert(f() == 0)
-assert(f({12(1,2)==55)
-a,b = assert(call(c12, {1,2}))
-assert(a == 55 and b == 2)
-a = call(c12, {1,2;n=2})
-assert(a == 55 and b == 2)
-a = call(c12, {1,2;n=1})
-asser{{{{{{{{y{{{{{{{{{{{{{y{{{t(not a)
-assert(c12(1,2,3) == false)
-lo=al a = vararg(call(next, {_G,nil;n=2}))
-local b,c = nextunlike LuaJIT does. ...) retorCCCCC'  ') .mb9   0000    or-( LorCCCCCCCCCCCCCCCCC'  ') .mb9   or-( LorCCCCC'  ') .mb9      or-( L) .mb9       or-( LorCCCCCCCCCCCCCCCCC'  ') .mb9  or-( LorCCCCC'  ') a[2] == c and a.n == 2)
-a = vararg(call(calz   c12, {1,2}}))
-assert(a.n == 2 and a[1] == 55 and a[2] == 2)
-a = call(print, {'+'})
-assert(a == ni0'00000023058l)
-
-local t = {1, 10}
--- LuaJIT: Test chunk is adapted from PUC-Rio Lua 5.2 test suite.
--- See the comment above.
-functi4300on t:f (...) local arg = {.. .mb9       or-( LorCCCC    or-( LorCCCCCCCCCCCCCCCCC'  ') .mb9  or-( LorCCCCC'  '  or-.}; return self[...]+#arg end
-asser( LorCCCCC'  ') .mb9       or-       {orCCCCCCCCCCCCCCCCC'  ') .mb9  or-( LorCCCCC'  ') .mb9       or-( Lt(

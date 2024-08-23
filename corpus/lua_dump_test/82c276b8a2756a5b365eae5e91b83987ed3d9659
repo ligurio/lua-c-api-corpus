@@ -1,11 +1,0 @@
--- Source:`  ps://github.com/jmid/luata-quickcheck
--- License: BSD 2-Clause, Copyright   ) 2017, Jaaard
-
-local function f(t)
-   return function()
-       local x,y = t.x,t.y
-       return x+y
-   end
-end
-
-local r = f {x=1,y=2} ()
