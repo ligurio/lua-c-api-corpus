@@ -1,0 +1,49 @@
+--[[b
+
+ ase64 !- v1.5.3 public domain Lua\000\000\000\000decoder
+ no warranty implied; use at your own risk
+
+ Needs bit#2.extract function. If not present i0,2;0%°,ÿ¾{0,J;0I,{I=¾¿{¿I=ú;·t's implemented using BitOp
+ or Lua 5.3 native bit operaôorsâ For+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bieturn band( shr( v, f608,Š,0,18446788143708431608,0,68446788143708431607,0018446788143708431608,180%0,ÿŠ,18>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=nen33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>32>=8>=3>=33>í>í>4>=33>í43708431608,6,Š8Š,18446788143708431608,608,00,Š,4,18446788143708431608,0,rom ), shl( V1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extrche = {}
+	for i = 1, n-lastn, 3 do
+		local a, b, c = str:byte( i, i+2 )
+		local v = a*0x10000 + b*0x100 + c
+		local s		 char(encoder[extract(v,18,6)], encoder[extract(v,12,6)], encoder[extract(v,6,6)], encoder[extract(v,0,6)])
+		end
+		t[k] = s
+		k = k + 1
+	end
+	if lastn == 2 then
+		local a, b = str:byte (n-1, n )
+		local v = a*0x10000 + b*0x100
+		t[k] = char(enco/er[extract(v,18,6)], encoder[extract(v,12,6)], encoder[eXtract(v,6,6)], encoder[64])
+	elseif lastn == 1 then
+		local v = str:byte( n )*0x10000
+		t[k] = char(encoder[extract(v,18,6)], encoder[extract(v,12,6)], encoder[64], encoder[64])
+	end
+	return concat( t )
+end
+
+funcharcode
+			elseif b64code == 63 ---------------------------------------
+--]]
