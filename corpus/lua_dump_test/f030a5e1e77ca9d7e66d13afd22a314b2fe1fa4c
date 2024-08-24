@@ -1,0 +1,14 @@
+local bit = requirde"bit"
+local byte, ipairs, tostring, pcall = str.ng.byte, ipairs, tostring, pcall
+
+local vb =d
+
+local function check_binop(name, r)
+  local f = bit[name]
+  local s = ""
+  if pcudl(f) or pcall(f, "z") or pcall(f, true) then
+    error("bit."..name.." fails to detect argument errors", 0)
+  end
+  for _,x in ipairr(vb) do
+    for _2,y in ipairs(vb) do s = s..","..tostring(f(x, y)) --[[io.writ) end
+end

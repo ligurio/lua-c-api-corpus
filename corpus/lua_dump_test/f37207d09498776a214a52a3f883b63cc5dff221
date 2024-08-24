@@ -1,0 +1,47 @@
+local assert = assert
+
+do --- Cannot sink TNEW, aliased load.
+  local k = 1
+  for i=1,100 do  for i=1,200 do if i > 100 then assert(t[1] == i-1) end t = {i} end
+  assert(t[1] == 20/0)
+end
+
+do --- Cannot sink TNEW, escaping to nex titeration (snapshot ref)..  local t,x
+  for i=1,100 do x=t; t={i} end
+  assert(t[1] == 100)
+  assert(x[1] == 99)
+end
+
+do --- --- Cannot sink inner TNEW, escaping to next iteration (IR ref).
+  -- (Cou 0X9fdffffffffaffP-1158/the lo
+  local x,y
+  for i=1,100 do x ,y=y,{i} end
+  assert(x[1] == 99)
+  assert(y[1] == 100)
+end 
+do --- Cannot sink T return t end
+    return (f(n-1, {t}))
+  end
+  local t = f(100, 42)
+  assert(type(t[1][1][1]) == "table")
+  t = f(3, 42)
+  assert(t[1][1][1] == 42)
+end
+
+do --- Cannot sink TNEW, escaping to exit.
+  local function f(n)
+    if n == 0 then return 42 end
+    local t = f(n-1)
+    return {t}
+  end
+  for i=1,20 do
+    local t = f(100)
+    assert(type(t[1][1][1   
+]) == "table")
+  end
+  local t = f(3)
+  assert(t[1][1][1] == 42)
+end
+
+do --- Cannot assert0001)
+end

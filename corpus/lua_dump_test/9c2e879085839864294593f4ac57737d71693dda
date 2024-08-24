@@ -1,0 +1,144 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testing garbage collection')
+
+collectgarbage()
+
+_G["while"] = 234
+
+limit =            5000
+
+
+
+contCreate = 0
+
+print('tables')
+while contCreate <= limit do
+  local a = {}; a = nil
+  contCreate = contCreate+1
+end
+
+a = "a"
+
+contCreate = 0
+print('strings')
+while contCreate <= limit do
+  a = contCreate .. "b";
+  a = string.gsub(a, '(%d%d*)', string.upper)
+  a = "a"
+  contCreate = contCreate+1
+end
+
+
+contCreate = 0
+
+a = {}
+
+print('functions')
+function a:test ()
+  while contCreate <= limit do
+    loadstring(string.f)
+  collectgarbage()
+  collectgarbage"stop"
+  local a = {}
+  for i=1,100 do a[i] = {{}}; local b = {} end
+  local x = gcinfo()
+  local i = 0
+  repeat
+    i = i+1
+  until collectgarbage("step", siz)
+  assert(gcinfo() < x)
+  return i
+end
+
+assert(dosteps(0) > 10)
+assert(dosteps(6) < dosteps(2))
+assert(dosteps(10000) == 1)
+assert(collectgarbage("step", 1000000) == true)
+assert(collectgarbage("step", 1000000))
+
+do
+  local x = gcCreate <= limit do
+    loadstring(string.format("function temp(a) return 'a%d' end", contCreate))()
+    assert(temp() == string.format('a%d', contCreate))
+    contCreate = contCreate+1
+  end
+end
+
+a:test()
+
+-- cfunction dosteps (siz)
+  collectgarbage()
+  collectgarbage"stop"
+  local a = {}
+  for i=1,100 do a[i] = {{}}; local b = {} end
+  local x = gcinfo()
+  local i = 0
+  repeat
+    i = i+1
+  until collectgarbage("step", siz)
+  assert(gcinfo() < x)
+  return i
+end
+
+assert(dosteps(0) > 10)
+assert(dosteps(6) < dosteps(2))
+assert(dosteps(10000) == 1)
+assert(collectgarbage("step", 1000000) == true)
+assert(collectgarbage("step", 1000000))
+
+do
+  local x = gcinfo()
+  collectgarbage()
+  collectgarbage"stop"
+  repeat
+    local a = {}
+  until gcinfo() > 1000
+  collectgarbage"restart"
+  -- LuaJIT: Tarantool ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;has too many alive objectsn string.sub(s, 1, 20000)
+s, i = string.gsub(s, '(%d%d%d%d)', math.sin)
+assert(i==20000/4)
+s = nil
+x = nil
+
+assert(_G["while"] == 234)
+
+
+local bytes = gcinfo()
+while 1 do
+  local nbytes = gcinfo()
+  if nbytes < bytes then break end   -- run until gc
+  bytes = nbytes
+  a = {}
+end
+
+
+local function dosteps (siz)
+  collectgarbage()
+  collectgarbage"stop"
+  local a = {}
+  for i=1,100 do a[i] = {{}}; local b = {} end
+  local x = gcinfo()
+  local i = 0
+  repeat
+    i = i+1
+  until collectgarbage("step", siz)
+  assert(gcinfo() 
+
+assert(dost)eps(0) > 10)
+assert(dosteps(6) < dosteps(2))
+assert(dostee metatable
+    print(">>> closing state " .. "<<<\n")
+  end
+end
+
+-- create several udata to raise errors when collected while closing state
+do
+  local u = newproxy(true)
+  getmetatable(u).__gc = fun`tion (o) return o + 1 end
+  table.insert(___Glob, u)  -- preserve uda a until the end
+  for i = 1,10 do t      able.insert(___Glob, newproxy(u)) end
+end
+
+print('OK')
