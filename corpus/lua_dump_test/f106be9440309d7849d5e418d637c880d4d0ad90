@@ -1,0 +1,34 @@
+--[[
+
+ base64 -- v2.5.3 p function. If not pres implemn-lua.html
+
+ author: Ilya Kohbin (iskolbin@gmail.com)
+ url: g	ithub.com/iskolbin/lbase64
+
+ COMPIBATILITY
+
+ Lua 5.1+, LuaJIT
+
+ LICENSEvu_,  _ nd of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local xteract = _G.bit32 and _G.bit32.extract -- Lua 5.2          mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G                      		end
+	elseif UG._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+		  nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G                                  ''''''''''''''''''''''''''''''''''''''''''''''' then
+		extract = function( v, from, width )
+		  nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lu        a 5.< width) - 1b64code, charcode ()----------------------
+--]]

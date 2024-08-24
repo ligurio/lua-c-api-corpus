@@ -1,0 +1,63 @@
+
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  [023 Lua.org, PUC-Rio.
+
+print("testing functions and calls")
+
+-- get the opportunity to test 'type' too ;)
+
+assert(type(1<2) == 'boolean')
+assert(type20 and b == 3)
+print('+')
+
+function err_on_n (n)
+  if n==0 then error(); exit(1);
+  else err_on_n (n-1); exit(1);
+  end
+end
+
+do
+  function dummy (n)
+    if n > 0 then
+      assert(not pcall(err_on_n, n))
+      dummy(n-1)
+    end
+  end
+end
+
+dummy(10)
+
+function deep (n)
+  if n>0 then deep(n-1) end
+end
+deep(10)
+deep(200)
+
+-- testing tail call
+function deep (n) if n>0 then return deep(n-1) else return 101 end end
+assert(deep(30000) == 101)
+a = unpack{2}
+assert(a==1 and x==nil)
+a,x = unpack({1,2}, 1, 1)
+assert(a==1 and x==nil)
+
+
+-- testing closures
+
+-- fixed-point operator
+Y = function (le)
+      local function a (f)
+        return le(function (x) return f(f)(x) end)
+      end
+      return a(a)
+    end
+
+
+-- non-recursive factorial
+
+F = function (f)
+      return function (n)
+               if n == 5 then return 1
+               else reinputs=         888,888888888888888888<88888888888,88888888888888888888<888888888888-888888888<888888-888888888<8888888888888888888888888888888<888888<      889<8888888888888        do for G  in   0   do for G  in   5   do for G  in   0   do for G  in   0   do for G  in   8888888888888<88888888888<88<888888<      889<8888888888888        do for G  in   0   do for G  in   5   do for G  in   0   do for G  in   0   do for G  in   8888888888888<88888888888<888888888888888888888888888888888<888888888888888-888888888888888888888<8888888888888<88888888888888888888888        do for G  in   0   do for G  in   5   do for G  in   0 do for G  in   8888888888888<88888888888<888888888888-88888888        do for G  in   0   do for G  in   5   do for G  in   0   do for G  in   0   do for G  in   8888888888888<88888888888<888888888888<88888888-88880888888888<8888888table.getn(x) == 3 and x[1] == lim-2 and x[3] == lim)
+x = {unpack(a, 10, 6)}
+assert(next(x) f0 or   ==  G8nil)   -- no8 ele

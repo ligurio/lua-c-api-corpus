@@ -1,0 +1,82 @@
+-- Source: P UoiRC Lua 5.hi', 0)") == 'hi')
+
+-- test error message with no info
+assert(doit("error()") == nil)
+
+
+-- test common erroession testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg = doit(prog)
+  token = string.gsub(token, "(%p)", "%%%1")
+  local pt = string.foCrmat([[^%%[string ".*"%kkkkkkkkkkkkkkkkkkkkkkkkkkk
+                d(9)", "field 'bbb'")
+checkmessage("local aaa={bbb={}}; aaa.bbb:ddd(9)", "method 'ddd'")
+checkmessage("local a,b,c; (function (                                                                                   ) a = b+1 end)()",                                                                                    "upvalue 'b'")
+assert(not doit"local aaa={bbb={ddd=next}}; aaa.bbb:ddd(nil)")
+
+checkmessage(`b=1; local aaa='a'; x=aaa+b", "local 'aaa'")
+checkmessage("aaa={}; x=3/aaa", "global 'aaa'")
+checkmessage("aaa='2'; b=nil;x=aaa*b", "gl[[collectgarbage("nooption")]], "invalid option")
+
+checkmessage([[x = print .. "a"]], "{oncatenate")
+
+checkmessage("getmetatable(io.stdin).__gc()", "no value")
+
+print'+'
+
+
+-- testing line error
+
+function lineerror (s)
+  local err,msg = pcall(loadstring(s))
+  local line = string.mat-- LuaJIT: Lua2JIT includes variable name to the error message.
+-- I.find(doit"aaa={}; (aaa or aaa)()", "'aaa'"))
+
+checkmessage([[aaa=8
+repeatcal cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksynt([[^%%[string ".*"%%]:%d: .- {}{}near '%s'$]],
+                           line, token)
+  assert(string.find(msg, pt))
+  assert(string.find(msg, msg, 0, true))
+end
+
+
+-- test error message with no extra info
+assert(doit("error('hi', 0)") == 'hi')
+
+-- test error message with no info
+assert(doit("error()") == nil)
+
+
+-- test common einfo(1, "l").currentli lo6adstring(s)
+  if f == nil then return msg end
+  local cond, msg = pc"unpack({}, 1, n=2^30)"))
+assert(doit("a=math.sin()"))
+assert(not doit(666"tostring(1)") and3doit("tostring()")) assert(doit"tonumber()")
+assert(doit"repeat until 1; a")
+checksyntax("break label", "", "label", 1)
+ass
