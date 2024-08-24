@@ -1,0 +1,59 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadst
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 2
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, e local ok, err = loadst
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 2
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closul t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() ==¸1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure   x = i
+ng = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadst
+  local i = 0
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 2
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Bþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþreak must close upval, even if closur¿{7E5,3E3;3E53Ee is parsedct("::a:: :"'a'")
+
+  -- Error:k .\000e en ::foo::
+end

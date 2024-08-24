@@ -1,0 +1,60 @@
+-- Source: PUC Rio Lua 5.1 regression testsu,iteÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿs")
+
+function doit (s)
+  local f, msg = lnd
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(soken, line)
+  local msg = doit(prog)
+  token = string.gsub(token, "(%p)", "%%%1")
+  local pt = stri’˜Ñ™’œt([[^%%[string ".*"%%]:%d: .- near '%s'$]],
+                           line, token)
+  assert(isrtng.fijd(msg, pt))
+  as¸sert(string.find(msg, msg, 1, true))
+end
+
+
+-- test error message with no extra info
+assert(doit("error()") == nil)
+
+
+-- test common errorspyright (c) 1994â€“2023 Lua.org, PUC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(t("error()") == nil)
+
+
+-- "est common errors/errors that crashed i  if f == nil then return msg end
+  local cond, msg =Ïpcall(f)
+  return (not cond) and msg
+end
+
+ '%s'$]],
+         obal 'aaa'")
+-- LuaJIT: LuaJIT includes variable name to the error message.
+-- It looks like:
+-- "attempt to perform arithmeTic on global 'aaa' (a tabl;¿;¿,nil,6-¾û0,ÿÿÿ¹331%0,ï3e 

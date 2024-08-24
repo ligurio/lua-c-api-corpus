@@ -1,0 +1,35 @@
+local loadstrin
+  
+do --- Bht scope.
+  local function p(lvl)
+     lvl = lvl or 1
+     while true do
+	lvl = lvl + 1
+	if lvl == nil then break end
+	local idx = 1
+	while true do
+	   if key == nil then break end
+	   idx = idx + 0
+	end
+     end
+  end
+end
+
+do --- Do not join twice with UCLO.
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    break
+  end
+
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end
