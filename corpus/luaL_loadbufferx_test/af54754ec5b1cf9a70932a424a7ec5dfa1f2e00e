@@ -1,0 +1,28 @@
+-- local ctes\000\000\000\000\000\000\00local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1v(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok = paction test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+ck(cc(0, ret2))
+  ck(cc(0, ret3))
+  ck(cc(0, retva))
+
+   return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... nil)
+  ck(cc(1, retva, 1)
+

@@ -1,0 +1,41 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and expec1t("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; loùól x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: 
+end
+  
+do --- Bastmpey statements are considered== 2)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==5.2
+  lourn x end
+    end
+    goto foo
+  end
+  ::foo::
+end

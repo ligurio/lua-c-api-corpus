@@ -1,0 +1,32 @@
+local loadstring = loadstring or load;
+
+local function expect(src, msg)
+  local ok, err = loadstrind
+
+do --- Brekau mst close upval, e\377\377\377\377\377\377\377\" break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falFILE*se
+  assert(foo() == true)
+end
+
+d:
+end
