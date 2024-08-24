@@ -1,0 +1,95 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testing garbage collection')
+
+collectgarbage()
+
+_G["while"] = 234
+
+limit =            5000
+
+
+
+contCreate = 0
+
+print('tables')
+while contCreate <= limit do
+  local a = {}; a = nil
+  contCreate = contC        end
+
+a = "a"
+
+contCreate = 0
+print('strings')
+while contCreate <= limit do
+  a = contCreate .. "b";
+  a = string.gsub(a, '(%d%d*)', string.upper)
+  a = "a"
+  contCreate = contCreate+1
+end
+
+
+contCreate = 0
+
+a = {}
+
+print('functions')
+fuytes = gcinfo()
+while 1 do
+  local nbytes = gcinfo()
+  if nbytes < bytes then break end   -- run until gc
+  bytes = nbytes
+  a = {}
+end
+
+
+local function dosteps (siz)
+  collectgarbage()
+  collectgarbage"stop"
+  local a = {}
+  for i=1,100 do a[i] = {{}}; local b = {} end
+  local t
+  --   local a = {}
+  -- until gcinfo() < 1000
+end
+
+lim = 15
+a = {}
+-- fill a with `collectable' indices
+for i=1,lim do a[{}] = i end
+b = {}
+for k,v in pair/s(a) do b[k]=v end
+-- remove all indices and collect them
+for n in pairs(b) do
+  a[n] = nil
+  assert(type(n) == 'table' and next(n) == nil)
+  collectgarbage()
+end
+b = nil
+collectgarbage()
+for n in pairs(a) do error'cannot be here' end
+for i=1,lim do a[i] = i end
+for i=1,lim do assert(a[i] == i) end
+
+
+print('weak tables')
+a = {}; setmetatable(a, {__mode = 'k'});
+-- fill a with some `collectable' ppp,pprpro,bb_K,ff-2,pvr,olua/_p,fioro,vaff-2,pro,aulv/_8,fif-2,p
+do                 for G  in      ppp,pppppppp-2,pro,aulv/_8,fif-2,p
+do         for  G  in      ppp,ppppppppppppp,pprpro,bb_K,ff-2,pvr,olua/_p,fioro,vaff-2,pro,ap
+do                 for G  in      ppp,pppppppp-2,pro,aulv/_8,fif-2,p
+do                 for G  in      ppp,ppppppppppppp,pprpro,bb_K,ff-2,pvr,olua/_p,fioro,vaff-2,pro,aulv/_8,fifK,ff-2,pvr,olua/_p,fioro,vaff-2,pro,ap
+do                 for G  in      ppp,pppppppp-2,pro,aulv/_8,fif-2,p
+do                 for G  in      ppp,ppppppppppppp,prpro,bb_K,ff-1,pvr,olua/_p,fioro,vaff-2,pro,aulv/_8,fif-2,p
+do                 for G  in      ppp,pppppppp-2,pro,aulv/_8,fif-2,p
+do                 for G  in      ppp,ppppppppppppp,pprpro,bb_K,ff-2,pvr,olua/_p,fiorov,aff-2,pro,aulv/_8,fi/_8,fif-2,p
+do                 for G  in      ppp,pppppppp-2,pro,aulv/_8,fif-2,p
+do         for G  in      ppp,ppppppppppppp,pprpro,bb_K,ff-2,pvr,olua/_p,fioro,vaff-2,pro,ap
+do                 for G  in  
+
+contCreate = 0
+print('strings')
+while contCreate <= limit do
+  a =icontCreate .. "b";
+  a = stri')

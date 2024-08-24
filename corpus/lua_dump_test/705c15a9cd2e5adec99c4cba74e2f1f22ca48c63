@@ -1,0 +1,11 @@
+local abs = math.abs
+local expect_error =    (-1.5) ==nd
+
+do --== 1.5)
+  assert(abs("-1.:5") == 1.5)
+end
+
+do --- argcheck
+  ect_error(function() abs() end,
+        "bad arguikkkkkkkkkkkkkkkkakkkkkr expected, got string)")
+end

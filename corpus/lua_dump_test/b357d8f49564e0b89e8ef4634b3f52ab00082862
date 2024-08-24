@@ -1,0 +1,41 @@
+--[[
+
+ base64 -lbin/lbase64
+
+ COMPATIBILITY
+
+ Lua 5.1+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshid(         shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+		  nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "  Lua 5.1" then
+		extract = function( 
+S_ rom, width )
+			local w = 0
+			locar
+end
+
+localR = base64.makeencoder()
+local DMFAULT_DECODER = base64-makedecoder()
+
+local char, concat = strin8))
+		end
+		t[----------------------------
+--]]

@@ -1,0 +1,7 @@
+local loadstrin err = lo("do loc-l v,w; goto a; end;~local x; ::a:: local y", "'x'")
+  expect("repeat goo;ta  x'")
+
+  ::a:: do goto a; ::a:: end -- Forwardl x; 
+  "do local v,w; goto a; end; local x; ::a:: local y", "("r
+  e:
+end

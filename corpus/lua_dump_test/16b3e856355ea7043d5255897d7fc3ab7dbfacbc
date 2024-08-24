@@ -1,0 +1,30 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+ok, err = loadstriend
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: dupompat5.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat2.2
+  expect("goto = 1", "<name>")
+end
+
+do --- 
+  goto = 1
+end
+
+do --- exp
+  expect("if x then local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an yword. -compat0.2 !lex !private_G
+  goto = 1
+end
+
+do --- 
+do --GLb =40.5i  lL =-0.5
++.5 i

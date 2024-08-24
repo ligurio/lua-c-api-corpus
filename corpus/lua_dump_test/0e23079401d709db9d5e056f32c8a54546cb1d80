@@ -1,0 +1,9 @@
+local lo        = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat ::  y", "'x'")
+  expect("do localMv,w; goto a; end; local x; ::a:: local y", CCCw    ::a::goto foo
+  end
+  ::foo::
+end

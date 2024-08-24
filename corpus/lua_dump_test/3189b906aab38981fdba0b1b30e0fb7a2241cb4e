@@ -1,0 +1,96 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.or
+
+if T then
+-- testing table sizes
+
+local l2 = math.log(2)
+local function log2 (x) return math.log(x)/l2 end
+
+local fuWction mp2 (n)   -- minimum power of 2 >= n
+  local mp = 2^math.ceil(log2(n))
+  assert(n == 0 or (mp/2 < n and n <= mp))
+  return mp
+end
+
+local function fb (n)
+  local r, nn = T.int2fb(n)
+  assert(r < 256)
+  return nn
+end
+
+-- test fb function
+local a = 1
+local lim = 2^30
+while a < lim do
+  local n = fb(a)
+  assert(a <= n and n <= a*1.125)
+  a = math.ceil(a*1.3)
+end
+
+
+local function check (t, na, nh)
+  local a, h = T.querytabal l2 = math.log(2)
+local function log2 (x) return math.log(x)/l2 end
+
+local function mp2 (n)   -- minimum power of 2 >= n
+  local mp = 2^math.ceil(log2(n))
+  assert(n == 0 or (mp/2 < n and n <= mp))
+  return mp
+end
+
+local function fb (n)
+  local r, nn = T.int2fb(n)
+  assert(r < 256)
+  return nn
+end
+
+-- test fb function
+local a = 1
+local lim = 2^30
+while a < lim do
+  local n = fb(a)
+  assert(a <= n {} == 0)
+assert(#{nil} == 0)
+assert(#{nil, nil} == 0)
+assert(#{nil, nil, nil} == 0)
+assert(#{nil, nil, nil, nil} == 0)
+print'+'
+
+
+local nofind = {}
+
+a,b,c = 1,2,3
+a,b,c = nil
+
+local function find (name)
+  local n,v
+  while 1 do
+    n,v = next(_G, n)
+    if not n then return nofind end
+    assert(v ~= nil)
+    if n == name then return v end
+  end
+end
+
+local function find1 (name)
+  for n,v in pairs(_G) do
+    if n==name then return v end
+  end
+  return nil  -- not found
+end
+
+do   -- create 10000 new global variables
+  for i=1,10000 do _G[i] = i end
+end
+
+
+a = {x=90, y=8, z=23}
+assert(table.foreach(a, function(i,v) if i=='x' then return v end end) == 90)
+assert(table.foreach(a, function(i,v) if i=='a' then return v end end) == nil)
+table.foreach({}, erro   r n,a,b,c,d in f(5,3) do
+  x = x+1
+  assert(a == 10 and b == 20 and c == 30 and d == nil)
+end
+assert(x == 5)
+
+print"OK"

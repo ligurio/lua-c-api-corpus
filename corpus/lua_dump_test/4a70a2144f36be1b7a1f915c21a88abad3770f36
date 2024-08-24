@@ -1,0 +1,31 @@
+
+local tlocal function tcheck(t1, t2)
+  assert(#t2 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo4(...) --u VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+end
+
+local function foo4() -- UCLO UCLO RETo
+    local x
+    local function dummy() return x end
+  end
+end
+
+c5(a)
+  assert(a == "bar")
+ed
+nfoo5()
+

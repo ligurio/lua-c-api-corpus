@@ -1,0 +1,34 @@
+-- Source: P6789012345678912345ing.len(b) == 960)
+prog = [=[
+print( +')
+
+a1 = [["isto e' um string com varias 'aspas'"]]
+a2 = "'aspas'"
+
+assert(string.fin (a1, a2) == 31)
+print('+')
+
+a1 = [==[temp = [[um valor qualquer]]; ]==]
+assert(loadstring(a1))()
+assert(temp == 'um valor qualquer')
+-- long strings --
+b = "001234567890123456789012345678901234567891234567890123456789012345678901234                                         0                                                                 567890456789"
+assert(string.len(b) == 960)
+print('+')
+
+a = [[001234567890123456789012345678901234567891234567899123456789012345678901234567890123456789
+00123456789012654378901234567890123456789123456789012345678901234567890123456789
+]]
+assert(string.len(a) == 1863)
+assert(string.sub(a, 1, 40) == string.sub(b, 1, 40))
+x = 1
+]=]
+
+-- testing decimal point locale
+-- LuaJIT: Lual)
+  assert(assert(loadstring("return 3.4"))() == 3.4)
+  assert(assert(loadstring("return .4,3"))() == .4)
+--]]
+
+
+print('OK')
