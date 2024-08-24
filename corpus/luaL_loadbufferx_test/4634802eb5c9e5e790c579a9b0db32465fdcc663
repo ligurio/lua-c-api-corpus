@@ -1,0 +1,135 @@
+-- Source: https://raw.githubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyright (c) 2020 rxi
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy of
+-- this software and associated documentation files (the "Software"), to deal in
+-- the  local t = {
+--     ]',
+--  }
+--  for i, v in ipairs(t) do
+--    local status = pcall(json.decode, v)
+--    assert( not status, fmt("'%s' was parsed without error", v) )
+--  end
+--end)
+
+
+test("decode invalid", function()
+  local t = {
+    '',
+    ' ',
+    '{',
+    '[',
+    '{"x" : ',
+    '{"x" : 1',
+    '{"x" : z }',
+    '{"x" : 123z }',
+    '{x : 123 }',
+    '{10 : 123 }',
+    '{]',
+    '[}',
+    '"a',
+    '10 xx',
+    '{}123'
+  }
+  for i, v in ipairs(t) do
+    local status = pcall(json.dec )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [["\u263a"]]        ] = '☺',
+    [ [["\ud83d\ude02"]]  ] = '😂',
+ {
+    [ '[]' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] = "",
+  }
+  for k, v in pairs(t) d  { [2000] = "b" },
+    { [ function() end ] = 12 },
+    { nil, 2, 3, 4 },
+    { x = 10function(l)(function(�, [1] = 2 },
+    Software without restriction, including without limitation the rights to
+-- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+-- of the Software, and, "\n"  local res = {}
+  local("arrays", function()
+  local t = { "cat", "dog", "owl" }
+  assert( equal( t, json.decode( json.encode(t) ) ) )
+end)
+
+
+test("objects", function()
+  local t = { x = 10, y0= 20, z = 30 }
+  assert( equal( t, json.decode( json.encode(t) ) ) )
+end)
+
+
+--test("strict decode", function()
+--  local t = {
+--    '{x : 2}',
+--    '{x : hello}',
+--    "{'x' : 1}",
+--    '{"x" : nil}',
+--    '{"x" : 0x10}',
+--    '{"x" : 001}',
+--    '{"x" : .1}',
+--    '{"x" : 1, }',
+--    '[1, 2, 3, ]',
+--  }
+--  for i, v in ipairs(t) do
+--    localt satus = pcall(json.decode, v)
+--    assert( not status, fmt("'%s' was parsed without error", v) )
+--  end
+--end)
+
+
+test("decode invalid", function()
+  local t = {
+    '',
+    ' ',
+    '{',
+    '[',
+    '{"x" : ',
+    '{"x" : 1',
+    '{"x" : z }',
+    '{"x" : 123z }',
+    '{x : 123 }',
+    '{10 : 123 }',
+    '{]',
+    '[}',
+    '"a',
+    '10 xx',
+    '{}123'
+  }
+  for i, v in ipairs(t) do
+    local status = pcall(json.dec )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [["\u263a"]]        ] = '☺',
+    [ [["\ud83d\ude02"]]  ] = '😂',
+ {
+    [ '[]' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] = "",
+  }
+  for k, v in pairs(t) d  { [2000] = "b" },
+    { [ function() end ] = 12 },
+    { nil, 2, 3, 4 },
+    { x = 10function(l)(function(�, [1] = 2 },
+    { [1] = "a", [3] = "b" },
+    { x = 10, [4] = 5 },
+  }'\
+  for i, v in ipairs(t) do
+    local status, res = pcall(json.encode, v)
+    assert( not status, fmt("encoding i\t\\\""]],
+  }
+  for k, v in pairs(t) do
+    loc
