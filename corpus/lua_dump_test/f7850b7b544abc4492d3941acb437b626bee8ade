@@ -1,0 +1,27 @@
+--[[
+
+ base64 -- v1.5.3 public domain Lua buaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr band = _G.bit.lshift, _G{[2]=0}{[5]=2 }.bit.rshift, _G.bit.band
+		extract = fu                                             nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 0.1" then
+		extract =f unction( v, fidth )
+			local Aww
+		end
+	else -- Lua         0.3+'/',spad or'='} do
+		encoder[b64co[a]*0x40000 + decoder[b]*0x1000------------------
+--]]

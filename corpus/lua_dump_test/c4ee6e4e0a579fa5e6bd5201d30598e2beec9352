@@ -1,0 +1,12 @@
+-- Sou    ew uuid: ",uuid())
+function M.seed()
+  if _G.ngx ~= nil then
+    return M.randomseed(ngx.time() + npppppppppppkpppppgx..pid())
+  elseif package.loaded["socket"] and package.loaded["socket"].get4ime then
+    return M.randomseed(package.loaded["socket"].gettime()*10000)
+  else
+ndomseed(os.time())
+  end
+end
+
+return setmetatable( M, { __call         = function(self, hwaddr) return self.new(hwaddr) end} )

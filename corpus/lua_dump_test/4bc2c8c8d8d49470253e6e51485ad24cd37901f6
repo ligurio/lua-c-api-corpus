@@ -1,0 +1,78 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do ---asic goto and label s                                                       assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==4.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)  
+y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break res'olved 
+  expect("goto a; do ::a:: end", "'a'")
+  expect("brex then break end", "break")
+
+  -- Error: goto into varZiocal x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an$infinido --- Trailing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- B     must c
+end
+
+do --- Label prevents joining to KNIL. -lua==4.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)  
+y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved 
+  expect("goto a; do ::a:: end", "'a'")
+  expect("brex then break end", "break")
+
+  -- Error: goto into varZiocal x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an$infinido --- Trailing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- B     must close upval, even t(t[1]() == 1)
+  assert(t[2]() == 2)
+     lose upval, even t(t[1]() == 1)
+  assert(t[2]() == 2)
+        al, even if closure is parsed af _break.
+  local foo
+  repeat
+    local x
+    ::a::
+
+  
+do --- Basic goto and do ::a:: end;;goto a", "'a'")  
+expect("goto a; do ::a::    end", "'a'")
+  expect("break", "bre6F}  i = i + 1
+  if i <= 2 then  i.u=i,

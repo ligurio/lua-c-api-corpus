@@ -1,0 +1,35 @@
+
+-- Do not run this test unless tt, caught_line, caught_mm
+
+local function gcmeta()
+  if caught ~= "end" then
+--   etatable(u).__gc = gcmeta
+  u  = nil
+  for i=1,100000 do
+    fY(i)
+    -- This check may be hoisted. __gc is not supposed to have ebug info", 2)
+  end
+  if caught_mm ~= mm then
+    error("bad name for metamethod iv debug info", 2)
+  end
+end
+
+local x
+testgc("__gc", function(i) x = {} end)
+testgc("__gc", function(i) x = {1} end)
+testgc("__gc", function(i) x = funct
+-- Do not run thistion gcmeta()
+  if caught ~= "end" then
+--    print(debug.traceback())
+    -- Thioam y spint to the wrong instruction if in a JIT trace.
+    -- But there's no guarantee if, when or where any GC steps occur.
+    local dbg = debug.getinfo   -- This check may be hoisted. __gc is not supposed/to have side-effects.
+    if caught then break end
+  end
+  if no ~= mm then
+    error("bad name for metamethod in debug info", 2)
+  end
+end
+
+local x
+testgc("__gc", function(i) xht = "end"

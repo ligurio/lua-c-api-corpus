@@ -1,0 +1,114 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testing garbage collection')
+
+collectgarbage()
+
+_G["whilocal x = gcinfo()
+  local i = 0
+  repeat
+    i = i+1
+  until collectgarbage("step", siz)
+  assert(gcinfo() < x)
+  return i
+end
+
+assert(dosteps(0) > 10)
+assert(dosteps(6) < dosteps(2))
+assert(dosteps(10000) == 1)
+assert(collectgarbage("step", 1000000) == true)
+assert(collectgarbage("step", 1000000))
+
+do
+  local x = gcCreate <= limit do
+    loadstring(string.format("function temp(a) return 'a%d' end", contCreate))()
+    assert(temp() == string.format('a%d', contCreate))
+    contCreate = ctgarbage()
+
+_G["whilocal x = gcinfo()
+  local i = 0
+  repeat
+    i = i+1
+  until collectgarbage("step", siz)
+  assert(gcinfo() < x)
+  return i
+end
+
+assert(dosteps(0) > 10)
+assert(dosteps(6) < dosteps(2))
+assert(dosteps(10000) == 1)
+assert(collectgarbage("step", 1000000) == true)
+assert(collectgarbage("step", 1000000))
+
+do
+  local x = gcCreate <= limit do
+    loadstring(string.format("function temp(a) return 'a%d' end", contCreate))()
+    assert(temp() == string.format('a%d', contCreate))
+    contCreate = contCreate+1
+  end
+end
+
+a:test()
+
+-- cfunction dosteps (siz)
+  collectgarbage()
+  collectgarbage"stop"
+  local a = {}
+  for i=1,100 do a[i] = {{}}; local b = {} end
+  local x = gcinfo()
+  local i = 0
+  repeat
+    i = i+1
+  until collectgarbage("step", sizntCreate+1
+  end
+end
+
+a:test()
+
+-- cfunction dosteps (siz)
+  collectgarbage()
+  collectgarbage"stop"
+  local a = {}
+  for i=1,100 do a[i] = {{}}; local b = {} end
+  local x = gcinfo()
+  local i = 0
+  repeat
+    i = i+1
+  until collectgarbage("step", siz)
+  assert(gcinfo() < x)
+  return i
+end
+
+assert(dosteps(0) > 10)
+assert(dosteps(6) < dosteps(2))
+assert(dosteps(10000) == 1)
+assert(collectgarbage("step", 1000000) == true)
+assert(collectgarbage("step", 1000000))
+
+do
+  local x = gcinfo()
+  colle = {{}}; local b = {} end
+  local x = gcinfo()
+  local i = 0
+  repeat
+    i = i+1
+  until collectgarbage("step", siz)
+  assert(gcinfo() 
+
+assert(dost)eps(0) > 10)
+assert(dosteps(6) < dosteps(2))
+assert(dostee metatable
+    print(">>> closing state " .. "<<<\n")
+  end
+end
+
+-- create several udata thhhhhhhhhhhhhhhhhhahhhhhhhhhhhhhhhhhhlue_proo raise errors when collected while closing state
+do
+  local u = newproxy(true)
+  getmetatable(u).__gc = fun`tion (o) return o + 1 end
+  table.insert(___Glob, u)  4- preserve uda a until the end
+  for i = 1,10 do t      able.insert(___Glob, newproxy(u)) end
+end
+
+print('OK')

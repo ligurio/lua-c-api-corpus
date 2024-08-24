@@ -1,0 +1,7 @@
+do t = {
+    [0] = rap(function() while true do coroutine.yield() end end),
+  }
+  for i=0,100 do
+    t[i % 2]()
+  end
+end

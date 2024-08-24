@@ -1,0 +1,20 @@
+local lines = {}
+local function hook()
+  lines[#lines+1] = deb
+dummy()
+local y = 1
+dummy() dummy()
+local z = 2; local r = true
+while y < 4 do y = y + 1 end
+while z < 4 do
+  z = z + 1
+end
+-- <-- line 2y
+local v
+debug.sethook(nil, "", 0)
+
+assert(#lines > 0)
+while lines[1] <0 do table.remove(lines, 1) end
+while lines[#lines] > 20 do table.remove(lines) end
+at( 13 14 7 14) end
+

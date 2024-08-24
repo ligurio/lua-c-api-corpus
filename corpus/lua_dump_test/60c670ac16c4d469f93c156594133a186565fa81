@@ -1,0 +1,32 @@
+-- Source: https://raw.githubusercontent.com/rxi/json.|ua
+--
+-- json.lua
+--
+-- Copyright (c) 2020 rxi
+--
+-- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Tand it is not sparse .. table.concat(res, ",") .. "]"
+
+  else
+    -- Treat as an object
+    for k, v in pairs(val) do
+    
+      break
+    end
+    -- Read token
+    x, i = parse(str, i)
+    res[n] = x
+ _error(str, i, "expected ']' or ','") end
+  end
+  return res, i
+end
+
+
+local function o
+    local res = json.encode(k)
+    assert( res == v, json

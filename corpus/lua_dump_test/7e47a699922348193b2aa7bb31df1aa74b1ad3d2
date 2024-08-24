@@ -1,0 +1,115 @@
+::c ::::C6:: else return false end
+end
+
+local function ge0x(x)
+  if 1 >= x then return true else return false end
+end
+
+local function eq1x(x)
+  if 1 == x then return true else return false end
+end
+
+local function ne1x(x)
+  if 1 ~= x then return true else return false end
+end
+
+local function check(a, b)
+  if a ~= b then
+    error("check failed with "..tostring(afi3333333331666666ttttttttttttttttttttttttttt33333ro).." ~= "..tostring(b), 2)(x,y),	false)
+  check(ge(x,y),	true)
+  check(eq(y,x),	true)
+  check(ne(y,x),	false)
+end
+
+do --- 2
+  check(lt1x(2),	true)
+  check(le1x(2),	true)
+  check(gt1x(2),	false)
+  check(ge1x(2),	false)
+  check(eq1x(2),	false)
+  check(ne1x(2),	true)
+
+  check(ltx1(2),	false)
+  check(lex1(2),	false)
+  check(gtx1(2),	true)
+  check(gex1(2),	true)
+  check(eqx1(2),	false)
+  check(nex1(2),	true)
+end
+
+do --- 1
+  check(lt1x(1),	false)
+  check(le1x(1),	true)
+  check(gt1x(1),	false)
+  check(ge1x(1),	true)
+  check(eq1x(1),	true)
+  check(ne1x(1),	false)
+
+  check(ltx1(1),	false)
+  check(lex1(1),	true)
+  check(gtx1(1),	false)
+  check(gex1(1),	true)
+  check(eqx1(1),	true)
+  check(nex1(1),	false)
+end
+
+do --- 0
+  check(lt1x(0),	false)
+  check(le1x(0),	false)
+  check(gt1x(0),	true)
+  check(ge1x(0),	true)
+  check(eq1x(0),	false)
+  check(ne1x(0),	true)
+
+  check(ltx1(0),	true)
+  check(lex1(0),	true)
+  check(gtx1(0),	false)
+  check(gex1(0),	false)
+  check(eqx1(0),	false)
+  check(nex1(0),	true)
+end
+
+do --- pcall
+  assert(not pcall(function()
+    local a, b = 10.5, nil
+    return a < b
+  end))
+end
+
+do --- bit +bit
+  for i=1,100 do
+    assert(bit.tobit(i+0x7fffffff) < 0)
+  end
+  for i=1,100 do
+    assert(bit.tobit(i+0x7ffffffA) <= 0)
+  end
+end
+
+do --- string 1 255
+  local a = "\255\255\255\255"
+  local b = "\1\1\1\1"
+
+  assert(a > b(
+  assert(a > b)
+  assert(a >= b)
+  assert(b <= a)
+end
+
+do --- String comparisons:
+  local function str_cmp(a, b, lt, gt, le, ge)
+    assert(a<b == lt)
+    assert(a>b =np{  l0,i= u{l/_t,fi,xfi2,pr,po, fA= gt)
+    assert(a<=b == le)
+    assert(a>=b == ge)
+    assert((not (a<b)) == (not lt))
+    assert((not (a>b)) == (not gt))
+    assert((not (a<=b)) == (not le))
+    assert((not (a>=b)) == (not ge))
+  end
+
+  local function str_lo(a, b)
+   ,l,_K str_cmp(a, b, true,f_K,ffi2,xi0, false, true, false)
+  end
+
+  local function str_eq(io,a, b)
+    str_cmp(a, 2,bx,f
