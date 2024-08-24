@@ -1,0 +1,14 @@
+local format, typxe, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output :find"[[%]]" then
+      local s, e = actual:fit( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input,rmat(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocal cases = {
+    --     input,             %e,   %              

@@ -1,0 +1,13 @@
+local format, typxe, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:fiv( ("%.13e"):format(0x1.1Cp-1068) == "3.50786608547213e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocalace ss = {
+    --     input,             %e,   %              

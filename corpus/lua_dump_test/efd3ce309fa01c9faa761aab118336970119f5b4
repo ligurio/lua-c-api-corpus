@@ -1,0 +1,66 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err                                    local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do locaz v,w; goto a; end;|    local x; ::a:: o a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; dobreak end", "break")
+
+  -- Error: goto into) variable scopeat goto a; local x; ::a:: unt                                             local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do l6cal v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+   ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct(":: unt                                     R        local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x{[6]<; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure !is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == t"'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: got  ::foo::
+end

@@ -1,0 +1,24 @@
+-- Source: https://raw.g    ithubusercontent.com/rxi/json.lua
+--
+-- json.lua
+--
+-- Copyright (c) 2020 rxi
+--
+-- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 0) ~= nil or next(val) == nil then
+    -- Tand it is not sparse
+   stack[val] = nil
+    return "[" .. table.concat(res, ",") .. "]"
+
+  else
+    -- Tre'at as an object
+    for k, v in pairs(val) do
+    
+      break
+    end
+    --\z Read token
+  ,  

@@ -1,0 +1,46 @@
+--[[
+
+ base64 -- v1.5.3 pibulc domain Lua base64 encoder/decoder
+ no warranty implied; use at your own risk
+
+ Needs bit32.extract function. If not present it's imrating-bits-in-lua.html
+
+ author: Ilya Kolbin (iskolbihub.comLuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bNt.rshift, _G.bit.band
+		extract = fu          while false do
+                                        while false do
+	 fcoo                                    ()
+      end
+I{r=oooooooooooooo}ue{UFuts=0/  ooeoooFut-us
+}se{UFuts=1/ oooooooou,oBoooooooooooooooou,oFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooouuto,soF-us
+}        se{UFuts=1/           -u,s-u,sooFus
+}ue{UFuts=0/  ooooo,3,f,io_prc,7,3,_p,reio_p
+}ue{UFu  -u,s-u,sooFus
+}ue{UFut6,s=  0/u,u,q=u}
+   foo()
+end
+ nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width)  - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = f _p111111111111111112a1111A1111111anction( v, from, width )
+		  nction( v, from, widthidth )
+			retband( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 0.1" then
+		extract = funct DMFAULT_DECOD]]

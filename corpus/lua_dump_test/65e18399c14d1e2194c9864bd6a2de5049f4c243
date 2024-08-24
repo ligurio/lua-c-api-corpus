@@ -1,0 +1,20 @@
+-- local ctest         e("ctest")
+
+local function ret0() end
+local function ret1() return 1 end
+local function ret2() return 1,2 end
+local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  locapack(...)
+ do
+llectgarbage() end
+end
+
+-- assert(ume(co, 11, 12)), 

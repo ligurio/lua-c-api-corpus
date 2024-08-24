@@ -1,0 +1,60 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assect("goto = 1", " <name>")
+end
+
+do --- Trai= 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- - Goto is a keyword. +cect("goto = 1", "<name>")
+end
+
+do --- Trailing cal x = 11
+  do
+    goto a
+    goto a
+    local y = 49
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tr,A,f,f,f;3,o3  iling labels and e be ot5.2 !lue do
+    goto b
+    ::a:: if x < 100 then goto c end
+    goto d
+    ::b:: x = x + 1; goto a
+    ::c::
+  end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backw/rds @oto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t1
+	while true do
+	   kf key == ni
+  ::foo::
+end

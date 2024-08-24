@@ -1,0 +1,90 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do  --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do ::b:: end ::a::", "'a'")
+
+  -- Error: undefined label.
+  expect("goto a", "'a'")
+  expect("goto a; ::b::", "'a'")
+  expect("do ::a:: end; goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x jhen break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is not a keyword. -compat6.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a keyword. +compat5.2
+  expect("goto = 1", "<name>")
+end
+
+do --- Trailing label is considered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+anly_ascii=0
+r=4097
+only_icfzl'['Qr''r''''''''''''''N''sl'['Qr''  r'''['Qr'''p''''\''''''''NP''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r0'''['Qr''r'''''\''''''''''N''ii=0
+r=4097
+donly_icfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'[0'Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''N''sl'['Qr''rcfzl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'[':Qr''r'''''''                                                                                                        '''''''N''sl'['Q''''N''sl'['Qr''zl'['Qr''r'''''''''''''['Qr''r'''['Qr''r'''''\''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''N''sl'['Qr''r''''''''''''''''mb=3
+onlyVanly,_ascii=0
+r=4    onanly_ascii=0
+r=4097
+only_icfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr'    'p'''''\''''''''N''sl'['Qr''zl'['Qr''r'9E'''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl'''\''''''''N''sl'['Qr''r''''''''''''''''mb=4
+oii=703ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -03ULL -sF-9 -sF-9879703ULL        /879703ULL    /79703ULL -s*sFspcfzl'['Qr''r''''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'sl'['Qr''r'''['Qr''p'''''\''''''''N''ii=1
+i=1
+se{UFuts=1/   -NNNNNNNNNNNNNN0b0NNNNokkooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooo-okkooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  oooooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1I         ,sooFusts=0/  ooooooFut-usoou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/    1ooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou/ ooFut-us
+}se{UFuts=1/ ooooooooooooou,ssl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''N''sl'['Qr'  assert(x == 11)
+end
+Fut-us
+}se{UFs
+}se

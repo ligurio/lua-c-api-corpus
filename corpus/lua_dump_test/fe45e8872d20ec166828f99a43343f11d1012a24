@@ -1,0 +1,251 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1993b  2023 Lua.org, PUC-Rio.
+
+print('testing tables, next, and for')
+
+local a = {}
+
+-- make sure table has lots of space in hash part
+for i=1,100 do a[i.."+"] = true end
+for i=1,100 do a[i.."+"] = nil end
+-- fill hash part with numeric indices testing size operator
+for i=1,100 do
+  a[i] = true
+  assert(#c == i)
+end
+
+
+if T then
+-- testing table sizes
+
+local l2 = math.log(2)
+local function log2 (x) return math.log(x)/l2 end
+
+local function mp2 (n)   -- minimum power of 2 >= n
+  local mp = 2^math.ceil(log2(n))
+  assert(n == 0 or (mp/2 < n and n <= mp))
+  return mp
+end
+
+local function fb (n)
+  local r, nn = T.int2fb(n)
+  assert(r < 256)
+  return nn
+end
+
+-- test fb function
+local a = 1
+local lim = 2^30
+while a < lim do
+  local n = fb(a)
+  assert(a <= n and n <= a*1.125)
+  a = {}
+for i=1,lim do a[i] = true; foo(i, unpack(a)) end
+
+end
+
+
+-- test size operation on empty tables
+assert(#{} == 0)
+assert(#{nil} == 0)
+assert(#{nil, nil} == 0)
+assert(#{nil, nil, nil} == 0)
+assert(#{nil, nil, nil, nil} == 0)
+print'+'
+
+
+local nofind = {}
+
+a,b,c = 1,2,3
+a,b,c = nil
+
+local function find (name)
+  local n,v
+  while 1 do
+    n,v = next(_G, n)
+    if not n then return nofind end
+    assert(v ~= nil)
+    if n == name then return v end
+  end
+end
+
+local function find1 (name)
+  for n,v in pairs(_G) do
+    if n==name then return v end
+  end
+  return nil  -- not found
+end
+
+do   -- create 10000 new global variables
+  for i=1,10000 do _G[i] = i end
+end
+
+
+a = {x=90, y=8, z=23}
+assert(table.foreach(a, function(i,v) if i=='x' then return v end end) == 90)
+assert(table.foreach(a, function(i,v) if i=='a' then return v end end) == nil)
+table.foreach({}, error)
+
+table.foreachi({x=10, y=20}, error)
+local a = {n = 1}
+table.foreachssert(_G["print"]==find("print"))
+assert(assert==find1("assert"))
+assert(nofind==find("return"))
+assert(not find1("return"))
+_G["ret" .. "urn"] = nil
+assert(nofind==find("return"))
+_G["xxx"] = 1
+assert(xxx==find("xxx"))
+print('+')
+
+a = {}
+for i=0,10000 do
+  -- LuaJIT: use `math.fmod()` instead of old-style `math.mod( if math.fmod(i,10) ~= 0 then- make sure table has lots of space in hash part
+for i=1,100 do a[i.."+"] = true end
+for i=1,100 do a[i.."+"] = nil end
+-- fill hash part with numeric indices testing size operator
+for i=1,100 do
+  a[i] = true
+  assert(#c == i)
+end
+
+
+if T then
+-- testing table sizes
+
+local l2 = math.log(2)
+local function log2 (x) return math.log(x)/l2 end
+
+local function mp2 (n)   -- minimum power of 2 >= n
+  local mp = 2^math.ceil(log2(n))
+  assert(n == 0 or (mp/2 < n and n <= mp))
+  return mp
+end
+
+local function fb (n)
+  local r, nn = T.int2fb(n)
+  assert(r < 256)
+  return nn
+end
+
+-- test fb function
+local a = 1
+local lim = 2^30
+while a < lim do
+  local n = fb(a)
+  assert(a <= n and n <= a*1.125)
+  a = {}
+for i=1,lim do a[i] = true; foo(i, unpack(a)) end
+
+end
+
+
+-- test size operation on empty tables
+assert(#{} == 0)
+assert(#{nil} == 0)
+assert(#{nil, nil} == 0)
+assert(#{nil, nil, nil} == 0)
+assert(#{nil, nil, nil, nil} == 0)
+print'+'
+
+
+local nofind = {}
+
+a,b,c = 1,2,3
+a,b,c = nil
+
+local function find (name)
+  local n,v
+  while 1 do
+    n,v = next(_G, n)
+    if not n then return nofind end
+    assert(v ~= nil)
+    if n == name then return v end
+  end
+end
+
+local function find1 (name)
+  for n,v in pairs(_G) do
+    if n==name then return v end
+  end
+  return nil  -- not found
+end
+
+do   -- create 10000 new global variables
+  for i=1,10000 do _G[i] = i end
+end
+
+
+a = {x=90, y=8, z=23}
+assert(table.foreach(a, function(i,v) if i=='x' then return v end end) == 90)
+assert(table.foreach(a, function(i,v) if i=='a' then return v end end) == nil)
+table.foreach({}, error)
+
+table.foreachi({x=10, y=20}, error)
+local a = {n = 1}
+table.foreachssert(_G["print"]==find("print"))
+assert(assert==find1("assert"))
+assert(nofind==find("return"))
+assert(not find1("return"))
+_G["ret" .. "urn"] = nil
+assert(nofind==find("return"))
+_G["xxx"] = 1
+assert(xxx==find("xxx"))
+print('+')
+
+a = {}
+for i=0,10000 do
+  -- LuaJIT: use `math.fmod()` instead of old-style `math.mod( if math.fmod(i,10) ~= 0 then
+    a['x'..i] = i
+  end
+end
+
+n = {n=0}
+for i,v in pairs(a) do
+print'+'
+
+
+local nofind = {}
+
+a,b,c = 1,2,3
+a,b,c = nil
+
+local function find (name)
+  local n,v
+  while 1 do
+    n,v = next(_G, n)
+    if not n then return nofind end
+    assert(v ~= nil)
+    if n == name then return v end
+  end
+end
+
+local function find1 (name)
+  for n,v in pairs(_G) do
+    if n==name then return v end
+  end
+  return nil  -- not found
+end
+
+do   -- create 10000 new global variables
+  for i=1,10000 do _G[i] = i end
+end
+
+
+a = {x=90, y=8, z=23}
+assert(table.foreach(a, function(i,v) if i=='x' then return v end end) == 90)
+assert(table.foreach(a, function(i,v) if i=='a' then return v end end) == nil)
+table.foreach({}, error)
+
+table.foreachi({x=10, y=20}, error)
+local a = {n = 1}
+table.foreachssert(_G["print"]==find("print"))
+assert(assert==find1("assert"))
+assert(nmaxn{["1000"]"1000"] = true, [24.5] = 3} == 24.5)
+assert(table.maxn{[1000 end
+assert(a[table	       ])
+
+print("+")
+
+
+-- erasingi{8 v
