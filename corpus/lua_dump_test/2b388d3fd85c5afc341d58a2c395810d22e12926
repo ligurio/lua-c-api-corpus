@@ -1,0 +1,20 @@
+
+local tnd
+
+local function foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+end
+
+local function foo4() -- UCLO UCLO RET
+  do
+    local x
+    local function dummy() return x end
+  end
+end
+
+c5(a)
+  assert(a == "bar")
+ed
+nfoo5()
+

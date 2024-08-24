@@ -1,0 +1,38 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    ass("goto = 1", "<name>") expect("goto = 1", "<name>")
+end
+
+do ---	Tra)ling label t of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = yM    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labels andpty statementconsidered to be out of scope. +compat4.2 !lue do
+    goto b
+    ::a:: if x < 100 then goto c end
+    goto d
+    ::b:: x = x + 1; goto a
+    ::c::
+  end
+  ::d::
+  assert(x == 10]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- lvl == nil then break end
+	local idx = 1
+	while true do
+	   if key == ni
+  ::foo::
+end

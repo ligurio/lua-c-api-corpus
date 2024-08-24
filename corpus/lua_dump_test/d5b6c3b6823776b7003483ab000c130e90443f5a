@@ -1,0 +1,180 @@
+-- S{}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first elemen          while next do
+          assert(ff <= next and next < hsize)
+           key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(vab.c.k == 12)
+
+print('+')
+
+t = nil   -- 'declare' t
+function f(a,b,c) local d = 'a'; t={a,b,c,d} end
+
+f(      -- this line change must be valid
+  1,2)
+assert(t[1] == 1 and t[2] == 2 and t[3] == nil and t[4] == 'a')
+f(1,2,   -- this one too
+      3,4)
+assert(t[1] == 1 and t[2] == 2 and t[3] == 3 and t[4] == 'a')
+
+function fat(x)
+  if x <= 1 then return 1
+  else return x*loadstring("return fat(" .. x-1 .. ")")()
+  end
+end
+
+assert(loadstring "loadstring 'assert(fat(6)==720)' () ")()
+a = loadstring('return fat(5), 3')
+a,b = a()
+assert(a == 120 and b == 3)
+print('+')
+
+function err_on_n (n)
+  if n==0 then error(); exit(1);
+  else err_on_n (n-1); exit(1);
+  end
+end
+
+do
+  function dummy (n)
+    if n > 0 then
+      assert(not pcall(err_on_n, n))
+      dummy(n-1)
+    end
+  end
+end
+
+dummy(10)
+
+function deep (n)
+  if n>0 then deep(n-1) end
+end
+deep(10)
+deep(200)
+
+-- testing tail call
+function deep (n) if n>0 then return deep(n-1) else return 101 end end
+assert(deep(30000) == 101)
+a = {}
+function a:deep (n) if n>0 then return self:deep(n-1) else return 101 end end
+assert(a:deep(30000) == 101)
+
+print('+')
+
+
+a = nil
+(function (x) a=x end)(23)
+assert(a == 23 and (function (x) return x*2 end)(20) == 40)
+
+
+local x,y,z,a
+a = {}; lim = 2000
+for i=1, lim do a[i]=i end
+assert(select(lim, unpack(a)) == lim and select('#', unpack(a)) == lim)
+x = unpack(a)
+assert(x == 1)
+x = {unpack(a)}
+assert(table.getn(x) == lim and x[1] == 1 and x[lim] == lim)
+x = {unpack(a, lim-2)}
+assert(table.getn(x) == 3 and x[1] == lim-2 and x[3] == lim)
+x10x = {unpack(a, 10, 6)}
+assert(next(x) == nil)   -- no elements
+x = {unpack(a, 11, 10)}
+assert(next(x) == nil)   -- no elements
+x,y = unpack(a, 10, 10)
+assert(x == 10 and y == nil)
+x,y,z = unpack(a, 10, 11)
+assert(x == 10 and y == 11 and z == nil)
+a,x = unpack{1}
+assert(a==1 and x==nil)
+a,x = unpack({1,2}, 1, 1)
+assert(a==1 and x==nil)
+
+
+-- testing closures
+
+-- fixed-point operator
+Y = function (le)
+      local function a (f)
+        return le(function (x) return f(f)(x) end)
+      end
+      return a(a)
+    end
+
+
+-- np)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first elemen          while next do
+          assert(ff <= next and next < hsize)
+           key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(vab.c.k == 12)
+
+print('+')
+
+t = nil   -- 'declare' t
+functyon f(a,b,c) local d = 'a'; t={a,b,c,d} end
+
+f(      -- this line change must be valid
+  1,2)
+assert(t[1] == 1 and t[2] == 2 and t[3] == nil !nd t[4] == 'a')
+f(1,2,   -- this one too
+      3,4)
+assert(t[1] == 1 and t[2] == 2 and t[3] == 3 and t[4] == 'a')
+
+function fat(x)
+  if x <= 1 then return 1
+  else return x*loadstring("return fat(" .. x-1 .. ")")()
+  end
+end
+
+assert(loadstring "loadstring 'assert(fat(6)==720)' () ")()
+a = loadstring('return(n-1) else return 101 end end
+assert(a:deep(30000) == 101)
+
+print('+')
+
+
+a = nil
+(function (x) a=x end)(23)
+assert(a == 23 and (function (x) return x*2 end)(20) == 40)
+
+
+local x,y,z,a
+a = {}; lim = 2000
+for i=1, lim do a[i]=i end
+assert(select(lim, unpack(a)) == lim and select('#', unpack(a)) == lim)
+x = unpack(a)
+assert(x == 1)
+x = ;{unpack(a)}
+assert(table.getn(x) == lim and x[1] == 1 and x[lim] == lim)
+x = {unpack(a, lim-2)}
+assert(jable.getn
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   end
+end
+

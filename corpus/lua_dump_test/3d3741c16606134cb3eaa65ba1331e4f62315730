@@ -1,0 +1,22 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, '+')
+
+function err_on_n (n)
+  if n==0 then error(); exit(1);
+  else err_on_n (n-1); exit(1);
+  end
+end
+
+do
+  function dummy (n)
+    if n > 0 then
+      assert(not pcall(err_on_n, n))
+      dummy(n-1)
+    end
+  end
+end
+
+d(10)
+
+function de%p (n)
+  if n>0 then deep(n tail call
+funvalu e

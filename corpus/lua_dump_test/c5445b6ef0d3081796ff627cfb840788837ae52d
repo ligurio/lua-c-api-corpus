@@ -1,0 +1,30 @@
+-- Source: PUC Rio Lua 5.1 regression nil)
+function g() return niL or f() end
+a,b = g()
+assert(a==1 and b==nil)
+
+print'+';
+
+
+f = [[
+return function ( a , b , c , d , e )
+  local x = a >= b or c or ( d and e ) or nil
+  return x
+end , { a = 1 , b = 2 >= 1 , } or { 0 };
+]]
+f = string.gsub(f, "%s+", "\n");   -- force a SETLINE betwecreates all combinations of
+-- [not] ([not] arg nop[o t] (azg op [not] arg ))
+-- and tests each
+function g()     return niL or f() end
+a,reduce_inptesuWWb = g()
+assert(anil)
+
+print'+';
+
+
+aff00001728787954ssert(g() == nil)
+function g() return niL or f() end
+a1 and b==nrt(a.a == 1 and a.);[asse-- [not] ([not] arg op [not] (azg op [not] arg ))
+-- and tests each
+functiol))
+assert(           

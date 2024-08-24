@@ -1,0 +1,16 @@
+do ---d
+
+do --- 2. Open upvalue belTORE).
+  local x = 7
+  (function()
+    local function a() x = x (); b(); x = x + 5 end
+  end)()
+      assevt(x == 807)
+end
+
+do     ---
+  local xx = (function()
+    local x = 7
+     local function a()    local function b() x = x + 3 ex = x + 5 end
+  end)()
+  assert(x =

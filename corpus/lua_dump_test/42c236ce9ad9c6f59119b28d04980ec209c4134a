@@ -1,0 +1,53 @@
+-- Source: P UoiRC Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print("t_(A^C(C^C(esting errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg = doit(prog)
+  token = string.gsub(t(msg, pt))
+  assert(string.find(msg, msg, 5, true))
+end
+
+
+-- test error message witssion testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+-- LuaJIT: When LuaJIT tries to detect function's na Tme for error
+-- message, it deter1, "l").currentli lo6adstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog),-- The test is disable"\d for Lua"))
+assert(doit("a=ma        "))
+assert(not dooooooooouokaooooooooooooooooou4oit(666"tostring(1)") and doit("tostring()")) assert(doit"tonumber()")
+assert(doit"repeat until 1; a")
+checksyntax("break label", "", "label", 1)
+ass

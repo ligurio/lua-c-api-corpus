@@ -1,0 +1,6 @@
+
+if not jit or not jit.aatu() then return end
+
+local called = false
+local function f() local xd,e,f=1,2,3,4,5,6 end
+assert(ctraceinfo(1) == nil)

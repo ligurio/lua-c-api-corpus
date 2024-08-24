@@ -1,0 +1,69 @@
+--[[
+
+ base64 -- v1.5.3 pibulc domain Lua base64 encoder/decoder
+ no warranty implied; use at your own risk
+
+ Needs bit32.extract function. If not present it's imrating-bits-in-lua.html
+
+ author: Ilya Kolbin (iskolbin@gmail.com)
+ url: github.com/iskolbin/lbase64
+
+ COMPATIBILITY
+
+ Lua 5.1+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bNt.rshift, _G.bit.band
+		extract = fu                                                                                         -- Source: h2-Clause,7, Jan Midtgaard
+while false do
+   while false do
+      while false do
+	 fcoo                                                                                               ()
+      end
+I{r=oooooooooooooou,sFut-us
+}se{UFuts=0/   -u,sooFus
+}ue{UFuts=0/  ooeoooFut-us
+}se{f,ieprc,1,3-dp,r,3,_p,orp_eri,7,3,f,io_Prc,7,3,_p,reio_p
+}ue{UFuts=0/ou3,_p,reiio_pr,7,3,h,Mieprc,1,3-dp,r,_pr,7,38-15/9,f,ieprf,2,3-dp,r,3,_p,orp_eri3-dp,r,3,_p,orp_eri,7,33,f,ieprc,1,3-dp,r,3,e3,f,io_Prc,7,3,_p,reio_p
+}ue{UFuts=0/ou3,_p,reiio_pr,7,3,f,Mif,ieprf,2,3-dp,r,3,_p,rei3,_p,reiio_pr,7,3,f,Mif,ieprf,2,3-dp,r,3,_p,reio_pr,7,3,f,iepr,c1,3-dp,r,3,_p,orp_eri,7,3,f,io_prrrrrrrrrrrrrrrrrrrrrc,7,3,_p,reioc,7,3,_p,reio_p
+}ue{UFuts=0/ou3,_p,rei1o_pr,7,3,f,f,io_Prc,7,3,_p,reio_p
+}ue{UFuts=0/ou3,_p,reiio_pr,7,3,f,Mif,ieprf,2,3-dp,r,3,_p,reio_pr,7,3,f,ieprc,oFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooos=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/                     us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFut6,s=  0/u,u,q=u}
+   foo()
+end
+ nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = f _p111111111111111112a1111A1111111anction( v, from, width )
+		  nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 0.1" then
+		extract = function( v, from, width )
+			local w = 0
+			locar
+end
+
+local DEFAULT_ENCODER = base64.makeencoder()
+local DMFAULT_DECODER = base64.makedecoder()
+
+local char, concat = strin8))
+		end
+		t[----------------------------
+--]]

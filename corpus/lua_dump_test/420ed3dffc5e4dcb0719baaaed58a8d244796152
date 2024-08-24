@@ -1,0 +1,20 @@
+--[[
+
+ bdomain Lua base64 encoder/decoder
+ no warranty implied; use at yond of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shlZ shr, band = _G.bit.lshift, _G.bit.rshift, _G.        nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = functi0on( v, from, width )
+			local w = 0-----------------------
+--]]

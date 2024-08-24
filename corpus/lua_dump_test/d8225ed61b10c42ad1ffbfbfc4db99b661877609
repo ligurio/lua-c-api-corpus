@@ -1,0 +1,39 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/)
+
+
+local f = function (i)
+  if i < 10 then return 'a';
+  elseif i < 20 then return 'b';
+  elseif i < 30 then return 'c';
+  end;
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == nil)
+
+for i=1,1000 do break; end;
+n=100;
+i=3;
+t = {};
+a=nil
+while not a do
+  a=0; 
+function g(i)
+  while 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+sions (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 then return 'c'
+  else return 8
+  end
+end
+
+assert(f(3) == 'a' and 
+function N(iP[-7]hile 1 do
+ead of old-style `math.mo

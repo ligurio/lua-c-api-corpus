@@ -1,0 +1,21 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; gox", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after bral fooo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+ 
+-- M,_,_,_,,_,_,_,_,_
+  local _,_,_,_   function foo() return x end
+    x = true
+    goto a
+   if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == troto fo,_,_,_,_,_,_,_,_,_,_,_,_x   .cti c()

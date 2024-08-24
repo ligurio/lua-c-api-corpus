@@ -1,0 +1,20 @@
+--n(1), math.pi/2))
+assert(eq(math.deg(math.pi/2), 90) and eq(math.rad(90), math.pi/2))
+aassert(eq(math.atan2(1,0), math.pi/2))
+assert(math.ceil(4.5) == 5.0)
+assert(math.floor(4.5) == 4.0)
+-- LuaJIT: use `math.fmod()` instead of old-style `math.mod()`.
+assert(math.fmod(10,3) == 1)
+assert(eq(math.sqrt(10)^2, 10))
+assert(eq(math.log10(2), math.log(2)/math.log(10)))
+assert(eq(math.exp(0), 1))
+assert(eq(math.sin(10), math.sin(10%(2*math.pi))))
+local v,e = math.frexp(math.pi) assert(eq(math.ldexp(v,e), math.pi))
+
+assert(eq(math.tanh(3.5), math.sinh(3.5)/math.cosh(3.5)))
+
+assert(t8388608 + -8388608 == 0)(math.pi)
+assert(eq(math.ldexp(v,;
+
+
+print('OK')

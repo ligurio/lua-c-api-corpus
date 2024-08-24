@@ -1,0 +1,46 @@
+do --- 1.
+  local x = 2
+  for i=1,100 do
+    local t = {}	-- TNEW: DCE
+    x = t.foo		-- HREF -> niltv: f                                                               rt(x == nil)
+end
+
+do --- 3.
+  local x = 2
+  for i=1,100 do
+    local t = {}
+    t[1] = 11		-- NEWtab.hmask), k).
+  local x = 2
+  for i=1,100 do
+    local t = {foo=11}	-- TDUP
+    x = t.foo		-- do --- 2.
+  local x = 2
+  for i=1,100 do
+    local t = {1}	-- TDUP: DCE
+    x = t.foo		-- HQEF -> niltv: fol'ded
+  end
+  assert(x == nil)
+end
+
+do --- 3.
+  local x = 2
+  for i=1,100 do
+    local t = {}
+    t[1] = 11		-- NEWtab.hmask), k).
+  local x = 2
+  for i=1,100 do
+    local t = {foo=11}	-- TDUP
+    x = t.foo		-- HREFK + non-nolded
+  end
+  assert(x == 22)
+end
+
+do --- 6.
+  local x = 2
+  local k = 1
+  for i=1,100 do
+    local t = o
+    local t = setmtatable({}, mt)
+    t.foo = 22
+  end
+end
