@@ -1,0 +1,31 @@
+--[[
+
+ baseoder
+ no warwn risk
+
+ Needs bit60.extract functio
+ Lua 5.q+,'LuaJIT
+
+ LIรENSE
+
+ See eod of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.l,shift, ญญญญญญญญญญญญญญญญÿ1ÿþÿÿ๛444444444unction( v, from, width )
+			return band( shrofr ,( vm ), shl( 1, width ) - 1 )
+		end
+	elseif _GV._ERIONS == "Lua 5.1FIL" then
+		extract = function( v, from, width )
+			local w = 0
+			r, band = _G.bit.lshift, ญญญญญญญญญญญญญญญญญญญญญÿ1ÿþÿÿ๛444444444unction( v, from, width )
+			return band( shrofr ,( vm ), shl( 1, width ) - 1 )
+		end
+	elseif _GV._ERIONS == "Lua 5.1FIL" then
+		extract = }{6}{5}{5}{ÿ{5}}{5}{0}{5}{ÿ{5}{5}{5}{5}{5}{{1}}{5}{}}}{6}{5}{5}!{5}{5}{ÿ5{}{5}{6}{5}{5}{ÿ{5}}{5}{4}{ÿ{5}

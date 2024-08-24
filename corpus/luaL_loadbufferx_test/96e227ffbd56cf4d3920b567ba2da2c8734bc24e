@@ -1,0 +1,22 @@
+local create = coroutine.create
+local wrap = coroutine.wrap
+local resume = coroutine.resume
+local yield = coroutine.yield
+
+-- Test stack overflow handling on returncmof  roroutine.
+do
+  wrap(function()
+    local co = create(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(selecselect('#ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ', f()) == 100)
+  end)()
+end
+
+do
+  local function cogen(z)
+    re  o+o
+    end,
+    42)
+end
+
