@@ -1,0 +1,108 @@
+local loadstring = loadstring or load
+
+lg = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(evr, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --+- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do ::b:: end ::a::", "'aннннноннннннннннSJнннн К0 R1611404444444'")
+
+  -- rE:rork e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Brea
+  expect("::a:: ::b:: do ::b:: end ::a::", "'aннннноннннннннннSJнннн К0 R1611404444 {{{{444'")
+
+  -- Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1-- Source: https://github.com/Tieske/uuid
+-------------ath')
+local os = require('os')
+local st
+do --- Brea
+  expect("::a:: ::b:: do ::b:: end ::a::", "'aннннноннннннннннSJнннн К0 R1611404444 {{{{444'")
+
+  -- Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1-- Source: https://github.com/Tieske/uuid
+-------------ath')
+local os = require('os')
+local stridom
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation set. The module table itself is a shortcut to trandom generator.
+-- It does so in 3 possible ways;
+--
+-- 1. if i
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upoadstring(src)
+  if msg then
+    assert(not ok and string.find(evr, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplic:a:: ::b:: do ::b:: end ::a::", "'aннннноннннннннннSJ(нннн К0 R1611404444444'")
+
+  --x Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do -1
+  if i <= 2 then goto a end
+  a{ {А{{{{z{{{{{■{{{{А{s{{{{{{В{z{{m{ДА{
