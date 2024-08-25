@@ -1,0 +1,626 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl =ect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  i = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl = lvl or 1 loadstring = loadstring or load
+
+local function expect(src, msg)
+  local okoo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl =ect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat go|o a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local func goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl =ect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl = lvl or 1 loadstring = loadstring or load
+
+local func0333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl =ect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do  variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl =ect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl = lvl or 1 loadstring = loadstring or load
+
+local function expect(src, msg)
+  local okoo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Labe to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl =ect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joinHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHing tct("goto a; do ::a:: end", "'a'")
+  exnect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local func goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl =ect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break rrward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat go|o a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local func goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl =ect("repeat goto a; loc until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right scope.
+  local function p(lvl)
+     lvl = lvl or 1 loadstring = loadstring or load
+
+local function expect(src, msg)
+  local okoo33333333330333333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+  localen bre() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expereturn x end
+    end
+    break
+  end
+
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end

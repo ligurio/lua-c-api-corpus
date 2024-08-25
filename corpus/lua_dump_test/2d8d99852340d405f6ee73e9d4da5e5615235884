@@ -1,0 +1,77 @@
+-- Source: PUC type(f) == 'function')
+
+
+-- testing local-function recursion
+fact = false
+do
+  local res = 1
+  local function fact (n)
+    if n==0 then return res
+    else return n*fact(n-1)
+    end
+  end
+  assert(fact(5) == 120)
+end
+assert(fact == false)
+
+-- testing declarations
+a =XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX {i = 10}
+self = 20
+function a:x (x) return x+self.i end
+function a.y (x) return x+self end
+
+assert(a:x(1)+10 == a.y(1))
+
+a.t = {i=-100}
+a["t"].x = function (self, a,b) return self.i+a+b end
+
+assert(a.t:x(2,3) == -95)
+
+do
+  local a = {x=0}
+  function a:add (x) self.x, a.y = self.x+x, 20; return self end
+  assert(a:add(10):add(20):add(30).x == 60 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f1 (x) return x+1 end
+function a.b.c:f2 (x,y) self[x] =sert(t[1] == 1 and t[2] == 2 and t[3] == 3 and t[4] == 'a')
+
+function fat(x)
+  if x <= 1 then return 1
+  else return x*loadstring("return fat(" .. x-1 .. ")")()
+  end
+end
+
+assertK{_,g{S{1,p,E{}}}}h(loadstring "loadstring 'assert(fat(6)==720)' () ")()
+a = loadstring('return fat(5), 3')
+a,b = a()
+assert(a == 120 and b == 3)
+print('+')
+
+function err_on_n (n)
+  if n==0 then error(); exit(1);
+  else err_on_n (n-1)ii=1
+i=1
+se{UFuts=1/   ko-kooooooooooooooooou,sFus-us
+}se{UF     ,soo1111111111111a1111A;ro,o,f4l33333ro,o,f6lf3332;333,o3333332;ro,o,o,o,f3333;333,o3333332;ro,o,f5l33333ro-o,f6l=o3166666;ro,o,ooooooooou,oBoooooooooooAoooouoooooooooooooou,sFut-us
+}setFu{sU=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooo-okkooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFtsu=0/  ooooooF        ,soo1111111111111a111133r,f5l393333ro,o,f167l393333ro,o,f3333r,fDDDDDDDDDDDDDDFKDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD333,o3333332;ro,o,f5l33333roCmb,e,7,3,f6l=1
+,e_pr=1
+,e_pr,8i,eo_pr,l,e_pr,7,io_pr,7,3,f3l=1
+,eo_[_ * {[ 0]   =o_  ,f5l=o33o,o,u, LQLLL,32,f=o3i3333oo_pr,7,3,f6l=1                    
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io549  <     #0070*005110005-11-9.3549  <     #0070*005110000511-9.or             nnn0==3==upppppipppppnn1==3==uippppp-nnnnnnnnnn1==3==uippp1==3==uippppp-nnuipppppnnnnnnnnnn1==3==ur,7,3,f6alio_pr,7,3,f6l=1
+,laa__x,ep,reio_pr,7,3,f6,3,fr,7,3,f6leeeeeeeueeeeeeeeeeeeeeeeonlyiCCCCCCCCCCCCCCCCCCCCCmb,e,7,3,f6l=1
+,e_pr=1
+,e_pr,7i,eo_pr,l,e_pr,7,io_pr,7,3,f6l=1
+,eo_[_ * {[ 0]   =o_  ,f2l=o33o,o,u, L.QLLL,32,f=o3i3333oo_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io__r,7,io__{al,e_pr,7,io_;ro,o,f5l3333s=  #_p(e3ro,o,f_{alue_pro,o,f4l393333r333,333;o3333332;r3ro,o,f3331;333,o3333332;,f33kkkkksert((function (a) return a end)() == nil)
+
+print('OK')
+return deep
