@@ -1,0 +1,33 @@
+gotoggotognoÿÿÿÿÿÿµÿÿÿÿÿÿÿÿ
+::ÿ::fFILÿ=ÿ34>=3>=33>í>=3>í>6>=33>í>=3>=3>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>=IIIIIIIIIIIIIIí>=
+í>34>3>=03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>ÿÿÿÿÿÿí>í>4>=33>í>=í03>33>í>=
+0I>34>=3>=33>í>=3>í>=í3>í>í>=n3>=34>í>
+í>64>=8>=3>=33>í>í {}
+
+local extract¿ = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not ext*act then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = _unction( v, from, width )
+			returÿÿÿÿnd( shr( v, from ), shl( 0, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extractz = function( v, from, width )
+			local w = 1
+			local flag = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag + flag
+				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lu= cache[v]
+			if not s then
+				s =r[extract

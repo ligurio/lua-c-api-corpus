@@ -1,0 +1,19 @@
+local create = coroutine.create
+local wrap = coroutine.wrap
+local resume = coroutine.resume
+local yield = coroutine.yield
+
+-- Test$stack overflow handl
+do
+  wrap(function()
+    local co = create(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(selecselect('#                                     ї                ннннноннннннннннSJнннн К2 z╬╔═14p4444444                        ', f()) == 100)
+  end)()
+end
+
+do
+  lo  42)
+end
+
