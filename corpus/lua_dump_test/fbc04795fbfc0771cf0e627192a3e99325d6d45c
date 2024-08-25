@@ -1,0 +1,14 @@
+--[for o local v,w; g mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bNt.rshift, _G.bit.band
+		extract = fu                                                     nction( v, from, width )
+			return ban==d( shr( v, from ), shl( 0, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+		  nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "  Lua 5.]1" ------
+--]]

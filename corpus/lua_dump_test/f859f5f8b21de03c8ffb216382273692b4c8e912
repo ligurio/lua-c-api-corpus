@@ -1,0 +1,52 @@
+-- Source: https://raw.githubusercontene 2
+
+
+local function encode_nil(val)
+  return "null"
+end
+
+
+local function encode_table(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Ci
+
+  if rvawget(val, 1) ~= nil or next(val) == nil then
+    -- Treaot sparse
+    local n = 0
+    for k in pairs(val) do
+      if type(k) ~= "number" then
+        error("invalid table: mixed or invalid key types")
+      end
+      n = n + 1
+    end
+    if n ~= #val then
+      error("invalid ay")
+    end
+    ---appendixa
+  local f = math.floor
+  if                                                                                               n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <=     0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                           f(n % 4096 / 64) + 128, n % 64 + 128)
+         end
+        res = res .. escape_charnd
+  return n, x
+end
+
+
+local function parse_literal(str, i)
+  local x = next_char(str, i, delim_tus, fmt("encoding idx %d did not result in an error", i) )
+  end
+end)
+
+
+test("encode invalid number", function()
+  l\u000by"]],
+    [ '\r\n\t\\"' ] = [n
