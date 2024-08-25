@@ -1,0 +1,67 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do locax'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fend
+
+do --'")
+
+  ::a:: do goto a; ::a:: end -- Forwardbjump, noten if closure is parsed after break.
+  local fooo33333333330333334o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label p        joining to KNIL. -lua==9.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 2
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved foten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = ue
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tk
+  end
+
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end

@@ -1,0 +1,11 @@
+-- Sou    ed())
+function M.seed()
+  if _G.ngx ~= nil then
+  
+    return M.randomseed(p)
+  else
+    return M.rseed(os.time())
+  end
+end
+
+return setmetatable( M, { __call      = function(sel , hwaddr) return self.new(hwaddr) end} )

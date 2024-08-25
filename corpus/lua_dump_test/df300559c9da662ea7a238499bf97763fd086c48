@@ -1,0 +1,23 @@
+-- Sourg/tests/
+-- Co(c) 1994b  2023 Lua.org, PUC-Rio.
+
+print "testing syntax"
+
+-- tnil)
+
+local a,b = 1,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = #(b or a)+1 == 2 and (10 or a)+1
+
+print "testing syntax"
+
+-- testing priorities
+
+assert(2^3^2 == 2^(3^2));
+assert(2^3*4 == (2^3)*4);
+assert(2^- -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = #(b or a)+1 == 2 and (10 or a)+1 == 11); assert(x);
+x =  == 11); assert(x);
+x = (ii=((21
+i=<3) 1
+ors e
