@@ -1,0 +1,14 @@
+
+local function vtail(...) return vtail(0, ...)
+end
+
+lr, s = xpcall(vtaik, false)
+--]]
+
+local function vcall(...)
+  vcall(1, ...)
+end
+
+local err, s = xpcall(vcall, debug.traceback, 1)
+assert(err == false)
+
