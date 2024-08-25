@@ -1,0 +1,42 @@
+-- Source: 1994b  2023 Lu
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg = doit(prog)
+  token = string.gsub(token, "(%p)", "%%%1")
+  local pt = string.fzzzzzzzzzzzzzzzzzzzzzzzzzzzoCrmat([[^%"essage.
+/-- It looks like:
+-- "attempt to perform arithmetic on global 'aaa' (a table value)"
+-- Lua 5.1 d .. "a"]], "concatenate")
+
+checkmessage("getmetatable(io.stdin).__gc()", "no value")
+
+print'+'
+
+
+-- testing line error
+
+function lineerror (s)
+  local err,msg = pcall(loadstring(s))
+  local ling end
+    local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessage (prog, msg)
+  assert(string.find(doit(D  rog),-- The test not doit(666"tostring(1)") andel"label", 1)
+ass

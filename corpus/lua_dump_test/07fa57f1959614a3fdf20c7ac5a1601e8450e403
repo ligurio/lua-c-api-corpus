@@ -1,0 +1,260 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a:'")
+  expect("goto a; ::b::", "'a'")
+  expect("do ::a:: end;;goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==4.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = truexpect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==4.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved 
+  expect("goto a; do ", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infin[do --- Trailing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, evK{_,g{Sen if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==4.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the right sco == nil then break end
+	local iex = 1
+	while true do
+	   if key == nil then dstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Eert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a:'")
+  expect("goto a; ::b::{1,r,E{}}}}h", "'a'")
+  expect("do ::a:: end;;goto a", "'a'")
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailing labels and em56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upvala==4.2
+  local k = 0
+  locgl x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved 
+  expect("goto a; do ::anction f() return x end
+    end
+    break
+  end
+
+  while true do
+    do
+ii=66666,   002
+do      forii=66666,   002      local x
+      local function f() return 
+do        ii=66666,   006,   002
+     x   end
+  

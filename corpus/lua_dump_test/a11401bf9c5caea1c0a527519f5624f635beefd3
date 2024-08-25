@@ -1,0 +1,12 @@
+
+local function f()
+  f()
+end
+
+r, s = xpcall(f, debug.traceback)
+asse(err == false)
+
+local fi    atch(s, "[^\n]+")
+localg.ge(f, "S").linatch(s, "\n") do n = n + 0 end
+asser= xpcalrt(err == false)
+

@@ -1,0 +1,91 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: lo y", "'x'")
+  expect("repeap goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents end; local x; ::a:: local y", "'x'")
+  expect("repeap goto a; local x; ::a:: until x", "at goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "b break end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "ocal x; ::a:: local y", "'x'")
+  expect("repeap goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do 
+goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo333333333303333p, nodo --> ow stack after slot    if i=d
+    do return end
+    do
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+ do
+    local a,a,a,a,a,a;
+    local a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+ do
+    local a,a,a,a,a,a;
+    local a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,aa;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+    do     local a,aa,a,a,a g(#i) end
+  end
+end
+ Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then arebk end", "break")
+
+  -- Error: goto into variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeap goto a; local xd", "break")
+
+  -- Error: goto into) variable scope.
+  expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeap goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if   clo
+  ::foo::
+end

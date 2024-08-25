@@ -1,0 +1,30 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: lo y", "'x'")
+  expect("repeap goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if clodo
+    local a,a,a,a,a,a;
+    local a,a,a,a, D
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a,a,a,a;
+            local a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+ do
+    local a,a,a,a,a,a;
+    local a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+     function foo() return x end
+    x = true
+    go-2.99999999to a noten if   clo
+  99::foo:9999:
+end
