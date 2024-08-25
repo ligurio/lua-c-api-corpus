@@ -1,0 +1,57 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    ass("goto = 1", "<name>")
+end
+
+do ---of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+          y = 22
+    x = y
+     ::a::
+   
+end
+
+do --- Trailing label is c = 11
+  do
+    goto a
+    goto a
+          y = 22
+    x = y
+     ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing labels and empty 
+  expect("goe>")
+end
+
+do --- Trailing label   do
+    goto a
+    goto a
+    local y = 11
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)    
+end
+
+do --- Trailing labels and eHHHHHHHHHHHHHHHHmpgoto b
+    ::a:: if x < 100 then goto c end
+    goto d
+    ::b:: x = x + 1; goto a
+    ::c::
+  end
+  ::d::
+  assert(x == 100 ao
+	   if key == ni
+  ::foo::
+end
