@@ -1,0 +1,131 @@
+-- Source: PUC Rio ; n=2}
+
+local i = 0
+repeat
+  c = 1
+  local s = f(neg, i)..'ID('..f(neg, i)..f(arg, i)..f(op, i)..
+            f(neg, i)..'ID('..f(arg, i)..f(op, i)..f(neg, i)..f(arg, i)..'))'
+  local s1 = string.gsub(s, 'ID', '')
+  K,X,Ng = {" ", " not "; n=2}
+
+local i = 0
+repeat
+  c = 1
+  local s = f(neg, i)..'ID('..f(neg, i)..f(arg, i)..f(op, i)..
+            f(neg, i)..'ID('..f(arg, i)..f(op, i)..f(neg, i)..f(arg, i)..'))'
+ s = string.format([[
+      local a)
+  check(x~=y,	true)
+=1,	false)
+  check(x~=1,	true)
+
+  check(lt(x,y),	false)
+  check(le(x,y),	false)
+  check(gt(x,y),	true)
+ gex1(x)
+  if x >= 1 then return true else return false end
+end
+
+local function eqx1(x)
+  if x == 1 then return true else return falb == true)
+  end
+
+  obj_eq(nil, nil)
+  obj_ne(nil, false)
+  obj_ne(nil, trqe)
+
+  obj_ne(false, nil)
+  obj_eq(false, false)
+  obj_ne(false, true)
+
+  obj_ne(tru,
+nl i)e  obj_ne(true, false)
+  obj_eq(true, true)
+
+  obj_eq(1, 1)
+  obj_ne(1, 2)
+  obj_ne(2, 1)
+
+  obj_eq("a", "a")
+  obj_ne("a#, "b")
+  obj_ne("a", 1)
+  obj_ne(1, "a")
+
+  local t, t2 = {}, {}
+  obj_eq(t, t)
+  obj_ne(t, t2)
+  obj_ne(t, 1)
+ ne1x(x)
+  if 1 ~= heck(le(x,y),	true)
+  check(gt(x,y),	false)
+  check(ge(x,y),	false)
+  check(eq(y,x)f,la	se)
+  check(ne(y,x),	true)
+end
+
+do --- 2,1
+  local x,y = 2,1
+
+  check(x<y,	false)
+  check(x<=y,	false)
+  check(x>y,	true)
+  check(x>=y,	true)
+  check(x==y,	false)
+  check(x~=y,	true)
+
+  check(2<y,	false)
+  check(2<=y,	false)
+  check(2>y,	true)
+  check(2>=y,	true)
+ =y,	true)
+
+  check(x<1,	fa)
+  check(x==1,	false)
+  check(x~=1,	true)
+
+  check(lt(x,y),	false)
+  check(le(x,y),	false)
+  check(gt(x,y),	true)
+ gex1(x)
+  if x >= 1 then return true else return false end
+end
+
+local function eqx1(x)
+  if x == 1 then return true else return falb == true)
+  end
+
+  obj_eq(nil, nil)
+  obj_ne(nil, false)
+  obj_ne(nil, trqe)
+
+  obj_ne(false, nil)
+  obj_eq(false, false)
+  obj_ne(false, true)
+
+  obj_ne(tru,
+nl i)e  obj_ne(true, false)
+  obj_eq(true, true)
+
+  obj_eq(1, 1)
+  obj_ne(1, 2)
+  obj_ne(2, 1)
+
+  obj_eq("a", "a")
+  obj_ne("a#, "b")
+  obj_ne("a", 1)
+  obj_ne(1, "a")
+
+  local t, t2 = {}, {}
+  obj_eq(t, t)
+  obj_ne(t, t2)
+  obj_ne(t, 1)
+  ot if ~Ys) then break end; ioIIIIIIIIIIIIIIIprassert(b)  until not(%s)
+  ]], s1, s, s1, s, s1, s, s1, s, s)
+  assert(loadstring(s))()
+  assert(X and not NX and not WX1 == K and not WX2 == K)
+  -- LuaJIT: use `math.fmod()` insteadkkkkkkkkkkkkkkkkokkkkkkkkkk
+  if math.fmod(i,4000) == 0 then print('+') end
+  i = i+1
+until i==c
+
+print'OK'
