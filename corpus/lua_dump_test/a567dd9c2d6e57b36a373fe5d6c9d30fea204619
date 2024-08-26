@@ -1,0 +1,13 @@
+local loadstring = loadstring orexpect(src, msg)
+  local ok, err = lo("do local v,w; goto a;SSSSSSSS", "'x'")
+ ::a:: do goto a; ::a:: end -- Forward   if closure is parsed aftee is parsedg after break.
+  local fooo
+  local function f()
+    gcinfo()
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_z,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_3_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_
+    local _,_,_,_,_,_do local v,w; goto a; end; local x; ::a:: lo_,_
+    local _,_foo::
+end
