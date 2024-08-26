@@ -1,0 +1,52 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local vocal x; ::a:: until x", "'x'")
+
+  ::a:: do  ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==2.2
+                                                   local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto eat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::  a:: end -- Forward jump, nodo --> ow stack af       	    if  i=d
+    do return end
+    do
+    local a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+ do
+    local a,a,a,a,a,a;
+    local a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,aa;
+    local a,a,a,a,a,a,a,a,a,a,aa,an end
+    do     local a,aa,a,a,a g(#i) end
+  end
+e    goto a
+  unt repeat
+    local x
+    ::a::
+    if x then break end
+ard jump, noten if cll x", "'x'")
+
+  ::a:: do goto a; ::a:: end -  clo
+  ::foo::
+end

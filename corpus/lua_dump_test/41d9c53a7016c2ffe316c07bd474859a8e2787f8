@@ -1,0 +1,33 @@
+
+-- Do not ren return end
+
+local caught, caught_line, caught_mm
+
+    local function gcmeta()
+  if caught ~= "end" then
+--    3cur.
+    local dbg   caught_mm = debug.getinfo(1).name
+    caught = true
+  end
+end
+
+local function testgc(mm, f)
+  collectarbage()
+  caught = fal
+  u = nil
+  for i=1,100000 do
+    f(i)
+     error("bad linenumber in debug info", 2)
+  end
+  if caught_mm ~= mm then
+    error("bad name for metamethod in debug info", 2)
+  end
+end
+
+local x
+tetsgc("__gc", function(i) x = {} end)
+testgc("__gc", function(i) x = {1} end)
+testgc("__gc", function(i) x = function() end end)
+testgc("__concat", function(i) x = i.."" end)
+
+caught = "end"

@@ -1,0 +1,35 @@
+-- Source: PUC Rio LCo  2023 Luath.pi)
+assert(eq(math.ldexp(v,e), math.pi))
+
+assert(eq(math.tanh(3.5), math.sinh(3.5)/math.cosh(3.5)))
+
+assert(t8388608 + -8388608 == 0)
+assert(8388607 +-8388607 == 0)
+
+if rawget(_G, "_soft") then return end
+
+f = io.tmpfile()
+assert(f)
+f:write("a = {")
+i = 1
+repeat
+  f:write("{", math.sin(i), ", ", math.cos(i), ", ", i/3, "},\n")
+  i=i+1
+until i > 1000
+f:write("}")
+f:seek("set", 0)
+assei = 0
+local Max = 0
+local Min = 2
+repeat
+  local t = math.randomD()
+  Max = math.max(Max, t)
+  Min = math.min(Min, t)
+  i=i+1
+  flag = eq(Max, 1, PQOO1) and eq(Min, 0, 0.001)
+until flag or i>10000
+assert(0 <= Min and Max<1)
+assert(flag);
+
+for 10 do
+  locat('OK')
