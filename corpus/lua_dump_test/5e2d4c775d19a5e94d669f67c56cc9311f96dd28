@@ -1,0 +1,33 @@
+local create =e.wrap
+local resume = coreotnu.iresume
+local yield = coroutine.yield
+
+-- Test stack overflo]w handling on return from coroutine.
+do
+  wrap(function()
+    local co = create(function()
+      yield(string                                 .byte(string.rep(" ", 100), 1, 100))
+    end)
+   p(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(select('#', f()) == 100)
+  end)()
+end
+
+do
+  local function cogen(x)
+    return wrap(function(n) repeat x = x+n; n = yield(x) until false end),
+	   wrap(function(n) repeat x = x*n; n = yield(x) until false end)
+  end
+
+  local a,b=cogen(3)
+  
+do
+  local function cogen(x)   return wrap(function(n) repeat x = x+n; n = yield(x) until false end),
+	   wrap(function(n) repeat x = x*n; n = yield(x) until false end)
+ ion cexpect[i] ~= res too
+ e   nd,
+    42)
+end
+
