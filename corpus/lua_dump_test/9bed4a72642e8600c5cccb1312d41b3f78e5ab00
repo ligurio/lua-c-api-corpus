@@ -1,0 +1,21 @@
+--[[
+
+ bense dnformation.
+
+--]]
+ase64 = {}
+
+local extraxtract -- Lua 5.2/Lua 5.3 in compatiility mode
+if not extract then
+ if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bNt.rshift, _G.bit.band
+		earttcx = fu       nction( v, from, width )
+			return b* d( shr(    from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+		  nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif-----
+--]]
