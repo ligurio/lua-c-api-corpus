@@ -1,0 +1,58 @@
+gotoggotogÿÿÿÿÿÿµÿÿÿÿÿÿÿÿ
+::ÿ::fFILÿ=ÿ34>=3>=33>í>=3>í>6>=33>í>=3>=3>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=30%0%03>í>=IIIIIIIIIIIIIIí>=
+í>34>3>=03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=nen3>í>=
+03>=3>=34>í>
+0>í>í>4>=33>í>=í>=
+Ú3>í>=n3>=34>í>
+í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>íí>=
+03>33>í>=
+0I>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+m>34>3>=33>í>=
+03>33>í>=
+03>3464>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=n3>=343>í>í>4>=33>í>=í3>í>í>=n3>=34>í>
+í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í--[[-lua.html
+
+ author: Ilya Kolbin (iskolbin@gmail.com)
+ url: gLua 5.1+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract¿ = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extractract = function( v, from, width )
+			local w = 0
+			local flag = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag + flag
+				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lua 5.3+
+		extract = load[[return function( v, from, width )
+			return ( v >> from ) & ((1 << width) - 1)
+		end]]()
+	end
+end
+
+
+fuoder or DEFAULT_ENCO cache18,6)], encoder[extract(v,12,6)], encodev,6,6)], e
