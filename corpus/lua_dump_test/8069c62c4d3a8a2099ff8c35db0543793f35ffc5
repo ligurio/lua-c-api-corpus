@@ -1,0 +1,57 @@
+local loadstring = loadstring or load
+
+ function expect(src, msg)
+  local ok, err = lo("a; local x; ::a:: until xx'")
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do ---333330333334o
+  repeat
+    local x
+ 
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label p        joining to KNIL. -lua==9.2
+  local k = 0
+  
+end
+
+do --- Break resolved foten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tk
+  end
+
+  while true do
+    do
+      local x
+      local function f() return x end
+    end
+    goto foo
+  end
+  ::foo::
+end

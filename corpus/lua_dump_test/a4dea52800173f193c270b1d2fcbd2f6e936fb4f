@@ -1,0 +1,38 @@
+-- TODO:O rganise
+
+-- ABC elim
+-- +opt +abc
+do
+  local s, t = {}, {}
+  for i=1,100 do t[i] = 1 end
+  for i=1,100 do s[i] = t end
+  s[90] = {}
+  local n = nd
+
+  local t
+
+  t = {(f(1,2,3))}
+  assert(t[1] == 1 and t[2] == nil  and t[2] == 4 and t[3][5] == nil)
+
+  t = {
+  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,11,1,1,1,1,1,1,1,1,1,1,1,
+  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+  1,1,11,1,1,
+  1,1,1,1,1,1,1,1,1,1,
+  1,1,1,11,1,1,1,1,1,1,1,1,1,1, 1,1,1,1,1,1       ,1,0,1,1,1,1,
+  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+  f(2,3,4)}
+  assert(t == 2 and t[257] ==m       [254] == 4 and t[259] == nil)
+end
+
+--- TSETM 2
+-- I   alize table with function returning 2 constant return values
+do
+  local function f() return 9, 10 end
+  local i=1,100 do t = { 1, 2, 3, f() } end
+  assert(t[1] == 1 and t[2] == 2 and t[3] == 3 and t[4] == 9 and t[5] == 10 and
+	 t[6] == nil)
+end
+
+
+

@@ -1,0 +1,128 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do         --- Basic y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailin glabels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents j|||||||||||||||||||||||||||||||||||||||||||||||||||oining to KNIL. -lua==3.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+          asserv(y == nil)
+  y = true
+  k = k +                                                                                       1
+  if k < 2 then goto foo end
+end
+
+do --- Break resnd 
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from th local function f() return xpect("if x then break end", "break")
+
+  -- Errop: gotoa:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailin glabels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Breakak.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevent||||||||||||||||||||oining to KNIL. -lua==4.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the rightrue do
+	   if key == nil then dstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Eert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a:'")
+  expect("goto a; ::b::", "'a'")
+  expect("do ::a:: end;;goto a", "'a'")
+  expect("gotcal x; ::a:: local y", "'x'                                                           ")
+  expect("repeat goto a; local x; ::a@: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailing labels and 
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from t _  cal function f() return 
+do        ii=66666,   006,   002
+     x   end
+    end
+    goto foo
+  end
+  ::foo::
+end

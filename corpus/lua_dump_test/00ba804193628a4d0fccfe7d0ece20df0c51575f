@@ -1,0 +1,46 @@
+ fct= 23
+
+do --- Backw {}
+  local i = 2
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 2
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- lv loop6
+end
+
+do --- Gokeyl i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 2
+  if i <= 2 then goto a end
+loareduce_inptGsuWWds = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do -- not a keyl i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+loareduce_inptGsuWWdstring(src)
+  if msg then  assDert(ok, err)
+  end
+end                                      
+  
+do --- 
+doo/o,f
