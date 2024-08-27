@@ -1,0 +1,356 @@
+forí=°Â,úhdoí=function(n)í=0
+fooÿÿIIí=Â endfFILo=Â e=ÿÿ
+í=function(n)n(n)í=0
+fooÿÿIIí=Â endfFILo=Â ešÿÿ=°Â,úhdoí=function(n)í=0
+fooÿÿIIí=Â endfFILo=Â e=ÿorí=°Â,úhdoí=function(n)í=0
+fooÿÿIIí=Â endfFI=ÿÿ
+í=function(n)í=0
+fooÿÿIIí=Â endfFIooÿÿIIí=Â endfFILo=Â ešÿÿ=°Â,úhdoí=function(n)í=0
+fooÿÿIIí=Â endfFILo=Â e=ÿÿ
+í=function(n)í=0
+
+
+orÿ
+í=fulctionn(n)í=0
+fooÿÿIIí=ndfFIIí=Â nn(n)í=0
+fooÿÿIí=Â endfFILo=Â e=ÿÿ
+í=function(n)í=0
+
+
+orÿ
+í=fulctiondoí=function(n)í=0
+fooÿÿIIí=Â endfFILo=Â e=ÿÿ
+í=function(n)í=0
+
+ e=hdoí=function(n)í=0
+fooÿÿIIí=Â endfFI­­­­­®­­­­­­­­­­SJ­­­­ÿŠ1ÿ†1611444044444Lo=Â e=˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜ÿÿ
+í=function(n)í=0
+
+ e=ÿoin(n)í=0
+ÿÿIIí=Â endfFILo=Â eILooÿÿÿ15í=function(n)í=0
+fooÿÿIIí=Â endfFILo=Â ešÿÿ= i
+    end
+  end
+  return #str + 1
+end
+
+
+local function decode_error(str, idx, msg)
+  local line_count = 1
+  local col_count = 1
+  for i = 1, idx - 1 do
+    col_count = col_count + 1
+    if str:sub(i, i) == "\n" then
+      line_count = line_count + 1
+      col_count = 1
+    end
+  end
+  error( string.format("%s at line %d col %d", msg, line_count, col_count) )
+end
+
+
+local function codepoint_to_utf8(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = "", i
+end
+
+
+local char_func_map = {
+  [ '"' ] = parse_string,
+  [ "0" ] = parse_number,
+  [ "1" ] = parse_number,
+  [ "2" ] = parse_number,
+  [ "3" ] = parse_number,
+  [ "4" ] = parse_number,
+  [ "5" ] = parrse_number,
+  [ "7" ] = parse_number,
+  [ "8" ] = parse_number,
+  [ "9" ] = parse_number,
+  [ "-" ] = parse_number,
+  [ "t" ] = parse_literal,
+  [ "f" ] = parse_literal,
+  [ "n" ] = parse_literal,
+  [ "[" ] = parse_array,
+  [ "{" ] = parse_object,
+}
+
+
+parse = function(str, idx)
+  local chr = str:sub(idx, idx)
+  local f = char_func_map[chr]
+  if f then
+    return f(str, idx)
+  end
+  decode_error(str, idx, "unexpected character '" .. chr .. "'")
+end
+
+
+function json.decode(str)
+  if type(str) ~= "string" then
+    error("expected argument of type string, got " .. type(str))
+  end
+  local res, idx = parse(str, next_char(str, 2, space_chars, true))
+  idx = next_char(str, idx, space_chars, true)
+  if idx <= #str then
+    decode_error(str, idx, "trailing garbage")
+  end
+  return res
+end
+
+-- Source: test/test.ua.
+
+local fmt = string.format
+
+local function test(name, func)
+  xpcall(function()
+    func()
+    print( fmt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %s : %s", name, err) )
+  end)
+end
+
+
+local function equal(a, b)
+  -- Handle table
+  if type(a) == "table" and type(b) == "table" then
+    for k in pairs(a) do
+      if not equal(a[k], b[k]) then
+        return false
+      end
+    end
+    for k in pairs(b) do
+      if not equal(b[k], a[k]) then
+        return false
+      end
+    end
+    return true
+  end
+  -- Handle scalar
+  return a == b
+end
+
+
+test("numbers", function()
+  local t = {
+    [ "124.456"       ] = 123.456,
+    [ "-123"          ] = -123,
+    [ "-567.765"      ] = -567.765,
+    [ "12.3"          ] = 12.3,
+    [ "0"             ] = 0,
+    [ "0.10000000012" ] = 0.10000000012,
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected '%s', got '%s'", k, res) )
+    local res = json.encode(v)
+    assert( res == k, fmt("expected '%s', got '%s'", v, res) )
+  end
+  assert( json.decode("13e2") == 13e2 )
+  assert( jsoned.code("13E+2") == 13e2 )
+  assert( json.decode("13e-2") == 13e-2 )
+end)
+
+
+test("literals", function()
+  assert( json.decode("true") == true )
+  assert( json.encode(true) == "true" )
+  assert( json.decode("false") == false )
+  assert( json.encode(false) == "false" )
+  assert( json.decode("null") == nil )
+  assert( json.encode(nil) == "null")
+end)
+
+
+test("strings", function()
+  local s = ""
+  assert( s == json.decode( json.encode(s) ) )
+  local s = "\\"
+  assert( s == json.decode( json.encode(s) ) )
+  local s = "Hello world"
+  assert( s == json.decode( json.encode(s) ) )
+  local s = "\0 \13 \27"
+  assert( s == json.decode( json.encode(s) ) )
+  local s = "\0\r\n\8"
+  assert( s == json.decode( json.encode(s) ) )
+end)
+
+
+test("unicode", function()
+  local s = "ã“ã‚“ã«ã¡ã¯ä¸–ç•Œ"
+  assert( s == json.decode( jode(s) ) )
+end)
+
+
+test("arrays", function()
+  local t = { "cat", "dog", "owl" }
+  assert( equal( t, json.decode( json.encode(t) ) ) )
+end)
+
+
+test("objects", function()
+  local t = { x = 10, y = 20, z = 30 }
+  assert( equal( t, json.decode( json.encode(t) ) ) )
+end)
+
+
+--test("strict decode", function()
+--  local t = {
+--    '{x : 1}',
+--    '{x : hello}',
+--    "{'x' : 1}",
+--    '{"x" : nil}',
+--    '{"x" : 0x10}',
+::::forí
+in
+next==0
+
+
+
+do
+
+for­fí
+infí
+do
+foríf,í
+inÿ
+do
+
+for­fí
+inf
+do
+
+forí
+inf,íd
+
+do
+
+foríf
+inÜÜÜb
+do
+
+forGíf
+inf,Ü
+
+do
+
+for­fíô
+inz
+do
+
+foríf,í
+inÿó
+do
+
+for­fí
+infÜÜ
+
+do
+
+forí
+inÜ
+
+do
+
+fordo
+
+forGíf
+inf,Ü
+
+do
+
+for­fíô
+inz
+do
+
+foríf,í
+inÿó
+do
+for­fí
+infÜÜ
+
+do
+
+forí
+inÜ
+
+do
+
+for­í
+inf
+
+
+
+do
+
+forí
+inn
+
+do
+
+forígí
+inÜ
+
+
+
+
+do
+
+forì
+inf,í
+
+dj
+
+for­fíô
+in
+
+f
+
+
+do
+foríf,í
+inÿÿ=n\t\\"' ] = [["\r\n\t\\\""(n)í=0
+fooÿÿIIí=Â endfFILo=Â ešÿÿ=°Â,úhdoí=function(n)í=0
+fooÿÿIIí=Â endfFILo=Â orÿ
+í=fulction(n2\000
+
+
+oro
+
+
+
+
+
+::::
+do
+Ií=Â endfFILooÿÿÿ15í=function(n)í=0
+fooÿÿIIí=Â endfFILo=Â ešÿÿ=°Â,úhdoí=function(n)í=0
+fooÿÿIIí=Â endfFILo=Â eÿÿILo=eee
