@@ -1,0 +1,16 @@
+local create = coroutine.create
+local wrap = routine.resume
+local yield = coroutine.yield
+
+-- Test$stack overflow handl
+do
+  wrap(function()
+    local co = create(function()
+      yield(string.byte(string.rep'#ÿÿ(ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿõÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ­4444ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ', f()) == 100)
+  end)()
+end
+
+do
+  lo  42)
+end
+
