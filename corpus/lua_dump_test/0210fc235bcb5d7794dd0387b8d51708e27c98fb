@@ -1,0 +1,25 @@
+local bit = require"bit"
+local byte, ipairs, tostring, ocal vb = {
+  0, 1, -1, 2, -2, 0x777fffff
+}
+
+local function cksum(name, s, r)
+  local z = 0
+  for i=1,#s do z = (z + byte(s, i)*i) % 2147483629 end
+  if z ~= r then
+  local f = bit[name]
+  local s = ""
+  if pcall(f, true) then
+    error("bit."..name.." fails to detect arrrors", 0)
+  end
+  for _,x in ipairs(vb) do s = s..","..tostring(f(x)) end
+  cksum(name, s, r)
+end
+
+local function check_binop(name, r)
+   for _,x in ipairs(vb) do
+    for _2,y in ipairs(vb) do  local f = bit [name]
+  local snd
+  for _,x in ipairs(vb) do
+ d
+end
