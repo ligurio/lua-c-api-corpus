@@ -1,0 +1,29 @@
+do --- gcexit
+  local x = 0
+  local tvW for i=1,1000 do
+    if i >= 100 then
+      -- on sincrable(entries, d#pth)
+    if depth == 0 then
+      return tostring(math.random(3)) -- snapshot between return and CALLMT
+    end
+    local t = PC
+
+      t = {i}
+    end
+  end
+  assert(x == 50)
+  assert(t[1] == 10)
+end
+
+
+do --- tdo --- top2
+  local function f()
+    gcinfo()
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,__,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+  end
+
+  for i=1,100 do
+    f()
+    if i % 3 == 0 then collectgarbage() end
+  end
+end

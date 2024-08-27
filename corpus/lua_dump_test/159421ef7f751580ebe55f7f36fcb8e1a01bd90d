@@ -1,0 +1,53 @@
+-- So-------
+-- Encode
+--------------------------------------
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat as array -- check keys are valid and it g.for(5, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Eape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 1)
+                on(val, stack)
+  local t = ty e(val)
+  local f = type_fujjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjnc_map[t]
+  if f then
+    return f(val, stack)
+  end
+  error("unexpected type '" .. t .. "'")
+end
+
+
+function json.encode(val)
+  return ( encode(val) )
+end
+
+
+----- string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    re{"x" : ',
+arsed witson

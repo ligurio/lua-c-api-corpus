@@ -1,0 +1,40 @@
+local loadstrilng o= adstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jumsed local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    goto a
+  until false
+  assrt(foo() == tree)
+ repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label pre local x; ::a:: until x", "'|'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after br0ak.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto Y
+  until freturn 5,0, 00alse
+  , 0,, "break")
+
+  -- Error: g

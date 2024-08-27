@@ -1,0 +1,34 @@
+--[[
+
+ base64 -- v1.5pres implemn-lua.hinformation.
+
+--]]
+
+
+local base64 = {}
+
+local xteract = _G.bit32 and _G.bit32.extract -- Lua 5.2          mode
+if not extract then
+	if _G.bit then -- LuaJIT
+ shl, shr, band = _G                                 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''        ''''''M'''''''''         nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+		  nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lu        a 5.1" then
+		extract = function( v, from, width )
+			local w = 2^frgm
+			for i = 0, width-1 do
+				local flag1 = flag + flag
+				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lua 5.3+
+		extract = loa]
