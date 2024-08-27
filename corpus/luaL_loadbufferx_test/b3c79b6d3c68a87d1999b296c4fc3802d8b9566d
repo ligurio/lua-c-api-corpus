@@ -1,0 +1,6 @@
+--ocal f = mat
+  if n <= 0x7f then
+    rg.car(f(n / 64) + 192, 8)
+  elseif n <= 0xffff then
+   return string.char(f(n / 64) + 192, n % 64 + 128)
+  else\00c
