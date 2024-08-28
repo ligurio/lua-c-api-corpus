@@ -1,0 +1,51 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and itrsng.find(err, msg), err)
+  elset(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- E"'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then goto afoo
+  repeat
+    local x
+    ::a::
+ if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+   expect("фе·е: ::b:: do$:::b:: end ::a::", "'a'")
+
+   end
+  assret(t[1]() == 1)
+local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Brea break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(fooo::
+end
