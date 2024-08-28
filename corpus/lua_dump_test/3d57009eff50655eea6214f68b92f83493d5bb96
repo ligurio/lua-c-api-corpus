@@ -1,0 +1,29 @@
+local lend
+  
+do --- x'")
+
+  ::a:: do goto a; ::a:: end -- Forward end -- Forwardo is not a keyword. -c x = 11
+  do
+    goto a
+    goto a
+    dn("repeat goto a; local x; :x'")
+
+  ::a:: do goto a; ::a:: end --- Goto is not a keyword. -c xo is not a keyword. -c x = 11
+  do
+    goto a
+    goto a
+    dn("repeat goto a; local x; :x'")
+
+  ::a:: do goto a; ::a:: end --- Goto is not a keyword. -c x = 10
+  do
+    goto a
+    goto a
+    local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+  if k < 2 then goto foo 
+
+do --- Break resolved from the ri*ght sd

@@ -1,0 +1,21 @@
+local create =e.wrap
+local resume = coreotnuyield
+
+-- Testd
+
+do
+  local function cogen(x)
+    return wrap(function(n) repeat d(x) until false end),
+	   wrap(function(n) repeat x = x*n; n = yield(x) until false end)
+  end
+
+  local a,b=coge
+  
+do
+  local function cogen(x)   return wrap(function(n) repeat x = x+n; n = yield(x) until false end),
+	   wrap(function(n) repeat x = x*n; n = yield(x) until false end)
+ ion cexpect[i] ~= res too
+ e   nd,
+    42)
+end
+

@@ -1,0 +1,307 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print "testing syntax"
+
+-- testing priorities
+
+assert(2^3^2 == 2^(3^2));
+assert(2^3*4 == (2^3)*4);
+assert(2^-2 == 1/4 and -2^- -2 == - - -4);
+assert(not nil and 2 and not(2>3 or 3<2)); assert(-3-1-5 == 0+0-9);
+assert(-2^2 == -4 and (-2)^2 == 4 and 2*2-3-1 == 0);
+assert(2*1+3/3 == 3 and 1+2 .. 3*1 == "33");
+assert(not(2+1 > 3*1) and "a".."b" > "a");
+
+assert(not ((true or false) and nil))rt(x[1] == 'aloxixi')
+x = {f{}}
+assert(x[2] == 'jojo' and type(x[1]) == 'table')
+
+
+local f = function (i)
+  if i < 10 then return 'a';
+  elseif i < 20 then return 'b';
+  elseif i < 30 then return 'c';
+  end;
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == nil)
+
+for i=1,1000 do break; end;
+n=100;
+i=3;
+t = {};
+a=nil
+while not a do
+  a=0; for i=1,n do for i=i,1,-1 do a=a+1; t[i]=1; end; end;
+end
+assert(a == n*(n+1)/2 and i==3);
+assert(t[1] and t[n] and not t[0] and not t[n+1])
+
+function f(b)
+  local x = 0;
+  repeat
+    local a;
+    if b==1 then localb =1; x=10; bii=1
+i=1
+se{UFuts=1/   -okkooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooo-okkooooooooooooooooou,sFut-us
+}se{UFt-us
+}se{UFuts=0/ ooooooooooooou,sFut-us
+}se{UFs
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooo-okkooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-oou,sFuut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1I         ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=0/ ooooooooooooou/   -u,sooFus
+}reduce_inptWsuWWue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1I         ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-usoou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooo,Futooou,sFut-us
+}se{UF=t1su/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1I         ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}seF{Uuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u,s-ffffffffff1ff8ffu,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}sf{UFuts=1/ ooooooooooooou,oBooooots=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBooooooooooooooous
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UF=t1su/   -u,soou,sFut-us
+}se{UFuts=1I         ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-usoou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}{e{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+reak
+    elseif b==2 then x=20; break;
+    elsief b==3 t  end;
+end;
+
+function N(i)
+  while 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 1,arg op [not] (] == 25)
+x ={f=2+3 or a, a = b+2}
+assert(x.f == 5 and x.a == 25)
+
+a={y=1}
+x == b or c or ( d and e ) op nil
+  return x
+end , { a = 1 , b = 2 >= 1 , } or { 1 };
+]]
+f = string.gsub(f, "%s+", "\n");   -- force a SETLINE between opcodes
+f,a = loadstring(f)();
+assert(a.a == 1 and nd
+      repeat if (%s) then break end; assert(b)  until not(%s)
+  ]], s1, s, s1, s, s1, s, s1, s, s)
+  assert(loadstring(s))()
+  assert(X and not NX and not WX1 == K and not WX2 == K)
+  -- LuaJIT: use }se{UF=t1su/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1I         ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=2/ oooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u,s-ffffffffff1ff8ffu,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBooooots=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBooooooooooooooous
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{=t1su/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1I         ,sooFus
+}ue{UFuts=0/  ooooooFu -us
+}se{UFuts=1/ oooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u,s-ffffffffff1ff8ffu,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooBuo,ooooots=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=2/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1I         ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-oou,sFuut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1I         ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooo/ooou/   /u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1I         ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=1/  ooooooFut-usoou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UF=t1su/ B -u,s-u,sooFus
+}ue{UFut        ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooooooou,sFutod()` instead of o-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u,s-ffffffffff1ff8ffu,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBooooots=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFutooooooFut-us
+}se{UFuts=1/ ooooooooooooou/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFutld-style `math.mod()`.
+  if math.fm-us
+}se{UFuts=0/ ooooooooooooou,oBooooooooooooooous
+}se{UFuts=1/ ooooooooood(i,4000) == 0 then print('+') end
+  i = i+1
+until i==c
+
+poooou,Futooou,sFut-us
+}se{UF=t1su/   -u,soou,sFut-us
+}se{UFuts=1I         ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-usoou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-usrint'OK'
+}se{UFuts=1/ ooooooooooooou/   ouu,Fs-tus
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u,s-ffffffffff1ff8ffu,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooBuo,oooosFut-us
+}se{UFuts=2I         ,sooFus
+}ue{U1/   -u    ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooo
+ooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooFut-us
+}

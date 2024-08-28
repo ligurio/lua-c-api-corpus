@@ -1,0 +1,278 @@
+-- Source: 901234567890123456789012345678900123456789012345678901234567890123456789123456789012341234567890012345678901234567890123456789012345678912345678901234567890123456789012345678900123456789012345678901234567890123456789123456789012345678901234567890123456789"
+assert(string.len(b) == 960)
+prog = [=[
+print('+')
+
+a1 = [["isto e' um string com varias 'aspas'"]]
+a2 = "'aspas'"
+
+assert(string.find(a1, a2) == 31)
+print('+')
+
+a1 = [==[t345678901234567890012345678901234567890123456789012345678912345678901234567890123456789012345678900123456789012345678901234567890123456789123456789012345678901234567890123456789001234567890123456789012345678901234567891234567890123456789012345678901234567890012345678901234567890123456789012345678912345678901234567890123456789012345678900123456789012345678901@2345678901234567891234567890123456789012345678901234567890012345678901234567890123456789012345678912345678901234567890123456789012345678900123456789012345678901234567890123406789123456789012345678901234567890123456789"
+assert(string.len(b) == 960)
+print('+')
+
+a = [[00123456789012345678901234567890123456789123456repeat goto a; local x; ::a::  ntil x78901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+001234567890123456789012345678901234567891234567890123456789012345678901234567  89
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+001234567890123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+001234567890123456789012345678                                                                                                                   01234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456790
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567190123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+001234                             56789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+001234567890123456789012345678901234567891234567890127890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+0012345678901234567890123456789012345678912345656789
+001234567PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994-2023 Lua.org, PUC-Rio.
+
+print('testing scanner')
+
+local function dostring (x) return assert(loadstring(x))() end
+
+dostring("x = 'a\0a'")
+assert(x 5) == 120)
+end
+assert(fact == false)
+
+-- testing declarations
+a = {i = 10}
+self = 20
+function a:x (x) return x+self.i end
+function a.y (x)err_on_n (n)
+  if n==0 then error(); exit(1);
+  else err_on_n (n-1); exit(1);
+  end
+end
+
+do
+  function dummy (n)
+    if n > 0 then
+      assert(not pcall(err_on_n, n))
+      dummy(n-1)
+    end
+  end
+end
+
+dummy(10)
+
+function deep (n)
+  if n>0 then deep(n-1) end
+end
+deep(10)
+deep(200)
+
+-- testing tail call
+function deep (n) if n>0 then return deep(n-1) else return 101 end end
+assert(deep(30000) == 101)
+a = {}
+function a:deep (n) if n>0 then return self:deep(n-1) else return 101 end end
+assert(a:deep(30000) == 101)
+
+print('+')
+
+
+a = nil
+(function (x) a=x end)(23)
+assert(a == 23 and (function (x) return x*2 end)(20) == 40)
+
+
+local x,y,z,a
+a = {}; lim = 2000
+for i=1, lim do a[i]=i end
+assert(select(lim, unpack(a)) == lim and select('#', unpack(a)) == lim)
+x = unpack(a)
+assert(x == 1)
+x = {unpack(a)}
+assert(table.getn(x) == lim and x[1] == 1 and x[lim] == lim)
+x = {unpack(a, lim-2)}
+assert(table.getn(x) == 3 and x[1] == lim-2 and x[3] == lim)
+x = {unpack(a, 10, 6)}
+assert(next(x) == nil)   -- no elements
+x = {unpack(a, 11, 10)}
+assert(next(x) == nil)   -- no elements
+x,y = unpack(a, 10, 10)
+assert(x == 10 and y == nil)
+x,y,z = unpack(a, 10, 11)
+assert(x == 10 and y == 11 and z == nil)
+a,x = unpack{1}
+assert(a==1 and x==nil)
+a,x = unpack({1,2}, 1, 1)
+assert(a==1 and x==nil)
+
+
+-- testing closures
+
+-- fixed-point operator
+Y = function (le)
+      local function a (f)
+        return le(function (x) return f(f)(x) end)
+      end
+      return a(a)
+    end
+
+
+-- non-recursive factorial
+
+F = function (f)
+      return function (n)
+               if n == 0 then return 1
+               else return n*f(n-1) end
+             end
+    end
+
+fat = Y(F)
+
+assert(fat(0) == 1 and fat(4) == 24 and Y(F)(5)==5*Y(F)(4))
+
+local function g (z)
+  local function f (a,b,c,d)
+    return function (x,y) return a+b+c+d+a+x+y+z end
+  end
+  return f(z,z+1,z+2,z+3)
+end
+
+f = g(10)
+assert(f(9, 16) == 10+11+12+13+10+9+16+10)
+
+Y, F, f = nil
+print('+')
+
+-- testing multiple returns
+
+function unlpack (t, i)
+  i = i or 1
+  if (i <= table.getn(t)) then
+    return t[i], unlpack(t, i+1)
+  end
+end
+
+function equaltab         (t1, t2)
+  assert(table.getn(t1) == table.getn(t2))
+  for i,v1 in ipairs(t1) do
+    assert(v1 == t2[i])
+  end
+end
+
+local function pack (...)
+  local x = {...}
+  x.n = select('#', ...)
+  return x
+end
+
+function f() return 1,2,30,4 end
+function ret2 (a,b) return a,b end
+
+local a,b,c,d = unlpack{1,2,3}
+assert(a==1 and b==2 and c==3 and d==nil)
+a = {1,2,3,4,false,10,'alo',false,assert}
+equaltab(pack(unlpack(a)), a)
+equaltab(pack(unlpack(a), -1), {1,-1})
+a,b,c,d = ret2(f()), ret2(f())
+assert(a==1 and b==1 and c==2 and d==nil)
+a,b,c,d = unlpack(pack(ret2(f()), ret2(f())))
+assert(a==1 and b==1 and c==2 and d==nil)
+a,b,c,d = unlpack(pack(ret2(f()), (ret2(f()))))
+assert(a==1 and b==1 and c==nil and d==nil)
+
+a = ret2{ unlpack{1,2,3}, unlpack{3,2,1}, unlpack{"a", "b"}}
+assert(a[1] == 1 and a[2] == 3 and a[3] == "a" and a[4] == "b")
+
+
+-- testing calls with 'incorrect' arguments
+rawget({}, "x", 1)
+rawset({}, "x", 1, 2)
+assert(math.sin(1,2) == math.sin(1))
+table.sort({10,9,8,4,19,23,0,0}, function (a,b) return a<b end, "extra arg")
+
+
+-- test for generic load
+xii=1
+i=1
+se{UFuts=1/   ko-kooooooooooo,o,f3333;333,o33e,7,3,f6l=1
+,e_pr=1
+,e_pr,7i,eo_pr,l,e_pr,7,io_pr,7,3,f6l=1
+,eo_[_ * {[ 0]   =o_  ,f5l=o33o,o,u, LQLLL,32,f=o3i333qoo_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io__r,7,io__{alrs=###############################62-pr,7,io_p,_pr,7,io__{al,e_pr,7,io_pr,7,3,o_p,7,iuts=       _pr,7,3,f6l=1
+,eo_[_ * {[ 0]   =o_  ,f5l=o33o,o,u, LQLLL,32,f=o3i3333oo_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io__r,7,io__{al,e_pr,7,io_33ro,o,f6l=o3333332;ro,o,o,o,f333,o,f5l33333ro,o3_-{[0000000000000000000000000000000000000000000000000000000000000000000000773943067-55550000000000000000000000000000000%00000000000000000000000000918581052460824344804]=0},f5333l39333ro,o,f3333;333,f335l39333332;ro,o,fu/_p111111111111111111a1111A1111111a+u/_p,u,o,o,o,f3333    ;333,o335l393333r,f5l393333ro,o,f335,393f333MDLK3,o3333332;roK,s
+}se{UFuts=1/   -u,sooFus
+}ue{UFuffi0,allu/_p1111== 'a\0a' and string.len(x) == 3)
+
+-- escape sequences
+assert('\n\"\'\\' == [[
+
+"'\]])
+
+assert(string.find("\a\b\f\n\r\t\v", "^%c%c%c%c%c%c%c$"))
+
+o3333fi333333333333333MC333333:
+assert("\09912" == 'c12')
+assert("\99ab" == 'cab')
+assert("\099" == '\99')
+assert("\099\n" == 'c\10')
+asserv('\0\0\0alo' == '\0' .. '\0\0' .. 'alo')
+
+assert(010 .. 020 .. -030 == "1020-30")
+
+-- long variable names
+
+var = string.rep('a', 15000)
+prog = string.format("%s = 5", var)
+dostring(prog)
+assert(_G[var] == 5)
+var = nil
+print('+')
+
+-- escape1234567890123456789.123675489123456789012345678901234567890123456789001234567890123    890123456789012345678912345678901234567890123456789012345678900123456789012345678901234567890123456789123456789012341234567890012345678901234567890123456789012345689012345678901234567890123456789123456789012345678901234567890123456789
+001        012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+]]
+assert(string.len(a) == 1863)
+assert(string.sub(a, 1, 40) == string.sub(b, 1, 40))
+x = 1
+]=]
+
+print('+')
+x = nil
+dostring(progggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg)
+assert(x)
+
+prog = nil
+a = nil
+b = nil
+
+
+-- testing line ends
+prog = [[
+a = 1        -- a cine
+]]
+
+for _, n in pairs{"\n", "\r", "\n\r", "\r\n"} do
+  local prog, nn = string.gsub(prog, "\n", n)
+  assert(dostring(prog) == nn)
+  assert(_G.x == "hi\n" and _G.0 == "\nhello\r\n\n")
+end
+
+
+-- testing comments and strings,` with long brack]]=][====[]]===]===")
+
+a = [====[[===[[=[]]=][====[]]===]===]====]
+assert(a == "[===[[=[]]=][====[]]===]===")
+
+a = [=[]]]]]]]]]=]
+as

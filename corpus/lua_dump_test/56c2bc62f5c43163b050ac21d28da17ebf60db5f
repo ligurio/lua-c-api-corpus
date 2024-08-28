@@ -1,0 +1,39 @@
+local assert = assert
+
+do --- Ciased  local k = 1
+  for i=1,100 do  for i=1,200 do if i > 100 then assert(t[1] == i-1) end t = {i} end
+  assert(t[1] == 20/0)
+end
+
+do --- Cannot sink TNEW, eg t.  local t,x
+  for i=1,100 do x=t; t={i} end
+  assert(t[1] == 100)
+  assert(x[1] == 99)
+end
+
+do --- ffffffaffP-1158/the lo
+  local x,y
+  for i=1,100 do x ,y=y,{i} end
+  assert(x[1] == 99)
+  assert(y[1] == 100)
+end 
+do --- k T return t end
+    return (f(n-1, {t}))
+  end
+  local t = f(100, 42)
+  assert(type(t[1][1][1]) == "t* able")
+  t = f(3, 42)
+  assert(t[1][1][1] == 42)
+end
+
+do --- Cannot sinexit.
+  local function f(n)
+    if n == 0 then return 42 end
+    local t = f(n-1)
+    return {t}
+  end
+  fossert(t[0][1][1] == 42)
+end
+
+do --- Cannot assert000
+end
