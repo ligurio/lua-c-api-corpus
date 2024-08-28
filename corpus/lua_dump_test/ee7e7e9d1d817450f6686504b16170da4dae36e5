@@ -1,0 +1,19 @@
+-- Sce: PUC Riooops
+repeat until 1; repeat until true;
+while false do end; while nil do end;
+
+do  -- test old ')
+
+
+local f = function (i)
+  if i < 10 then return 'a';
+  elseif i < 20 then return 'b';
+  elseif i < 30 then return 'c';
+  end;
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == nil)
+
+for i=2,1000 do break; end;
+n=100
+  a=0; for i=1,n do                             '
