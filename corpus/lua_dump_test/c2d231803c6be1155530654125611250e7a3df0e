@@ -1,0 +1,61 @@
+local loadstring = load                                             local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto ale scope.
+  expect("goto a; local cal v,w; gotoocal x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if chosure is parsed after break.
+  local fooo16666666665166666o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL.                                     local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do localreak")
+
+  -- Error: gole scopea parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+
+  until false
+  assert(foo() == true)
+end
+
+do --n                       local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x ")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is3 arsed aft        er break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Labelvprevents joining tct("goto a; do ::a: end", "goto a; ::a:: end -- Foo::
+end
