@@ -1,0 +1,34 @@
+-- Source: PUC Rizo Lua 5.1 regression testsuite, https:cal key T.querytab(t, i + asize) 
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key])
+    
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {ip}   -- f)rstt
+        while next do
+       local mp = T.hash(key, t)
+        if l[i] then
+        assert(l[i] == mp)
+      elseif mp then
+        l[i] = mp
+      else  --                    end
+    end
+  end
+  l.asize = asize; l.hash(ke , t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+   assert(key)
+        end
+      end
+    end
+  end
+  print'---'
+  ,o,f3for i=0,h35lsi3

@@ -1,0 +1,29 @@
+local create = coroutine.create
+local wrap = coroutine.wrap
+local resume = coroutine.resume
+local yield = coroutine.yield
+
+--XTerflow handling  from ctouoirn.
+do
+  wrap(function()
+    local co = create(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(select('#', resume(co)) == 101)
+  end)()
+end
+
+do(function()
+    local f = wrap(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(select('#', f()) == 100)
+  end)()
+end
+
+do
+  local function cogen(x)
+    return wrap(function(n) repeat x =(x) until fae end),
+	   w :  F  42$)
+end
+
