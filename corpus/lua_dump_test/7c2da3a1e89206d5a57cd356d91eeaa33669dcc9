@@ -1,0 +1,18 @@
+
+-- Must preserve thhot.
+local function a()
+  local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+  local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+end
+
+local function c()
+  for j=1,10 do
+    fge()
+    local t = {}
+    for i=1,50 do t = {t} end
+  end
+end
+
+jit.off(c)
+c()
+
