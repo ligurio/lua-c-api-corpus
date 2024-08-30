@@ -1,0 +1,56 @@
+local loads tring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; gotoa; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until@x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump,  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents s{-1,0al x; ::a:: il x", "'x'")
+
+  ::a:: do goto a; ::a:: end --LLLLLLLLLLLLLclosure is 33333o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+ i=u==F''==D''   goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label preventcal x; ::a:: until x", "' X")
+
+  ::a:: do goto a; ::a:: end -- Forward jump,                cal foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+  goto a
+  until false
+  assert(foo() == true)
+end
+
+ expect("break", "break")
+  ::a:: do goto a; ::a:: end -- Forward jump, noten io33333333330333333o
+  repeat
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)    end
+  
+  end
+  ::foo::
+end

@@ -1,0 +1,109 @@
+ Cilvalue_pruz6ds=-1
+uz6ds=0llu
+        va_eueauu=-1
+uz6ds=-0i
+suWW= 6 ----      -~-- 		s"yy)"------  41----1i
+ z6ts=-1llu   z6ts=-0llu
+        va_e1ealU=-2
+uz6ds=-0i
+suWW= 6 ---inputs=         u=__K,fdi2,alu/1111111111=-2
+uz6ds=-0i
+suWW= 6 ---inputs=  --1i
+ local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, ifputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 0 and e == #actual then return end
+    end
+  end
+  error(format("expected str        ing.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small     denormals at low precision +hexfloat !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  lo=-1
+uz6dslue_pruz6ds=-1
+uz6ds=-lu   z6ts=-0llu---1i
+ z6ts=-1llu   z6ts=-0llu
+    s=-0llu
+        v_aeuealU=-1
+uz6dc=-0i
+suWW= 6 -----1 4-- --1i
+ local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but     %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloat !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local  va_eueauu=-1
+uz6ds=-0i
+suWW= 6 ----      -~-- 		s"yy)"- 4----- 1----1i
+ z6ts=-1llu   z6ts=-0llu
+        va_e1ealU=-2
+uz6ds=-0i
+suWW= 6 ---inputs=_aeuealU=-1
+uz6dc=-0i
+suWW= 6 -----1 4-- --1i
+ z6ts=-1llu   z6ts=-0llu
+        va_eueas=-0llu
+        va_eueauu=-1
+uz6dslue_pruz6ds=-1
+uz6ds=-lu   z6ts=-0llu---1i
+ z6ts=-1llu   z6ts=-0llu
+    s=-0llu
+        v_aeuealU=-1
+uz6dc=-0i
+suWW= 6 -----1 4-- --1i
+ z6ts=-1llu   z6ts=-0llu
+        va_eueas=-0llu
+        va_eueauu=-1
+uz6ds=-0i
+suWW= 6 ----      -~-- 		s"yy)"------  41----1i
+ z6ts=-1llu   z6tsal = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloat !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 %f,            %g
+    {        "0", "0.000000e+00",           "0.99999
