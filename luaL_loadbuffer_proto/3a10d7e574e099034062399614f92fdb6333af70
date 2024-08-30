@@ -1,0 +1,149 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            forcyclename {
+              name {
+                name: ""
+                num: 0
+              }
+              startexp {
+                false: 173
+              }
+              stopexp {
+              }
+              stepexp {
+                false: 173
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+          laststat {
+            explist {
+              explist {
+                explast {
+                  function {
+                    body {
+                      block {
+                        chunk {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            prefixexp {
+              functioncall {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "xpcall"
+                        num: 8
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "require"
+                                num: 0
+                              }
+                            }
+                          }
+                        }
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "xpcall"
+                                num: 3080192
+                              }
+                            }
+                          }
+                        }
+                        explast {
+                          str: ";"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          binop {
+          }
+          rightexp {
+            true: 3080192
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "load"
+              num: 3087007744
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                prefixexp {
+                  functioncall {
+                    prefArgs {
+                      prefixexp {
+                        var {
+                          indexexpr {
+                            prefixexp {
+                            }
+                            exp {
+                            }
+                          }
+                        }
+                      }
+                      args {
+                      }
+                    }
+                  }
+                }
+              }
+              explast {
+                str: "\002\000\000\000\000\000KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK\000\000"
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  laststat {
+    break: 250
+  }
+}

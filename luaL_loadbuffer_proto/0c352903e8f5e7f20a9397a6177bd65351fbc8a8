@@ -1,0 +1,111 @@
+chunk {
+  stat {
+    semicolon: true
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "_ENV"
+                      num: 0
+                    }
+                  }
+                }
+                name {
+                  name: "getmetatable"
+                  num: 0
+                }
+                args {
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "_ENV"
+                      num: 0
+                    }
+                  }
+                }
+                name {
+                  name: "getmetatable"
+                  num: 0
+                }
+                args {
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        ellipsis: "_ENV"
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                }
+                name {
+                  name: ""
+                  num: 0
+                }
+                args {
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "_ENV"
+                      num: 0
+                    }
+                  }
+                }
+                name {
+                  name: "getmetatable"
+                  num: 0
+                }
+                args {
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        ellipsis: "!"
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    call {
+    }
+  }
+  stat {
+  }
+  laststat {
+    semicolon: true
+  }
+}

@@ -1,0 +1,47 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  str: "debug.setc[tacklimit"
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 67108864
+                    }
+                  }
+                }
+                args {
+                  str: "debug.setcstacklimit"
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        ellipsis: "A"
+      }
+    }
+  }
+}

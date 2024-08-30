@@ -1,0 +1,128 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            prefixexp {
+              var {
+                indexexpr {
+                  prefixexp {
+                    exp {
+                      tableconstructor {
+                      }
+                    }
+                  }
+                  exp {
+                    prefixexp {
+                      functioncall {
+                        prefArgs {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "load"
+                                num: 0
+                              }
+                            }
+                          }
+                          args {
+                            str: "goto"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          binop {
+          }
+          rightexp {
+            prefixexp {
+              var {
+                indexexpr {
+                  prefixexp {
+                    exp {
+                      tableconstructor {
+                      }
+                    }
+                  }
+                  exp {
+                    prefixexp {
+                      functioncall {
+                        prefArgs {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "load"
+                                num: 0
+                              }
+                            }
+                          }
+                          args {
+                            str: "goto"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+            stat {
+              repeatcycle {
+                block {
+                  chunk {
+                  }
+                }
+                condition {
+                  unary {
+                    unop {
+                    }
+                    exp {
+                    }
+                  }
+                }
+              }
+            }
+            laststat {
+              break: 131072
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    whilecycle {
+      condition {
+        ellipsis: "\'"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+  }
+  laststat {
+    semicolon: true
+  }
+}

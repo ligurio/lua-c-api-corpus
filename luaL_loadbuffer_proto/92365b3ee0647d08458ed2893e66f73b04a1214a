@@ -1,0 +1,107 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\\001\\000\\000\\000\\000\\000\\000\\003"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+            stat {
+              ifstat {
+                condition {
+                }
+                first {
+                  chunk {
+                  }
+                }
+              }
+              semicolon: true
+            }
+            stat {
+            }
+            stat {
+              forcyclelist {
+                names {
+                  firstname {
+                    name: ""
+                    num: 0
+                  }
+                }
+                expressions {
+                  expressions {
+                    str: ""
+                  }
+                  expressions {
+                    binary {
+                      leftexp {
+                      }
+                      binop {
+                        add: 6648320
+                      }
+                      rightexp {
+                      }
+                    }
+                  }
+                  expressions {
+                    str: ""
+                  }
+                  explast {
+                    str: "\'<string.reverse\'"
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    block {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 4
+                    }
+                  }
+                }
+                args {
+                  explist {
+                    explist {
+                      expressions {
+                        str: "\033\000\000\000\000\000\000\000"
+                      }
+                      explast {
+                        str: "\231\231\231\231\231\231\231\231\231\231\231\231\231\231\231\211\231\231"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            semicolon: false
+          }
+        }
+      }
+    }
+  }
+  stat {
+  }
+}

@@ -1,0 +1,92 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\000\000\000\000\000\000\000*"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    block {
+      block {
+        chunk {
+          stat {
+            forcyclelist {
+              names {
+                firstname {
+                  name: "utf8.offset"
+                  num: 127
+                }
+                names {
+                  name: "utf8.offset"
+                  num: 127
+                }
+              }
+              expressions {
+                expressions {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "rawlen"
+                        num: 36
+                      }
+                    }
+                  }
+                }
+                expressions {
+                  prefixexp {
+                    var {
+                    }
+                  }
+                }
+                explast {
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+          laststat {
+            break: 4
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      namedArgs {
+        prefixexp {
+        }
+        name {
+          name: ""
+          num: 6648320
+        }
+        args {
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+  laststat {
+    semicolon: true
+  }
+}

@@ -1,0 +1,63 @@
+chunk {
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          exp {
+            nil: 0
+          }
+        }
+        args {
+          str: "::"
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "load"
+              num: 0
+            }
+          }
+        }
+        args {
+          str: "::fuzz"
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "load"
+              num: 0
+            }
+          }
+        }
+        args {
+          str: "::f\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020uzz"
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          str: "::"
+        }
+      }
+    }
+  }
+  laststat {
+  }
+}

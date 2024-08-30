@@ -1,0 +1,81 @@
+chunk {
+  stat {
+    func {
+      name {
+        firstname {
+          name: "\300\300\300\300\300\300\300\300\300\300\300\300\300\300\300\300\300\300\300\300\300"
+          num: 0
+        }
+      }
+      body {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    forcyclelist {
+      names {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+      expressions {
+        explast {
+          false: 1
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclelist {
+                names {
+                  firstname {
+                    name: ""
+                    num: 0
+                  }
+                }
+                expressions {
+                  explast {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "collectgarbage"
+                          num: 4
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        false: 1
+      }
+    }
+    semicolon: true
+  }
+  stat {
+  }
+}

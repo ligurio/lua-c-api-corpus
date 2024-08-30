@@ -1,0 +1,23 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            str: "\'<A>AAAAAA^A<\'\021\0008"
+          }
+          binop {
+            greaterEqual: 100
+          }
+          rightexp {
+            true: 100
+          }
+        }
+      }
+    }
+  }
+}

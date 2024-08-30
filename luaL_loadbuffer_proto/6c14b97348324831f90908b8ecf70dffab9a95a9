@@ -1,0 +1,46 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            concat: 8192
+          }
+          rightexp {
+            prefixexp {
+              var {
+                name {
+                  name: "_ENV"
+                  num: 536870912
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+            laststat {
+              explist {
+                explist {
+                  explast {
+                    str: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                  }
+                }
+              }
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    semicolon: true
+  }
+}

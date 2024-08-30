@@ -1,0 +1,67 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            ellipsis: ""
+          }
+          binop {
+            equal: 6
+          }
+          rightexp {
+            binary {
+              leftexp {
+                str: "\000\'>io.open\'.\000&&\'>\'\000\000&\'>\'"
+              }
+              binop {
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                    str: "\000\'>io.open\'.\000&&\'>\'\000\000&\'>\'"
+                  }
+                  binop {
+                  }
+                  rightexp {
+                    false: 1702195828
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+                namedArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "_ENV"
+                        num: 0
+                      }
+                    }
+                  }
+                  name {
+                    name: "getmetatable"
+                    num: 0
+                  }
+                  args {
+                  }
+                }
+              }
+            }
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

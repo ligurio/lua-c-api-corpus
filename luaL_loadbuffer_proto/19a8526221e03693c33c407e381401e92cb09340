@@ -1,0 +1,81 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            negate: 0
+          }
+          exp {
+            prefixexp {
+              functioncall {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "__le"
+                        num: 50331649
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        expressions {
+                          str: "\000\000\000\000"
+                        }
+                        explast {
+                          str: "\000\000\000\000\000"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    ifstat {
+      condition {
+        str: "\\zzzzzzzz\\z "
+      }
+      first {
+        chunk {
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        explast {
+          binary {
+            leftexp {
+              number: 1.06099789548264e-314
+            }
+            binop {
+            }
+            rightexp {
+              ellipsis: "\000\000\000\000"
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

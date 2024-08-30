@@ -1,0 +1,103 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+          indexname {
+            prefixexp {
+            }
+            Name: ""
+          }
+        }
+        vars {
+          indexname {
+            prefixexp {
+            }
+            Name: ""
+          }
+        }
+      }
+      explist {
+        explast {
+          unary {
+            unop {
+              length: 0
+            }
+            exp {
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            list {
+              varlist {
+                var {
+                }
+              }
+              explist {
+                explast {
+                  binary {
+                    leftexp {
+                      prefixexp {
+                      }
+                    }
+                    binop {
+                      add: 2
+                    }
+                    rightexp {
+                      prefixexp {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+                prefixexp {
+                }
+              }
+              binop {
+                mult: 4
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                    prefixexp {
+                    }
+                  }
+                  binop {
+                    sub: 0
+                  }
+                  rightexp {
+                    ellipsis: "_______"
+                  }
+                }
+              }
+            }
+          }
+          binop {
+            equal: 2105376
+          }
+          rightexp {
+            number: 9.88131291682493e-324
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+}

@@ -1,0 +1,64 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            nil: 262144
+          }
+          binop {
+            concat: 0
+          }
+          rightexp {
+            prefixexp {
+              var {
+                name {
+                  name: "load"
+                  num: 250
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                      nil: 262144
+                    }
+                    binop {
+                      concat: 0
+                    }
+                    rightexp {
+                      prefixexp {
+                        var {
+                          name {
+                            name: "load"
+                            num: 250
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

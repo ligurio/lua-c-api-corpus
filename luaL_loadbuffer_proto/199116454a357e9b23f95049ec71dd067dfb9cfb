@@ -1,0 +1,84 @@
+chunk {
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: "counter_+"
+          num: 0
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            list {
+              varlist {
+                var {
+                }
+              }
+              explist {
+                explast {
+                  binary {
+                    leftexp {
+                      prefixexp {
+                        exp {
+                          unary {
+                            unop {
+                              length: 0
+                            }
+                            exp {
+                              str: "counter_+"
+                            }
+                          }
+                        }
+                      }
+                    }
+                    binop {
+                      mult: 33554436
+                    }
+                    rightexp {
+                      prefixexp {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        prefixexp {
+          var {
+            indexexpr {
+              prefixexp {
+                exp {
+                  tableconstructor {
+                  }
+                }
+              }
+              exp {
+                binary {
+                  leftexp {
+                    true: 8
+                  }
+                  binop {
+                    mult: 33554436
+                  }
+                  rightexp {
+                    prefixexp {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

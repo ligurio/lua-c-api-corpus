@@ -1,0 +1,81 @@
+chunk {
+  stat {
+  }
+  stat {
+    localfunc {
+      name {
+        name: ""
+        num: 0
+      }
+      funcbody {
+        parlist {
+          namelist {
+            namelist {
+              firstname {
+                name: "_ENV"
+                num: 8
+              }
+              names {
+                name: "xpcall"
+                num: 0
+              }
+              names {
+                name: "*"
+                num: 8
+              }
+              names {
+                name: "__ENVENV"
+                num: 8
+              }
+            }
+            ellipsis: "math.rad"
+          }
+        }
+        block {
+          chunk {
+            stat {
+              localfunc {
+                name {
+                  name: "math.rad"
+                  num: 1032
+                }
+                funcbody {
+                  parlist {
+                    ellipsis: ""
+                  }
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                  }
+                  args {
+                    str: "0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          str: "xpcall"
+        }
+      }
+    }
+  }
+}

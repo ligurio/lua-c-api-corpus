@@ -1,0 +1,52 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            nil: 64255
+          }
+          binop {
+            mod: 4
+          }
+          rightexp {
+            number: 0
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            mod: 4
+          }
+          rightexp {
+            number: 0
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  laststat {
+    break: 4
+  }
+}

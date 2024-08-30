@@ -1,0 +1,79 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            str: "\000\'>io.open\'\000\000&&\'>\'\000\000&\'>\'"
+          }
+          binop {
+            sub: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+                str: "\000\'>io.open\'\000\000&&\'>\'\000\000&\'>\'"
+              }
+              binop {
+                sub: 0
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclename {
+                name {
+                  name: "_ENV"
+                  num: 0
+                }
+                startexp {
+                  function {
+                    body {
+                      block {
+                        chunk {
+                        }
+                      }
+                    }
+                  }
+                }
+                stopexp {
+                  number: -1.6122275479153505e+265
+                }
+                stepexp {
+                  unary {
+                    unop {
+                      negate: 0
+                    }
+                    exp {
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        call {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+  }
+  laststat {
+    break: 23552
+  }
+}

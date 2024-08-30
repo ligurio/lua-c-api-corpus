@@ -1,0 +1,55 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            tableconstructor {
+            }
+          }
+          binop {
+          }
+          rightexp {
+            prefixexp {
+              var {
+                name {
+                  name: "io"
+                  num: 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    semicolon: false
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                str: "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+              }
+              first {
+                chunk {
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+      }
+    }
+  }
+}

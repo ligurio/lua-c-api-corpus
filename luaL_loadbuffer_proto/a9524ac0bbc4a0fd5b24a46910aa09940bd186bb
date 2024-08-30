@@ -1,0 +1,142 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            number: 5
+          }
+          binop {
+            notEqual: 7
+          }
+          rightexp {
+            number: 5
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          functioncall {
+            prefArgs {
+              prefixexp {
+                functioncall {
+                  prefArgs {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "xpcall"
+                          num: 262144
+                        }
+                      }
+                    }
+                    args {
+                      explist {
+                        explist {
+                          expressions {
+                            prefixexp {
+                              var {
+                                name {
+                                  name: "collectgarbage"
+                                  num: 0
+                                }
+                              }
+                            }
+                          }
+                          expressions {
+                            function {
+                              body {
+                                block {
+                                  chunk {
+                                    stat {
+                                      list {
+                                        varlist {
+                                          var {
+                                            indexexpr {
+                                              prefixexp {
+                                                exp {
+                                                  nil: 19
+                                                }
+                                              }
+                                              exp {
+                                              }
+                                            }
+                                          }
+                                          vars {
+                                            name {
+                                              name: "tonumber"
+                                              num: 8448
+                                            }
+                                          }
+                                          vars {
+                                            name {
+                                              name: "load"
+                                              num: 8192
+                                            }
+                                          }
+                                        }
+                                        explist {
+                                          expressions {
+                                            str: "\'~#~9~9~\'9~"
+                                          }
+                                          explast {
+                                            nil: 0
+                                          }
+                                        }
+                                      }
+                                    }
+                                    stat {
+                                      semicolon: true
+                                    }
+                                    laststat {
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                          explast {
+                            tableconstructor {
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                tableconstructor {
+                  fieldlist {
+                    firstField {
+                    }
+                    lastSep {
+                      semicolon: 201
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              explast {
+                str: "\000\000\000\000"
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

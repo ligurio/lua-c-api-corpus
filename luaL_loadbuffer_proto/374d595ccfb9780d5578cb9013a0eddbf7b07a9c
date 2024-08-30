@@ -1,0 +1,123 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        explast {
+          binary {
+            leftexp {
+              unary {
+                unop {
+                }
+                exp {
+                  unary {
+                    unop {
+                    }
+                    exp {
+                      true: 1024
+                    }
+                  }
+                }
+              }
+            }
+            binop {
+              concat: 8
+            }
+            rightexp {
+              prefixexp {
+                exp {
+                  tableconstructor {
+                    fieldlist {
+                      firstField {
+                      }
+                      fields {
+                        field {
+                        }
+                        sep {
+                          comma: 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                      prefixexp {
+                        var {
+                          name {
+                            name: "__le"
+                            num: 0
+                          }
+                        }
+                      }
+                    }
+                    binop {
+                      div: 0
+                    }
+                    rightexp {
+                      prefixexp {
+                        functioncall {
+                          prefArgs {
+                            prefixexp {
+                              exp {
+                                prefixexp {
+                                  var {
+                                    name {
+                                      name: "load"
+                                      num: 0
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            args {
+                              explist {
+                                explist {
+                                  explast {
+                                    prefixexp {
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

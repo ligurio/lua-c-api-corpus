@@ -1,0 +1,104 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        expressions {
+          unary {
+            unop {
+              length: 0
+            }
+            exp {
+            }
+          }
+        }
+        explast {
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            list {
+              varlist {
+                var {
+                }
+              }
+              explist {
+                explast {
+                  binary {
+                    leftexp {
+                    }
+                    binop {
+                      add: 2
+                    }
+                    rightexp {
+                      binary {
+                        leftexp {
+                          prefixexp {
+                          }
+                        }
+                        binop {
+                          mult: 0
+                        }
+                        rightexp {
+                          prefixexp {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            forcyclename {
+              name {
+                name: "____________"
+                num: 0
+              }
+              startexp {
+                prefixexp {
+                }
+              }
+              stopexp {
+                binary {
+                  leftexp {
+                    prefixexp {
+                    }
+                  }
+                  binop {
+                    mod: 2
+                  }
+                  rightexp {
+                    number: 1.29441743248882e-312
+                  }
+                }
+              }
+              stepexp {
+                prefixexp {
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        false: 0
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                str: "\000\'>\'\000\000&&\'>\'\000\000&\'>\'"
+              }
+              first {
+                chunk {
+                }
+              }
+              last {
+                chunk {
+                }
+              }
+            }
+            semicolon: false
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            str: "\000\'>\'\000\000&&\'>\'\000\000&\'>\'"
+          }
+          binop {
+            greaterEqual: 6
+          }
+          rightexp {
+            str: "\000\'>\'\000\000&&\'>\'\000\000&\'>\'"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+              }
+              first {
+                chunk {
+                }
+              }
+              last {
+                chunk {
+                  laststat {
+                    break: 0
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                  exp {
+                    prefixexp {
+                    }
+                  }
+                }
+                name {
+                  name: ""
+                  num: 0
+                }
+                args {
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  str: "\""
+                }
+              }
+            }
+            semicolon: false
+          }
+        }
+      }
+      condition {
+        prefixexp {
+        }
+      }
+    }
+  }
+  laststat {
+    break: 0
+    semicolon: false
+  }
+}

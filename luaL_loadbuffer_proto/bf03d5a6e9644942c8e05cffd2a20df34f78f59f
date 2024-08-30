@@ -1,0 +1,45 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        str: "^zzzzzzzz\\z "
+      }
+      first {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                str: "\\zzzzzzzz\\z "
+              }
+              first {
+                chunk {
+                  stat {
+                    ifstat {
+                      condition {
+                        str: "^zzzzzzzz\\z "
+                      }
+                      first {
+                        chunk {
+                          laststat {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              clauses {
+                condition {
+                }
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

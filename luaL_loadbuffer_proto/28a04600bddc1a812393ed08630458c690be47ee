@@ -1,0 +1,95 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        explast {
+          unary {
+            unop {
+              length: 3
+            }
+            exp {
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            list {
+              varlist {
+                var {
+                }
+              }
+              explist {
+                explast {
+                  binary {
+                    leftexp {
+                      prefixexp {
+                      }
+                    }
+                    binop {
+                      concat: 3
+                    }
+                    rightexp {
+                      prefixexp {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+          stat {
+            forcyclename {
+              name {
+                name: ""
+                num: 0
+              }
+              startexp {
+                false: 3
+              }
+              stopexp {
+                false: 3
+              }
+              stepexp {
+                binary {
+                  leftexp {
+                    false: 3
+                  }
+                  binop {
+                    sub: 2
+                  }
+                  rightexp {
+                    prefixexp {
+                    }
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        ellipsis: "______"
+      }
+    }
+  }
+  laststat {
+    break: 8192
+  }
+}

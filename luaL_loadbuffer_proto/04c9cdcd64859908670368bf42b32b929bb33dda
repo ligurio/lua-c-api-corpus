@@ -1,0 +1,32 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            mod: 4096
+          }
+          rightexp {
+            unary {
+              unop {
+                negate: 4096
+              }
+              exp {
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+  }
+}

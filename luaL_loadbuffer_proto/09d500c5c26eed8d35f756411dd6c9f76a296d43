@@ -1,0 +1,60 @@
+chunk {
+  stat {
+    forcyclename {
+      name {
+        name: ""
+        num: 0
+      }
+      startexp {
+      }
+      stopexp {
+        true: 3840
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 35
+                    }
+                  }
+                }
+                args {
+                  str: "=="
+                }
+              }
+            }
+          }
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                }
+              }
+              condition {
+                false: 0
+              }
+            }
+          }
+        }
+      }
+      condition {
+        false: 0
+      }
+    }
+  }
+}

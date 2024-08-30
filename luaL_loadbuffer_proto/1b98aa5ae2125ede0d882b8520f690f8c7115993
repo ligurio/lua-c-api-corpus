@@ -1,0 +1,81 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "TTTTT"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                      prefixexp {
+                        functioncall {
+                          prefArgs {
+                            prefixexp {
+                              var {
+                                name {
+                                  name: "xpcall"
+                                  num: 0
+                                }
+                              }
+                            }
+                            args {
+                              explist {
+                                explist {
+                                  expressions {
+                                    prefixexp {
+                                      var {
+                                        name {
+                                          name: "xpcall"
+                                          num: 0
+                                        }
+                                      }
+                                    }
+                                  }
+                                  expressions {
+                                    prefixexp {
+                                      var {
+                                        name {
+                                          name: "rawlen"
+                                          num: 0
+                                        }
+                                      }
+                                    }
+                                  }
+                                  explast {
+                                    nil: 4
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                    binop {
+                      exp: 4
+                    }
+                    rightexp {
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

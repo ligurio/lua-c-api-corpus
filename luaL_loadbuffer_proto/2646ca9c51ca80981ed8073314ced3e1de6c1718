@@ -1,0 +1,185 @@
+chunk {
+  stat {
+    call {
+      namedArgs {
+        prefixexp {
+        }
+        name {
+          name: ""
+          num: 67108864
+        }
+        args {
+        }
+      }
+    }
+  }
+  stat {
+    forcyclename {
+      name {
+        name: ""
+        num: 1024
+      }
+      startexp {
+        false: 4
+      }
+      stopexp {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                mod: 15104
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            add: 4
+          }
+          rightexp {
+            binary {
+              leftexp {
+                number: -255.999999996275
+              }
+              binop {
+                mult: 536870912
+              }
+              rightexp {
+                number: -255.999999996275
+              }
+            }
+          }
+        }
+      }
+      stepexp {
+        unary {
+          unop {
+            negate: 4
+          }
+          exp {
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            laststat {
+              break: 536870912
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    call {
+    }
+  }
+  stat {
+    forcyclename {
+      name {
+        name: ""
+        num: 0
+      }
+      startexp {
+      }
+      stopexp {
+        prefixexp {
+          var {
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "collectgarbage"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                str: "step"
+              }
+              explast {
+                number: 16777215.999755878
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    call {
+    }
+    semicolon: false
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "collectgarbage"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  explist {
+                    explist {
+                      expressions {
+                        str: "step"
+                      }
+                      explast {
+                        number: -255.999999996275
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+          stat {
+            semicolon: false
+          }
+          stat {
+          }
+        }
+      }
+      condition {
+        unary {
+          unop {
+          }
+          exp {
+            false: 1073741824
+          }
+        }
+      }
+    }
+  }
+}

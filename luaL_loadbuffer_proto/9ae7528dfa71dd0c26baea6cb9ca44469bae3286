@@ -1,0 +1,117 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                }
+                args {
+                  str: "Q\000"
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  str: "~="
+                }
+              }
+            }
+          }
+          stat {
+            call {
+            }
+            semicolon: true
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  explist {
+                    explist {
+                      expressions {
+                        prefixexp {
+                          var {
+                            name {
+                              name: "require"
+                              num: 0
+                            }
+                          }
+                        }
+                      }
+                      expressions {
+                        prefixexp {
+                          var {
+                            name {
+                              name: "xpcall"
+                              num: 0
+                            }
+                          }
+                        }
+                      }
+                      explast {
+                        number: 15.073007294696433
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            semicolon: false
+          }
+          stat {
+            call {
+            }
+          }
+          stat {
+            semicolon: false
+          }
+          stat {
+            call {
+            }
+          }
+        }
+      }
+      condition {
+        prefixexp {
+          functioncall {
+            prefArgs {
+              prefixexp {
+                var {
+                  name {
+                    name: "load"
+                    num: 0
+                  }
+                }
+              }
+              args {
+                str: "~="
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

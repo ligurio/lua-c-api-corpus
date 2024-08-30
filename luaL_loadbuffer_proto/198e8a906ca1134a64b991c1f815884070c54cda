@@ -1,0 +1,127 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            prefixexp {
+              functioncall {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "xpcall"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "require"
+                                num: 0
+                              }
+                            }
+                          }
+                        }
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "collectgarbage"
+                                num: 0
+                              }
+                            }
+                          }
+                        }
+                        expressions {
+                          number: 2.34227265689673e-312
+                        }
+                        explast {
+                          false: 16384
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          binop {
+            concat: 0
+          }
+          rightexp {
+            unary {
+              unop {
+                negate: 16384
+              }
+              exp {
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "xpcall"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "require"
+                      num: 0
+                    }
+                  }
+                }
+              }
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "collectgarbage"
+                      num: 0
+                    }
+                  }
+                }
+              }
+              expressions {
+                number: 2.34227265689673e-312
+              }
+              explast {
+                false: 16384
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    break: 16384
+    semicolon: true
+  }
+}

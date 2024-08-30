@@ -1,0 +1,99 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 1
+                    }
+                  }
+                }
+                args {
+                  str: "~"
+                }
+              }
+            }
+          }
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                  stat {
+                    call {
+                      prefArgs {
+                        prefixexp {
+                        }
+                        args {
+                          str: "\306\000\000\000"
+                        }
+                      }
+                    }
+                    semicolon: true
+                  }
+                }
+              }
+              condition {
+                nil: 67108864
+              }
+            }
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 1
+                    }
+                  }
+                }
+                args {
+                  str: "~"
+                }
+              }
+            }
+          }
+          laststat {
+            break: 1024
+          }
+        }
+      }
+      condition {
+        nil: 67108864
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "load"
+              num: 1
+            }
+          }
+        }
+        args {
+          str: "~"
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        explast {
+          str: "table.pack"
+        }
+      }
+    }
+  }
+}

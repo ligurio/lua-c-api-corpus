@@ -1,0 +1,77 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          laststat {
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+          }
+          binop {
+            mod: 0
+          }
+          rightexp {
+            prefixexp {
+              exp {
+                unary {
+                  unop {
+                    negate: 65
+                  }
+                  exp {
+                    prefixexp {
+                      exp {
+                        unary {
+                          unop {
+                            length: 0
+                          }
+                          exp {
+                            str: "math.mininteger"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    block {
+      block {
+        chunk {
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "+\000\000\000\000\000\000\000"
+                      num: 0
+                    }
+                  }
+                }
+                name {
+                  name: ""
+                  num: 0
+                }
+                args {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+  }
+}

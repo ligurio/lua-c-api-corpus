@@ -1,0 +1,60 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            str: "\031\000\000\000\000\000\000\000"
+          }
+          binop {
+            greater: 8257536
+          }
+          rightexp {
+            binary {
+              leftexp {
+                str: "\031\000\000\000\000\000\000\000"
+              }
+              binop {
+                sub: 0
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                    nil: 8257536
+                  }
+                  binop {
+                    exp: 0
+                  }
+                  rightexp {
+                    str: "\'-6>6&33332<\'<8<2"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              ifstat {
+                condition {
+                }
+                first {
+                  chunk {
+                  }
+                }
+              }
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    semicolon: true
+  }
+}

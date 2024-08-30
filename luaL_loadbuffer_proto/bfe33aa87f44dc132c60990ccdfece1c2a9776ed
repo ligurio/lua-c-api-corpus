@@ -1,0 +1,55 @@
+chunk {
+  stat {
+    call {
+      namedArgs {
+        prefixexp {
+        }
+        name {
+          name: ""
+          num: 0
+        }
+        args {
+          str: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+        vars {
+          indexexpr {
+            prefixexp {
+              functioncall {
+              }
+            }
+            exp {
+              str: "\000\000\000\000~\000\000"
+            }
+          }
+        }
+      }
+      explist {
+        expressions {
+          str: "\000\000\000\000~\000\000"
+        }
+        explast {
+          tableconstructor {
+            fieldlist {
+              firstField {
+                expression {
+                  ellipsis: "dofile"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

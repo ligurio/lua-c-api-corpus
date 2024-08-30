@@ -1,0 +1,33 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        str: "os\\xecute"
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+          str: "os\\x,ecute"
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+    }
+    semicolon: false
+  }
+  stat {
+    semicolon: false
+  }
+  laststat {
+    break: 0
+  }
+}

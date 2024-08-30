@@ -1,0 +1,61 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            ellipsis: ""
+          }
+          binop {
+            equal: 6
+          }
+          rightexp {
+            binary {
+              leftexp {
+                ellipsis: "\000\'>io.open\'.\000&&\'>\'\000\000&\'>\'"
+              }
+              binop {
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                    str: "\000\'>io.open\'.\000&&\'>\'\000\000&\'>\'"
+                  }
+                  binop {
+                    concat: 67108864
+                  }
+                  rightexp {
+                    function {
+                      body {
+                        block {
+                          chunk {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  laststat {
+    semicolon: true
+  }
+}

@@ -1,0 +1,64 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    exp {
+                      ellipsis: "__name"
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "xpcall"
+                                num: 0
+                              }
+                            }
+                          }
+                        }
+                        expressions {
+                          prefixexp {
+                            exp {
+                              binary {
+                                leftexp {
+                                  number: 1.3981012990693357e-76
+                                }
+                                binop {
+                                  exp: 0
+                                }
+                                rightexp {
+                                  str: "\'&333~3+\'"
+                                }
+                              }
+                            }
+                          }
+                        }
+                        explast {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    semicolon: true
+  }
+}

@@ -1,0 +1,60 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        number: 0
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "xpcall"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "require"
+                                num: 0
+                              }
+                            }
+                          }
+                        }
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "xpcall"
+                                num: 0
+                              }
+                            }
+                          }
+                        }
+                        explast {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

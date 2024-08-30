@@ -1,0 +1,79 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+        }
+        vars {
+        }
+      }
+      explist {
+        explast {
+          unary {
+            unop {
+              length: 5
+            }
+            exp {
+              unary {
+                unop {
+                }
+                exp {
+                  unary {
+                    unop {
+                    }
+                    exp {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              ifstat {
+                condition {
+                }
+                first {
+                  chunk {
+                    laststat {
+                      break: 1024
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        explast {
+          nil: 0
+        }
+      }
+    }
+  }
+}

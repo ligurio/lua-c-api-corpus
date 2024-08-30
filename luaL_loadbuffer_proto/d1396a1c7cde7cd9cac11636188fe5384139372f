@@ -1,0 +1,102 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  tableconstructor {
+                    fieldlist {
+                      firstField {
+                        expression {
+                          prefixexp {
+                            functioncall {
+                              prefArgs {
+                                prefixexp {
+                                  var {
+                                    name {
+                                      name: "xpcall"
+                                      num: 0
+                                    }
+                                  }
+                                }
+                                args {
+                                  explist {
+                                    explist {
+                                      expressions {
+                                        prefixexp {
+                                          var {
+                                            name {
+                                              name: "string.packsize"
+                                              num: 32
+                                            }
+                                          }
+                                        }
+                                      }
+                                      expressions {
+                                        prefixexp {
+                                          var {
+                                            name {
+                                              name: "collectgarbage"
+                                              num: 2097152
+                                            }
+                                          }
+                                        }
+                                      }
+                                      expressions {
+                                        number: 7.29112189732944e-304
+                                      }
+                                      explast {
+                                        unary {
+                                          unop {
+                                          }
+                                          exp {
+                                            str: "string.packsize"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      fields {
+                        field {
+                          expression {
+                            prefixexp {
+                            }
+                          }
+                        }
+                        sep {
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        semicolon: true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    semicolon: true
+  }
+}

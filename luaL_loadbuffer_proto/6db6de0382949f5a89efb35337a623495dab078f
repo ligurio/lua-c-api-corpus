@@ -1,0 +1,76 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        str: "\\001\\000\\000\\000\\000\\000\\000\\000"
+      }
+      first {
+        chunk {
+          stat {
+            repeatcycle {
+              block {
+                chunk {
+                  laststat {
+                    break: 0
+                  }
+                }
+              }
+              condition {
+              }
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+            stat {
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+            stat {
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        expressions {
+          false: 0
+        }
+        explast {
+        }
+      }
+    }
+  }
+}

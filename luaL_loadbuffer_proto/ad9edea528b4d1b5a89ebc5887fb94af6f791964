@@ -1,0 +1,66 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        number: -5
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              list {
+                varlist {
+                  var {
+                  }
+                }
+                explist {
+                  explast {
+                    number: -5
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                    }
+                    binop {
+                      exp: 0
+                    }
+                    rightexp {
+                      prefixexp {
+                        exp {
+                          str: "\000\'>io.open\'\000\000&&\'>\'\000\000&\'>\'"
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

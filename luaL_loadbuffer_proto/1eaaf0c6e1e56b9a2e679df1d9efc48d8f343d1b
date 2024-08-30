@@ -1,0 +1,28 @@
+chunk {
+  stat {
+    semicolon: true
+  }
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            str: "\'+8<<\'<9"
+          }
+          binop {
+            concat: 32768
+          }
+          rightexp {
+          }
+        }
+      }
+      first {
+        chunk {
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+    }
+  }
+}

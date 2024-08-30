@@ -1,0 +1,68 @@
+chunk {
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            indexexpr {
+              prefixexp {
+              }
+              exp {
+              }
+            }
+          }
+        }
+        args {
+          str: "<<"
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "load"
+              num: 0
+            }
+          }
+        }
+        args {
+          str: "<<"
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  str: "<<"
+                }
+              }
+            }
+            semicolon: false
+          }
+        }
+      }
+      condition {
+        true: 8388608
+      }
+    }
+  }
+}

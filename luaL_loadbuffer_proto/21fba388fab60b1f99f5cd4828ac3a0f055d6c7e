@@ -1,0 +1,62 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                div: 1280
+              }
+              rightexp {
+                str: "\'&~packqge.ioeload\'"
+              }
+            }
+          }
+          binop {
+            mult: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+                str: "\'&~packqge.ioeload\'"
+              }
+              binop {
+              }
+              rightexp {
+                str: "\'&~packqge.ioeload\'"
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  tableconstructor {
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      laststat {
+                        break: 65536
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            laststat {
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,181 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\000\000\000\000\000\000\000*"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclelist {
+                names {
+                  firstname {
+                    name: "utf8.offset"
+                    num: 127
+                  }
+                }
+                expressions {
+                  expressions {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "pcall"
+                          num: 0
+                        }
+                      }
+                    }
+                  }
+                  expressions {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "xpcall"
+                          num: 0
+                        }
+                      }
+                    }
+                  }
+                  explast {
+                    prefixexp {
+                      functioncall {
+                        namedArgs {
+                          prefixexp {
+                          }
+                          name {
+                            name: ""
+                            num: 0
+                          }
+                          args {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        forcyclelist {
+                          names {
+                            firstname {
+                              name: "utf8.offset"
+                              num: 127
+                            }
+                          }
+                          expressions {
+                            expressions {
+                              prefixexp {
+                                var {
+                                  name {
+                                    name: "pcall"
+                                    num: 127
+                                  }
+                                }
+                              }
+                            }
+                            expressions {
+                              prefixexp {
+                                var {
+                                  name {
+                                    name: "xpcall"
+                                    num: 0
+                                  }
+                                }
+                              }
+                            }
+                            explast {
+                            }
+                          }
+                          doblock {
+                            block {
+                              chunk {
+                                stat {
+                                  semicolon: true
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      laststat {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    block {
+      block {
+        chunk {
+          stat {
+          }
+          laststat {
+            explist {
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "xpcall"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 0
+                    }
+                  }
+                }
+              }
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 1
+                    }
+                  }
+                }
+              }
+              explast {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+  laststat {
+    semicolon: true
+  }
+}

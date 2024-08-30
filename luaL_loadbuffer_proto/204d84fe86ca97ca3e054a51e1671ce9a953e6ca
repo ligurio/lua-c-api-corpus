@@ -1,0 +1,59 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            prefixexp {
+              var {
+                name {
+                  name: "next"
+                  num: 0
+                }
+              }
+            }
+          }
+          binop {
+            concat: 0
+          }
+          rightexp {
+            prefixexp {
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              list {
+                varlist {
+                  var {
+                  }
+                }
+                explist {
+                  explast {
+                    binary {
+                      leftexp {
+                      }
+                      binop {
+                        concat: 0
+                      }
+                      rightexp {
+                        prefixexp {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              semicolon: false
+            }
+            laststat {
+            }
+          }
+        }
+      }
+    }
+  }
+}

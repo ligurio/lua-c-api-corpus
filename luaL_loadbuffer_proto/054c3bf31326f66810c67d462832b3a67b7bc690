@@ -1,0 +1,115 @@
+chunk {
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          str: "@\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "xpcall"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                function {
+                  body {
+                    parlist {
+                      ellipsis: "tonumber"
+                    }
+                    block {
+                      chunk {
+                        stat {
+                          list {
+                            varlist {
+                              var {
+                              }
+                            }
+                            explist {
+                              expressions {
+                              }
+                              explast {
+                                binary {
+                                  leftexp {
+                                    prefixexp {
+                                      var {
+                                        name {
+                                          name: "_ENV"
+                                          num: 0
+                                        }
+                                      }
+                                    }
+                                  }
+                                  binop {
+                                    concat: 0
+                                  }
+                                  rightexp {
+                                    binary {
+                                      leftexp {
+                                        str: "select"
+                                      }
+                                      binop {
+                                        concat: 0
+                                      }
+                                      rightexp {
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "select"
+                      num: 0
+                    }
+                  }
+                }
+              }
+              explast {
+                tableconstructor {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+  }
+  laststat {
+    explist {
+      explist {
+        expressions {
+          true: 0
+        }
+        explast {
+        }
+      }
+    }
+  }
+}

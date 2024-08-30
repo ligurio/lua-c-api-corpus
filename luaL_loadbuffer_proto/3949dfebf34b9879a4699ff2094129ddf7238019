@@ -1,0 +1,75 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+                binary {
+                  leftexp {
+                    false: 1024
+                  }
+                  binop {
+                  }
+                  rightexp {
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "warn"
+                      num: 1024
+                    }
+                  }
+                }
+                args {
+                  str: "not enough memory"
+                }
+              }
+            }
+            semicolon: false
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "warn"
+                      num: 1024
+                    }
+                  }
+                }
+                args {
+                  str: "@\000\000\000\000\000\000\000"
+                }
+              }
+            }
+          }
+          laststat {
+          }
+        }
+      }
+      condition {
+        number: nan
+      }
+    }
+  }
+  laststat {
+    semicolon: true
+  }
+}

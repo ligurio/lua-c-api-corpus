@@ -1,0 +1,76 @@
+chunk {
+  stat {
+    forcyclename {
+      name {
+        name: "count\\r_+"
+        num: 0
+      }
+      startexp {
+        unary {
+          unop {
+            negate: 1
+          }
+          exp {
+            str: "\001\000\000\000"
+          }
+        }
+      }
+      stopexp {
+        true: 0
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclelist {
+                names {
+                  firstname {
+                    name: ""
+                    num: 0
+                  }
+                }
+                expressions {
+                  expressions {
+                    function {
+                      body {
+                        parlist {
+                          namelist {
+                            namelist {
+                              firstname {
+                                name: "stderr"
+                                num: 0
+                              }
+                            }
+                          }
+                        }
+                        block {
+                          chunk {
+                          }
+                        }
+                      }
+                    }
+                  }
+                  explast {
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+              semicolon: true
+            }
+            stat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+}

@@ -1,0 +1,147 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            prefixexp {
+            }
+          }
+          binop {
+            concat: 0
+          }
+          rightexp {
+            prefixexp {
+              functioncall {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "xpcall"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        expressions {
+                          function {
+                            body {
+                              block {
+                                chunk {
+                                  stat {
+                                    list {
+                                      varlist {
+                                        var {
+                                        }
+                                        vars {
+                                        }
+                                        vars {
+                                          indexexpr {
+                                            prefixexp {
+                                              functioncall {
+                                                prefArgs {
+                                                  prefixexp {
+                                                    var {
+                                                      name {
+                                                        name: "next"
+                                                        num: 0
+                                                      }
+                                                    }
+                                                  }
+                                                  args {
+                                                    explist {
+                                                      explist {
+                                                        expressions {
+                                                          tableconstructor {
+                                                          }
+                                                        }
+                                                        explast {
+                                                          true: 8
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                            exp {
+                                              function {
+                                                body {
+                                                  parlist {
+                                                  }
+                                                  block {
+                                                    chunk {
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                      explist {
+                                        expressions {
+                                        }
+                                        explast {
+                                        }
+                                      }
+                                    }
+                                    semicolon: true
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "select"
+                                num: 0
+                              }
+                            }
+                          }
+                        }
+                        explast {
+                          tableconstructor {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            laststat {
+              break: 0
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    localfunc {
+      name {
+        name: "warn"
+        num: 0
+      }
+      funcbody {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+}

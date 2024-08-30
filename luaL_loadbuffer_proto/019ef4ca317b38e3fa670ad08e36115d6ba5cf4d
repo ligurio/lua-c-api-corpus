@@ -1,0 +1,97 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            tableconstructor {
+            }
+          }
+          binop {
+            exp: 1
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                add: 65536
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "load"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    str: "<<"
+                  }
+                }
+              }
+            }
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "load"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                    }
+                  }
+                }
+              }
+              semicolon: true
+            }
+            stat {
+              repeatcycle {
+                block {
+                  chunk {
+                    stat {
+                      semicolon: true
+                    }
+                  }
+                }
+                condition {
+                  true: 8388608
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        explast {
+        }
+      }
+    }
+  }
+}

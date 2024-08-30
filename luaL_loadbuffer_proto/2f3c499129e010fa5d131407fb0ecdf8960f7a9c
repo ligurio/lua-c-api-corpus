@@ -1,0 +1,75 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            str: "\0002\\000\\000\\000\\000\\000\\000\\00*"
+          }
+          binop {
+            exp: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+                str: "\'-666&33332<<\'8<8"
+              }
+              binop {
+                mult: 4194304000
+              }
+              rightexp {
+                number: 0
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  binary {
+                    leftexp {
+                      str: "\0002\\000\\000\\000\\000\\000\\000\\00*"
+                    }
+                    binop {
+                      exp: 0
+                    }
+                    rightexp {
+                      binary {
+                        leftexp {
+                          str: "\'-666&33332<<\'8<8"
+                        }
+                        binop {
+                          mult: 4194304000
+                        }
+                        rightexp {
+                          number: 0
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                      }
+                    }
+                  }
+                }
+              }
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  laststat {
+    semicolon: true
+  }
+}

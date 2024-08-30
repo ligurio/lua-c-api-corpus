@@ -1,0 +1,218 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\000\000\000\000\000\000\000*"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclelist {
+                names {
+                  firstname {
+                    name: "utf8.offset"
+                    num: 127
+                  }
+                }
+                expressions {
+                  expressions {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "pcall"
+                          num: 0
+                        }
+                      }
+                    }
+                  }
+                  expressions {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "xpcall"
+                          num: 0
+                        }
+                      }
+                    }
+                  }
+                  explast {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "rawlen"
+                          num: 0
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        forcyclelist {
+                          names {
+                            firstname {
+                              name: "utf8.offset"
+                              num: 127
+                            }
+                          }
+                          expressions {
+                            expressions {
+                              prefixexp {
+                                var {
+                                  name {
+                                    name: "pcall"
+                                    num: 0
+                                  }
+                                }
+                              }
+                            }
+                            expressions {
+                              prefixexp {
+                                var {
+                                  name {
+                                    name: ""
+                                    num: 0
+                                  }
+                                }
+                              }
+                            }
+                            explast {
+                            }
+                          }
+                          doblock {
+                            block {
+                              chunk {
+                                stat {
+                                  semicolon: true
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      laststat {
+                        break: 570425344
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    block {
+      block {
+        chunk {
+          stat {
+            forcyclelist {
+              names {
+                firstname {
+                  name: "utf8.offset"
+                  num: 127
+                }
+              }
+              expressions {
+                expressions {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "pcall"
+                        num: 0
+                      }
+                    }
+                  }
+                }
+                expressions {
+                  prefixexp {
+                    exp {
+                      prefixexp {
+                        exp {
+                        }
+                      }
+                    }
+                  }
+                }
+                explast {
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                    stat {
+                      semicolon: true
+                    }
+                  }
+                }
+              }
+            }
+          }
+          laststat {
+            explist {
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "xpcall"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 0
+                    }
+                  }
+                }
+              }
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 1
+                    }
+                  }
+                }
+              }
+              explast {
+                true: 5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+  laststat {
+    semicolon: true
+  }
+}

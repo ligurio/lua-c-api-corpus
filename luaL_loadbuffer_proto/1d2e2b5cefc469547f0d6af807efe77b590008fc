@@ -1,0 +1,24 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            nil: 3
+          }
+          binop {
+            or: 3
+          }
+          rightexp {
+            str: "\000\000\000"
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: true
+  }
+}

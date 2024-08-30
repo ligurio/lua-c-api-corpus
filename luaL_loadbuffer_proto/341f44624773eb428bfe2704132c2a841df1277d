@@ -1,0 +1,38 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            prefixexp {
+              var {
+                name {
+                  name: "_ENV"
+                  num: 16711680
+                }
+              }
+            }
+          }
+          binop {
+            notEqual: 16711680
+          }
+          rightexp {
+            tableconstructor {
+              fieldlist {
+                firstField {
+                  expression {
+                    str: "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

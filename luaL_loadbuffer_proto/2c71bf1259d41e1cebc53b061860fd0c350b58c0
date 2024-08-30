@@ -1,0 +1,85 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        str: "os\\xecute"
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+          str: "os\\xecute"
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+        str: "os\\xecute"
+      }
+      first {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                str: "os\\xecute"
+              }
+              first {
+                chunk {
+                }
+              }
+              clauses {
+                condition {
+                  str: "os\\xecute"
+                }
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            ifstat {
+              condition {
+                str: "os\\xecute"
+              }
+              first {
+                chunk {
+                  laststat {
+                    semicolon: true
+                  }
+                }
+              }
+              clauses {
+                condition {
+                  str: "os\\xecute"
+                }
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+          str: "os\\xecute"
+        }
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+}

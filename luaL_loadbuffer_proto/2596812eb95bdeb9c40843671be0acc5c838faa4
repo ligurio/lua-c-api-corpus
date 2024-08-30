@@ -1,0 +1,103 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            prefixexp {
+            }
+          }
+          binop {
+          }
+          rightexp {
+            prefixexp {
+              var {
+                indexexpr {
+                  prefixexp {
+                    exp {
+                      tableconstructor {
+                      }
+                    }
+                  }
+                  exp {
+                    prefixexp {
+                      functioncall {
+                        namedArgs {
+                          prefixexp {
+                          }
+                          name {
+                            name: ""
+                            num: 0
+                          }
+                          args {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+            stat {
+              repeatcycle {
+                block {
+                  chunk {
+                  }
+                }
+                condition {
+                  unary {
+                    unop {
+                      negate: 458752
+                    }
+                    exp {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    whilecycle {
+      condition {
+        tableconstructor {
+          fieldlist {
+            firstField {
+            }
+            lastSep {
+              semicolon: 0
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+  laststat {
+    semicolon: true
+  }
+}

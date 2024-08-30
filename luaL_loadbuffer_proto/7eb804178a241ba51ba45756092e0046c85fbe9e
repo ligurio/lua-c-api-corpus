@@ -1,0 +1,120 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            semicolon: true
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  explist {
+                    explist {
+                      expressions {
+                        function {
+                          body {
+                            parlist {
+                              ellipsis: "tonumber"
+                            }
+                            block {
+                              chunk {
+                                stat {
+                                  list {
+                                    varlist {
+                                      var {
+                                      }
+                                    }
+                                    explist {
+                                      expressions {
+                                        ellipsis: "collectgarbage"
+                                      }
+                                      explast {
+                                        binary {
+                                          leftexp {
+                                            prefixexp {
+                                              var {
+                                                name {
+                                                  name: "ipairs"
+                                                  num: 0
+                                                }
+                                              }
+                                            }
+                                          }
+                                          binop {
+                                            concat: 1114112
+                                          }
+                                          rightexp {
+                                            binary {
+                                              leftexp {
+                                                str: "\'<debug.traceback\'<9"
+                                              }
+                                              binop {
+                                              }
+                                              rightexp {
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      expressions {
+                        prefixexp {
+                          var {
+                            name {
+                              name: "xpcall"
+                              num: 0
+                            }
+                          }
+                        }
+                      }
+                      explast {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                }
+                name {
+                  name: ""
+                  num: 0
+                }
+                args {
+                }
+              }
+            }
+            semicolon: true
+          }
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        nil: 2
+      }
+    }
+  }
+}

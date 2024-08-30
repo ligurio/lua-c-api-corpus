@@ -1,0 +1,49 @@
+chunk {
+  stat {
+    call {
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+        }
+        args {
+          str: "abc"
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          functioncall {
+            prefArgs {
+              prefixexp {
+                functioncall {
+                  namedArgs {
+                    prefixexp {
+                    }
+                    name {
+                      name: "abc"
+                      num: 524288
+                    }
+                    args {
+                    }
+                  }
+                }
+              }
+              args {
+                str: "ab"
+              }
+            }
+          }
+        }
+        args {
+          str: "on {\n        binary {\n          leftexp {\n            binary {\n              leftexp {\n                ellipsis: \"math.abs\"\n              }\n              binop {\n                mod: 536870912\n              }\n              rightexp {\n                number: -4.9591064453125e-05\n              }\n            }\n          }\n          binop {\n            div: 0\n          }\n          rightexp {\n            binary {\n              leftexp {\n              }\n              binop {\n              }\n              rightexp {\n                true: 0\n              }\n            }\n          }\n        }\n      }\n      da"
+        }
+      }
+    }
+  }
+}

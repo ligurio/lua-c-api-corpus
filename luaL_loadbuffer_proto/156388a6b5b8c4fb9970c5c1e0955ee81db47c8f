@@ -1,0 +1,56 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+          }
+          stat {
+            semicolon: true
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  functioncall {
+                    prefArgs {
+                      prefixexp {
+                      }
+                      args {
+                        str: "\'string.upper \'stat {\n              localnames {\n"
+                      }
+                    }
+                  }
+                }
+                args {
+                  str: "\'string.upper \'"
+                }
+              }
+            }
+            semicolon: true
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                }
+                args {
+                  str: "\'string.upper \'"
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        unary {
+          unop {
+          }
+          exp {
+            str: "\'string.upper \'"
+          }
+        }
+      }
+    }
+  }
+}

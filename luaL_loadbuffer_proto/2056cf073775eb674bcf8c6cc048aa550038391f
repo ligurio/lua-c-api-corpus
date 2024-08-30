@@ -1,0 +1,113 @@
+chunk {
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "xpcall"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "assert"
+                      num: 0
+                    }
+                  }
+                }
+              }
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 0
+                    }
+                  }
+                }
+              }
+              expressions {
+                prefixexp {
+                  functioncall {
+                    prefArgs {
+                      prefixexp {
+                      }
+                      args {
+                        str: ""
+                      }
+                    }
+                  }
+                }
+              }
+              explast {
+                number: nan
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+  }
+  stat {
+    call {
+    }
+    semicolon: true
+  }
+  stat {
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "assert"
+              num: 0
+            }
+          }
+        }
+        args {
+          tableconstructor {
+            fieldlist {
+              firstField {
+              }
+              fields {
+                field {
+                  exprassign {
+                    key {
+                    }
+                    value {
+                      nil: 0
+                    }
+                  }
+                }
+                sep {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        explast {
+          false: 16384000
+        }
+      }
+    }
+    semicolon: true
+  }
+}

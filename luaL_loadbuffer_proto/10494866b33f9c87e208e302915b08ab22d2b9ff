@@ -1,0 +1,187 @@
+chunk {
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: ""
+          num: 0
+        }
+      }
+      explist {
+        explast {
+          unary {
+            unop {
+              negate: 0
+            }
+            exp {
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      namedArgs {
+        prefixexp {
+        }
+        name {
+          name: ""
+          num: 0
+        }
+        args {
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        expressions {
+          prefixexp {
+            var {
+            }
+          }
+        }
+        expressions {
+          prefixexp {
+            functioncall {
+              prefArgs {
+                prefixexp {
+                }
+                args {
+                  str: "\'"
+                }
+              }
+            }
+          }
+        }
+        expressions {
+          tableconstructor {
+            fieldlist {
+              firstField {
+              }
+            }
+          }
+        }
+        expressions {
+          tableconstructor {
+            fieldlist {
+              firstField {
+                namedassign {
+                  name {
+                    name: ""
+                    num: 0
+                  }
+                  value {
+                    tableconstructor {
+                    }
+                  }
+                }
+              }
+              fields {
+                field {
+                  exprassign {
+                    key {
+                      tableconstructor {
+                        fieldlist {
+                          firstField {
+                          }
+                          fields {
+                            field {
+                            }
+                            sep {
+                              semicolon: 0
+                            }
+                          }
+                        }
+                      }
+                    }
+                    value {
+                      str: "debug.getmetatable"
+                    }
+                  }
+                }
+                sep {
+                  comma: 8
+                }
+              }
+              lastSep {
+                semicolon: 0
+              }
+            }
+          }
+        }
+        expressions {
+          tableconstructor {
+          }
+        }
+        expressions {
+          tableconstructor {
+            fieldlist {
+              firstField {
+                expression {
+                  false: 8
+                }
+              }
+              fields {
+                field {
+                  exprassign {
+                    key {
+                      tableconstructor {
+                      }
+                    }
+                    value {
+                    }
+                  }
+                }
+                sep {
+                }
+              }
+            }
+          }
+        }
+        expressions {
+        }
+        expressions {
+          tableconstructor {
+            fieldlist {
+              firstField {
+                expression {
+                  str: "utf8.len"
+                }
+              }
+            }
+          }
+        }
+        expressions {
+          tableconstructor {
+          }
+        }
+        explast {
+          prefixexp {
+            functioncall {
+              prefArgs {
+                prefixexp {
+                  exp {
+                    number: 3.13672397231691e-319
+                  }
+                }
+                args {
+                  str: "\'"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+  }
+}

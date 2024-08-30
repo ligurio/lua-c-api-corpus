@@ -1,0 +1,118 @@
+chunk {
+  stat {
+    func {
+      name {
+        firstname {
+          name: ""
+          num: 0
+        }
+        lastname {
+          name: ""
+          num: 0
+        }
+      }
+      body {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    list {
+      varlist {
+        var {
+          name {
+            name: "tonumber"
+            num: 0
+          }
+        }
+      }
+      explist {
+        expressions {
+          prefixexp {
+            var {
+              name {
+                name: "load"
+                num: 0
+              }
+            }
+          }
+        }
+        explast {
+          binary {
+            leftexp {
+              function {
+                body {
+                  parlist {
+                  }
+                  block {
+                    chunk {
+                      laststat {
+                        semicolon: true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            binop {
+              mult: 0
+            }
+            rightexp {
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "xpcall"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "collectgar\000\000\000\000\000\000\000\000bage"
+                      num: 4128768
+                    }
+                  }
+                }
+              }
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "collectgarbage"
+                      num: 4128768
+                    }
+                  }
+                }
+              }
+              explast {
+                tableconstructor {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

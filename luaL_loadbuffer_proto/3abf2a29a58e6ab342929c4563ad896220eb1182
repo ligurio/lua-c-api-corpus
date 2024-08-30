@@ -1,0 +1,89 @@
+chunk {
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "load"
+              num: 0
+            }
+          }
+        }
+        args {
+          str: "V \"N\""
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  str: "V \"N\""
+                }
+              }
+            }
+            semicolon: true
+          }
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        str: "\000\000\000\000\000\000\000!"
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  str: "V \"N\""
+                }
+              }
+            }
+            semicolon: true
+          }
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        str: "\000\000\000\000\000\000\000!"
+      }
+    }
+  }
+  laststat {
+    break: 0
+    semicolon: true
+  }
+}

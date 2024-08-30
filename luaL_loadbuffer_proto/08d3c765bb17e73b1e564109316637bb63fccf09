@@ -1,0 +1,83 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 8192
+                    }
+                  }
+                }
+                args {
+                  str: "\ttopexp {\\n      }\\n      doblock {\\n        block {\\n          chunk {\\n            laststat {\\n            }\\n        \000\000\000"
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 8192
+                    }
+                  }
+                }
+                args {
+                  str: "\ttopexp {\\n      }\\n      doblock {\\n        block {\\n          chunk {\\n            laststat {\\n            }\\n        \000\000\000"
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  functioncall {
+                    prefArgs {
+                      prefixexp {
+                        var {
+                          name {
+                            name: "load"
+                            num: 8192
+                          }
+                        }
+                      }
+                      args {
+                        str: "\ttopexp {\\n      }\\n      doblock {\\n        block {\\n          chunk {\\n            laststat {\\n            }\\n        \000\000\000"
+                      }
+                    }
+                  }
+                }
+                args {
+                  str: "\ttopexp {\\n      }\\n      doblock {\\n        block {\\n          chunk {\\n            laststat {\\n            }\\n        \000\000\000"
+                }
+              }
+            }
+          }
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        prefixexp {
+          var {
+            name {
+              name: "coroutine.running"
+              num: 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+                str: "f\000\000\000\'%__~id/v\'\'\'"
+              }
+              binop {
+                notEqual: 0
+              }
+              rightexp {
+                str: "f\000\000\000\'%__~id/v\'\'\'"
+              }
+            }
+          }
+          binop {
+            add: 50
+          }
+          rightexp {
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+            stat {
+              call {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

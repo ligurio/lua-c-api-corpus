@@ -1,0 +1,47 @@
+chunk {
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "tonumber"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                str: "__mul"
+              }
+              expressions {
+                number: 2
+              }
+              explast {
+                prefixexp {
+                  exp {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    ifstat {
+      condition {
+        str: "\006\000\000\000\000\000\000\000"
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: true
+  }
+}

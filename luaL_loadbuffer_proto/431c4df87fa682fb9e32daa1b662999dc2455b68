@@ -1,0 +1,124 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        true: 0
+      }
+      first {
+        chunk {
+          stat {
+            call {
+            }
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  str: "<="
+                }
+              }
+            }
+            semicolon: true
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  str: "<="
+                }
+              }
+            }
+            semicolon: true
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  str: "<="
+                }
+              }
+            }
+            semicolon: true
+          }
+          stat {
+            call {
+            }
+            semicolon: true
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  str: "<="
+                }
+              }
+            }
+          }
+        }
+      }
+      clauses {
+        condition {
+          tableconstructor {
+            fieldlist {
+              firstField {
+              }
+            }
+          }
+        }
+        block {
+          chunk {
+            stat {
+              call {
+                namedArgs {
+                  prefixexp {
+                  }
+                  name {
+                    name: "\\000("
+                    num: 0
+                  }
+                  args {
+                  }
+                }
+              }
+              semicolon: true
+            }
+            laststat {
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+chunk {
+  stat {
+    forcyclename {
+      name {
+        name: "cou2nt\\r_+"
+        num: 0
+      }
+      startexp {
+        unary {
+          unop {
+            negate: 1
+          }
+          exp {
+          }
+        }
+      }
+      stopexp {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "load"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    str: ">="
+                  }
+                }
+              }
+              semicolon: true
+            }
+            stat {
+              forcyclename {
+                name {
+                  name: ""
+                  num: 0
+                }
+                startexp {
+                }
+                stopexp {
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+chunk {
+  stat {
+    semicolon: true
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+                binary {
+                  leftexp {
+                    str: "\000\'>io.open\'\000\000&&\'>\'\000\000&\'>\'"
+                  }
+                  binop {
+                  }
+                  rightexp {
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                    stat {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+                binary {
+                  leftexp {
+                    str: "\000\'>io.open\'\000\000&&\'>\'\000\000&\'>\'"
+                  }
+                  binop {
+                    less: 0
+                  }
+                  rightexp {
+                    binary {
+                      leftexp {
+                        tableconstructor {
+                        }
+                      }
+                      binop {
+                        less: 0
+                      }
+                      rightexp {
+                        nil: 1048576
+                      }
+                    }
+                  }
+                }
+              }
+              binop {
+                less: 67108864
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            less: 67108864
+          }
+          rightexp {
+          }
+        }
+      }
+    }
+  }
+  laststat {
+  }
+}

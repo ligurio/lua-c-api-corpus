@@ -1,0 +1,49 @@
+chunk {
+  stat {
+    forcyclename {
+      name {
+        name: "_ENV"
+        num: 0
+      }
+      startexp {
+        true: 2304
+      }
+      stopexp {
+        number: 767
+      }
+      stepexp {
+        str: "\\00\005\000p06"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              ifstat {
+                condition {
+                  binary {
+                    leftexp {
+                      str: "\\00\005\000p06"
+                    }
+                    binop {
+                      mod: 2304
+                    }
+                    rightexp {
+                      true: 2304
+                    }
+                  }
+                }
+                first {
+                  chunk {
+                    laststat {
+                    }
+                  }
+                }
+              }
+              semicolon: false
+            }
+          }
+        }
+      }
+    }
+  }
+}

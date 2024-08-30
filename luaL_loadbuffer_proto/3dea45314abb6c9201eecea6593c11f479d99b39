@@ -1,0 +1,53 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            str: "f\000\000\000\'%__~id/v\'\'\'"
+          }
+          binop {
+            div: 0
+          }
+          rightexp {
+            unary {
+              unop {
+                length: 0
+              }
+              exp {
+                str: "f\000\000\000\'%__~id/v\'\'\'"
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+      }
+      first {
+        chunk {
+        }
+      }
+      clauses {
+        condition {
+        }
+        block {
+          chunk {
+            stat {
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

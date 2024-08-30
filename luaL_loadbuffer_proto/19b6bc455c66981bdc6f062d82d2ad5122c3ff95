@@ -1,0 +1,27 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            str: "\000\'>io.open\'\000\000&&\'>\'\000\000&\'>\'"
+          }
+          binop {
+            sub: 0
+          }
+          rightexp {
+            str: "\000\'>io.open\'\000\000&&\'>\'\000\000&\'>\'"
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+          }
+        }
+      }
+    }
+  }
+}

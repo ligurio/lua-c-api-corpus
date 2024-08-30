@@ -1,0 +1,89 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        unary {
+          unop {
+          }
+          exp {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    list {
+      varlist {
+        var {
+        }
+      }
+      explist {
+        expressions {
+          binary {
+            leftexp {
+              prefixexp {
+              }
+            }
+            binop {
+              mod: 1024
+            }
+            rightexp {
+              binary {
+                leftexp {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "load"
+                        num: 65
+                      }
+                    }
+                  }
+                }
+                binop {
+                  sub: 0
+                }
+                rightexp {
+                  number: 1.0810575166688617e+98
+                }
+              }
+            }
+          }
+        }
+        explast {
+          binary {
+            leftexp {
+            }
+            binop {
+              mod: 1024
+            }
+            rightexp {
+              binary {
+                leftexp {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "load"
+                        num: 65
+                      }
+                    }
+                  }
+                }
+                binop {
+                  sub: 0
+                }
+                rightexp {
+                  number: 1.0810575166688617e+98
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

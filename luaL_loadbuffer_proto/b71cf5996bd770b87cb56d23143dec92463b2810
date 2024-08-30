@@ -1,0 +1,49 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            prefixexp {
+              var {
+                name {
+                  name: "next"
+                  num: 0
+                }
+              }
+            }
+          }
+          binop {
+            concat: 0
+          }
+          rightexp {
+            prefixexp {
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              list {
+                varlist {
+                  var {
+                  }
+                }
+                explist {
+                  explast {
+                    str: "\'-8<string.packsize\'<8<8"
+                  }
+                }
+              }
+              semicolon: false
+            }
+            laststat {
+            }
+          }
+        }
+      }
+    }
+  }
+}

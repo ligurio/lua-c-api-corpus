@@ -1,0 +1,68 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\'<debug.traceback\'<9"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  str: "\'<debug.traceback\'<9"
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        str: "\'<debug.traceback\'<9"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  str: "\'<debug.traceback\'<9"
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        semicolon: true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+  }
+  laststat {
+  }
+}

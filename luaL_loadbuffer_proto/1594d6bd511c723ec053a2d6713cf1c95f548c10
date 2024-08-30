@@ -1,0 +1,169 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            str: ""
+          }
+          binop {
+            div: 127
+          }
+          rightexp {
+            number: 960
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclelist {
+                names {
+                  firstname {
+                    name: "utlocf8.offset"
+                    num: 0
+                  }
+                }
+                expressions {
+                  expressions {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "pcall"
+                          num: 262144
+                        }
+                      }
+                    }
+                  }
+                  expressions {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "xpcall"
+                          num: 0
+                        }
+                      }
+                    }
+                  }
+                  explast {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "xpcall"
+                          num: 1
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                    }
+                  }
+                }
+              }
+            }
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "xpcall"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "xpcall"
+                                num: 162
+                              }
+                            }
+                          }
+                        }
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "pcall"
+                                num: 262144
+                              }
+                            }
+                          }
+                        }
+                        explast {
+                          true: 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    semicolon: false
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "xpcall"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 162
+                    }
+                  }
+                }
+              }
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 0
+                    }
+                  }
+                }
+              }
+              explast {
+                true: 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+}

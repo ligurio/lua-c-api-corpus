@@ -1,0 +1,52 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\001\000\0000"
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    list {
+      varlist {
+        var {
+          indexexpr {
+            prefixexp {
+              var {
+                name {
+                  name: "rawequal"
+                  num: 63
+                }
+              }
+            }
+            exp {
+            }
+          }
+        }
+      }
+      explist {
+        expressions {
+          binary {
+            leftexp {
+              nil: 0
+            }
+            binop {
+            }
+            rightexp {
+              str: "\'-table.unpack\'\'/8<\'<8<8"
+            }
+          }
+        }
+        explast {
+          str: "\377\377\005"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "utf8.offset"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              forcyclelist {
+                names {
+                  firstname {
+                    name: "utf8.offset"
+                    num: 127
+                  }
+                }
+                expressions {
+                  expressions {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "pcall"
+                          num: 0
+                        }
+                      }
+                    }
+                  }
+                  expressions {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "xpcall"
+                          num: 0
+                        }
+                      }
+                    }
+                  }
+                  explast {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "xpcall"
+                          num: 1
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      laststat {
+                        explist {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "xpcall"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "xpcall"
+                                num: 162
+                              }
+                            }
+                          }
+                        }
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "xpcall"
+                                num: 28
+                              }
+                            }
+                          }
+                        }
+                        explast {
+                          true: 5
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            laststat {
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    semicolon: false
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "xpcall"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 162
+                    }
+                  }
+                }
+              }
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 1
+                    }
+                  }
+                }
+              }
+              explast {
+                true: 5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+  laststat {
+    semicolon: true
+  }
+}

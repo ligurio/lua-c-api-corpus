@@ -1,0 +1,29 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        str: "^zzzzzzzz\\z "
+      }
+      first {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                str: "^zzzzzzzz\\z\000"
+              }
+              first {
+                chunk {
+                  laststat {
+                    semicolon: true
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

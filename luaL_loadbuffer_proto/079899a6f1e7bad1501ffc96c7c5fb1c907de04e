@@ -1,0 +1,88 @@
+chunk {
+  stat {
+    block {
+      block {
+        chunk {
+          stat {
+            whilecycle {
+              condition {
+                binary {
+                  leftexp {
+                    binary {
+                      leftexp {
+                      }
+                      binop {
+                        greaterEqual: 0
+                      }
+                      rightexp {
+                      }
+                    }
+                  }
+                  binop {
+                    concat: 8192
+                  }
+                  rightexp {
+                    str: "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+                  }
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "xpcall"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "xpcall"
+                      num: 0
+                    }
+                  }
+                }
+              }
+              expressions {
+                prefixexp {
+                  var {
+                    name {
+                      name: "error"
+                      num: 0
+                    }
+                  }
+                }
+              }
+              explast {
+                ellipsis: "1"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    semicolon: true
+  }
+}

@@ -1,0 +1,104 @@
+chunk {
+  stat {
+    semicolon: true
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "_ENV"
+                      num: 0
+                    }
+                  }
+                }
+                name {
+                  name: "getmetatable"
+                  num: 0
+                }
+                args {
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              namedArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "_ENV"
+                      num: 0
+                    }
+                  }
+                }
+                name {
+                  name: "getmetatable"
+                  num: 0
+                }
+                args {
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            number: 0
+          }
+          binop {
+            and: 0
+          }
+          rightexp {
+            str: "\000"
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          laststat {
+            semicolon: true
+          }
+        }
+      }
+      condition {
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    call {
+      namedArgs {
+        prefixexp {
+          var {
+            name {
+              name: "_ENV"
+              num: 0
+            }
+          }
+        }
+        name {
+          name: "getmetatable"
+          num: 0
+        }
+        args {
+        }
+      }
+    }
+  }
+  stat {
+  }
+  laststat {
+  }
+}

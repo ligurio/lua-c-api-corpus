@@ -1,0 +1,60 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 5
+                    }
+                  }
+                }
+                args {
+                  str: "break"
+                }
+              }
+            }
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        prefixexp {
+          functioncall {
+            prefArgs {
+              prefixexp {
+                var {
+                  name {
+                    name: "load"
+                    num: 5
+                  }
+                }
+              }
+              args {
+                str: "break"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+  laststat {
+    semicolon: true
+  }
+}

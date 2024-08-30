@@ -1,0 +1,76 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 4194304
+                    }
+                  }
+                }
+                args {
+                  explist {
+                    explist {
+                      explast {
+                        str: "@-"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "load"
+                      num: 4194304
+                    }
+                  }
+                }
+                args {
+                  str: "@-"
+                }
+              }
+            }
+          }
+        }
+      }
+      condition {
+        prefixexp {
+          functioncall {
+            prefArgs {
+              prefixexp {
+                var {
+                  name {
+                    name: "load"
+                    num: 4194304
+                  }
+                }
+              }
+              args {
+                explist {
+                  explist {
+                    explast {
+                      str: "@-"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+}

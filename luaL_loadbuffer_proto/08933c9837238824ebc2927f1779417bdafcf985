@@ -1,0 +1,33 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            false: 0
+          }
+          binop {
+            or: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+                false: 0
+              }
+              binop {
+                or: 0
+              }
+              rightexp {
+                str: "\001\000\000\000\000\000\000@"
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\\00\\000\\\"\\\\0[00\\\\00\\\"\\\\000\\\\077"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+                namedArgs {
+                  prefixexp {
+                  }
+                  name {
+                    name: "2"
+                    num: 0
+                  }
+                  args {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        str: "\\00\\000\\\"\\\\000\\\\00\\\"\\\\000\\\\077"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  str: "\\00\\000\\\"\\\\000\\\\00\\\"\\\\000\\\\077"
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        forcyclename {
+                          name {
+                            name: ""
+                            num: 0
+                          }
+                          startexp {
+                          }
+                          stopexp {
+                          }
+                          doblock {
+                            block {
+                              chunk {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+    }
+  }
+}

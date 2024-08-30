@@ -1,0 +1,66 @@
+chunk {
+  stat {
+    localnames {
+      namelist {
+        firstname {
+          name: ""
+          num: 0
+        }
+        names {
+          name: "__sub"
+          num: 4096
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        tableconstructor {
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "load"
+                        num: 101
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        explast {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "require"
+                                num: 126
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+  stat {
+    semicolon: false
+  }
+  laststat {
+  }
+}

@@ -1,0 +1,84 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            number: 0
+          }
+          binop {
+            exp: 0
+          }
+          rightexp {
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "\000\000\000\000"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    str: "next"
+                  }
+                }
+              }
+            }
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "next"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        explast {
+                          tableconstructor {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "next"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                  }
+                }
+              }
+            }
+            laststat {
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

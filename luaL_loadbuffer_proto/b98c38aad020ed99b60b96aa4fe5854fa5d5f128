@@ -1,0 +1,26 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            nil: 128
+          }
+          binop {
+            notEqual: 0
+          }
+          rightexp {
+            str: "\'|hs.date\'"
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+}

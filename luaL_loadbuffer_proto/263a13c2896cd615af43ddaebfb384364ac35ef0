@@ -1,0 +1,172 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        unary {
+          unop {
+            negate: 2
+          }
+          exp {
+            prefixexp {
+              functioncall {
+                prefArgs {
+                  prefixexp {
+                    var {
+                      name {
+                        name: "xpcall"
+                        num: 0
+                      }
+                    }
+                  }
+                  args {
+                    explist {
+                      explist {
+                        expressions {
+                          prefixexp {
+                            var {
+                              name {
+                                name: "xpcall"
+                                num: 0
+                              }
+                            }
+                          }
+                        }
+                        expressions {
+                          function {
+                            body {
+                              block {
+                                chunk {
+                                }
+                              }
+                            }
+                          }
+                        }
+                        explast {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              whilecycle {
+                condition {
+                  unary {
+                    unop {
+                      negate: 2
+                    }
+                    exp {
+                      prefixexp {
+                        functioncall {
+                          prefArgs {
+                            prefixexp {
+                              var {
+                                name {
+                                  name: "xpcall"
+                                  num: 0
+                                }
+                              }
+                            }
+                            args {
+                              explist {
+                                explist {
+                                  expressions {
+                                    prefixexp {
+                                      var {
+                                        name {
+                                          name: "xpcall"
+                                          num: 0
+                                        }
+                                      }
+                                    }
+                                  }
+                                  expressions {
+                                    function {
+                                      body {
+                                        block {
+                                          chunk {
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                  explast {
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                doblock {
+                  block {
+                    chunk {
+                      stat {
+                        semicolon: true
+                      }
+                      laststat {
+                        explist {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              semicolon: true
+            }
+            stat {
+              ifstat {
+                condition {
+                }
+                first {
+                  chunk {
+                  }
+                }
+              }
+              semicolon: true
+            }
+            laststat {
+              explist {
+                explist {
+                  explast {
+                    true: 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    ifstat {
+      condition {
+      }
+      first {
+        chunk {
+        }
+      }
+    }
+    semicolon: true
+  }
+  laststat {
+    explist {
+      explist {
+        explast {
+          true: 0
+        }
+      }
+    }
+  }
+}

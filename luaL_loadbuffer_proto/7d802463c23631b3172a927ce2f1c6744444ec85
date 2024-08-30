@@ -1,0 +1,55 @@
+chunk {
+  stat {
+    semicolon: true
+  }
+  stat {
+    semicolon: false
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+                str: "\000\000\000\000\000\000\000\032"
+              }
+              binop {
+                equal: 0
+              }
+              rightexp {
+                number: 2.0522684006491881e-289
+              }
+            }
+          }
+          binop {
+            mod: 128
+          }
+          rightexp {
+            binary {
+              leftexp {
+                prefixexp {
+                  functioncall {
+                  }
+                }
+              }
+              binop {
+                exp: 0
+              }
+              rightexp {
+                number: 1.1125374183073181e-308
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+}

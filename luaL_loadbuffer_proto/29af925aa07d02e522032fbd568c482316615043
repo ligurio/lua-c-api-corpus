@@ -1,0 +1,47 @@
+chunk {
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        false: 0
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+          }
+        }
+      }
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+                str: "\'<debug.debug\'<<8"
+              }
+              binop {
+                lessEqual: 15
+              }
+              rightexp {
+              }
+            }
+          }
+          binop {
+            lessEqual: 983040
+          }
+          rightexp {
+          }
+        }
+      }
+    }
+  }
+}

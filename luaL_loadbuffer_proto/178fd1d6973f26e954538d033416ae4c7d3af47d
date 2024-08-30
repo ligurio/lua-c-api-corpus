@@ -1,0 +1,143 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              list {
+                varlist {
+                  var {
+                  }
+                }
+                explist {
+                  expressions {
+                    unary {
+                      unop {
+                        negate: 2
+                      }
+                      exp {
+                        str: "____________"
+                      }
+                    }
+                  }
+                  expressions {
+                    unary {
+                      unop {
+                        negate: 2
+                      }
+                      exp {
+                      }
+                    }
+                  }
+                  explast {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            list {
+              varlist {
+                var {
+                }
+              }
+              explist {
+                explast {
+                  binary {
+                    leftexp {
+                      prefixexp {
+                      }
+                    }
+                    binop {
+                      sub: 2
+                    }
+                    rightexp {
+                      binary {
+                        leftexp {
+                          prefixexp {
+                            var {
+                            }
+                          }
+                        }
+                        binop {
+                          mult: 2097154
+                        }
+                        rightexp {
+                          prefixexp {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          stat {
+            forcyclename {
+              name {
+                name: "_[__________"
+                num: 2
+              }
+              startexp {
+              }
+              stopexp {
+                binary {
+                  leftexp {
+                    prefixexp {
+                      var {
+                        name {
+                          name: "next"
+                          num: 0
+                        }
+                      }
+                    }
+                  }
+                  binop {
+                    mod: 11520
+                  }
+                  rightexp {
+                    prefixexp {
+                      var {
+                      }
+                    }
+                  }
+                }
+              }
+              stepexp {
+                prefixexp {
+                }
+              }
+              doblock {
+                block {
+                  chunk {
+                    laststat {
+                      explist {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+        }
+      }
+      condition {
+        false: 25344
+      }
+    }
+    semicolon: true
+  }
+}

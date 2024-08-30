@@ -1,0 +1,166 @@
+chunk {
+  stat {
+    call {
+    }
+  }
+  stat {
+    call {
+    }
+  }
+  stat {
+    forcyclename {
+      name {
+        name: ""
+        num: 1024
+      }
+      startexp {
+        false: 38
+      }
+      stopexp {
+        binary {
+          leftexp {
+            ellipsis: ""
+          }
+          binop {
+            add: 4
+          }
+          rightexp {
+            false: 0
+          }
+        }
+      }
+      stepexp {
+        unary {
+          unop {
+            negate: 4
+          }
+          exp {
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            laststat {
+              break: 536870912
+              semicolon: true
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    call {
+    }
+  }
+  stat {
+    forcyclename {
+      name {
+        name: ""
+        num: 0
+      }
+      startexp {
+      }
+      stopexp {
+        prefixexp {
+          var {
+            name {
+              name: "collectgarbage"
+              num: 0
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+  stat {
+    call {
+      prefArgs {
+        prefixexp {
+          var {
+            name {
+              name: "collectgarbage"
+              num: 0
+            }
+          }
+        }
+        args {
+          explist {
+            explist {
+              expressions {
+                str: "step"
+              }
+              explast {
+                number: 16777215.999755878
+              }
+            }
+          }
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    call {
+    }
+    semicolon: false
+  }
+  stat {
+    repeatcycle {
+      block {
+        chunk {
+          stat {
+            call {
+              prefArgs {
+                prefixexp {
+                  var {
+                    name {
+                      name: "collectgarbage"
+                      num: 0
+                    }
+                  }
+                }
+                args {
+                  explist {
+                    explist {
+                      expressions {
+                        str: "step"
+                      }
+                      explast {
+                        number: -255.999999996275
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            semicolon: true
+          }
+          stat {
+            semicolon: false
+          }
+          stat {
+          }
+        }
+      }
+      condition {
+        function {
+          body {
+            block {
+              chunk {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+chunk {
+  stat {
+    ifstat {
+      condition {
+        binary {
+          leftexp {
+            binary {
+              leftexp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    greaterEqual: 0
+                  }
+                  rightexp {
+                  }
+                }
+              }
+              binop {
+                greaterEqual: 0
+              }
+              rightexp {
+                binary {
+                  leftexp {
+                  }
+                  binop {
+                    greaterEqual: 1024
+                  }
+                  rightexp {
+                  }
+                }
+              }
+            }
+          }
+          binop {
+            greaterEqual: 0
+          }
+          rightexp {
+            binary {
+              leftexp {
+              }
+              binop {
+                greaterEqual: 1024
+              }
+              rightexp {
+              }
+            }
+          }
+        }
+      }
+      first {
+        chunk {
+          stat {
+            ifstat {
+              condition {
+                binary {
+                  leftexp {
+                    binary {
+                      leftexp {
+                      }
+                      binop {
+                        greaterEqual: 7106403
+                      }
+                      rightexp {
+                      }
+                    }
+                  }
+                  binop {
+                    greaterEqual: 0
+                  }
+                  rightexp {
+                    binary {
+                      leftexp {
+                      }
+                      binop {
+                        greaterEqual: 1024
+                      }
+                      rightexp {
+                      }
+                    }
+                  }
+                }
+              }
+              first {
+                chunk {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

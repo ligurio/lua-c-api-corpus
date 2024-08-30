@@ -1,0 +1,70 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            str: ""
+          }
+          binop {
+            concat: 50331648
+          }
+          rightexp {
+            binary {
+              leftexp {
+                true: 128
+              }
+              binop {
+              }
+              rightexp {
+                number: 0
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            str: ""
+          }
+          binop {
+            concat: 50331648
+          }
+          rightexp {
+            prefixexp {
+              var {
+                name {
+                  name: ""
+                  num: 0
+                }
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+  }
+}

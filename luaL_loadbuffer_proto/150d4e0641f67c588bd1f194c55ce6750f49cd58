@@ -1,0 +1,97 @@
+chunk {
+  stat {
+    list {
+      varlist {
+        var {
+          name {
+            name: "tonumber"
+            num: 0
+          }
+        }
+        vars {
+          indexexpr {
+            prefixexp {
+              functioncall {
+              }
+            }
+            exp {
+            }
+          }
+        }
+      }
+      explist {
+        expressions {
+          prefixexp {
+            var {
+              name {
+                name: "pcall"
+                num: 0
+              }
+            }
+          }
+        }
+        explast {
+          false: 32
+        }
+      }
+    }
+    semicolon: true
+  }
+  stat {
+    list {
+      varlist {
+        var {
+          name {
+            name: "select"
+            num: 0
+          }
+        }
+      }
+      explist {
+        explast {
+          binary {
+            leftexp {
+              prefixexp {
+              }
+            }
+            binop {
+              add: 2
+            }
+            rightexp {
+              binary {
+                leftexp {
+                  tableconstructor {
+                  }
+                }
+                binop {
+                  add: 2
+                }
+                rightexp {
+                  unary {
+                    unop {
+                    }
+                    exp {
+                      str: "\'<8<\'<8"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  laststat {
+    explist {
+      explist {
+        expressions {
+          number: 0
+        }
+        explast {
+        }
+      }
+    }
+    semicolon: true
+  }
+}

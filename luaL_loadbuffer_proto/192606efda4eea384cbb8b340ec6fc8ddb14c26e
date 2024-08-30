@@ -1,0 +1,36 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            str: "\000\000\000\000"
+          }
+          binop {
+            mod: 2883584
+          }
+          rightexp {
+            binary {
+              leftexp {
+                ellipsis: "\\000\\000\\000\\002"
+              }
+              binop {
+                add: 2883584
+              }
+              rightexp {
+                number: 5.41108926725788e-312
+              }
+            }
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+    semicolon: false
+  }
+}

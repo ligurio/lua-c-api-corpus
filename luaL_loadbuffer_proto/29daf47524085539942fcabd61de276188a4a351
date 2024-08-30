@@ -1,0 +1,33 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        str: "\'<debug.traceback\'<9"
+      }
+      doblock {
+        block {
+          chunk {
+            stat {
+              call {
+                prefArgs {
+                  prefixexp {
+                    var {
+                    }
+                  }
+                  args {
+                    str: "\000z"
+                  }
+                }
+              }
+            }
+            stat {
+            }
+          }
+        }
+      }
+    }
+  }
+  stat {
+    semicolon: true
+  }
+}

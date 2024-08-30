@@ -1,0 +1,25 @@
+chunk {
+  stat {
+    whilecycle {
+      condition {
+        binary {
+          leftexp {
+            number: 1.2516040454103008e-308
+          }
+          binop {
+            greaterEqual: 2359296
+          }
+          rightexp {
+            str: "setme\'+\' \'+\'  f  \'+\'  f"
+          }
+        }
+      }
+      doblock {
+        block {
+          chunk {
+          }
+        }
+      }
+    }
+  }
+}
