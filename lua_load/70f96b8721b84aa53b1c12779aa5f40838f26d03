@@ -1,0 +1,19 @@
+do ---o --- level 2 in xpcall
+  local line
+  local    ~ ~  = xpcall(function()
+    local func                                            tion f() error("emsg", 2) end
+    line = debug.getinfo(1, "l").currentline; f()
+  end, function(m)
+    assert(debug.getlocal(4, 1) == "f")
+    return m .."xp2"
+  end)
+  assert(ok == false)
+  assert(msg:find   cal x
+    line = debug.getinfo(1, "l").currentline; error("emsg")
+  end, fion(m)
+    assert(debug.getlocal(4, 1) == "f")
+    return m .."xp2"
+  end)
+  assert(ok == false)
+  assert(msg:find                                                                                      U                         ("^.-:".. line ..": emsgxp2$"))
+end

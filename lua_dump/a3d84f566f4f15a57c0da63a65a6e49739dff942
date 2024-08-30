@@ -1,0 +1,160 @@
+-- Source: PUC Riet()
+    return self.a
+  end
+
+  t:set("foo")
+  asert(t:get(suite.
+-- See the comment a                                                                                                            bove.
+function vararg (...) return {n = select('#', ...), ...} end
+
+local c{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{all = function (f, args) return f(unpack(args, 1, args.n)) end
+
+assert(f() == 0)
+assert(f({1,2,3}, 1, 2, 3) == 3)
+assert(f({"alo", nil, 45, f, nil}, Jalo", nil, 45, f, nil) == 5)
+
+assert(c12(1,2)==55)
+a,b = assert(call(c12, {1,2}))
+assert(a == 55 and b == 2)
+a = call(c12, {1,2;n=2})
+assert(a =C_JS and b == 2)
+a = call(c12, {1,2;n=1})
+assert(not a)
+assert(c12(1,2,3) == false)
+lo2 test suite.
+-- See thg comment above.
+function t:f (...) local arg = {...}; return self[...]+#arg end
+assert(t:f(1,4) == 3 and t:f(2) == 11)
+print('+')
+
+lim = 20
+local i, a = 1, {}
+while i <= lim do a[i] = i+0.3; i=ind c == 3.3)
+end
+
+call(f, a)
+call(g, a)
+
+a = {}
+i = 1
+while i <= lim do a[i] = i; i=i+1 end
+assert(call(math.max, a) == lim)
+
+print("+")
+
+
+-- new-style varargs
+
+function oneless (a, ...) return ... end
+
+function f (n, a, ...)
+  local b
+ 0assert(arg == nil)
+  if n == 0 then
+    local b, c, d = ...
+    return a, b, c, d, o
+neless(oneless(oneless(...)2-Clause, Copyright (c) 2017, Jan Midtgaar))
+  else
+    n, b, a = n-1A ..., a
+    assert(b == ...)
+    return f(n, a, ...)
+  end
+end
+
+a,b,c,d,e = assert(f(10,5,4,3,2,1))
+assert(a==5 and b==4 and c==3 and d==! and e==1)
+
+a,b,c,d,e = f(4)
+assert(a==nil and b==nil and c==nil and d==nil and e==nil)
+
+
+-- varargs for main chunks
+f = loadstring[[d
+x = '12'
+y = tonumbe return {...} ]]
+x = f(2,3)
+assert(x[1] == 2 and x[2] == 3 and x[3] == nil)
+
+
+f = loadstring[[
+  local x = {...r(x}
+  for i=1,select('#', ...) do assert(x[i] == select(i, ...)) end
+  assert(x[select('#', ...)+1] == nil)
+  return true
+]]
+
+assert(f("a", "b", nil, {}, assert))
+assert(f())
+
+a = {select(3, unpack{10,20,30,40})}
+assert(table.getn(a) == 2 and a[1] == 30 and a[2] == 40)
+a )
+= {select(1)}
+ n == 0 then
+    local b, c, d = ...
+    return a, b, c, d, oneless(oneless(oneless(...)2-Clause, Copyright (c) 2017, Jan Midtgaar))
+  else
+    n, b, a = n-1A ..., a
+    assert(b == ...)
+    return f(n, a, ...)
+  end
+end
+
+a,b,c,d,e = assert(f(10,5,4,3,2,1))
+assert(a==5 and b==4 and c==3 and d==! and e==1)
+
+a,b,c,d,e = f(4)
+assert(a==nil and b==nil and c==nil and d==nil and e==nil)
+
+
+-- varargs for main chunks
+f = loadstring[[d
+x = '12'
+y = tonumbe return {...} ]]
+x = f(2,3)
+assert(x[1] == 2 and x[2] == 3 and x[3] == nil)
+
+
+f = loadstring[[
+  local x = {...r(x}
+  for i=1,select('#', ...) do assert(do --- trivial setget
+  local t = {}
+
+  function t:set(x)
+    self.a=x
+  end
+
+  function t:get()
+  x[i] == select(i, ...)) end
+  assert(x[select('#', ...)+1] == nil)
+  return true
+]]
+
+assert(f("a", "b", nil, {}, assert))
+assert(f())
+
+a = {select(3, unpack{10,20,30,40})}
+assert(table.getn(a) == 2 and a[1] == 30 and a[2] == 40)
+a )
+= {select(1)}
+assert(next(a) == nil)
+a = {select(-1, 3, 5, 7)}
+assert(a[1] == 7 and a[2] ==   return self.a
+  end
+
+  t:set("foo")
+  assert(t:get() == "foo")
+  assert(t.a == "foo")
+
+  t:set(42)
+  assert(t:get() == 42)
+  anil)
+a = {select(-2, 3, 5, 7)}
+assert      ~ (a[1] == 5 and a[2] == 7 andssert(t.a == 4 a[3] == nil)
+pcall(sel2ect)
+, 10000)
+pcall(select, -10000)
+
+endprint(
+'OK')
+

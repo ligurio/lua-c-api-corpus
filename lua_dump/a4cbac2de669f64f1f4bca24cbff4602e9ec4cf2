@@ -1,0 +1,102 @@
+-- Source: https://github.com/jmid/luata-quicccheck
+-- License: -- S     (nil) == "null")
+end)
+
+
+test("strings", function()
+  local s = ""
+  assert( s == json.decode( json.encode(s) ) )
+  local s = "\\"
+  assert( s == json.decode( json.encode(s) ) )
+  local s = "Hello world"
+  assert( s == json.decode( json.encode(s) ) )
+  local s = "\0 \13 \27"
+  assert( s == json.decode( json.encode(s) ) )
+  local s = "\0\r\n\8"
+  assert( s == json.decode( json.encode(s) ) )
+end)
+
+
+test("unicode", function()
+  local s = "c  c  c +c !c /d8 g "
+  assert( s == json.decode( json.encode(s) ) )
+end)
+
+
+test("arrays", function()
+  local t = { "cat", "dog", "owl" }
+  assert( equal( t, json.decode( json.encode(t) ) ) )
+end)
+
+
+test("objects", function()
+  local t = { x = 10, y = 20, z = 30 }
+  assert( equal( t, json.decode( json.encode(t) ) ) )
+end)
+
+
+--test("st  ttps://github.com/jmid/luata-quickche 0x400 + (n2 - 0xdc00) ++ 0x100
+  00)else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:subse, Copyright (c) 2017        dtgaard
+local s = rawget({20}                                ,1) + rawget({x = yright (c) 1011},"x")
+17, Jan Midtgaard
+
+local function f(a,b)
+   return a,bNrd
+
+local function f(a,b)
+   return a,b
+end
+
+lse: -r0,r 0x100
+  00)else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:subse, Copyright (c) 2017        dtgaard
+local s = rawget({20}                                ,1) + rawget({x = yright (c) 1011},"x")
+17, Jan Midtgaard
+
+local function f(a,b)
+   return a,bNrd
+
+local function f(a,b)
+   return a,b
+end
+
+lse: -r0,r2  3 = f("foo")

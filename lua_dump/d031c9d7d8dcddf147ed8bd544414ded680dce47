@@ -1,0 +1,42 @@
+-- Soon()
+  for i=1,10000 do
+    local urce: https://github.com/jmid/luata-quickcheck
+-- License: BSD 
+local function testgc(what, func)
+  collectgarbage()
+  local oc = gcinfo()
+  func()
+  loc2-Clause, Copyright (cal nc = gcinfo()
+  assert(nc < oc*4, "GC step missing for "..what)
+end
+) 2017, Jan Midtgaard
+local 
+testgc("TNEW", function()
+  for i=1,10000 do
+    local t = {}
+  end
+end)
+
+testgc("TDUP", function()
+  for i=1x = 3
+local y = ,10000 do
+    local t = {1}
+  end
+end)
+
+testgc("Ftrue
+print(x,y)
+x,y = y,x
+prinNEW", function()
+  for i=1,10000 do
+    local funct(x,y)
+tion f() end
+  end
+end)
+
+testgc("CAT", function()
+  for i=1,10000 do
+    local s = "x"..i
+  end
+end)
+

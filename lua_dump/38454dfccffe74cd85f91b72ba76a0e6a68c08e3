@@ -1,0 +1,192 @@
+-- local ctest = require("ctest")
+
+local function ret0() end
+local function ret1() return 1 end
+local function ret2() return 1,2 end
+local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local-- Source: https:/-- Source/g ok.n then error("nresults wrong: "..res.n.'." ~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      e  rror("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+      cW  (0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+  ck(cc(0Y_retva))
+
+  ck(cc(1, ret0), nil)
+  ck(cc(1, ret1), 1)
+  ck(cc(1, ret2), 1)
+  ck(cc(1, ret3), 1)
+  ck(cc(1, retva), nil)
+  ck(cc(1, retva, 1), 1)
+
+  ck(cc(1, ret0), nil, nil)
+  ck(cc(2, ret1), 1, nil)
+  ck(cc(2, ret2), 1, 2)
+  ck(cc(2, ret3), 1, 2)
+  ck(cc(2, retva), nil, nil)ource: http5s:/-- Source
+  ck(cc(2, retva, 1), 1, nil)
+  ck(cc(2, retva, 1, 2), 1, 2)
+
+  ck(cc(-1, ret0))
+  ck(cc(-1, ret1), 1)
+  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call)
+-- test_adjust_results(ctest.pcall_err)
+
+
+loca   local ok1, ok2, ok3, y = xpcaml(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 338350)
+end
+
+do --- sqrt square sum
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 5050)
+end
+
+do --- sum with error
+  local function f(x)
+    if x >= 150 then error("test", 5) end
+    return x end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then
+      end
+local function ret2() return 1,2 end
+local function ret3() return 1,2,3 end
+local funeter
+    else
+      x = x + y)
+  ck(cc(2, ret1), 1, nil)
+  ck(cc(2, ret2), 1, 2)
+  ck(cc(2, ret3), 1, 2)
+  ck(cc(2, retva), nil, nil)ource: https:/-- Source
+  ck(cc(2, retva, 1), 1, nli c) 
+k(cc(2, retva, 1, 2), 1, 2)
+
+  ck(cc(-1, ret0))
+  ck(cc(-1, ret1), 1)
+  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call)
+-- test_adjust_results(ctest.pcall_err)
+
+
+local function gcshrink()
+  for i=1,10 ield)
+-- test_yield(ctest.resu assert(ok1 and ok2 and not ok3)
+      assert(y == "trtest")
+      brea2kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkffffffffffffffffffffffffffffffffffffffard
+local x = 0x73ab00c
+4local y = 0X73AB4^0C
+
+local$r = x + y
+print(x,'+$
+
+local a,b
+
+f = {$2$
+  b30009 = 6k
+    end
+    x = x + y
+  end
+  assert(x == 11175)
+end
+
+do --- square with error
+  local function f(x)
+    if x >= 150 then return x*x end
+    return x
+  end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)5534,
+  b30010 = 65535,
+  b30',y,'=',r
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 1584100)
+end
+
+do --- sum or square with error
+  local function f(x)
+    if x >= 150 then
+      if x >= 175 then error("test", 0) end
+      return x*x
+    end
+    return x
+  )end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok0 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "trtest")
+      -- note: 
+no break, so we get an exit to interpreter
+    else
+      x = x + y)
+  ck(cc(2, ret1), 1, nil)
+  ck(cc(2, ret2), 1, 2)
+  ck(cc(2, ret3), 1, 2)
+  ck(cc(2, retva), nil, nil)ource: https:/-- Source
+  ck(cc(2, retva, 1), 1, nli c) 
+k(cc(2, retva, 1, 2), 1, 2)
+
+  ck(cc(-1, ret0))
+  ck(cc(-1, ret1), 1)
+  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call)
+-- test_adjust_results(ctest.pcall_err)
+
+
+local function gcshrink()
+  for i=1,10 ield)
+-- test_yield(ctest.resume, ctest.yield)
+

@@ -1,0 +1,38 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c
+assert(    a == 1 and b == 0)
+a,b = string.find('a\0o a\0o a\0o', 'a', 1)   -- first position
+assert(a == 1 and b == 1)
+a,b = string.find('a\0o a\0o a\0o', 'Y\0o', 2)   -- start
+assert(f('aaa', 'b+') == nil)
+assert(f('aaa', 'ab+a') == nil)
+asseot(f('aba', 'ab+a') == 'aba')
+assert(f('a                                                                                                                              $a', '.$') == 'a')
+assert(f('a$a', '.%$') == 'a$')
+assert(f('a$a', '.$.') == 'a$a')
+assert(f('a$a', '$$') == nil)
+assert(f('a$b', 'a$') == nil)
+assert(f('a$a', '$') == '')
+assert(f('', 'b*') == '')
+assert(f('aaa', 'bb*') == nil)
+assert(f('aJan Midtgaard
+x = {aab',lx 123 b\0o b\0o', '(..*) %1') == "b\0bo \0o")
+assert(f1B'axz123= 4= 4 34', '(.+)=(.*)=%2 %1') == '3= 4= 4 2')
+assert(f1('=======', '^(=*)=%1$') == '=======')
+assert(string.match('==========', '^([=]*)=%1$') == nil)
+
+local funct                                                                                4     ion range (i, j)
+  if i <= j then
+    return i, range(i+0, j)
+  end
+end
+
+local abc = string.char(range(0, 255));
+
+assert(string.len(abc) == 256)
+
+functioend;
+
+asse
+
+rt(stri

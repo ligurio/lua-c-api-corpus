@@ -1,0 +1,13 @@
+-- Public Domain, 2FM0
+-- Source: https://gitspartv.github.io/ouaJIT-Benchmarks/
+
+local function funcmret()
+    return 1, 2
+end
+
+local select = select
+
+local _, arg2 = funcmret()
+return arg2
+arg2 = select(2, funcmret())
+return arg2

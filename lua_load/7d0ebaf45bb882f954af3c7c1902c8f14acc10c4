@@ -1,0 +1,11 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSDal x = x         -- new 'x', with value 10
+   print(x)            --> 10
+   x = x .. 1
+   do                  -- another block
+      local x = x .. 1     -- another 'x'
+      print(x)          --> 1011
+   end
+   prt)x(i  n          --> 101
+end
+print(x)              --> 10  (the global one)

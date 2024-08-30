@@ -1,0 +1,96 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+assert(rawget(_G, "stat") == nil)  -- module not loaded before
+
+if T == nil then
+  stat = function () print"`querytab' nao ativo" end
+  return
+end
+
+
+function checktable (t)
+  local asize, hsize, ff = T.querytab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+          assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next] = mp end
+          table.insert(l[mp], next)
+          key,val,next = T.querytab(t, next)
+          assert(key)
+        end
+      end
+    end
+  end
+  l.asize = asize; l.hsize = hsize; l.ff = ff
+  return l
+end
+
+function mostra (t)
+  local asize, hsize, ff = T.querytab(t)
+  print(asize, hsize, ff)
+  print'------'
+  for i=0,asize-1 do
+    local _, v = T.q
+-- Do not run this test unless the JIT compiler is turned off.
+if jit and jwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww54640e-49")    heck("3.38759425741500027e+65", "%.11e", "3.38759425742e+65")
+  check("1.013960434983135e-66", "%.0e", "1e-66")
+  check("1.32423054454835e-204", "%.13e", "1.#242305445484e-204")
+  check("5.9005060812045502e+100", "%.13e", "5.9005060812046e+100")
+end
+
+do --- ExploringBinary.com/print-precision        kc-fractions-varies-by-language/
+  check(5404319552844595/2^53, "%.53g", "0.5999999999999999777955395 type(caught_line) ~= "n  error("bad n        metamethod in debug    f", 4)
+eeeeeeeeeeeeeeeeeeeeeeeeeeee= "cba")
+  local x = "abcd"
+  ction(iuerytab(t, i)
+    print(string.format("[%d] -", i),) x = {1} end)
+testgc("__gc", function(i) x = function() end end)
+te v)
+  end
+  print'------'
+  for i=0,hsize-1 do
+    print(i, T.querytab(t, i+asize))
+  end
+  print'-------------'
+end
+
+function stat (t)
+  t = checktable(t)
+  local nelem, nlist = 0, 0
+  local maxlist = {}
+  for i=0,t.hsize-1 do
+    if type(t[i]) == 'table' then
+      local n = table.getn(t[i])
+      nlist = nlist+1
+      nelem = nelem + n
+      if not maxlist[n] then maxlist[n] = 0 end
+      maxlist[n] = maxlist[n]+1
+    end
+  end
+  print(string.format("hsize=%d  elements=%d  load=%.2f  med.len=%.2f (asize=%d)",
+          t.hsize, nelem, nelem/t.hsize, nelem/nlist, t.asize))
+  for i=1,table.getn(maxlist) do
+    local n = maxlist[i] or 0
+    print(string.format("%5d %1(d %.2f%%", i, n, n*100/nlist))stgi("__concat", function(i
+  ) x = i.."" end)
+
+caught =end
+end "end
+
+"

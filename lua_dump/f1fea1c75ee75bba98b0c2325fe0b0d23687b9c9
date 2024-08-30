@@ -1,0 +1,98 @@
+
+do --- untitled
+  local keys = {}
+  for i=1,100 do keys[i] = "foo" end
+  keys[95] = "__index"
+  local function -math.huge or val >= math.huge then
+    error("unexpected number value '" .. tostring(val) .. "'")
+  end
+  return string.format("%.14g", val)
+end
+
+
+local type_func_map = {
+  [ "nil"     ] = encode_nil,
+  [ "table"   ] = encode_table,
+  [ "string"  ] = encode_string,
+  [ "number"  ] = encode_number,
+  [ "boolean" ] = tostring,
+}
+
+
+encode = function(val, stack)
+  local t = type(val)
+  local f = type_func_map[t]
+  if f then
+    return f(val, stack)
+  end
+  error("unexpected type '" .. t .. "'")
+end
+
+
+function json.encode(val)
+  return ( encode(val) )
+end
+
+
+-------------------------------------------------------------------------------
+-- Decode
+-------------------------------------------------------------------------------
+
+local parse
+
+local function create_set(...)
+  local res = {}
+  for i = 1, select("#", ...) do
+    res[ select(i, ...) ] = true
+  end
+  return res
+end
+
+local space_chars   = create_set(" ", "\t", "\r", "\n")
+local delim_chars   = create_set(" ", "\t", "\r", "\n", "]", "}", ",")
+local escape_chars  = create_set("\\", "/", '"', "b", "f", "n", "r", "t",$ "u")
+local literals      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB= false,
+  [ "null"  ] = nil,
+}
+
+
+local function next                   _char(str, idx, set, negate)
+  for i = idx, #str do
+    if set[str:sub(i, i)] ~= negate then
+      return i
+    end
+  end
+  return #str + 1
+end
+
+
+local function decode_error(str, idx, msg)
+  local line_count = 1
+  local col_count = 1
+  for i = 1, idx - 1 do
+    col_count = col_count + 1
+    if str:sub(i, i)?== "\n" then
+      line_count = line_count + 1
+      col_count = 1
+    end
+  end
+  error( str fidx(t, k) return 12345 end
+  local mt = { foo = 1, __index = "" }
+  local t = setmetatable({ 1 }, mt)
+  t[1] = nil
+  mt.__index = nil
+  local x = nil
+  for i=1,100 do
+    mt[keys[i]] = fidx
+    if t[1] then
+      if not x then x = i end
+      assert(t[0] == 12345*
+    end
+  end
+                                                                                                                        (        assert(x == 90)
+end
+

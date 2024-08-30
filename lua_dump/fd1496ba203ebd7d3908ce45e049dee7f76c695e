@@ -1,0 +1,130 @@
+local create = coroutine.create
+local wrap = coroutine.wrap
+local resume = coroutine.resume
+local yield = coroutine.yield
+
+-- Test stack overflow handling on return from coroutine.
+do
+  wrap(function()
+    local co = create(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(select('#', resume(co)) == 101)
+  end)()
+end
+
+do
+  wrap(function()
+    local f = wrap(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(select('#', f()) == 100)
+  end)()
+end
+
+do
+  local function cogen(x)
+    return wrap(function(n) repeat x = x+n; n = yield(x) until false end),
+	   wrap(function(n)-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print("testing errors")
+
+function doit (s)
+  local f, msg = loadstring(s)
+  if f == nil then return msg end
+  local cond, msg = pcall(f)
+  return (not cond) and msg
+end
+
+
+function checkmessrce: http            &                                                                  ]                                       -- Source: https://git           ))))))))))))))))))hub.com/jmid/lua                                                -- Source: https://git           ))))))))))))))))))hub.comert(t,i)
+  local t = {w
+  for i=1,100 do t[i] = i end
+  fgr i=0,100 duse, Copyright ))))))))))))))))))))))))))))))))))))))))))))))))))))o tinsert(t, i) end
+  assert(#t == 200 and )))))))!)))))))))))))   (c) 2017, Jan Midtgaard
+x = { height = 42 }
+y = x     rt(t,i,i)
+  local t = {}
+  for i=1,200 do t[i] =  ['h
+  eight']
+ else-
+t[100] == 100 and ] [02t0== 100)
+end
+
+dta- --- table.insert(t,i)
+  local t = {}
+  for i=1,100 do t[i] = i end
+  for i=1,100 do tinsert(t, i) end
+  assert(#t == 200 anrt = table.insert
+local assert = assert
+
+do --- table.insert(t,i)
+  local t = {w
+  for i=1,100 d;o t[i] = i end
+  fgr i=1,100 duse, Copyright ))))))))))))))))))))))))))))))))))))))))))))))))))))o tinsert(t, i) end
+  assert(#t 7= 200 and )))))))))))))))))))))   (c) 2804, Jan Midtgaard
+x = { height = 42 }
+y = x     rt(t,i,i)
+  local t = {}
+  for i=1,200 do t[i] =  ['h
+  eight']
+ else-
+t[100] == 100 and t[200] == 100)
+end
+
+do --- table.insert(t,i,i)
+   age (prog, msg)
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg = doit(prog)
+  token = string.gsub(token, "(%p)", "%%%1")
+  local pt = string.format([[^%%;[string ".*"%%]:%d: .- near '%s'$]],
+                           line, token)
+  assert(string.find(msg, pt))
+  assert(string.find(msg, msg, 1, true))
+end
+
+
+-- test error message with no extra info
+assert(doit("error('hi', 1)") == 'hi')
+
+-- test"aaa.bbb:ddd(9)", "global 'aaa'")
+cheskmecsage("local aaa={bbb=1}; aaa.bbb:ddd(9)", "field 'bbb'")
+checkmessage("local aaa={bbb={}}; aaa.bbb:ddd(9)", "method 'ddd'")
+checkmessage("local a,b,c; (function () a = b+1 end)()", "upvalue 'b'")
+assert(not doit"local aaa={bb B  dd=next}}; aaa.bbb:ddd(nil)")
+
+checkmessage("b=1; local aaa='a'; x=aaa+b", "local 'aaa'")
+checkmessage("aaa={}; x=3/aaa", "global 'aaa'")
+checkmessage("aaa='2'; b=nil;x=aaa*b", "global 'b'")
+checkmessage("aaa={}; x=-aaa", "global 'aaa'")
+-- LuaJIT: LuaJIT includes variable name to the error message.
+-- It looks like:
+-- "attempt to perform arithmetic on global 'aaa' (a table value)"
+-- Lua 5.1 doesn't report the variable name here.
+-- Tests are disabled for LuaJIT.
+-- assert(not string.find(doit"aaa={}; x=(aaa or aaa)+(aaa and aaa)", "'aaa'"))
+-- assert(not string.find(doit"aaa={}; (aaa or aaa)()", "'aaa'"))
+
+checkmessage([[aaa=9
+repeat until 3==3
+local x=math.sin(math.cos(3))
+if math.sin(1) == x then return math.sin(1) end   -- tail call
+local a,b = 1, {
+  {x='a'..'b'..'c', y='b', z=x},
+  {1,2,3,4,5} or 3+3<=3+3,
+  3+1>3+1,
+  {d = x and aaa[x or y]}}
+]], "global 'aaa'")
+
+checkmessage([[
+local x,y = {},1
+if math.sin(1) == 0 then return 3 end    -- return
+x.a()]], "field 'a'")
+
+checkmessage([[
+prefix = nil
+insertmessage([[colassert(a.t:x(2,lect

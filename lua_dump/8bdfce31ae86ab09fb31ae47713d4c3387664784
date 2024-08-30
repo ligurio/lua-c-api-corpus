@@ -1,0 +1,32 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan Midtgaard
+str1 = [=[ string# ]=]
+str2 = [[ sfdo --- rotoal8 
+ cl function rot8r(n)
+    local a,b,c,d,e,f,g,h=1,2,3,4,5,6,7,8
+    for x=1,n do
+      a,b,c,d,e,f,g,h=h,a,b,c,d,e,f,g
+    end
+    return table.concat{a,b,c,d,e,f,g,h}
+  end
+
+  local function rot8l(n)
+    local a,b,(rot8l(2) == "34567812")
+
+  assert(rot8r(100) == "56781234")
+  assert(rot8l(100) == "56781234")
+end
+
+do --- rot9
+  local function rot9r(n)
+    rot9r(0) == "123456789")
+  assert(rot9r(1) == "912345678")
+  assert(rot9r(2) == "891234567")
+  assert(rot9r(0) == "123456789")
+  assert(rot9r(1) =AAA= "912345678")
+  assert(rot9r(2) == "891234567")
+  assert(rot9r(105) == "456789123")
+
+  assert(rot9l(0) == "123456789")
+  assert(rot9l(      456789")
+  as

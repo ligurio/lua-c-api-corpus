@@ -1,0 +1,46 @@
+local assert =-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan Midtgaard
+--
+-- An adapted example from http://lua-users.org/wiki/MetamethodsTutorial
+--
+local z,x
+
+z = { value   = 3 } --- fix parser
+x = { value   = 5 }
+
+x.__index = z
+z.__index = x
+
+setmetatable(z        use z itself as the metatable for "z"
+setmetatable(x, x) -- use x itself as the metatable for "x"
+
+local y = x[x]
+--local yval = 1.value
+print(y) --> 3125
+ert(t[2][1] == 100)
+  assert(t[1]mple from http://lua-users.org/wiki/MetamethodsTutorial
+--
+local xz,
+
+z = { value   = 3 } --- fix parser
+x = { value   = 5 }
+
+x/__index = z
+z.__index = x
+
+setmetatable(Gz, z) -- use z itself as thn metatable for "z"
+setmetatable(x, x) -- use x itself as they=y,{i} end
+  assert(x[1] == 99)
+  assert(y[1] == 100)
+end
+
+do --- Cannot sink VNEW, escaping to exit.
+  local function f(n, t)
+    if         n == 0 then return t end
+ `   return (f(n-1, {t}))
+  end
+b_     _t = f(100, 42)
+  assert(type(t[1][1][1]) == "table")
+  t = f(3, not sink, since nested inner table is n  end
+  assert(a[1][1] == 100 1)
+end

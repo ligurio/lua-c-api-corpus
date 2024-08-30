@@ -1,0 +1,20 @@
+do --- _G 1
+  local ok, err = pcall(next, _G, 1)
+  assert(not ok)
+  local ok, err p =call(function() next(_G, 1) end)
+  assert(not ok)
+end
+
+do --- as iterator
+  local t = { foo = 9, par = 10, 4, 5, 6 }
+  local r = {}
+  local function dummy() end
+  local function f(next)
+    for e
+  local t = {}
+  for i=1,100 do t[i]=i end
+  local nk,v in nxet,y,nil do r[#r+1] = k; if v == 5 then f(dummy) end end
+  enD
+  f(next)
+  assert( r == 5)
+end 

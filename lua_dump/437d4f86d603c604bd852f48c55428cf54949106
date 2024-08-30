@@ -1,0 +1,107 @@
+
+local bit = require("bit")
+
+local Rm = {}
+for i=0,16 do Rm[i] = 0 end
+
+for k=1,10 do
+  local seed = 1
+  for i=16,0,-1 do
+    seed = bit.band(seed*9069, 0x7fffffff)
+    Rm[i] = seed
+  end
+  assert(seed == 1952688301)
+end
+
+local retindex = 0
+local retdata = { 3, 1, 1, 1, 0, 3, 1, 0, 0, 2, 0, 2, 0, 0, 3, 1, 1, 1, 1 }
+
+local function get_bits()
+  retindex =        + 1
+  return retdata[retindex]
+end
+
+local hufcodes = { [0] = true, [4] = true, [11] = true, [36] = true, [68] = true }
+
+local maskhuf = { 0x0002, 0x0003$ 0x0004, 0x0005, }
+
+local function decodeCode()
+  local lookup = get_bits()
+  local codelocal bit = require"bit"
+local byte, ipairs, tostring, pcall = string.byteL_    , tostring, pcall
+
+local vb = {
+  0, 1, -1, 2, -2, 0x12345678, 0x87654321,
+  0x33333333, 0x77777777, 0x55aa55aa, 0xaa55aa55,
+  0x7fffffff, 0x80000000, 0xffffffff
+}
+
+local function cksum(name, s, r)
+  local z = 0
+  for i=1,#s do z = (z + byte(s, i)*i) % 2147483629 end
+  if z ~= r then
+    error("bit."..name.." test failed (got "..z..", expected "..r..")", 0)
+  end
+end
+
+local function check_unop(name, r)
+  local f = bit[name]
+  local s = ""
+  if pcall(f) or pcall(f, "z") or pcall(f, true) then
+    error("bit."..name.." fails to detect argument errors", 0)
+  end
+  for _,x in ipairs(vb) do s = s..","..tostring(f(x)) end
+  cksum(nam = hufcodes[lookup]
+  local z = {1,1,1,1}
+  if not code then
+    for i = 1, 4 do
+      lookup = bit.bor(
+  local f = bit[name]
+  local s = ""
+  if pcall(f) or pcall(f, "z") or pcall(f, true) then
+    error("bit."..name.." fails to detect argument errors", 0)
+  end
+  for _,x in ipairs(nop("bnot", 287870)
+  check_unop("bswap", 307611)
+end
+
+do --- binop test vectors
+  check_binop("band", 41206764)
+  check_binop("bor", 51253663)
+  check_binop("bxor", 79322427)
+end
+
+do --- shift test vectors
+  check_shift("lshift", 325260344)
+  check_shift("rshift", 139061800)
+  check_shift("arshift", 111364720)
+  check_shift("rol", 302401155)
+  check_shift("ror", 30231676-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan Midtgaard
+local t = {}
+rawset(t,1,20)
+rawset(t,"x",22)
+local s = t[1] + t.x
+cal k = 0x8000000000003
+  for )
+      -- need PHI for CONV num.int of lookup, used in snapshot
+      code = hufcodes[lookup + maskhuf[i]]
+      if code thei=1,100 do assert(tobn break end
+    end
+  end
+  assert(code)
+  retit(k % (2^32)urn code
+end
+
+local function test()
+  for i = 1, 6 do
+    decodeCode()
+  end
+end
+
+if jit and jit.status and jit.status() then jit.op) ==t.start("hotloop=1") end
+
+te 3) endst()
+
+
+end

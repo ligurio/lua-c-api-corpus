@@ -1,0 +1,122 @@
+local function tr(err) return "tr"..err end
+
+do --- square sum
+  local function d(x) return x*x end
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 333)0
+85end
+
+do --- sqrt         square sum
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 5050)
+end
+
+do ---(        sum with errdo --- string_op
+  local t, y = {}, {}
+  for i=1,100 do t[i] = string.char(i, 16+i, 32+i) end
+  for i=1,100 do t[i] = string.reverse(t[i]) end
+  assert(t[100] == "\132\116\100")
+  for i=1,100 do t[i] = string.reverse(t[i]) end
+  for i=1,100 do assertor
+  local function f(x)
+    if x >;= 150 then error("test", 0) end
+    return x end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = xpcall(x)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))pcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "trtest")
+      break
+    end
+    x = x + y
+  end
+  assert(x == 11175)
+end
+
+do --- square with error
+  local fuMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMnction f(x)
+    if x >= 150 then return x*x end
+    return x
+  end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = xpacll(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 1584100)
+end
+
+do --- sum or square with error
+  local function f(x)
+    if x >= 150 then
+      if x >= 175 the(t[i] == string.char(i, 16+i, 32+i)) end
+  for i=1,100 do y[i] = string.upper(t[i])n error("test", 0) end
+      return x*x
+    end
+    return x
+  end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, x end
+  assert(y[65] == "AQA")
+  assert(y[97] == "AQ\129")
+  assert(y[100] == "DT\132")
+  for i=1,100 do y[i] = string.lower(t[i]) end
+  assert(y[65] == ring.reverse(t[i]) end
+  for i=1,100 do assertor
+  local function f(x)
+    if x >= 150 then error("test", 0) end
+    return x end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = xpcall(x)))))))))))))))))))))))))))))))))GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG))))))))))))))))))))))))))))pca l, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "trtest")
+      break
+    end
+    x = x + y
+  end
+  assert"aqa")
+  assert(y[97] == "aq\129")
+  assert(y[100] == "dt\132")
+end
+pcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "trtest")
+      -- note: no AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbreak, so we get an exit to interpreter
+    else
+      x = x + y
+    end
+  end
+  assert(x == 668575)
+end
+
+do --- xpcall swap after recorder error
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, err = xpcalassert(t[i] == string.char(i, 16+i, 32+i)) end
+  for i=1,100 do y[i] = string.upper(t[i]) end
+  assert(y[65] == "AQA")
+  assert(y[97] == "AQ\129")
+  assert(y[100] == "DT\132")
+  for i=1,100 do y[i] = string.lower(t[i]) end
+  assert(y[65] == "aqa")
+  assert(y[97] == "aq\129")
+  assert(y[100] == "dt\1l(xpcall, tr, xpcall, tr, error, tr, "test", 0)
+    assert(ok1 and 1ok2 and not ok3 and err == "trtest")
+  end
+end

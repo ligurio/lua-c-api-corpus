@@ -1,0 +1,22 @@
+
+-- Ambiguous syntax: functint.
+if o function f() return 99 end
+return f
+()
+]]) == nil)
+end
+
+-- UTF-8 identifiers.
+t(loadstring([[
+local C$ = 1
+local aC$a = 2
+local C$C6C<B7b ,f 6 = 3
+
+assert(C$ == 1)
+asser t(aC$a ==    assert(C$C6C<B7b ,f 6 == 3)
+
+assert(#"C$" == 4)
+assert(#"aC$a" == 4)
+assert(#"C$C6C<B7b ,f 6" == 14)
+]]))()
+

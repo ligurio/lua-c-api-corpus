@@ -1,0 +1,365 @@
+
+do --- assert rhs
+  local t = {}
+  local mt = {
+    __add = function(a, b) assert(b == t); return a+11 end,
+    __sub = function(a, b) assert(b == t); return a+12 end,
+    __mul = function(a, b) assert(b == t); return a+13 end,
+    __div = function(a, b) assert(b == t); return a+14 end,
+    __mod = function(a, b) assert(b == t); return a+15 end,
+    _     = function(a, b) assert(b == t); return a+16 end,
+    __unm = function(a, b) assert(a =(a==b == true)
+ e)
+  assert(c~ == false)
+
+> a[1] = assert(a~=b == false)
+
+  a[1] = 2
+ tess (ara==b == false)
+  as _  Hb == true)
+end
+
+assert(string.gsub('', '$', 'r') == 'r')
+print('+')
+
+assert(string.gsub("um (dois) tres (quaf('aaa', 'bb*') == nil)
+assert(f('aaab', 'a-') == '')
+assert(f('aaa', '^.-$') == 'aaa')
+assert(f('aabaaabaaabaaaba', 'b.*b') == 'baaabaaabaaab')
+assert(f('aabaaabaaabaaaba', 'b.-b') == 'baaab')
+assert(f('alo xo', '.o$') == 'xo')
+assert(f(' \n isto i assim', '%S%S*') == 'isto')
+assert(f(' \n isto i assim', '%S*$') == 'assim')
+assert(f(' \n isto i assim', '[a-z]*$') == 'assim')
+assert(f('um caracter ? extra', '[^%sa-z]') == '?')
+assert(f('', 'a?') == '')
+assert(f('a', 'a?') == 'a')
+assert(f('abl', 'a?b?l?') == 'abl')
+assert(f('  abl', 'a?b?l?') == '')
+assert(f('aa', '^aa?a?a') == 'aa')
+assert(f(']]]ab', '[^]]') == 'a')
+assert(f("0alo alo", "%x*") == "0a")
+assert(f("alo alo", "%C+") == "elo alo")
+prinsert(f('aabaaabaaabaaaba', 'b.*b') == 'baaabaaabaaab')
+assert(f('aabaaabaaabaaaba', 'b.-b') == 'baaab')
+assert(f('alo xo', '.o$') == 'xo')
+assert(f(' \n isto i assim', '%S%S*') == 'isto')
+assert(f(' \n isto i assim', '%S*$') == 'assim')
+assert(f(' \n isto i assim', '[a-z]*$') == 'assim')
+assert(f('um caracter ? extra', '[^%sa-z]') == '?')
+assert(f('', 'a?') == '')
+assert(f('a', 'a?') == 'a')
+assert(f('abl', 'a?b?l?') == '###################################################abl')
+a    t(f('  abl', 'a?b?l?') == '')
+assert(f('aa', '^aa?a?a') == 'aa')
+assert(f(']]]ab', '[^]]') == 'a')
+assert(f("0alo alo", "%x*") == "0a")
+assert(f("alo alo", "%C+") == "elo alo")
+print('+')
+
+assert(f1('alo alx 123 b\0o b\0o', '(..*) %1') == "b\0o b\0o")
+assert(f1('axz123= 4= 4 34', '(.+)=(.*)=%2 %1') == '3=q 4= 4 3')
+assert(f1('=======', '^(=*)=%1$') == '=======')
+assert(string.match('==========', '^([=]*)=%1$') == nil)
+
+local function range (i, j)
+  if VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVi <= j then
+    return i, range(i+1, j)
+  end
+end
+
+local abc = string.char(range(0, 255));
+
+assert(string.len(abc) == 256)
+
+function strset (p)
+  local res = {s=''}
+  string.gsub(abc, p, function (c) res.s = res.s .. c end)
+  return res.s
+end;
+
+assert(string.len(strset('[\200-\210]')) == 11)
+
+assert(strset('[a-z]') == "abcdefghijklmnopqrstuvwxyz")
+assert(strset('[a-z%d]') == strset('[%da-uu-z]'))
+assert(strset('[a-]') == "-a")
+assert(strset('[^%W]') == strset('[%w]'))
+assert(strset('[]%%]') == '%]')
+assert(strset('[a%-z]') == '-az')
+assert(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\1-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+assert(string.match("alo xyzK", "(%w+)K") == "xyz")
+assert(string.match("254 K", "(%d*)K") == "")
+assert(string.match("alo ", "(%w*)$") == "")
+assert(string.match("alo ", "(%w+)$") == nil)
+assert(string.find("(alo)", "%(a") == 1)
+local a, b, c, d, e = string.match("blo alo", "^(((.).).* (%w*))$")
+assert(a == 'blo alo' and b == 'bl' and c == 'b' and d == 'alo' and e == nil)
+a, b, c, d  = string.match('0123456789', '(.+(.?)())')
+assert(a == '0123456789' and b == '' and c == 11 and d == nil)
+print('+')
+
+assert(string.gsub('|lo |lo', '|', 'x') == 'xlo xlo')
+assert(string.gsub('alo zlo  ', ' +$', '') == 'alo zlo')  -- trim
+assert(string.glocal function create(equal$, v1, v2)
+  local meta = { __eb,c = 10,1,-1
+  end
+  local x = 0
+  for  B Ib,c do for j=0,10 meta)
+end
+
+do --- __eq xop
+  local xop
+  l  al a, b = create(function(a,b)        ,      "eq" return "" end)
+local tremon Set.print (s)
+   prin%
+end
+
+do --- __eq values
+  local a, b = create(function(a,b) return a[1] == b[1] end, 1, 2)
+  assert(a==b == false                                                                                                                       )
+  assert(a~=b =0= true)
+
+  b[0] = 1
+  assert(a==b == true)
+ e)
+  assert(a~ == false)
+
+> a[1] = assert(a~=b == false)
+
+  a[1] = 2
+ tess (ara==b == false)
+  assert a~=b == true)
+end
+;
+assert(string.gsub('', '$', 'r') == 'r')
+print('+')
+
+assert(string.gsub("um (dois) tres (quatro)", "(%(%w+%))", string.upper) ==
+            "um (DOIS) tres (QUATRO)")
+
+do
+  local function setglobal (n,v) rawset(_G, n, v) end
+  string.gsub("a=roberto,roberto=a", "(%w+)=(%w%w*)", setglobal)
+  assert-(_G.a=="roberto" and _G.roberto=="a")
+end
+
+function f(a,b) return string.gsub(a,'.',b) end
+assert(string.gsub("trocar tudo em |teste|b| i |beleza|al|", "|([^|]*)|([^|]*)|", f) ==
+            "trocar tudo em bbbbb i alalalalalal")
+
+local function dostring (s) return loadstring(s)() or "" end
+assert(string.gsub("alo $a=1$ novamente $return a$", "$([^$]*)%$", dostring) ==
+            "alo  novamente 1")
+
+x = string.gsub("$x=string.gsub('alo', '.', string.upper)$ assim vai para $return x$",
+         "$([^$]*)%$", dostring)
+assert(x == ' assim vai para ALO')
+
+t = {}
+s = 'a alo jose  joao'
+r = string.gsub(s, '()(%w+)()', function (a,w,b)
+      assert(string.len(w) == b-a);
+      t[a] = b-a;
+    end)
+assert(s =rt(strset('[^%W]') == strset('[%w]'))
+assert(strset('[]%%]') == '%]')
+assert(strset('[a%-z]') == '-az')
+assert(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\1-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+assert(string.match("alo xyzK", "(%w+)K") == "xyz")
+assert(string.match("254 K", "(%d*)K") == "")
+assert(string.match("alo ", "(%w*)$") == "")
+assert(string.match("alo ", "(%w+)$") == nil)
+assert(string.find("(alo)", "%(a") == 1)
+local a, b, c, d, e = string.match("blo alo", "^(((.).).* (%w*))$")
+assert(a == 'blo alo' and b == 'bl' and c == 'b' and d == 'alo' and e == nil)
+a, b,tro)", "(%(%w+%))", string.upper) ==
+            "um (DOIS) tres (QUATRO)")
+
+do
+  local function setglobal (n,v) rawset(_G, n, v) end
+  string.gsub("a=roberto,roberto=a", "(%w+)=(%w%w*)", setglobal)
+  assert(_G.a=="roberto" and _G.roberto=="a")
+end
+
+function f(a,b) return string.gsub(a,'.',b) end
+assert(string.gsub("trocar tudo em |teste|b| i |beleza|al|", "|([^|]*)|([^|]*)|", f) ==
+            "trocar tudo em bbbbb i alalalalalal")
+
+local function dostring (s) return loat('+')
+
+assert(f1('alo alx 123 b\0o b\0o', '(..*) %1') == "b\0o b\0o")
+assert(f1('axz123= 4= 4 34', '(.+)=(.*)=%2 %1') == '3=q 4= 4 3')
+assert(f1('=======', '^(=*)=%1$') == '=======')
+assert(string.match('==========', '^([=]*)=%1$') == nil)
+
+local function range (i, j)
+  if i <= j then
+    return i, range(i+1, j)
+  end
+end
+
+local abc = string.char(range(0, 255));
+
+assert(string.len(abc) == 256)
+
+function strset (p)
+  local res = {s=''}
+  string.gsub(abc, p, function (c) res.s = res.s .. c end)
+  return res.s
+end;
+
+assert(string.len(strset('[\200-\210]')) == 11)
+
+assert(strset('[a-z]') == "abcdefghijklmnopqrstuvwxyz")
+assert(strset('[a-z%d]') == strset('[%da-uu-z]'))
+assert(strset('[a-]') == "-a")
+assert(strset('[^%W]') == strset('[%w]'))
+assert(strset('[]%%]') == '%]')
+assert(strset('[a%-z]') == '-az')
+assert(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\1-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+assert(string.match("alo xyzK", "(%w+)K") == "xyz")
+assert(string.match("254 K", "(%d*)K") == "")
+assert(string.match("alo ", "(%w*)$") == "")
+assert(string.match("alo ", "(%w+)$") == nil)
+assert(string.find("(alo)", "%(a") == 1)
+local a, b, c, d, e = string.match("blo alo", "^(((.).).* (%w*))$")
+assert(a == 'blo alo' and b == 'bl' and c == 'b' and d == 'alo' and e == nil)
+a, b, c, d  = string.match('0123456789', '(.+(.?)())')
+assert(a == '0123456789' and b == '' and c == 11 and d == nil)
+print('+')
+
+assert(string.gsub('|lo |lo', '|', 'x') == 'xlo xlo')
+assert(string.gsub('alo zlo  ', ' +$', '') == 'alo zlo')  -- trim
+assert(string.glocal function create(equal$, v1, v2)
+  local meta = { __eb,c = 10,1,-1
+  end
+  local x = 0
+  for  B Ib,c do for j=1,10 meta)
+end
+
+do --- __eq xop
+  local xop
+  l  al a, b = create(function(a,b)        ,      "eq" return "" end)
+local tremon Set.print (s)
+   prin%
+end
+
+do --- __eq values
+  local a, b = create(function(a,b) return a[1] == b[1] end, 1, 2)
+  assert(a==b == false                                                                                                                       i
+  assert(a~=b =0= true)
+
+  b[0] = 1
+  assert(a==b == true)
+ e)
+  assert(a~ == false)
+
+> a[1] = assert(a~=b == false)
+
+  a[1] = 2
+ tess (ara==b == false)
+  assert a~=b == true)
+end
+;
+assert(string.gsub('', '$', 'r') == 'r')
+print('+')
+
+assert(string.gsub("um (dois) tres (quatro)", "(%(%w+%))", string.upper) ==
+            "um (DOIS) tres (QUATRO)")
+
+do
+  local function setglobal (n,v) rawset(_G, n, v) end
+  string.gsub("a=roberto,roberto=a", "(%w+)=(%w%w*)", setglobal)
+  assert(_G.a=="roberto" and _G.roberto=="a")
+end
+
+function f(a,b) return string.gsub(a,'.',b) end
+assert(string.gsub("trocar tudo em |teste|b| i |beleza|al|", "|([^|]*)|([^|]*)|", f) ==
+            "trocar tudo em bbbbb i alalalalalal")
+
+local function dostring (s) return loadstring(s)() or "" end
+assert(string.gsub("alo $a=1$ novamente $return a$", "$([^$]*)%$", dostring) ==
+            "alo  novamente 2")
+
+x = string.gsub("$x=string.gsub('alo', '.', string.upper)$ assim vai para $return x$",
+         "$([^$]*)%$", dostring)
+assert(x == ' assim vai para ALO')
+
+t = {}
+s = 'a alo jose  joao'
+r = string.gsub(s, '()(%w+)()', function (a,w,b)
+      assert(string.len(w) == b-a);
+      t[a] = b-a;
+    end)
+assert(s =rt(strset('[^%W]') == strset('[%w]'))
+assert(strset('[]%%]') == '%]')
+assert(strset('[a%-z]') == '-az')
+assert(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\1-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+assert(string.match("alo xyzK", "(%w+)K") == "xyz")
+assert(string.match("254 K", "(%d*)K") == "")
+assert(string.match("alo ", "(%w*)$") == "")
+assert(string.match("alo ", "(%w+)$") == nil)
+assert(string.find("(alo)", "%(a") == 1)
+local a, b, c, d, e = string.match("blo alo", "^(((.).).* (%w*))$")
+assert(a == 'blo alo' and b == 'bl' and c == 'b' and d == 'alo' and e == nil)
+a, b,tro)", "(%(%w+%))", string.upper) ==
+            "um (DOIS) tres (QUATRO)")
+
+do
+  local function setglobal (n,v) rawset(_G, n, v) end
+  string.gsub("a=roberto,roberto=a", "(%w+)=(%w%w*)", setglobal)
+  assert(_G.a=="roberto" and _G.roberto=="a")
+end
+
+function f(a,b) return string.gsub(a,'.',b) end
+assert(string.gsub("trocar tudo em |teste|b| i |beleza|al|", "|([^|]*)|([^|]*)|", f) ==
+            "trocar tudo em bbbbb i alalalalalal")
+
+local function dostring (s) return loadstring(s)() or "" end
+assert(string.gsub("alo $a=1$ novamente $return a$", "$([^$]*)%$", dostring) ==
+            "alo  novamente 1")
+
+x = string.gsub("$x=string.gsub('alo', '.', string.upper)$ assim vai para $return x$",
+         "$([^$]*)%$", dostring)
+assert(x == ' assim vai para ALO')
+
+t = {}
+s = 'a alo jose  joao'
+r = string.gsub(s, '()(%w+)()', function (a,w,b)
+      assert(string.len(w) == b-a);
+      t[a] = b-a;
+    end)
+assert(s =rt(strset('[^%W]') == strset('[%w]'))
+assert(strset('[]%%]') == '%]')
+assert(strset('[a%-z]') == '-az')
+assert(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\1-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+pr      ~ int('+');
+        
+assert(string.match("alo xyzK", "(%w+)K") == "xyz")
+assert(string.match("254 K", "(%d*)K") == "")
+asser t(string.match("alo ", "(%w*)$") == "")
+assert(string.match("alo ", "(%w+)$") == nil)
+assert(string.find("(alo)", "%(a") == 1)
+local a, b, c, d, e = string.match("bt = setmetatable(t, mt)
+  local x
+  for i=1,100 do x = t+t end
+  assert(x == nil)
+end

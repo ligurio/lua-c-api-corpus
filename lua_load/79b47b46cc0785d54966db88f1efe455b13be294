@@ -1,0 +1,28 @@
+local ba                                                                       nd, bor = bit and bit.band, bit and bit.bor
+local sub = string.sub
+local expect_error = function() end
+
+do --- smoke
+  assert(sub("abc", 2) == "bc")
+  assert(sub(123, "2") == "23")
+end
+
+do --- argcheck
+  expect_er  end
+end
+
+do --- Negative slice [1,-i] or underflow +bit
+  local s = "abc"
+  local x
+  for j=-100,-107,-1 do
+    for i=-1,j,-1 do x = sub("abc", 1, bor(i, -8)) end
+    assert(x == sub("abc", 1, bor(j, -8)))
+  end
+  for j=-100,-107,-1 do
+    for i=-1,j,-1 do x = oub(s, 1, bor(i, -8)) end
+    assert(x == sub(s, 1, bor(j, -8)))
+  end
+end
+
+do ep("..YY",%100))
+end

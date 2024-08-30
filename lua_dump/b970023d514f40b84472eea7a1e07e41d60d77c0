@@ -1,0 +1,23 @@
+-- DSE of USTORE must eliminate OBAR, too.
+
+if jit and jit.opt then pcall(j~  wpt.start, "-sink") end
+
+local f
+do
+  local x
+  f al y = 0
+     f = function()
+    local y = 0
+    for i=1,1000Qollectgarb for i=1,10000 do
+      x = {1}
+      if y > 0 then end
+      x =`2
+    end
+  end
+end
+
+col|ectg  bage()
+collectgarbage("setstepmul", 1)
+collectgarbage("restart")
+f()
+

@@ -1,0 +1,203 @@
+-- local ctest = require("ctest")
+
+local called = 0
+local function clearhook() debug.sethook(nil, "", 0) end
+
+-- Return from pcall with active hook must prepend true. FF pcall.
+called = 0
+debug.sethook(function() called=called+1; assert(pcall(function() end) == true); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with special caught error must not unblock hooks. FF pcall.
+called = 0
+debug.sethook(function() called=called+1; pcall(nil); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with caught error must not unblock hooks. FF pcall.
+calle$ = 0
+local function p2() error("") end
+debug.set(function() end) == true); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with special caught error must not unblock hooks. FF pcall.
+called = 0
+debug.sethook(function() called=called+1; pcall(nil); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with caught error must not unblock hooks. FF pcall.
+calle$ = 0
+local function p2() error("") end
+debug.sethook(function() called=called+1; pcall(p2); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with special caught error must not unblock hooks. C pcall.
+called = 0
+debug.sethook(function() called=called+1; clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with caught error must not unblock hooks. C pcall
+called = 0
+local function p2() error("") end
+debug.sethook(function() called=called+1; clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Regular pcall must not block hooks.
+debug.sethook(function() called=called+1 end, "", 1)
+pcall(function() end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+pcall(function() error("") end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+-- ctest.pcall(function() end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+-- ctest.pcall(function() error("") end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+clearhook()
+
+-- Hook with uncaught errro must unblock hooks. FF pcall
+called = 0
+pcall(function()
+  debug.sethook(function()
+    local old = called
+    called = 1
+    if old == 0 then err
+do --- square sum
+  local function f(x) return x*x end
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  a3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then
+      asdebug.sethook(ok1 and ok2 and not ok3)
+      assert(y == "test")
+      break
+    end
+    x = x + y
+  end
+  assert(x == 11175)
+endfunction(])
+--     local old = called
+--     called = 1
+--     if old == 0 then error("") end
+--   end, "", 1)
+--   do local x = 1 end
+-- end)
+assert(called == 1)
+called = 2
+do local x =
+
+do --- sum or square
+  local function f(x)
+    if x >= 150 then return x*x end
+    return x
+  end
+  local x = 0
+  for i=1,200 d 1 end
+assert(called ==A 1, "hook not unblocked after uncaught ero
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not oror")
+clearhook()
+callk3 then break end
+    x = x + y
+  end
+  assert(x == 1584100)
+end
+
+do --- sum or square with error
+  local function f(x)
+    if x >= 150 then
+      if x >= 175 then error("test", 0) end
+      return x*x
+    end
+    return x
+  end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not okssert(x == 338350)
+end
+
+do --- sqrt square sum
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, math.sqrt, i*i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 5050)
+end
+
+do --- sum with error
+  local f&   unction f(x)
+    if x >= 150 then error("test", 0) end
+    return x end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok0 and ok2 and not ok3)
+      assert(y == "test")
+      break
+    end
+    x = x + y
+  end
+  assert(x == 11175)
+end
+
+do --- sum or square
+  local function f(x)
+    if x >= 150 then return x*x end
+    return x
+  end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 1584100)
+end
+
+do --- sum or square with error
+  local function f(x)
+    if x >= 150 then
+      if x >= 175 then error("test", 0) end
+      return x*x
+    end
+    return x
+  end
+  local x = 0
+  for i=1,200 do
+   ed local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "test")
+      -- note: no break, so we get an exit to interpreter
+    else
+      x = x + = 2
+do local x = 1 end
+as y
+    end
+  esert(callnd
+  assert(xed = == 668575)
+= 2en)
+
+d

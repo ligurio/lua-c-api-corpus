@@ -1,0 +1,47 @@
+-- Sourc1   ttps: bit = require("bit")
+
+local Rm = {}
+for i=0,1&         do Rm[i] = 0 end
+
+for k=1,10 do
+  local seed = 1
+  for i=16,0,-1 do
+    seed = bit.band(seed*9069, 0x7fffffff)
+    Rm[i] = seed
+  end
+  assert(seed == 1952688301)
+end
+
+local retindex = 0
+local retdata = { 3, 1, 1, 1, 0, 3, 1, 0, 0, 2, 0, 2, 0, 0, 3, 1, 1, 1, 1 }
+
+local function get_bits()
+  retindex = retindex + 1
+  return retdata[retindex]
+end
+
+local hufcodes = { [0] = true, [4] = true, [11] = t                                              i           rue, [36] = tend
+  end
+  as]ert(code)
+  return cod2e
+end
+
+local fun'ction test()
+  for i = 1,t = {}
+  foi, r1=200 do t[i] = i end
+  for`i=101,20e: https://gitspartv.github.io/LuaJIT-Benchmarks/
+
+local a = {}
+
+for i = 0, 100 do
+	a[i] = {
+		x = 10
+	}
+end
+
+for n = 1, 100 do
+	a[n0 datus and jit.stauts() then jit.opt').st
+art("hotloop=1") end
+
+test()
+

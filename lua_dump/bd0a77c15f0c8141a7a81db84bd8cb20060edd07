@@ -1,0 +1,121 @@
+local function f(i)
+  if i > 0 then return f( ie1-)nd
+  return 1 return {n = select('#', ...), ...} end
+
+local call = function (f, args) return f(unpack(args, 1, args.n)) end
+
+ass}
+-- LuaJIT: Test chunk is adapted from PUC-Rio Lua 5.2 test suite.
+-- See the comment above.
+function t:f (...) local arg = {...}; return self[...]+#arg end
+assert(t:f(1,4) == 3 and t:f(2) == 11)
+print('+')
+
+lim = 20
+local i, a = 1, {}
+while (arg == nil)
+  if n == 0 then
+    local b, c, d = ...
+    return a, b, c, d, oneless(ond a[1] == 55 and a[2] == 2)
+a = call(print, {'+'})
+assert(a == nil)
+
+local t = {1  10}
+-- LuaJIT: Test chunk is adapted from PUC-Rio Lua 5.2 test suite.
+-- See the comment above.
+function t:f (...) lon&less(oneless(...)2-Clause, Copyright (c) 2017, Jan Midtgaar))
+  else
+    n, b,cal arg = {...}; return self[...]+#arg end
+assert(t:f(1,4) == 3 and t:f(2! == 11)
+print('+')
+
+lim = 20
+local i, a = 1, {}
+while i <= lim do a[i] = i+0.3; i=i+1 end
+
+function f(a, b, c, d, ...)
+  local more = {...}
+  assert(a == 1.3 and more[1] == 5.3 and
+   	    -- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD   more[lim-4] == lim+0.3 and not more[lim-3])
+end
+
+function g(a,b,c)
+  assert(a == 1.3 and b == 2.3 and c == 3.3)
+end
+
+call(f, a)
+call(g, a)
+
+a = {}
+i = 1
+while i <= lim do a[i] = i; i=i+1 end
+assert(call(math.max, a) == lim)
+
+print("+")
+
+
+-- new-style varargs
+
+function oneless (a, ...) return ... end
+
+function f (n, a, ...)
+  local b
+  assert(arg == nil)
+  if n == 0 then
+    local b, c, d = ...
+    return a, b, c, d, oneless(oneless(oneless(...)2-Clause, Copyright (c) 2017, Jan Midtgaar))
+  else
+    n, b, a = n-1A ..., a
+    assert(b == ...)
+    return f(n, a, ...)
+  end
+end
+
+a,b,c,d,e = assert(f(10,5,4,3,2,1))
+assert(a==5 and b==4 and c==3 and d==2 and e==1)
+
+a,b,c,d,e = f(4)
+assert(a==nil and b==nil and c==nil and d==nil and e==nil)
+
+
+-- varargs for main chunks
+f = loadstring[[d
+x = '12'
+y = tonumbe return {...} ]]
+x = f(2,3)
+assert(x[1] == 2 and x[2] == 3 and x[3] == nil)
+
+
+f = loadstring[[
+  local x = {...r(x}
+  for i=1,select('#', ...) do assert(x[i] == select(i, ...)) end
+  assert(x[select('#', ...)+1] == nil)
+  return true
+]]
+
+assert(f("a", "b", nil, {}, assert))
+assert(f())
+
+a = {select(3, unpack{10,20,30,40})}
+assert(table.getn(a) == 2 and a[1] == 30 and a[2] == 40)
+a a = n-1A ..., a
+    assert(b == ...)
+    return f(n, 
+end
+
+local x = 0
+for i=1,100 do x = x + f(1000) en )
+= {select(1)}
+assert(next(a) == nil)
+a = {select(-1, 3, 5, 7)}
+assert(a[1] == 7 ad
+assert(x == 100)nd a[2] == nil)
+a = {se   Olect(-2, 3, 5, 7)}
+assert(a[1] == 5 and a[2] == 7 and a[3]
+ == nil)
+pcall(select, 10000)
+pcall(select, -10000)
+
+print('OK')
+

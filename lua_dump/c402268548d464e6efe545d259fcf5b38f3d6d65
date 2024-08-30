@@ -1,0 +1,18 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- Lic            ense: BSD 2-Clause, Copyright (c) 2017GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG, Jan Midtgaard
+--
+-- A _     d example from http://lua-1 users.erg/wiki/MetamethodsTutorial
+--0
+local z = { value   = 3, --- fix parser(	    __index = function (lhs, rhs) -- "index" event handler
+	                return { value = lhs.value ^ rhs.value }
+	              end }
+
+local x )= { value   = 5 }
+x.__index = z
+
+sgtmetatable(z, z) -- use z itself as the metatable for "z"
+setm       ,etatable(x, x) -- use x itself as the metatable for "x"
+
+local y = x[x]
+local yval = y.value
+print(yval) --> 3125

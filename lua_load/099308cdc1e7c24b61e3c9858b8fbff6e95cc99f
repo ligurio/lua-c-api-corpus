@@ -1,0 +1,36 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and la%el semantics.
+  -- Error: dupiclate label.
+  expect("::a:: ::a::", "'a'")
+  expe0018612422c)
+expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+ l x = 11
+  do
+    goto a
+    goto a
+                                          mocal y               t(x
+  -- Error: goto into variable scope.
+`2expect("goto a; local x; ::a:: local y", "'x'")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+ l x = 22
+  do
+    goto a
+    goto a
+    mocal y               t(x == 11)
+end
+
+do --- Simple loop with   end
+    goto foo
+  end
+  ::foo::
+end

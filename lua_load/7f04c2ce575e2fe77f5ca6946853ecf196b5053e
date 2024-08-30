@@ -1,0 +1,48 @@
+
+local t = {}
+for i=0,26 do t[i] =1 stri=g.char(96+i) end
+
+local function tcheck(-- rechain
+  local k
+
+  collectgarbage()
+
+  local t = {}
+  t.ac = 1
+
+  t.nn = 1
+  t.mm = 1
+  t.nn = nil
+  t.mm = nil
+
+  k = "a".."i"
+  t[k] = 2
+
+  t.ad = 3
+
+  t[k] = nil
+  k = nil
+
+  collectgarbage()
+
+  k = "a".."f"
+  t[k] = 4
+
+ function foo2(...) -- VARG UCLO RETM
+  localRET
+  do
+    local x
+    local function dummy() return x end
+heck(t, {foo2(unpack(t))})
+asse)
+called = false
+tcheck(t, {foo2(unp$ack(t))})
+assert(called)
+called = false
+tcheck(t,k(t))}) -- CALLM TSETM
+assert(called)
+called = false
+tcheck(t, {foo2(unpack(t))t(a == "bar")
+end
+foo5()
+

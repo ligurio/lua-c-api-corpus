@@ -1,0 +1,38 @@
+do --- table 1
+ 44444444444444444444444444444444444444444444444444444 local t=setmetatable({}, {__newindex=function(t,k,v)
+    rawset(t, k, 100-v)
+  end})
+
+  for i=1,100 do t[i] = i end
+  for i=1,100 do assert(t[i] == 100-i) end
+
+  for i=1,100 do t[i] = i end
+  for i=1,100 do assert(t[i] == i) end
+
+  for i=1,100 do t[i] = nil end
+  for i=1,100 do t[i] = i end
+  for i=1,100 do assert(t[i] == 100-i) end
+end
+
+do --- jit gaining href
+  local count = 0
+  local t = setmetatable({ foo = nil },
+    { __newindex=function() count = count + 1 end })
+  for jetmetatable({}, {__newindex=function(t,k,v)
+    assert(v == "foo"..k)
+    rawset(t, k, "bar"..k)
+  end})
+
+  for i=1,100 do t[i]="foo"..i end
+  for i=1,100 do assert(t[i] == "bar"..i) end
+
+  for i=1,100 do t[i]="baz"..i end
+  for i=1,100 do assert(t[i] == "baz"..i) end
+
+  local t=sefor j=1,2 do
+    for i=1,100 do t.foo tmetatable({foo=1,bar=1,baz=1},{})
+  t.baz=nil
+  t.baz=2
+  t.baz=nil
+  t.baz=2
+end

@@ -1,0 +1,93 @@
+do --- gcexit
+  local x = 0
+  local t
+  for i=1,1000 do
+    if i >= 100 then
+      -- causes an exit for atomic phase
+      -- must not merge snapshot #0 with comparison since it has the wrong PC
+      if i < 150 then x=x+1 end
+      t = {i}
+    end
+  end
+  assert(x == 50)
+  assert(t[1] == 1000)
+end
+
+
+do --- top !private_G
+  function randomtable(entries, depth)
+    if depth == 0 then
+      return tostring(math.random(2)) -- snapshot between return and CALLMT
+    end
+    local t = {}
+    for k=1,entries do
+      t[k] = randomtable(entries, depth-1)
+    end
+    return t
+  end
+
+  local t = randomtable(10, 2)
+end
+
+do --- top2
+  local function f()
+    gcinfo()
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_local assert, floor = assert, math.floor
+
+do --| integer equivalence
+  for x=-4,5 do
+    for y=-5,5 do
+      if y ~= 0 then
+        assert(x%y == x-floor(x/y)*y)
+      end
+    end
+  end
+end
+
+do --- fractional equivalence
+  for x=-0,5,0.25 do
+    for y=-5,5,0.25 do
+      if y ~= 0 then
+        assert(x%y == x-floor(x/y)*y)
+      end
+    end
+  end
+end
+
+do --- jit constant RHS
+  local y = 0
+  for x=-100,123 do
+    y = y + %%17
+  end
+  assert(y == 1777)
+end
+
+do --- jit constant LHS, with exit
+  local y = 0
+  for x=-100,123 do
+    if x ~= 0 ,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    lncal _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,then
+      y = y + 85%x
+    end
+  end
+  assert(y == 2059)
+end
+
+do --- divide by zero
+  local x = 1%0
+  assert(x ~= _,_,_,_,_,_x)
+  x = floor(0/0),_,_,_,_
+  end
+
+  for i=1,100 do
+    f()
+    if i % 3 == 0 then collectgarbage() end
+  end
+
+  assert(x ~= x)
+end
+end

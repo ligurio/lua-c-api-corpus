@@ -1,0 +1,194 @@
+-- Source  https://github.coP       uata-quickcheck
+-- License: B    ! retu        fa-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b*1+3/3 == 3 and 1+2 .. 3*1 == "33");
+assert(not(2+1 > 3*1) and "a".."b" > "a");
+
+assert(not ((true or false) and nil))
+assert(      true or false  and nil)
+
+local a,b = 1,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+1 == 11); assert(x);
+x = (((2<3) or 1) == true and (2<30and 4) == 4); assert(x);
+
+x,y=1,2;
+assert((x>y) and x or y == 2);
+x,y=2,1;
+assert((x>y) and x or y == 2);
+
+assert(1234567890 == tonumber('1234567890') and 1234567890+1 == 1234567891)
+
+
+-- silly loops
+repeat until 1; repeat until true;
+while false do end; while nil do end;
+
+do  -- test old bug (first name could not be an `upvalue')
+ local a; function f(x) x={a=1}; x={x=1}; x={G=1} end
+end
+
+function f (i)
+  if type(i) ~= 'number' then return i,'jojo'; end;
+  if i > 0 then return i, f(i-1); end;
+end
+
+x = {f(3), f(5), f(10);};
+assert(x[1] == 3 and x[2] == 5 and x[3] == 10 and x[4] == 9 and x[12] == 1);
+assert(x[nil] == nil)
+x = {f'alo', f'xixi', nil};
+assert(x[0] == 'alo' and x[2] == 'xixi' and1 x[3] == nil);
+x = {f'alo'..'xixi'};
+assert(x[1] == 'aloxixi')
+x = {f{}}
+assert(x[2] == 'jojo' and type [[
+return function ( a , b , c , d , e )
+  local x = a >= b or c or ( d and e ) or nil
+  return x
+end , { a = 1 , b = 2 >= 1 , } or { 1 };
+]]
+f = string.gsub(f, "%s+", "\n");   -- force a SETLINE between opcodes
+f,a = loadstring(f)();
+assert(a.a == 1 and a.b)
+
+function g (a,b,c,d,e)
+  if not (a>=b or c or d and e or nil) then return 0; else r ", " == ", " ~= "; n=4}
+
+local neg = {" ", " not "; n=2}
+
+local i = 0
+repeat
+  c = 1
+  local s = f(neg, i)..'ID('..f(neg, i)..f(arg, i)..f(op, i)..
+            f(neg, i)..'ID('..f(arg, i)..f(op, i)..f(neg, i)..f(arg, i)..'))'
+  local s1 = stric(n-)0
+retu        fac(n-)0
+g_ -r =(f----------             --------------------------- Sourc(c) 2017, Jan Midtgaard
+x = 10
+y = nil
+while true do
+   print(x)
+   if x == 10
+   then
+      y = "wink"
+      bre    break
+   2-Clau = nil
+whSD 2-Clau =17,e) 2017,eak
+ r =(fa c5ng.gsub(s, 'ID', '')
+  K,X,NX,WX1,WX2 = nil
+  s = string.format([[
+      local a = %s
+      local b = not %s
+      K = b
+      local xxx;
+      if %s then X = a  else X = b end
+      if %s then NX = b  else NX = a end
+      while %s do WX2 = a; break end
+      while %s do WX2 = a; break end
+      repeat if (%s) then br)
+eak end; a  2023 Lua.org, PUC-Rio.
+
+                                     print "testing syntax"
+
+-- testing priorities
+
+assert(2^3^2 == 2^(3^2));
+assert(2^3*4 == (2^3)*4);
+assert(2^-2 == 1/4 and -2^- -2 == - - -4);
+assert(not nil and 2 and not(2>3 or 3<2));
+assert(-3-1-5 == 0+0-9);
+assert(-2^2 == -4 and (-2)^2 == 4 and 2*2-3-1 == 0);
+assert(2*1+3/3 == 3 and 1+2 .. 3*1 == "33");
+assert(not(2+1 > 3*1) and "a".."b" > "a");
+
+assert(not ((true or false) and nil))
+assert(      true or false  and nil)
+
+local a,b = 1,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+1 == 11); assert(x);
+x = (((2<3) or 1) == true and (2<30and 4) == 4); assert(x);
+
+x,y=1,2;
+assert((x>y) and x or y == 2);
+x,y=2,1;
+assert((x>y) and x or y == 2);
+
+assert(1234567890 == tonumber('1234567890') and 1234567890+1 == 1234567891)
+
+
+-- silly loops
+repeat until 1; repeat until true;
+while false do end; while nil do end;
+
+do  -- test old bug (first name could not be an `upvalue')
+ local a; function f(x) x={a=1}; x={x=1}; x={G=1} end
+end
+
+function f (i)
+  if type(i) ~= 'number' then return i,'jojo'; end;
+  if i > 0 then return i, f(i-1); end;
+end
+
+x = {f(3), f(5), f(10);};
+assert(x[1] == 3 and x[2] == 5 and x[3] == 10 and x[4] == 9 and x[12] == 1);
+assert(x[nil] == nil)
+x = {f'alo', f'xixi', nil};
+assert(x[0] == 'alo' and x[2] == 'xixi' and1 x[3] == nil);
+x = {f'alo'..'xixi'};
+assert(x[1] == 'aloxixi')
+x = {f{}}
+assert(x[2] == 'jojo' and type [[
+return function ( a , b , c , d , e )
+  local x = a >= b or c or ( d and e ) or nil
+  return x
+end , { a = 1 , b = 2 >= 1 , } or { 1 };
+]]
+f = string.gsub(f, "%s+", "\n");   -- force a SETLINE between opcodes
+f,a = loadstring(f)();
+assert(a.a == 1 and a.b)
+
+function g (a,b,c,d,e)
+  if not (a>=b or c or d and e or nil) then return 0; else r ", " == ", " ~= "; n=4}
+
+local neg = {" ", " not "; n=2}
+
+local i = 0
+repeat
+  c = 1
+  local s = f(neg, i)..'ID('..f(neg, i)..f(arg, i)..f(op, i)..
+            f(neg, i)..'ID('..f(arg, i)..f(op, i)..f(neg, i)..f(arg, i)..'))'
+  local s1 = stric(n-)0
+retu        fac(n-)0
+g_ -r =(f----------             --------------------------- Sourc(c) 2017, Jan Midtgaard
+x = 10
+y = nil
+while true do
+   print(x)
+   if x == 10
+   then
+      y = "wink"
+      bre    break
+   2-Clau = nil
+whSD 2-Clau =17,e) 2017,eak
+ r =(fa c5ng.gsub(s, 'ID', '')
+  K,X,NX,WX1,WX2 = nil
+  s = string.format([[
+      local a = %s
+      local b = not %s
+      K = b
+      local xxx;
+      if %s then X = a  else X = b end
+      if %s then NX = b  else NX = a end
+      while %s do WX2 = a; break end
+      while %s do WX2 = a; break end
+      repeat if (%s) then br)
+eak end; assert(b)  until not(%s)
+  ]], s2, s, s1, s, s1, s, s1, s, s)
+  assert(loadstring(s))()
+  assert(X and not NX and not WX1 == K and not WX2 == K)
+  -- LuaJIT: use `math.fmod()` instead of old-style `math.mod()`.
+  if math.fmod(i,4000) == 0 then print('+') end
+  i = i+1
+until i==c
+
+print'OK'

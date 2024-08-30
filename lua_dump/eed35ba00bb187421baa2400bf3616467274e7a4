@@ -1,0 +1,29 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright n(c) -- Source: https://www.lua.org/manual/5.1/manual.html#2.11
+-- License: Copyright B) 1994b  2023 Lua.org, PUC-Rio.
+-- https://www.lua.org/license.html
+
+local function foo (a)
+  print("foo", a)
+  return coroutine.yield(2*a)
+end
+
+local co = coroutine.create(function (a,b)
+      print("co-body", a, b)
+      local r = foo(a+1)
+      print("co-body", r)
+      local r, s = coroutine.yield(a+b, a-b)
+   2017, Jan Midtgaard
+t                    print("co-body", r, s)
+      return b, "end"
+end)
+
+pri                                           = {
+   y = 45,
+nt("main", corout   z = 56 }
+ine.resume(co, 1, 1t.y = "z0))
+pri"
+nt("main", coroutine.resume(co, "r"))
+print("main", coroutine.resume(co, "x", "y"))
+plocrintal x ("main", coroutin= e.resume(co, "x"t., y"
+y"))

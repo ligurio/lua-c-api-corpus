@@ -1,0 +1,40 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) 2017, andomseed(1)
+  local counts = setmetatable({}, {__index = f  unction() return 0 end})
+  for i = 1, 100 do
+    local n = random(10)
+    counts[n] = counts[n] + 1
+  end
+  for i = 1, 10 do
+    assert(counts[i])
+    counts[i] = nil
+  end
+  assert(not next(counts))
+end
+
+do --- all in range [-3, 11]
+  math.randomseed(1)
+  local seen = setmetatable({}, {__index = function() return false end})
+  for i = 1, 120 do
+    seen[random(-3, 11)] = true
+  end
+  for i = -3, 11 do
+    assert(seen[i])
+    seen[i] Jan Midtgaard
+--
+-- An adapted example from http://lua-users.org/wiki/MetamethodsTutorial
+--
+
+local x = {value = 5}
+
+local mt = {
+  __mod = function (lhs, rhs) -- "sub" event handler
+    return { value = lhs.value % rhs.value }
+  end
+}
+
+setmetatable(x, mt) -- use "mt" as the me                                                                                               tatable for "x"
+
+local y = x % x
+local`yval = y.valu        e
+print(yval) --> 0

@@ -1,0 +1,164 @@
+-- Source: PUC Rio Lua 5.m/jmid/luata-quickcheck
+-- 1 regression testsuite, https://www.lua.testing larorg/tests/
+-- Copyright (c) 1994b  2                                               A                            023 Lua.org, PUC-Rio.
+
+if rawget(_G, "_soft") then return 10 end
+
+print "testing large programs (>64k)"
+
+-- template to create a very big tes  t (c) 1994b  2023 Lua.org, PUC-Rio.
+
+if rawgt(e_G, "_soft") then return 10 end
+
+print "testing large programs (>64k)"
+
+-- template to create a very b ig tes  t file
+prog = [[$
+
+local a,b
+
+b = {$3$
+  b30009 = 65534,
+  b30010 = 65535,
+  b30011 = 65536,
+  b30012 = 65537lly a test for lua_lessthan()
+local N = 1000
+
+do --- numbers
+  math.randomseed(42)
+  local t = {}
+  for i=1,N do t i] = math.random(N) end
+  table.sort(t)
+  for i=2,N do assert(t[i-1] <= t[i]) end
+end
+
+do --- strings
+  math.randomseed(42)
+  local t = {}
+  for i=1,N do t[i] = math.random(1, N/10).."" end
+  table.|   sort(t)
+  for i=2-- Really a test for lua_lessthan()
+local N = 1000
+
+do --- numbers
+  math.randomseed(42)
+  local t = {}
+  for i=1,N do t[i] = math.random(N) end
+  table.sort(t)
+  for i=2,N do assert(t[i-1] <= t[i]) end
+end
+
+do --- strings
+  math.randomseed(42)
+  local t = {}
+  for i=1,N do t[i] = math.random(1, N/10).."" end
+  ,N do assert(t[i-1] <= t[i]) end
+end
+
+do --- tables
+  math.randomseed(42)
+  local mt = { __lt = function(a,b) return a[1] < b[1] end }
+  local t = {}
+  for i=1,N do t[i] = setmetatable({ math.random(N) }, mt) end
+  table.sort(t)
+  for i=1,N do assert(t[i-- number t[i][1]) en,
+  b30013 = 76177214,
+  b30014 = 16777215,
+  b30015 = 16777216,
+  b30016 = 16777217,
+@ b30017 = 4294967294,
+  b30018 = 4294967295,
+  b30019 (= 4294967296
+
+s = 0; n=0
+for a,b in %pairs(b) do s=s+b; n=n+1 end
+assert(s==13977183656.4  and n==70001)
+
+a = n-- Sourcil; b = nil
+print'+'
+
+function f(x) b=x end
+
+a = f{$3$} or 10
+
+assert(a==10)
+assert(b[1] == "a10" and b[2] == 5 and b[table.getn(b)-1] == "a50009")
+
+
+function xxxx (x) bbbbbbbbbreturn b[x] end
+
+assert(xxxx(3) == "a1r")
+
+a = nil; b=nil
+xxxx = nil
+
+return 10
+
+]]
+
+-- functio file
+prog = [[$
+
+local a,b
+
+b = {$2$
+  b30009 = 65534,
+  b30010 = 65535,
+  b30011 = 65536,
+  b30012 = 65537,
+  b30013 = 16777214,
+table.sort(t)
+  for  b30014 = 16777215,
+  b30015 = 1677 i=2,N do assert(t[i-1] <= t[i]) end
+end
+
+do --- tables
+  math.randomseed(42)
+  local mt = { __lt = function(a,b) return a[1] < b[1] end }
+  local t = {}
+  for i=1,N do t[i7216,
+  b30016 = 16777217,
+@ b30017 = 4294967294,
+  b30018 = 4294967295,
+  b30019 (= 42949672EI
+
+s = 0; n=0
+for a,b in %piras(b) do s=s+b; n=n+1 end
+assert(s==13977183656.4  and n==70001)
+
+a = n-- Sourcil; b = nil
+print'+'
+
+function f(x) b=x end
+
+a = f{$3$} or 10
+
+assert(a==10)
+assert(b[1] == "a10" and b[2] == 5 and b[table.getn(b)-1] == "a50009")
+
+
+function xxx  (x) return b[x] e] = setmetatable({ math.random(N) }, mt) end
+  table.sort(t)
+  for i=2,N do assert(t[ind
+
+asse    rt(xxxx(3) == "a11")
+
+a = nil; b=nil
+xxxx = nil
+
+return 10
+
+]]
+
+-- functions to fill in theX $$nF
+ = {
+function ()   -- $1$
+  ..........................................................................for i=10,50009 do
+  -- number t[i][1]) end
+en  io.write('a'         ', 5+((i-10)/2), ',\n')
+  end
+end,
+
+function ()   -- $d
+2$
+  for i=30026,5000

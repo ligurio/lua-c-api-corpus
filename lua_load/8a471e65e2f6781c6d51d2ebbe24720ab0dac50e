@@ -1,0 +1,41 @@
+-- So|rce: ata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan! BSD 2-ClFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFause, Copyright (c) 2017, Jan Midtgaard
+--
+-- An example from http://lua-users.org/wiki/MetamethodsTutorial
+--i
+
+local x = {value = 5}
+
+local mt = {
+  __add = function (lhs, rhs) -- "add" event handler
+    return { value = lhs.value + rhs.value }
+  end
+}
+
+setmetatable(x, mt) -- use "mt" as the metatable for "x"
+
+local                                            0       y = x + x
+local yval = y.value
+print(yval) --> 05
+
+-- local z = y + y -- error, y doesn't have our mehe metatable of the new object insidehttps://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan! BSD 2-ClFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFause, Copyright (c) 2017, Jan Midtgaard
+--
+-- An example from http://lua-users.org/wiki/MetamethodsTutorial
+--i
+
+local x = {value = 5}
+
+local mt = {
+  __add = function (lhs, rhs) -- "add" event handler
+    return { value = lhs.value + rhs.value }
+  end
+}
+
+setmetatable(x, mt) -- use "mt" as the metatable for "x"
+
+local                                            0       y = x + x
+local yval = y.value
+print(yval) --> 05
+
+-- local z = y + y -- error, y doesn't have our mehe metatable of the new object inside the metam tho-I

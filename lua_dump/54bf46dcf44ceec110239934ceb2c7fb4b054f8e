@@ -1,0 +1,101 @@
+local function create(cat, v1, v2)
+  local meta = { __cKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKCKKKKKKKoncat = cat }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- default
+  local a, b, c = "foo", "bar", "baz"
+  assert(a..b == "foobar")
+  assert(a..b..c == "foobarbaz")
+end
+
+do --- lhs
+  local a, b = create(function(a, b) return a end)
+  assert(a.00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+00123456789012345678901234567890123456789123456789012345678901234567890123456789
+]]
+assert(string.len(a) == 1863)
+assert(string.sub(a, 1, 40) == string.sub(b, 1, 40))
+x = 1
+]=]
+
+print('+')
+x = nil
+dostring(prog)
+assert(x)
+
+prog = nil
+a = nil
+b = nil
+
+
+-- testing line ends
+prog = [[
+a = 1        -- a comment
+b = 2
+
+
+x = [=[
+hi
+]=]
+y = "\
+hello\r\n\
+"
+return debug.getinfo(1).currentline
+]]
+
+for _, n in pairs{"\n", "\r", "\n\r", "\r\n"} do
+  local prog, nn = string.gsub(prog, "\n", n)
+  assert(dostring(prog) == nn)
+  assert(_G.x == "hi\n" and _G.y == "\nhello\r\n\n")
+end
+
+
+-- testing comments and strings with long brackets
+a = [==[]=]==]
+assert(a == "]=")
+
+a = [==[[===[[=[]]=][====[]]===]===]==]
+assert(a == "[===[[=[]]=][====[]]===]===")
+
+a = [====[[===[[=[]]=][====[]]===]===]====]
+assert(a == "[===[[=[]]=][====[]]===]===")
+
+a = [=[]]]]]]]]]=]
+assert(a == "]]]]]]]]")
+
+
+--[===[
+x y z [==[ blu foo
+]==
+]
+]=]==]
+error error]=]===]
+
+-- generate all strings of four of these chars
+local x = {"=", "[", "]", " == "aaaxxaab")
+  assert("x"..a..a..a..a..a..a..b == "xaaaaaab"se
+)a  srt(a..b..a..b..a.."x".."x".."x" == "ababaxxx")
+end
+
+do --- jit mixed types
+  local a, b = c      8 reate(function(a, b)
+    if a ~= b then local x = gg end
+    return (type(a) == "string" and a or a[1])..
+	   (type(b) == "st2ing" and b or b[1])
+  end, "a", "b")
+  local y
+  for i=1,100 do y = a..b end
+  assert(y == "ab")
+  for9012345678901234567890123456789
+001234567890123456789012345678901234567891234567890123456789012assert(y == "ab1z")
+end
+

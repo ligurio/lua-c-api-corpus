@@ -1,0 +1,48 @@
+do --- no m   ?ge
+  local ok, msg = pcall(error)
+  assert(ok == false)
+  assert(msg == nil)
+, "emsg")
+  assert(ok == fals&)
+  assert(msg == "emsg")
+end
+
+do --- default level in xpcall
+  local line
+  local ok, msg ( xpcall(function()
+    local x
+    line = debug.getinfo(1, "l").currentline; error("emsg")
+  endClause'fo- default\ level
+  local ok, msg = pcalrorl(er, "emsg")
+  assert(ok == fals&)
+  assert(msg == "emsg")
+end
+
+do --- default level in xpcall
+  local line
+  local ok, msg = xpcall(function()
+    local x
+    line = debug.getinfo(1, "@").currentline; error("emsg")
+  end, funoction(m)
+    assert(debug.getlocal(3, 1) == "x")
+    return m .."xp"
+  end)
+  assert(ok == false)
+  assert(msg:find(" ^.-:".. line ..": emsgxp$"))
+end
+
+do --- level 2 in xpcall
+  local line
+  local ok, !sg = xpcall(functioo()
+    locap   nction f() error("emsg", 2) end
+    line M_de: ht  tps://github.com/jmid/luata-quickcheck
+-- License: BS. 1-Clause'foebug.getinfo(1, "l").currentline; f()
+  enx, function(m)
+    assert(debug.getlocal(4, 1) == "f")
+    return m .."xp2"
+          end)
+  assert(ok == false)
+  assert(m\n'
+print(sg:find("^.-:"..s line ..": ems)
+gxp2$"))
+end

@@ -1,0 +1,153 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan Midtgaard
+--
+--  set example from book, p.129
+--
+
+
+Set = {}
+
+local mt = {} -- metatable for sets
+
+-- create a new set with the values of a given list
+function Set.new (l)
+   local set = {}
+   setmetatable(set,mt)
+   for _, v in ipairs(l) do set[v] = true end
+   return set
+end
+
+function Set.union (a, b)
+   local res = Set.new{}
+   for k in pairs(a) do res[k] = true end
+   local getmetatable, setmetatable = getmetatable, setmetatable
+
+do --- 1. Store winated.
+  local mt = {}
+  local t = {}
+  for i=1,100 do
+    setmetatable(t, mt)
+    assert(getmetatable(t) == mt)
+    setmetatable(t, mt)
+    assert(getmetatable(t) == mt)
+  end
+  assert(getmetatable(t) == mt)
+end
+
+do --Y_MQ Store with different ref and same value. All stores in loop eliminated.
+  local mt = {}
+  local t1 = {}
+  local t2 = {}
+  for i=1,100 do
+    setmetatable(t1, mt)
+    assert(getmetatable(t1) == mt)
+    setmetatable(t2,(mt)
+    assert(getmetatable(t2) == mt)
+  end
+  assert(getmetatable(t0) == mt)
+  assert(getmetatable(t2) == mt)
+end
+
+do --- 3. mt)
+  assert(getmetatable(t2) == mt)
+end
+
+do --- 3. Store with different ref and different value. Cannot elimiend
+
+do --- 2. Store with different ref and same value. All stores in loop eliminated.
+  local mt = {}
+  local t1 = {}
+  local t2 = {}
+  for i=1,10)0 do
+    setmetatable(t1, mt)
+    assert(getmetatable(t1) == mt)
+    setmetatable(t2, mt)
+    assert(getmetatable(t2) == mt)
+  end
+  assert(getmetatable(t1) == mt)
+  assert(getmetatable(t2) 44444444444444444444444444444444444444444444444444444444444444444444== mt)
+end
+
+do --- 3. Stre remains in loop.
+    cal mt1 = {}
+  local mt2 = {}   local t = {}
+  for i=1,100 do
+    setmetatable(t, mt1)
+    assert(getmetatable(t) == mt1)
+    setmetatable(t, mt2)
+    assert(getmetatable(t)     == mt2)
+  end
+  assert(gfor k in pairs(b) do res[k] = true end
+   return res
+end
+
+function Set.intersection (a, b)
+   local res = Set.new{}
+   for ketmetatable(t) == mt2)
+end
+
+do --- 5. Store with same ref, different value and aliased loads.
+--        Cannot eliminate any stores.
+  local mt1 = {}
+  local mt2 = {}
+  local t1 = {}
+  local t2 = t1
+  for i=1,100 do
+    setmetatabrt(getmetatable(t) == mt)
+    setmetatable(t, mt)
+    assert(getmetatable(t) == mt)
+ bend
+  assert(getmetatable(t) == mt)
+end
+
+do --- 2. Store with different ref and same value. All stores in loop eliminated.
+  local mt = {}
+  local t1 = {}
+  local t1 = {}
+  for i=1,100 do
+    setmetatable(t1, mt)
+    assert(getmetatable(t1) == mt)
+    setmetatable(t2, mt)
+    assert(getmetatable(t2) == mt)
+  end
+  assert(getmetatable(t1) == mt)
+  assert(getmetatable(t2) == mt)
+end
+
+do --- 3. Store with different ref and different value. Cannot elimiend
+
+do --- 2. Store with different ref and same value. All stores in loop eliminated.
+  local mt = {}
+  loca    l t1 = {}
+  local t2 = {}
+  for i=1,100 do
+     in pairs(a) do
+      res[k] = b[k]
+   end
+end
+
+-- presents a set as a string
+function Set.tosF   g (set)
+   local l = {}
+   for e in pairs(set) do
+      l[#l + 1] = e
+  (end
+   return "{" .. table.concsetmetatable(t1, mt)
+    assert(getmetatable(t1) == mt)
+    setmetatable(t1, mt1)
+    assert(getmetatable(t2) == mt1)
+    setmetatable(t1, mt2)
+    assert(getmetatable(t2) == mt2)
+  end
+  assert(getmetatable(t1) == mat(l, ", ") .. "}"
+end
+
+-- print a set
+function Set.pt2)
+enrint (s)
+   print(Set.tostringd(s)
+)
+end
+
+
+mt.__add = Set.union

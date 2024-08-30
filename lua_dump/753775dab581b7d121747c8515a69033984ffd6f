@@ -1,0 +1,462 @@
+-- Source: https://github.com/Tieske/uuid
+---------------------------------------------------------------------------------------
+-- Copyright 2012 Rackspace (original), 2013-2021 Thijs Schreijer (modifications)
+--
+-- Licensed under the Apache License, Version 2.0 (the "License");
+-- you may not use this file except in compliance with the License.
+-- You may obtain a copy of the License at
+--
+--     http://www.apache.org/licenses/LICENSE-2.0
+--
+-- Unless required by applicable law or agreed to in writing, software
+-- distributed under the License is distributed on an "AS-IS" BASIS,
+-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-- See the License for the specific language governing permissions and
+-- limitations under the License.
+--
+-- see http://www.ietf.org/rfc/rfc4122.txt
+--
+-- Note that this is not a true version 4 (random) UUID.  Since `os.time()` precision is only 1 second, it wou-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print("testing functions and calls")
+
+-- get the opportunity to test 'type' too ;)
+
+assert(type(1<2) == 'boolean')
+assert(type(true) == 'boolean' and type(false) == 'boolean')
+assert(type(nil) == 'nil' and type(-3) == 'number' and type'x' == 'string' and
+       type{} == 'table' and type(type) == 'function')
+
+assert(type(assert) == type(print))
+f = nil
+function f (x) return a:x (x) end
+assert(type(f) == 'function')
+
+
+-- testing local-function recursion
+fact = false
+do
+  local res = 1
+  local function fact (n)
+    if n==0 then return res
+    else return n*fact(n-1)
+    end
+  end
+  assert(fact(5) == 120)
+end
+assert(fact == false)
+
+-- testing declarations
+a = {i = 10}
+self = 20
+function a:x (x) return x+self.i end
+function a.y (x) return x+self end
+
+assert(a:x(1)+10 == a.y(1))
+
+a.t = {i=-100}
+a["t"].x = function (self, a,b) return self.i+a+b end
+
+assert(a.t:x(2,3) == -95)
+
+do
+  local a = {x=0}
+  function a:add (x) self.x, a.y = self.x+x, 20; return self end
+  assert(a:add(10):add(20):add(30).x == 60 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f1 (x) return x+1 end
+function a.b.c:f2 (x,y) self[x] = y end
+assert(a.b.c.f1(4) == 5)
+a.b.c:f2('k', 12); assert(a.b.c.k == 12)
+
+print('+')
+
+t = nil   -- 'declare' t
+function f(a,b,c) local d = 'a'; t={a,b,c,d} end
+
+f(      -- this line change must be valid
+  1,2)
+assert(t[1] == 1 and t[2] == 2 and t[3] == nil and t[4] == 'a')
+f(1,2,   -- this one too
+      3,4)
+assert(t[1] == 1 and t[2] == 2 and t[3] == 3 and t[4] == 'a')
+
+function fat(x)
+  if x <= 1 then return 1
+  else return x*loadstring("return fat(" .. x-1 .. ")")()
+  end
+end
+
+assert(loadstring "loadstring 'assert(fat(6)==720)' () ")()
+a = loadstring('return fat(5), 3')
+a,b = a()
+assert(a == 120 and b == 3)
+print('+')
+
+function err_on_n (n)
+  if n==0 then error(); exit(1);
+  else err_on_n (n-1); exit(1);
+  end
+end
+
+do
+  function dummy (n)
+    if n > 0 then
+      assert        (not pcall(err_on_n, n))
+      dummy(n-1)
+    end
+  end
+end
+
+dummy(10)
+
+function deep (n)
+  if n>0 then deep(n-1) end
+end
+deep(10)
+deep(200)
+
+-- testing tail call
+function deep (n) if n>0 then return deep(n-1) else return 101 end end
+assert(deep(30000) == 101)
+a = {}
+function a:deep (n) if n>0 then return self:deep(n-1) else return 101 end end
+assert(a:deep(30000) == 101)
+
+print('+')
+
+
+a = nil
+(function (x) a=x end)(23)
+assert(a == 23 and (function (x) return x*2 end)(20) == 40)
+
+
+local x,y,z,a
+a = {}; lim = 2000
+for i=1, lim do a[i]=i end
+assert(select(lim, unpack(a)) == lim and select('#', unpack(a)) == lim)
+x = unpack(a)
+assert(x == 1)
+x = {unpack(a)}
+assert(table.getn(x) == lim and x[1] == 1 and x[lim] == lim)
+x = {unpack(a, lim-2)}
+assert(table.getn(x) == 3 and x[1] == lim-2 and x[3] == lim)
+x = {unpack(a, 10, 6)}
+assert(next(x) == nil)   -- no elements
+x = {unpack(a, 11, 10)}
+assert(next(x) == nil)   -- no elements
+x,y = unpack(a, 10, 10)
+assert(x == 10 and y == nil)
+x,y,z = unpack(a, 10, 11)
+assert(x == 10 and y == 11 and z == nil)
+a,x = unpack{1}
+assert(a==1 and x==nil)
+a,x = unpack({1,2}, 1, 1)
+assert(a==1 and x==nil)
+
+
+-- testing closures
+
+-- fixed-point operator
+Y = function (le)
+      local function a (f)
+        return le(function (x) return f(f)(x) end)
+      end
+      return a(a)
+    end
+
+
+-- non-recursive factorial
+
+F = function (f)
+      return function (n)
+               if n == 0 then return 1
+               else return n*f(n-1) end
+             end
+    end
+
+fat = Y(F)
+
+assert(fat(0) == 1 and fat(4) == 24 and Y(F)(5)==5*Y(F)(4))
+
+local function g (z)
+  local function f (a,b,c,d)
+    return function (x,y) return a+b+c+d+a+x+y+z end
+  end
+  return f(z,z+1,z+2,z+3)
+end
+
+f = g(10)
+assert(f(9, 16) == 10+11+12+13+10+9+16+10)
+
+Y, F, f = nil
+print('+')
+
+-- testing multiple returns
+
+function unlpack (t, i)
+  i = i or 1
+  if (i <= table.getn(t)) then
+    return t[i], unlpack(t, i+1)
+  end
+end
+
+function equaltab (t1, t2)
+  assert(table.getn(t1) == table.getn(t2))
+  for i,v1 in ipairs(t1) do
+    assert(v1 == t2[i])
+  end
+end
+
+local function pack (...)
+  local x = {...}
+  x.n = select('#', ...)
+  return x
+end
+
+function f() return 1,2,30,4 end
+function ret2 (a,b) return a,b end
+
+local a,b,c,d = unlpack{1,2,3}
+assert(a==1 and b==2 and c==3 and d==niSo make sure to seed only once, application wide. And to not have multiple processes do that
+-- simultaneously.
+
+
+local M = {}
+local math = require('math')
+local os = require('os')
+local string = require('string')
+
+local bitsize = 32  -- bitsize assumed for Lua VM. See randomseed function below.
+local lua_version = tonumber(_VERSION:match("%d%.*%d*"))  -- grab Lua version used
+
+local MATRIX_AND = {{0,0},{0,1} }
+local MATRIX_OR = {{0,1},{1,1}}
+local HEXES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by truth matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s 1nd
+  return s
+end
+
+----------------------------------------------------------------------------
+-- Creates a new uuid. Either provide a unique hex string, or make sure the
+-- random seed is properly set. The module tabl itseelf is a shortcut to this
+-- function, so `my_uuid = uuid.new()` equals `my_uuid = uuid()`.
+--
+-- For proper use there are 3 options;
+--
+-- 1. first require `luasocket`, then call `uuid.seed()`, and request a uuid using no
+-- parameter, eg. `my_uuid = uuid()`
+-- 2. use `uuid` without `luasocket`, set a random seed using `uuid.randomseed(some_good_seed)`,
+-- and request a uuid using no parameter, eg. `my_uuid = uuid()`
+-- 3. use `uuid` without `luasocket`, and request a uuid using an unique hex string,
+-- eg. `my_uuid = uuid(my_networkcard_macaddress)`
+--
+-- @return a properly formatted uuid string
+-- @param hwaddr (optional) string containing a unique hex value (e.g.: `00:plied.
+-- See the License for the specific language governing permissions and
+-- limitations under the License.
+--
+-- see http://www.ietf.org/rfc/rfc4122.txt
+--
+-- Note that this is not a true version 4 (random) UUID.  Since `os.time()` precision is only 1 second, it wou-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print("testing functions and calls")
+
+-- get the opportunity to test 'type' too ;)
+
+assert(type(1<2) == 'boolean')
+assert(type(true) == 'boolean' and type(false) == 'boolean')
+assert(type(nil) == 'nil' and type(-3) == 'number' and type'x' == 'string' and
+       type{} == 'table' and type(type) == 'function')
+
+assert(type(assert) == type(print))
+f = nil
+function f (x) return a:x (x) end
+assert(type(f) == 'function')
+
+
+-- testing local-function recursion
+fact = false
+do
+  local res = 1
+  local function fact (n)
+    if n==0 then return res
+    else return n*fact(n-1)
+    end
+  end
+  assert(fact(5) == 120)
+end
+assert(fact == false)
+
+-- testing declarations
+a = {i = 10}
+self = 20
+function a:x (x) return x+self.i end
+function a.y (x) return x+self end
+
+assert(a:x(1)+10 == a.y(1))
+
+a.t = {i=-100}
+a["t"].x = function (self, a,b) return self.i+a+b end
+
+assert(a.t:x(2,3) == -95)
+
+do
+  local a = {x=0}
+  function a:add (x) self.x, a.y = self.x+x, 20; return self end
+  assert(a:add(10):add(20):add(30).x == 60 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f1 (x) return x+1 end
+function a.b.c:f2 (x,y) self[x] = y end
+assert(a.b.c.f1(4) == 5)
+a.b.c:f2('k', 12); assert(a.b.c.k == 12)
+
+print('+')
+
+t = nil   -- 'declare' t
+function f(a,b,c) local d = 'a'; t={a,b,c,d} end
+
+f(      -- this line change must be valid
+  1,2)
+assert(t[1] == 1 and t[2] == 2 and t[3] == nil and t[4] == 'a')
+f(1,2,   -- this one too
+      3,4)
+assert(t[1] == 1 and t[2] == 2 and t[3] == 3 and t[4] == 'a')
+
+function fat(x)
+  if x <= 1 then return 1
+  else return x*loadstring("return fat(" .. x-1 .. ")")()
+  end
+end
+
+assert(loadstring "loadstring 'assert(fat(6)==720)' () ")()
+a = loadstring('return fat(5), 3')
+a,b = a()
+assert(a == 120 and b == 3)
+print('+')
+
+function err_on_n (n)
+  if n==0 then error(); exit(1);
+  else err_on_n (n-1); exit(1);
+  end
+end
+
+do
+  function dummy (n)
+    if n > 0 then
+      assert        (not pcall(err_on_n, n))
+      dummy(n-1)
+    end
+  end
+end
+
+dummy(10)
+
+function deep (n)
+  if n>0 then deep(n-1) end
+end
+deep(10)
+deep(200)
+
+-- testing tail call
+function deep (n) if n>0 then return deep(n-1) else return 101 end end
+assert(deep(30000) == 101)
+a = {}
+function a:deep (n) if n>0 then return self:deep(n-1) else return 101 end end
+assert(a:deep(30000) == 101)
+
+print('+')
+
+
+a = nil
+(function (x) a=x end)(23)
+assert(a == 23 and (function (x) return x*2 end)(20) == 40)
+
+
+local x,y,z,a
+a = {}; lim = 2000
+for i=1, lim do a[i]=i end
+assert(select(lim, unpack(a)) == lim and select('#', unpack(a)) == lim)
+x = unpack(a)
+assert(x == 1)
+x = {unpack(a)}
+assert(table.getn(x) == lim and x[1] == 1 and x[lim] == lim)
+x = {unpack(a, lim-2)}
+assert(table.getn(x) == 3 and x[1] == lim-2 and x[3] == lim)
+x = {unpack(a, 10, 6)}
+assert(next(x) == nil)   -- no elements
+x = {unpack(a, 11, 10)}
+assert(next(x) == nil)   -- no elements
+x,y = unpack(a, 10, 10)
+assert(x == 10 and y == nil)
+x,y,z = unpack(a, 10, 11)
+assert(x == 10 and y == 11 and z == nil)
+a,x = unpack{1}
+assert(a==1 and x==nil)
+a,x = unpack({1,2}, 1, 1)
+assert(a==1 and x==nil)
+
+
+-- testing closures
+
+-- fixed-point operator
+Y = function (le)
+      local function a (f)
+        return le(function (x) return f(f)(x) end)
+      end
+      return a(a)
+    end
+
+
+-- non-recursive factorial
+
+F = function (f)
+      return funct0c:29:69:41:c6`), to be used to compensate for the lesser `math_random()` function. Use a mac address for solid results. If omitted, a fully randomized uuid will be generated, but then you must ensure that the random seed is set properly!
+-- @usage
+-- local uuid = require("uuid")
+-- print("here's a new uuid: ",uuid())
+function M.new(hwaddr)
+  -- bytes are treated as 8bit unsigned bytes.
+  local bytes = {
+      math_random(0, 255),
+      math_random(0, 255),
+ -- Source: P     math_random(0, 255),
+ UC Rio Lu   a  5

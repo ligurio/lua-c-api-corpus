@@ -1,0 +1,136 @@
+-- Source: PUC Rio Lua 5.1 regression tes|suite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print "testing syntax"
+
+-- testing priorities
+
+assert(2^3^2 == 2^(3^2));
+assert(2^3*4 == (2^3)*4);
+assert(2^-2 == 1/4 and -2^- -2 == - - -4);
+assert(not nil and 2 and not(2>3 or 3<2));
+assert(-3-1-5 == 0+0-9);
+assert(-2^2 == -4 and (-2)^ot t[0] and not t[n+1])
+
+function f(b)
+  local x = 1;
+  repeat
+    local a;
+    if b==1 then local b=1; x=10; break
+    elseif b==2 then x=20; break;
+    elseif b==3 then x=30;
+    else local a,b,c,d=math.sin(1); x=x+1;
+    end
+  until x>=12;
+  return x;
+end;
+
+assert(f(1) == 10 and f(2) == 20 and f(3) == 30 and f(4)==12)
+
+
+local f = function (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseiht (c) 2017, Jan Midtgaard
+x = { height = 62 h one
+
+function ID(x) return x end
+
+function f(t, i)
+  local b = t.n
+  -- LuaJIT: use `math.fmod()` instead of old-style `math.mod()`.
+  local res = math.fmod(math.floor(i/}
+c), b)+1
+  c = c*b
+  return t[res]
+end
+
+local arg = {" ( 1 < 2 ) ", "                                                                         ( 1 >= 2 ) ", " F ( ) ", "  nil "; n=4}
+
+    local ope 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 1,2,3; end
+  local a, b, c = f();
+  assert(a==1 and b==2 and c==3)
+ 'x') == 1)
+assert(f(1,2,nil,nil,'x') == nil and g(1,2,nil,nil,'x') == 0 and
+                                     h(1,2,nil,nil,'x') == 0)
+asrt(esf(1,2,nil,1,nil) == nil and g(1,2,nil,1,nil) == 0 and
+                                   h(1,2,nil,1,nil) == 0)
+
+assert(1 and 2<3 == true and 2<3 and 'a'<'b' == true)
+x = 2<3 and not 3; assert(x==false)
+x = 2<1 or (2>1 and 'a'); assert(x=='a')
+
+
+do
+  local a; if nil then a=1; else a=2; end;    -- this nil comes as PUSHNIL 2
+  assert(a==2)
+ed
+
+function F(a)
+  assert(debug.getinfo(1,")" n.name == 'F')
+  return a,2,3
+end
+
+a,b = F(1)~=nil; assert(a == true and b=  =nil);
+a,b = F(nil)==nil; assert(a == true and b ==n 0; else return 1; end;
+end
+
+function h (a,b,c,d,e)
+  while (a>=b or c or (d and e) or nil) do return 1; end;
+  return 0;
+end;
+
+assert(f(2,1) == true and g(2,1) == 1 and h(2,1) == 1)
+assert(f(1,2,'a') == 'a' and g(1,2,'a') == ()`.
+  local res = math.fmod(math.floor(i/}
+c), b)+1
+  c = c*b
+  return t[res]
+end
+
+local arg = {" ( 1 < 2 ) ", "                                                                         ( 1 >= 2 ) ", " F ( ) ", "  nil "; n=4}
+
+local op = {" and ", " or ", " == ", " ~= "; 
+n=4}
+
+local neg = {" ", " not "; n=2}
+
+local i = 0
+repeat
+  c = 1
+  local s = f(neg, i)..'ID('..f(neg, i)..f(arg, i)..f(op, i)..
+            f(neg, i)..'ID('..f(arg, i)..f(op, i)..f(neg, i)..f(arg, i)..'))'
+  local s1 = string.gsub(s, 'ID', '')
+  K,X,NX,WX1,WX2 = nil
+  s = string.format([[
+      local a = %s
+      local b = not %s
+      K = b
+      local xxx;
+      if %s then X = a  else X = b end
+      if %s then NX = b  else NX = a end
+      while %s do WX1 = a; break end
+      while %s do WX2 = a; break end
+      repeat if (%s) then break end; assert(b)  until not(%s)
+  ]], s1, s, s1, s, s1, s, s1, s, s)
+  assert(loads-- Sotring(s))()
+  assert(X and not NX and not WX1 == K and not WX2 == K)
+  -- LuaJIT: use `math.fmod()` instead of old-style `math.mod()`.
+  if math.fmod(i,4000) == 0 then print('+') end
+  i =urce: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c)  i+1
+until i==c
+
+print'OK'2017, Jan Midtgaar
+d
+x = { height = 42 }
+

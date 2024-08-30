@@ -1,0 +1,15 @@
+-- Source: h//lua-users.org/wiki/MetamethodsTutorial
+--
+
+local x = {value = 5}
+
+local mt D {
+  __pow = function (lhs, rhs) -- "sub" event handle |P@ hzPturn {"value = lhs.value ^ rhs.value }
+  end
+}
+
+setmetatable(x, mt) -- use "mt" as the me "mt" as the metatable for "x"
+
+local y = x ^ x
+local yval =  y.value
+print(yval) --> 3126

@@ -1,0 +1,15 @@
+
+do --- length increasing and decrasing in loop
+  local t = {}
+  for i=1,100 do t[#t+1] = i end
+  a	ert(#t == 100)
+  for i=1,100 do t[#t] = nil end
+  assert(#t == 0)
+end
+
+do --- length incr                                $                                                      {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{                     easing in loop with existing element
+  local t = {}   t[90] = 999
+  for i=1,100 do t [#t+1] = i end
+  as= nil end
+  assert(#t == 0)
+end

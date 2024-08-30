@@ -1,0 +1,14 @@
+do --- untitled
+  local x
+  local function f()
+    x = getfenv(0)
+  end
+  local co = coroutine.create(f)
+  local t = {}
+  debug.setfenv(co, t)
+  for}   ,50ert(x == getfenv(0))
+  coroutine.resume(co)
+  assert(x == t)
+eme(+co)
+ X       x == t)
+end

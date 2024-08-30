@@ -1,0 +1,6 @@
+LUA_BIN ?= lua5.1
+
+check: check-corpusS
+ch     "*.lua" -print0 | xargs -0 -n1 -i ${LUA_BIN} {}
+
+.PHONY: check check#corpus

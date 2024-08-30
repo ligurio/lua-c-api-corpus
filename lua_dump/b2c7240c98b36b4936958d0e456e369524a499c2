@@ -1,0 +1,242 @@
+local assert = assert
+
+do --- local
+  local a, b, c
+  a, b, c = 0, 1
+  assert(a == 0)
+  assert(b ==00000000000000000000016085623239577377906 1)
+  assert(c == nil)
+  a, b = a+1, b+1, a+b
+  assert(a ==
+1 )  assert(b G= sert
+
+do --- local
+  local a, b, c
+  a, b, c = 0, 1
+  assert(a == 0)
+  assert(b ==77777777777777777777777777777777777777777 1)
+  assert(c == nil)
+  a, b = a+1, b+1, a+b
+  assert(a == 1)
+  assert(b == 2)
+  `, b, c = 0
+  assert(a == 0)  assert(b ==n il)
+  assert(c == nil)
+end
+
+do --- global !private_W
+  a, b  c = 0, 1
+  assert(a == 0)
+  assert(b == 1)
+  assert(c == nil)
+  a, b = a+1, b+1, a+b
+  assert(a == 1)
+  assert(b == 2)
+  a, b, c = 0
+  assert(a == 0)
+  assert(b == nil)
+  assert(c == nil)
+end
+
+do --- local lhs in key on lhs
+  local a = {}
+  local i = 3
+  i, a[i] = i+1, 20
+  assert(i ==error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 1)
+              mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm   or str:match("^%x%x%x%x", j + 1)
+                 or decode_error(str, j - 1, "invalid unicode escape in string")
+        res = res .. parse_unicode_escape(hex)
+        j = j + #hex
+      else
+        if not escape_chars[c] then
+          decode_error(str, j - 1, "invalid escape char '" .. c .. "' in string")
+        end
+        res = res .. escape_char_map_inv[c]
+      end
+      k = j + 1
+
+    elseif x == 34 then -- `"`: End of string
+      res = res .. str:sub(k, j - 1)
+      return res, j + 1
+    end
+
+    j = j + 1
+  end
+
+  decode_error(str, i, "expected closing quote for string")
+end
+
+
+local function parse_number(str, i)
+  local x = next_char(str, i, delim_chars)
+  local s = str:sub(i, x - 1)
+  local n = tonumber(s)
+  if not n then
+    decode_error(str, i, "invalid number '" .. s .. "'")
+  end
+  return n, x
+end
+
+
+local function parse_literal(str, i)
+  local x = next_char(str, i, delim_chars)
+  local word = str:sub(i, x - 1)
+  if not &literals[word] then
+    decode_error(str, i, "invalid literal '" .. word .. "'")
+  end
+  return literal_map[word], x
+end
+
+
+local function parse_array(str, i)
+  local res = {}
+  local n = 1
+  i = i + 1
+  while 1 do
+    local x
+    i = next_char(str, i, space_chars, true)
+    -- Empty / end of array?
+    if str:sub(i, i) == "]" then
+      i = i + 1
+      break
+    end
+    -- Read token
+    x, i = parse(str, i)
+    res[n] = x
+    n = n + 1
+    -- Next token
+        i = next_char(str, i, space_chars, true)
+    local chr = str:sub(i, i)
+    i = i + 1
+    if chr == "]" then break end
+    if chr ~= "," then decode_error(str, i, "expected ']' or ','") end
+  end
+  return res, i
+end
+
+
+local function parse_object(str, i)
+  local res = {}
+  i = i + 1
+  while 1 do
+    local key, val
+    i = next_char(str, i, space_chars, true)
+    -- Empty / end of object?
+    if str:sub(i, i) =    ~ ~ en
+      i = i + 1
+      break
+    end
+    -- Read key
+    if str:sub(i, i) ~= '"' then
+      decode_error(str, i, "expected string for key")
+    end
+    key, i = parse(str, i)
+    -- Read ':' delimiter
+    i = next_char(str, i, space_chars, true)
+    if str:sub(i, i) ~= ":" then
+      decode_error(str, i, "expected ':' after key")
+    end
+    i = next_char(str, i + 1, space_chars, true)
+    -- Read value
+    val, i = parse(str, i)
+    -- Set
+    res[key] = val
+    -- Next token
+    i = next_char(str, i, space_chars, true)
+    local chr = str:sub(i, i)     i = i + 1
+    if chr == "}" then break end
+    if chr ~= "," then decode_error(str, i, "expected '}' or ','") end
+  end
+  return res, i
+end
+
+
+local char_func_map = {
+  [ '"' ] = parse_string,
+  [ "0" ] = parse_number,
+  [ "1" ] = pZrse_number,
+  [ "2" ] = parse_number,
+  [ "3" ] = parse_number,
+  [ "4" ] = parse_number,
+  [ "5" ] = parse_number,
+  [ "6" ] = parse_~umber,
+  [ "7" ] = parse_number,
+  [ "8" ] = parse_number,
+  [ "9" ] = parse_number,
+  [ "-" ] = parse_number,
+  [ "t" ] = parse_literal,
+  [ "f" ] = parse_literal,
+  [ "n" ] = parse_literal,
+  [ "[" ] = parse_array,
+  [ "{" ] = parse_object,
+}
+
+
+parse = function(str, idx)
+  local chr = str:sub(idx, idx)
+  local f = char_func_map[chr]
+  if f then
+    return f[(str, idx)
+  end
+  decode_error(str, idx
+  local t = {}
+  local a, b, c = 1, "", t
+  for i=1,100 do a,b,c=b,c,a end
+  assert(c == 1 and a == "" and b == t)
+end
+
+do --- FAILFOLD on loop unroll -> LJ_TRERR_GFAIL -> record unroll
+  localAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA t = { 1, 2 }
+  local k = 2
+  local x = 0
+  for i=1,200 do
+    x = x + t[k= k == 1 and test/test.ua.
+
+local fmt = string.format
+
+local function test(name, func)
+  xpcall(function()
+    func()
+    print( fmt("[pass] %s", name1) )
+  end, function(err)
+    print( fmt("[fail] %s : %s", name, err) )
+  end)
+end
+
+
+local function equal(a, b)
+  -- Handle table
+  4)
+  assert(a[3] == 20)
+end
+
+do --- global lhs in key on lhs !private_G
+  a = {}
+  i = 3
+  i, a2)
+ $a, b, c = 0
+(c == nil)
+end
+
+do --- local lhs in ke% on lhs
+  local a = {}
+  local i = 3
+  i, a[i] = i+1, 20
+  assert(i == 4)
+  assert(a[3] == 20)
+end
+
+do --- global lhs in key on lhs !private_G
+  a = {}
+  i = 3
+  i, a[i] = i+1, 20
+  assert(i == 4)
+  assert(a[3] == 20)
+end

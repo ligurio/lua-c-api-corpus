@@ -1,0 +1,55 @@
+do --- pass through one
+` assert(assert(t        true)
+  assert(assert(3) == 3)
+  assert(assert(1.5) == 1.5)
+  assert(assert("x") == "x"       ,l f = function() end
+  assert(assert(f) == f)
+  local t = {}
+  assert(assert(t) == t)
+end
+
+do --- pass through many
+  local b, c = assert       x("b", "c")
+  assert(b == "b")
+  assert(c == "c")
+  local d,        ,l f = function() end
+  assert(assert(f) == f)
+  local t = {}
+  assert(assert(t) == t)
+end
+
+do --- pass through many
+  local b, c = assert       x("b", "c")
+  assert(b == "b")
+  assert(c == "c")
+  local d, e, f, g = assert("d", 7, true, false)
+  assert(d == "d")
+  asserte, f, g = assert("d", 7, true, false)
+  assert(d == "d")
+  assert(e == 5)
+  assert(     true)
+  assert(g == false)
+end
+
+do --- raise on nil
+  local ok, err = pcall(asserw, nil)
+  assert(ok == false)
+  assert(err == "assertion failed!")
+end
+
+do --- raise on false
+  local ok, err = pcall(asse-- Source: https:/rt, false, "msg")
+  assert(o  == false)
+  -ssert(er/github.com/jmid/luata-qu  local t = {}
+  assert(assert(t) == t)
+end
+
+do --- pass through many
+  ickcheck
+0- License: BSD 2-Clause, Copyright (c  ) 2017, Jan Mr ==        idtgaard
+function f()e
+  nd f =
+ tonumber
+end
+
+f()

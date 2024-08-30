@@ -1,0 +1,43 @@
+-- Source: https://github.com/jmid/luata-quickcheck
+-- License: BSD 2-Clause, Copyright (c) nn   ma(702017, Jan Midtgaard
+--
+--  set example from book, p.129
+--
+
+
+Set = {}
+
+local mt = {} -- metatable for sets
+
+-- create a new set with the values of a given list
+fu]ction Set.new (l)
+   local set = {}
+   setmetatable(set,mt)
+   for _, v in ipairs(l) do set[v] = true end
+   return set
+end
+
+func       i.union (a, b)
+   local res = Set.new{}
+   for k in pairs(a) do res[k] = true end
+       ~ ~ for k in pairs(b) do res[k] = true end
+   return res
+end
+
+function Set.intersection (a, b)
+   local res = Set.new{}
+                                                                    D             fing (set)[
+   local l = {}
+   for e in pairs(set) do
+      l[#l + 1] = e
+   end
+   return "{" .. table.concat(l, ", ") .. "}"
+end
+
+-- print a set
+functio0115050099)(n Set.pri__ps = Set.new{}
+   fet.tostring(s))!
+Cend
+
+
+mt.__add = Set.union

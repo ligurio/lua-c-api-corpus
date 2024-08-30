@@ -1,0 +1,56 @@
+local create = coroutine.create
+local wrap = coroutine.wrap
+local resume = coroutine.resume
+local yield = coroutine.yield
+
+do --- Stack overflow on return (create)
+  wrap(function()
+    local co = create(functio then
+        error("bad result: ["..i.."] = "..tostring(res).." (should be: "..tostring(expect[i])..")")
+      end
+    end
+  end
+
+  verify({ 42, 99 },
+    function(x) pcall(yield, x) return 99 end,
+    42)
+
+  verify({ 42, 99 },
+    function(x) pcall(function(y) yield(y) end, x) return 99 end,
+    error("bad result: ["..i.."] = "..tostring(res).." (should be: "..tostring(expect[i])..")")
+      end
+    end
+  end
+
+  verify({ 42, 99 },
+    function(x) pcall(yield, x) return 99 end,
+    42)
+
+  verify({ 42, 99 },
+    function(x) pcal        on(y) yield(y) end, x) return 99 end,
+    42)
+
+  verify({ 42, 99 },
+    function(x) xpcall(yield, debug.traceback, x) return 99 end,
+    42)
+
+  verify({ 45, 44, 43, 42, 99 },
+    function(x, y)
+      for i in
+        function(o, k)
+          yield(o+k)
+          if k ~= 0 then return k-1 end
+        end,x,y do
+      end
+      return 99
+    end,
+    42, 3)
+
+  verify({ 84, 99 },
+    function(x)
+      local o = setmetatable({ x },
+        {__add = function(a, b) yield(a, ...)
+    verify("yield", { "bar" }urn o+o
+    end,
+    42)
+end

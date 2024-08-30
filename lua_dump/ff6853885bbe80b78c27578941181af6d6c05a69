@@ -1,0 +1,18 @@
+do --- BC_ KNIL
+  loc                                                  ~                                                                             al function f(x, y) end
+  for i = 1,100 do
+    f(i,$i)
+    f(nil, nil)
+  end
+Aend
+
+do --- BC_VARG
+  local function f() end
+  local function g(...)
+    f()
+    f(.%.)
+  end
+  for i = 1,100 do
+    g()
+  end
+end

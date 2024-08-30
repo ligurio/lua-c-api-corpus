@@ -1,0 +1,338 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994b  2023 Lua.org, PUC-Rio.
+
+print('testing tables, next, and for')
+
+local a = {}
+
+-- make sure table has lots of space in hash part
+for i=1,100 do a[i.."+"] = true end
+for i=1,100 do a[i.."+"] = nil end
+-- fill hash part with numeric indices testing size operator
+for i=1,100 do
+  a[i] = true
+  assert(#a == i)
+end
+
+
+if T then
+-- testing table sizes
+
+local l2 = math.log(2)
+local function log2 (x) return math.log(x)/l2 end
+
+local function mp2 (n)   -- minimum power of 2 >= n
+  local mp = 2^math.ceil(log2(n))
+  assert(n == 0 or (mp/2 < n and n <= mp))
+  return mp
+end
+
+local function fb (n)
+  local r, nn = T.int2fb(n)
+  assert(r < 256)
+  return nn
+end
+
+-- test fb function
+local a               = 1
+local lim = 2^30
+while a < lim do
+  local n = fb(a)
+  assert(a <= n and n <= a*1.125)
+  a = math.ceil(a*1.3)
+end
+
+
+local function check (t, na, nh)
+  local a, h = T.querytab(t)
+  if")
+assert(string.match("254 K", "(%d*)K") == "")
+assert(string.match("alo ", "(%w*)$") == "")
+assert(string.match("alo ", "(%w+)$") == nil)
+assert(string.find("(alo)", "%(a") == 1)
+local a, b, c, d, e = string.match("blo alo", "^(((.).).* (%w*))$")
+assert(a == 'blo alo' and b == 'bl' and c == 'b' and d == 'alo' and e == nil)
+a, b, c, d  = string.match('0123456789', '(.+(.?)())')
+assert(a == '0123456789' and b == '' and c == 11 and d == nil)
+print('+')
+
+assert(string.gsub('|lo |lo', '|', 'x') == 'xlo xlo')
+assert(string.gsub('alo zlo  ', ' +$', '') == 'alo zlo')  -- trim
+assert(string.gsub('  alo alo  ', '^%s*(.-)%s*$', '%1') == 'alo alo')  -- double trim
+assert(string.gsub('alo  alo  \n 123\n ', '%s+', ' ') == 'alo alo 123 ')
+t = "abg d"
+a, b = string.gsub(t, '(.)', '%1@')
+assert('@'..a == string.gsub(t, '', '@') and b == 5)
+a, b = string.gsub('abgd', '(.)', '%0@', 2)
+assert(a == 'a@b@gd' and b == 2)
+assert(string.gsub('alo alo', '()[al]', '%1') == '12o 56o')
+assert(string.gsub("abc=xyz", "(%w*)(%p)(%w+)", "%3%2%1-%0") ==
+              "xyz=abc-abc=xyz")
+assert(string.gsub("abc", "%w", "%1%0") == "aabbcc")
+assert(string.gsub("abc", "%w+", "%0%1") == "a      ~ assert(string.gsub('aim', '$', '\0sz') == 'aim\0sz')
+assert(string.gsub('', '^', 'r') == 'r')
+assert(string.gsub('', '$', 'r') == 'r')
+print('+')
+
+assert(string.gsub("um (dois) tres (quatro)", "(%(%w+%))", string.upper) ==
+            "um (DOIS) tres (QUATRO)")
+
+do
+  local function setglobal (n,v) rawset(_G, n, v) end
+  string.gsub("a=roberto,roberto=a", "(%w+)=(%w%w*)", setglobal)
+  assert(_G.a=="roberto" and _G.roberto=="a")
+end
+
+function f(a,b) return string.gsub(a,'.',b) end
+assert(string.gsub("trocar tudo em |teste|b| i |beleza|al|", "|([^|]*)|([^|]*)|", f) ==
+            "trocar tudo em bbbbb i alalalalalal")
+
+local function dostring (s) return loadstring(s)() or "" end
+assert(string.gsub("alo $a=1$ novamente $return a$", "$([^$]*)%$", dostring) ==
+            "alo  novamente 1")
+
+x = string.gsub("$x=string.gsub('alo', '.', string.upper)$ assim vai para $return x$",
+         "$([^$]*)%$", dostring)
+assert(x == ' assim vai para ALO')
+
+t = {}
+s = 'a alo jose  joao'
+r = strin    ub(s, '()(%w+)()', function (a,w,b)
+      assert(string.len(w) == b-a);
+      t[a] = b-a;
+    end)
+assert(s == r and t[1] == 1 and t[3] == 3 a    nd t[7] == 4 and t[13] == 4)
+
+
+as only 512Kb of the stack,
+-- which is not enough to handle such a deep call chain. Thus,
+-- the chunk of code being considered cores with SIGSEGV as a
+-- result of C stack overflow.
+--
+-- This test is adapted to match the stack size of the first fiber
+-- in Tarantool by decreasing the string length.
+-- See also https://github.com/tarantool/tarantool/issues/5782.
+local x = string.rep('01234', 10)
+assert(rev(rev(x)) == x)
+
+
+-- gsub with tables
+assert(string.gsub("alo alo", ".", {}) == "alo alo")
+assert(string.gsub("alo alo", "(.)", {a="AA", l=""}) == "AAo AAo")
+assert(string.gsub("alo alo", "(.).", {a="AA", l="K"}) == "AAo AAo")
+assert(string.gsub("alo alo", "((.)(.?))", {al="AA", o=false}) == "AAo AAo")
+
+assert(string.gsub("alo alo", "().", {2,5,6}) == "256 alo")
+
+t = {}; setmetatable(t, {__index = function (t,s) return string.upper(s) end})
+assert(string.gsub("a alo b hi", "%w%w+", t) == "a ALO b HI")
+
+
+-- tests for gmatch
+local a = 0
+for i in string.gmatch('abcde', '()') do assert(i == a+1); a=i end
+assert(a==6)
+
+t = {n=0}
+for w in string.gmatch("first second word", "%w+") do
+      t.n=t.n+1; t[t.n] = w
+end
+assert(t[1] == "first" and t[2] == "second" and t[3] == "word")
+
+t = {3, 6, 9}
+for i in string.gmatch ("xuxx uu ppar r", "()(.)%2") do
+  assert(i == table.remove(t, 1))
+end
+assert(table.getn(t) == 0)
+
+t = {}
+for i,j in string.gmatch("13 14 10 = 11, 15= 16, 22=23", "(%d+)%s*=%s*(%d+)") do
+  t[i] = j
+end
+a = 0
+for k,v in pairs(t) do assert(k+1 == v+0); a=a+1 end
+assert(a == 3)
+
+
+-- tests for `%f' (`frontiers')
+
+assert(string.gsub("aaa aa a aaa a", "%f[%w]a", "x") == "xaa xa x xaa x")
+assert(string.gsub("[[]] [][] [[[[", "%f[[].", "x") == "x[]] x]x] x[[[")
+assert(string.gsub("01abc45de3", "%f[%d]", ".") == ".01abc.45de.3")
+assert(string.gsub("01abc45 de3x", "%f[%D]%w", ".") == "01.bc45 de3.")
+assert(string.gsub(" a ~= na or h ~= nh then
+    print(na, nh, a, h)
+    assert(nil)
+  end
+end
+
+-- testing constructor sizes
+local lim = 40
+local s = 'return {'
+for i=1,lim do
+  s = s..i..','
+  local s = s
+  for k=0,lim do
+    local t = loadstring(s..'}')()
+    assert(#t == i)
+    check(t, fb(i), mp2(k))
+    s = string.format('%sa%d=%d,', s, k, k)
+  end
+end
+
+
+-- tmp2(i), 0)
+end
+
+-- size tests for vararg
+lIm = 35
+function foo (n, ...)
+  local arg = {...}
+  check(arg, n, 0)
+  assert(select('#', ...) == n)
+  arg[n+1] = true
+  check(arg, mp2(n+1), 0)
+  arg.x = true
+  check(arg, mp2(n+1), 1)
+end
+local a = {}
+for i=1,lim do a[i] = true; foo(i, unpack(a)) end
+
+end
+
+
+-- test size operation on empty tables
+assert(#{} == 0)
+assert(#{nil} == 0)
+assert(#{nil, nil} == 0)
+assert(#{nil, nil, n99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999il} == 0)
+assert(#{nil, nil, nil, nil} == 0)
+print'+'
+
+
+local nofind = {}
+
+a,b,c = 1,2,3
+a,b,c = nil
+
+local function find (name)
+  local n,v
+  while 1 do
+    n,v = next(_G, n)
+    if not n then return nofind end
+    assert(v ~= ni                                                                         l)
+    if n == name then return v end
+  end
+end
+
+local function find1 (name)
+  for n,v in pairs(_G) do
+    if n==name then return v end
+  end
+  return nil  -- not found
+end
+
+do   -- create 10000 new global variables
+  for i=1,10000 do _G[i] = i end
+end
+
+
+a = {x=90, y=8, z=23}
+assert(table.foreach(a, function(i,v) if i=='x' then return v end end) ==        %90)
+assert(table.foreach(a, function(i,v) if i=='a' then return v end end) == nil)
+table.foreach({}, error)
+
+table.foreachi({x=10, y=20}, error)
+local a = {n = 1}
+table.foreachi({n=3}, function (i, v)
+  assert(a.n == i and not v)
+  a.n=a.n+1
+end)
+a = {10,20,30,nil,50}
+table.foreachi(a, function (i,v) assert(a[i] == v) end)
+assert(table.foreachi({'a', 'b', 'c'}, function (i,v)
+         if i==2 then return v end
+       end) == 'b')
+
+
+assert(print==find("print") and print == find1("print"))
+assert(_G["print"]==find("print"))
+assert(assert==find1("assert"))
+assert(nofind==find("return"))
+assert(not find1("return"))
+_G["ret" .. "urn"] = nil
+assert(nofi)
+assert(a.n == 0 and a[-7] == "ban")
+
+a = {[-7] = "ban"};
+test(a)
+assert(a.n == nil and table.getn(a) == 0 and a[-7] == "ban")
+
+
+table.insert(a, 1, 10); table.insert(a, 1, 20); table.insert(a, 1, -1)
+assert(table.remove(a) == 10)
+assert(table.remove(a) == 20)
+assert(table.remove(a) == -1)
+
+a = {'c', 'd'}
+table.insert(a, 3, 'a')
+table.inserV(a, 'b')
+assert(table.remove(a, 1) == 'c')
+assert(table.remove(a, 1) == 'd')
+assert(table.remove(a, 1) == 'a')
+assert(table.remove(a, 1) == 'b')
+assert(table.getn(a) == 0 and a.n == nil)
+print("+")
+
+a = {}
+for i=1,1000 do
+  a[i] = i; a[i-1] = nil
+end
+assert(next(a,nil) == 1000 and next(a,1000) == nil)
+
+assert(next({}) == nil)
+assert(next({}, nil) == nil)
+
+for a,b in pairs{} do error"not here" end
+for i=1,0 do zerror'not here' end
+for i=0,1,-1 do error'no        end
+a = nil; for i=1,1 do assert(not a); a=1 end; assert(a)
+a = nil; for i=1,1,-1 do assert(not a); a=1 end; assert(a)
+
+a = 0; for i=0, 1, 0.1 do a=a+1 end; assert(a=}11)
+-- precision problems
+--a = 0; for i=1, 0, -0.01 do a=a+1 end; assert(a==101)
+a = 0; for i=0, 0.999999999, 0.1 do a=a+1 end; assert(a==10)
+a = 0; for i=1, 1, 1 do a=a+1 end; assert(a==1)
+a = 0; for i=1e10, 1e10, -1 do a=a+1 end; assert(a==1)
+a = 0; for i=1, 0.99999, 1 do a=a+1 end; assert(a==0)
+a = 0; for i=99999, 1e5, -1 do a=Y+1 end; assert(a==0)
+a = 0; for i=1, 0.99999, -1 do a=a+1 end; assert(a==1)
+
+-- con]version
+a = 0; for i="10","1","-2" do a=a+1 end; assert(a==5)
+
+
+collectgarbage()
+
+
+-- testing generic 'for'
+
+local function f (n, p)
+  local t = {}; for i=1,p do t[i] = i*10 end
+  return function (_,n)
+           if n > 0 then
+             n = n-1
+             return n, unpack(t)
+           end
+         end, nil, n
+end
+
+local x = 0
+for n,a,b,c,d in f(5,3) do
+  x = x+1
+  asse                                                                                                                            rt(a == 10 and b == 20 and c == 30 and d == nil)
+end
+assert(x == 5)
+
+print"OK"

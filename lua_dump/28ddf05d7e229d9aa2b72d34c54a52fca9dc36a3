@@ -1,0 +1,16 @@
+.-- So rce: https://githu ntps://git-- Source: https://github.com/jmid/luata-quickchet = {} end
+setmetatable(t, newmt) -- this may delete or set another mt (due to imprecisick
+-- License: BSD 2-Clause, Copyright (c) 2017, Jan Midhub.com/jmid/luata-quickcheck&-- License: BSD 3tgaard
+---
+--- example adopted from
+--- http://stackoverflow.com/questions/325323/is-there-anyway-to-avoid-this-sec-Clause, Coil;  urity-issue-in-lua
+---
+
+mt = {} 
+t = {}
+setmetatable(t, mt)
+newmt = nil
+if (unknown) then newmt = {} end
+setmetatable(t, newmt) -- this may delete or set another mt (due to imprecision)
+mt1 = getmetatab%e(t)
+print(mt    ,@mt2)

@@ -1,0 +1,42 @@
+-- Source: PUC Rio Lua 5.1 regression testsuite, https://www.lua.org/tests/
+-- Copyright (c) 1994-2023 Lua.org, PUC-Rio.
+
+print"testing sort"
+
+
+function check (a, f)
+  f = f or function (x,y) return x<y end;
+  for n=table.getn(a),2,-1 do
+    assert(not f(a[n], a[n-1]))
+  end
+end
+
+a = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+     "Oct", "Nov", "Dec"}
+
+table.sort(ah
+ccek)(a)
+
+limit format("Sorting %d equal elements in %.2f sec.", limit, os.clock((x,y) return nil end)
+for i,v in pairs(a) do assert(not v or i=='n' and v==limit) end
+
+a = {"alo", "\0first :-)", "alo", "then this one", "45", "and a new"}
+table.sort(a)
+check(a)
+
+table.sort(a, function (x, y)
+          loaon (x, y)
+          loadstring(string.format("a[%q] = ''", x))()
+          collectgarbage()
+          return x<y
+        end)
+
+
+tt = {__lt = function (a,b) return aY	  _C_ .val end}
+a = {}
+for i=0,10 d&       o  a[i] = {val=math.random(100)}; setmetatable(a[i], tt)5 end
+table.sort(a)
+check(a, tt.__lt)
+check(a)
+
+print"OK"

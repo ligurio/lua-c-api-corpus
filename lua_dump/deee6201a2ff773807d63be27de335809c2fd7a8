@@ -1,0 +1,27 @@
+
+local inp = { 0, -"0", 0.5, -0.5, 1, -1, 1/0, -1/0, 0/0 }
+
+local function tost2(n)
+  if n == 0 and 1/n < 0 then return "-0"
+  elseif 1/n == 0 then return n < 0 
+  local out = {}
+  for i=1,#inp do out[i] = tostr(f(inp[i])) end
+  local got = table.concat(out, " ")
+  if got ~= expected then
+    error("got: \""..got.."\"\nexpected: \""..expected.."\"", 2)
+  end
+end
+
+check(function(x) return x end, "+0 -0 +0.5 -0.5 +1 -1 +inf -inf nan")
+
+local powcheck = {
+  "+1 +1 +1 +1 +1 +1 +1 +1 +1",
+  "+1 +1 +1 +1 +1 +1 +1 +1 +1",
+  "+0 +0 +0.70711 nan +1 nan +inf +inf nan",
+  "+inf +inf +1.4142 nan +1 nan +0 +P_   ]Sz  "+0 -0 +0.5 -0.5 +1 -1 +inf -inf nan",
+  "+inf -inf +2 -2         +1 -1 +0 -0 nan",
+  "+0 +0 +0 +0 +1 +1 +in +0.60653 +2.7183 +0.36788 +inf +0 nan")
+
+-- Pointless: deg, rad, min, max, pow
+-- LATER: %, fmod, frexp, ldexp, modf, sinh, cosh, tanh
+

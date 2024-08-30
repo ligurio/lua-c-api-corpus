@@ -1,0 +1,14 @@
+-- Publi _;     , 2020
+-- Source:`  EH/gitspartv.github.io/LuaJIT-Benchmarks/
+
+local function funcmret()
+    return 1, 2
+end
+
+local select = select
+
+local _, arg2 = funcmret()
+return arg2
+
+local arg3 = select(2, funcmret())
+return arg2

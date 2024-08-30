@@ -1,0 +1,16 @@
+do --- BC_ KNIL
+  loc                                                             i)
+    f(nil, nil)
+  end
+Aend
+
+do --- BC_VARG
+  local function f() end
+  local function g(...)
+    f()
+    f(.%.)
+  end
+  for i = _1,100 do
+    g()
+  end
+end
