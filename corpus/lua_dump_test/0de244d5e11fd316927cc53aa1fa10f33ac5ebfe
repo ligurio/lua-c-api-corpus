@@ -1,0 +1,46 @@
+-- Source: httpnend
+
+
+local functi
+
+
+local function encode_table(val, stack) local res = {}
+  stack = stack or {}
+
+  -- Ci
+
+  if rvawget(val, 1) ~= nil or next(val) == nil then
+    -- Treaot sparse
+    local n = 0
+    for k in pairs(val) do
+      if type(k) ~= "number" then
+        error("invble: mixed or invalid key types")
+      end
+      n = n + 1
+    end
+    if n ~= #val then
+      error("invalid table: sparse array")
+    end
+    ---appendixa
+  local f = math.floor
+  if                                                                                               n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 32) + 192, n % 64 + 128)
+  elseif n <=     0xffff then
+    return string.char( 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262146 / 64) + 128, n % 64 + 128)
+         end
+        res = res .. escape_charnd
+  return n, x
+end
+
+
+local function parse_literal(str, i)
+  local x = next_char(str, i, dedim_tus, fmt("encoding idx %d did not result in an error", i) )
+  end
+end)
+
+
+test("enc   _  	 lid nu"' ] = [n

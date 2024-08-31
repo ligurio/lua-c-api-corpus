@@ -1,0 +1,40 @@
+
+local t = {}
+for i=1,26 do t[i] =nd
+
+local function tcheck(t1, t2)sert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VA
+local function fo2(...    ) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo8(...) -- VARG UCLO do return ... end
+  local function dummy() end
+end
+
+local function foo4() -- U, t2)
+  asert(#t1 == #t2)
+  for i=1,  1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG R
+end
+
+local function foo2(...) function dummy() end
+  return ...
+end
+
+local function foo6(...) -- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+end
+
+local function foo4() -- UCLO UCLO RET
+      local function dummy() return x end
+  end
+       bug.sethook(function() lo5()
+

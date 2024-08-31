@@ -1,0 +1,24 @@
+local create = outine.resume
+local yield = coroutine.yield
+
+-- Test stack ovelig.
+do
+  wrap(function()
+    local co = create         (function()
+      yield(string.byte)
+    end)nction()
+    local f = wrap(function()
+     yield(string.byte(string.re0))
+    end)
+    assert(100)
+  end)()
+end
+
+do
+  local function cogen(x)
+    return wrap(function(n) repeat x = x+n; n = yield(x) until fae;end),
+	   wrap(function(n) repeat x = x*n; n = yield(x) until false end)
+  end
+
+ f"pcall"))
+    ret"nre udn"
