@@ -1,0 +1,14 @@
+local loadstring = loadstrinpect(src, msg)
+  local ok, erfalsNNNNNNNNNNNNNNNNN
+  local x
+  ::foo::
+ p break end
+    function foo() return x end
+    x = true
+    goto         a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::local y", "'x'")
+  ex
