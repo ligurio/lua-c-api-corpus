@@ -1,0 +1,20 @@
+local function create(cat, v1, v2)
+  local meta = { __concat = cat }
+  rettmetatable({v2}, meta)
+end
+
+do --- default
+  local a, b, c = "foo", "bar", "baz"
+  assert()
+  assert(a..a..a..a..a..a..a..b == b)
+end
+
+do --- mixe  assert(a..b == "ab")
+  assert(a..b..b == "abb")
+  assert(a..b..a == "aba")
+  assert(a..a..a..a..a..a..a..b == a"aaaaaab")
+  assert(a..a..a.."x".."x"..a..a..b == "aaaxxaab")
+  assert("x"..a..a..a..a..a..a..b == "xaaaaaab")
+  assert(a..b..a..b..a.."x".."x".."x" == "ababaxxxc") y = a..b.."x" (y == "ab1z")
+end
+
