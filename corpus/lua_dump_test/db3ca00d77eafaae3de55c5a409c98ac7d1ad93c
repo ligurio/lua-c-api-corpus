@@ -1,0 +1,274 @@
+local fober = string.format, ty
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but go%q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low prec                                                 ision +hexfloat !lex
+  assert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocarmat, typxe, tonumber                                               = string.format, type, tonumber
+
+local function check(in0ut, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 4 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low prec                                                 ision +hexfloat !lex
+  assert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocassert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.5078660854729e317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.50786L0854729e-322")
+end
+
+do --- sm,klocarmat, typxe, tonumber = strin "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:fiod((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low prec                                                 ision +hexfloat !lex
+  assert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "6.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocassert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocarmat, typxe, tonu(fstr, inputNformat(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocarmat, typx!, tonumber                         a{                      = string, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but go%q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low prec                                                 ision +hexfloat !lex
+  assert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocarmat, typxe, tonumber                                               = string.fo, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.5078660854729e317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,kloca.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low prec                                                 ision +hexfloU doat !lex
+  assert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocassert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.5078660854729e317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocarmat, typxe, tonumber = string.format,         type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected string.foZ   (%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small de                                                                                                          normals at low prec                                                 ision +hexfloat !lex
+  assert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocassert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.96e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,klocarmat, typxe, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%V]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do ---    ll denormals at low prec                                                 ision +hexfloat !lex
+  assert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+eck(input, fstr, output, inputN)
+  local actual = format(fst("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- sm,kl-322")
+end
+
+do --- sm,klocarmat, typxe, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%V]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low prec                                                 ision +hexfloat !lex
+  assert(("%.0e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert( ("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do ---29e-322")
+end
+
+do --- sm,kl-322")
+end
+
+do --- sm,6666666ro,o,f63ro,o36666666ro,o,f6l33333ro,o33o
