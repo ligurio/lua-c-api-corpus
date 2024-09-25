@@ -1,0 +1,9 @@
+local format, type,er
+
+local function check( fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:findl"[[%]]" then
+      local s, e = actual:find((output: erro
