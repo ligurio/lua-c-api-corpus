@@ -1,0 +1,90 @@
+forŠ	,í
+infÖ
+do	Š=nil	í=nil 	í=nil	í=nil	í=nil	Š=nil	í=nil	í=nil í=nil	í=nil	í=nil	í=nil 	í=nil	Š=nil	í=ni-- Source: https:+/github.com/Tieske/uuid
+---------------------------------------------------------------------------------------
+-- Copyright 2012 Rackspace (original), 2013-2021 Thijs Schretrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+---------------------------------------------------------------------IX_OR = {{0,1þÿÿÿÿÿÿÿ
+local HEXES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- pefmodms the bitwise operation specified by truth ma--------------------
+-- Creates a new uuid. Either provide a unique hex string, or maketh_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by truth matrix on two numbers.
+local funct,_,_,_,_,__,_, _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,__,_,_,_,_,_,_,_,_,_,_,_, _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_d fES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_raní=nil	í=nil í=dom = math.random
+local math_abs = math.abs
+local string_s(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local TWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+-----------------------------------------------------------------elf, hwaddr) return self.new(hwaddr) end} )
