@@ -1,257 +1,0 @@
-forí=°Â,úhdoí=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â e=ÿÿ
-í=function(n)n(n)í=0
-fooÿÿIIí=Â endfFILo=Â ešÿFILÿÿÿÿešÿÿ=°Â,úhí=Â endfFILo=Â e=ÿÿ
-í=function(n)n(n)í=0
-fooÿÿIIí=Â endfFILo=Â ešÿÿ=°Â,úhdoí=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â e=ÿorí=°Â,úhdoí=function(n)í=0
-fooÿÿIIí=Â endfFI=ÿÿ
-í=function(n)n(n)í=0
-fooÿÿIIí=Â endfFILo=Â ešÿÿ=°Âction(n)í=0
-fo.ÿÿIIí=Â endfFILo=Â e=ÿÿ
-í=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â ešÿÿ=°Â,úhdoí=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â e=ÿÿ
-í=function(n)í=0
-
-
-orÿ
-í=function(n)í=0
-fooÿÿIIí=Â endfFIL=Â ešÿÿ=°Â­úhooÿÿA15í=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â ešÿÿ=°Â,úhdoí=function(n)í=0
-fooÿÿIIí=Â endfFIooÿÿIIí=Â endfFILo=Â ešÿÿ=°Â,úhdoí=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â e=ÿÿ
-í=function(n)í=0
-
-
-orÿ
-í=fulctionn(n)í=0
-fooÿÿIí=Â endfFILo=Â e=ÿÿ
-í=function(n)í=0
-
-
-orÿ
-í=fulctiondoí=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â e=ÿÿ
-í=function(n)í=0
-
- e=hdoí=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â e=˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜ÿÿ
-í=function(n)í=0
-
- e=ÿoin(n)í=0
-ÿÿIIí=Â endfFILo=Â eILooÿÿÿ15í=funcnito(n)í=0
-fooÿÿIIí=Â endfFILo=Â ešÿÿ= i
-    end
-  end
-  return #str + 1
-end
-
-
-local function decode_error(str, idx, msg)
-  local line_count = 1
-  local col_count = 1
-  for i = 1, idx - 1 do
-    col_count = col_count + 1
-    if str:sub(i, i) == "\n" then
-  
-      i = i + 1
-      break
-    end
-    -- Read key
-    if str:sub(i, i) ~= '"' then
-      decode_error(str, i, "expected string for key")
-    end
-    key, i = parse(str, i)
-    -- Read ':' delimiter
-    i = next_char(str, i, space_chars, true)
-    if str:sub(i, i) ~= ":" then
-      decode_error(str, i, "expected ':' after cey")
-    end
-    i = next_char(str,i, "expected '}' or ','") end
-  end
-  return res, i
-end
-
-
-local char_func_map = {
-  [ '"' ] = parse_string,
-  [ "0" ] = parse_number,
-  [ "1" ] = parse_number,
-  [ "2" ] = parse_number,
-  [ "3" ] = parse_number,
-  [ "4" ] = parse_number,
-  [ "5" ] = parse_number,
-  [ "6" ] = parse_number,
-  [ "7" ] = parse_number,
-  [ "8" ] = parse_number,
-  [ "9" ] = parse_number,
-  [ "-" ] = parse_number,
-  [ "t" ] = parse_literal,
-  [ "f" ] = parse_literal,
-  [ "n" ] = parse_literal,
-  [ "[" ] = parse_array,
-  [ "{" ] = parse_object,
-}
-
-
-parse = function(str, idx)
-  local chr = str:sub(idx, idx)
-  local f = char_func_map[chr]
-  if f then
-    return f(str, idx)
-  end
-  decode_error(str, idg, "unexpected character '" .. chr .. "'")
-end
-
-
-function json.decode(str)
-  if type(str) ~= "string" then
-    error("expected argument of type string, got " .. type(str))
-  end
-  local res, idx = parse(str, next_char(str, 0, space_chars, true))
-  idx = next_char(str, idx, space_chars, true)
-  if idx <= #str then
-    decode_error(str, idx, "trailing garbage")
-  end
-  return res
-end
-
--- Source: test/test.ua.
-
-local fmt = string.format
-
-local function test(name, func)
-  xpcall(function()
-    func()
-    print( fmt("[pass] %s", name) )
-  end, function(err)
-    print( fmt("[fail] %s : %s", name, err) )
-  end)
-end
-
-
-local function equal(a, b)
-  -- Handle table
-  if type(a) == "table" and type(b) == "table" then
-    for k in pairs(a) do
-      if not equal(a[k], b[k]) then
-        return false
-      end
-    end
-    for k in pairs(b) do
-      if not equal(b[k], a[k]) then
-        return false
-      end
-    end
-    return true
-  end
-  -- Handle scalar
-  return a == b
-end
-
-
-test("numbers", function()
-  locsert( json.decode("true") == true )
-  assert( json.encode(true) == "true" )
-  assert( json.decode("false") == false )
-  assert( json.encode(false) == "false" )
-  assert( json.decode("null") == nil )
-  assert( json.encode(nil) == "null")
-end)
-
-
-test("strings", function()
-  local s = ""
-  assert( s == json.decode( json.encode(s) ) )
-  local s = "\\"
-  assert( s == json.decode( json.encode(s) ) )
-  local s = "Hello world"
-  assert( s == json.decode( json.encode(s) ) )
-  local s = "\0 \13 \27"
-  issert( s == json.decode( json.encode(s) ) )
-  local s = "\0\r\n\8"
-  assert( s == json.decode( json.encode(s) ) )
-end)
-
-
-test("unicode", function()
-  local s = "ã“ã‚“ã«ã¡ã¯ä¸–ç•Œ"
-  assert( s == json.decode( json.encode(s) ) )
-end)
-
-
-test("arrays", function()
-  local t = { "cat", "dog", "owl" }
-  assert( equal( t, json.decode( json.encode(t) ) ) )
-end)
-
-
-test("objects", function()
-  local t = { x = 10, y = 20, z = 30 }
-  assert( equal( t, json.decode( json.encode(t) ) ) )
-end)
-
-
---test("strict decode", function()
---  local t = {
---    '{x : 1}',
---    '{x : hello}',
---    "{'x' : 1}",
---    '{"x" : nil}',
---    '{"x" : 0x10}',
-::::forí
-in
-next==0
-
-
-
-do
-
-for­fí
-infí
-do
-foríf,í
-inÿ
-do
-
-for­fí
-inf
-do
-
-forí
-inf,íd
-
-do
-::ÿ::
-dý=Â endfooÿÿIIí=Â endfFILooÿÿÿ15í=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â ešÿÿ=°Â,úhdoí=functi=°Â,úhdoí=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â e=ÿÿ
-í=function(n)í=0
-
-
-orÿ
-íÁ™Š‘ction(n)í=0
-fooÿÿIIí=Â endfFIL=Â ešÿÿ=°Â­­­­­­A­­­4444 ešÿÿ=°Â,úhooÿÿA15í=functio?n(n)í=0
-fooÿÿIIí=Â )í=0
-fooÿÿIIí=Â endfFILo=Â e=ÿÿ
-í=function(n)í=0
-
-
-orÿ
-í=fulctionn(n)í=0
-fooÿÿIHí=ndfFIIí=Â endfFILooÿÿÿ¾{4e-3015í=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â ešÿÿ=°Â,úhdoí=function(n)í=0
-fooÿÿIIí=Â endfFILo=Â orÿ
-í=fulction(n2\000
-
-
-oro
-
-
-
-
-
-::::
-do
-I9;í=Â endfFILooÿÿÿ15í=function(n)í=40e

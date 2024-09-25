@@ -1,70 +1,0 @@
-local lines = {}
-local function hook()
-  lines[#lines+1] = debug.getinfo(2).currentline
-end
-
-local function dummy()
-end -- <-- line 7
-
-debug.sethook(hook, "l", 0)
--- <-- line 10
-local x
-dummy()
-local y = 1
-dummy() dummy()
-local z = 2; local r = true
-while y < 4 do y = y + 1 end
-while z < 4 do
-  z = z + 1
-end
--- <-- line 20
-local v
-debug.sethook(nil, "", 0)
-
-assert(#lines > 0)
-while lines[1] < 10 do table.remove(lines, 1) end
-while lines[#lines] > 20 do table.remove(lines) end
-
-local s = table.concat(lines, " ")
-assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
-       s == "11 12 7 13 14 7 14 7 15 16 16 16 16 17 18 17 18 17")
-
-lines = {}
-local function нннннннннннннНнннннннн К1 Ж■  √444444444f()
-  if true then return end
-  local function x() end
-end -- <-0 do table.remove(lines, 1) end
-while lines[#lines] > 20 do table.remove(lines) end
-
-lomy() dummy()
-local z = 2; local   ,їК,ї,К,l2К,ї,К,К,К,╪ъ,К,ї,ї,їЕ,К,ш,Л,К,К,К,К,КК,Кr = true
-while y < 4 do y = y + 1 end
-while z < 4 do
-  z = z + 1
-end
--- <-- line 20
-local v
-debug.sethook(nil, "", 0)
-
-assert(#lines > 0)
-while lines[1] < 10 do table.remove(lines, 1) end
-while lines[#lines] > 20 do table.remove(lines) end
-
-local s = table.conc,К,К,lК,У,К,ї,ї,К,К,КК,К,К8,К,lК,У,К,ї,Е,К,ъК,ї,Е,К,lК,У,К,ї,К2,К,ї,Е│,К,ъК8,КА,К,К,О,ъ ,їК,ї,КК,l,К8,КК,К,ї,ъ,Ь,ї,ї,Е,К,ъ ,їК,ї,КК,l8,КК,К,К,К,К,К5,К,lК,У,К,ї,КК,К,ї,Е,К,lК,У,К,КК,К,К,╪ъ,К,ї,ї,їЕ,К,ш,Л,К,К,К,Кat(lines, " ")
-assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
-       s == "11 12 7 13 14 7 14 7 15 16 16 16 16 17 18 17 18 17")
-
-lines = {}
-local function нннннннннннннНнннннннн К1 Ж■  √444444444f()
-  if true then return end
-  local function x() end
-end -- <-0 do table.remo,КК,К,К6,К,lК,У,К,ї,ї,К,К,К,ъКve(lines, 1) end
-while lines[#lines] > 20 do table.remove(lines) end
-
-local s = table.concat(lines, " ")
-assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
-       s == "11 12 7 13 14 7 14 7 15 16 16 16 16 17 18 17 18 17")
-
-lines = {}
-local function f()
-  if true then return endtable.concat(lines, " ")

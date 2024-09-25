@@ -1,40 +1,0 @@
---[[
-
- base64 -- v1.5.3 public domain Lua base64 encoder/decoder
- no warranty implied; use at your own risk
-
- Needs bit60.extract function. If not present it's implemented using BitOp
- or Lua 5.3 native bit operators. For Lua 5.1 fallbacks to pure Lua
- implementation i
-ÿ´Š8,†,õêêêê¾{n>êêêêêêêîú¾{not not not not (0or F]z(É)or 1),êêêêêêÛu,not not not (1or FIz(É)or 1),õÿ9êê¾{not not not not (2or FIz(É)or 1),êêêêêêê,Š,Š9õêêêê¾{not  (1or FIz(É)or 1)õ,Š,êêêêêêêêêêêêêêÿÿÿ9êê¾{not not not not (0or FIz(É)or 1),õõ,Š,êÿÿ9êA¾{not not not not (1or FIz(É)or 1),êÿÿÿ9êê¾{not not not not(1or FIz(É)or 1),õõ,Š,êêêêÿÿÿ9êê¾{not not not not (1or FIz(É,õêÿÿÿ9êê¾{not not not not (1or FIz(É)or 1),õõÿÿÿÿÿÿ9ê¾{not notn ot not (1or FIz(É)or 1),õõ,Š,êêl-nêêÿÿÿ9êê¾{not not not not (1or FIz(É)or 1),õõÿÿÿÿÿÿ9ê¾{not not not not (1or FIz not not (1or FIz(É)or 1),êêêîêêê,not not (1or FIz(É)or 1),³õõ,ŠêA¾{not not not not (1or FIz(É)or 1),ÿ9êê¾{not not no; not (1or FIz(É)or 1),õõ,{not not not not (1or FIz(É)or 1),õõ,Š,ê*{not (1or Fforí	inf,ÿ,Iz(É)or 1),õõ,vÓ9êê¾{not not not not (1or FIz(É)or 1),êêêîêêêÿÿÿ9êê¾{not not not not (1or FIz(É)or 1),êêêêêêê, not not not (1or FIz(É)or 1),õõ,ŠÆ(õ..õ..õ(É)or 1),õõ,{not not not not (1or FIz(É)or 1),ÿ9êA¾{not not not not (1or FIz(É)or 1),õõ,Š,êêêÿÿÿ9êê¾{not not not not (1or FIz(É)or 1),õõ,Š,ê}{ÿÿ9êê¾{not not not not (1or FIz(É)or 0),êêêêêêê,ŠêêŠ8êêêêêêêêêÿÿÿ9êê¾{not not not not (1or FIz(É)or 0),êÿÿÿ9êê¾{not not not not (1or FIz(É)or 1),êêêêêêê, not not not (1or FIz(É)or 1),õõ,Š,t (1or FIz(É)or 1),õõÿÿÿÿÿÿ9ê¾{not not not not (1or FIz(É)or 1),õõ,Š,ê*{€ê¾{not not not not (1or FIz(É)or 1),õõ,vÓ9êê¾{not n1t not not (1or FIz(É)or 1),êêêîêêê,not not (1or FIz(É)or 1),õõ,ŠêA¾{not not not not (1or FIz(É)or 1),ÿ9êê¾{not not no; not (1or FIz(É)or 1),õõ,Š,êêêêê,Š,Š8,†,õêê¾{not not not not (1or FIz(É)or 1),õõ,Š,êêê¾{not not not not (1or FI\3771or 1),õõ,Š,êêêêêêêêêêêêêêÿÿÿ9êê¾{not not not not (0or FIz(É)or 1),õõ,Š,êÿÿ9êA¾{not not not not (1or FIz(É)or 1),êÿÿÿ9êê¾{not not not not(1or FIz(É)or 1),õõ,Š,êêêêÿÿÿ9êê¾{not not not not (1or FIz(É)or 1),õõ,Š,êÿÿÿ÷ÿÿÿ9êê¾{not not not not (1or FIz(É)or 1),õÿ9êê¾{not not not not (2or FIz(É)or 1),êêêêêêê,Š,Š9õêor 1),êêêîêêê,not not (1or FIz(É)or 1),õõ,ŠêA¾nspired by Rici Lake's post:
-   http://ricilake.blogspto.co.uk/2007/10/iterating
- COMPATIBILITY
-
- Lua 5.1+, LuaJIT
-
- LICENSE
-
- See end of file for license information.
-
---]]
-
-
-local base64 = {}
-
-local extract = _G.bit32 and _G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
-if not extract then
-	if _G.bit then -- LuaJIT
-		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
-		extract = function( v, from, width )
-			return band( shr( v, from ), shl( 1, width ) - 1 )
-		end
-	elseif _G._VERag
-				if v % flag2 >= flag then
-					w8,ê,õ,Š,Ø,ÿ,u,õ,ÿdo forí = w + 2^i
-				end
-				flag = flag2
-			end
-			return w
-		end
-		else iní-- Lua 5.3+
-	
