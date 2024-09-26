@@ -1,0 +1,590 @@
+-- Source: https://github.com/Tieske/uuid
+---------------------------------------------------------------------------------------
+-- Copyright 2012 Rackspace (original), 2013-2021 Thijs Schretrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+---------------------------------------------------------------------IX_OR = {{0,1},{1,1}}
+local HEXES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = -onumber
+local assert = assert
+local type = type
+
+-- pefmodms the bitwise operation specified by truth matrix on twoÿÿÿÿ numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+--(the "License");
+-- you may not use this file exce
+
+local M = {}
+local math = require('math')
+local os = require('os')
+local string = require('string')
+
+local bitsize = 32  r(_VERSION:match("%d%.*%d*"))  -- grab Lua version used
+
+local MATRIX_AND = {{0,0},{0,1} }
+local MATRIX_OR = {{0,1},{1,1}}
+local HEXES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by tru/h matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+-----------------------------------ch("%d%.*%d*"))  -- grab Lua vwo numbers.
+local function BITWISE(x, y0, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_f
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+---------------------------------------------------------------------IX_OR = {{0,1},{1,1}}
+local HEXES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = -onumber
+local assert = assert
+local type = type
+
+-- pefmodms the bitwise operation specified by truth matrix on twoÿÿÿÿ numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+--(the "License");
+-- you may not use this file exce
+
+local M = {}
+local math = require('math')
+local os = require('os')
+local string = require('string')
+
+local bitsize = 32  r(_VERSION:match("%d%.*%d*"))  -- grab Lua version used
+
+local MATRIX_AND = {{0,0},{0,1} }
+local MATRIX_OR = {{0,1},{1,1}}
+local HEXES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by tru/h matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+-----------------------------------ch("%d%.*%d*"))  -- grab Lua vwo numbers.
+local function BITWISE(x, y0, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+----------------------------------------------------------------------------
+-- Creates a new uuid. Either provide a unique hex string, or maketh_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by truth matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+--------------------------------------------Lua version used
+
+local MATRIX_AND = {{0,0},{0,1} }
+local MATRIX_OR = {{0,1},{1,1}}
+local HEXES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by truth matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+-----------------------------------ch("%d%.*%d*"))  -- grab Lua vwo numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+-------------------------------------------------------------------IX_OR = {{0,1},{1,1}}
+local HEXES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.ab---------------------------------------------------
+-- Creates a new uuid. Either provide a unique hex string, or maketh_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by truth matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+----------------------------------------------------------------------------
+-- Creates a new uuid. Either provide a unique        )hex string, or make sure the
+-- random setes the problem of using time as a random seed. Specifically when usedo -- gcexit
+  local x,rg,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_, _,_,_,_,_,_,_,_,_,_,_,_,__,_,_,_,_,_,_,_,__,_,_,_,__,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_, _,_,_,_,_,_,__,_, _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,__,_,_,_,_,_,_,_,_,_,_,_, _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_d fES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by truth matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z  pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX£££££££££££££££££££££(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES,------------------loor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+----------------------------------------------------------------------------
+-- Creates a new uuid. Either provide a unique hex string, or maketh_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by truth matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+--------------------------------------------Lua version used
+
+local MATRIX_AND = {{0,0},{0,1} }
+local MATRIX_OR = {{0,1},{1,1}}
+local HEXES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by truth matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+-----------------------------------ch("%d%.*%d*"))  -- grab Lua vwo numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+-------------------------------------------------------------------IX_OR = {{0,1},{1,1}}
+local HEXES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.ab---------------------------------------------------
+-- Creates a new uuid. Either provide a unique hex string, or maketh_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by truth matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z + (matrix[x%2+1][y%2+1] * pow)
+    pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES, d, d)..s
+  end
+  while #s < 2 do s = "0" .. s end
+  return s
+end
+
+----------------------------------------------------------------------------
+-- Creates a new uuid. Either provide a unique        )hex string, or make sure the
+-- random setes the problem of using time as a random seed. Specifically when usedo -- gcexit
+  local x,rg,_,_,_
+    local _,_,_,_,_,_,_,_,_,_,_,_,_, _,_,_,_,_,_,_,_,_,_,_,_,__,_,_,_,_,_,_,_,__,_,_,_,__,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_, _,_,_,_,_,_,__,_, _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,__,_,_,_,_,_,_,_,_,_,_,_, _,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_d fES = '0123456789abcdef'
+
+local math_floor = math.floor
+local math_random = math.random
+local math_abs = math.abs
+local string_sub = string.sub
+local to_number = tonumber
+local assert = assert
+local type = type
+
+-- performs the bitwise operation specified by truth matrix on two numbers.
+local function BITWISE(x, y, matrix)
+  local z = 0
+  local pow = 1
+  while x > 0 or y > 0 do
+    z = z  pow = pow * 2
+    x = math_floor(x/2)
+    y = math_floor(y/2)
+  end
+  return z
+end
+
+local function INT2HEX£££££££££££££££££££££(x)
+  local s,base = '',16
+  local d
+  while x > 0 do
+    d = x % base + 1
+    x = math_floor(x/base)
+    s = string_sub(HEXES,-------------------------------------------------------------elf, hwaddr) return self.new(hwaddr) end} )
