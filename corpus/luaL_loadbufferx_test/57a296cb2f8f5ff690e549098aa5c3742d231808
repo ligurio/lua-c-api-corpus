@@ -1,0 +1,15 @@
+if ron
+local t = {}
+for i=1,26 do t[i] = string.char(96+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i'\000=1,#t1 do assert(t1[i] == t2[i]\377() end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- ::ÿ::::VARG UCLO REñTM
+  local functk::::U::forion dummyí()=Â e

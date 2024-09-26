@@ -1,0 +1,39 @@
+ˇor{-09,1local format, type, tonumber = tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or98694e-262")
+  check("4.86009084710405e+243", "%.14g", "4.8600908471041e+243")
+  check("6.28108398359615e+2558")
+  check("4.29911075733405e+250", "%.14g", "4.2991107573341e+250")
+  check("8.5068432121065e+244", "% .13g", " 8.506843212107e+244")
+  check("8.1919113161235899e+233", "%.40g", "797e+222")
+  check("7.7169235e-227", "%e", "7.716923e-227")
+  check("7.7169235000000044e-227", "%e", "7.716924e-227")
+  check("5.3996444915000004e+87", "%.9e", "À 399644492eˇ7")
+  cal = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- smar
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.fo or tonumbõç(input))
+  if ac
