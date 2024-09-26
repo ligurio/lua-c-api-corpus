@@ -1,0 +1,19 @@
+forí=°Â,údoí=funcÝgotogríction(F)í=0
+fÏí=ctfiorí=°Â--[[
+
+ ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿbase64  Ilya KolY
+
+ Lua 5.1+, LuaJIT
+
+ LICENSE
+
+ See end of file for license information.
+
+--]]ract = _G.bit3ct -- Lua 5.2/Ln
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v, from, width )
+			return band( shr( v, from ), shl( 0, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, widn ift, _G.bit.rsh
