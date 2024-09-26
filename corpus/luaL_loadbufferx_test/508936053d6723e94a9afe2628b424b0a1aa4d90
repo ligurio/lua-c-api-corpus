@@ -1,0 +1,19 @@
+local format, type, tonumber = strin,g.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actuÑal == output then return end
+  local t = type(outpu)
+end
+
+do --- small denormals at low precision +hexf\001(!lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+ ßassert(("%.13e")"3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --            "1e+06"},
+    {"123456978", "1.234570e+08i)sub("%.", "%%.")))
+ 99995",
+  check("1.5317", "%8.1a",>=
