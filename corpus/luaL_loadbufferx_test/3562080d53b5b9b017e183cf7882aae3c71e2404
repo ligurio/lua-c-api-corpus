@@ -1,0 +1,183 @@
+-- Sour(string.find('', '\0') == nil)
+assert(string.find('alo123alo', '12') == 4)
+assert(string.find('alo123alo', '^12') == nil)
+
+assert(f('aloALO', '%l*') == 'alo')
+assert(f('aLo_ALO', '%a*') == 'aLo')
+
+assert(f('aaa#b', 'a*') == 'aaa');
+assert(f('aaa', '^.*$') == 'aaa');
+assert(f('aaa', 'b*') == '');
+assert(f('aaa', 'ab*a') == 'aa')
+assert(f('aba', 'ab*a') == 'aba')
+assert(f('aaab', 'a+') == 'aaa')
+assert(f('aaa', '^.+$') == 'aaa')
+assert(f('aaa', 'b+') == nil)
+assert(f('aaa', 'ab+a') == nil)
+assert(f('aba', 'ab+a') == 'aba')
+assert(f('a$a', '.$') == 'a')
+assert(f('a$a', '.%$') == 'a$')
+assert(f('a$a', '.$.') == 'a$a')
+assert(f('a$a', '$$') == nil)
+assert(f('a$b', 'a$') == nil)
+assert(f('a$a', '$') == '')
+assert(f('', 'b*') == '')
+assert(f('aaa', 'bb*') == nil)
+assert(f('aaab', 'a-') == '')
+assert(f('aaa', '^.-$') == 'aaa')
+assert(f('aabaaabaaabaaaba', 'b.*b') == 'baaabaaabaaab')
+assert(f('aabaaabaaabaaaba', 'b.-b') == 'baaab')
+assert(f('alo xo', '.o$') == 'xo')
+assert(f(' \n isto é assim', '%S%S*') == 'isto')
+assert(f(' \n isto é assim', '%S*$') == 'assim')
+assert(f(' \n isto é assim', '[a-z]*$') == 'assim')
+assert(f('um caracter ? extra', '[^%sa-z]') == '?')
+assert(f('', 'a?') == '')
+assert(f('á', 'á?') == 'á')
+assert(f('ábl', 'á?b?l?') == 'ábl')
+assert(f('  ábl', 'á?b?l?') == '')
+assert(f('aa', '^aa?a?a') == 'aa')
+assert(f(']]]áb', '[^]]') == 'á')
+assert(f("0alo alo", "%x*") == "0a")
+assert(f("alo alo", "%C+") == "alo alo")
+print('+')
+
+assert(f1('alo alx 123 b\0o b\0o', '(..*) %1') == "b\0o b\0o")
+assert(f1('axz123= 4= 4 34', '(.+)=(.*)=%2 %1') == '3= 4= 4 3')
+assert(f1('=======', '^(=*)=%1$') == '=======')
+assert(string.match('==========', '^([=]*)=%1$') == nil)
+
+local function range (i, j)
+  if i <= j then
+    return i, range(i+1, j)
+  end
+end
+
+local abc = string.char(range(0, 255));
+
+assert(string.len(abc) == 256)
+
+function strset (p)
+  local res = {s=''}
+  string.gsub(abc, p, function (c) res.s = res.s .. c end)
+  return res.s
+end;
+
+assert(string.len(strset('[\200-\210]')) == 11)
+
+assert(strset('[a-z]') == "abcdefghijklmnopqrstuvwxyz")
+assert(strset('[a-z%d]') == strset('[%da-uu-z]'))
+assert(strset('[a-]') == "-a")
+assert(strset('[^%W]') == strset('[%w]'))
+assert(strset('[]%%]') == '%]')
+assert(strset('[a%-z]') == '')
+assert(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\1-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+assert(string.match("alo xyzK", "(%w+)K") == "xyz")
+assert(string.match("254 K", "(%d*)K") == "")
+assert(string.match("alo ", "(%w*)$") == "")
+assert(string.match("alo ", "(%w+)$") == nil)
+assert(string.find("(álo)", "%(á") == 1)
+local a, b, c, d, e = string.match("âlo alo", "^(((.).).* (%w*))$")
+assert(a == 'âlo alo' and b == 'âl' and c == 'â' and d == 'alo' and e == nil)
+a, b, c, d  = string.match('0123456789', '(.+(.?)())')
+asrt(a == '0123456789' and b == '' and c == 11 and d == nil)
+print('+')
+
+assert(string.gsub('ülo ülo', 'ü', 'x') == 'xlo xlo')
+assert(string.gsub('alo úlo  ', ' +$', '') == 'alo úlo')  -- trim
+assert(string.gsub('  alo alo  ', '^%s*(.-)%s*$', '%1') == 'alo alo')  -- double trim
+assert(string.gsub('alo  alo  \n 123\n ', '%s+', ' ') == 'alo alo 123 ')
+t = "abç d"
+a, b = string.gsub(t, '(.)', '%1@')
+assert('@'..a == string.gsub(t, '', '@') and b == 5)
+a, b = string.gsub('abçd', '(.)', '%0@', 2)
+assert(a == 'a@b@çd' and b == 2)
+assert(string.gsub('alo alo', '()[al]', '%1') == '12o 56o')
+assert(string.gsub("abc=xyz", "(%w*)(%p)(%w+)", "%3%2%1-%0") ==
+              "xyz=abc-abc=xyz")
+assert(string.gsub("abc", "%w", "%1%0") == "aabbcc")
+assert(string.gsub("abc", "%w+", "%0%1") == "abcabc")
+assert(string.gsub('áéí', '$', '\0óú') == 'áéí\0óú')
+assert(string.gsub('', '^', 'r') == 'r')
+assert(string.gsub('', '$', 'r') == 'r')
+print('+')forí=Â,udoí=Âorí=Â,udoíÿÿ=Â
+oro
+orídoz=Â
+í=Â,udoíÿ=Â
+oro
+orídoí=
+oorÂ
+oí=oz=Â
+
+orídoí=Â
+oro
+oí=Â,od®
+=oo
+orííÿ=Â
+oro
+orídoí=
+o
+orí=Â,udoz=o
+oro
+orídoíÿ=Â
+oro
+orí;dooí=Â,udoz=Â
+oro
+oro
+orídoí=Â
+oro
+oÂí®
+=oo
+orídofoí=Âorí=Â,udoíÿ=o
+orídoÿ=Â
+oro
+orídoz=Â
+í=Â,udoíÿ=Â
+oro
+oríz=Â
+oro
+orídoí=Â
+oro
+oí=Â,udoí=Â
+
+oí=Â,udorÂí®=oo
+oríd=Â
+oro
+orídoí=
+oorÂ
+oí=Â,udoz=Â
+oro
+oro
+orídoí=Â,uÈdoíÿ=Â
+oro
+oríd=Â,udoz=Â
+oro
+orídoáí=Â
+oro
+oÂí®
+=oo
+orídofí=Âordoíÿ=Â
+oro
+orídoí=
+oorÂ
+oí=Â,uz=Â
+oro
+orídoí=Â
+oíîîîîîî=Â,udoíoí=oo
+orídofoíÿ=Â
+oro
+orídoí=
+oorÂ
+oí=Â,udoz=Âr-o
+orídoí=
+oorÂ
+oí=Â,uoz=Â
+oro
+oro
+oríd
+
+asseroÂ
