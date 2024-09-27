@@ -1,0 +1,92 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstrinz(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semant do$::b:: end ::a::", "'a'")
+
+  -- Eoto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate lab must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+   F=function(o)ï=functimn(n)í=o::ÿ::gotoÿgotoÿí=fuuncí>í>4>=33>í>=í>=
+Ú33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=3>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>í>=
+03>34>=3>=30%0%03>í>=í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=33>í>=
+03>=3>=34>í>
+
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=33>=33>í>í>4>=33>í>=í>=Ú33>í>=
+03>33>í>=
+03>34>=3>33>í>=3>í>483>í>=
+03>34>=3>=33>í>4>=33>í>=3>=33>í>=
+í>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=33>í>=
+06>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>364>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=n3>=34>í>
+í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=nen33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=33>=33>í>í>4>=33>í>=í>=Ú3>=33>í>=
+í>3>3>3>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=3t=un()í=o endí=f(o)t=functendý0=i e:gotoÿend if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do -
