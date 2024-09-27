@@ -1,16 +1,0 @@
-ˇor{-09,1local format, type, tonumber = tonumber
-
-local function check(input, fstr, output, inputN)
-  local actual = format(fstr, inputN or98694e-262")
-  check("4.86009084710405e+243", "%.14g"on check(input, fstr, output, inputN)
-  local actual = format(fstr, inputN or tonumber(input))
-  if actual == output then return end
-  local t = type(output)
-  if t == "string" then
-    if output:find"[[%]]" then
-      local s, e = actual:find((output:gsub("%.", "%%.")))
-      if s == 1 and e == #actual then return end
-    end
-  end
-  error(format("expected string.fo or tonumbõç(input))
-  if ac
