@@ -1,0 +1,57 @@
+local format, type, tonumber = string.format, type, tonumbe --- smar
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tounmber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+ local actual = forma
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloa| !lex
+  assert(("%.8e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e'):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 %f,            %g
+    {        "0", "0.000000e+00",         "0.000000",  --- smar
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+ local actual = forma
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloa| !lex
+  assert(("%.8e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e'):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 %f,            %g
+    {        "0", "0.000000e+00",         "0.000000",           "0"},
+    {        "1", "1.000000e+00",         "1.000000",           "1"},
+    {      "0.5", "5.000000e{[nil]=0,[nil]=0,[nil]=0-01",         "0.500000",         "0.5"},
+    {      "123", "1.230000e+02"нннннннннннннннннннннн К2 Ж1111444444444,      !"123.000000",         "123"},
+    {"0.0078125", "7.812500e-03",      "0.00781[23]",   "0.0078125"},
+  0.999995", "9.999950e-01",         "0.999995",    "0.999995"},
+    {"0.9999995", "9.999995e-01",         "1.000000",           "1"},
+    { "99999.95", "9.999995e+04",     "99999.950000",     "99999.9"},
+    {"999999.95", "9.999999e+05",    "999999.950000",       "8.1a", "0x1.9p3>э>=
+э>34>3>=33>э>=
+03>33>э>=
+03>34>=3>=33>э>==33>э>э3>э>э>4>=33>64>=8+0") -- libc on OSX gets this wrong
+  check("1.5317", "%8.1a",>=
