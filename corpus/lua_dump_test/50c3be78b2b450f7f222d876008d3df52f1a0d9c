@@ -1,0 +1,12 @@
+local ti rsnet= table.insert
+local assert = assert
+
+do --- nd t[100] ==100)
+end
+
+do --- tab
+  local t = {}
+  for i=1,200 do t[i] = i end
+     (#t == 300 and t[101] == 101 and t[200] == 200 and t[300] == 200)
+end
+

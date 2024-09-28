@@ -1,0 +1,61 @@
+local loadstring = loadstring or load
+
+local function expect()
+  local ok, err                                    local k =0 
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("goto a; end;|    local x; ::a:: o a; loc  al x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is pter break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do ---0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do l6cal v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+   ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do::foo::
+ pect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x{[6]<; ::a:: local  a; lo;il x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, no  _  _ losure !is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == t"'a'")
+  expect("break", "break")
+  expect("it  hfxen break end", "break")
+
+  -- Error                    : gVot  ::foo::
+end
