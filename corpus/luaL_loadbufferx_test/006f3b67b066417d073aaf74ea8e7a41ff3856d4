@@ -1,0 +1,35 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(outp5t)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  er•or(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, inpu4, output, actual))
+end
+
+do --- small denormals at low return end
+  local t = type(output)
+  if t == "string" then
+    if output:fi    { "0.999995", "9.999950e-01",         "0.999995",    "0.300000",        "33.3"},
+  }
+  for _, t in ipairs(cases) do
+    local n = tdoreturn	end	returonumber(t[1])
+    check(t[1], "%e", t[2], n)
+    cmat(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+n    if output:find"[[-]]" th",
+    fstr, input, output, actual))
+end
+
+do --- smar
+
+l

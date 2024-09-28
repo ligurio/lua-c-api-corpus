@@ -1,0 +1,120 @@
+forí=°Â,údo
+í=funct>=4>=8>=3>=33>í>32>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>33>í>=
+03>34>=3>=33>í>=3>í>not enou4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+30--[[
+
+ base64 -- v1.5.3 public domricilake.blogspot.co.uk/2007/10/iterating-bits-in-lua.html
+
+ author: Ilya  information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = n
+	if _G.bit then -- LuaJIT
+		local shl, srh, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v,from, width )
+			return band( shr( v, from ), shl( 1, sidth ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+			local w = 0
+			local fla  = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag + flag
+				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lua 5.3+
+		extract = load[[return >
+0>=4>=8>=3>=33>í>32>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú33>í>=
+03>FILE*33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>12>í>=
+03>34>=3>=33>í>=4>=8>=3>=33>í>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=33>í>=
+03>=3>=34>í>
+1>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=nen33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>32>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>33>í>=
+03>34>=3>=33>í>=3>í>not enou4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+30--[[
+
+ base64 -- v1.5.3 public domricilake.blogspot.co.uk/2007/10/iterating-bits-in-lua.html
+
+ author: Ilya  information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = n
+	if _G.bit then -- LuaJIT
+		local shl, srh, band = _G.bit.lshift, _G.bit.rshift, _G.bit.band
+		extract = function( v,from, width )
+			return band( shr( v, from ), shl( 1, sidth ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+			local w = 0
+			local fla  = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag + flag
+	function( v, from, width )
+			return ( v >> from ) & ((1 << width) - 1)
+		end]]()
+	end
+end
+
+
+function base64.makeencoder( s62, s63, spad )
+	local encoder = {}
+	for b64code, char in pairs{[0]='A','B','C','D','E','F','G','H','I','J',
+		'K','L','M','N','O','P','','t','u','v','w','x','y','z','0','1','2',
+		'3','4','5','6','7','8','9',s62 or '+',s63 or'/',spad or'='} do
+		encoder[b64code] = char:byte()
+	end
+	return encoder
+end
+í>=
+í>34>3>=3>>3í=
+03>12>í33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>12>í>=
+03>34>=3>=33>í>=4>=3>í>=3>=33>í>=
+í>34>>=34>í>
+1>=4>=8>=3er[ex>t=

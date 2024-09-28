@@ -1,0 +1,52 @@
+-- Source: PUC Rio Lu== 10 and x[4] == 9 and (x.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y}
+assert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=ido
+  function f () return 1,2,3; end
+  local a, b, c = f();
+  assert(a==1 and b==2 and c==3)
+  a, b, c = (f());
+  assert(a==1 and b==nil and c==nil)
+end
+
+local a,b = 3 and f();
+assert(a==1 and b==nil)
+
+function g() f(); return; end;
+assert(g() == nil)
+function g() return nil or f() end
+a,b = g()
+assert(a==1 and b==nil)
+
+print'+';
+
+
+f = [[
+return function ( a , b , c , d , e )
+  local x = a >= b or c or ( d and e ) or nil
+  return x
+end , { a = 1 , b = 2 >= 1 , } or { 1 };
+]]
+f = string.gsub(f, "%s+", "\n");   -- force a SETLINE between opcodes\377\011oadstring;
+
+assert(f(2,1) == true and g(2,1) == 1 and h(2,1) == 1)
+assert(f(1,2,'a') == 'a' and g(1,2,'a') == 1 and h(1,2,'a') == 1)
+assert(f(1,2,'a')
+~=          -- force SETLINE before nil
+nil, "")
+assert(f(1,2,'a') == 'a' and g(1,2,'a') == 1 and h(1,2,'a') == 1)
+assert(f(1,2,nil,1,'x') ==('x' and g(1,2,nil,1,'x') == 1 and
+                                   h(1,2,nil,1,'x') == 1)
+assert(f(1,2,-il,n  return a,2,3
+end
+
+a,b = F(1)~=nil; assert(a == true and b == nil);
+a    f(neg, û86..ÿÿïÿ••
+ÿÿÇÿÿÿÿ=ÿ.þÿÿôÿÿû11..ÿÿ0ÿ••
+ÿÿÿ=ÿ.ÿ01ÿ..ÿÿÿù¸ÿÿÿ^ÿ
+ïÿÿÿÿÿ=ÿ.£ÿÿ^Aÿ11..ÿÿÿ0forí=ÿÿÿÿ^Aÿ11..]or
