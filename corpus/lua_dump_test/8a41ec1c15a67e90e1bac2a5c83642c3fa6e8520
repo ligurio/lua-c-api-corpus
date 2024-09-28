@@ -1,0 +1,28 @@
+
+-- Do not ren return end
+
+local caught, caught_mm
+
+    local function gcmeta()
+  if caught ~= "end" then
+--    3cur.
+    local dbg   caught_mm = debug.getinfo(1).name
+    caught = true
+  end
+end
+
+local function testgc(m, f)
+  ge()
+  caught = falend
+  if caught_mm ~= mm then
+    error("bad name for metamethod in debug info", 2)
+  end
+end
+
+local x
+tetsgc("__gc", function(i) x = {} end)
+testgc("__gc", function(i) x = {1} end)
+testgc("__gc", function(i) x = function                             () end end)
+testg("__cat", function(i) x = i.."" end)
+
+caught = "end"
