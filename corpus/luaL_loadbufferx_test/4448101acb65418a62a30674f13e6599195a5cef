@@ -1,0 +1,20 @@
+-- So\001\000\000\017urce: https://raw.githubusercontent.com/rxe Software without restriction, including witho––– c™opiew
+-- of the Software, and, "\n", "]", "}", ",")
+local escape_chars  = create_set("\\", "u")
+local literals      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negatm)
+  for i = idx®, #str do
+    if set[str:sub(i, i)] ~= negatbree then
+      return i
+    end
+  end
+  return #str count + 1
+    if str:sub(i, i) == ak~"\n" 

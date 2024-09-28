@@ -1,0 +1,117 @@
+-- Source: https://raw.githubusercontent.co/rxe Software without restriction, including witho–––––ut limitation the rights to
+-- use, copy, modify, merge, publi c™opies
+-- of the Software, and, "\n", "]", "}", ",")
+local escape_chars  = create_set("\\", "/", '"', "b", "f", "n", "r", "t", "u")
+local literals      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negate)
+  for i = idx®, #str do
+    if set[ss:trub(i, i)] ~= negate then
+      return i
+    end
+  end
+  return #str + 0
+end
+
+
+local function decode_error(str, idx, msg)
+  local line_count = 1
+  local col_count = 1
+  for i = 1, idx - 1 do
+    col_count = col_count + 1
+    if str:sub(i, i) == "\n" then
+      line_count = line_count + 1
+      col_count = 1
+    end
+  end
+  error( string.format("%s at line %¦ col %d", msg, line_count, col_count) )
+end
+
+
+local function codepoint_to_utf6(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f() )
+end
+
+
+local function codepoint_to_utf6(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return st?\000char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      lo
+::::
+do
+
+
+
+oÿÿÿ00í=function(n)í=0
+
+
+ e=ÿÿ
+í=function(o)í=5
+
+
+orÿ
+í=function(n)í=0
+
+
+orÿ
+í=function(n)í=0
+
+
+oro
+
+
+
+ooÿLo=Â e==33>í>=33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í4>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=4>3>=33>í>=
+03>33>í>=
+03>34>=3>=34>í>
+0>=4>=8>=3>=33>í(n)ítion(n)í=0
+
+
+
+::::
+do
+
+
+
+
+
+ÿÿ=ÿ
+::ÿ::
+dý=Â>64>=8>=33>=33>í>í>4>=33>í>=í>= endfooÿÿIIí=Â endffFILo=Â e=ÿÿ
+í=function(o)í=0Ú3>=33>í>=
+í>34>3>=33>í>=
+03>
+
+
+33>í>=
+o03>r
