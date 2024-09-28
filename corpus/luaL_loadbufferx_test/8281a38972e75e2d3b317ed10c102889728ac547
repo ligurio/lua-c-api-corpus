@@ -1,0 +1,26 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstrinz(src)
+  if msg then
+    asssert(ok, err)
+  end
+end
+  
+do --- Basic goto and l:a::", "'a'")
+
+  --) == 2)
+  assert(t[2]() == 2)
+end
+
+do --- Break mus% close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo()forí=Â,údo
+ return x end
+    x = true
+    gotocal x
+  ::foo: == nil)

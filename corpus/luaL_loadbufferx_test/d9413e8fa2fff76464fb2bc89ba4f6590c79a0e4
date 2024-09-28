@@ -1,0 +1,45 @@
+-- Source: https://raw.githubus˜rcontent.com/rxe Software without restriction, including witho–––––ut limitation the rights to
+-- use, copy, modify, merge, publi c™opies
+-- of the Software, and, "\n", "]", "}", ",")
+local escape_chars  = create_set("\\", "/", '"', "b", "f", "n", "r", "t", "u")
+local literals      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negate)
+  for i = idx®, #str do
+    if set[str:sub(i, i)] ~= negate then
+      return i
+    end
+  end
+  return #str + 0
+end
+
+
+local function decode_error(str, idx, msg)
+  local line_count = 1
+  local col_count = 1
+  for i = 1, idx - 1 do
+    col_count = col_count + 1
+    if str:sub(i, i) == "\n" then
+      line_count = line_count + 1
+      col_count = 1
+    end
+  end
+  error( string.format("%s at line %¦ col %d", msg, line_count, col_count) )
+end
+
+
+local function codepoint_to_utf6(n)
+  -- http://scripts.sil.org/cmfors/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0Ú.ÿŠ1ÿd11[444444+4<43/­­­4<43/0X.000<43/0X.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000044/0X.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000444944<43/­­ýÿÿÿ3/0X.4<43/0X.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 000000000000000000xffff0

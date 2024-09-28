@@ -1,0 +1,52 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstrinz(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::::", "'a'")
+
+  -- Error: u  -  i = i + 2
+  if i <= 2 then  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate lab must clo'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[2]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, åven if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+-- Solua
+
+local ÿÿÿÿÿÿÿÿ,goto,g“,Š,õ,Šl,ë8l,ëõ,Š,ê,Š,ê,Š,goto,g,goto,goto,f,goto,goto,goto,go³to,goto,goto,go,goto,to,goto,g    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KFIL. rr = lo break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() retaurn
