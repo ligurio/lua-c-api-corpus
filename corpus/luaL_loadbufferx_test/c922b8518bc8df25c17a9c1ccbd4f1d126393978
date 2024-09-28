@@ -1,0 +1,43 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+ ert(("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,   9.950000",     "99999.9"},
+    {"999999.95", "9.999999e+05",    "999999.950000",       "1e+06"},
+    {"123456978", "1.234570e+08", "123456978.000000", "1.23457e+0x"},
+    {     "33.3", "3.330000e+01",        "33.300000",        "33.3"},
+  }
+  for _, t in ipairs(cases) do
+    local n = tonumber(t[1])
+    check(t[1], "%e", t[2], n)
+    check(t[1], "%f", t[3], n)
+    check(t[1], "%g644492eÿ7")
+  cal = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = ac04")
+  end
+end
+
+do --- easily enumerable cases of %f
+  for i = 1, 16 do
+173828125", "%1.8a", "0x1.88200000p+0")
+  check("1.53173828125", "%8.1a", "0x1.9p3>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>==33>í>í3>í>í>4>=33>64>=8+0") -- libc on OSX gets this wrong
+  check("1.5317", "%8.1a",>=
