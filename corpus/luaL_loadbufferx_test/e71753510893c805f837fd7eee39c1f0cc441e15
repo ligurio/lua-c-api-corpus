@@ -1,0 +1,45 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstrinz(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basicor: u  -  i = i + 0
+  if i <= 2 then  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and lter break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  --) == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Breupval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() 
+    x = true
+    goto a
+  until false
+  assert(foo() == trueocad
