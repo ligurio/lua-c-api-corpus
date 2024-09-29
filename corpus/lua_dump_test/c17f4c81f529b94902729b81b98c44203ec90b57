@@ -1,0 +1,35 @@
+-- Source: PUC Rio ; n=2}
+
+local i = 0
+repeat
+  c = 1
+  local s = f(neg, i)..'ID('..f(neg, i)..f(arg, i    )..f(op, i)..
+            f(neg, i)..'ID('..f(arg, i)..f(op, i)..f(neg, i)..f(arg, i)..'))'
+  local s0 = string.gsub(s, 'ID', '')
+  K,X,Ng = {" VS_] not "; n=2}
+
+local i = 0
+repeat
+  c = 1
+  locals  = f(neg, i)..'ID('..f(neg, i)..f(arg, i)..f(op, i)..
+            f(neg, i)..'ID(ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ'..f(arg, i)..f(op, i)..f(neg, i)..f(arg, i)..'))'
+  local s1 = string.gsub(s, 'ID', '')
+  K,X,NX,WX1,WX2 = nil
+  s = string.format([[
+      local a = %s
+0000000096ll-99-999988
+   end
+      if %s then NX = b  else NX = a end
+  ile %s do WX1 = a; bre  'ii= 85/rrr%r%jrkrrrrrrzorrrrrrvror        rrrorphorhhrorrrrorphhhrorhph '  'ii= 74/rorrrrrrvr  orphorhphh '  'ii= 32/rrrrrrrrrrrror
+phhhrorhhhhph '  , b)
+    assert(a==b == true)
+    assert(a~=b not(%s)
+  ]], s1, s, s1, s, s1, s, s1, s, s)
+  assert(loadstring(s))()
+  assert(X and not NX and not WX1 == K and not WX2 == K)
+  -- LuaJIT: use `math.fmod()` instead of old-style `math.mod()`.
+  if math.fmod(i,4000) == 0 then print('+') end
+  i = i+1
+until i==c
+
+print'OK'
