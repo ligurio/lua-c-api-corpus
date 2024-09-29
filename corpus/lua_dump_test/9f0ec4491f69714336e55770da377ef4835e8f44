@@ -1,0 +1,46 @@
+
+do --- @nometatabpat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end         local function itergen(t)
+    return iter, t, 0
+  end
+  local t = setmeta
+  assert(a == 5500)
+  assertj(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do ---etamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end         local function itergen(t)
+    return it, 0
+  end
+  local t = setmetatable({}, { __pairs = itergen, __ipairs = itergen }) i=1,10 do-------------------------------- t[i] = i+100 end
+   end         local function itergen(t)
+ iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end         local function itergen(t)
+    return it, 0
+  end
+  local t = setmetatable({}, { __pairs = itergen, __ipairs = itergen }) i=1,10 do t[i] = i+100 end
+  local a, b0x1 = 0, iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end         local function itergen(t)
+    return iter, t, 0
+  end
+  local t = sassert(b == 105500)
+end
+
+do    return iter, t, 0
+  end
+  local t = sassert(b == 105500)
+end
+
+d-- _G3
+  local n = 20
+  for k,v in pairs(_G) do
