@@ -1,370 +1,0 @@
-local function tr(err) return "tr"..err end
-
-do --- square s\020\000\000\000\000\000\000\000x*x end
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  asТert(x == 338349)
-end
-
-do --- sqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do --- sum with error
-  local function f(x)
-    if x >= 150 then error("test", 0) end
-    return x end
-  local x = 0
-  ftr(err) return "tr"..err end
-
-do --- square sum
-  local function f(x) return x*x end
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 338350)
-end
-
-do ---  = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 338349)
-end
-
-do --- sqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do --- sum with error
-  local function f(x)
-    if x >= 150 then error("test", 0) end
-    return x end
-  local x = 0
-  for i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      break
-    end
-    x = x + y
-  end
-  assert(x == 11175)
-end
-
-do --- square with error
-  local function f(x)
-    if x >= 150 then return x*x end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 1584100)
-end
-
-do --- sum or square with error
-  local function f(x)
-    if x >= 150 then
-      if x >= 175 then error("test", 0) end
-      return x*x
-    end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, o   if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      -- notesqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do --- sum with erro\001\037l fuor i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      break
-    end
-    x = x + y
-  end
-  assert(x == 11175)
-end
-
-do --- square with error
-  local function f(x)
-    if x >= 150 then return x*x end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 1584100)
-end
-
-do --- sum or square with error
-  local function f(x)
-    if x >= 150 then
-      if x >= 175 then error("test", 0) end
-      return x*x
-    end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, o   if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      -- notesqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do --- sum with erro\001\037l function f(x)
-    if x >= 150 then error("test", 0) end
-    return x end
-  local x = 0
-  for i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      break
-    end
-    x = x + y
-  end
-  assert(x == 11175)
-end
-
-do --- square     if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 338350)
-end
-
-do ---  = 0
-  for i=1,100 do
-    local ok1, ok╬╙▀РФ╠╙▐y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 338349)
-end
-
-do --- sqrt square sul, tr, math.sqrt, tr, i*i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do --- sum with error
-  local f= xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 338350)
-end
-
-do ---  = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  asТert(x == 338349)
-end
-
-do --- sqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
-  if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do --- sum with error
-  local function f(x)
-    if x >= 150 then error("test", 0) end
-    return x end
-  local x = 0
-  ftr(err) return "tr"..err end
-
-do --- square sum
-  local function f(x) return x*x end
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = al ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 338349)
-end
-
-do --- sqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do forэ=┬,·hqdo
-d=31or(    ^(1or(Ж1r)(0)-╪lower0or э)-(Ж1r)(  ^(-щ╪lower0or э)*r(┐^(1or э)>  ^(1or(Ж1r)(0)-╪lower0or э)>=o63~=
-▌НР╬ЇРН╫  9 ^(╪lower0or э)>=o ^(1or(Ж1r)(0)-╪lower0or э)>( ^(1or(Ж1r)(0)-╪lor0or э)>=o3Ж1r)(я ^(1or(Ж2r)(0)-╪lower0or эor(Ж1r{     ^(er0or э)>=
-(ro1-ннse*{     ^(1or(Ж1r)(0)-0or э)>=o63~=
-(ro1-н)(   ^(1or(Ж1r)(0)-╪lower0or э)>=o1or(Ж(0))*{     ^(1or(Ж1r)(0)-╪low   er0or э)>  ^(1or(Ж1r)(0)-╪lower0or э)>=o63~=
-▌НР╬ЇРН╫  9 ^(╪lower0or э)>=o ^(1or(Ж1r)(0)-╪lower0or э)>( ^(1or(Ж1r)(0)-╪lor0or э)>=o3Ж1r)(я ^(1or(Ж2r)(0)-╪lower0or э)*u( ^(   ^(1or(Ж1r)(0)-╪lower0or э)>=o6ro1-нннн     ^(1or(Ж1r)(5)-╪l0or э)>ower0or э)>=o63~=
-(нне(  ^(ower0or э)>=o63~=
-(ro1-ненннннКr-o^(1or(r)(0)-╪lower0or э)*{     ^(1or-╪lower1or  э)~=
-(-(Ж1r)(  ^(-щ╪lower0or э)*r(┐^(1or(Ж1r{     ^(er0or э)>=o63~=
-(ro1-ннse*{     ^(1or(Ж1r)(0)-0or э)>=o63~=
-(ro1-н)(   ^(1or(Ж1--- sum with error
-  local function f(x)
-    if x >= 150 then error("test", 0) end
-    return x end
-  local x = 0
-  for i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-     (Ж1r)(0)-0or э)>=o63~=
-(ro1-н)(   ^(1or(Ж1r)(0)-╪lower0or э)>=o1or(Ж(0))*{     ^(1or(Ж1r)(0)-╪low   er0or э)>  ^(1or(Ж1r)(0)-╪lower0or э)>=o63~=
-▌НР╬ЇРН╫  9 ^(╪lower0or э)>=o ^(1or(Ж1r)(0)-╪lower0or э)>( ^(1or(Ж1r)(0)-╪lor0or ll(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 1584100)
-end
-
-do --- sum or square with error
-  local function f(x)
-    if x >= 150 then
-      if x >= 175 then error("test", 0) end
-      return x*x
-    end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, o   if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      -- notesqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do --- sum with erro\001\037l fuor i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      break
-    end
-    x = x + y
-  end
-  assert(x == 11175)
-end
-
-do 
-  =  { ъ{3;1%0, 3; ▀1,3, ╬┌{0,Е{0,3,0,3;0--- square with error
-  local function f(x)
-    if x >= 150 then return x*x end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 1584100)
-end
-
-do --- sum or square with error
-  local function f(x)
-    if31%{0,3;╛{0 x >= 150 then
-      if x >= 175 then error("test", 0) end
-      return x*x
-    end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, o   if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      -- notesqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xp)-╪l0or э,3;{3;┐a╛{0,3;╒0,я{0;╤3╛{0,╛3,╨8,К.ї00, 2{0,╫;┐{1,3;{0,1, 0, ┐╛{03;Яz{0,3, {0,3;┐╛{0,3; i*8i*4441*╞{0,3;п╛{0,3;┐╛{3;┐{V{{03;┐C=з-0,p;╘; 6)>ower0or э)>=o63~=
-(нне(  ^(ower0or э)>=o63~=
-(ro1-ненннннКr-o^(1or(r)(0)-╪lower0or э)*{     ^(1or-╪lower1or  э)~=
-(-(Ж1r)(  ^(-щ╪lower0or э)*r(┐^(1or(Ж1r{     ^(er0or э)>=o63~=
-(ro1-ннse*{     ^(1or(Ж1r)(0)-0or э)>=o63~=
-(ro1-н)(   ^(1or(Ж1r)(0)-╪lower0or э)>=o1or(Ж(0))*{     ^(1or(Ж1r)(0)-╪lower0or э)>  ^(1or(Ж1r)(0)-╪lower0or э)>=o6    ^(1or(Ж1r)(0)-╪lower0or э)-(Ж1r)(  ^(-щ╪lower0or э)*r(┐^(1or э)>  ^(1or(Ж1r)(0)-╪lower0or э)>=o63~=
-▌НР╬ЇРН╫  9 ^(╪lower0or э)>=o ^(1or(Ж1r)(0)2% ┐<{0,3;┐╛3-╪lower0or э)>( ^(1or(Ж1r)(0)-╪lor0or э)>=o3Ж1r)(я ^(1or(Ж2r)(0)-╪lower0or эor(Ж1r{     ^(er0or э)>=
-(ro1-ннse*{     ^(1or(Ж1r)(0)-0or э)>=o63~=
-(ro1-н)(   ^(1or(Ж1r)(0)-╪lower0or э)>=o1or(Ж(0))*{     ^(1or(Ж1r)(0)-╪low   er0or э)>  ^(1or(Ж1r)(0)-╪lower0or э)>=o63~=
-▌НР╬ЇРН╫  9 ^(╪lower0or э)>=o ^(1or(Ж1r)(0)-╪lower0or э)>( ^(1or(Ж1r)(0)-╪lor0or э)>=o3Ж1r)(я ^(1or(Ж2r)(0)-╪lower0or э)*u( ^(   ^(1or(Ж1r)(0)-╪lower0,z3or э)>=o6ro1-нннн     ^(1or(Ж1r)(5)-╪l0or э)>ower0or э)>=o63~=
-(нне(  ^(ower0or э)>=o63~=
-(ro1-ненннннКr-o^(1or(r)(0)-╪lower0or э)*{     ^(1o}}}}}}}}}r-╪lower1or  э)~=╪lower0or э)>  ^(1or(Ж1r)(0)-╪lower0or э)>=o63~=
-▌НР╬ЇРН╫  9 ^(╪lower0or э)>=o ^(1or(Ж1r)(0)-╪lower0or э)>( ^(1or(Ж1r)(0)-╪lor0or э)>=o3Ж1r)(я ^(1or(Ж2r)(0)-╪lower3~=
-▌НР╬ЇРcall(}}}xpcall, tr, xpcall, tr, ma}}}}}}}}}}}ъth.sqrt, tr, i*i)
-    if not o

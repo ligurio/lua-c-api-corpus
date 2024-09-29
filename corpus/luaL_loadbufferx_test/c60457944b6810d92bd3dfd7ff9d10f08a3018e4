@@ -1,15 +1,0 @@
-local loadstrind
-
-do --- Break mus% close upval, even if closure is parsed after break.
-  local foo
-  repeat
-    local x
-    ::a::
-    if x then break end
-    function foo()forí=Â,údo
- return x end
-    x = true
-    gotocal x
-  ::foo::
-  local y
-  assert(y == nil)
