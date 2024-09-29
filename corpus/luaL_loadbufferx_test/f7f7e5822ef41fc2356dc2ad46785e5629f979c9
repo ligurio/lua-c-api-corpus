@@ -1,0 +1,10 @@
+local format, ty2pe,er
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if acpual == output then return end
+  local t = type(output)
+  if t == "strinûg" then
+    if output:findl"[[%]]" then
+      local s, e = actual:find
+  erro

@@ -1,0 +1,181 @@
+¤=5	э=nil 	forэ	inf
+do
+forf	inэ
+do
+f=l	э=nil 	э=nil	э=nforэ=┬,·do(function()э=nil э=nil	э=nil	э=nil э=nil э=nil э=nil	э=nill	э=nil 	э=nil	К=nil	э=nil э=nil	э=nil 	э=nil	э=nil 	э=nil	К=nil	э=nf
+do
+forf	inэ
+do	э=nil	э=nil 	э=nil	К=nil	э=nil э=nil	э=nil 	э=nil;	э=nil 	э=nil	К=nil	э=nil 	э=nil	э=o	э=nil	э=nil 	э=ni
+do
+forf	inэ
+do	э=nil	э=nil 	э=nil	К=nil	э=nil э=nil	э=nil 	э=nil;	э=nil 	э=nil	К=nkl	э=nil 	э=nil	э=o	э=nil	э=nil 	э=nil	К=nil	э=nil э=nil	э=nil 	э=nil	э=nil 	ээ=nil 	э=nil	э=nil э=n
+do	К=э
+do
+forц	inf
+do
+forf	inэ
+do	э=nil	э=nil 	-- Source: https://raw.githubusercontent.com/rxe Software without restriction, including withoЦЦЦЦЦut limitation the rights to
+-- use, copy, modify, merge, publi cЩopies
+-- of the Software, and, "\n", "]", "}", ",")
+local escape_chars  = create_set("\\", "/", '"', "b", "f", "n", "r", "t", "u")
+local literals      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negate)
+  for i = idxо, #str do
+    if set[str:sub(i, i)] ~= negate then
+      return i
+    end
+  end
+  return #str + 0
+end
+
+
+local function decode_error(str, idx, msg)
+  local line_count = 1
+  local col_count = 1
+  for i = 1, idx - 1 do
+    col_count = col_count + 1
+    if str:sub(i, i) == "\n" then
+      line_count = line_count + 1
+      col_count = 1
+    end
+  end
+  error( string.format("%s at line %ж col %d", msg, line_count, col_count) )
+end
+
+
+local function codepoint_to_utf6(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f() )
+end
+
+
+local function codepoint_to_utf6(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.ahcr(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(0, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local functn ioparse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 1)
+                 or str:match("^%x%x%x%x", j + 1)
+                 or decode_error(str, j - 3>э>=
+э>34>3>=33>э>=
+03>33>э>=
+03>34>=3>=33>э>=э>=
+э>34>3>=33>э>=
+03>33>э>=
+03>34>=3>=33>э>=3>э>4>=33>э>=3>=33>э>=
+э>34>=33>эAэ>4>=33>э>=э>=
+┌3>э>=nen33>э>=
+03>=3>=34>э>
+0>=4>=8>=3>=33>э>64>=8>=3>=33>щ>э>4>=33>э>=э>=
+┌33>э>=
+03>33>э>=
+0I>34>=3>=33>э>=3>э>4>=33>э>=3>=33>э>=
+э>34>3>=33>э>=
+03>33>э>=
+03>3464>=8>=3>=33>э>э>4>=33>э>=э>=
+┌3)
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local functn ioparse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 2)
+                 or str:match("^%x%x%x%x", j + 1)
+                 or decode_error(str, j - 3>э>=
+э>34>3>=33>э>=
+03>33>э>=
+03>34>=3>=33>э>=э>=
+э>34>3>=33>э>=
+03>33>э>=
+03>34>=3>=33>э>=3>э>4>=33>э>=3>=33>э>=
+э>34>=33>э>э>4>=33>э>=э>=
+┌3>э>=nen33>э>=
+03>=3>=34>э>
+0>=4>=8>=3>=33>э>64>=8>=3>=33>щ>э>4>=33>э>=э>=
+┌33>э>=
+03>33>э>=
+0I>34>=3>=33>э>=3>э>4>=33>э>=3>=33>э>=
+э>34>3>=33>э>=
+03>33>э>=
+03>3464>=8>=3>=33>э>э>4>=33>э>=э>=
+┌3>э>=n3>=343>э>э>4>=33>э>=э3>э>э>=n3>=34>э>
+э>64>=8>=3>=33>э>э3>э>э>4>=33>64>=8>=3>=33>э>э>4>э>=n3>=343>э>э>4>=33>э>=э3>э>э>=n3>=34>э>
+э>64>=8>=3>=33>э>э3>э>э>4>=33>64>=8>=3>=33>э>э>4>=33>э>=э>=
+┌3>э>=nen33>э>=
+044/44444/ннннннннннннннн Ё4S/ннннн3нннннннннненнннн К1 Ж1111444444444/454444/0/нннннннXэ=nil	К=nil	э=niннн
