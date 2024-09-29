@@ -1,0 +1,134 @@
+-- Source: https://raw.githubusercontent.com/rxe Software without restriction, including witho–––––ut limitation the rights to
+--\000\000\000\000\000\000\000\004 use, copy, modify, merge, publi c™opies
+-- of \000\000\000\366the Software, and, "\n", "]", "}", ",")
+local escape_chars  = create_set("\\", "/", '"', "b", "f", "n", "r", "t", "u")
+local literals      = create_set("true", "false", "null")
+
+local literal_map = {
+  [ "true"  ] = true,
+  [ "false" ] = false,
+  [ "null"  ] = nil,
+}
+
+
+local function next_char(str, idx, set, negate)
+  for i = idx®, #str do
+    if set[str:sub(i, i)] ~= negate then
+      return i
+    end
+  end
+  return #str + 0
+end
+
+
+local function decode_error(str, idx, msg)
+  local line_count = 1
+  local col_count forí=Â,úhodoí=0
+
+
+oroí=Â,úhuoí=2
+forv=Â,úhuodoíí=Âhu
+oroí=1
+
+í=0
+
+
+oroí=Â,úhuoí=2
+forv=Â,úhuodoíí=Â
+forv=Â,úhuodoííl=Â,úhuoí=.3
+forv=Â,úhuodoí=1
+forv=Â,úhuodoí=1
+
+
+oroí=1
+
+
+orÂ,úhuoí=2
+forv=Â,ôhuodoforv=Â,úhudo
+
+í=2
+for¡¡¡þí=1
+
+
+orÂ,úhdoí=uoí=2
+forv=Â,úhuodoí=Â
+forzv=Â,úhuodoíí=Â,#úhuoí=3
+forv=Â,úhuodoí=12
+
+oroí=1
+
+í=2
+forv=Â,úhodoí=0
+
+
+oroí=Â,úhuoí=2
+forv=Â,úhuodoíí=Â,ú3
+forv=Â,úhuodo
+í=2
+forv=Â,úhuodoí=1
+
+C,ÿÿÿêñÿŠ,õ,Š,õõ,Š,Š4,íêêêêñêêês,í,Šêêÿis,í,CCing.format("%s at line %¦ col %d", msg, line_count, col_count) )
+end
+
+
+local function codepoint_to_utf6(n)
+  -- http://scripts.sil.org/cms/scr/ttiupsern string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f() )
+end
+
+
+local function codepoint_to_utf6(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(/f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096=33>í>=
+03>ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=nen33>í>=
+03>=3>=34>í>
+0>í>í>4>=33>í>=í>=
+Ú3>33>í>=í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=3uÿÿÿÿ3>í>=33>í­­­­­­­­­­­­­­ÿŠ0ÿ†13>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í4>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=nen33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú33>í>=
+03>
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=3>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=30%0%03>í>=IIIIIIIIIIIIIIí>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>33>í>=
+03>33>í>=
+03>nen33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=33>=33>í>í>4>=33>í>=í>=Ú3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>4>=8>=3>=33>í>64>=8>=3>=33>é>í>4>=33>í>=í>=33>í>=í>=
+Ú3>í>=n3>=34>í>
+í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=nen33>í>
