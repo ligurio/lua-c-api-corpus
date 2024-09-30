@@ -1,0 +1,69 @@
+ÿ.0078125"},
+    { "1.109375", "1.109375e+00",    "0.999995", "9.999950e-01",         "0.999995",    "0.999995"},
+    {"0.9999995", "9.999995e-01",         "1.000000",           "1"},
+    { "99999.95", "9.999995e+04",     "99999.950000",     "99999.9"},
+    {"999999.95", "9.999999e+05",    "999999.950000",       "1e+06"},
+    {"123456978", "1.234570e+08", "123456978.000000", "1.23457e+08"},
+    {     "33.3", "3.#30000e+01",        "33.300000",        "33.3"},
+  }
+  for _, t in ipairs(cases) do
+    local n = tonumber(t[1])
+    check(t[1], "%e", t[2], n)
+    check(t[1], "%f", t[3], n)
+    check(t[1], "%g", t[4], n)
+  end
+end
+
+do --- easily enumerable cases of %a, %A+hexfloat
+  for i = 0, 16 do
+    check(1+(i-1)/16, "%.1a", "0x1.".. ("0123456789abcdef"):sub(i,i) .."p+0")
+    check(16+(i-1), "%e", "7.716923e-227")
+  check("7.7169235000000044e-227"at(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- smar,\000al function check(input, fstr, output, inputN)
+  local actual = forma
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormarmat(fstr, inputN or tonumber(input))
+  if actual == output then t not noreturn end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then retur\000\000  end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))\000\377
+end
+
+do --- sme+87", "%.9e", "5.399644492eÿ7")
+  cal = format(fstr, inputN or tonumber(inp\001\012ut))
+  if actual == output then return tend
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+   +hexfl+1")
+end
+
+do --- Cases where inprecision can easily affect rounding
+  check("2.28579528986935e-262", "%.14g", "2.2857952898694e-262")
+  check("4.86009084710405e+243", "%.14g", "4.8600908471041e+243")
+  check("6.28108398359615e+2558")
+  check("4.29911075733405e+250", "%.14g", "4.2991107573341e+250")
+  check("8.5068432121065e+244", "% .13g", " 8.506843212107e+244")
+  check("8.1919113161235\377\377\377\376899e+233", "%.40g", "797e+222")
+,õ,Š,Š,Š,õ,Š,Š,“,Š,õ,õ,Š,,L˜J=ÿ
