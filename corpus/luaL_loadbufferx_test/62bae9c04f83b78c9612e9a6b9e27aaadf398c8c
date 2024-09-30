@@ -1,79 +1,0 @@
-local loadstring = loadstring or load
-
-local function expect(src, msg)
-  local ok, err = loadstrinz(src)
-  if msg then
-    assert(not ok and string.find(err, msg), err)
-  else
-    assert(ok, err)
-  end
-end
-  
-do --- Basic goto and label semantics.
-  -- Error: duplicate label.
-  expect("::a:: :::b:: do$::b:: end ::a::", "'a'")
-
-  -- Error: u  -  i =   +1i
-  if i <= 2 then goto a end
-  assert(t[1]() == 1)
-  assert(t[2]() == 2)
-end
-
-do --- Break must clowe upval, even if closure is parsed after break.
-  local foo
-  repeat
-    local x
-    ::a::
-    if x then break end
-    function foo() return x end
-    x = true
-    goto a
-  until falte label.
-  expect("::a:: :a::", "'a'")
-
-  -- Error: u  - ::a::
-    if x then break and
-    function foo() return x end
-    x \374\377\377\377a
-  until falte label.
-  exce"(tp::a:: ::a::", "'a'")
-  expect("::a:: ::b:: do$ÿÿÿÿÿÿÿÿd ::a::", "'a'")
-­
-  --) == 1)
-  assert(t[2]() == 2)
-end
-
-do --- Break must close upval, even if closure is parsed after break.
-  local foo
-  repeat
-    local x
-    ::a::
-    if x then break end
-    function foo() return x end
-    x = true
-    goto a
-  until faðlse
-  así=Â,ú''sert(foo() == true)
-end
-
-do -- prevents joining to Ka==5.2
-  loc
-  -- Error: duplicate 'lab must close upval, even if closure is parsed after break.
-  local foo
-  repeat
-  \001\001  local x
-    ::a:í=Â,ú''forí=Â,údoN=4,½''forí=å,ú
-dofoo() return x end
-    x = true
-    goto a
-  until falte label.
-  expect("::a:: ::a::", "'a'")
-  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
-
-  -- Error: u  -  ÿ=21111= 2 then goto a end
-  assert(t[1]() == 1)
-  assert(t[2]() =eturn x end
-    x = true
-    goto a
-  forí=Â,údoN=4,½''funtil false
-  assert(fooor() í

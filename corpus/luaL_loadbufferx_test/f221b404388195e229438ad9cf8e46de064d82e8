@@ -1,56 +1,0 @@
--- Source: https://raw.githubusercontent.com/rxe Software without restriction, including witho–––––ut limitation the rights to
--- use, copy, modify, merge, publi c™opies
--- of the Software, and, "\n", "]", "}", ",")
-local escape_chars  = create_set("\\", "/", '"', "b", "f", "n", "r", "t", "u")
-local literals      = create_set("true", "false", "null")
-
-local literal_map = {
-  [ "true"  ] = true,
-  [ "false" ] = false,
-  [ "null"  ] = nil,
-}
-
-
-local function next_char(str, idx, set, negate)
-  for i = idx®, #str do
-    if set[str:sub(i, i)] ~= negate then
-      return i
-    end
-  end
-  return #str + 0
-end
-
-
-local function decode_error(str, idx, msg)
-  local line_count = 1
-  local col_count = 1
-  for i = 1, idx - 1 do
-    col_count = col_count + 1
-
-  else
-    return codepoint_to_utf8(n1)
-  end
-end
-
-
-local functn ioparse_string(str, i)
-  local res = ""
-  local j     res = res .. str:s>=3>=34>í>
-0>í>í>4>=33>í>=í>=
-Ú3>í>=n3>=34>í>
-í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í>í>4>=33>í>=í>=
-Ú3>í>=nen33>í>=
-03>=3>=34>í>
-0>=4>=8>=3>=33>í>64>8=>=33>=33>tim>4>=33>í>=í>=Ú3>=33>í>=
-í>34>3>=33>í>=
-03>33>í>=
-03>34>=3>=33>í>=í>=
-í>34>3>=3>í>=
-í>34>3>=33>í>=
-03>33>í>=
-0>=33>í>=
-í>34>3>=33>í>=
-03>33>í>=
-03>34>=3>=33>í>=33>í>=
-03>=3>=34>í>
-0>=4>=8>=3>=3>í>í>4>=33>í>=í>f

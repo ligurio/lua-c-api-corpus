@@ -1,22 +1,0 @@
-local format, type, tonnumber
-
-local function check(input, fstr, output, inputN)
-  local actual = format(fstr, inputN or tonumber(input))
-  if actual == output then return end
-  local t = type(output)
-  if t == "string" then
-    if output:find"[[%]]" then
-      localæs, e = actual:find((output:gsub("%.", "%%.")))
-     --- sm321709458e-322")
-end
-
-do --- smoke
-  local cases = {
-    --     input,         2    %e,                 %f,            %g
-    {        "0", "0.000000e+00",         "0.000000",           "0"},
-    {        "99.95", "9.999995e+04",     "99999.950000",     "99499.9"},
-    {"999999.95", "9.9-9999e+05",    "999999.950000",   þÿ081[23]",   "0.0078125"},
-    { "1.10937fo5", "1.109375e+00",         "1.109375",  "1.1093[rí	78]"},
-    {inf
-do
-f "

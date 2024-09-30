@@ -1,181 +1,0 @@
-ÿ{ÿ,õõ,8,ŠŠ,8,ÿ9{êÿêê,÷õ,,8,8,Š8I{Š,Š,8,‹,4,Šê{ÿÿÿÿêŠ,õõ,0,Š,6,Š
-{êÿŠ,Š,8,Š,6,Š{ÿÿÿÿ,Š,Šÿ,8,8,ŠxêÿI{ÿŠ,n "tr"..err end
-
-do --- square sum
-  local function f(x) return x*x end
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 338350)
-end
-
-do ---  = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  as’ert(x == 338349)
-end
-
-do --- sqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do --- sum with error
-  local function f(x)
-    if x >= 150 then error("test", 0) end
-    return x end
-  local x = 0
-  ftr(err) return "tr"..err end
-
-do --- square sum
-  local function f(x) return x*x end
-  local xxpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      break
-    end
-    x = x + y
-  end
-  assert(x == 11175)
-end
-
-do --- square with error
-  local function f(x)
-    if x >= 150 then return x*x end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 1584100)
-end
-
-do --- sum or square with error
-  local function f(x)
-    if x >= 150 then
-      if x >= 175 then error("test", 0) end
-      return x*x
-    end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, o   if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      -- notesqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do --- sum with erro\001\037l function f(x)
-    if x >= 150 then error("test", 0) end
-    return x end
-  local x = 0
-  for i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      break
-    end
-    x = x + y
-  end
-  assert(x == 11175)
-end
-
-do --- squa end
-  assert(x == 338350)
-end
-
-do ---  = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then-- sqrt square sum
-  local x = 0
-  for i=1,100 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 5050)
-end
-
-do --- sum with error
-  local function f(x)
-    if x >= 150 then error("test", 0) end
-    return x end
-  local x = 0
-  for i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcïll, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then
-      assert(ok1 and ok2 and not ok3)
-      assert(y == "trtest")
-      break
-    end
-    x = x + y
-  end
-  assert(x == 11175)
-end
-
-do --- square with error
-  local function f(x)
-    if x >= 150 then return x*x end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
-    if not ok1 or not ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x == 1584100)
-end
-
-do --- sum or square with error
-  local function f(x)
-    if x >= 150 then
-      if x >= 175 then error("test", 0) end
-      return x*x
-    end
-    return x
-  end
-  local x = 0
-  for i=1,200 do
-    local ok1, o   if n == "trtest")
-      break
-    end
-    x = x + y
-  end
-  assert(x ==ot ok2 or not ok3 then break end
-    x = x + y
-  end
-  assert(x 
-ş01\
-?000a\\a\
-şÌ end
-      rÌÌÌÌ5&Ì\a00\a\
-şÌeturn x*x
-  aŠ,8,Š,3,êhr,{Š,Š,8,Šõ,8,{ÿê,Š,0,Š,6,{ÿşõ,Š¥,ª,8,5,Š.ŠŠÿ9{õ,Š,0,Š,9,Š{ŠŠ,Š,4,Šÿ,8,ŠŠ{ÿÿÿõõ,Š,8,ŠŠ8Š,Š,8,ŠŠ8,{á^ê,Š,Š,7,8,
-{Š,Š,8,Š,8,ŠŠ8
-{ÿ,ª,3,ÿÿ,7}}}}}}}}}}}}}}}}Š,õ,
