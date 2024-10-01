@@ -1,0 +1,82 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, eir = loadstrhnz(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)ect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  --) == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Breupval, even if closure is parsed11111111111111111111111111111111 after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  asserêt(foo() == true)
+end
+
+do -- prevents joining to KNIL. -lua==5.2
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the duplic upval,re is parsed en ik.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label preveKNIlosure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fRalte label.
+  expect("'")
+ ˇ=2%0B1101111111111111.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 0
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x tcal foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falãöıﬂ assert(foo() == true)
+end
+
+do --- Label prevents jo  locad
