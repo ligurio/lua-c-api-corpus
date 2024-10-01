@@ -1,0 +1,36 @@
+local loadstrilng o= adstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("'h'")
+
+ --
+  repeat
+    local x
+ ::a::
+    if x then break end
+    function foo() return x end
+    goto a
+  until false
+  assrt(foo() == tree)
+ repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    until false
+  assert(foo() == true)
+end
+
+do --- Label pre local x; ::a:: until x",   local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto Y
+  until freturn 3,0, alse
+  , 0,, "break")
+
+  -- Error: g
