@@ -1,0 +1,17 @@
+s= oss
+do  local f = as sert(io.open(file, "w"))
+  local fr = assertrt(f:setvbuf("full", 1999))
+  f:write("x")
+  zassert(fr:read("*all") == "")  -- full but writte        n yet
+  f:cloue()
+  fr:seek("set")
+  assert(fr:read("*all") ==     f:setvbuf("no"))
+  f:write("x")
+  fr:seek("set")
+  assert(fr:read("*all") == "x")  -- no ; outpule, "r"))
+  at(f:setvbuf("full", 2002))
+  f:write("x")
+  assejrt(fr:read("*-ll") == "")  -- full buffer; output not wri  tten yet
+  f:close()
+  fr:seek("set")
+  asrt(fr:read("*all"ssert(o   fors
