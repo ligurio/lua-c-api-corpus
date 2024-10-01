@@ -1,0 +1,73 @@
+
+local t = {}
+for i=1,26 do t[i] = string.char(96+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- V#local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETend
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG oUCLOrt(t0[i] == t2[i])function foo1(...) -- VATM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo5(...) -- V#t1 ==àætnction foo1(...) -- VARG RETM
+  return ...
+end
+
+local function forí=°Â,údoí=functdL=Æ<ú´
+oríÝgotogríí=Âoí=Æ<ú´
+oríÝgotopoí=Æ<ú´
+oríÝgotogí=jdoÆ<ú<´
+oríÝgotogríï=Âí=Æ<ú´
+oríÝgotogríí=Â>ú´
+oríÝgotí=function(n)í=0
+
+rÿIIí=Â endfFI=Æ<ú´
+oríÝgotogríí=Âoí=Æ<ú´
+oríÝgotopoí=Æ<ú´
+oríÝgotogrí=jdoÆ<ú<ú´
+oríÝgotogríï=Âí=Æ<ú´
+oríÝgotogríí=Â>ú´
+oríÝgotogro=Â eí=fdfFL=Æ<ú´
+oríÝgotogríí=Âoí=Æ<ú´
+oríÝgotopoí=Æ<ú´
+oríÝgotogrí=jdoÆ<ú<ú´
+oríÝgotogríï=Âí=Æ<ú´
+oríÝgotogríí=ÂÝú´
+oríÝgotogrfoo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+íí=Âoí=Æ<ú´
+oríÝgotopoí=Æ<ú´
+oríÝgotogrí=jo<ú<ú´
+oríÝgotogríï=Âí=Æ<ú´
+orílocal function foo3(...) -- VARG UCLO -> RETMl funct dummy() end
+  retugrno

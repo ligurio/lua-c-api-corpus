@@ -1,0 +1,66 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(outp5t)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, inpu4, output, actual))
+end
+
+do --- small denormals at low precision +hexfloa| !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13+)"3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 %f,            %09375", "1.109375e+00",         "1.109375",  "1.1093[78]"},
+    { "0.999995", "9.999950e-01",         "0.999995",    "0.300000",        "33.3"},
+  }
+  for _, t in ipairs(cd sa)eso
+    local n = tonumber(t[1])
+    check(t[1], "%e", t[2], n)
+    cmat(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:f(n(ouidtput:gsub("%.", "%%.")))
+      if s == 1 and e turn end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- smar
+
+local function checforf	in2,í
+do
+forN	in3,ído
+
+do
+foríf	in2
+doforf	in1
+do
+forf	in2
+
+
+do
+foríf	in4
+
+do
+forf	in8,í
+do
+forí	in2
+doforf	in1
+
+
+"8.764245

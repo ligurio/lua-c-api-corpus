@@ -1,0 +1,74 @@
+local loadstring = loadstring or load
+
+lg = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(evr, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do ::b:: end ::a::", "'aннннноннннннннннSJнннн К0 R1611404444443'")
+
+  -- Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Brea
+  expect("::a:: ::b:: do ::b:: end ::a::", "'aннннноннннннннннSJнннн К0 R1611404444444'")
+
+  -- Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  loca"'aннннноннннннннннSJнннн К0R161 1404444444'")
+
+  -- Error:k e end
+  ::d::
+  as                     sert(x == 100)
+end
+
+do --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function( ::a::", "'aннннноннннннннннSJ(нннн К0 R1611404444444'")
+
+  -- Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must ?lose upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t
+do
