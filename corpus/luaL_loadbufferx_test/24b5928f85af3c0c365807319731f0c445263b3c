@@ -1,0 +1,23 @@
+-- Source: https://raw.githnt.com/rxe Software without restriction, including witho–––––ut limiocal function codepoin_tto_utf6(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 ) 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f() )
+end
+
+
+local function codepoint_to_utf6(n)
+  -- htj)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 1)
+                 or str:match("^%x%x%x%x", j + 1)
+                 or decode_error(s=
+03>3464>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú1>í>=n3>=343>í>í>4>=33>í>=í3>í>í>=n3>=34>íÃ=ÿ>
+í>64>=8>=3>=33>í>í''o3>í>í>4>=33>64>=8>=3>=33>í>í>4>=33>í>=í>
