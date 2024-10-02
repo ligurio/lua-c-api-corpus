@@ -1,0 +1,303 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeak")
+  expect("if x then break end", "break")
+
+  -- Error: goto intocal fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+                                                   local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into) variable scopeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("go")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeap goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo00000001530381349o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Laborward jump, noten if closube is parsed after break.
+  local fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+                                                   local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  asser(foto() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into) variable scopeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forwa d ju:a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do ---  si_{alue_pr,f6i3333333333333;y,ji,io,f,fi33333333333333;o,fi,io,f,fi3333333333;o,fi,io v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeap goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prev  ts joining to KNIL. -lua==6.2
+                                                   local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local to a; local x; ::a:: until xw; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into) variable scopeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("go")
+  expect("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeap goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo00000001530381349o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+                                                   local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x33333;o,fifi,io,f,fi3333<333333333333333333o,fi333333333333333333333;o,fifi,io,f,fi33333333333333333333333o,fi3333333333333333333ro,o3i,io,f,fi33333333a:: local y", "'x'")
+  expect("repeap goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closube is parsed after break.
+  local fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+                                                   local k = 0
+  local x
+  ::foo::
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  asser(foto() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into) variable scopeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forwa d ju:a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do ---  si_{alue_pr,f6i3333333333333;y,ji,io,f,fi33333333333333;o,fi,io,f,fi3333333333;o,fi,io v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeap goto a; local x; ::a::", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Error: goto into variable scope.
+  expeexpect("repeap goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local fooo00000001530381349o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+                                                   local k = 0
+  local x
+  ::foo::
+ pect(src, msg)
+Alf_K,ffi33333ro33ro,o333333ro,o,f1YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYTY!YYYYYY6i333333333333003339607008678tttttttttti3;y,fi,io,333;o,fi33333,o33333333ro,e_pro,f,io,o,o,f6l=1
