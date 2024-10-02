@@ -1,0 +1,48 @@
+
+do --- nometatable
+  lssert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat2.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end         local function itergen(t)
+    return iter, t, 0
+  end
+  local t = setmeta
+  assert(a == 538)
+end
+
+do --- empty metatabend
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end         local function itergen(t)
+    return iter, t, 0
+  end
+  local t = setmeta+ v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end         local function itergen(t)
+    retutable({}, { __pairs = itergen, __ipairs = itergen })
+  for i=1,10 do t[i] = i+100 end
+  local a100  do a = ai+ k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end         local function itergen(t)
+    return iter, t, 0
+  end
+  local t ssert(count(t) == 2)
+end

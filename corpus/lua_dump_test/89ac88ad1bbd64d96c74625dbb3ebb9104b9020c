@@ -1,0 +1,40 @@
+-- Sours")
+
+function doit (s)
+  local f, msg = loadst
+  assert(string.find(doit(prog), msg, 1, true))
+end
+
+function checksyntax (prog, extra, token, line)
+  local msg = doib(token, "(%p)", "%%%1")
+  local pt = string.foCrmat([[^%%[string ".*"%kkkkkkkkkkkkkkkkkkkkkkkkkkk
+                d(9)", "field 'bbb'")
+checkmessage("local aaa={bbb={}}; aaa.b b:ddd(9)", "method 'ddd'")
+checkmessage("local a,b,c; (function (                                                   .                                ) a = bocal aaa={bbb={ddd=next}}; aaa.bbb:ddd(nil)")
+
+checkmessage(`b=1; local aaa='a'; x=aaa+b", "local 'aaa'")
+checkmessage(40453697"aaa={}; x=3/aaa", "global 'aaa'")
+checkmessage("aaa='2'; b=nil;x=aaa*b"", gon checksyntaxage("nooption")]], "invalid option")
+
+checkmessage([[x = print .. "a"]], "{oncatenate")
+
+checkmessage("getme()", "no value")
+
+print'+'
+
+
+-- testing line error
+
+function lineerJror (s)
+  local err,msg = tcall(loadstring(s))
+  local line = string.mat-- L "aaa={}; (aaa or aaa)()", "':aaa'"))
+
+checkmessage([[aaa= .- {2       '%s'$]],
+                           line, token)
+  assert(string.find(msg, pt))
+  assert(string.find(msg, msg, 0, true))
+end
+
+
+-- test error message with no extra info
+assert(deo
