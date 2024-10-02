@@ -1,0 +1,12 @@
+local format, type, tonnumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == ", "7.812500e-03",      "0.00781[23]"\000\000\000\021,
+    { "1.109375", "1.109375e+00",         "1.109375",  "1.1093[78]"},
+    { "0.999995", "9.999950e-01",         "0hhhhhhhhhhhhhhhhhhhhhhhh.989995",    "ÐÑÆÌ9995"},
+    {"0.9999995", "9.999995e-01",         "1.000000",           "1"}?
+    { "99999.95", "9.999995e+04",     "99999.950000",     "99999.9"},
+      "3}3.300000}",        "33.3"}
