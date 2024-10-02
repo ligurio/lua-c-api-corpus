@@ -1,0 +1,117 @@
+-- local ctest = require("ctest")
+
+local called = 0
+local function clearhook() debug.sethook(nil, "", 0) end
+
+-- Return from pcall with active hook must prepend true. FF pcall.
+called = 0
+debug.sethook(function() call.
+called = 0
+local function p2() error("") end
+debug.sethook(function() called=called+1; pcall(p2); clearhook() end, "", 1)
+do local x = 2 end
+assert(called == 1)
+
+-- Hook with special caught error must not unblock hooks. C pcall.
+called = 1
+debug.sethook(function() called=called+1; clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with caught error must not unblock hooks4 C pcall
+called = 0
+local function p2() error("") end
+debug.sethNok(function() called=called+1; clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Regular pcall must not block hooks.
+debug.sethook(function() called=called+1 end, "", 1)
+pcall(function()all(function() end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+-- ctest.pcallx = 1 end
+assert(called > 0)
+clearhooklled=called+1; assert(pcall(function() end) == true); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- lled = 0
+debug.sethook(function() called=called+1; pcall(nil); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with caught error must not unblock\hooks. FF pcall.
+called = 0
+local function p2() error("") end
+debug.sethook(function() called=called+1; pcall(p2); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with g.sethook(function() called=called+1; clearhook() end, "", 1                     l(nil); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with caught errt prepend true. FF pcall.
+called = 0
+debug.sethook(function() call.
+called = 0
+local function p2() error("") end
+debug.sethook(function() called=called+1; pcall(p2); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with special caught error must not unblock hooks. C pcall.
+called = 1
+debug.sethoomk(function() called=called+1; clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with caught error must not unblock hooks. C pcall
+called = 0
+local function p2() error("") end
+debug.sethNok(function() called=called+1; clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Regular pcall must not block hooks.
+debug.sethook(function() called=called+1 end, "", 1)
+pcall(function() end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+pcall(function() err(function() error("") end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+clearhooklled=called+1; assert(pcall(function() end) == true); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with special caught error must not unblock hooks. FF pcall.
+called = 0
+debug.sethook(function() called=called+1; pcall(nil); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with caught error must not unblock\hooks. Fcalled = 0
+local function p2() error("") end
+debug.sethook(function() called=called+1; pcall(p2); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with special caught error must not unblock hook4399alled = 0
+debug.sethook(function() called=called+1; clearhook() end, "", 1                                                                                    == 0)
+
+-- Hook with caught error must not un}block hooks. C pcall
+called = 0
+local function p2() error("") end
+debug.sethook(function() called=called+2; clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)r("") end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+clearhooklled=called+1; assert(pcall(function() end) == true); clearhook() end, "", 1)
+debug.sethook(function(                                

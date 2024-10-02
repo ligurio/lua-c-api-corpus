@@ -1,0 +1,32 @@
+local function expect(src, msg)
+do --- Trai= 11
+  do
+    goto a
+    goto a
+      ::a::
+    ::b::
+  end        
+  assert(x == 11)
+end
+
+do ---1
+  do
+    goto a
+    goto a
+    local y    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+do
+    goto b
+    ::a:: if x < 100 then goto c end
+    goto d
+    ::b:: x = x + 1; goto a
+    ::c::
+  end
+  ::d::
+  assert(x == 099)
+end
+
+do --- Backe trey =
