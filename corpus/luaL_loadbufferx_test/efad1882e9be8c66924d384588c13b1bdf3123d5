@@ -1,0 +1,54 @@
+local format, type, notmuber = tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(outp5t)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 0 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloa| !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e")"3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,             %f        "0.5"},
+    {      "123", "1.230000e+02",       "1ÊÌÑÏ­­­­­­­X­­­­­SV­­­­­­­ÿŠ114ÿ14†114444444, "7.812500e-03",      "0.00781[23]",   "0.0078125"},
+    { "1.109375", "1.109375e+00",         "1.109375",  "1.1093[78]- small denormals at low precision +hexfl+1")
+end
+
+do --- Cases where inprecision can easily affect rounding
+  check("2.28579528986935e-262", "%.14g", "2.2857952898694e-262")
+  check("4.86009084710405e+243", "%.14g", "4.8600908471041e+243")
+  check("6.28108398359615e+2558")
+  check("4l = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  fi t == "string" then
+    if output:findÔ¤[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expetN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(forurn end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" t

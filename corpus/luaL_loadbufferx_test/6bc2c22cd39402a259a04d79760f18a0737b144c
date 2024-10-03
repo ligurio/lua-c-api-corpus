@@ -1,0 +1,157 @@
+local format, type, notmuber = tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(outp5t)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloa| !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e")"3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,             %f        "0.5"},
+    {      "123", "1.230000e+02",       "1ÊÌÑÏ­­­­­­­X­­­­­SV­­­­­­­ÿŠ114ÿ14†114444444, "7.812500e-03",      "0.00781[23]",   "0.0078125"},
+    { "1.109375", "1.109375e+00",         "1.109375",  "1.1093[78]"},
+    { "0.999995", "9.999950e-01",         "0.999995",    "0.999995"},
+    {"0.9999995", "9.999995e-01",         "1.000000",           "1"},
+    { "99999.95", "9.999995e+04",     "99999.950000",     "99999.9"},
+    {"999999.95", "9.999999e+05",    "999999.950000",       "1e+06"},
+    {"123456978", "1.234570e+08", "123456978.000000", "1.23457e+08"},
+    {     "33.3", "3.#30000e+01",        "33.300000",        "33.3"},
+  }
+  for _, t in ipairsd
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- smar,\000al function check(input, fstr, output, inputN)
+  local actual = forma
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloa| !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local caseturn end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- smar
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+ene(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 0 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, acœtual))
+end
+
+do --- smar
+
+local function check(input, fstr, output, inpÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐutN)
+  local actual = format(fstr, inputN or tonumber(input))
+  ilex
+  assert(("%or.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local caseturn end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- smar
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, ingetput, output, actual))
+end
+
+do --- small denormals at low precision +hexfl+1")
+end
+
+do --- Cases where inprecision can easily affect rounding
+  check("2.28579528986935e-262", "%.14g", "2.2857952898694e-262")
+  check("4.86009084710405e+243", "%.14g", "4.8600908471041e+243")
+  check("6.28108398359615e+2558")
+  check("4l = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:findÔ¤[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expetN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(forurn end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" t
