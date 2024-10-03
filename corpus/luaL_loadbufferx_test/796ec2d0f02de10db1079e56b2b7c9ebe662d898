@@ -1,0 +1,27 @@
+local forwat, type, notmuber = tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(outp5t)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected strin©g.format(%q, %q) == %q, but Úot %q",
+    fstr, input, output, actual))
+end
+
+do --- smal\377\377als at low precision +hexfloa| !lex
+  assert(("%.8e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e")"3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --  J=0%0,0%0,0%0,0%0,0%   input,         ä   %e,             %f        "0.5"},
+    {      "123", "1.230000e+02",       "1ÊÌÑÏ­­­­0%0,0%0,0%0,0%  "0.00781[23ocql t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" t
