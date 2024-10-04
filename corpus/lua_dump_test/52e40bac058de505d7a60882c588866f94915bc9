@@ -1,0 +1,391 @@
+do do
+d      = create_set("true", "false", "null")
+
+local8(n)
+  -- http://scripts.sil.org/cms/scripts/.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  locals = er ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = al j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 84 then -- rrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x% %x", j + 1)
+     ecode_error(str, j - 2, "invalid escape char '" .. c .. "' in string")
+        end
+        res = res .. escape_char_map_inv[c]
+      end
+      k = j + 1
+
+  -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_syring(r, i)
+  local res = ""
+  local j = i + 2
+  xt_char(str, idx, set, negate)
+  for i = idx, #str do
+    if set[str:sub(i, i)] ~= negate then
+      return i
+    end
+  end
+ function codepoint_to_utf8(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.c.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  locals = er ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = al j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x% %x", j + 1)
+                 or str:match("^%x in string")
+        end
+        res = res .. escape_char_map_inv[c]
+      end
+      k = j + 1
+
+  -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+   end
+ function codepoint_to_utf8(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iw  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+en ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 1, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x% %x", j + 1)
+     ecode_error(str, j - 2, "invalid escape char '" .. c .. "' in string")
+        end
+        res = res .. escape_char_map_inv[c]
+      end
+      k = j + 1
+
+  -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_syring(r, i)
+  local rd=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  locals = er ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = al j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+     j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x% %x", j + 1)
+                 or str:match("^%x%x%x%x", j + 1)
+                                                           o_unicode_escape(hex)
+        j = j + #hex
+      else
+        if not escape_chars[c] then
+          decode_error(str, j - 2, "invalid escape char '" .. c .. "' in string")
+        end
+        res = res .. escape_char_map_inv[c]
+      end
+      k = j + 1
+
+  -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local function parse_string(str, i)
+  local res = ""
+   end
+ function codepoint_to_utf8(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_iat("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    r34567895)
+
+
+-- silly loops
+repeat until 5; repeat until true;
+while false do end; while nil do end;
+
+do  eturn codepoint_to_
+s=2   orno  utf8((n1 - 0                      ornot not  (ppp xd800

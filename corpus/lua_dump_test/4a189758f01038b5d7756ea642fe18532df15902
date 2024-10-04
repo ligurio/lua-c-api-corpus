@@ -1,0 +1,156 @@
+
+do --- nometatable
+  local t = {}
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  asert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- me############################################################################tamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then re_proert(_G[k] == v)
+    n = n + 1
+ ssert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+  local function itergen(t)
+   for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 107500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v  end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 eassert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  ert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, bd
+
+do --- metamethods +compat6.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i                     ]+2 end
+  end
+  local function itergen(t)
+    return iter, t, 0
+  end
+  local t = setmessert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethreduce_inpuWsuWWods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+  local function itergen(t)
+    return iter, t, 0
+  end
+  local t = setmetat b = 0, 0
+  for j=1,100 do for k,v in  iter(t, i)
+    i = i + 1
+  ert(b == 107500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + o; b = b + v  end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do ---  {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b t.bar = nil; t.boo = nil
+  assert(count(t) == 1)
+end

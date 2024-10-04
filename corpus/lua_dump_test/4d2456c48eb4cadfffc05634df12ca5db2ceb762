@@ -1,0 +1,211 @@
+-- Source: https://raw.githubusercontenend
+
+
+local function encode_nil(val)
+  return "null"
+end
+
+
+local function encode_table(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat as array -- check keys are va  lid and it is not sparse
+    local n = 0
+    for k in pairs(val) do
+      if type(k) ~= "number" then
+        error("invalid table: mixed or invalid key types")
+      end
+      n = n + 1
+    end
+    if n ~= #val then
+      error("invalid table: sparse array")
+    end
+    ---appendixa
+  local f = math.floor
+  if                                                                                               n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4064) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                           f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local funct_on parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local function encode_nil(val)
+  return "null"
+end
+
+
+local function encode_table(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat as array -- check keys are va  lid and it is not sparse
+    local n = 0
+    for k in pairs(val) do
+      if type(k) ~= "number" then
+        error("invalid table: mixed or invalid key types")
+      end
+      n = n + 1
+    end
+    if n ~= #val then
+      error("invalid table: sparse array")
+    end
+    ---appendixa
+  local f = math.floor
+  if                                                                                               n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                           f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function picode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surr 2, "invalid escape char '" .. c .. "' in string")
+        end
+        res = res .. escape_charnd
+  return n, x
+end
+
+
+local fuVVVVVVVVVVVVVVVVVVVVV encode_nil(val)
+  return "null"
+end
+
+
+local function encode_table(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat as array -- check keys are va  lid and it is not sparse
+    local n = 0
+    for k in pairs(val) do
+      if type(k) ~= "number" then
+        error("invalid table: mixed or invalid key types")
+      end
+      n = n + 1
+    end
+    if n ~= #val then
+      error("invalid table: sparse array")
+    end
+    ---appendixa
+  local f = math.floor
+  if                                                                                               n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4064) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                           f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local function encode_nil(val)
+  return "null"
+end
+
+
+local function encode_table(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular reference?
+  if stack[val] then error("circular reference") end
+
+  stack[val] = true
+
+  if rawget(val, 1) ~= nil or next(val) == nil then
+    -- Treat as array -- check keys are va  lid and it is not sparse
+    local n = 0
+    for k in pairs(val) do
+      if type(k) ~= "number" then
+        error("invalid table: mixed or invalid key types")
+      end
+      n = n + 1
+    end
+    if n ~= #val then
+      error("invalid table: sparse array")
+    end
+    ---appendixa
+  local f = math.floor
+  if                                                                                               n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                           f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(1, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surr 2, "invalid escape char '" .. c .. "' in string")
+        end
+        res = res .. escape_charnd
+  return n, x
+end
+
+
+local fuVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVnction parse_literal(str, i)
+  local x = next_al n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surr 2, "invalid escap -- Surr 2, "invalid escape char '" .. c .. "' in string")
+        end
+        res = res .. escape_charnd
+  return n, x
+end
+
+
+local function parse_literal(str, i)
+  local x = next_char(str, i, delim_tus, fmt("encoding idx %d did not resuerror", i) )
+  end
+end)
+
+
+test("encode in\t\\"' ] = [n
