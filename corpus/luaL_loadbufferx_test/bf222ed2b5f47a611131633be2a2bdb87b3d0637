@@ -1,0 +1,313 @@
+
+
+forÿÿÿÿ
+inÜÜÜÜ
+
+do
+
+forí,í
+inÿ,ÿ-ÿÏdo
+do
+
+forí,í
+in
+ÿÿÿÿ
+
+
+doforí,í
+inÿÿÿÿ
+do
+forí,í
+inÿÿÿÿ
+
+
+do
+forífí
+inf,lower
+do
+forí,í
+inÿÿÿÿ
+
+do
+
+forí,í
+inÿÿÿ
+
+
+do
+forí
+inÿÿÿÿ
+do
+
+forí,í
+inÿÿÿÿ
+
+
+do
+
+forífí,í
+inÿÿÿÿ
+
+do
+
+forí,í
+inÿÿÿÿ
+
+
+
+
+doforí,í
+inÿÿÿÿ
+
+
+
+do
+forí,í
+inÿÿÿÿ
+
+
+do
+forí,í
+inÿÿÿÿ
+
+
+do
+
+foríºf,í
+inÿÿÿ
+
+do
+
+forì,í
+inÿÿÿÿ
+
+do
+forí,í
+inÿÿÿÿ
+do
+
+do
+forí,í
+inÿÿÿÿ
+
+
+do
+forí
+inÿÿÿÿ
+do
+
+forí,í
+inÿÿÿÿ
+
+
+do
+
+foríf,í
+inÿÿÿÿ
+
+do
+
+forí,í
+inÿÿÿÿ
+
+
+do
+
+doforí,í
+inÿÿÿÿ
+
+
+
+do
+forí,í
+inÿÿÿÿ
+
+
+do
+forí,í
+inÿÿÿÿ
+
+
+do
+
+ert(ok1 and ok2 and not ok3)
+      assert(y == "trtest")
+      -- notesqrt square sum
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 5050)
+end
+
+do --- sum with erro\001\037l function f(x)
+    if x >= 150 then error("test", 0) end
+    return x end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "trtest")
+      break
+    end
+    x = x + y
+  end
+  assert(x == 11175)
+end
+
+do --- square     if not o ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 5050)
+end
+
+do --- sum with error
+  local function f(x)
+    if x >= 150 then error("test", 0) end
+    return x end
+  local x = 0
+  ftr(err) return "tr"..err end
+
+do --- square sum
+  local function f(x) return x*x end
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 338350)
+end
+
+do ---  = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 338349)
+end
+
+do --- sqrt square sum
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 5050)
+end
+
+do --- sum with error
+  local function f(x)
+    if x >= 150 then error("test", 0) end
+    return x end
+  local x = 0
+  for i=1,200 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok0 and ok2 and not ok3)
+      assert(y == "trtest")
+      break
+    end
+    x = x + y
+  end
+  assert(x == 11175)
+end
+
+do --- square with , xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then
+      assert(ok1 and ok2 and not ok3)
+      assert(y == "trtest")
+      break
+    end
+    x = x + y
+  end
+  assert(x == 11175)
+end
+
+do --- square     if not o ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 5050)
+end
+
+do --- sum with error
+  local function f(x)
+    if x >= 150 then error("test", 0) end
+    return x end
+  local x = 0
+  ftr(err) return "tr"..err end
+
+do --- square sum
+  local function f(x) return x*x end
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 338350)
+end
+
+do ---  = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 338349)
+end
+
+do --- sqrt square sum
+  local x = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, math.sqrt, tr, i*i)
+    if not ok1 or not ok2 or not ok3 thforí,í
+inÿÿÿÿ
+
+
+do
+
+forífí,í
+inÿÿÿÿ
+do
+
+forí,í
+inÿÿÿÿ
+
+do
+
+
+
+doforí,í
+inÿÿÿÿ
+
+
+
+do
+forí,í
+inÿÿÿÿ
+
+
+do
+forí,í
+inÿÿÿÿ
+
+
+do
+
+foríºf,í
+inÿÿÿÿ
+
+do
+
+forí,í
+inÿÿÿÿ
+
+
+
+
