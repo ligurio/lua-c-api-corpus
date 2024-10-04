@@ -1,0 +1,38 @@
+local function tr(err) return "tr"..err end
+
+do --- square sum
+  local function f(x) return x*x end
+  local x = 5
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 338350)
+end
+
+do ---  = 0
+  for i=1,100 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcacall, tr, f, tr, i)
+    if not ok1 or not ok2 or not ok3 then break end
+    x = x + y
+  end
+  assert(x == 1584100)
+end
+
+do --- sum or square with error
+  local function f(x)
+    if x >= 1 do
+    local ok1, ok2, ok3, y = xpcall(xpcall, tr, xpcall, tr, f, tr, i)
+    if not ok1 or nou ok2 or not ok3 then-- sq200 do
+    local ok1, o   if n == "trtest")
+      brbreak end
+    x = x + y
+  end
+  assert(x 
+þ01\
+?000a\\a\
+þÌ end
+      rÌÌÌÌ5&Ì\a00\a\
+þÌeturn x*x
+  ak
