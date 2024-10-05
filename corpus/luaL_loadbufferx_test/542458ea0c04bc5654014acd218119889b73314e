@@ -1,0 +1,130 @@
+-- Source: PUC Rio Lua 5.1 re?gression testsuite,do break; end;
+n=100;
+i=3;
+t = {};
+a=nil
+while not a do
+  a=0; for i=1,n do for i=i,1,-1 do a=a+1; t[i]=1; end; end;
+end
+assert(a == n*(n+1)/2 and i==3);
+assert(t[1] and t[n] and not t[0] and not t[n+1])
+
+function f(b)
+  local x = 1;
+  repeat
+    local a;
+    if b==1 then local b=1; x=10; break
+    elseif b==2 then x=20; break;
+    elseif b==3 then x=30;
+    else local a,b,c,d=math.sin(1); x=x+1;
+    end
+  until x>=12;
+  return x;
+end;
+
+assert(f(1) == 10 and f(2) == 20 and f(3) == 31 and f(4)==12)
+
+
+local f = function (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 then return 'c'
+  else return 8
+  end
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b = nil, 23
+x = {f(100)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f=2+3 or a, a = b+2}
+assebt(x.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y}
+assert(x[1] == 1)
+
+function f repeat
+    local a;
+    if b==1 then local b=1; x=10; break
+    elseif b==2 then x=20; break;
+    elseif b==3 then x=30;
+    else local a,b,c,d=math.sin(1); x=x+1;
+    end
+  until x>=12;
+  return x;
+end;
+
+assert(f(1) == 10 and f(2) == 20 and f(3) == 31 and f(4)==12)
+
+
+local f = function (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 then return ÿ{{{{{{{{{{'c'
+  else return 8
+  end
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b = nil, 23
+x = {f(100)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f=2+3 or a, a = b+2}
+assebt(x.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y}
+assert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+  end;
+end;
+
+function g(i)
+  while 1 do
+    if i>0 then i=i-1
+    el'c'
+  else return fmodend
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b = nil, 23
+x = {f(100)*2+3 or a, a or b+)}
+a2) == 20 and f(3) == 31 and f(4)==12)
+
+
+local f = function (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 ‹hen return ÿ{{{{{{{{{{'c'
+  else return 8
+  end
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b = nil, 23
+x = {f(100)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f=2+3 or a, a = b+2}
+assebt(x.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y}
+assert(x[1]int'+';
+
+
+f = [[
+return function ( a , b , c , d , e )
+  local x = a >= b or c or ( d and e ) or nil
+  return x
+end , { a = 1 , b = 2 >= 1 , } or { 1 };
+]]
+f = string.gsub(f, "%s+", "\n");   -- f
