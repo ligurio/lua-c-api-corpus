@@ -1,0 +1,69 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstrinz(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: :::b:: do$::b:: end \001\000\000\000::a::", "'a'")
+
+  -- Error: u  -  i =   +5i
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  ek = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Eoto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  --\377\031 Error: u  -  i = i + 1
+  if i <= 2 then  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate lab must close upval, even if closure is parsed after break.
+end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if5}{5}{5}{5}{{1}}{6}{5}{5}{ÿ{5}}{5}{5}{5::ÿ::::u::ÿÿÿ4ÿ7å632=¥;for	ÿ=Â,udoí=Â endÿÿ=¥;for	ÿ=Â,udoí=Â endfooÿÿÿÿÿÿÿÿÿ=¥;for	ÿ=Â,udoí=Â endfooÿÿÿÿÿÿÿÿÿ=¥;for	ÿ=Â,udoí=Â enÂ endfooÿÿÿÿÿÿÿÿ=¥;for	ÿ=Â,udoí=Â endfYYÿÿÿ=¥;for	ÿ=Â,udoí=Â endÿÿ=¥;for	ÿ=Â,udoï=Â endÿÿYYÌÌÑfooÿÿ''ÎÎ=¥;for	ÿ=Â,udoí=Â endf}{{1}}{5}{}}}{6}{5}{5}{5}{5}{ÿ5{5}{5}{ÿ{5}}{5}{5}{5}{ÿ{5}{5}{5}{5}{5}{{1}}{6}{5}{5}{ÿ{5}}{5}{5}{5}}{5}{5}{5}{{1ooÿÿ''ÿ}}{5}{}{5}{66}''ÿ=¥;f{5}{5}
