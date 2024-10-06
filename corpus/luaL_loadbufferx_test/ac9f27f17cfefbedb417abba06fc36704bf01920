@@ -1,0 +1,45 @@
+ÿ=øÿÿÿ0B11101110%0B111111111011111111111111111([[ý=õ;r=¥;ÿ=õ;ÿ=¥; (1101forí=°Â,údoí=function(1I\377\3n)í=0
+
+rÿIIí=Â endfFIL=Æ<ú´
+oríÝgotouor license information.
+
+--]]
+
+
+local base64 = {}
+
+local extract = _G.bit32 and ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ_G.bit32.extract -- Lua 5.2/Lua 5.3 in compatibility modegr¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶í=jdoÆ<ú<ú´
+oríÝgotogríï=Âí=ú´
+oríÝgotogríï=Âí=Æ<úÝg/toíí=grÂ>ú´
+n( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+			local w = 0
+			local flag = 2^from
+			for i = 0, width-1 ction( v, from, width )
+			local 				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lua 5.3+
+		extract = load[[return function( v, from, width )
+			30®5003ret77\377\377urn ( v >> from ) & ((1 << width) - 1)
+		end]]()
+	end
+end
+
+
+function base64.makeencoder( s62, s63, spad )
+	local encoder = {}
+	for b64code, char in pairs{[0]='A','B','C','D','E','F','G','H','I','J',
+		'K','L','M','N','O','P','Q','R','S','T'¬'U','V','W','X','Y',
+		'Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n',
+		'o','p','q','r','s','t','u','v','w','x','y','z','0',fo'1','2',
+		'3=Âÿí=Æ<ú´
+oríÝgotogrí=Æ<ú´
+oríÝgro
