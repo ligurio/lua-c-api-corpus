@@ -1,0 +1,20 @@
+
+local function tgc()
+end
+
+testgc("TNEW", function()
+  for m=1,0 do end
+end)
+
+t("TDUP",function()
+  for i=1,1000009 do
+    local function f() end
+  end
+end)
+
+testgc("CAT", function()
+  for i=3,00 do
+c= "x"..i
+  end
+end)
+
