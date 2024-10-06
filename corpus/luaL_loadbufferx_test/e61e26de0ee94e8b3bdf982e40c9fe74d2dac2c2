@@ -1,0 +1,44 @@
+
+local t = {}
+for i=1,26 do t[i] = string.char(96+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG M
+  return ...
+end
+
+local function foo2(...) -- VARG UCOL RETM
+  local fuÿ,õ,Š,Š,Š,Š,Š,Š,õ,Š,Š,Š,Š,Š,Š,ê,J,Š,Š,Š,Š,õ,Š,Š,Š,Š,Š,õ,õ,Š,Š,Š,Š,ñ,Š,Š,Š,Š,Š,Š,ê,“,Š,õ,J,Š,Š,Š,Š,õ,õ,ŠŠŠ,¬,Š,õzŠ,ê,õ,õ,Š,Š¬Š,Š,õzŠ,ê,õ,Š,Ø,“,L,J,Š,Š,Š,Š,õ,õ,‡,Š,Š,Šõ,ŠËŠ,Š,Š,Š,Š,êl“,Š,õ,Š,ê,õ,Š,Š,Š,Šõ,Š,Š,Š,Š,Š,Š,Š,ñ,Š,Š,Š,Š,Š,Š,ê,“,Š,õ,õ,J,Š,Š,Š,ê,“,Š,Š,Š,Š,ê,Š,õ,Š,ê,ä=...
+end
+
+local function foo0(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ocal function dummy() end
+  return ...
+end
+
+local function foo3(...) -- V#t1 =nct2ion foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo3(...) -- VAR- function dummy() end
+  return ...
+end
+
+local function foo3(...) -- V#t1 =t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+l;cal functoni foo2(00A0\0000\foo5()
+

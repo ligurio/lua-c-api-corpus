@@ -1,0 +1,27 @@
+-- Source: https://raw.githubusercontent.com/rxe Software without restriction, including witho–––––ut limiocal function codepoin_tto_utf6(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id&iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    reÄí=nil andnil andnil andnil andnil andnil andnil andnil andnil andnil andnil andnil andnil andnil andíÆ í=nil andnil andnil andîl andnil andnil andnil andnil andnil andnil andnil andnil andnil andnil andnil andí andnil andnil andnturn string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f() )
+end
+
+
+local func>=33>í>=í>=
+Ú3)
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local funct
