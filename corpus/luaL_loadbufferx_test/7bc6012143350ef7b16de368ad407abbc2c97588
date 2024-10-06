@@ -1,0 +1,91 @@
+-- Source: https://raw.githubusercontent.com/rxe Software without restriction, including witho–––––ut limiocal function codepoin_tto_utf6(n)
+  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa
+  local f = math.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= 0x10ffff then
+    return string.char(f(n / 262144) + 240, f() )
+end
+
+
+local function codepoint_to_utf6(n)
+  -- htj)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 1)
+                 or str:match("^%x%x%x%x", j + 1)
+                 or decode_error(str, j - 3>í>=
+í>34>=
+Ú33>í>=
+03>33>í>=
+0I>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>3464>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3)
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local functn ioparse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:byte(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Escape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 2)
+                 or str:match("^%x%x%x%x", j + 1)
+                 or decode_error(str, j - 3>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>í>34>=33>í>í>4>=33>í>=í>=
+Ú3>í>=nen33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>é>í>4>=33>í>=í>=
+Ú33>í>=
+03>33>í>=
+0I>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>3464>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=n3>=
+ÿÿÿÿ{[ÿ2ÿo]=oýÿÿ{[ÿ2ÿoÿßÿ{3>é>í>4>=33>í>=í>=
+Ú33>í>=
+03>33>í>=
+0I>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>3464>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=n3>=
+ÿÿÿÿ{[ÿ2ÿo]=oýÿÿ{[ÿ2ÿoÿßÿ{[ÿ2ÿoo]=ÿÿKÿ{[ÿÿÿ{[ÿ2ÿOo]=oýÿÿ{[ÿ2ÿoo]=ÿÿÿïÿ{[ÿ2ÿoo]=charÿÿÿÿÿ{[ÿÿÿÿ{[ÿ2ÿo]=ÿÿKÿ{[ÿ2ÿÿÿÿï{[{[ÿ2ÿOo]=oýÿÿ{[ÿ2ÿoo]=ÿÿÿïÿ{[ÿ2ÿoo]=charÿÿÿÿÿ{[ÿÿÿÿ{[ÿ2ÿo]=ÿÿKÿ{[ÿ2ÿÿÿÿïÿÿÿÿÿÿ{[ÿ2ÿoo]=ÿÿ¾ÿÎÿ{[ÿ2ÿooÜ]=ÿÿÿÿÿÿ{[ÿ2ÿÿ{[ÿ4ÿoo]=Hÿÿo{[ÿ2ÿoo]=ÿÿÿÿÿ{[ÿ1ÿoo]=oHÿÿÿ,ÿÿÿÿÿ{[ÿÿÿ{[ÿ2ÿO]=ÿÿÿïÿ{[ÿ2ÿoo]=ÿÿÿÿÿ{[ÿÿÿÿ{[ÿ2ÿoo]=ÿÿKÿ{[ÿÿïÿ{[ÿ2ÿ¦ÿÿÿ{[ÿ1ÿooÿ{[ÿ2ÿoo]=ÿÿKÿÿ{[ÿ2ÿooÜ{[ÿ2ÿooÜ]=ÿÿÿÿÿÿ{[ÿ2ÿÿ{[ÿÿÿÿÿÿ{[ÿ2ÿÿ{[ÿ4ÿoo]=Hÿÿo{[ÿ2ÿoo]=ÿÿÿÿÿ{[ÿ1ÿoo]=oHÿÿÿ,ÿŠ[ÿÿÿÿÿ{[ÿ2ÿoo]=ÿÿ¾ÿÎÿ{[ÿ2ÿooÜ]=ÿÿÿÿÿÿ{[ÿ2ÿÿ{[ÿ4ÿoo]=Hÿÿo{[ÿ2ÿoo]=ÿÿÿÿÿ{[ÿ1ÿoo]=oHÿÿÿ,ÿÿÿÿÿ{[ÿÿÿ{[ÿ2ÿOo]=oýÿÿ{[ÿ2ÿoo]=ÿÿÿïÿ{[ÿ2ÿoo]=ÿÿÿÿÿ{[ÿÿÿÿ{[ÿ2ÿoo]=ÿÿKÿ{[ÿÿïÿ{[ÿ2ÿ¦ÿÿÿ{[ÿ1ÿoo]=ÿÿ{[ÿ2ÿoo]=ÿÿKÿÿ{[ÿ2ÿoo{[ÿ2ÿooÜ]=ÿÿÿÿÿÿ{[ÿ2ÿÿ{[ÿÿÿÿÿÿ{[ÿ2ÿÿ{[
+
+
+
+
+
+ÿ4ÿoo]=Hÿÿo{[ÿ2ÿoo]=ÿÿÿÿÿ{[ÿ1ÿoo]=oHÿÿÿ,343>í>í>4>=33>í>=í3>í>í>=n3>=34>í>
+í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í>í>4>í>=n3>=343>í>í>4>=33>í>=í3>í>í>=n3>=34>í>
+í>64[ÿ2ÿoo]=ÿÿKÿ{[ÿÿÿ{[ÿ2ÿOo]=oýÿÿ{[ÿ2ÿoo]=ÿÿÿïÿ{[ÿ2ÿoo]=charÿÿÿÿÿ{[ÿÿÿÿ{[ÿ2ÿo]=ÿÿKÿ{[ÿ2ÿÿÿÿï{[{[ÿ2ÿOo]=oýÿÿ{[ÿ2ÿoo]=ÿÿÿïÿ{[ÿ2ÿoo]=charÿÿÿÿÿ{[ÿÿÿÿ{[ÿ2ÿo]=ÿÿKÿ{[ÿ2ÿÿÿÿïÿÿÿÿÿÿ{[ÿ2ÿoo]=ÿÿ¾ÿÎÿ{[ÿ2ÿooÜ]=ÿÿÿÿÿÿ{[ÿ2ÿÿ{[ÿ4ÿoo]=Hÿÿo{[ÿ2ÿoo]=ÿÿÿÿÿ{[ÿ1ÿoo]=J=lowerÿÿÿít a>=3>=33>í>í>4>í>=n3>=343>í>í>4>=33>í>=í3>í>í>=n3>=34>í>
+í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í>í>4>=33>í>=­­ÿð4S/­­­­­3­­­­­­­­­­¥­­­­­ÿŠ1ÿ†1111444444444/454444/0/d©íííítUUUòíím) and©ííít and©ííí) and©íííítí) and©­ and­­­­­­­X­­­­­­í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33 
