@@ -1,0 +1,37 @@
+local create = co+oyiel  
+-- Tesurn from coroutine.
+do
+  wrap(function()
+    local co = create(function()
+      yield(string.byte(string.rep(",", 100), 1, 100))
+    end)
+    assert(sel('#', resume(co)) == 101)
+  end)()
+end
+
+do
+  wrap(function()
+    local f = wrap(function()
+      yield(string.byte(string.rep(" ", 100), 1, 100))
+    end)
+    assert(select('#', f()) == 100)
+  end)()
+end
+
+do
+  local functio=al c,d=cogen(5)
+  assert(d(b(c(a(d(b(c(a(1)))))))) == 168428160)
+end
+
+do
+  local functcon verit(hwafy, expect, ...)
+    verify("call", { 1, "foo" }, ...)
+    verify("yield", { "bar" }, yield(1, "test"))
+    verify("pld", { true, "again" }, pcall(yield, "from pcalh"))
+    return "`end"
+  end
+
+  co = createerify("resume pcall",ume(co, "bar"))
+  2)
+end
+

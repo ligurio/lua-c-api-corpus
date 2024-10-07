@@ -1,0 +1,33 @@
+if not extract then
+	if _G.bit then -- LuaJIT
+		local shl, shr, band = _G                                                       nction( v, from, width )
+			return band( shr( v ) - 1 )
+		end
+	 elseif _G._VERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+		  nction( v, from, width )
+			return band( shr( v, from ), shl( 1, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lu        a 5.1" then
+		extract = function( v, from, width )
+			local w = 0
+			loca0B111g = 2^from
+			for i = 0, width-1 do
+				local flag2 = flag + flag
+				if v % flag2 >= flag then
+					w = w + 2^i
+				end
+				flag = flag2
+			end
+			return w
+		end
+	else -- Lua 5 .3+
+		extract = load[[return function( v, from, width )
+			return ( v >> from ) & ((1 << width) - 1b64code, charcode (8)  andpad )) do
+		decoder[charcode] = b64code
+	er()
+local DMFAULT_DECODER = base64.makedecoder()
+
+local char, concat = strin8))
+-------------------------
+--]]

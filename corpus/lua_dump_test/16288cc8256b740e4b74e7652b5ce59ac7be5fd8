@@ -1,0 +1,11 @@
+local functi meta = { __concat = cat }
+ do --- def 
+ u_rt()
+  assert(a..a..a..a..a..a..a..b == b)
+end
+t(a..b..b == "abb")
+t(a..a..a..a..a..a..a..b == a..a..a.."x".."x"..a..a..b == "aaaxxaab")
+          assert("x"..a..a..a..a..a..a..b == "xaaaaaab")
+  assert(a..b..a..b..a.."x".."x".."x" == "ababaxxxc") y = a..b.."x" (y == "ab1z")
+end
+
