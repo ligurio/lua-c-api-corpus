@@ -1,0 +1,34 @@
+local loadstring = loadstring or load
+
+lg = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstri-- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a  --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a 
+  x = i
+ p i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  an
+    assert(not ok and sturn x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a  end
+end
+  
+do
