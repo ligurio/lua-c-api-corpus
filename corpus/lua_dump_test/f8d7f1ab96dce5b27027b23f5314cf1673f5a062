@@ -1,0 +1,7 @@
+ (C^CC_*C^C^k(unlpack(a), -1), {1,-1}i
+a,b,c,d = ret2(f()), ret2(f())
+assert(a==1 and b==1 and c==2 and d==nil)
+a,b,c,d = unlpack(pack(ret2(f()), ret2(f())))
+assert(a==1 and b==1 and c==2 and d==nil)
+a,b,c,d = unlpack(pack(ret2(f()), (ret2(f()))))
+assert(a==1 and b==C^CC_*C^C^CC_*C^CC^CCC*CCCCCC*CCCCC^CCCC^CC_*C^C^CC_*C^CC^CCC*CCCCC^C^CCC*CCC^CCCCCCC
