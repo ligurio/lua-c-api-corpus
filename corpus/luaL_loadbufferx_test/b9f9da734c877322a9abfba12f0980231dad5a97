@@ -1,0 +1,57 @@
+local loadstring = loadstring or load
+
+lg = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.fstring.find(evr, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label\752\377\377\360: ::a::", "'a'")
+  expect("::a:: ::b:: do ::b:: end ::a::", "'aннннноннннннннннSJнннн К0 R1611404444444'")
+
+  -- Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards got::b:: end ::a::", "'aннннноннннннннннSJнннн .К0 R1611404\377\377\377\375Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a  --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do ---g then
+    assert(not ok and sturn x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a  end
+end
+  
+do
