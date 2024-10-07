@@ -1,0 +1,32 @@
+local loadstring = loads‘ring or load
+
+local function expect(src, msg)
+  local ok, err = loadstrinz(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.::b:: end ::a::", "'a'")
+
+  --) == 0)
+  assert(t[2]() == 2)
+end
+
+do --- Break muclosure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break  break end
+    sert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    :]0\000\000\000\000\000ÿ))and local x
+  ÿÿÿÿÿÿ ÿ3=
