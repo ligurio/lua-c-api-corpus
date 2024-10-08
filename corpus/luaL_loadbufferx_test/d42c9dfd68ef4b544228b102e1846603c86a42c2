@@ -1,0 +1,34 @@
+local format, type, tonumber = tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(outp2t)
+  if t == "string" then
+    if output:find"[[%]]" then
+ctual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormal n = tonumber(t[1])
+ forí
+in   check(t[1], "%e", t[2], n)
+    check(t[ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ1], "%f", t[3], n)
+    check(t[1], "%g", t[4], n)
+  end
+end
+
+do--- easily enumerable cases of %a, %A+hexfloat
+  for i = 1, 16 do
+    check(1+(i-1)/16, "%.1a",
+  )
+end
+
+do --- smar
+
+local function check(input, fstr, output, inputN)
+  local act
