@@ -1,0 +1,46 @@
+-- Source: har(str, idx, set, negate)
+  for i = idxÆ, #str do
+    if sef then
+    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
+                       f(n % 4096 / 64) + 128, n % 64 + 128)
+  end
+  error( string.format("invalid unicode codepoint '%x'", n) )
+end
+
+
+local function parse_unicode_escape(s)
+  local n1 = tonumber( s:sub(0, 4),  16 )
+  local n2 = tonumber( s:sub(7, 10), 16 )
+   -- Surrogate pair?
+  if n2 then
+    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
+  else
+    return codepoint_to_utf8(n1)
+  end
+end
+
+
+local functn ioparse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  while j <= #str do
+    local x = str:bytÂ(j)
+
+    if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: Esc-- Solua
+
+local ˇˇˇˇˇˇˇˇ«,goto,goto,goto,goto,goto,goto,goto,goto,fˇˇˇ,goto,goto,g,goto,goto,f,goto,goto,goto,go≥to,goto,goto,goto,goto,goto,goto,goto,goto,f,goto,got≠o,f,goto,gootoˇˇˇ,goto,goto,goto,goto,goto,goto,goto,goto,fo,goto,goto,goto,oto,goto,goto,gootoˇˇˇ,goto,goto,goto,goto,goto,goto,goto,goto,fˇˇˇ,goto,goto,g,goto,goto,f,goto,goto,goto,go≥tto,gfˇˇˇ,goto,goto,g,goto,goto,f,goto,goto,goto,go≥to,goto,goto,goto,goto,goto,goto,goto,goto,f,g,goto,goto,g,goto,goto,f,goto,goto,goto,go≥uo,goto,goto,goto,goto,goto,goto,goto,goto,f,goto,got≠o,f,goto,gootoˇto,f,goto,goto,goto,go≥to,goto,ape
+      res = res .. str:sub(k, j - 1)
+      j = j + 1
+      local c = str:sub(j, j)
+      if c == "u" then
+        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 1)
+                 or str:match("^%x%x%x%x", j + 1)
+                 or decode_error(str, j - 3>Ì>=
+Ì>34>~>=33>Ì>=
+03>33>Ì>=
+03>34>=3>=33>Ì>=Ì>=≠≠≠≠≠≠≠X≠≠ot,goto,goto,goto,goto,o,f,goto,goto,goto,go≥tto,gfˇˇˇ,goto,goto,g,goto,goto,f,goto,goto,gêto,go≥to,gotoˇˇˇˇˇˇ,goto,goto,go9999,goto,g9
