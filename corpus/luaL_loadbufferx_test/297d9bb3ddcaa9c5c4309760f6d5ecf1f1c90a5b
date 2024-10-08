@@ -1,0 +1,37 @@
+--ÿÿ¨ÿ\377(ûÿÿ
+ÿÿ,¾{-0,3;¿0,¾{-0,3;¿¾û0,3;¬0J=0XBF<-0XBFFDFFBFFBBF331%{-0,3;¿¾û112E35;r-10008E33,3;¿¾û0,3;¬0331%0,ïÀ3;¿õõ,Š>2%0,ï3\005\000\000\000;¿õõ,Š>233;¿;¿,nil,6-111E93;020233;¿;G,nilÿÿÿÿÿÿÿn3,3;¿¾û0,3;¬,¾{-0,3;¿¾û0,ÿÿÿ¹331%0,ï3;¿õõ,Š>233;¿;¿,nil,6-111E93;020233;»¿;¿,ni,3;¬0331%0,ïÀ3;¿õõ,Š>2%0,ï3;¿õõ,Š>233;¿;¿,nil,6-111E93;020233;¿;G,nilÿÿÿÿ\001\377¿¾û0-- Source: PUC Rio Lua 5.1 re?gression testsuite,do break; end;
+n=100;
+i=3;
+t = {};
+a=nil
+while not a do
+  a=0; for i=1,n do for i=i,1,-1 do a=a+1; t[i]=1; end; end;
+end
+assert(a == n*(n+1)/2 and i==3);
+assert(t[1] and t[n] and not t[0] and not t[n+1])
+
+function f(b)
+  local x = 1;
+  repeat
+    local a;
+    if b==1 then local b=1; x=10; break
+    elseif b==2 then x=20; break;
+    elseif b==3 then x=30;
+    else local a,b,c,d=math.sin(1); x=x+1;
+    end
+  until x>=12;
+  return x;
+end;
+
+assert(f(1) == 10 and f(2) == 20 and f(3) == 31 and f(4)==12)
+
+
+local f = function (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 then return ',3;¬,¾{-0,3;¿¾û0,ÿÿÿc'
+  else return 8
+  end
+e¹331%0,ï3nd
+
+assert(f;¿õõ(3,Š>
