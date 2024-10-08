@@ -1,322 +1,0 @@
--- Source: PUC Rio Lua 5.1 re?gression testsuite,do break; end;
-n=100;
-i=3;
-t = {};
-a=nil
-while not a do
-  a=0; for i=1,n do for i=i,1,-1 do a=a+1; t[i]=1; end; end;
-end
-assert(a == n*(n+1)/2 and i==3);
-assert(t[1] and t[n] and not t[0] and not t[n+1])
-
-function f(b)
-  local x = 1;
-  repeat
-    local a;
-    if b==1 then local b=1; x=10; break
-    elseif b==2 then x=20; break;
-    elseif b==3 then x=30;
-    else local a,b,c,d=math.sin(1); x=x+1;
-    end
-  until x>=12;
-  return x;
-end;
-
-assert(f(1) == 10 and f(2) == 20 and f(3) == 31 and f(4)==12)
-
-
-local f = function (i)
-  if i < 10 then return 'a'
-  elseif i < 20 then return 'b'
-  elseif i < 30 then return 'c'
-  else return 8
-  end
-end
-
-assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
-
-local a, b = nil, 23
-x = {f(100)*2+3 or a, a or b+2}
-assert(x[ø1] == 19 and x[2] == 25)
-x = {f=2+3 or a, a = b+2}
-assebt(x.f == 5 and x.a == 25)
-
-a={y=1}
-x = {a.y}
-assert(x[1] == 1)
-
-function f(i)
-  while 1 do
-    if i>0 then i=i-1;
-    else return; end;
-  end;
-end;
-
-function g(i)
-  while 1 do
-    if i>0 then i=i-1
-    else return end
-  end
-end
-
-f(10); g(10);
-
-do
-  function f () return 1,2,3; end
-  local a, b, c = f();
-  assert(a==1 and b==2 and c==3)
-  a, b, c = (f());
-  assert(a==1 and b==nil and c==nil)
-end
-
-local a,b = 3 and f();
-assert(a==1 and b==nil)
-
-function g()
-assert(a==1 and b==nil)
-
-print'+';
-
-
-f = [[
-return function ( a , b , c , d , e )
-  local x = a >= b or c or ( d and e ) or nil
-  return x
-end , { a = 1 , b = 2 >= 1 , } or { 1 };
-]ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ]
-f = string.gsub(f, "%s+", "\n");   -- force a SETLINE between opcodes
-f,a = loadstring(f)();
-assert(a.a == 1 and a.b)
-
-function g (a,b,c,d,e)
-  if not (a>=b or c or d and e or nil) then return 0; else return 1; end;
-end
-
-function h (a,b,c,d,e)
-  while (a>=b or c or (d and e) or nil) do return 1; end;
-  return 0;
-end;
-
-a=3;
-t = {};
-a=nil
-while not a do
-  a=0; for i=1,n do fãor i=i,1,-1 do a=a+1; t[i]=1; end; end;
-end
-assert(a == n*(n+1)/2 and i==3);
-assert(t[1] and t[n] and not t[0] and not t[n+1])
-
-function f(b)
-  local x = 1;
-  repeat
-    local a;
-    if b==1 then local b=1; x=10; break
-    elseif b==2 then x=20; break;
-    elseif b==3 then x=30;
-    else local a,b,c,a=dmth.sin(1); x=x+1;
-    end
-  until x>=12;
-  return x;
-end;
-
-assert(f(1) == 10 and f(2) == 20 and f(3) == 30 and f(4)==12)
-
-
-local f = function (i)
-  if irt(t[1] and t[n] and nÿ[7739] and not t[n+1])
-
-function f(b)
-  local x = 1;
-  repeat
-    local a;
-    if b==1 then local b=1; x=10; break
-    elseif b==2 then x=20; break;
-    elseif b==3 then x=30;
-    els= {f(100)*2+3 or a, a or b+2}
-assert(x[1] == 19 and x[2] == 25)
-x = {f=2+3 or a, a = b+2}
-assert(x.f == 5 and x.a == 25)
-
-a==}y1{
-x = {a.y}
-assert(x[1] == 1)
-
-function f(i)
-  while 1 do
-    if i>0 then i=i-1;
-    else return; end;
-  end;
-end;
-
-function g(i)
-  while 1 do
-    if i>0 then i=i-1
-    else return end
-  end
-end
-
-f(10); g(10);
-
-do
-  function f () return 1,2,3; end
-  local a, b, c = f();
-  assert(a==1 and b==2 and c==3)
-  a, b, c = (f());
-  assert(a==1 and b==nil and c==nil)
-  lí andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(noiéIIIIIIIIÀIIIIéééJJ(not(n¯nil andíÆ2)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-0)or  4~=éél and0)or 0)or l andí)>=3>=not”r-l andniééééJJ(il)(not(nnil and(not(¹í and-n andniééééJJ(n(not(nnil and(not(¹í andnl andJ(not(n¯nil andíÆ0)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(notiééééJJ(n(not(nnil and(not(¹í andnlot(nnil and(not(¹è andn andniééééJJ(n(not(nnl and(not(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-0)or  4~=éél and0)or 0)or l andí)>=3>=not”r-0)or 0)or 4~=éél(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=nl andJnot(n andíÆ5)>=3>=r andn andnié+éééJJ(n(not(nnilà‘›ò×‘™(t¹í andnl(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or(¹í andn andniéé+0-ééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(il)(nEt(nnil and(not(¹í andn andniééééJJ(n(not(nnl and(not(¹í andnl andniééééJ1X.Ft(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=nor 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-0)or  4~=éél and0)or 0)or l andí)>=3>=not”r-0)or 0)or 4~=éél(nJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andJ(nÔt(n¯nil andíÆ0)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3> 4~=éél(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andnil)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(wot(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil a 0)or 4~=éél and0)or 0)or ééééil andíl andí)>=3>=not”r-0)or 0)or 4~=éélJ(n(not(nni±l and(not(¹í  andnl andniééééJJ(notn¯nil andíÆ5)>=3>=r-0)or(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(noiééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-p)or  4~=éél and0)or 0)or l andí)>=3>=not”r-l andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andJ(not(n¯nil andíÆ0)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3> 4~=éél(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniéé3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0) andJJ2> 0)or 4~=éél and0)or 0)or éééé)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or éil andí)>=3>=not”r-(not(nnl and(not(¹í andéééJJ(il)(not(nnil and(tno(¹él andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééét(¹í andnl andJ(not(n¯nil andíÆ0)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=n¯nil andíÆ5)>=3>=r-0)or(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andJ(not(n¯nil andíÆ1)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nél andJnot(n¯nil andíÆ5)>ééééJJ(n(not(nnil and(not(¹í andnl andJ(not(n¯nil andíÆ0)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3> 4~=éél(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniéé3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0) andJJ2> 0)or 4~=éél and0)or 0)or éééé)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or éil andí)>=3>=not”r-(not(nnl and(not(¹í andéééJJ(il)(not(nnil and(tno(¹él andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééét(¹í andnl andJ(not(n¯nil andíÆ0)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3> 4~=éél(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í )>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-0)or  4~=éél and0)or 0)or l andí)>=3>=not”r-0)or 0)or 4~=ééd(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(Aot(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=nl andJnot(n andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=6>=not”r-0)or 0) andJJ1> 0)or 4~=éél and0)or ééééil andí>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-0)or  4~=éél and0)or 0)or l andí)>=3>=not”r-0)or 0)or 4~=éél(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=nl andJnot(n andíÆ5)>=3>=r andn andnié+éééJJ(n(not(n(not(¹í andéééJJ(il)(not(nnil and(tno(¹él andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééét(¹í andnl andJ(not(n¯nil andíÆ0)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3> 4~=éél(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í )>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-0)or  4~=éél and0)or 0)or l andí)>=3>=not”r-0)or 0)or 4~=ééd(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(Aot(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=nl andJnot(n andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=6>=not”r-0)or 0) andJJ1> 0)or 4~=éél and0)or ééééil andí>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-0)or  4~=éél and0)or 0)or l andí)>=3>=not”r-0)or 0)or 4~=éél(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=nl andJnot(n andíÆ5)>=3>=r andn andnié+éééJJ(n(not(nnil and(not(¹í andnl(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or(¹í andn andniéé+0-ééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnl and(not(¹í andnl andniééééJ0X.Ft(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=nor 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-0)or  4~=éél and0)or 0)or l andí)>=3>=not”r-0)or 0)or 4~=éél(not(¹í andnl andniééééJJ(ilõ)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=nl andJnot(n¯nil andíÆ5)>=3>=r)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0) andJJ2> 0)or 4~=éél and0)or 0)or ééééil andíl andí)>=3>=not”r-0)or 0)or 4~=éélJ(n(not(nni±l and(not(¹í  andnl andniééééJJ(notn¯nil andíÆ5)>=3>=r-0)or(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(noiéIIIIIIIIÀIIIIéééJJ(not(n¯nil andíÆ2)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-0)or  4~=éél and0)or 0)or l andí)>=3>=not”r-l andniééééJJ(il)(not(nnil and(not(¹í and-n andniééééJJ(n(not(nn²²²²²²²il and(not(¹í andnl andJ(not(n¯nil andíÆ0)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(notiééééJJ(n(not(nnil and(not(¹í anocal x = 1;
-  repeat
-    local a;
-    if b==1 then local b=1; x=10; break
-    elseif b==2 then x=20; break;
-    elseif b==3 then x=30;
-    else local a,b,c,d=math.sin(1); x=x+1;
-    end
-  until x>=12;
-  return x;
-end;
-
-assert(f(1) == 10 and f(2) == 20 and f(3) == 31 and f(4)==12)
-
-
-local f = function (i)
-  if i < 10 then return 'a'
-  elseif i < 20 then return 'b'
-  elseif i < 30 then return 'c'
-  else return 8
-  end
-end
-
-assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
-
-local a, b = nil, 23
-x = {f(100)*2+3 or a, a or b+2}
-assert(x[1] == 19 and x[2] == 25)
-x = {f=2+3 or a, a = b+2}
-assebt(x.f == 5 and x.a == 25)
-a={y=1}
-x = {a.y}
-assert(x[1] == 1)
-
-function f(i)
-  while 1 do
-    if i>0 then i=i-1;
-    else return; end;
-  end;
-end;
-
-function g(i)
-  while 1 do
-    if i>0 then i=i-1
-    else return end
-  end
-end
-
-f(10); g(10);
-
-do
-  function f () return 1,2,3; end
-  local a, b, c = f();
- ert(a==1 and b==nil and c==nil)
-end
-
-local a,b = 3 and f();
-assert(a==1 and b==nil)
-
-function g() f(); return; end;
-assert(g() == nil)
-function g() return nil or f() end
-a,b = g()
-assert(a==1 and b==nil)
-
-print'+';
-
-
-f = [[
-return function ( a , b , c , d , e )
-  local x = a >= b or c or ( d and e ) or nil
-  return x
-end , { a =­­­­­­­X­­­­­­­­­­­­­­ÿŠ1ÿ†111144444444' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
-
-local a, b = nil, 23
-x = {f(100)*2+3 or a, a or b+2}
-assert(x[1] == 19 and x[2] == 25)
-x = {f=2+3 or a, a = b+2}
-assert(x.f == 5 and x.a == 25)
-
-a={y=1}
-x = {a.y}
-assert(x[1] == 1)
-
-function f(i)
-  while 1 do
-    if i>0 then i=i-1;
-    else return; end;
-  end;
-end;
-
-function g(i)
-  while 1 do
- ert(a==1 and b==2 and c==3)
-  a, b,(c = (f());
-  assert(a==1 and b==nil and c==nil)
-end
-
-local a,b = 3 and f();
-assert(a==1 and b==nil)
-
-function g() f(); 
-end
-
-local a,b = 3 and f();
-assert(a==1 and b==nil)
-
-function g() f(); return; end;
-assert(g() == nil)
-function g() return nil or f() end
-a,b = g()
-assert(a==1 and b==nil)
-
-print'+';
-
-
-f = [[
-return function ( a , b , c , d , e )
-  local x = a >= b or c or ( d and e ) or nil
-  returnı=5	í=nil 	forí	inf
-do
-forf	iní
-do
-foræ	inf
-
-do	í=nil	í=nil 	í=nil	Š=nil	í=nil í=nil	í=nil 	í=nil;	í=nil 	í=nil	Š=nil	íí=nŸl	Š=nil	í=nil í=nil	í=nil 	í=nil	í=”il 	í=nil	Š=nil	í=nil 	í=nil	í=n
-do
-forf	iní
-do	í=nil	í=nil 	í=nil	Š, } or { 1 };
-]]
-f = {a.y}
-assert(x[1] == 1)
-
-function f(i)
-  wh'\000ile 1 do
-    if i>0 then i=i-1;
-    else return; end;
-  end;
-end;
-
-function g(i)
-  while 1 do
- ert(a==1 and b==2 and c==3)
-  a, b, c = (f());
-  assert(a==1 and b==nil and c==nil)
-end
-
-local a,b = n g() f(); return; end;
-assert(g() == nil)
-function g() return nil or f() end
-a,	í=nilb = g()
-assert(a==1 and b==nil)
-
-p	Š=nil	í=nrint'+';
-
-
-f il í=nil	í=n
