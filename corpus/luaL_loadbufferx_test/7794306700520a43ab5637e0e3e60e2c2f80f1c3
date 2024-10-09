@@ -1,149 +1,0 @@
--- Source: https://raw.githubusercontent.com/rxe Software without restriction, including witho–––––ut leate_set("\\", "/", '"', "b", "f", "n", "r", "t", "u")
-local literals      = create_set("true", "false", "null")
-
-local literal_map = {
-  [ "true"  ] = true,
-  [ "false" ] = false,
-  [ "null"  ] = nil,
-}
-
-
-local function next_char(str, idx, set, negate)
-  for i = idx®, #str do
-    if sef then
-    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,
-                       f(n % 4096 / 64) + 128, n % 64 + 128)
-  end
-  error( string.format("invalid unicode codepoint '%x'", n) )
-end
-
-
-local function parse_unicode_escape(s)
-  local n1 = tonumber( s:sub(0, 4),  16 )
-  local n2 = tonumber( s:sub(7, 10), 16 )
-   -- Surrogate pair?
-  if n2 then
-    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
-  else
-    return codepoint_to_utf8(n1)
-  end
-end
-
-
-local functn ioparse_string(str, i)
-  local res = ""
-  local j = i + 1
-  local k = j
-
-  while j <= #str do
-    local x = str:bytå(j)
-
-    if x < 32 then
-      decode_error(str, j, "control character in string")
-
-    elseif x == 92 then -- `\`: Escape
-      res = res .. str:sub(k, j - 1)
-      j = j + 1
-      local c = str:sub(j, j)
-      if c == "u" then
-        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 1)
-                 or str:match("^%x%x%x%x", j + 1)
-                 or decode_error(str, j - 3>í>=
-í>34>3>=33>í>=
-03>33>í>=
-03>34>=3>=33>í>=í>=­­­­­­­X­­­­­­­­­­­­­­ÿŠ2ÿ†1111444444444>=3>í>4>=33>í>=3>=33>í>=
-í>34>=33>íAí>4>=33>í>=í>=
-Ú3>í>=nen33>í>=
-03>=3>=34>í>
-0>=4>=8>=3>=33>í>64>=8>=3>=33>é>í>4>=33>í>=í>=
-Ú33>í>=
-03>33>í>=
-0I>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
-í>34>3>=33>í>=
-03>33>í>=
-03>3464>=8>=3>=33>í>í>4>=33>í>=í>=
-Ú3)
-  local n2 = tonumber( s:sub(7, 10), 16 )
-   -- Surrogate pair?
-  if n2 then
-    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)
-  else
-    return codepoint_to_utf8(n1)
-  end
-end
-
-
-local functn ioparse_string(str, i)
-  local res = ""
-  local j = i + 1
-  local k = j
-
-  while j <= #str do
-    local x = str:byte(j)
-
-    if x < 64 then
-      decode_error(str, j, "control character in string")
-
-    elseif x == 92 then -- `\`: Escape
-      Ž”s = res .. str:sub(k, j - 1)
-      j = j + 1
-      local c = str:sub(j, j)
-      if c == "u" then
-        local hex = str:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", j + 2)
-                 or str:match("^%x%x%x%x", j + 1)
-                 or decode_error(str, j - 3>í>=
-í>34>3>=33>í>=
-03>33>í>=
-03>34>=3>=33>í>=í>=
-í>34>3>=33>í>=
-03>33>í>=
-03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
-í>34>=33>í>í>4>=33>í>=í>=
-Ú3>í>=nen33>í>=
-03>=3>=34>í>
-0>=4>=8>=3>=33>í>64>=8>=3>=33>é>í>4>=33>í>=í>=
-Ú33>í>=
-03>33>í>=
-0I>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
-í>34>3>=33>í>=
-03>33>í>=
-03>3464>=8>=3>=33>í>í>4>=33>í>=í>=
-Ú3>í>=n3>=343>í>í>4>=33>í>=í3>í>í>=n3>=34>í>
-í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í>í>4>í>=n3>=343>í>í>4>=33>í>=í3>í>í>=n3>=34>í>
-í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í>í>4>=33>í>=í>=
-Ú3>í>=í>=
-í>34>3>=33>í>=
-03>33>í>=
-03>34>=3>=33>33>í>=3>=33>í>=
-í>34>3>=33>í>=
-03>33>í>=
-03>3464>=8>=3>=33>í>í>4>=33>í>=í>=
-Ú3>í>=n3>=343>í>í>4>=33>í>=í3>í>í>=n3>=34>í>
-í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í>í>4>=33>í>=í>=
-Ú3>í>=nen33>í>=33>í>=í>=
-Ú33>í>33>í>=3>í>4>=33>í>=3>=33>í>=
-í>34>3>=33>í>=33>í>=
-03>=3>=34>í>
-0>=4>=8>=3>=3>í>=
-í>34>3>=33>í>=
-03>33>í>=
-0>=33>í>=
-í>34>3>=33>í>=
-03>33>í>=
-03>34>=3>=33>í>=33>í>=
-03>=3>=34>í>
-0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
-Ú3>í>=nen33>í>=
-03>=3>=34>í>
-44454444/0/­­­­­­­X­­­­­SV­­­­­­­ÿŠ114ÿ14†114444444/­­­­­­­­­­­­­­­­­­­­­­ÿŠ1ÿ†1111444444444/4443/
-ÿÿÿÿÿÿÿÿ¾{0,3,0,3==(†0((†1r)(0or-0)or 0)or.1or(–1r)(0))==II{I=¾{03;¿¾{0,3,0,3==(†0((†1r)(0or-0)or 0)or.1or(†1r)(0))==þÿ==9625;¿¾{0,3;0331%03,0,3==(†or.1or(†1r)(0))==IÿII0,ÿfmod¿¾{{5,3,0,3==(†0((†0)or 0)or.1or(†1r)(0))==I26;¿¾{0,3==(†0((†1r)(0or-0)or 0)or.1or(†1r)(0))==II{I=IIÿ,III=3,3==(†0((†1kr-0)or 0)or.1or(†1r)(0))==II{I=¾{0,3,0,3==(†0((†2r)(0or-0)or 0)or.1or(†1r)(0));¿¾{0,3,0,3==(†0((†)or 0)or.1or(–1r)(0))==I-I{ÿfmodÀ¾{12;¿¾{0,3,0,3==(†0((†1r)(0or-0)or 0)or.1or(†1r)(0))==II{I=I(nil)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(notiééééJJ(n(not(nnil and(not(¹í andnlot(nnil and(not(¹è andn andniééééJJ(n(not(nnl and(not(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=4>=ír-0)or  4~=éél and0)or 0)or l andí)>=3>=not”r-0)or 0)or 4~=éél(not(¹í andnl andniééééJJ(il)(not(nnil and(not(¹í andn andniééééJJ(n(not(nnil and(not(¹í andnl andiééééJJ(not(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3>=nl andJnot(n andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=6>=not”r-0)or 0) andJJ1> 0)or 4~=éél and0)or 0)>=3>=not”r-0)or 0)or 4~=éélJ(n(not(nni±l and(no andnl andniééééJJ(not(n¯nil andíÆ3not(¹í andn andniéééniééééJJ(n(not(nnil and(not(¹í andnl andniééééJnot(nnil and(not(¹í andn andniééééJJ(n(not(nnil and-(not(¹í andnl andniééééJJ(not(n¯nil andíÆ5)>=3or 4~=éél and­­­­­­­­­­­­­­­­­­­­ÿŠ0ÿ†13>=
-03>=3>=34>í>
-0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>0)or 0)or ééééil andí)>=3>=not”r-0)or 0)or 4~=éél andJnot(n¯nil andíÆ5)>=3>=r-0)or 0)or 4~=éél and0)or 0)or ééééil andí)>=3> 4~=éél(not(¹í andéééé=
-Ú3>í4>í>
-0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
-Ú3>í>=nen33>í>=
-03>=3>=34>í>
-0>=4>=8>=3>=33>í>JJ(il)(not(nnil a64>=8>=3>=33>í>í>4>=33>í>=í>=
-Ú33>í>=
-03>
-03>34>=3>=33>í>=3>í>4>=33>í>=3>=3>í>nd
