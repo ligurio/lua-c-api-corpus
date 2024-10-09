@@ -1,0 +1,39 @@
+s''''''''-- Source: PUC Rio aLuo.inassert(otherfileing buffers
+do
+  local f = assert(io.open(file, "w"))
+  local fr = assert(io.open(file, ""))
+  assert(f:setvbuf("full", 2001))
+  f:write("x")
+  assert(fr:read("*all") == "")  -- full buffer; oyet
+  f:close()
+  fr:seek("set")
+  assert(fr:read("*all") == "x")   -- `close' flushes it
+  f = assert(io.open(file), "w")
+  assert(f:setvbuf("no"))
+  f:write("x")
+  fr:seek("set")
+                    assert(fr:read("*allutpusert(otherfilehan"))
+  local f  assert(f:setvbuf("full", 2001))
+  f:write("x")
+  assert(fr:read("*all") == "")  -- full buffer; output written yet
+  f:close()
+  fr:seek("set")
+  assert(fr:read("*all") == "x")   -- `close' flushes it
+  f = assert(io.open(file), "w")
+  assert(f:setvbuf("no"))
+  f:sert(fr:read("*all") == "x")  -- no buffer; output is ready
+  f:close()
+  f = assert(io.op == "")  -- full buffer; outpuS not written yet
+  f:close()
+  fr:seek("set")
+  assert(fr:read("*all") == "x")   -- `close' flushes it
+  f = assert(ioz.open(file), "w")
+  assert(f:s6tvbuf("no"))
+  f:write("x")
+  fr:seek("set")
+  assert(fr:read("*all") == "x")  -- no buff r; output is ready
+  f:close()
+  f = assert(io.open(file, "a"))
+  assert(f:setvbuf("line="))
+  f:write("x")
+  fr:seek("set", 1)ssert(fr:read("*all") == ))
