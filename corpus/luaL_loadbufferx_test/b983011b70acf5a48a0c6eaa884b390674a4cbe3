@@ -1,0 +1,401 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = loadstrinz(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate label.
+  expect("::a:: :::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i =   +1i
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: :a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate lab must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte la=bel.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  --) == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break muclosure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$ÿÿÿÿÿÿÿÿd ::a::", "'a'")
+
+  --) == 2)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if ˆ then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do -- prevents foo end
+end
+
+do --- ect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+ 
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert.
+  -- Error: duplicate labe2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after brzeak.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+ 
+õ,¡=¡Ì¡==
+þÿù;ÿÿïÿÿ,ÿ¡¡¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿÿÿchar=Ì==
+þÿý;ÿ±hŠ,õ,Šÿ¡¡¡¡¡¡=Ì==ÿù;ÿÿïÿÿ,ÿ¡ýŠ,õ¡¡¡¡=¥Ì¡==
+ÿù;ÿÿï,ÿ¡¡¡¡¡¥¡ÿÿ5ÿ4ÿ÷ÿÿ4ÿ736432ÿÿÿÿchar=Ì==
+þÿýþÿù;ÿÿïÿÿ,ÿ¡r=Ì==
+þÿý;ÿ±hŠ,õ,Šÿ¡¡¡¡¡¡=Ì==ÿù;ÿÿ££££££££,õ¡¡¡¡=¡Ì¡==
+þÿù;ÿÿïÿÿ,ÿ¡¡ÿïÿÿ,ÿ¡¡¡¡¡¥ÿ¡ÿ0ÿ=¥;for	ÿ=Â,udoí=Â ;for	ÿ=Â,udoí=Â end¡¡¡¡=Ì==
+þÿù;ÿÿÿÿÿÿ=£;dooÿÿ''ÎÎ=¥;for	ÿ=Â,udoí=Â end¡¡¡¡=Ì==
+þÿù;ÿÿ¡¡¡¡=Ìÿÿÿ¼ÿÿ==
+þÿù;ÿÿïÿÿ,ÿÿÿchar=Ì==
+þÿó;ÿ±hŠ,õ,Šÿ¡¡¡=Ì==ÿù;ÿÿï=¡Ìù;ÿÿïÿÿ,ÿ¡¡¡¡¡¥ÿ¡ÿ0ÿ5ÿÿÿ4ÿÿÿÿ=Ì==
+ý;ÿ¡=Ì==
+þÿù;ÿÿ¯¯ïÿÿÿ¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿÿÿchar=þÿý;ÿ±ÿ¯¯ïÿÿÿ¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿÿÿchar=Ì==
+þÿý;ÿ±h=Ì==
+þÿù;ÿÿ¯¯ïÿÿ,ÿÿ¡¡¡=
+þÿù;ÿÿïÿÿ,ÿ=Ì==
+þÿý;ÿ±h=Ì==
+þÿù;ÿÿ¯¯ïÿÿ,ÿÿ¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿhar=Ì==Jþÿý;ÿ±hŠ,õ,Šÿ¡¡¡¡¡ÿ=¥;for	ÿ=Â,udoí=Â f=¥;for	ÿ=Â,udoí=Â end¡¡¡¡=
+þÿù;ÿÿÿÿÿÿ=¥;for	ÿ=Â,udoí=Â endfooÿÿ''ÎÎ=¥;for	ÿ=Â,udoí¡¡¡=Ì==
+þÿù;ÿÿ¯¯ïÿÿ,ÿÿ¡¡¡¡¡¡=Ìÿù;ÿÿïÿÿ,ÿÿÿchar=Ì==
+þÿý;ÿ±hŠ,õ,Šÿ¡¡¡¡¡¡=Ì==ÿù;ÿÿïÿÿ,ÿ¡ýŠ,õ¡¡¡¡=¡Ì¡==
+þÿù;ÿ¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿÿÿchar=Ì==
+þÿý;ÿ±hŠ,õ,Šÿ¡¡¡¡¡¡=Ì==ÿÿùÿÿï;ÿ,ÿ¡ýŠ,õ¡¡¡¡=¡Ì¡==
+þÿù;ÿÿïÿ¡¡¡¡¥ÿ¡ÿ¡¡¡=Ì==
+þÿù;ÿÿ¡=Ì==
+þÿù;ÿ¡¡=Ì==ÿù;ÿÿïÿÿ,ÿ¡ýŠ¡=Ì==ÿù;ÿÿï=¡Ìù;ÿÿïÿÿ,ÿ¡¡¡¡¡¥ÿ¡ÿ0ÿ5ÿÿÿ5=
+þÿý;ÿ¡=Ì==
+þÿù;ÿÿ¯¯ïÿÿÿ¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿÿÿchar=Ì==
+þÿý;ÿ±ÿ¯¯ïÿÿÿ¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿÿÿchar=Ì==
+þÿý;ÿ±h=Ì==
+þÿù;ÿÿ¡¡¡=
+þÿù;ÿÿïÿÿ,ÿ=Ì==
+þÿý;ÿ±h=Ì==
+þÿù;ÿÿ¯¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿÿhar=Ì==
+þÿý;ÿ±hŠ,õ,Šÿ¡¡¡¡¡ÿ=¥;for	ÿ=Â,udoí=Â f=¥;for	ÿ=Â,udoí=Â end¡¡¡¡=Ì==
+þÿù;ÿÿÿÿÿÿ=¥;for	ÿ=Â,udoí=Â''ÎÎ=¥;for	ÿ=Â,udoí¡¡¡=Ìù;ÿÿïÿÿ,ÿÿ¡¡¡¡¡¡=Ìÿù;ÿÿïÿÿ,ÿÿÿchar=Ì==
+þÿý;ÿ±hŠ,õ,Šÿ¡¡¡¡¡¡=Ì==ÿù;ÿÿïÿÿ,ÿ¡ýŠ,õ¡¡¡¡=¡Ì¡==
+þÿù;ÿ¡¡¡¡¡¡=Ì==
+þÿù;ÿïÿÿÿ,ÿÿÿchar=Ì==
+þÿý;ÿ±hŠ,õ,Šÿ¡¡¡¡¡¡=Ì==ÿù;ÿÿïÿÿ,ÿ¡ýŠ,õ¡¡¡¡=¡Ì¡==
+þÿù;ÿÿïÿ¡¡¡¡ï,¥ÿ¡ÿ¡¡¡=Ì==
+þÿù;ÿÿ¡=Ì==
+þÿù;ÿ¡¡=Ì==ÿù;ÿÿïÿÿ,ÿ¡ýŠ,õ¡¡¡¡=¡Ì¡==
+þÿù;ÿÿïÿÿ,ÿ¡¡¡¡¡¥ÿ¡ÿ0ÿ=¥;for	ÿ=Â,udoí=Â ;for	ÿ=Â,udoí=Â end¡¡¡¡=Ì==
+þÿù;ÿÿÿÿÿÿ=¥;dooÿÿ''ÎÎ=¥;for	ÿ=Â,udoí=Â end¡¡¡¡=Ìÿÿÿÿÿ==
+þÿù;ÿÿïÿÿ,ÿÿgetar=Ì==
+þÿý;ÿ±hŠ,Šÿ¡¡¡¡¡¡=Ì==ÿù;ÿÿï=¡Ìù;ÿÿïÿ5ÿÿÿ4ÿÿÿÿ=Ì==
+þÿý;ÿ¡=Ì==
+þ -- Errod
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate 'lab must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 0
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break mue is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+ rt(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Breaer break'a'")
+
+  -- E)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Labrror: end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break m falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Error: duplicate 'lst close upval, even if closure is pareak.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    fÿù;ÿÿ¯¯ïÿÿÿ¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ar=Ì==
+þÿý;ÿ±h=Ì==
+þÿù;ÿÿ¯¯ïÿÿ,ÿÿ¡¡¡=
+þÿù;ÿÿïÿÿ,ÿ=Ì==
+þÿý;ÿ±h=Ì==
+þÿù;ÿÿ¯¯ïÿÿ,ÿÿ¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿÿhar=Ì==
+þÿý;ÿ±hŠ,õ,Šÿ¡¡¡¡¡ÿ=¥;for	ÿ=Â,udoí=ÂÌ==
+þÿù;ÿÿÿÿÿ,õ¡¡¡¡=¡Ì¡==
+þÿÿù;ÿÿïÿÿ,ÿ¡¡¡¡¡¥ÿ¡ÿ0ÿ=¥;for	ÿ=Â,udoí=Â ;for	ÿ=Â,udoí=Â end¡¡¡¡=Ì==
+þÿù;ÿÿÿÿÿÿ=¥;dooÿÿ''ÎÎ=¥;for	ÿ=Â,udoí=Â end¡¡¡¡=Ì==
+þÿù;ÿÿ¡¡¡,¡=Ìÿÿÿÿÿ==
+þÿù;ÿÿÿchar=Ì==
+þÿý;ÿ±h=Ì==ÿù;ÿÿï=¡Ìùunction foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do -- prevents joining to KNIL. -lua==5.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  az´n(n)íssert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved from the duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  -- Eoto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  --\377\031 Error: u  -  i = i + 1
+  if i <= 2 then  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and label semantics.
+  -- Erro;ÿÿïÿÿ,ÿ¡¡¡¡¡¥ÿ¡ÿ0ÿ5ÿÿÿ4ÿÿ=
+þÿý;ÿ¡=Ì==
+þÿù;ÿ¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿÿÿchar=Ì==
+þÿý;ÿ±h=Ì==
+þÿù;ÿÿ¯¯ïÿÿ,ÿÿ¡¡¡=
+þÿù;ÿÿïÿÿ,ÿ=Ì==
+þÿý;ÿ±h=Ì==
+þÿù;¯ïÿÿ,ÿÿ¡¡¡¡¡¡=Ì==
+þÿù;ÿÿïÿÿ,ÿÿhar=Ì==
+þÿý;ÿ±hŠ,õ,Šÿ¡¡¡¡¡r: duplicate lab must close upval, even if closure is parsed aftÿ=¥;for	ÿ=Â,udo fooÿÿ''ÎÎ=¥;for	ÿ=Â,udoí=Â;ÿÿÿÿÿÿ=¥;for	ÿ=Â,udoí=Â endÿ''ÎÎ=er break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until falte label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do$ÿÿÿÿÿÿÿÿd ::a::", "'a'")
+
+  --) == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function fo(o) return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do -- prevents f=5liš(n)oo end
+end
+
+do --- ect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+ 
+
+  -- Error: u  -  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until¥;¡¡¡¡ false
+  assert.
+  -- Error: duplicate label.
+  expect("::a:: ::a::", "'a'")
+  expect("::a:: ::b:: do=Ì==ÿù;$::b:: end ::a::", "'ÿÿï
