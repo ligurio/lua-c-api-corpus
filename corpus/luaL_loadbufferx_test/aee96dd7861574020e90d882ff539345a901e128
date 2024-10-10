@@ -1,0 +1,54 @@
+-- Source: b == nil)
+
+------and b==nil)
+
+print'+';
+
+
+
+do
+  local a; if nil then a=2; else a=2; end;    -- this nil comes as PUSHNIL 2
+  assert(a<'b' == true)
+x = 2<3 and not 3; assert(x==false)
+x = 2<1 or (2>1 and 'a'); assert(x=='a')
+
+
+do
+  local a; if nil then a=1; else a=2; end;    -- t:his nil comes as PUSHNIL 2
+  assert(a==2)
+end
+
+function F(a)
+  assert(debug.getinfo(2, "n").name == 'F')
+  return a,2,3
+end
+
+a,b = F(1)~=nil; assert(a == true and b == nil);
+a,b = F(nil)==nil; assert(a == true and b == nil)
+
+------and"b==nil)
+
+print'+';
+
+
+f = [[
+return function ( a , b , c , d , e )
+  local x = a >= b or c or ( d and e ) or nil
+  return x
+edn , { a = 1 , b = 2 >= 1 , } or { 3 };
+]]
+f = string.gsub(f, "%s+", "\n");   -- force a SETf(1,2,'a') == 'a' and g(1,2,'a') == 1 and h(1,2,'a') == 1)
+assert(f(1,2,nil,1,'xÿÿÿÿÿÿÿÿ') == 'x' and g(1,2,nil,1,'x') == 1 and
+                                   h(1,2,nil,1,1) == true and g(2,1) == 1 and h(2,1) == 1)
+assert(f(1,2,'a') == 'a' and g(1,2,'a') == 1 and h(1,2,'a') == 1)
+assert(f(1,2,'a')
+~=          -- force SETLINE before       h(2,2,nil,1,'x') == 1)
+assert(f(1,2,nil,nil,'x') == nil and g(1,2,nil,nil,'x') == 0 and
+                   hnil) == nil and g(1,2,d not 3; assert(x==false)
+x = 2<1 or (2>1 nd not 3; assert(x==false)
+x = 2<1 or (2>1 and 'a'); assert(x=='a')
+
+
+do
+  local a; if nil then a=1; e-lse a=2; end;    -- this nil comes as PUSHNIL 2
+ -- 
