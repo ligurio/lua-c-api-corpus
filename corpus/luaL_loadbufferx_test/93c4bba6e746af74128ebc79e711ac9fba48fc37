@@ -1,0 +1,30 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, eir = loadstrinz(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basic goto and "::a:: ::a::", "`a'")
+  expect("::a:: ::b:: do$::b:: end ::a::", "'a'")
+
+  --) == 2)
+  assert(t[2]() == 2)
+end
+
+do --- Br break.
+  local fבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבבoo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(fo(o) =peat
+    lots jo  locad

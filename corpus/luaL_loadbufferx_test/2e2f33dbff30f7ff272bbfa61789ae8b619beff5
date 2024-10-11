@@ -1,0 +1,28 @@
+local format, type, tonumber = tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(outp0t)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expect?edq) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low preciub(i,i) .."p+0")
+    check(16+(i-1), "%e", "7.716923e-227")
+  check("7.7169235000000044e-227", "%e", "7.716924e-227")
+  check("5.3996444915p00004e+87", "%.9e", "1068) == "3.5078660847295e-322")
+end
+
+do --- smoke
+  local caseturn end
+  local t = type(output)
+  if t == "string" then
+    if al s, e = actual:find((output:gsub("%.", "%%.")))
+      tput:find"[[%]]" t
