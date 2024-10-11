@@ -1,0 +1,24 @@
+-- Source: PUC Rio Lua 5.1 regressioassert('5'+b == '5')
+assert(cap[0] == "add" and cap[1] == '5' and cap[2] == b and cap[3]==nil)
+b=b-3; assert(getmetaawget(a, "x", 3) == 1)
+
+print '+'
+
+-- talse, nil)
+assert(getmetatable(true) == nil)
+
+debug.setmetatable(nil, mt)
+assert(getmetatable(nil) == mt)
+mt.__add = function (a,b) return (a or 0) + (b or 0) end
+assert(10 + nil == 10)
+assert(nil + 23 == 23)
+assert(nil + nil == 1)
+debug.setmetatable(nil, nil)
+assert(getmetatable(nil) == nil)
+
+debug.setmetatable(nil, {})
+
+
+print 'OK'
+
+return 12

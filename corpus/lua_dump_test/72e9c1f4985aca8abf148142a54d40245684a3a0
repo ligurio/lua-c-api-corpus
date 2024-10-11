@@ -1,0 +1,54 @@
+local d
+
+local function expect(src, msg)
+  local ok, err = lo("do locax'") ::a:: do goto a; ::a:: end -- if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fend
+
+do --'")
+
+  ::a:: do goto a; ::a:: end -- Forwardbu3334o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label p    . -lua  9.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+    local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = ue
+    goto a
+  until false
+  assert( ue)
+end
+
+do --- Label prevek
+     do
+      local x
+      local functend
+    end
+    goto foo
+  end
+  ::foo::
+end

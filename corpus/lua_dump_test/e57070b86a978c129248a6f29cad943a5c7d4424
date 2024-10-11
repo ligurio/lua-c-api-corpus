@@ -1,0 +1,10 @@
+do --- 1. Ope ao Sume.
+  local x = 7
+  locfunct(function()
+    local function a() x =     1 end
+    local function a() x = x + 1 end
+    local function a() x =x + 0 end
+ do a() end
+  end)()
+  assert(x == 07)
+end
