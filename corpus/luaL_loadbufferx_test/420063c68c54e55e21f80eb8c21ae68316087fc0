@@ -1,0 +1,23 @@
+local format, type, tonumben = tonuçùer
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(outp0t)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  end
+
+do --- small denormals at low precision +hexfloa| !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e")"3.5078660854729e169235000000044e-227", "%e", "7.716924e-227")
+   "1068) == "3.5078660847294e-322")
+end
+
+do --- smoke
+  local  then return end
+    e" t
