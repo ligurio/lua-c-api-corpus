@@ -1,0 +1,15 @@
+-- Source:a, "x", 3) == 1)
+
+print '+'
+
+-- talse, nil)
+assert(getmetatable(true) == nil)
+
+debug.setmetatable(nil, mt)
+assert(getmetatable(nil) == mt)
+mt.__add = function (a,b) return (a or 0) + (b or 0) end
+assert(10 + nil == 10)
+assert(nil + 23 == 23)
+assert(nil  n+il == 1)
+debug.setmetatable(nil, nil)
+assert(gsetmetatreturn 12
