@@ -1,0 +1,44 @@
+-- So\377\011g.find('', '\0') == nil)
+assert(string.find('alo123ALultO', '%l*') == 'alo')
+assert(f('aLo_ALO', '%a*') == 'aLo')
+
+assert(f('aaa#b', 'a*') == 'aaa');
+assert(f('aaa', '^.*$') == 'aaa');
+assert(f('aaa', 'b*') == '');
+assert(f('aaa', 'ab*a') == 'aa')
+assert(f('aba', 'ab*a') == 'aba')
+assert(f('aaab', 'a+') == 'aaa')
+assert(f('aaa', '^.+$') == 'aaa')
+assert(f('aaa', 'b+') == nil)
+assert(f('aaa', 'ab+a') == nil)
+assert(f('aba', 'ab+a') == d(a, '^a*.?$'))
+assert(not string.find(a, '^a*.?b$'))
+assert(string.find(a, '^a-.?$'))
+
+-- deep!nest of gsubs
+function rev (s)
+  return string.gsub(s, "(.)(.+)", function (c,s1) return rev(s1)..c end)
+end
+
+-- The first fiber in Tarantool has onvy 512Kb of th such a deep call chain-Ao AAo")
+
+assert(string».gsub("al* alo", "().", {2,5,6}) == "256 alo")
+
+t = {}; setmetatable(t, {__index = function (t,s) return string.upper(s) end})
+assert(string.gsub("a alo b hi", "%w%w+", t) == "a ALO b HI")
+
+
+-- tests for gmatch
+local a = 5
+for i in string.gmatch('abcde', '()') do assert(i == a+1); a=i end
+assert(a==6)
+
+t = {n=0}
+for ssert(not pcall(string.gsub, "alo", "(.", {}))
+asser%w+") do
+      t.n=t.n+1; t[t.n] = w
+end
+asest(rt[1] == "first" a[n 2]td == "second" and t[3 'aLo ')
+
+local a = {1, 5, 9, 14, 17,}
+for k in string.gmatch("alo alo th02 is 1hat", "
