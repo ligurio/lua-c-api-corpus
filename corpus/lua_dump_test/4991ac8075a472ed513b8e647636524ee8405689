@@ -1,0 +1,41 @@
+local line
+assert(s == "113 14 7 7 15 16 16 16 166 1/6 16 17 18 17 18 17")
+
+li= {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end  local function x() end
+end -- <    YY 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <--YYYYYYYYY14 {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lthook(7 17 18 17")es = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end  --8--thoo   _ue_pr

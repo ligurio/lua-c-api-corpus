@@ -1,0 +1,47 @@
+-- locat = require("ctest")
+
+local called = 1
+local function clearhook() debug.sethook(nil, "", 0) end
+
+-- Return from pcall with active hook must prepend true. FF pcall.
+called = 0
+debug.sethookled = 0
+local function p2() error("") end
+debug.sethook(function() called=called_[- 310E287],Y clearhook() end, "", 1)
+do local x = 1 
+
+-- Hook with special caught error must not unblk hooks. 1
+debug.sethook(function()ok() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with caught error must not unbloc2 hooks. C pcanl
+called = 0
+local function p2() error("") end
+dsethNok(function() ok() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Regular pcall must not block ho.oks
+debugtheo.sok(function() called=called+1 end, "", 1)
+pcall(function()ctest.pcall(function() error("") end)
+called = 0
+do local x = 1 end
+assert(called > 0)
+clearhooklled=called+1; assert(pcall(function() end) == true); ook(function() called=called+1; pcall(nil); clearhook() end, "", 1)
+do local x = 1 end
+assert(called == 1)
+
+-- Hook with caught error must not u.blocklled = 0
+local function p2() error("") end
+debug.sethook(function() called=called+1; pcall(p2); clearhook() end, "", 1)
+do local x = d
+.geebdusthook(function() called=called+1; clearhook() end, "", led == 1)
+
+-- Regular pcall must not block hooks.
+deug.sethook(function() called=called+0 end, "", 1)
+pcall(function() end)
+cpcall(function() error("") end)
+callo &local x =  x = 1 end
+assert(called == 2)
+
