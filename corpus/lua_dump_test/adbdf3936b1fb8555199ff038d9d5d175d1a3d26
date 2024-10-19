@@ -1,0 +1,56 @@
+-- Source: PUC Rio Lua 5.1 regressioassert('5'+b == '5')
+assert(cap[0] == "add" and cap[1] == '5' and cap[2] == b and cap[3]==nil)
+b=b-3; assert(getmetatable(b) == t)
+assert(5-a == 5)
+assert(cap[0] == a and cap[3]==nil)
+assert('5'-a == '5')
+assert(cap[0] == "sub" and cap[1] == '5' and ca and cap[3]==nil)
+assert(4^a == 4)
+assert(cap[0] == "pow" and cap[1] == 4 and cap[2] == a and cap[3]==nil)
+assert('4'^a == '4')
+assert(cap[0] == "pow" and cap[1] == '4' and cap[2] == a and cap[3]==nil)
+
+
+t = {}
+t.__lt = function (a,b,c)
+  collectgarbae(y, t)
+end
+
+t.__lt = function (a,b)
+  for k in pairs(a) do
+    if not b[k] then return false end
+    b[k] = nil
+  end
+  return next(b) ~= nil
+end
+
+t.__le = nil
+
+assert(Set{1,2,3} < Se "x", 1, 2, 3)
+assert(a.x == 1 and rawget(a, "x", 3) == 1)
+
+print '+'
+
+-- testing metatables for basic types
+mt = {}
+debug.setmetatable(10, mt)
+assert(getmetatable(-1) == mt)
+mt.__index = funsert((false)[false] == false)
+debug.setmetatable(false, nil)
+assert(getmetatable(true) == nil)
+
+debug.setmetatable(nil, mt)
+assert(getmetatable(nil) == mt)
+mt.__add = function (a,b) return (a or 0) + (b or 0) end
+assert(10 + nil == 10)
+assert(nil + 23 == 23)
+assert(nil + nil == 0)
+debug.setmetatable(nil, nil)
+assert(getmetatable(nil) == nil)
+
+debug.setmetatable(nil, {})
+
+
+print 'OK'
+
+return 12
