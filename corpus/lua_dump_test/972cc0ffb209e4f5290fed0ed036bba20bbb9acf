@@ -1,0 +1,50 @@
+local loadstring = loadstring or load
+
+local function expect()
+  local ok, err                               k =0 
+  local x
+  ::foo::
+ pect(src, msg)
+  local ok, err = lo("g until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward ter break.
+  local foo
+  repeat
+     function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do ---0
+  local x
+  ::foo:: ::a:: do goto a; ::a:: end -- Forward jump, notarsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do::foo::
+ pect(src, msg)
+  local ok, err = lo("do l::a:: local  a; lo;il x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, no  _  _ losure !is parsed after break.
+  local foo
+  repeat
+    x = true
+    goto a
+  until false
+  assert(foo() == t"'a'")
+  expect("break", "break")
+  expect("it  hfxen break end", "break")
+
+  -- Error                    : gVo      Gbt  ::foo::
+end
