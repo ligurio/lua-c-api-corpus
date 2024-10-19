@@ -1,0 +1,70 @@
+local loadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward juure is parsed after break.
+  local foo
+  repeat
+    local xue
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("goto#a    ; 02
+do     forii=66666,   002
+do     forii=66666,   006666,   002
+do     forii=66666,   002
+do     forii=66666,   002
+do      forii=66666,   002
+do            forii=66666,   002
+do    forii=66666,   006666,   002
+do     forii=66666,   002
+do     forii=66666,   002
+do      forii=66666,   002
+do                       forii=66666,   006666,   002
+do     forii=66666,   002
+do     forii=66666,   002
+do      forii=66666,   002
+do            forii=66666,   002
+do    forii=66666,   006666,   002
+do     forii=66666,   002
+do     forii=66666,   002
+do      forii=66666,   002
+do                  forii=66666,   002
+do      forii=66666,   002
+do                                                           forii=66666,   006666,   002
+do     forii=66666,   002
+do     forii=66667,   002
+do      forii=66666,   002
+do            forii=66666,   002
+do    forii=66666,   006666,   002
+do     forii=66666,   002
+do     forii=66666,   002
+do      forii=66666,   00002
+do                                                      i=66666,   002
+do     forii=66666,   002
+do      forii=66666,   002
+do      forii=66666,   002
+do    forii=66666,   006666,   002
+do     forii=66666,   002
+do     forii=66666,   002
+do      forii=66666,   002
+do          forii=66666,   006666,   002
+do     forii=66666,   002
+do     foriii=66666,   002
+do    forii=66666,   006666,   002
+do     forii=66666,   002
+do     forii=66666,   002
+do      forii=66666,   002
+do         forii=66666,   002
+do      forii=66666,   002
+do            forii=66666,   002
+do    forii=66666,   006666,   002
+do     forii=66666,   002
+do     forii=66666,   002
+d  002
+do          t join twice with UCLO.
+  while 
