@@ -1,0 +1,105 @@
+-- Source: PUC Rio Lua 5.1 re?gression te)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f=2+3 or a, a = b+2}
+assebt(x.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y}
+assert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+  end;
+end;
+
+function g(i)
+  while 1 do
+    if i>Æ then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 1,2,3; end
+  local a, b, c = f();
+  assert(a==1 and b==2 and c==3)
+  a, b, c = (f());
+  assert(a==1 and b==nil and c==nil)
+end
+
+local a,b = 3 and f();
+assert(a==1 and b==nil)
+
+function g()
+assert(a==1 and b==nil)
+
+print'+';
+
+
+f = [[
+return function ( a , b , c , d , e )
+  local x = a >= b or c or ( d and e ) or nil
+  return x
+end , { a = 1 , b = 2 >= 1 , } or { 1 };
+]]
+f = string.gsub(f, "%s+", "\n");   -- force a SETLINE between opcodes
+f,a = loadstring(f)();
+assert(a.a == 1 and a.b)
+
+function g (a,b,c,d,e)
+  if not (a>=b or c or d and e or nil) then return 0; else return 1; end;
+end
+
+function h (a,b,c,d,e)((4>=33>í>=í>=
+Ú32>í>=
+03>í>=í>=
+Ú3>í>=nen33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>é>í>4>=33>í>=í>=
+Ú33>í>=
+03>33>í>=
+0I>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>3464>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=n3>=343>í>í>4>=33>í>=í3>í>í>=n3>=34>í>
+í>64>=8>=3>=33>í>í3>í>í>4>=33>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í>=nen33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=33>=33>í>í>4>=33>í>=í>=Ú3>=33>í>=
+í>34>3>=33>í>=
+03>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=33>í>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=33>í>=
+03>=3>=
+zÿÿ{-0X3Bb77dFfEfED77BFBD6p-114733>í>í>4>=33>í>=í>=
+Ú3>í4>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=4>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=3>í>4>=3\377\377\377\007>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=33>í>=
+03>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
+Ú3>í4>í>
+0>=4>3>=3>=34>í>
+0>=4>=8>=3>=33>í>64>=8>=3>=3>=33>í>=
+í>34>3>=33>í>=
+03>33>í>=
+03>34>=3>=33>í>=33>í>=
+03>=3>
+zÿÿ{-0X3Bb77dFfEfED77BFBD6p-1147r f() end
+a,	í=nilb = g()
+assert(a==1 and b==nil)
+
+p	Š=nil	í=nrint'+';
+
+
+f il í=nil	í=n

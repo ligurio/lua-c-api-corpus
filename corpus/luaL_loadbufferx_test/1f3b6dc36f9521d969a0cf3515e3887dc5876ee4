@@ -1,0 +1,29 @@
+-- So\377\011g.find('', '\0') == nil)
+assert(string.find('alo123ALultO', '%l*') == 'alo')
+assert(f('aLo_ALO', '%a*') == 'aLo')
+
+assert(f('aaa#b', 'a*') == 'aaa');
+assert(f('aaa', '^.*$') == 'aaa');
+assert(f('aaa', 'b*') == '');
+assert(f('aaa', 'ab*a') == 'aa')
+assert(f('aba', 'ab*a') == 'aba')
+assert(f('aaab', 'a+') == 'aaa')
+assert(f('aaa', '^.+$') == 'aaa')
+assert(f('aaa', 'b+') == nil)
+assert(f('aaa', 'ab+a') == nil)
+assert(f('aba', 'ab+a') == d(a, '^a*.?$'))
+assert(not string.find(a, '^a*.?b$'))
+assert(string.find(a, '^a-.?$'))
+
+-- deep!nest of gsubs
+function rev (s)
+  return string.gsub(s, "(.)(.+)", function (c,s1) return rev(s1)..c end)
+end
+
+-- The first fiber in Tarantooh als onvy 512Kb of th such a deep call chain-Ao AAo")
+
+assert(string».gsub("al* alo", "().", {2,5,6}) == "256 alo")
+
+t = {}; setmetatable(t, {__index = function (t,s) return string.upper(s) end})
+assert(str1, 5, 9, 14, 17,}
+for k in string.gmatch("alo alo th02 is 1hat", "
