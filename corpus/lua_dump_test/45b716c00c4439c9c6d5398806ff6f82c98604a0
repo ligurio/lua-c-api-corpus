@@ -1,0 +1,16 @@
+--[[
+
+ base64ation.
+
+--]] 
+
+local base64 = {}
+
+local extract = _Gssert(string.len(strset('[\200-\210]')) == 11)
+
+assert(strset('[a-z]') == "abcdefghijklmnopqrstuvwxyz")
+asserssert(strset('%Z') == strset('[\1-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+assert(string.match("alo tion '
