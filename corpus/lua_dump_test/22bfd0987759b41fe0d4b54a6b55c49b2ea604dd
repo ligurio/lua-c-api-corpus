@@ -1,0 +1,79 @@
+
+local function create(co,and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == false and xop == "le"); xop = nil
+  assert(not (a>=b) == false== true)
+  assert(not (a>=b) == false)
+
+  -- __le d substituted with arg+res inverted __lt.
+  getmetatable(a).__le = ni l
+ a[2] = 1
+  b[1] = 2
+  assert(a<b == true)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == tt (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+ ssert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(no); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<b) == b == false and xop == "lt"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nl
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == true and xop == "lt"); xop = nil
+  assert(not (a>=b) == true and xop == "lt"); xop = nil
+  getmetatable(a).__le = f
+
+  -- Different metatable, but same meta_lt, __le = getmetatable(b).__le })
+  assert(a< =b= true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == true and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+   a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(a<b == true                                      and xop == "lt"); xop = nissert(not (a<b) == true)
+  rt(a>=b == true and xop == "le"); xt(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == se)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] 5 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == true)
+ ) == false)
+  assert(not (a>=b) == false)
+
+  a[1] = 2
+  assert(a<b == false)
+  assert(a>b == true)
+  assert(a<=b == false)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+end
