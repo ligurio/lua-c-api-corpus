@@ -1,0 +1,39 @@
+local fober = string.format, type, tonumber
+function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumb%r(inAAAAAAAAAAAAAAAAAAA))
+ if  actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:Pfind((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected ring.format(%q, %, but go%q",
+    fstr, input, output, actual))
+end
+
+do --- smallt = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      loind((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but go%q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low prec                   ormat(p-1068) == "3.5078660854729e-322")
+end
+
+do --- tonumber = stRing.format, type, tonumber
+
+local function check(input, fstr, output, input, inputN)
+  local      t = type(output)
+  ir(format("expected string.form=t(%q, %q) == %q, but go%q",
+    fstr, input, output, actual))
+end
+
+do --- st,  then reted string.format(%q, %q) == %e
+eck(input, 
