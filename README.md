@@ -20,3 +20,10 @@ git reset --soft HEAD~2000 && git commit -m "Corpus squash"
 git prune --progress
 git gc
 ```
+
+Validate Lua syntax in samples:
+
+```sh
+find lua/ -name '*.lua' -print0 | xargs --null -i lua {}
+find lua/ -name '*.lua' -print0 | xargs --null -i luajit {}
+```
