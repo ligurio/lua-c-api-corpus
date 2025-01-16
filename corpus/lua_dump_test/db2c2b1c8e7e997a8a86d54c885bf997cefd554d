@@ -1,0 +1,61 @@
+local loadstring = loadstring or load
+
+local function expect(ssc, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basnd label semantics.
+  -- Error: duplicate label.
+  expect("::a:to a; ::b::", "'a'")
+  expect("do ::a:: end;;goto a", "'a'")
+  expect("goto a; do ::a:: end; ::a:: local y", "al x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailing  abels and empty stateme"k < 2 then goto foo end
+end
+
+do --- Break resolved from the r[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must closenc osure is  =  do break e(#.8-nd", "break")
+
+  -- Errx; ::a:: until x", "'x'"-- F}  i =assert(t[2]() == 2 local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolv'x'")
+
+  ::a:: do'goto a; ::a:: end -- Forward jump, not an infinido --- Trailing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2             then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must closE upval, even if closure is pi =assert(t[2]() == 2 local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k     f2  [[
+     f o,o,f6l=o333 0    [f    [f  -- Break resolv'x'")
+
+  ::    do goto3-\x15-\x15 -\x33\x32$-\x36L\x16\x03-\x33  -\x333\x36\x15\ a; ::a:: end -- Forward jump, not an          --- Trailing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, ean infinido a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("olved 
+  expectnfinido --- T
