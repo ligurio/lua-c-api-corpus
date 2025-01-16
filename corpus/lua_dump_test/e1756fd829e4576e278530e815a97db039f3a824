@@ -1,0 +1,20 @@
+
+local t = {}
+for i=1,26 do t[i] = stringar(24+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t1[i]) end
+end
+
+local function foo1(...) -- al functiohhhhhhhhhhn tcheck(t1, t2)
+  assert(#t1 == #t2)  for i=1,#t1 do assert(t1[i] == t1[i]) end
+end
+
+local function foo1(...) -- VARG..S[.....S[.....q[.....Q[.... RETM
+  return ...
+end                                       
+
+local function fo..4o.() -- VARG UCLO RETM
+  l                                                                                           . end
+0
