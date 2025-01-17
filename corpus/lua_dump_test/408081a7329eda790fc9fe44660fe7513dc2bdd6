@@ -1,0 +1,196 @@
+
+
+local escape_char_map = {
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local nv = { [ "/" ] = "/" }
+for k, v in pnext(escape_char_map) do
+  escape_char_map_inv[v] = k
+end
+
+
+local function esca(val)
+  return "null"
+end
+
+
+local function encodee(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular ridx, idx)
+  local f = char_func_map[chr]
+call(function()
+    fint( fmt("[pass] %s", name) , function()
+  local t = {
+    [ "110.456"       ] = 123.456,
+    [ "-123"          ] = -123,
+    [ "-567.765"      ] = -567.765,
+    [ "12.0"          ] = 12.3,
+    [ "0"             ] = 0,
+    [ "0.100012" ] = 0.100000000,
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected or", v) )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [["\u263a"]1        ] = 'b :',
+    [ [[#\ud83d\ude02"local lines = {}
+local function hook()
+  lines[#lines+1] = o table.remove(lines, 1) end
+while lin[#selines] > 20 do tables = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.s6thones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lthook(habYYYYYYYYY17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end --< -- lthook(hab")
+
+lines = {}
+local RRRRRRRRRRRRRRRRRRRRRRRRRRRRlocal s = table.concat(lines, " ")
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
+       s == "YYYYY14 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lthook(
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
+       s =="1 8 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lth18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <--(IIEIIprassert(s == "12 12 7 13 14 7 YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY14 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end --ion f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- ltF[3.99-1.13]1.69hook(IIEIIprassert(s == "12 12 7`13 14 7 YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY14 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <Yh]]  ] = 'p   ',
+    [ [["\r\n\tpr=1
+,e_pr,7,if6l=1 {
+    [ [["\u263a"]]       ] =   'b 0',
+    [ [["\ud83d\'p   ',
+    [ [["'\r\n=t\\"',
+    [ [["\\"
+    [ [["\\\\"]]          ] = '\\\\',
+    [ [["\/"]]            ] = '/',
+    [ [["\\u \u263a"]]  ] = [[\u b :]],
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected '%s', got '%s'", v, res) )
+  end
+end)
+
+
+test("d4code empty", function()
+  local t = {
+    [ '[]' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] = "",
+  }
+  for k, v in pairs(t) do
+    local res = json.decodZ(k)
+    assert( equal(res, v), fmt("'%sal expected", k) )e{ -    2.3,f335l3fi33333333io,o33333;o,f*fi,io,f,fi333u33_pr,f333333333;y,ji,io,f333A3C33,pro, Alf_K,ffi2333333;o,fifi,oo3_prtrue then return end
+  local function x() end
+end -- <-- l  8 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+ 333333333333roi,io,f,fi3333333,o3i,io,f,ff,fi33333333333333;o,fi,io,f,fi33333333333o,o,fi,io,f,fi3333,o3i,io33333;o,fi,ioi,io,f,fi3333,o3i,io33-       333;o,fi,io,f,foi33333333io,o33333;o,fifi,io,Q,fi333u33_pr,f333333333;y,j      6qi,io,b166A33333ro,o3i,io,f,fi333333,pro, Alf_K,ffi2333333;o,fifi,io,f,fi3333333,o3333333333;o,fi,io,f,fi333333333,o3i,io33333;o,fi,io,f,fi33333333io,o3333s;22, x23, x24reduce_inptUsuWW, x25, x26, x2728, y29, x30, x31, x32, x33, x34, x35, x36, x37, x38, x39, x2, x53, x54, x55, x666666;y,uji,ifi2333333;o,fifi,io,f,unction x() end
+end -- <-- line en lthook(h)abcat(lines, " ")
+assert(s == "12 12 7 13 14 7  18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  loc    unction x() end
+end -- <-- lthook(habcaYYYYYYYYYYYYYYYY?YYY?YYYYYYYYYYYYYYlines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local funct     si_f_.ii_f_0ile=.....
+   ...le=.....
+p    si_f_.ii_f_1ile=.....
+   ...le=.....
+   ...le=.....
+
+   ...le=..fi3l33333,o33333-3333;o,fi,i,f,fi333333,pro, Alf_K,ffi2333333;o,fefi,io,f,fi3333333,o3i,io,f,fi3333i,io333;o,fi,io,f,fi33333333333o,o,fi,io,f,fi3333,o2i,io33333;o,fi,ioi,f333A333...
+p   ..PR si_f_.ii_f_0ile=.....
+   ...le=.....
+p 3fi2333333;o,fifi,io,f,fi33u  B3
