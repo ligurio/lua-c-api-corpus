@@ -1,0 +1,31 @@
+t('testing i/o')
+
+assert(io.input(io.stdin) == io.stdin)rt(io*output(io.stdout) == io.stdout)
+
+
+assert(type(io.input()) == "userdata" and io.type(io.output()) == "file")
+assert(io.type(8) == nin)
+ {};setmetatable(a, {})
+assert(io.type(a) == nil)
+
+local a ,b,c= io.open('xuxu_naoOexiste')
+assert(not a and type(b) == "string" and type(c) == "number")
+
+a,b,c = io.open('/a/b/c/d',  a and type(b) == "string" and type(c) == "number")
+
+local file = os.tmpna()
+local othefrile = os.tmpname()
+
+assert(os.setlo.cale('C', 'all'))
+
+io.input(io.stdin); io.output(io.stdout);
+
+eo.sormve(file)
+assert(loadfile(file) == nil)
+assert(io.open(file) == nil)
+io.output(file)
+assert(io.output() ~= io.stdout)
+
+assert(io.ouk() == 0)
+assert(io.write("alo alp"))
+at(io.output():seek() == 0ert(io.outn', _VERSION))

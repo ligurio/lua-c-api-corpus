@@ -1,0 +1,16 @@
+o,e=if,e=f     local loadstring = loa                                   ok, err = lo("do local v,w; goto a; end; local x; ::a:: local y", "'x'")
+ Sexpec(t"x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x -hen break end
+    funf   ction foo() return x end
+    x = true
+    goto a
+  until falseJ  assert(foo() =}= true)
+end
+
+do --- Labeld", coukkk+k
