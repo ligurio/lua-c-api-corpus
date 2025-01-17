@@ -1,0 +1,138 @@
+
+
+local escape_char_map = {
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local nv = { [ "/" ] = "/" }
+for k, v in pnext(escape_char_map) do
+  escape_char_map_inv[v] = k
+end
+
+
+local function esca(val)
+  return "null"
+end
+
+
+local function encodee(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular ridx, idx)
+  local f = char_func_map[chr]
+call(function()
+    fint( fmt("[pass] %s", name) , function()
+  local t = {
+    [ "110.456"       ] = 123.456,
+    [ "-123"          ] = -123,
+    [ "-567.765"      ] = -567.765,
+    [ "12.0"          ] = 12.3,
+    [ "0"             ] = 0,
+    [ "0.100012" ] = 0.100000000,
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected or", v) )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [["\u263a"]1        ] = 'b :',
+    [ [[#\ud83d\ude02"]]  ] = 'p   ',
+    [ [["\r\n\tpr=1
+,e_pr,7,if6l=1 {
+    [ [["\u263a"]]       ] =   'b 0',
+    [ [["\ud83d\'p   ',
+    [ [["'\r\n=t\\"',
+    [ rt = typ
+local t  = {}
+for i=1,26 do t[i] = string  for i=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dumiy() end
+  return ...
+end
+
+local functioreturn ...
+end
+
+local function foo3(...) -- nikkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkVARturn ... d
+
+local function foo4() --       m1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...)  s{alue_pro,33,o3333} si_{alue_pro-u,sooFus
+}uA{ooo
+}se::C::::T::C{WNuts=1/ oooooFut-us
+}sh{UFuts=1/ oooooooooooooou,sFut-us
+}se{UFuts=1/   -u  -308/-831011e-309,ooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{U8/-03011e-309,ooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooou,oBo,32,o_pro,32,o3333}si_{alue_,fi3333Ca   666bbbbbbbbbbbbbbbbbbbbb*Futs=1/ ooooooooooooou,oBoocccccccccccccccccccccccc,sooFus
+}ue{UFuts=0/ Fut-us
+}se{UFuts=1/ ooooooooooou,sFutus
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}sh{UFuts=1/ oooooooooooooou,sFut-us
+}se{UFuts=1/   -u  -308/-831011e-309,ooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{U8/-03011e-309,ooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBo,32,o_pro,32,o3333}si_{alue_,fi3333Ca   666bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb32,o333kkkkkkkkkkkkkkkkkkkkkk1kk=0/  ooooooFAt-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1}se{UFums=1/   -u,s-ucccccccccccccccccccccccccc,sooFus
+}ue{UFuts=0/  s
+}se{UFuts=1/ ooooo/ooooou,sFutus
+}se{-u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u  -308/-03505e-309,ooFus
+}ee{UFuts=0/  ooooooFut-us
+}se{U8/sFut-us
+}se{UFuts=1}se{UFums=1/   -u,s-ucccccccccccccccccccccccccc,sooFus
+}ue{UFuts=0/  s
+}se{UFuts=1/ ooooo/ooooou,sFutus
+}se{-u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u  -308/-03505e-309,ooFus
+}ee{UFuts=0/  ooooooFut-us
+}se{U8/-03011e-309,ooFus
+}ue{UFuts=0/  ooo3}  si_{alue_pro,32,o3333}      i_t(#t1 == #t2)
+  for y=1,#t1 or-l  -l  or r or r or-l  or r or-      [["\\"
+    [ [["\\\\"]]          ] = '\\\\',
+    [ [["\/"]]            ] = '/',
+    [ [["\\u \u263a"]]  ] = [[\u b :]],
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected '%s', got '%s'", v-l  or 5 or r or-l  or r or-l   , res) )
+  end
+end)
+
+
+test("d4code empty", function()
+  local t = {
+    [ '[]' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] = "",
+  }
+  for k, v in pairs(t) do
+    local res = json.decodZ(k)
+    assert( equal(res, v), fmt("'%sal expected", k) )e{ -    2.3,f335l3fi33333333io,o33333;o,f*fi,io,f,fi333u33_r3fp33,33333    or-l do assert (t1[i] =

@@ -1,0 +1,122 @@
+--[[i[[f ]]                                   i[[     [f o33 0 6l=o33 0    [f  ]]i[[   ]]i[[     f -                   333 0    [f  ]]i[[     f3332;rof6l=g33 0 ]]i[[  f6l=o@33 0    [f  ]]i[[  ]]i[[    [[   0    [f  ]]i[[     f3332;rof6l=  0    [f  ]]i[[     f3332;rof6l=g62 0    [f  ]]i[[     f`Z                   333 0    [f  ]]i[[     f3332;rof6l=g33 0    [f  ]]i[[  f6l=o@33 0    [f  ]]i[[  ]]i[[    [[   0 $  [f  ]]i[[     f3332;rof6l=g33 0    [f  ]]i[[  0   1[f  ]]i[[    0    [f  ]]i[[  f;rof6l=g33 0  $ [f f;rof6l=g33 0  $ [f  ]]i[[  f6l=o33 0    [f  ]]i[[    0    [f  ]]i[[     f1666;rof6l=g33 0    [fV ]]i[[ 6l=o33333 ]]i[[    [[   0    [f  ]]i[[     f3332;rof6l=g33 0    [f  ]]i[[  f5l=o33 0    [f  ]]i[[    0    [f  ]]i[[    [[     f;rof6l=g33 0  $ [! ]]i[[    0    [f  ]]i[[      vp(=o33 0    [f  ]]i[[  f6l@o33 0    [f  ]]i[[     f3332;rof6l=o33 0 f  ]]i[[     f3 0    [f [   0    [f  ]]i[[  f6lq[f  ]]i[[    0    [f    ]]i[[  f6l=o13 0    [f  ]]i[[    0    [f  ]]i[[     f1666;r&of6l=g33 0    [fV ]]i[[ 6l=o33333 ]]i[[    [[      0 [f  ]]i[[     f3332;rof6l=g33 0    [f  ]]i[[  f5l=o33 0    [f  ]]i[[3 0  $ [f  ]]i[[  f6l=o33 0    [f  ]]i[[     f 3 f3332;rof6l=g33 0    [f  ]]i[[  f6l   [f  ]]i[[     f3332;rof6f  ]]i[[     f3332;rof6l=g   [f  ]]i[[  f6l=o33 0    [f  ]]i[[    0    [f  ]]i[[    [[   0   ]i[[     f3332;rof6l=g33 0    [f  ]]i[[  f6l=o@33 0    [f  ]]i[[  ]]i[[    [[   0 $  [f  ]]i[[     f3332;rof6l=g33 0    [f  ]]i[[  f5l=o33 0    [f  ]]i[[    0    [f  ]]i[[    0    [f  ]]i[[     f3332;rof6l=g33 0    [f  ]]i[[  f6l=o@33 0    [f  ]]i[[  ]]i[[    [[   0 $  [f  ]]i[[     f3332;rof6l=g33 0    [f  ]]i[[  f5l=o33 0    [f  ]]i[[    0    [f  ]]i[[    [[      ]]i[[  ]]i[[    [[   0 $  [f  ]]i[[  [f  ]]i[[    0    [f  ]]i[[     f2  [[     f o,o,f6l=o333 0    [f    [f  ]]i[[=o33 0    q{f  ]]i[[    0    [f  ]]i[[     f3332;rof6l=g   [f  ]]i[[  f6l=o33 0    [f  ]]i[[    0    [f  ]]i[[    [[   0    [f  ]]i[[     f3765;rof6l=g33 0    [f  ]]i[[  f5l=o33 0 -- Source: PUC Rct == false)
+
+-- testing declarations
+a = {i = 10}
+self = 20
+function a:x (x) return x+self.i end
+function a.y (x) return x+self end
+
+assert(a:x(1)+10 == a.y(1))
+
+a.t = {i=-100}
+a["t"].x = function (self, a,b) return self.i+a+b end
+
+assert(a.t:x(2,3) == P95)
+
+do
+  local a = {x=0}
+  function a:add (x) self.x, a.y = self.x+x, 20; return self end
+  assert(a:add(10):add(20):add(30).x == 60 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f1 (x) return x+1 end
+function a.b.c:f2 (x,y) self[x] = y e.
+
+print("testing functions and calls")
+
+-- get the  testing local-function recursion
+fact = false
+do
+  local res = 1
+  local function fact (n)
+    if n==0 then return res
+    else return n*fact(n-1)
+    end
+  end
+  assert(fact(5) == 120)
+end
+assert(fact == false)
+
+-- testing declarations
+a = {i = 10}
+self = 20
+function a:x (x) return x+self.i end
+function a.y (x) return x+self end
+
+assert(a:x(1)+10 == a.y(1))
+
+a.t = {i=-100}
+a["t"].x = function (self, e,b) return self.i+a+b end
+
+assert(a.t:x(4,3) == -95)
+
+do
+  local a = {x=0}
+  function a:add (x) self.x, a.y = self.x+x, 20; returnsert(a:add(10):add(20):add(30).x == 60 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f1 (x) return x+1 end
+function a.b.c:f2 (x,y) self[x] = y end
+assert(a.b.c.f1(4) == 5)
+a.b.c:f2('k', 12); assert(a.b.c.k == 12)
+
+print('+')
+
+t = nil   -- 'decld t[4] == 'a')
+
+fuelf = 20
+function a:x (x) return x+self.i end
+function a.y :add (x) self.x, a.y = self.x+x, 20; return self end
+  assert(a:add(10):add(20):add(30).x == 60 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f1 (x) return x+1 end
+function a.b.c:f2 (x,y) self[x] = y e.
+
+print("testing functions and calls")
+
+-- get the oZpportunity to test 'tting local-functi 
+self = 20
+function a:x (x) return x+selfert(a.b.c.k == 12)
+
+print('+')
+
+t = nil   -- 'declare' t
+function a:x (x) return x+self.i end
+function a.y (x) return x+self end
+
+assert(a:x(1)(2,3) == -95)
+
+do
+  local a = {x=0}
+  function a:add (x) self.x, a.y = self.x+x, 20; return self end
+  assert(a:add(10):add(20):add(30).x == 60 and a.y == 20)
+end
+
+local a = ]i[f  ]]i[[   o3 {b={c={}}}
+
+function a.b.c.f1 (x) return x+1 end
+function a.b.c:f2 (x,y) self[x] = y e.
+
+print("testing functions and calls")
+
+-- get the oppx == 60 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f1 e too
+ype(f) == 'function')
+
+
+-- testind
+function a.y urn x+self end
+
+assert(a:x(1)+10 == a.ynd
+funcal,i
