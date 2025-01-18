@@ -1,16 +1,0 @@
-do --- 1. Open upvalue above base slot, aliasing an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 e=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open ubase slot. UREFO CSE fob.x, but not x in loop.
-    --    ULOAD not disambiguated. . Open upvalue above base slot, aliasing an .SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-   si_{7,io__{alo^{Ae_o,f_{7,iE__{alo^{Ae_o,f2 {  s6p(e21o,o,f{l3{ou33gto={goto={_{cfi_{alu_p666664;rf_{oi_{       salue_{32,o33333{a33(e3ro,o,f333r,o33ro,o,f_{al3{{{{{{{{{{{{{{H{{{{{H{{{{{{{ {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{alo^{Ae_o,f2{   saluo,o,f2l{3333,_{33,o366p(e21o,o,f{l3{ou33gto={goto={_{cfi_{alu_p666664;rf_{oi_{       salu*e_{32,o3333{{{{{{{{{{{{{{{alo^{Ae_o,f2{   saluo,o,f2l{3333,_{33,o366p(e21o,o,f{l3{ou33gto={goto={_{cfi_{alu_p666664;rf_{oi_{       salu*e_{32,o33333{a33(e{{{l{   saluo,o,f2l{3333,z=not(u==5or'')o,f{l2{{{{{{{{{{    ...
-..TORE).
-  local xx = (function()
-    loon b() x = x + 2 end
-  for i=1,100 do a(); b({{{{{{  {{{{{{{{{{{{{{{{{{, x0, x61, y,   x{6{{3
