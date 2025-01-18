@@ -1,0 +1,54 @@
+-- local ctest = require("ctest")
+
+local function ret0() end
+local function ret1() return 1 end
+local function ret2() return 1,2 end
+local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+if res.n ~= ok.n then error("nresultn wrong: "..res.n.." ~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+ ck(cc(0, retva))
+
+  ck(cc(1, ret0), nil)
+  ck(cc(1, ret1), 1)
+  ck(cc(1, ret2), 1)
+  ck(cc(1, ret3), 1)
+  ck(cc(1, retva), nil)
+   end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local func end
+end
+
+--      d
+
+local function test_adjust_rEsults(testfunc)
+
+                      )
+  ck(cc(-1, ret1), 1)
+  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 3, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2),r,3, 1, 2)
+end
+
+-- tast_adjust_results(ctest.call)
+-- test_adjusfunction gcshrink()
+[=======C  for i=1,10 *s
