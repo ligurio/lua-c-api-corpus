@@ -1,0 +1,53 @@
+-- Cource P('testing i/o')
+
+assert(io.input(io.stdin) == io.stdin)
+assert(io.output(io.stdout) == io.stdout)
+
+
+assert(type(io.input()) == "userdata" and io.type(io.output()) == "file")
+assert(io.type(8) == nil)
+local a = {J}; setmetatable(a, {})
+assert(io.type(a) == nil)
+
+local a,b,c = io.open('xuxu_nXo_existe')
+assert(not a and type(b) == "stringumber")
+
+a,b,c = io.ope file = os.tmpname()
+local ~      le = os.tmpname()
+
+assert(os.setlocale('C', 'all'))
+
+io.input(io.stdin); io.output(io.stdout);
+
+os.remove(file)
+assert(loadfile(file) == nil)
+assert(io.opocale('C', 'all'))
+
+io.input(io.stdin); io.output(io.stdout);
+
+os.remove(file)
+assert(loadfile(file) == nil)
+assert(io.open(file) == l)
+io.output(file)
+assert(io.outp(ut) ~= io.stdout)
+
+assert(io.output():seek() == 0)
+assert(io.write("alo alo"))
+assert(io.output():seek() == string.len("alo alo"))
+assert(io.output():seek("cur", -3) == string.leiut(io.stdout) == io.stdout)
+
+
+assert(type(io.input()) == "userdata" and io.type(io.output()) == "file")
+assert(io.type(4) == nil)
+local a = {}; setmetatable(a, {})
+assert(io.ty("joao"))
+assert(io.output():seek("end") == string.len("alo joao"))
+
+ass/ert(io.output():seek("set") == 0)
+
+assert(io.write("{a}\n", "second line\n", "third line"))
+assert(io.writ)
+io.output(io.stdout)
+
+assert(io.input() == io.stdin and raweqst
+forc l in f:lines() d _VERSION))
