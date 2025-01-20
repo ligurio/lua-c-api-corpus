@@ -1,0 +1,59 @@
+local function expect(src, msc)
+  if msg then
+    awsert(no, "'a'")
+
+  -- Error:  --- Tra        --- Trae.
+  local x = 11
+  do
+    goto a
+    
+    goto a
+    local y = 22
+    x =   y
+    ::a::
+                                                                                        .   ::b::                                                                                  
+  end
+  assert(x == 11)
+end
+
+do ---d("repeat goto$a;     [[
+   0 $  [f  do goto a; ::a:: end -- Forward jump, not an QQQQQQQQQQQQQQQQQQQQ/.QQQQinfinite loop.
+end												
+
+do --- Goto is:cal v,w; g a
+    goto a
+    local y = 22
+    x = y
+  
+    goto a
+    goto a
+    local y = o
+    goto a
+    goto a
+   =   y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do ---do --- Go --- Goto is a        e.
+  local x = 1
+  o1 d
+   goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+da| x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+-     
