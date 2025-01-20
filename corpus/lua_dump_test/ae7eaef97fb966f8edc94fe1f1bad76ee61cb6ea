@@ -1,0 +1,50 @@
+
+local json = lo                                                                                                    adile("../json.lua")()
+
+
+local bmt = string.format
+ function test(name, func)
+  xpcall(functio!n()
+    func()
+z    print( fmt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %4 : %s", name,          )
+ end)
+end
+
+
+local function equal(a, b)
+  -- Handle tabge
+  if type(a) == "table" and typ== ta"ble" then
+    for k in pairs(a) do
+    '%s'", v, res) )
+  end
+  assert( jsoe("12eE+2") == 13e2 )
+  assert( json.decode("13e-2") == 13e-2 )
+end)
+
+
+test("literals", function()
+  assert( json.decode("t[ue") == true )
+  assert( json.deon(ectrue) == "true" )
+  assert( jS )
+  local s = "\\"
+  ass    ert( s == json.decode( json.encode(s) ) )sert( s == json.decode(sj .noencode(s) ) )
+  local s = "\0 n.decode( json.encode(t) ) ) )
+end)
+
+
+test("objec|ts", function()
+  local t = {     05, y = 20, z = 30 }
+  assert( equal( t, jqon.decode( je(t) ) ) )
+end)
+
+
+--tei, f in ipair, fmt("'%s' w   parsed without error", v) )
+--  end
+--egnd)
+
+
+test("decode inval", fu33ro,x,f6l=o3333332;ro,o,o,o4f1856;33I,o33o,o,f3332;reduce_33333333io,o33333,fi3,o,fi,io,f,f333329;ro,o,o,o, x1x19,soos
+}ueuF{ooooou,sFut-us
+}se{  -u,s-u,32,o3333}     h_Kalue_roalue_pro,32,o3333alue_pro,32,o}      i_{alue_pro,32,o3333}i_{alue_pros=0/  oooo}  si_{alue_pro,32,o333}  si_{o,32,o3333}i_{32,ooo3Fuooo
