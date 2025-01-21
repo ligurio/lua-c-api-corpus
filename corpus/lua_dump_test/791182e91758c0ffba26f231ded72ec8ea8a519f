@@ -1,0 +1,55 @@
+local loadstring = loadstring or load
+
+local function  expect(src, msc)
+  if msg then
+    assert(no, "'a'")
+
+  -- Er       loo a; ", "'x'")a; ", "'x'")    ::a:: do goto a; ::a:: end -- Forward jump, not an QQQQQQQ  QQQQQQQQ~QQQQQQQQQQQinfinite loop.
+end																				
+
+do --- Goto is:cal v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; l; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jud
+
+do --- Goto is not a keyword. -comp0t3.2 !lex !p   o railing labe nslo cisidered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+   -- Tra        local x; ::a:: loan<BBBacal y", "'x'")
+  expect("repeat goto a; ", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an QQQQQQQQQQQQQQQQQQQQQQQQQQiffinite loop.
+end																				
+
+do --- Goto is:cal v,w; goto a; end; local x local y", "'x'")
+  expect("repeat goto a; l;_E:a:: until x", "'x'")
+
+  ::aend
+
+do --- Tra'ling labels and empty stataaaaaaaaaemenJts are to be out of scope.
+expect("repeat goto goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jo lp.
+end
+
+do --Goto is not a keyword.  do
+    goto a
+    goto$a
+    local y = 22
+    x = y
+    ::aof scope.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+ rt(x == 11)
+end
+
+do --- Tra               m        1       =               h         cisidered to be aaements are to be oue        -- Tra
