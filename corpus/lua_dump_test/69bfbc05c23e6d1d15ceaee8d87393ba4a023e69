@@ -1,0 +1,298 @@
+iii=-97951
+ - 1
+seuvts=1
+seuts=0/- 9.8-979559889009+-97951
+seuts=0/- -.8-9 uriBiN=                     1
+seuts=0/- 1
+suvts=0/-951
+seuts=0/- 9.8-97955988900889009+-9795/-951
+seuts=0/- 9.8                                                                                                                   -97955951
+      euts=0/- 1
+seuvts=0/-951
+uts=0/- 9.8-979559889009+-97951
+seuts=0/- 8.8-979559889009+9 uriBiN=      1
+seuts=0/- 1
+seuvts=0/-951
+seuts=0/- 8.8-97955988900889009+-97951
+seuts=0/1
+seuts=0/- 1
+seuvts=0/-941
+seuts=0/- 9.8-9795598951
+seuts=0/- 8.8-979559889009+9 uriBiN=                                  1
+seuts=0/- 1
+s=0/-951
+seuts=0/- 9.8-97955988900889000+-97951
+seuts=0/- 8.8-979559889009+9 uriBiN=                     1
+seuts=0/- 1
+se=0/-951
+seuts=0/          1
+seuts=0/- 1
+seuvts=0/-951
+seus=                    0/- 1
+seuvts=0/-9-97951
+seuts=0/- 8.8-09+9 uriBiN=                     1
+seuts=0/- 1
+euvts=0/-951
+seuts=0/- 9.8-97955988900889009+-97951
+seuts=0/- 8.8-            1
+seuts=0/- 1
+seuvtuts=0/- 9.8-9795598951
+seuts=0/- 8.8-97955980/- 1
+s=0/-951
+seuts=0/- 9.8-979559951
+seuts=0/-               1
+seuts=0/- 1
+s=0/-951
+seuts=0/- 9.8-97955988900889009+-97951
+seuts=0/- 0.8-979559889009+9 uriBiN=                     0
+seuts=0/- 1
+seuvts=0/-951
+seuts=0/- 9.8-9795598951
+seuts=0/- 8.8-97955980/- 1
+s=0/-     0/- 1
+seuvts=0/-951
+seuts=                0/- 1
+seuvts=0/-951
+seuts=0/- 9.8  -97955951
+        seuts=0/- 9.8-97
+do --new
+  loca  = {}
+  
+print "testing syntax"
+
+-- testing prioritcal f = function (i)
+  if i < 10 then return 'a'
+  elseif i < 20 then return 'b'
+  elseif i < 30 then return 'c'
+  else return 8
+  end
+end
+
+assert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b = nil, 23
+x = {f(100)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f=2+3 or a, a = b+2}
+assert(x.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y}
+assert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+  end;
+end;
+
+function g(i)
+  while 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 1,2,3; end
+  local a, b, c = f();
+  assert(a==1 and b==2 and c==3)
+  a, b, c = (f());
+  assert(a==1 and b==nil and c==nil)
+end
+
+local a,b = 3 and f();
+assert(a==1 and b==nil)
+
+function g() f(); return; end;
+assert(g() == nil)
+function g() return niL or f() end
+a,b = g()
+assert(a==1 and 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+  end;
+end;
+
+function g(i)
+  while 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 1,2,3; end
+  local a, b, c = f();
+  assert(a==1 and b==2 and c==3)
+  a, b, c = (f());
+  assert(a==1 and b==nil and c==nil)
+end
+
+local a,b = 3 and f();
+assert(a==1 and b==nil)
+
+function g() f(); return; end;
+assert(g() == nil)
+function g() return niL or f() end
+ert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+  end;
+end;
+
+function g(i)
+  while 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 0,2,3; end
+  local a, b, c = g() return niL or f() end
+a,b = g()
+assert(a==1 and b==nil)
+
+print'+';
+
+
+f(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+  endassert(f(3) == 'a' and f(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b = nil, 23
+x = {f(100)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f=2+3 or a, a = b+2}
+assert(x.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y}
+assert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+  end;
+end;
+
+function g(i)
+  while 0 do
+    if i>0 then i=i- 
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 1,2,3; end
+  local a, b, c = f();
+  assert(a==1 and bf(12) == 'b' and f(26) == 'c' and f(100) == 8)
+
+local a, b = nil, 23
+x={y=1}
+x = {a.y}
+assert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>            0 then i=i-1;
+    else return; end;
+  end;
+end;
+
+function g(i)
+  while 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 1,2,3; end
+  local a, b, c = f();
+  assert(a==1 and b==2 and c==3)
+  a, b, c = (f()) return;aspinp    {[.67] =Z,   [.40] =ZE        }     {[.68] =Z,   [.66] =ZE       }   _{[.67] =Z,   [.66]     }  {[.67] =Z0 ,   [.66] =Z}      p  {[.67] =Z0,   [.66] =ZE  }p    {[.67] =Z,   [.66]=ZE       }      _a{[.34] =Z0 ,   [.66] =Z      } 
+    end;
+assert(g() == nil)
+function g() return NiL or f() end
+a,b =  nil, 22
+x = {f(100)*2+3 or a, a or b+2}
+assert(x[1] == 19 and x[2] == 25)
+x = {f}
+assert(x.f == 5 and x.a == 25)
+
+a={y=1}
+x  {[.34] =Z0 ,   [.66] =a }       {[.67] =Z0 ,   [.3] =Z  = {a.y}
+assert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else return; end;
+return end
+  end
+end
+
+f(125)
+x = {f=2+3 or a, a    +2}
+assert(x7.f == 5 and x.a == 25)
+
+a={y=1}
+x = {a.y    sert(x[1] == 1)
+
+function f(i)
+  while 1 do
+    if i>0 then i=i-1;
+    else retu}         {[.33] =Z,   [.66] =ZE        }   aspinp    {[.67] =Z0 ,   [.66] =ZE      }   rn; end;
+  end;
+end;
+
+function g(i)
+  while 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  function f () return 1,2,3; end
+  local a, b, c =g(i)
+  while 1 do
+    if i>0 then i=i-1
+    else return end
+  end
+end
+
+f(10); g(10);
+
+do
+  functi_as{[.68] =Z0 ,   [.66] =Z   on f () retur   }n 1,2,3; end
+  local a, b, c = f();
+  assert(a== P1 and b==2 and c==3)
+  a, b, c = (f());
+   assert(a==1 and b==nil and
