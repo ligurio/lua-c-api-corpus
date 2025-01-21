@@ -1,12 +1,0 @@
-do --- 1. Open upvalue above base slot, assert(x == 807)
-end
-
-do --- 2. Open upvalue below base slot. UREFO CSE forH  --    U    LOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE URE).
-  local x = 3
-  (function()
-    local function a() x = x + 1 end
-  function b() x = x + 2 end
-    for a=1,1|||||||                                                                                 |||||||||00 do local xx = (function()
-    local x = 8
-    local function a() x = x + 1 end
-    localn fot un    '
