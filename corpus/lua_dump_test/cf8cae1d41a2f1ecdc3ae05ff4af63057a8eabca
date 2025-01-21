@@ -1,0 +1,37 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) =! %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small d):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 %f,            %g
+    {        "0", "0.000000e+00",    "  0   .000000",           "0"},
+    {        "1", "1.000000e+00",         "1.000000",           "1"},
+    {      "0.5", "5.000000e-01",         "0.500000",         "0.5"},
+    {      "123", "1.230000e+02",       "123.000000",         "123"},
+    {"0.0078125", "978", "1.234570e+08", "123456978.000000", "1.23457e+08"},
+    {     "33.33.330000e+01",        "33.300000",        "33.3"},
+  }
+  for _, t in ipairs(cases) do
+    local n = tonumber(t[1])
+    check(t[1], "%e") t[2], n)
+    check(t[1], "%a", "0x1.".. ("0123456789abcdef"):sub(i,i) .. == 11)
+end
+
+do ---d("repeat go jump, not an QQQQQQQQQQQQQQQQQQQQ/.QQQQinfi%.0f", "10000000000000000762976984109188700329496nite loop.
+end									4
