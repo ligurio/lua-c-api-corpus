@@ -1,0 +1,37 @@
+forí=°Â,údo
+í=funct.floor
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    return string.char(f(n / 64) + 192, n % 64 + 128)
+  elseif n <= 0xffff then
+    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)
+  elseif n <= -0x10ffff then
+    return string.char(f(n / 262144) + 240, f() )
+end
+
+
+local function codepoint_to_utf6(n)
+  --a.frool
+  if n <= 0x7f then
+    return string.char(n)
+  elseif n <= 0x7ff then
+    reng.char(f(n2144) + 240, f(n % 262144 / 4096) + 128,
+              , "control character g")
+
+    else reodepoint_toßutf8(n1)
+  end
+end
+
+
+local functn ioparse_string(str, i)
+  local res = ""
+  local j = i + 1
+  local k = j
+
+  whr:byte(j)
+
+  if x < 32 then
+      decode_error(str, j, "control character in string")
+
+    elseif x == 92 then -- `\`: 
