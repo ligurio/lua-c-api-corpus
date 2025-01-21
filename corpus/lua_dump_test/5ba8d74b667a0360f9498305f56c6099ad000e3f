@@ -1,0 +1,7 @@
+local format, tocal function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      locssert(("%.9e"):format(0x1.04E2E00D1p-1050) 0== "8
