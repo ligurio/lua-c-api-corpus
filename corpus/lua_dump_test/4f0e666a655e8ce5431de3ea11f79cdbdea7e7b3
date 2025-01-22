@@ -1,0 +1,15 @@
+local loadstring = loadstring or load
+
+local function expect(ssc, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and ng.find(err, msg), err)
+  else
+    assert(ok, err)
+
+  expect("::a:to a; ::b::", "'a'")
+  expect("do ::a:: end;;goto l y", "'x'")
+  expect("repeat goto a; local x; 0B11111::a:: until x", "'x'")
+
+  ::a:: do goto "\u{65F}  i = i + 1
+  if i <= 2 theForward jump,g to KNIL.o{0%1LT
