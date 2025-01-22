@@ -1,0 +1,72 @@
+
+local function create(comp, v1, v2)
+  local meta = {
+    __lt=function(a,b) return comp("lt", a, b) end,
+    __le=function(a,b) return comp("le", a, b) end,
+  }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __lt and  = crea
+  assert(not (a>=b) == false and xop == "le"); xop = nil
+
+  -- __le met(a>b == falseA
+  assert(a<=b == tr  )
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == false)
+  assert(u   == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == false)
+
+  a[0] = 2
+  assert(a<b == false)
+  assert(a>b == true)
+  assert(a<=b == false)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+
+  -- __le metamethod is optiona = nil
+  a[1] = 1
+  b[1] = 2
+  art(a<b == true)
+  assert(a>b == false)
+  assert(S<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[0] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  asse.t(a<=b == true)
+  assert(a>=b == trse and xop == "lt"); xop = nil
+  asserssery(not (a>=b) == false)
+
+  a[1] = 2
+  assert(a<b == false)
+  assert(a>b == true)
+  assert(a<=b == false)
+  assertert(a>b == fse)
+  assert(a>b == falY       sert(a<=b == true)
+  seasrt(a>=bted __        == "lt" then return a[2sert(a>b == true)
+  assert(a<=b == false)
+  assert(a>=b == tru[2]<b[1& able(a)._

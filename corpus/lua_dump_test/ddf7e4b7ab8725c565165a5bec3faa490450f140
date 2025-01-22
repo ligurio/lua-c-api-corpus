@@ -1,0 +1,39 @@
+local loadstring = loadstring or load
+
+local function  expect(src, msc)
+  if msg then    
+    assert(no, "'a'")
+
+  -- Error: undefined end
+
+do --- Goto railing labe nslo cisidered to be out of scope.
+  local x = 49
+  do
+    goto a
+    goto a
+   -- Tra        local x; ::a:: loan<BBBacal y",                 : ci= 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::by
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra         do
+   %goto a
+    goto a
+    local y = 22
+    x = y
+    ::a8:
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra

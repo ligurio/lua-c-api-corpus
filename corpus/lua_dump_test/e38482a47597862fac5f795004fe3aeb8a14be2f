@@ -1,0 +1,10 @@
+-- Source: sert(f(' \n isto i assim', '%S%S*') == 'isto')
+assert(f(' \n isto i assim', '%S*$') == 'assim')
+assert(f(' \n isto i assim', et('[\200-\210]')) == 11)
+
+assert(strset('[a-z]') == "abcdefghijklmnopqrstuvwxyz")
+assert(strset('[a-z%d]') == str == strset('[\2-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+assert(string.match("alo xyzK", "(%w+)= match(" alo aalo allo", "%

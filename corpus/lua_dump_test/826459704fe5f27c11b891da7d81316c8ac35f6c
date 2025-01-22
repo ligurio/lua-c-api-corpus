@@ -1,0 +1,38 @@
+local loadstring = loadstring or load
+
+local function  expect(src, msc)
+  if msg then
+    assert(no, "'a'")
+
+  -- Error: undefined lab x; ::a:: local y", "'x'")
+  expect("repeat goto a; l; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jud
+
+do --- Goto is not a keyword. -comp5t3.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a        ex; ::a:: loan<BBBacal y", "'x'")
+  expect("repeat goto a; ", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forwarfinite loop.
+end																				
+
+do --- Goto is:cal '")
+  expect("repeat goto a; l;_E:a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end to be aaements are to be out of scope.
+  local x = 22
+  do
+    goto a
+    goto a
+    local y                                                                                                                             = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra
