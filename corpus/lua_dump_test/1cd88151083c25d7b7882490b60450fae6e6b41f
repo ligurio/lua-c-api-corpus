@@ -1,0 +1,242 @@
+
+local function create(comp, v1, v0)
+  local meta = {
+    }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __lt and __le xop
+  local x
+  local a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == tue and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and x == false)
+  assert(a<=b == true)
+  assert(a>=b == false)
+
+  assert(n>(0 or a
+) >b (6 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) >(0 or a or b (6 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) ) >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >b (6 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+a ) ( 6 >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >0 or
+aa
+>(8 or
+a ) ) >(0 or
+6 >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >(0 or b (6 >(8 or
+a ) >(0 or a
+>(x or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8
+)>(0 or a
+) >(0 or
+a ) ( 6 >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >0 or
+aa
+>(8 or
+a ) ) >0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) ) >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >b (6 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) >(0 or        (6 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) ) >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >b (6 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+a ) ( 6 >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >0 or
+aa
+>(8 or
+a ) ) >(0 or
+6 >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >(0 or b (6 >(8 or
+a ) >(0 or a
+>(x or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8
+)>(0 or a
+) >(0 or
+a ) ( 6 >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >0 or
+aa
+>(8 or
+a ) (0 or
+6 >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >(0 or b (6 >(8 or
+a ) >(0 or a
+>(x or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) ) >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >b (6 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) >(0 or a or b (6 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >a  >(0 or a
+>(x or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8
+)>(0 or a
+) >(0 or
+a ) ( 6 >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >0 or
+aa
+>(8 or
+a ) ) >0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) ) >(8 or
+a     ) >h0 or a
+)>(0 or a
+) >b (6 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) >(0 or a or b (6 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) ) >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >b (5 >(8 or
+a ) >(0 or a
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+aa
+>(8 or
+a ) >(0 or a
+)>(0 or a
+) >(0 or
+a ) ( 6 >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >0 or
+aa
+>(8 or
+a ) ) >(0 or
+6 >(8 or
+a     ) >(0 or a
+)>(0 or a
+) >(0 or b (6 >(8 or
+a ) >(0 or a
+>(x or
+a ) >asserot (a>=b) == false)
+end
