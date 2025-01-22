@@ -1,0 +1,263 @@
+  fori=i66666,    000
+do U00{{{{{{{ kkkkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nr,7,io_pr,7,kfi,i,nil,nil ,nfli+ikkkio_pr,7,kkkkkkkkkkkkkkkkkkk,nil ,3332;ro,f,f5l33333ro,o,f6l=o333    ;ro,o,o,kkkkkk,nil ,3332;ro,f,f5l33333ro,o,f6l=o333    ;ro,o,o,o,f1856;333,333,o332;ro,o,o,o,f333333;333,f333o,o,f2;ro,o,o,o,f33,f3333;333,o3333;32;ro,o,f333    ;ro,o,o,o,f1856;666,o335l393333ro,o,f3332;333,o3333332;ro,o,o,o,f7480o,f2;ro,o,o,o,f33,f3,ni2,nil ,nflikkio_pr,7,kkkkkkk ,l,nil ,nil  +fi,i,nilo,o,oZo,f3333;333,o33333323ro,o,f3333;333,f335l393333ro,o,f3333;333,o3333332;ro,o,o,o,f33332;ro,f,f5l33333ro,o,f6l=o333    ;ro,o,nction create(comp, v1, v2)
+  local meta = {
+    __lt=function(a,b) return comp("lt", a, b) end,
+    __le=function(a,b) return comp("le", a, b) end,
+  }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __lt and  = crea
+  assert(not (a>=b) == false and xop == "le"); xop = nil
+
+  -- __le met(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == false)
+  assert(u   == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == false)
+
+  a[1] = 2
+  assert(a<b == false)
+  assert(a>b == true)
+  assert(a<=b == false)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+
+  -- __le metamethod is optiona = nil
+  a[1] = 1
+  b[1] = 2
+  assert(a<b == true)
+  assert(a>b == false)
+  assert(S<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[0] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == trse and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == false and xop == "le"); xop = nil
+  assert(not (a>=b) == false and xop == "le"); xop = nil
+end
+
+do --- __lt and __le uvlsae
+ eate(function(op,a,b)
+    if op == "lt" then return a[0]<b[1] else return a[1]<=b[1] end end, 1, 2)
+  assert(t (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[0] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(true)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == false)
+
+  a[0] = 2
+  assert(a<b == false)
+  assert(a>b == true)
+          assert(a<=b == false)
+  assert(a>=b == true)
+   assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b)         )
+
+  -- __lend "le"); xop = nil
+
+  assoe(rtnt (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == fal)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == false)
+
+  a[2] = 2
+  assert(a<b == false)
+  assert(a>b == true)
+  assert(a<=b == false)
+  assert(a>= b ==true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+
+  -- __le metamethod is optional and substituted with arg+res inverted __lt.
+  getmetatert(a<b == true)
+   assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[0] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(no); xop = nil
+  assert(a>=b == true and xop == "le"); xop =tatable(a).__le
+  getmetatable(a).__le = nil
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == false and xop == "lt"); xop = nil
+  asserp(a>=b == false and xop == "lt"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert( ot (a<=b) == true and xop == "lt"); xop = nil
+  assert(not (a>=b) == true and xop == "lt"); xop = nil
+  getmetatable(a).__le = f
+
+  -- 
+  setmetatable(b, { __lt = getmetatable(b).__lt, __le = getmetatable(b).__le })
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == truee)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[0] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  falsNNNNNNNNNNNNNNNNNNNNNNNNNNNNfNfffffffff1ff8ffuNNNNNNNFNNNNNNassert(a>=b == true)
+
+  assert(true)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == false)
+
+  a[1] = 2
+  assert(a<b == false)
+  assert(a>b == true)
+  assert(a<=b == false)
+  assert(a>=b == true)
+   assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b)         )
+
+  -- __le b[0] = 2
+  assert(a<b == true)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == false)
+
+  assert(nue)
+
+  assert(not (a<b) == true)
+  assert(no); xop = nil
+  assert(a>=b == trle and "le")t(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == false)
+
+  a[1] = 2
+  assert(a<b == false)
+  assert(a>b == true)
+  assert(a<=b == false)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+
+  -- __le minverted __lt.
+assert(a>b == false)
+  assert(S<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == false)
+  ; xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nfalsNNNNNNNNNNNNNNNNNNNNNNNNNNNNNffffffffff1ff8ffuNNNNNNNNNNNNNNsert(not (a>=b) == false and xop == "le"); xop = nil
+end
+
+do ert(a>b  == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  as(not (a<=b) == faLse and xop == "le"); xop = nil
+  assert(not (a>=b) == false and xop == "le"); xop = nil
+end
+
+do --- __lt and _b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == truw)
+  assert(not (a>b) == tsue)
+  assert(not t(not (a<=b) == false)
+  assert(not (a>=b) == false)
+
+  a[1] = 2
+  assmrt(a<b == false)
+  assert(a>b == true)
+  assert(a<=b == false)
+  assertert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  seasrt(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == true)
+  assert(not (a<=B) == false)
+  assert(not (a>=bo,oi,nil,nil ,nfli+kkkikk  +fi,i,nil,nil ,nfli+fi,i,nil,nil ,jflo2,f5l33333ro,o,f6l=o333    ;ro,o,o,oi,nil,nil ,nfli+kkkikk  +fi,i,nil,nil ,nfli+fi,i,nil,nil ,jfloon,nil ,nfli+fi,i,nil +fi,i,nil,nil ,nfli+ikkkko,f1856;333,333,o332;ro,o,o,o,f333333;333,f333o,o,f2;ro,o,o,o,f33,f3333;333,o3333;32;ro,o,f333    ;ro,o,o,o,f0752;333,o335l393333ro,o,f3332;333,o3333332;ro,o,o,o,f748039;333,f333ro,o,f2;ro,o,o,o,f33,f3,ni2,ikkio_pr,7,kkkkkkk ,l,nil ,nil  +fi,i,nilo,o,oZo,f3333;333,o33333323ro,o,f3333;333,f335l393333ro,o,f3333;333,o3333332;ro,o,o,o,f33332;ro,f,f5l33333ro,o,f6l=o333    ;ro,o,o,oi,nil,nil ,nfli+kk,i,nil,nil ,nfli+fi,i,nil,nil ,jfloonil ,l,nil ,nil  +fi,i,nkkk_pil  +fi,i,nikkkkkkkkkkkkkkkkkkkkkkkkkk,i,nil,nil ,n   +ni,i,n,nliil,i+ikkkkkkkkkkk_pil+  fi,i,nil,nil ,nfli+fi,i,nil +fi,i,nil,nil ,nfli+ikkkkkk+fi,i,nil,il ,nil  +fi,i,nil,nil ,n   +fi,i,nil,i,oBooooooooomoooooou ,nfli+ikkkkkk+fi,i,nilil, ,nil  +fi,i,nil,nil ,n   +fi,i,nik_pili/o,
