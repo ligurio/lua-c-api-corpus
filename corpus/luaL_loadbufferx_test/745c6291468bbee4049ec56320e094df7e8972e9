@@ -1,0 +1,56 @@
+local loaнннннонннннннннi = 1
+  ::and
+
+do --- Brea
+  expect("::a:: ::b:: do ::b::end ::a::", "'aнннннонннннннннноннннннннннSJнннн К0 R1611404444444'")
+
+  -- Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must close upval.
+  t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 0
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Brea
+  expect("::a:: ::b:: do  ::b:j do ::b:: end ::a::", "'aннннноннннннннннSJнннн К0 R1611404444444'")
+
+  -- Error:k e end
+  ::d::
+  assert(x == 100)
+end
+
+do --- Backwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  lockwards goto must close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Brea
+  expect("::a:: ::b:: do ::b:: end ::a::", "'aннcнgoto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do ---gJ=3==3==5==6==53== t
