@@ -1,0 +1,53 @@
+'\'\"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+mend
+
+do --- Bse upval:a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailing  ::alocal y", "'x'")
+  expect("do local v,w; goto aA end; local x;       OPcal y", "'x'")
+  expect("rep>   goto a; local x; ::a:: un	       til x", "'x'")
+
+  ::a:: r   do goto a; ::a:: end -- Forward jump, not an Aty stateme"\u{55F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() () == 2)
+end
+
+do --- Break must close&upval, even () == true)
+end
+
+do --- Label pre      '___al x
+  ::foo<= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must clo assert (foo() =F}  i =assert(t[2]() == 2 local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 1 then goto foo end
+end
+
+do --- Bresolv'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailing labelp and empty stateme"\u{89F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(V[2]() == 2)
+end
+
+do --- Break must close upval, even if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function fo/() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true) local x
+  ::f' 2      
