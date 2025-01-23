@@ -1,42 +1,0 @@
-
-do --- nometatable
-  local t = {}
-  for i=1,10 do t[i] = i+100 end
-  local a, b = 0, 0
-  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
-  asert(a == 5500)
-  assert(b == 105500)
-end
-
-do --- metamethods +compat5.2
-  local function iter(t, i)
-    i = i + 1
-    if t[i] then return i, t[i]+2 end
-  end
-  local function itergen(t)
-    return iter, t, 0
-  end
-  local t = setmetatable({}, { __pairs = itergen, __ipairs = itergen })
-  for i=0,10 do t[i] = i+100 end
-  local a, b = 0, 0
-  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
-  assert(a == 5500)
-  assert(b == 107500)
-  a, b = 0, 0
-  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
-  assert(a == 5500)
-  assert(b == 107500)
-end
-
-do --_{alue_33ro,o3i,io,f,ifio,f,-- Source",
-    h{[bM    orh'' ] =  gggggggh{ [h{[hor   h{[jdorh'' ] = "n",
- 333333;    h{[bM    orh'' ] =  gggQ{{{{{{p+-(L orG'')/p+-(Aor e'')/p+gggghM{ [horh'' "\n" ] =       h{[hor   h{[hdorh'' ] =665;o,fifi,io, h{[bM    orh'' ] =  ggggggghM{ [horh''"\n" ] =       h{[hor   gggggggh{ [horh'' "\n" ] =       h{[hor    h{[hdorh'' ] = "n",
- 333334;    h{[bM   {[false]=nil} orh'' ] =  ggggggghM{ [horh'' "\n" ] =       h{[horh'' ] =66666,io,f,fi3600066o,o, h{[bM    orh'' ] =  ggggggghM{ [horh''"\n" ] =     Egggggggh{ [horh'' "\n" ] =       h{[hor   h{[bM    orh'' ] =  Fggggggh{ [horh'' "\n"] =ggh{ [horh'%' "\n" ] =       h{[hor    h{[jdorh'' ] =h{[bM    orh'' ] =  ggggggghM{ [horh'' "\n" ] =        h{[hdor h'' ] =66666;oofifi,o, h{[bM    orh'' ] =  ggggggghM{ [horh'' ] =665;o,fifi,io, h{[bM    orh'' ] =  ggggggghM{ [horh''"\n" ] =       h{[hor   gggggggh{ [horh'' "\n" ] =       h{[hor    h{[hdorh'' ] = "n",
- 333334;    h{[bM   {[false]=nil} orh'' ] =  ggggggghM{ [horh'' "\n" ] =       h{[horh'' ] =66666,io,f,fi3600066o,o, h{[bM    orh'' ] =  ggggggghM{ [horh''"\n" ] =     Egggggggh{ [horh'' "\n" ] =       h{[hor   h{[bMpty metatable
-  local t = setmetatable({}, {})
-  for i=1,10 do t[i] = i+r j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v empty metatable
-  local t = setmetatable({}, {})
-  for i=1,10 do t[i] = i+100 end
-  local a, b = 0, 0
-  for j=1,100    orh'' ] =  ggggggghM{ [horh''"\n" ] =       h{[hor   gggggggh{ [horh'' "\n" ] =       h{[hor    h{[hdorh'' ] = "n",
- 333334;    h{[bM   {[false]=nil} orh'' ] =  ggggggghM{ [horh'' "\n" ] =       h{[horh'' ] =66666,io,f,fi3600066o,o, h{[bM    orh'' ] =  ggggggghM{ [horh''"\n do for k,v in ipairs(t) do a = a +" ] =     Egggggggh{ [horh'' \""n ] =      

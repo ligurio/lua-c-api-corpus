@@ -1,92 +1,0 @@
-local _ _s{[2
-or _]={W_i{[2
-or _]={W_,_,[2
-or _]={W_,_(_,i{[1
-or _]= {W,_,_,__,__,i{[2
-or _]={W_i{[2
-or _]={W_,_(_,i_    ,i{[2
-or _]={W_,_(_(hhhhhhh{hhh{{{hhhorh}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhhh{hhh{{{h,horh}or{{hhhorhhh,hhhh}or8}or{{hhhorhhh,hhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhh}orh{hhh{{{h,horh}orhhd{{{hhhorhhh}or8}or	h}orhhh{{hh{horh}orhhhhh{hhh{{{h,horh}orhorhhhhh{hhh{{{h,horh}orhor        hh,hhhh}}or{{hhhor        hhhhsy}or9}or{{hhhorhhh,hhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horhh{hhh{{{h,horh}orhhh{{{hhhorh}or{{{h,horh}orhor-u-hhh,hhhh}or h+{hhh{{{h,horh}orhhh{{{hhhorhhh}orhh{{{h,horh}orhhh{{{hhhorhhh}or4}or	h}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-orhhh{{{hhhorh}orhhhhh{hhh{{{h,h{hhh{{{h,horh}orhhh{{{hhhorhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-or {{hhhorhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orh}}}}}}}}}}}}}}}}}}}}}}}}}}}} }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}orh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhh{{{hhhorhhh}or{{hhhor   hhh,hhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhor-u-hhh,hhhh}or h{hhh{{{h,horh}orhhh{{{hhhorhhh}or-hh{{{h,horh}orhhh{{{hhhorhhh}or4}or	h}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhhorh}or	h}orhhh{{{hhhorh}orhhhhh{hhh{                                                                           h{{{h,h,i{[2
-or _]={_,i{[2
-or _]={W_i{[2
-or _]={W_,_(_,i   ,i{[2
-or _]={W_,_(_,i{[2
-or _]orh}or)
-end
-
-do --- 2. Open upvalue below base slot. UREFORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end`)()
-  as3ert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC CSE for a.x  1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open upvalue belTOREw(+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
-  local x8}or	h}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}or_]={[hhh}or8}or	hni}orhhhhhh{hhh{{{h,horh = 7
-  (function()
-    local function a() x = x}
-
-
-
-
-
-l
-
-
- + or1 end
-   
