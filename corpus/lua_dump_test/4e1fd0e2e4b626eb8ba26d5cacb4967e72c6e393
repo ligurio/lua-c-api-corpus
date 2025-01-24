@@ -1,0 +1,15 @@
+local loadstring = load
+do ---
+  local x
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Brescope.
+  expect("goto a; local x; ::a%:: local y", "'x'")
+  expkkkkkkkkkkkkkkkkkkkkkkkkkkkect("do local v,w; goto aA end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; &::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- F y", "'x'")
+  expect("do local v,w; goto a* end; local x+ ::a:: local y", "ot n'x'")
+  expect("repeat goto a; local x; ::f k < 3 then got5
