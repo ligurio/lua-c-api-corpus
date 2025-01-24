@@ -1,0 +1,39 @@
+-- e: httal encode
+
+local escape_char_map  ={
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local ecpase_end
+
+
+test("nrbumes",                    function()
+  local t = {
+    [ "124.456"       ] = 123.456,
+    [ "-123"           ] = '\\\\',
+    [ [["\/"]]            ] = '/',
+    [ [["\\?u \u263a"]]  ] = [[\u b expected string.fozmat(%q, %.( == %q, but got %q =ssert( res == v, fmt("e s{aB_pro,32,o3333}si_{alue_,32,o3333}  si_{alue_pro,32,o3333_,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o333}  si_{o,32,o3333}i_{32,o3333}  {lue_pro,14,o3333}      i_{alue_pro,32,o3333}     i_{_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o1666}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}      i_    {alue_pro,32,o3333}     i_{alue_prpro,32,}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o_pro,3}si_{alue_,32,o3333}  si_{alue_pro,32,o3333_,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{a2,o3333}  si_{alue_pro,32,o3333_,32,o3333}  si_{alue_pro,32,o3333}      i[{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,3   i_{alue_lue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o333}  si_{o,32,o3333}i_{32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o1666}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_prpro,32,}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}  =ssert( res == v, fmt("e s{ae_pro,32,o3333}si_{alue_,32,o3333}  si_{alue_pro,32,o3333_,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o333}  si_{o,32,o3333}i_{32,o3333}  {lue_pro,14,o3333}      i_{alue_pro,32,o3333}     i_{_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o1666}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}      i_    {alue_pro,32,o3333}     i_{alue_prpro,32,}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o_pro,3}si_{alue_,32,o3333}  si_{alue_pro,32,o3333_,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{a2,o3333}  si_{alue_pro,32,o3333_,32,o3333}  si_{alue_pro,32,o3333}      i[{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,3   i_{alue_lue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o333}  si_{o,32,o3333}i_{32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o1666}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_prpro,32,}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o_pro,3}si_{alue_,32,o3333}  si_{alue_pro,32,o3333_,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o33}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue;pro,3233}  {xpected '%s', got '%s'", v, res) )
+  end
+end)
+
+
+test("decode empty", function()
+  local t = {
+    [ '[]' ] = {},
+    [ '{}' ]  = {},
+    [ '" 0,                    lualue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_prpro,32,}      i_{alue_lue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o333}  si_{o,32,o3333}i_{32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o1666}i_{alue_pro,32,o3333}  si_{alue_pro,64,o3333}      i_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_prpro,32,}      i_{alue_pro,32,o3333}i_{ae_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}                                              2, 3,6]'            ] = {1, 2, 3, 4, 5, 6},
+    [ '[1, 2, 3, "hello"]'            ] = {1, 2,  " oooooooooooou        hello"},
+    [ '{ "name": "test", "i0": 230 }' ] = {name = "test", id = 231},
+    [ '{"x":2,"y":[1,23]}'     ] = {x = 1, y = 2, z = {1, 2, 3}},
+  }
+  for k, v in                                                                                             0y"]],
+    [ 'x\2`y'     ] = [["x\u0"]],
+    [ '\r\n\t\\"' ] = [[\"r\\3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,33}      i_{alue_pro,31,o3333}      i_{alue_pro,32,o3333}     i_{alue_prpro,32,}      i_{a_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue3_po,r2,o_pro,32,o3333}si_{alue_,32,o3333}  si_{alue_pro,32,o3333_,32,o3333}  si_{alue_pro,32,o3333} i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,333pro,32,o3333}     {alue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_prpro,32,}  ],
+  }
+    i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pr  o,32,for k, vo33 in33 
