@@ -1,0 +1,285 @@
+do --- 1. Open up6alue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Ope" unpvalueD +  xSUT2ORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+   local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalsed upvalue. UREFRE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assrt(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --t, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open up
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    fon()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    retur()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. upva upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+                                                        for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. TORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upva\TORE
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b();   x=x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Opembiguated. 2x ULOAD + 2x USTORE (+ 1x DSE foT UOSRrE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slod. ).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x    + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  local loadstring = ect("goto a; do : the x", "'x'")
+
+  ::a:: -- Foparsed after brea. k
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fals or ######## il  if msg then
+    assert(not ok and strin"'a'")
+  expect("goto a; do : the x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Foparsed after brea. k
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fals or ######## il
+or  ########z   and   #####t048
+or ############z   and 92
+or###        ###40964097
+   
+local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fals or ##                  ###### il
+or  ########z   and   #####t048
+or ############z   and 92
+or#####96
+or foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fals or ######## il  if msg then
+    assert(not  o"'a'")
+  expect("goto a; do : the x", "'x' do : the x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Foparsed after breend)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 5 end
+  assert(x == 807)
+end
+
+do --- )()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below a. k
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fals or ############TOFI
+or  #OFI
+or  ########z   and  load
+
+function expect(src, msg)
+  local  o,ek r = loadstring(src) expect("goto a; do : the x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Foparsed after brea. k
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fals or ######## il  if msg then
+    assert(not ok and strin"'a'")
+  expect("goto a; do : the x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Foparsed after brea. k
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    go  local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a 
+  until fals or ######## il-- Foparsed after brea. k
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    functio
+      local function a() x = x + 1 end
+      for i=1,100 do an foo() return x end
+    x = true
+    goto a
+  until fals or ######## il
+or  ########z   and   #####t048
+or ##########ing(  src)
+  if msg then
+    assert(not ok and strin"'a'")
+  expect("goto a; do : the x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Foparsed after brea. k
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fals or ######## iz   and g(src)
+  if msg then
+    assert(not ok and strin"'a'")
+  expect("goto a; do : the x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Foparsed after brea. k
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fals or ######## il  if msg then
+    asse(); a() end
+      return x
+    ert(nd
+  end)()n()
+  asoset
