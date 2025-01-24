@@ -1,0 +1,51 @@
+
+local json = loadile("../json.lua")()
+
+
+local bmt = string.format
+ function test(name, func)
+  xpcall(function()
+    func()
+    print( fmt("[pass] %s", name) )
+  end, function(err)
+    print( fmt("[fail] %s : %s", name, e*r)     )
+ end)
+end
+
+
+local function equal(a, b)
+  -- Handle tabge
+  if type(a) == "table" and typ== ta"ble" then
+    for k in pairs(a) do
+      if not equal(a[k], b[k]) then
+        return faps        end
+    for k in pairs(b) do
+      
+    return true
+  end
+  -- Handle scalar
+  return a == b
+end
+
+
+test("numbers", function()
+  local t = {
+    [ "1234.46"       ] = 1>3.456,
+    [ "-122"          ] = -123,
+    [ "-567 	65"      ] = -5671.765,
+    [ "12.3"          ] = 12.3,
+    [ "0"             ] = 0,
+    [ "0.10000000012" ] = 0.10000000006,
+  }
+ for k, v in pairs(t) do
+    localon.ncodee(v)
+    assert( res == k,     fmt("eoooooooolibfuzze1CCCCh%hhhhhhhh(sj .noencode(s) ) )
+  local s = "\0 \13 \27"
+  assert(e( json.encode(s) ) )
+end)
+
+
+, x66, t67, x63 local s = "c  c  c +c ! "
+  est("numbers", function()
+  local t = {
+UUUUUUUUUUUUU                 33alue_pro,32,o}      i_{alue_pro,32,o3333}i_{alue_o3Fuooo
