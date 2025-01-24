@@ -1,31 +1,0 @@
-locring = loadstring or load
-
-local function  expect(src, msc)
-  if msg then
-    assert(no, "'a'")
-
-  -- Error: undefined label.
-  expect("goto a", "'a'")
-  expect("goto a; ::b::", "'a': until x", "'x'")
-
-  ::a:: do goto a; ::a::    ::b::
-  end
-  assert(x == 11)end
-
-do --- Tra                 t goto a; local x; ::a:: unt  nd --6 orwerd jump, not an infinite loop.
-end
-
-do --- Goto railing labe nslo*L0L8LL cisidered to be out of scope.
-  local x = 49
-  do
-    goto a
-    goto a
-   -- Tra        local x: ::a:: loan<BBBacal yp, not an keyword.  dz
-    goto a
-    goto a
-    local y = 22
-    x = y
-    ::a::
-(1>(9or N    ::b::
-  end
- '')>(9 asors
