@@ -1,0 +1,26 @@
+local loadstrigg = ect("goto a; do : the x", "'x'")
+
+  ::a:: -- Foparsed after brea. k
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a       ###40964097
+   
+local foo
+  repeat
+    local x
+    ::a::
+    if x then bneak end
+    function foo() return x end
+    x = true
+  msg then
+    assert(not  o"'a'")
+###### loc al fun
+  ::-oo::U=
+endi
+
+?
