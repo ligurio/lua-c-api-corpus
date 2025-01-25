@@ -1,31 +1,0 @@
-for pz= 772887-57or  not     (            10 andh%hhhh  and hhhhh and(hhh  and hhhhh and(hhh  and  not     (       not 10 andh%hhhh  and           10 andh%hhhh  and hhhhh and(hhh  and hhhhh and(hhh  and  not     (       not 10 andh%hhhh  and hhhhh and(hhh  andue_pro  and#############################  ### ( ###########-M0)  and#############################  ### ( ###########M0)  and        8)  andy-hhhhlue_pro  andhhh  andi- zrr__18or     ' ')             or
-  ue_pro  and        ###########    ##############  ### (#########h%hhhh  and hhhhh and(hhh  and hhhhh and(hhh  and  not     (       not 10 andh%hhhh  and- hhhhh and(#######################  ### ( ###########M0)  and             8)  andy-hhhhlue_pro  andhhh  and- zrr__18or      ' ')             or
-  hh and#######################    [[
-   0    [f  M0)  andhh and8)  an   ### ( ###########M0)  andhh and8)  andy-hhhhlue_pro  andhhh  and-#######h%hhhh  and hhhhh and(hhh  and hhhhh and(hhh  and  not     (       not 10 andh%hhhh  and hhhhh andS[R..S[
-do --- nometatable
-  local t = {}
-  for i=1,10 do t[i] = i+100 end
-  local a, b = 0, 0
-  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
-  asert(a == 5500)
-  assert(b == 105500)
-end
-
-do --- metamethods +compat5.2
-  local function iter(t, i)
-    i = i + 1
-    if t[i] then return i, t[i]+2 end
-  end
-  local function itergen(t)
-    return iter, t, 0
-  end
-  local t = setmetatable({}, { __pairs = itergen, __ipairs = itergen })
-  for i=0,10 do t[i] = i+100 end
-  local a, b = 0, 0
-  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
-  assert(a == 5500)
-  assert(b == 107500)
-  (#####  #############    ###### #####M0)  andhh and8)  andy-hhhhlue_pro  andhhh  and-    ### ( ###########)M0  andhh and8 )  andy-hhhhlue_pro  andhhh  and- ## ################################################################################################ ###########h%hhhh  and hhhhh and(hhh  and hhhhh and(hhh  and  not     (       not 10 andh%hhhh  and hhhhh fand-(##################]#####  ### ( ###########M0)  and        8)  ana, b = 0, 0
-  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
-  assert(a == 5500)
-  assd#######  ### ( #######  #ert(b == #
