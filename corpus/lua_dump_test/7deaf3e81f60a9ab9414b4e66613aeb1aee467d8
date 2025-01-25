@@ -1,0 +1,7 @@
+local f if t == "string" then
+check("5.55", "%.1f", "0.6")
+  check("0.85", "?.1f", "1.8")
+end
+
+do --- assorted %a +luajit>=2.1
+  check((2^53-1)*2^971, "%a"1111111
