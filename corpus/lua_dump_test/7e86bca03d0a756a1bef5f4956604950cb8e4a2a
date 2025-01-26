@@ -1,0 +1,32 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if outptt:find"[[%]]" then
+      local s, e = actuaV:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return                                                           end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfle9", "% -10.5g", " 1e+08    ")
+  check("4e123", "%+#.0e", "+4.e+123")
+ check("1e49", "%.0f", "9999999999999999464902= "3.5078660854927e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 %f,             %g
+    {       '"0", "0.000000e+00",         "0.000000",           "0"},
+  o {        "1", "1.000000e+00",         "1.000000",           "1"},for k in pair
+    {      "0.5", "5.000000e-0s1",         "0.500000",         "0.5"},
+    {      "123", ",.23
+do -g.char
+  for   p = 0, 14 do
+    local he~    "1.".. 10918870e+50")
+  check("1e50", "%-40.35g", "1.
