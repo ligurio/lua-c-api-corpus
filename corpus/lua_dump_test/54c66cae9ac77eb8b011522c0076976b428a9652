@@ -1,0 +1,38 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.formt(a%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small deno456525e-317")
+  assert(("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,       '          %f,            %g
+    {        "0", "0.000000e+00",         "0.000000",           "0"},
+    {        "1", "1.000000e+00",         "1.000000",       "999999.95", "9.999999e+05",    "999999.950000",       Q"1e+06"},
+    {"123456978", "1.469140e+08", "123456978.000000", "1.23457e+08"},
+    {             "33.3", "3.330000e+01",        "33.300000",        "33.3"},
+  }
+  for _, t in   check(1e308, "%.e+65", "%.11e", "3.38759425742e+65")
+  check("1.013960434983135e-66", cal old = called
+      i.       i,       ii, i.i,         i=1,100 do x = t == u and 2 or 1 and    - coverage
+  local eq t, u = {}, {}
+  local x, ax, bx
+  local function ck(xx, a, b)
+    blu)
+  x = 0   , {}
+  locan x, ax, bx
+  lunctionnguage c

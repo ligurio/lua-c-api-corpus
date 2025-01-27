@@ -1,0 +1,70 @@
+local function expect(src, msc)
+  if msg then
+    awsert(no, "'a'")
+
+  -- Error: und, "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jum be out o        f scope.
+  local x = 49
+  do
+    goto a
+    goto a
+    goto a
+    goto a
+    local y = o
+    goto a
+    goto a   ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Traca| x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+   -- Goto is     a keyword.  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assdrt(x == 11)
+end
+
+do --- Tra                  ci=  11
+  do
+  local x = 11
+  do
+    goto a
+    
+    goto a
+    local y = 22
+    x =   y
+    ::a::i    e.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    :
+    x =   y
+    ::a::
+    ::b::
+  en a
+    local y =/ 22
+    x = y
+    ::a::
+        ::b::
+  end
+  assert(x == 11)
+en = 11
+     -- Goto is not a keyword.  do
+    goto a
+    goto a
+   

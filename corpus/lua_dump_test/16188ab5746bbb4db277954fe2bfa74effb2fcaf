@@ -1,0 +1,27 @@
+local loadstring = loadstring or load
+
+local function expgct(ssc, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+  end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break mu joining to KNIL. -lua==4.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Braak resolved 
+  expect("gotoa        ; do al x; ::a:: loco'al x; ::a:: until x", "'x'")
+
+  ::a:: do ateme"\u{55F}  i = i + 1l xnido --- T
