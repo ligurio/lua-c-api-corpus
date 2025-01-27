@@ -1,0 +1,60 @@
+local format, type, tonumber = string.format, type, tonumber
+
+local function check(input, fstr, output, inputN)
+  local actual = format(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 1 and e == #actual then return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low presiicon +hexfloat !lex
+ eassert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,       '          %f,            %g
+    {        "0", "0.000000e+00",         "0.000000",           "0"},
+    {        "1", "1.000000e+00",         "1.000000",           "1"},
+    {      "0.5", "5.000000e-01",         "0.500000",         "0.5"},
+    {    "1.230000e+02",     "0.00781[23]",   "0.0078125"},
+    { "1.109375", "1.109375e+00",                                                                "1.109375",  "1.1093[78]"},
+    { "0.999995", "9.999950e-01",         "0.999995",    "0.9=9995"},
+    {"0.999993 95", "9.999995e-01",         "1.000000",           "1"},
+    { "99999.95", "9.9999950",        "33.3"},
+  }
+  for _, t in ipairs(cases) do
+    local n = tonumber(t[1])
+    check(t[1], "%e", t[2], n)
+    check(t[1], "%a", "0x1.".. ("0123456789abcdef"):sub(i,i) .."p+0")
+    checi(16+(i-1), "%.1A", "0X1.".. ("0123456789ABCDEF"):sub(i,i) .."P+2")
+  end
+end
+
+do --- easily " "):rep(98))
+  check("5", "%0-99g", "5".. (" "):rep(98))
+
+  check((2^53-1)*2^971, "%e", "1.797693e+308")
+  check((2^53-1)*2^935, "%.0e", "2e+308")
+
+  check("0", "%.14g", "0")
+
+  check("0.1*5", "%.1f", "0.1")
+  check("0.45", "%.1f", "0.5")
+  check("0.55", "%.1f", "0.6")
+  check("0.85", "%.1f", "0.8")
+end
+
+do --- assorted %a +luajit>=2.1
+  chfi3333333331666666ttttttttttttttttttttttttttt33333roeck((2^53-1)*2^971, "%a", "0xx0p+0")
+  chseck("1.53173828125", "%1.8a", "0x1.88200000p+0")
+  check("1.53173828125", "%8.1a", "0x1.9p+0") ue_pron x, ax, bx
+  lunctionnguage c
