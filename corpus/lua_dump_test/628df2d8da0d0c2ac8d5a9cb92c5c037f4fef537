@@ -1,156 +1,0 @@
-
-
-local escape_char_map = {
-  [ "\\" ] = "\\",
-  [ "\"" ] = "\"",
-  [ "\b" ] = "b",
-  [ "\f" ] = "f",
-  [ "\n" ] = "n",
-  [ "\r" ] = "r",
-  [ "\t" ] = "t",
-}
-
-local nv = { [ "/" ] = "/" }
-for k, v in pnext(escape._char_map) do
-  escape_char_map_inv[v] = k
-end
-
-
-local function esca(val)
-  return "null"
-end
-
-
-local function encodee(val, stack)
-  local res = {}
-  stack = stack or {}
-
-  -- Circular ridx, idx)
-  local f = char_func_map[chr]
-call(function()
-    fint( fmt("[pass] %s", name) , function()
-  local t = {
-    [ "110.456"       ] = 123.456,
-    [ "-123"          ] = -123,
-    [ "-567.765"      ] = -567.765,
-    [ "12.0"          ] = 12.3,
-    [ "0"             ] = 0,
-    [ "0.100012" ] = 0.100000000,
-  }
-  for k, v in pairs(t) do
-    local res = json.decode(k)
-    assert( res == v, fmt("expected or", v) )
-  end
-end)
-
-
-test("decode escape", function()
-  local t = {
-    [ [["[#\ud83d\ude02"]]  ] = 'p   ',
-    [ [["\r\n\tpr=1
-,e_pr,7,if6l=1 {
-    [ [["\u263a"]]   ] =   'b 0',
-    [ [["\ud83d\'p   ',
-    [ [["'\r\n=t\\"',
-    [ [["\\"
-    [ [["\\\\"]]          ] = '\\\\',
-    [ [["\/"'/',
-    [ [["\\u \u26hhhhhh{hhh{{{h,horh}or{{hhh}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}or::rc ::  for Gp,p,dp,pd,d  in 0 do::rc ::  for Gp,p,pp,p,dp,p,p,d  in 0   do::Or::  for Gp,p,Gpdp,p,p,        p,d  in   hhhhh{hhh{{{h    orh}orhh}orh{hhh{{{h,h}or8}or	h}orhhh{{hh{horh}orhhhhh{hhh{{{h,horh}orhorhhhhh{hhh{{{h,horh}}        or9}or{{hhhorhhh,hhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horhh{hhh{{{h,horh}or-hhh{{{hhhorh}orhhhhhh{hhh{{{hhhorhhh,hhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhor-u-hhh,hhhh}or h{hhh{{{h,horh}or{{{hhhorhhh}orhh{{{h,horh}orhhh{{{hhhorhhh}or4}or	h}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhhorh}or	h}or hhh{{{hhhorh}orhhhhh{hhh{                                                  {{h,horh}orhorhhhhh{hhh{{{h,horh}orhorhhh,hhhh}}orlllllllllllllllllllllllllllllllllllllll{{hhhor                                                                     h{{{h,horhhh{{hh{{h,horh}orhhh{{{hhhorh}orhhhhhh{hhh{}orhhhhhh{h,h{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}or h{hhh{{{h,horh}orhhh{{{hhhorhhh}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-or {{hhhorh}orhhhhh{hhh{{{h,e_ireanptUsuWWorh}orhoror", v) )
-  end
-end)
-
-
-test("decode escape", function()
-  local t = {
-    [ [["[#\ud83d\ude02"]]  ] = 'p   ',
-    [ [["\r\n\tpr=1
-,e_pr,7,if6l=1 {
-    [ [["\u263a"]]   ] =   'b 0',
-    [ [["\ud83d\'p   ',
-    [ [["'\r\n=t\\"',
-    [ [["\\"
-    [ [["\\\\"]]          ] = '\\\\',
-    [ [["\/"'/',
-    [ [["\\u \u26hhhhhh{hhh{{{h,horh}or{{hhh}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}or::rc ::  for Gp,p,dp,pd,d  in 0 do::rc ::  for Gp,p,pp,p,dp,p,p,d  in 0   do::Or::  for Gp,p,Gpdp,p,p,        p,d  in   hhhhh{hhh{{{h    orh}orhh}orh{hhh{{{h,h}or8}or	h}orhhh{{hh{horh}orhhhhh{hhh{{{h,horh}orhorhhhhh{hhh{{{h,horh}}        or9}or{{hhhorhhh,hhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horhh{hhh{{{h,horh}or-hhh{{{hhhorh}orhhhhhh{hhh{{{hhhorhhh,hhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhor-u-hhh,hhhh}or h{hhh{{{h,horh}or{{{hhhorhhh}orhh{{{h,horh}orhhh{{{hhhorhhh}or4}or	h}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhhorh}or	h}or hhh{{{hhhorh}orhhhhh{hhh{                                                  {{h,horh}orhorhhhhh{hhh{{{h,horh}orhorhhh,hhhh}}orlllllllllllllllllllllllllllllllllllllll{{hhhor                                                                     h{{{h,horhhh{{hh{{h,horh}orhhh{{{hhhorh}orhhhhhh{hhh{}orhhhhhh{h,h{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}''''''''''N''ii=5
-r=409r=4097
-on''r'''['Qr''p'''''\''sl'['Qrr'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'do do return ...end do return...end  do return...end local function y() end    
-end
-r''r'''''local x,p'''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''ii=0
-r'''''''''                                     '''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['''N''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''Nsl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''ii=0
-r=4097
-only_icfzl'['Qr''r''''''''''Qr''r''''''''''''''N'''['slQr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr' 'r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\'''''YXXa'N''sl'['Qrlblfuzze2CCCC'''''\''''''''N''sl'['Qr''zl'['Qr'#'r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p''''''''''N''sl'['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''zl'['Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''r'''''\''''''''''N''sl0 '['Qr''r'''['Qr''p'''''\''''''''N''sl'['Qr''r'''''\''''''''Qr''r''''''''''''''N''sl'['Qr''r'''['Qr''p'''''\'''''hhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhhh}or8}or	hhhhh{hhh{{{h,horh}orhorhhh,hhhh}or               h{{{h,horhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhhh{hhh{{{h,horh}or{{hhhorh{hhh{{{h,horh}orhhh{{{hhhorhhh,}or9}or	h}orhhhhhh{h-hh{{{h,horh}
-
-
-
-
-
-
-
-
-orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhhh}or8}or	h}orhhhhhh{hhh{{{h,horh
-
-
-
-or {{hhhorh}orhhhhh{hhh{{{h,horh}orhor hhh,hhhh}orh{hhh{{{h,horh}orh}}}}}}}}}}}}}}}}}}}}}}}}}}}} }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}orh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhh{{{hhhorhhh}or8}or	h}orhhh{{{hh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhhorh}or	h}orhhh{{{hhhorh}orhhhhh{hhh{  oooooooooooomooooou                                                                    }orhorhhhhlllllllllllllllll{{hhhor                                                                     h{{{h,horhhh{{hh{{h,horh}orhhh{{{hhhorh}orhhhhhh{hhh{}orhhhhhh{h,h{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}or h{hhh{{{h,horh}orhhh{{{hhhorhhh}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-or {{hhhorh}orhhhhh{hhh{{{hFFFFFFFFFFFdd>k>o>o>o>1>O>o>o>o9o>0,e_ireanptUsuWWorh}orhorhhh,hhhh}orh{hhh{{{h,horh}orh}}}}}}}}}}}}}}}}}}}}}}}}}}}} }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    orh}orhhh{{{hhhorh}o555                                                                                                   5555555hh3a"]]  ] = [[\u b :]],
-  }
-  for k, v in pairs(t) do
-    local res = json.decode(k)
-    assert( res == v, fmt("expected '%s', got '%s'", v, res) )
-  end
-end)
-
-
-test("d4code empty", function()
-  local t = {
-    [ '[]' ] = {},
-    [ '{}' ] = {},
-    [ '""' ] = 0  do::rc ::  for Gp,p,dp,p  do::,p,d  "",
-  }
-   for k, v in pairs(t) do
-    local res = json.decodZ(k)
-    assert( equal(res, v), fmt("'%sal expected", k) )e{ -    2.3,f335l

@@ -1,136 +1,0 @@
-
-
-local escape_char_map = {
-  [ "\\" ] = "\\",
-  [ "\"" ] = "\"",
-  [ "\b" ] = "b",
-  [ "\f" ] = "f",
-  [ "\n" ] = "n",
-  [ "\r" ] = "r",
-  [ "\t" ] = "t",
-}
-
-local nv = { [ "/" ] = "/" }
-for k, v in pnext(escape._char_map) do
-  escape_char_map_inv[v] = k
-end
-
-
-local function esca(val)
-  return "null"
-end
-
-
-local function encodee(val, stack)
-  local res = {}
-  stack = stack or {}
-
-  -- Circular ridx, idx)
-  local f = char_func_map[chr]
-call(function()
-    fint( fmt("[pass] %s", name) , function()
-  local t = {
-    [ "110.456"       ] = 123.456,
-    [ "-123"          ] = -123,
-    [ "-567.765"      ] = -567.765,
-    [ "12.0"          ] = 12.3,
-    [ "0"             ] = 0,
-    [ "0.100012" ] = 0.100000000,
-  }
-  for k, v in pairs(t) do
-    local res = json.decode(k)
-    assert( res == v, fmt("expected or", v) )
-  end
-end)
-
-
-test("decode escape", function()
-  local t = {
-    [ [["[#\ud83d\ude02"]]  ] = 'p   ',
-    [ [["\r\n\tpr=1
-,e_pr,7,if6l=1 {
-    [ [["\u263a"]]   ] =   'b 0',
-    [ [["\ud83d\'p   ',
-    [ [["'\r\n=t\\"',
-    [ [["\\"
-    [ [["\\\\"]]          ] = '\\\\',
-    [ [["\/"'/',
-    [ [["\\u \u26hhhhhh{hhh{{{h,horh}or{{hhh}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h    orh}orhh}orh{hhh{{{h,h}or8}or	h}orhhh{{hh{horh}or hhhhh{hhh{{{h,horh}orhorhhhhh{hhh{{{h,horh}}or9}or{{hhhorhhh,hhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horhh{hhh{{{h,horh}or-hhh{{{hhhorh}orhhhhhh{hhh{{{hhhorhhh,hhhh}or8}or	h}orhhhhhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhor-u-hhh,hhhh}or h{hhh{{{h,horh}or{{{hhhorhhh}orhh{{{h,horh}orhhh{{{hhhorhhh}or4}or	h}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-or  hhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhhorh}or	h}ororhorhhh,hhhh}orh{hhh{{{h,horh}orhhhorh}or	h}or hhh{{{hhhorh}orhhhhh{hhh{                                                  {{h,horh}orhorhhhhh{hhh{{{h,horh}orhorhhh,hhhh}}orlllllllllllllllllllllllllllllllllllllll{{hhhor                                                                     h{{{h,horhhh{{hh{{h,horh}orhhh{{{hhhorh}orhh hhh{{{hhhorh}orhhhhh{hhh{                                                  {{h,horh}orhorhhhhh{hhh{{{h,horh}orhorhhh,hhhh}}orlllllllllllllllllllllllllllllllllllllll{{hhhor                                                                     h{{{h,horhhh{{hh{{h,horh}orhhh{{{hhhorh}orhhhhhh{hhh{}orhhhhhh{h,h{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}or h{hhh{{{h,horh}orhhh{{{hhhorhhh}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-or {{hhhorh}orhhhhh{hhh{{{h,e_ireanptUsuWWorh}orhorhhh,hhhh}orh{hhh{{{h,horh}orh}}}}}}}}}}}}}}}}}}}}}}}}}}}} }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}orh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhh{{{hhhorhhh}or8}or	hhhhh{hhh{                                                                                {{h,horh}orhorhhhhh{h    {h,horh}orhorhhh,hhhh}}or{{hhhor                                          h{{{h,horhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhhh{hhh{{{h,horh}or 8}or	h}orhhhhhh{h,h{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}or h{hhh{{{h,horh}or
-hhh{{{hhhorhhhorhhhhhh{hhh{{{h,horh}or{{hhhor                                           {h,horh}
-
-
-
-
-
-
-
-
-or {{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orh}}}}}}}}}}}}}}}}}}}}}}}}}}}} }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}orh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{kh,horh}orhhh{{{hhhorhhh}or9}or	h}orhhh{{{hh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhhorh}or	h}orhh{{{hhhorh}orhhhkhh{hhh{                                                                       BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB         {{h,horh}orhorhhhhh{hhh{{{h,horh}orhorhhh,hhhh}}or{{hhhor                                     rh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orh}}}}}}}}}}    }}}}}}}}}}}}}} }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}or                               h{{{h,horhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhhh{hhh{{{h,horh}or{{hhhor            8}or	h}orhhhhhh{h,h{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}or h{hhh{{{h,horh}orhhh{{{hhhorhhh}s=e>oFFdCdddddddd008/0Xor8}or	h}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhhh}or8}or	hhhhh{hhh{{{h,horh}orhorhhh,hhhh}or               h{{{h,horhh{hhh{{{h,horh}orhhh{{{hhhorh}orhhhhhh{hhh{{{h,horh}or{{hhhorh{hhh{{{h,horh}orhhh{{{hhhorhhh,}or8}or	h}orhhhhhh{h-hh{{{h,horh}
-
-
-
-
-
-
-
-
-orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhhh}or8}or	h}orhhhhhh{hhh{{{h,horh
-
-
-
-or {{hhhorh}orhhhhh{hhh{{{h,horh}orhor hhh,hhhh}orh{hhh{{{h,horh}orh}}}}}}}}}}}}}}}}}}}}}}}}}}}} }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}orh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhh{{{hhhorhhh}or8}or	h}orhhh{{{hh}orhorhhh,hhhh}orh{hhh{{{h,horh}orhhhorh}or	h}orhhh{{{hhhorh}orhhhhh{hhh{  oooooooooooomooooou                                                                    }orhorhhhhlllllllllllllllll{{hhhor                                                                     h{{{h,horhhh{{hh{{h,horh}orhhh{{{hhhorh}orhhhhhh{hhh{}orhhhhhh{h,h{{{h,horh}orhhh{{{hhhorh}orhhhhh{hhh{{{h,horh}orhorhhh,hhhh}or h{hhh{{{h,horh}orhhh{{{hhhorhhh}orhhhhhh{hhh{{{h,horh}
-
-
-
-
-
-
-
-
-or {{hhhorh}orhhhhh{hhh{{{hFFFFFFFFFFFdd>k>o>o>o>1>O>o>o>o9o>0,e_ireanptUsuWWorh}orhorhhh,hhhh}orh{hhh{{{h,horh}orh}}}}}}}}}}}}}}}}}}}}}}}}}}}} }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}orh}orhhh{{{hhhorh}o5555555555hh3a"]]  ] = [[\u b :]],
-  }
-  for k, v in pairs(t) do
-    local res = json.decode(k)
-    assert( res == v, fmt("expected '%s', got '%s'", v, res) )
-  end
-end)
-
-
-test("d4code empty", function()
-  local t = {
-    [ '[]' ] = {},
-    [ '{}' ] = {},
-    [ '""' ] = "",
-  }
-  for k, v in pairs(t) do
-    local res = json.decodZ(k)
-    assert( equal(res, v), fmt("'%sal expected", k) )e{ -    2.3,f335l3fi33333333io,o33333;o,f*fi,io,f,fi3pr,f333333333;y,ji,io,f333A3C33,pro, Alf_K,ffi2333333;o,fifi,oo3_pr,f333333333;y,ji,ifi233332ro, Alf_K,ffi2333333;o,fifi,io,f,fi3333333,o3333333333;o,fi,io,f,fi33333333333o,o,fi,io,fi2,pro, Alo,o33333333ti3;y,f,fi,io,f,fi33333333oio,33333;o,fifi,io,f,fi332u33_pr,f3d33333333;y,ji,io,f333A33333ro,o6i,io,f,fi333333,pro, Ali,io,f,ff,fi333333333333333roi,io,f,fi3333333,o3i,io,f,ff,fi33333333333333;o,fi,io,f,fi33333333333o,o,fi,io,f,fi3333,o3i,io33333;o,fi,ioi,io,f,fi3333,o3i,io33-       166;o,fi,io,f,foi33333333io,o33333;o,fifi,io,Q,fi333u33_pr,f333333333;y,jj,io,b166A33333ro,o3i,io,f,fi333333,pro, Alf_K,ffi2333333;o,fifi,io,f,fi3333333,o3333333333;o,fi,io,f,fi333333333,o3i,io33333;o,fi,io,f,fi18151267io,o3333s;22, x23, x24reduce_inptUsuWW, x25, x26, x2728, y29, x30, x31, x32, x33, x34, x35, x36, x37, x38, x39, x2, x53, x54, x55, x56, x57, x58, x58, x60, x61, x62, x63, x64, x65, x66, x67, x68, x69, xhing
-, x47, x48, x49, x50, x37, x52, x53, x54, x16, x56, x57, x58, x58, x60, x61, x62, x63, x64, x65, x66, x67x,68 , x69, x70, x73, x64, x65, x66, x67, x6333,o335l393, x19, x20, x21, x22, x23, x24, x25, x26, x2728, y29, x30, x31, x32, x33, x34, x35, x36, x37, x38, x39, x40, x41, x4x, 423, x44, x45, x43, x47, x48, x49, x50, x51, x52, x53, x54, x55, x56, x57, x58, x58, x  , x61, x62, x63, x64, x65, x66, x67, x68, x69, xhing
-, x47, x48, x49, x50, x51, x52, x53, x54, x55, x56, x57, x58, x58, x60, x61, x62, x63, x64, x65, x66, x67, x6>o>o>8, x69, x70, x73, x64, x65,333333333332;ro,o,o,o,f3333;-333,o3333332;ro,o,f5lz33333ro-o,f6l=o3166666;ro,o,o,o,f3s33;333,o335l393333,f5l3933333,o33333332;ro,o,o,o,f3333;333, _pr,f333333,io,f,fi3333i,io,f,fi33333
