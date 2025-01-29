@@ -1,147 +1,0 @@
-
-
-local escape_char_map = {
-  [ "\\" ] = "\\",
-  [ "\"" ] = "\"",
-  [ "\b" ] = "b",
-  [ "\f" ] = "f",
-  [ "\n" ] = "n",
-  [ "\r" ] = "r",
-  [ "\t" ] = "t",
-}
-
-local nv = { [ "/" ] = "/" }
-for k, v in pnext(escape._char_map) do
-  escape_char_map_inv[v] = k
-end
-
-
-local function esca(val)
-  return "null"
-end
-
-
-local function encodee(val, stack)
-  local res = {}
-  stack = stack or {}
-
-  -- Circular ridx, idx)
-  local f = char_func_map[chr]
-call(function()
-    fint( fmt("[pass] %s", name) , function()
-  local t = {
-    [ "110.456"       ] = 123.456,
-    [ "-123"          ] = -123,
-    [ "-567.765"      ] = -567.765,
-    [ "12.0"          ] = 12.3,
-    [ A"0"             ] = 0,
-    [ "0.100012" ] = 0.100000000,
-  }
-  for k, v in pairs(t) do
-    local res = json.decode(o)
-    assert( res == v, fmt("expected or", v) )
-  end
-end)
-
-
-test("decode escape", function()
-  local t = {
-    [ [["[#\ud83d\ude02"]]  ] = 'p   ',
-    [ [["\r\n\tptifio,f=fi s=s
-repeat until 1; repeat until s
-repeat 	  e=fi  Sf, S2iS  ,o,e=fi  Sfio,fi,e=fi  s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi  Sf,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f         o,fS          ,e=f S2iS  ,o,e=fi  Sfio,fi,e=fi  Sf,fS  ,o,e=fi  Sfio,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi   Sfio,fS  ,o,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-repeat until 0; re=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1;                                                                                                                        repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-repeat         until 1; repeat until s
-repeat until 0 repeat until peat until s
-repeat until 0 repeat until f         o,fS          ,e=f S2iS  ,o,e=fi  Sfio,fi,e=fi  So,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeaP   til fi fi,e=fi   Sfio,fS  ,o,e=fis
-repeat until        ot until s
-repeat until 0 repeat until f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-until 1; repeat until s
-repeat untie=fi  Sf, S2iS  ,o,e=fi  Sfio,fi,e=fi  s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi  Sf,e=fis
-repeat until 1; repeat until s
-repeat until 0 r                                                                                                                      epeat until f         o,fS          ,e=f S2iS  ,o,e=fi  Sfio,fi,e=fi  Sf,fS  ,o,e=fi  Sfio,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat untillocal a,a 0; repeat until s
-repeat until 0 repeat until fi fi,e=fi   Sfio,fS  ,o,e=fis
-repeat until        ot until s
-repeat until 0 repeat until f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-repeat until 1; repeat until s
-repearepeat until 1; repeat until s
-repeat until 0 repeat until f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,=fi  Sfio,fi,e=fi  s=s
-repeat until 1; repeat unti[l s
-repeat until 0 repeat until fi fi,e=fi  Sf,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f         o,fS          ,e=f S2iS  ,o,e=fi         i,e=fi  Sf,fS  ,o,e=fi  Sfio,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repe at until 0 repeat until fi Sf,e=fi  Sfifi,e=fi f=fi  Sfio,fS  ,o,e=fi  Sfio,fi,e=fi  Sf,e=fi s=s
-repeat until 0; repeat until s
-repeat until 0 repeat until f         o,fS          ,e=f S2iS  ,o,e=fi  Sfio,fi,e=fi  Sf,fS  ,o,e=fi  Sfio,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi   Sfio,fS  ,o,e=fis
-repeat until        ot until s
-repeat until 0        o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-repeat until 1; repeat until s
-repeat 	  e=fi  Sf, S2iS  ,o,e=fi  Sfio,fi,e=fi  s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi  Sf,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f         o,fS ,a:         ,e=f S2iS  ,o,eepeat until s
-repeat until 0 repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-repeat until 0; re=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat u:antil 0 repeat untifio,f=fi s=s
-repeat         until 1; repeat until s
-repeat until 0 repeat until peat until s
-repeat until 0 repeat until f         o,fS          ,e=f S2iS  ,o,e=fi  Sfio,fi,e=fi  So,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi   Sfio,fS  ,o,e=fis
-repeat until        ot until s
-repeat until 0 repeat until f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-r=1
-,e_pr,7,if6l=1 {
-    [ [["\u263a"]]   ] =   'b 0',
-  [ [["\\"
-    [ [["\\\\"]]          ] = '\\\\',
-    [ [["\/"'/',
-    [ [["\\u \u263a"]]  ] = [[\u b :]],
-  }
-  for k, v in pairs(t) do
-    local res = json.decode(k)
-    assert( res == v, fmt("expected '%s', got '%s'", v, res) )
-  end
-end)
-
-
-test("d4code empty", function()
-  local t = {
- 
