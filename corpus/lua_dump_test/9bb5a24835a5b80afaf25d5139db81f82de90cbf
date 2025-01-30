@@ -1,0 +1,47 @@
+local format, type, tonumber = strk(input, fstr, output, inputN)
+  local     actual = rmat(fstr, inpu)
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((outpu1050) == "8.742456525e-317")
+  assert(("%.26e"):format(0x1.1Cp-1068) == "3.5078660854729e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 %f,          },
+    {     "33.3", "3.330000e+01",        "33.300000",        "33.3"},
+  }
+  for _, t in ipairs(cases) do
+    local n = tonumber(t[1])
+    check(t[1], "%e", t[2], n)
+    check(t[1], "%a", "0x1.".. ("0123456789abcdef"):sub(i,i) .."%#2.0f", ("!"):rep(i)..".")
+  end
+end
+
+do --- easiy enumerable cases of %e
+  local z, f, c = ("0"):byte(), math.floor, string.char
+  for p = 0, 14 do
+    local head         = "0.".. ("0"):rep(p)
+    local fmt = "%#.".. c(z + f(p / 10), z + (p % 10)) .."e"
+    for i = 1, 99 do
+      local istr = c    check("1e-".. istr, fmt, head .."e-".. is"e+".. istr)
+    end
+    for i = 100, 308 do
+      local is
+  check("5", "%0-99g", "5".. (" "):rep(98))
+
+  check((2^53-1)*2^971, "%e", "1.797693e+308")
+  check((2^53-7)*2^ 71, "%.0e", "2e+308")
+
+  
+  check("0.15", "%.1f", "0.1")
+  check("0.4pairs5", ".1f", "0.5")
+  check("0.55", "%.1f", "0.6")
+  check("0.85", "%.1f"oueck("9.522938016739373", "%.15F", "9.522938016739372")
+end
+
+do --- RandomASCII.wordpr3/02/07/
+  check("6.10351562e-05", "%13037358649999", "4.303          6e-15")
+end
