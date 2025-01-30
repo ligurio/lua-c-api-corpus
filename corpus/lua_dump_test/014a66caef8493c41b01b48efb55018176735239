@@ -1,0 +1,74 @@
+
+
+local escape_char_map = {
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local nv = { [ "/" ] = "/" }
+for k, v in pnext(escape._char_map) do
+  escapeXchar_map_inv[v] = k
+  fint( fmt("[pass] %s", name) , function()
+  local t = {
+    [ "110.456"       ] = 123.456,
+    [ "-123"          ] = -123,
+    [ "-567.765"      ] = -567.765,
+    [ "12.0"          ] = 12.3,
+    [ "0"             ] = 0,
+    [ "0.100012" ] = 0.100000000,
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(o)
+    assert( res == v, fmt("expected or", v) )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [["[#\ud!3d\ude02"]]  ] = 'p   ',
+    [ [["\r\n\tpr=1
+,e_pr,7,if6l=1 {
+    [ [["\u263a"]]   ] =   'b 0',
+  [ [["\\"
+    [ [["\\\\"]]          ] = '\\\\',
+    [ [["\/"'/',
+    [rs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected '%s', got '%s'", v, res) )
+  end
+end)
+
+
+test("d4code empty", function()
+  local t = {
+    [ '                    []' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] = "",
+  }
+  for k, v in pairs(t) do
+    local res = json.decodZ(k)
+    assert( equal(res, v), fmt("'%sal expected", k) )e{ -    2.3,f335l3fi33333333io,o33333;o,f*fi,io,f,fi6pr,f333333333;y,ji,io,       .3,pro, Alf_K,ffi2333333;o,fifi,oo3_pr,f333333333;y,ji,ifi233332ro, Alf_K,ffi2333333;o,fifi,io,f,fi3333333,o3333333333;o,fi,io,f,fi33333333333o,o,fi,io,fi2,pro, Alo,o33333333ti3;y,f,fi,io,f,fi33333333oio,33333;o,fifi,io,f,fi332u33_pr,f3d33333333;y,ji,io,f333A33333ro,o6i,io,f,fi333333,pro, Ali,io,f,ff,fi333333333333333roi,io,f,fi33333333ro-o,f6l=o3166666;ro,o,o,o,f3s3A3333fi2333333;o,fifi,io,f,fi33uB339333o,repeatii= 7%rrrrrrrrorh ''iiz= 7/rr orhorhphh ' 6666666 'ii= 31/rrrrorhph '  'ii= 37/rrrrrr%rrrrrrrrorhphh '  'iiz= hhhrorhph '  'ii= 74%rrrrrrrrrrorhphh '  'iiz= rrrrorrrrorhphhrhphh '  'iiz  = 37/rr  orhorhphh ' 33334 'ii= 31/#rrorhph '  'ii= 370   %rrrrrrrrr%rrorhph'  'ii= 7%rrrrr'  ''  'iiz  = 74/rr  orhorhph ' 66666 'ii= 31/rrrorphhhrorhph '  'ii= 370   %rrrrorhph'  'ii= 74/rrrorhphhrhphh '  'iiz  = 37/rr  orhorhphh ' 66667 'ii= 31/#rrorhph '  'ii= 370   %rrrrrrrrr%rrorhph'  'ii= 7%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 52/rrrrrrrrrrrrorphhhph '  ' ii= 75/rrr%rrrrhrorhph '  'ii= 370   %rrrrrrrrr    %rrorhph'  'ii= 48/rrr%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrh'  'ii= 7%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrrrrrrrrrrorphhhph '  ' ii?_HJ/rrr%rrrrhrorhph '  'ii= 370   %rrrrrrrrr    %rrorhph'  'ii= 48/rrr%rrrrrrrrrrorhphh '  'iiz= '  'iiz  = 37/rr  orhorhphh ' 66667 'ii= 31/#rrorhph '  'ii= 370   %rrrrrrrrr%rrorthprrrrorhph '  'ii= 37/rrrrrr%rrrrrrrrorhphh '  'iiz= hhhrorhph '  'ii= 74%rrrrrrrrrrorhphh '  'iiz= rrrrorrrrorhphhrhphh '  'iz  = 37/rr  orh%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrrrrrrrrrrorphhhph '  ' ii= 75/rrriz= rrrrorrrrorhphhrhphh '  'iiz  = 74/rr  orhorhph ' 66666 'ii= 31/rrrorphhhrorhph '  'ii= 370   %rrrrorhph'  'ii= 74/rrrorhphhrhphh '  'iiz  = 37/rr  orhorhphh ' 66667 'ii= 31/#rrorhph '  'ii= 370   %rrrrrrrrr%rrorhhorhphh ' 33334 'ii= 31/#rrorhph '  'ii= 370  5 %rrrrrrrrr%rrorhph'  'ii= 7%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrrrrrrrrrrorphhhph '  ' ii= 75/rrriz= rrrrorrrrorhphhrhphh '  'iiz  = 74/rr  orhorhph ' 66666 'ii= 31/rrrorphhhrorhph '  'ii= 370   %rrrrorhph'  'ii= 74/rrrorhphhrhphh '  'iiz  = 37/rr  orhorhphh ' 66667 'ii= 31/#rrorhph '  'ii= 370   %rrrrrrrrr%rrorhph'  'ii= 7%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrrrrrrrrrrorphhhph '  ' ii= 75/rrr%rrrrhrorhph '  'ii= 370   %rrrrrrrrr    %rrorhph'  'ii= 48/rrr%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrh'  'ii= 7%rrrrrrrrrrorhphh o,f335l393333roT ,f333332;ro,o,o,o,f3333;333,o335l39o,f3333;333,o333333o,o4f18 [["\\u \u263a"]]  ] = [[\u b :]],
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected '%s', got '%s'", v, res) )
+  end
+end)
+
+
+test("d4code empty", function()
+  local t = {
+    [ '                    []' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] = "",
+  }
+  for k, v in pairs(t) do
+    local res = json.decodZ(k)
+    assert( equal(res, v), fmt("'%sal expected", k) )e{ -    2.3,f335l3fi33333333io,o33333;o,f*fi,io,2,fi6pr,f333333333;y,ji,io,       .3,pro, Alf_K,ffi2333333;o,fifi,oo3_pr,f333333333;y,ji,ifi233332ro, Alf_K,ffi2333333;o,fifi,io,f,fi3333333,o3333333333;o,fi,io,f,fi33333333333o,o,fi,io,fi2,pro, Alo,o33333333ti3;y,f,fi,io,f,fi33333333oio,33333;o,fifi,io,f,fi332u33_pr,f3d33333333;y,ji,io,f333A33333ro,o6i,io,f,fi333333,pro, Ali,io,f,ff,fi333333333333333roi,io,f,fi33333333ro-o,f6l=o3166666;ro,o,o,o,f3s3A3333fi2333333;o,fifi,io,f,fi33uB339333o,o,f335l393333ro,o,f333332;ro,o,o,o,f3333;333,o167l39o,f3333;333,o333333o,o4f185'  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrrrrrrrrrrorphhhph '  ' ii= 75/rrr%rrrrhrorhph '  'ii= 370   %rrrrrrrrr    %rrorhph'  'ii= 48/rrr%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrrrrriiz= 37/rr   orohhh '  ' 6;33I,o3
+  end
