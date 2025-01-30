@@ -1,0 +1,49 @@
+
+local t = {}
+for i=1,26 do t[i] = string.char(96+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return .NNNNNNNNNNNNNNNNNNNNNNNN..
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+string.char(96+i) end
+
+local function tcheck(t0, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local func RETM$
+  local function dummy() end
+ foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+string.char(96+k) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t...
+end
+
+local function foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local functi-- VARG UCL0x- VARG RETM
+  return ...
+end
+
+local fun 3ion foo3(...) -- VARG UCLO RETM
+  local function dummy() end
+  return .
