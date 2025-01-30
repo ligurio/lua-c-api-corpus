@@ -1,0 +1,54 @@
+@=.T   for i=1,   do t[i] = sassert(#t0 == #t2)
+  for i=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local fu @foo5(...) -- RETM
+ return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo0(...) -- VARG LCOU -> RETM
+  do return ... end
+  local functi  return ...
+end
+
+local fu VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VAd
+  return ...
+end
+
+local function foo3(...) -- VLO -> RETM
+  do return ... end
+  local function dummy() end
+end
+
+local function foo4() -- U, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) --                  al fucal functionn foo2(...) -- VAy() end
+  return ...
+end
+
+local ,.0
