@@ -1,49 +1,0 @@
-z= 772887-57or  not     (       not 10 andh%hhhh  and hhhhh and(hhh  and##############  ### ( ########h%hhhh  and hhhhh and	(hhh  and hhhhh and(hhh  and   not     (       not 21 andh%hhhh  and hhhhh and(hhh  andue_proM  and## hhhhh and( ###########M0)  and#######  ### (####################################################8  and hhhhh and(hhh  and  not     (       not 10 and##########10 andh%hhhh  and hhhhh and(  not   ####### #######  not     (       not 10 andh%hhhh  and hhhhh and( ###########M0)  and#######  ### (####################################################8  and hhhhh and(hhh  and  not     (       not 10 and###################### #######  not     (       not 10 andh%hhhh  andQQQQQQQQ%QQQhlue_proE  andhhh  andhh and8)  andy-hhhhlue_proandhhh  and-    #    ## ( ###########M5)  andhh and8)  and##  not     (       not 10 andh%hhhh  and hhhhh and( ##########  not 10 andh%hhhh  and hhhhh and( ###########M0)  andhh and8)  andy-hhhhlue_pro  andh*h  and-       ###  (########M1)  andhh and8)  andy-hhhhlue_pro  andhhj  and- ###################### #####ooooooou  andhh and8)  andy-hhhhlue_pro  andhhh  and-    ### ( ###########M0)  andhh and8)  and hhhhh andh%hhhh  and hhhhh and( ###########M0)  andhh and8)  andy-hhhhlue_pro  andhhh  and-  ( ### ( ######## ##        8)  and  not 10 and##########10 andh%hhhh  and hhhhh and(  not   ####### #######  not     (       not 10 andh%hhhh  and hhhhh and( ###########M0)  and#######  ### (####################################################8  and hhhhh and(hhh  and  not     (       not 10 and###################### #######  not     (       not 10 andh%hhhh  andQQQQQQQQ%QQQhlue_proE  andhhh  andhh and8)  andy-hhhhlue_proandhhh  and-    #    ## ( ###########M5)  andhh and8)  and##  not     (       not 10 andh%hhhh  and hhhhh and( ##########  not 10 andh%hhhh  and hhhhh and( ###########M0)  andhh and8)  andy-hhhhlue_pro  andh*h  and-       ###  (########M1)  andhh and8)  andy-hhhhlue_pro  andhhj  and- ###################### #####ooooooou  andhh and8)  andy-hhhhlue_pro  andhhh  and-    ### ( ###########M0)  andhh and8)  and hhhhh andh%hhhh  and hhhhh and( ###########M0)  andhh and8)  andy-hhhhlue_pro  andhhh  and-  ( ### ( ######## ##        8)  andy-hhhhlue_pro  andhhh  and- zrr__18or    ### ( ######## ##M0)  andhh and8)  andy-hhhhlue_pro  andhhj  and-     ##############  ### (#################################################################HHHHHHHHHHHHHHH3HHHHHHoQQQQQQQQQQQQQQQQQhlue_pro  andhhh  andhh and8)  andy-hhhhlue_pro  andhhh  and-     M0)  andhh and    not 10 andh%hxhh  and hhhhh and(##################################### #####8  and hhhhh and(hhh  and  not     (       n   ( ###### ####M0)  andhh andArrr)  andy-hhhhlue_pro  andhhj  and- ###################### ###########M0)  andhh and8)  andy-hhhhlue_pro  andhhh  and-    ### ( ###########M0)  anddo --- 1. Open using an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open up fo  r a.x + b.xUSTORE DSE USTORE).
-  local x = 7
-  (function()
-  local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Cl(+ 1x DSE forE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4.en upvalue below base sl. Forwarded. 1x UST DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do ---                              3. Closed u  --    TORE).
-  local xx = (function()
-    local x = 8
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return functhh and8)  and hhhhh andh%hhhh  and hhhhh and#M0)  andhh and8)  andy-hhhhlue_pro  andhhh    local f#M0)  andhh and8)  andy-hhhhlue_proeunction a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(  andhhj  and- ### ########### b() x = x + 2 en); x = x + 5 end
-  end)()
- d
-    
