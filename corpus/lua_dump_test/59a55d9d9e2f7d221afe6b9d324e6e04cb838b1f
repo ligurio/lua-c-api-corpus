@@ -1,0 +1,34 @@
+local lines = {}
+local function hoo(k)
+  lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- < el
+local function f()   
+  if true then return end
+  local function x() end
+end-- lthook(h{}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()if true then return end
+  local function x() end
+end -- <-- lthook({}
+local function f()
+  if true then  return end
+  local function x() end
+end -- <-- line}
+local function f()
+  if true then return end
+  local        function x() end
+end -- <-- lthook(hab= {}
+local function) end
+end -- < elni --37
+debs = {}
+local function f()    
+  if true then return end
+  l  nd
+
