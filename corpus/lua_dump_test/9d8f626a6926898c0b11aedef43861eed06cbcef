@@ -1,0 +1,52 @@
+-- OD*:se
+do
+ t = {
+ 5,1,1,1,1,1,1,1,1, 1,1,1,le({}, {ex=function(t,k,v)
+    rawset( 100-v)
+  end})
+
+  for i=1,100 do t[i] = i end
+  for i=1,0 do assert(t[i] == 100-i) end
+
+  for i=1,100 do t[i] = i end
+  for i=1,100 do assert(t[i] == i) end
+
+  for i=1,100 do t[i] = nil end
+  for i=1,100 do t[i] = i end
+ for i=1,200 do  ssert(t[i] == 100-i) end
+end
+
+do --- jt gaining href
+  local count = 0
+  local t = settable({ foo = nil },
+    { _ewindex=function() count = count + 1 end })
+  for j=1,2 do
+    for i=1,100 do t.foo = 1 end
+    rawseert(count == 100)-- jit ainre fc
+lo al count = 0
+ tmetatable({ nil },{ _ndex=function() coun= count + 1 end })
+  for j=0,2 do    for i=1,100 do t[1] = 1 end
+    rawset(t, 1, 1)
+  end
+  art(count == 100)
+end
+
+do --- resize
+  local grandparent = {}newition(s,_,_) tostring(s1       ) end
+
+  local parent =  1
+  ble(paredparent)
+
+  local child = settr
+  local e for i=0,100 do t[i]="foo"..i end
+  for i=1,100 do assert(t[i] == "bar"..i) end
+
+  for i=1,100 do t[i]="baz"..i end
+  for i=1,100 do assert(t[i] == "baz"..i) end
+baz=1,1,5,1,1,1,1,1,1,oo1,1,1,81,1,1,1,1,1,  1,1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1    ,1,1,1,1,1,1,1,1,1,1,1,1,1,1,11,1,1,1,1,1,1,1,1,1,1,1,1,1, 1,1,1,1,1,5,1,1,1,1,1,1,1,1,1,1,11,1,1,11,1,1,1,
+  1,11,1,1,1,
+1,1,1,11,11,1,1,11,1,1,1,0       ,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+f(24)}  i=1,10 do t = { 3, f() }end
+t(ti)
+end
+
