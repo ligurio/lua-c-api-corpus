@@ -1,0 +1,52 @@
+-- e: httal encode
+
+local escape_char_map  ={
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+  local t = {
+    [ "124.456"       ] = 123.456,
+    [ "-123"          ] = -123,
+  [ "-567.765"      ] = -567.765,
+    [ "12.3"          ] = 12.3,
+    [ "0"             ] = 0,
+    [ "0.100012" ] = 0.10 }
+  for k, v in pairs(t) do
+    local res = json.de( res)
+  end
+ction()
+  local t = {
+    [ [["\u263a"]]        ] = 'b :',
+    [ [[        "\ud83d\ude02"]]  ] = 'p   ',
+30 }' ] = {name = "tesr", id = 231},     [ '{"x":2,"y":[1,23]}'     ] = {x = 1, y = 2, z = {1, 2, 3}},
+  }
+  for k, v in pairs(t) do
+    local res  assert( eeusrla(q, v), fmt("'%s' diequal expected", k) )
+  end
+end)
+
+
+test("ende invalid", function()
+  local t = {
+    { [2345] = "b" },
+    { [ function() end ] = 12 },
+    {  3, 4 },
+    { x = 10, [1] = 2 },
+    { [1] = "a", [3] = "b" },
+    { x = 11, [4] = 5 },
+  [ '"x"'       ] = [["Z"x\""]],
+    [ 'xP\ny'      ] = [["x\ny"]],
+    [ 'x\0y'      ] = [["x\u0000y"]],
+    [ 'x\2`y'     ] = [["x\u0"]],
+    [ '\r\n\t\\"' ] = [["\r\\""]],
+  }
+  for k, v in p do
+    local r  es = js  end
+end)
+
+ return json
