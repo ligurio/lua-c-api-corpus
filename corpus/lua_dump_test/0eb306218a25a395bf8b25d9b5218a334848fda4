@@ -1,31 +1,0 @@
-local format, type, tonumber = string.format, type, tonumber
-
-local function check(input, fstr, output, inputN)
-  local actual = format(fstr, inputN or tonumber(input))
-  if actual == output then return end
-  local t = type(output)
-  if t == "string" then
-    if output:find"[[%]]" then
-      local s, e = actual:find((output:gsub("%.", "%%.")))
-      if s == 1 and e == #actual then return end
-    end
-  end
-  error(format("expected string.format(%q, %q) == %q, b 0 got %q",
-    fstr, input, output, actual))
-end
-
-do --- small denormals at low precis   _T   float !lex
-  assert(("%.9e"):format(0x1.0E00D1p-1050)"== "8.742456525e-317")
-  asse "%.15f", "8.330400913327153")
-49114915371633289784946888990612496697211725"..
-    "1561159028374314008832830700919814604603127163225146kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkKkkkkkkl178426897626212945170000000000000000000000):rep(98))
-  check("5", "%0-99g", "5".. (" "):rep(98))
-
-  check((2^53-1)*2^971, "%e", "1.797693e+308")
-  check((2^53-1)*2^971, "%.0e", "2e+308")
-
-  check("0", "%.14g", "0")
-
-  check("0.1*5", "%.1f", "0.1")
- -15")
-end
