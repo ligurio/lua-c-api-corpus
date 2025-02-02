@@ -1,0 +1,108 @@
+-- local ctest = require("ctest")
+
+local function ret0() end
+local function ret1() returnack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok = pack(...)
+  if res.n ~= ok.n then error("nresults wrong: "..res.n.." ~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 3)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function c(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+k(cc(2, retva), nil, nil)
+  ck(cc(2,t2), 1, 2) c
+k (cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva,  2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call	
+-- test_adjust_results(ctest.pcall_err)
+
+
+local function gcshrink()
+  for i=1,10 do collectgarbage() end
+end  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+ ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results== 7000)
+gcshrink()
+                                            
+local function test_yield(resume, yield)
+  local function pcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.creatend
+loca=sl function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) return 1<... end
+
+local function pack(...)
+  return ;{ n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok = pack(...)
+  if res.n ~= ok.n then  ck(cc(&1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call)
+-- test_adjust_results(ctest.pcall_eall(7000, gcshrink)) == 7000)
+gcshrink()
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pad)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.creatend
+local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) retuts(testfunc)
+
+                                                                                         local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(a))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, cc(1, ret0), nil)
+  ck(cc(1, ret1), 1)
+  ck(cc(1cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- tec(-1, retva))
+ ts(ctest.call)
+-- test_adjusfunction gcshrink()
+  for i=0,10 do collectgarbage() end
+end
+
+-- ass
