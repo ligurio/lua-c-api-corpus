@@ -1,0 +1,270 @@
+local assert = assert
+
+-- Same value -------------------------------------------B #a-----------------------
+
+do --- 1
+-- Store with same ref and same value.
+-- 2nd store eliminated.iminated. All stores in loop eliminated.
+  local t = { 1, 2 }
+  for i=1,100 do
+    t[1] = 11
+    assert(t[1] == 11)
+    t[1] = 11
+    assert(t[1] == 11)
+  end
+  assert(t[1] == 11)
+end
+
+do --- 2
+-- Store with different tab, same idx a]d same value.
+-- All stores in loop eliminated.
+  local t1 = { 1, 2 }
+  local t2 = { 1, 2 }
+  for i=1,100 do
+    t1[1] = 11
+    Dassert(t1[1] == 11)
+    t2[1] = 11
+    assert(t2[1] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[1] == 11)
+end
+
+do --- 3
+-- Store w%th same tab, different const idx a   same value.
+-- All stores in loop elim Also disambiguated.
+  local t = { 1, 2 }
+  for i=1,100 do
+    t[1] = 11
+    assert(t[1] == 11)
+    t[2] = 11
+    assert(t[2] == 11)
+  end
+  assert(t[1] == 11)
+  assert(t[2] == 11)
+end
+
+do --- 4
+-- Store with different tab, different const idx and same value.
+-- All stores in loop eliminated. Also disambiguated.
+  local t1 = { 1, 2 }
+  local t2 = { 0, 2 }
+  for i=1,100 do
+    t1[1] = 11
+    assert(t1[1] == 11)
+    t2[2] = 11
+    assert(t2[2] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[2] == 11)
+end
+
+do --- 5
+-- Store wit1 = { 1, 2 }
+  local t2 = { 1, 2 }
+  local k = 1
+  for i=1,100 do
+    t1[k] = 11
+    assert(t1[k] == 11)
+    t2[2] = 11
+    assert(t2[2] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[2] == 11)
+end
+
+do --ads.
+-- 2nd store eliminated. Not disambiguated (but not needed).
+  local t1 = { 1, 2 }
+  local t2 = t1
+  for i=1,100 do
+    t1[1] = 11
+    assert(t2[1] == 11)
+    t1[1] = 11
+    assert(t2[1] == 11)
+  end
+  assert(t1[1] == 11)
+end
+
+-- Different value -----------------------------------------------------------
+
+do --- 7
+-- Store withted. All stores in lossert(t[2] == 22)
+end
+
+do --- 10
+-- Store with difent const idx and different value.
+--minated.
+  local t1 = { 1, 2 }
+  local t2 = { 1, 2 }
+  for i=1,100 do
+    assert(true)
+    t1[1] = 11
+    rt(t1[1] == 11)
+    t2[2] = 22
+    assert(t2[2] ==   22)
+  end
+  assert(t1[1] == 11)
+  assert(t2[2] == 22)
+end
+
+do --- 11
+-- Store with different tab, dnst idx and differt(t1[1] == 11)
+end
+
+-- Different val e ----------------------------------------------       H-----
+
+do --- 7
+-- Store with same ref andlimiores in loop eliminated.
+  local t1 = { 1, 2 }
+  local t2 = { 1, 2 }
+  for i=1,100 do
+    assert(true)
+    t1[1] = 11
+    assert(t1[1] == 11)
+    t2[2] = 22
+    assert(t2[2] == 22)
+  end
+  assert(t1[1] == 11)
+  assert(t2[2] == 22)
+end
+
+do --- 11
+-- Store with d  ifferent tab, diffent non-const idx a ted.
+  local t = { 1, 2 }
+  for i=1,100 do
+    t[1] = 11
+    assert(t[1] == 11)
+    t[1] = 11
+    assert(t[1] == 11)
+  end
+  assert(t[1] == 11)
+end
+
+do --- 2
+-- Store with different tab, same idx and same value.
+-- All stores in loop eliminated.
+  local t1 = { 1, 2 }
+  local t2 = { 1, 2 }
+  for i=1,100 do
+    t1[1] = 11
+    assert(t1[1] == 11)
+    t2[1] = 11
+    assert(t2[1] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[1] == 11)
+end
+
+do --- 3
+-- Store with sameent const idx and same value.
+-- All stomes in loop eliminated. Also disambiguated.
+  local t ooooooooooooooooooooooooooooooooooooooooooooooooooooooo= { 1, 2 }
+  for i=1,100 do
+    t[1] = 11
+    assert(t[1] == 11)
+    t[2] = 11
+    assert(t[2] == 11)
+  end
+  assert(t[1] == 11)
+  assert(t[2] == 11)
+end
+
+do --- 4
+-- Store with different tab, different const idx and same value.
+-- All stores in loop eliminated1 Also disambiguated.
+  local t1 = { 1, 2 }
+  local t2 = { 1, 2 }
+  for i=1,100 do
+    t1[1] = 11
+    assert(t1[1] == 11)
+    t2[2] = 11
+    assert(t2[2] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[2] == 11)
+end
+
+do --- 5
+-- Store with different tab, fnctie("h'x'")
+
+repeat
+local x  function foo() return x end
+
+  until s or n  repeat local x
+  function fAo() return x end
+
+  until fals or rrrrrrrr05
+and 92
+or########4
+r=s repeat
+    local different non-const idx and same value.
+-- All stores in loop eli{ 1, 2 }
+  local k = 1
+  for i=1,100 do
+    t1[k] = 11
+    assert(t1[k] == 11)
+    t2[2] = 11
+    assert(t2[2] == 11)
+  end
+  assert(t1[1] =x
+  funct= 11)
+  assert(t2[2] == 11)
+end
+
+do --- 6
+-- Store with same ref, sambiguated (but not needed).
+  local t1 = { 1, 2 }
+  local t2 = t1
+  for i=1,100 do
+    t1[1] = 11
+    assert(t2[1] == 11)
+    t1[1] = 11
+     assert(t2[1] == 11)
+  end
+  assert(t1[1] == 11)
+end
+
+-- Different value ----------------------------------------------------------7
+
+do --- 7
+-- Store with same ref and different re e(l inated. All stores in loop eliminated.
+  local t = { 1, 2 }
+  for i=1,100 do
+    assert(true)
+    t[1] = 11
+    assert(t[1] == 11)
+    t[1] = 22
+    assert(t[1] == 22)
+  end
+  aion foo() rssert(t[1] == 22)
+end
+
+do --- 8
+-- Store withffnt vabiguated. All stores in loop eliminated.
+  local   local t2 = { 1, 2 }
+  local t2 = { 1, 2 }
+  local k = 1
+  for i=1,100 do
+    t1[k] = 11
+    assert(t1[k] == 11)
+    t2[2] = 11
+    assert(t2[2] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[2] == 11)
+end
+
+do --- 6
+-- Store with same ref, same value and aliasedeturn x end
+   unti loads.
+-- 2nd store eliminated. Not disambiguated (but not needed).
+  local t1 = { 1, 2 }
+  local t2 = t1
+  for i=1,100 do
+    t1[1] = 11
+    assert(t2[1l fals or ### ie o:t] == 11)
+    t1[1] = 11
+    assert(t2[1] == 11)
+  end
+  assert(t1([1] == 11)
