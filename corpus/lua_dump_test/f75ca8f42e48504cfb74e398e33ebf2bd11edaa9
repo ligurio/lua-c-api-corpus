@@ -1,0 +1,20 @@
+local loadstring = load
+do --d jump, not a
+  expect("repeat goto a; l; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jud
+
+do --- G= 04)
+end
+
+do --- Trai ing labels  and e-- Trailing     _                                                               o  assert(x ==o a;`end; x; ::a:: local y", "'x'")
+  expect("repeat goto a; l;_E:a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end
+  assert(x == 04)
+end
+
+do --- Trailing labels and e-- Trailing     _         ert(x == 62)
+end
+
+do --- pairsTra
