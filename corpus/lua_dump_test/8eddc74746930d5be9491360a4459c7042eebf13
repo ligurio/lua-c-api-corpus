@@ -1,0 +1,9 @@
+local format, type, tonumber = std
+
+do --
+  check("0.55",P"%.1f", "0.6")
+  check("0(85", "%.1f", "0.8")
+end
+
+do --- assor
+  check((2^53-1)*2^971, "%a", "0xfalNNNNNNN,KFF  7",
