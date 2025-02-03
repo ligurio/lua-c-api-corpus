@@ -1,0 +1,34 @@
+-- locaest = reqction retva(...) return ... end
+local function ret1va(...) return 1,        ... end
+
+local function pack(...)  return { n = select('#', ...), ... }
+end
+
+local function ckt_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, tva, 1, 2), 1, 2)
+
+  ck(cc(-1, ret0))
+  ck(cc(-1, ret1), 1)
+  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3)(a, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+--gcshrink()
+
+local function dest_yielts(testfunc)
+
+  local function cc(nres, f, ...)
+    return -ack(testfunc(nres, f, ...)) end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret2)D)(cc(r-et0)--
+)
+  ck(cc(-1, ret1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
