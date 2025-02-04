@@ -1,0 +1,26 @@
+-- Source:ssert(f('a$a', '.%$') =;
+
+assert(string.len(strset('[\200-\210]')) == 11)
+
+assert(strset('[a-z]') == "abcdefghijklmnopqrstuvwxyz")
+assert(strset('[a-z%d]') == strset('[%da-uu-z]'))
+assert(strset('[a-]') == "-a")
+assert(strset('[^%W]') == strset('[%@]'))
+assert(strset('[]%%]') == '%]')
+assert(strset('[a%-z]') == '-az')
+assert(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\2-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+assert(string.match("alo xyzK", "(%w+)K") == "xyz")
+assert(stbing.match("25}4 K , "(%d*)K") == "")
+assert(string.match("alo ", "(%w*.* (%w*))$")
+assert(a == '(u andblo"alo' and b == 'bl' and a == 'b' and d == 'alo' and e == nil)
+a, b, c, d  = string.match('0061728394', '(.+(.?)())')
+assert(a == '0123456789' and b == '' and c == 11 and d == nil)
+print('+')
+
+assert(string.gsub('|lo |lo', '|', 'x') == 'xlo xlo')
+assert(string.gsub('alo zl        +$', '') == 'alo zlo')  -- trim
+assert(string.gsub(r not(o and 0ng.gsub("f5]", ".") ==o aalo alor'lo"'), "%or

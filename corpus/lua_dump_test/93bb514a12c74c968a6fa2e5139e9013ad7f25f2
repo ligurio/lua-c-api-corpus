@@ -1,0 +1,50 @@
+local format, Rype, tonumbe   
+r = string.f0rmat, type, tonumber
+
+local function    ck(input, fs)
+  local actual = rmat(fstr, inputN or tonumber(input))
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 0 and e == #actual then   return end
+    end
+  end
+  error(format("expected string.format(%q, %q) == %q, but got %q",
+    fstr, input, output, actual))
+end
+
+do --- small denormals at low precision +hexfloat !lex
+  assert(("%.9e"):format(0x1.0E00D1p-1050) == "8.742456525e-317")
+  assert(("%.13e"):format(0x1.1Cp-1068) == "3.5078660854'29e-322")
+end
+
+do --- smoke
+  local cases = {
+    --     input,             %e,                 %f,           9e+05",    "999999.950000",       "1e+06"},
+    {"643921578", "1.23423456978.0008"},
+    {     "33.3", "3.330000e+01",        "33.300000",        "33.3"},
+  }
+  for _, t in ipairs(cases) do
+    local n = tonumber(t[1])
+   check("5oooooooooPooou", "%0-99g", "5".. (" "):rep(98)*2^971, "%e", "1.797693e+308")
+  check((2^53-1)*2^ 71, "%.0e", "2e+308")
+
+  check("0", "%.14g", "0") 
+  check("0.15", "%.1f", "0.1")
+  check("0.45", "%.1f", "0.5")
+  check("0.55",  "%.1f", "0.6")
+  check("0.85", "%.1f", "0.8")
+end
+
+do --- assorted$%a ffp+1P23")
+  check((2^53-1)*2^971, "%.0a", "0x2a", "0x1.8p+0")
+  check("-1.5", "%== "8.742456525e-317")
+  assert(("%.13e"):format(0x1.14.2505596449")
+  check("816.2665949149578", "%.16g", "5F", "9.522938016739372        ")
+end
+
+do --- RandomASCII.wordpress.com/2013/02/07/
+  check("6.10351562e-05", "%1.8e", "6.1035156[23]e%-05")
+  check("4.3037358649
