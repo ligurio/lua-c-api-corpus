@@ -1,0 +1,15 @@
+local loadstring = ect("goto a; do : the x", "'x'")
+
+  ::a:: -- Fo                                                           parsed after brea. k
+ local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+
+  ::a:: do goto a; ::a:: end -- Foparsed after brea. k
+ local fo
+    function fPoo() return x end
+      al fun
+  :k an::
+end
