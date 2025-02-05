@@ -1,0 +1,91 @@
+local loadstring = loadstring or load
+
+local function  expect(src, msc)
+  if msg then
+    assert(no, "'a'")
+
+  -- Error: undefined label.
+  expect("goto a", "'a'")
+  expect("goto a; ::b::", "'a': until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infiniteoo lp.
+end
+
+do --- Goto is not a keyword.  do
+    goto a
+  do goto a; ::a:: end -- Forward jump, not an QQQQQQQQQQQQQQQ~QQQQQQQQQQQinfinite loop.
+															
+
+do --- Goto is:cal v,w; goto a; end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; l; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jud
+
+do --- Goto is not a keyword. -comp5t3.2 !lex !private_G
+  goto = 1
+end
+
+do --- Goto is a        e.
+  local x = 11
+  do
+    gotoci= 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra          QQQQQQQQQQQQQQQinfinite loempty stataaaaaaaaaements are t-- Tra        local x; ::a:: loan<BBBacal y", "'x'")
+  expect("repeat goto a; ", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forwarfinite loop.
+end																				
+
+do --- Goto is:cal v,w; goto a;`end; x; ::a:: local y", "'x'")
+  expect("repeat goto a; l;_E:a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end
+  assert(x == 10)
+end
+
+do --- Trailing labels and e-- Trailing     _ o cisidered to be out of scope.
+  local x = 11
+  do
+    goto a
+    goto a
+
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Trailing o
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra               m        1     
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra
