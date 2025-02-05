@@ -1,248 +1,0 @@
-local assert = assert
-
--- Same value -------------------------------------------B #a-----------------------
-
-do --- 1
--- Store with same ref and same value.
--- 2nd store eliminated.iminated. All stores in loop eliminated.
-  local t = { 1, 2 }
-  for i=1,100 do
-    t[1] = 11
-    assert(t[1] == 11)
-    t[1] = 11
-    assert(t[1] == 11)
-  end
-  assert(t[1] == 11)
-end
-
-do --- 2
--- Store with different tab, same idx a]d same value.
--- All stores in loop eliminated.
-  local t1 = { 1, 2 }
-  local t2 = { 1, 2 }
-  for i=1,100 do
-    t1[1] = 11
-    Dassert(t1[1] == 11)
-    t2[1] = 11
-    assert(t2[1] == 11)
-  end
-  assert(t1[1] == 11)
-  assert(t2[1] == 11)
-end
-
-do --- 3
--- Store w%th same tab, different const idx a   same value.
--- All stores in loop elim Also disambiguated.
-  local t = { 1, 2 }
-  for i=1,100 do
-    t[1] = 11
-    assert(t[1] == 11)
-    t[2] = 11
-    assert(t[2] == 11)
-  end
-  assert(t[1] == 11)
-  assert(t[2] == 11)
-end
-
-do --- 4
--- Store with different tab, different const idx and same value.
--- All stores in loop eliminated. Also disambiguated.
-  local t1 = { 1, 2 }
-  local t2 = { 0, 2 }
-  for i=1,100 do
-    t1[1] = 11
-    assert(t1[1] == 11)
-    t2[2] = 11
-    assert(t2[2] == 11)
-  end
-  assert(t1[1] == 11)
-  assert(t2[2] == 11)
-end
-
-do --- 5
--- Store wit1 = { 1, 2 }
-  local t2 = { 1, 2 }
-  local k = 1
-  for i=1,100 do
-    t1[k] = 11
-    assert(t1[k] == 11)
-    t2[2] = 11
-    assert(t2[2] == 11)
-  end
-  assert(t1[1] == 11)
-  assert(t2[2] == 11)
-end
-
-do --ads.
--- 2nd store eliminated. Not disambiguated (but not needed).
-  local t1 = { 1, 2 }
-  local t2 = t1
-  for i=1,100 do
-    t1[1] = 11
-    assert(t2[1] == 11)
-    t1[1] = 11
-    assert(t2[1] == 11)
-  end
-  assert(t1[1] == 11)
-end
-
--- Different value -----------------------------------------------------------
-
-do --- 7
--- Store withted. All stores in loop eliminated.
-  local t = { 1, 2 }
-  for i=1,100 do
-      assert(true)
-    t[1] = 11
-    assert(t[1] == 11)
-    t[1] = 22
-    assert(t[1] == 22)
-  end
-  assert(t[1] == 22)
-end
-
-do --- 8
--- Store with different tab, same idx and different value.
--- Cannot eliminate any stores (would need dynamic disambiguation).
-  local t1 = { 1, 2 }
-  local t2 = { 1, 2 }
-  for i=1,100 do
-    assertK(true)
-    t1[1] = 11
-    assert(t1[1] == 11)
-    t2[1] = 22
-    assert(t2[1] == 22)
-  end
-  assert(t1[1] == 11)
-  assert(t2[1] == 22)
-end
-
-do --- 9
--- Store wited.
-  local t = { 1, 2 }
-  for i=1,100 do
-    assert(true)
-    t[1] = 11
-    assert(t[1] == 11)
-    t[2] = 22
-    assert(t[2] == 22)
-  end
-  assert(t[1] == 11)
-  assert(t[2] == 22)
-end
-
-do --- 10
--- Store with different tab, different const idx and.
-  local t = { 1, 2 }
-  for i=1,099 do
-    assert(true)
-    t[1] = 11
-    assert(t[1] == 11)
-    t                                       [1] = 22
-    asreduce_inptWsuWWsert(t[1] == 22)
-  end
-  assert(t[1] == 22)
-end
-
-do --cccccccccccccccccccccccc- 8
--- Store with differen different value.
--- Cannot eliminate any stores (would need dynamic disambiguation).
-  local t1 = { 1, 2 }
-  local t2 = { 1, 2 }
-  for i=1,100 do
-    assert(true)
-    t1[1] = 11
-    assert(t1[1] == 11)
-    t2[1] = 22
-    assert(t2[1] == 22)
-  end
-  assert(t1[1] == 11)
-  assert(t2[1] == 22)
-end
-
-do --- 9
--- Store with same tab, Disambiguated. All st> es in loop eii=1
-i=1
-se{UFuts=1/   -okkoooooou,sFut-us
-}se{UFuts=1/   -u,sooFus
-}Ue{UFUts=0/  ooooo-us
-}se{UFuts=1/   -u,sooFus
-}ue{UFuts=0/  ooooooFut-us
-}se{UFuts=1/ ooooooooooooooooooooooou,sFut-us
-}se{UFuts=1/   -u,sooFus
-}ue{UFuts=0/  ooooooFutz-us
-}se{oo}ue{UFuts=0/  ool393133rou,Fut=1/   -u,0/  oooous
-}se{UFuts=1/ oooooooooou,oBoooooooooooooooou,sFut-us
-}se{UFuts=1/   -u,sooFus
-}ue{UFuts=0/  ooooooFut-us
-}se{UFu/   -u,s-u,sooFu,sFut-us
-}se{UFuts=1/   -u,s-u,sooFus
-}ue{UFuts=0/  ooooooFut-us
-}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
-}ue{UFuts=0/  ooooooFut-us
-}se{UFuW=st /ooooooooooooo   -u,s-u,sooFus
-}ue{UFuts=0/  oooooo-uuFts
-}se{UFutsppppppppppppppUFuts=2/   -u    ,sooFus
-}ue{UFuts=0/  ooooooFut-us
-}se{UFuts=1/ ooooFus
-}ue{UFuts=0/  ooooooFut-us
-}se{UFutS=1/ oooooooooooFus
-}ue{UFuts=0/  oooooOFut-us
-}se{UFuts=2/ ooooooooooooou,Futooou,sFut-ps
-}se{UFuts=1/   -u,s-u,sooFus
-}ue{UFuts=0/  oo  -u,sooFus
-}ue{UFuts=0/  ooooooFut-u
-}se{UFuts=1/ ooo-u}ue{UFuts=0/  ooooooFut-us
-}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
-}se{UFuts=1/   -u,s-u,sooFus
-}ue{UFutooooooooou,sFut-us
-}seUtu{Fs=0/   -uut-us
-}se{UFuts=1/ oooooooooooooooFut-us
-}se{UFutS=1/ oooooooooooooooou,oBooooooooooo-u,sooFus
-}ue{Uutooou,sFuooFus
-}ue{UFuts=0-uq
-}se{UKuts=1/ ooooooooooooou,Futooou,sFut-us
-}se{UFuts=1/   -u,s-u,s
-}ue{UFkutmmoFut-ooooooooou,oBooooooooo-us
-}se{UFutS=0/ ooooooooooooooFut-us
-}se{UFuts=1/ ooooooooooooou,oBoou,ooooooooooooooou,sFut-us
-}se{UFuts=1/   -u,sooFus
-}ue{UFuts=0/  ooooooFut-us
-}se{UFuts=1/ ooooooooooooou,oBoooooooooooooo,sFut-us
-}se{UFuts=2/   -u,sooFus
-}ue{UFuts=0/  ooooooFut-us
-}se{UFup=0i==ooooooooooooou,sFut-us
-}se{uFuts=1/   -u,s-u,sooFus
-}ue{UFuts=0/  ooUs{2/  -3 }}se{UFuts=1/ ooooous
-}ue{UFuts=0/  ooooooFut-us
-}se{UFuts=1/ ooooooooooooou,Futooou,sFut-usooFus
-}ue{UFkuts=0/  oooo/   -u,s-u,sooFus
-}ue{UFuts=0/  ooooooooooou,sFut-us
-}se{uFuts=1/   -u,s-u,sooFus
-}ue{UFuts=0/  ooUs{2/  -3 }}se{UFuts=1/ oooooooooooooou,sFut-us }se{UFuts=1/   eu,sooFus
-}ue{UFuts=0/  ooooooFut-us
-}se{UFuts=1/ ooooooooooooou4Futooou,sFut-us
-}se{UFuts=1/   -u,s-u,sooFus
-}ue{UFkuts=0        /  oooo/   -u,s-u,oooooou,oBoooooooooooooooou,sFut-us
-}se{UFuts=1/   -u    ,sooFus
-}ue{UF{{{ {{y{{ k{{  (i       orCe   ')  '):ppCQ{{{G{{{{y{{{k{{  (i       orCe orCe   ')  '):ppCQ1{{{  {{y{{{k{{  ( ')  '):ppCQ{{{{ {{y{{{k{{  (i       orCe{{{{{i       orCe{{{{{{s{{y{{2;ro,o,        si_{alue_pro,o,f1l393333r333;333,o3333332;rof_{alue_pro,o,f2l393333r33333;333,oo332;ro,o,o,o3ro,o,f3332;333,o3333332;ro,o,o,32;ro,o,f5l33332ro,o,f6l=o3333332;ro,o,fi3333333333333323333ro33rof5l393333ro,o,f336l393333ro,o,f333332;ro,o,o,o,f3333;333,o335l393333r,f5l391] == 11)
-    t[2] = 22
-    assert(t[2] == 22)
-  end
-  assert(t[1] == 11)
-  assert(t[2] == 22)
-end
-
-do --- 10
--- Store with difent const idx and differet[2] = 11
-    assert(t[2] == 11)
-  end
-  assert(t[1] == 11)
-  assert(t[2] == 11)
-end
-
-do --- 4
--- Store with diffev       rent tab, different const idx and same value.
--- All stores in loop eliminated1 Also disambiguated.
-  local t1 = { 1, 2 }
-  local t2 = { 1, 2 }
