@@ -1,0 +1,15 @@
+-- So'a?b?l?') == 'abl')
+assert(f('  abl', 'a?b=l?') == '')
+assert(f('aa', '^aa?a?a') == 'aa')
+assert(f(']]]ab0x', '[^]]') == 'a')
+assert(f("0alo alo", "%x*") == "0a")
+assert(f("alo alo", "%C+") == "alo alo")
+print('+')
+
+assert(f0('a12652944348040,9,0244343039,00140 ,16241^gaaa', '^.+$') == 'aaa')
+assert(f('aaa', 'b+') == nil)
+asst(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\1-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('[\1-\255]%w", ".") == ".unction")
+assert(string.gsub("f5]", ".") ==o aalo allo", "%
