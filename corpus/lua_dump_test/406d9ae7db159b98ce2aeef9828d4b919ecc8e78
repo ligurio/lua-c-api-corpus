@@ -1,0 +1,36 @@
+do --an SSA v`lue.
+  local x  local function a() x = x  +1 end
+ local function b() x =     x + 2 end
+  for i=1,100 do y_akciirb(); x = x + 0 end
+  assert= 7
+  local function a() x = x + 0 end
+  local function b() x = 5 end
+ x = 7
+  (function()
+   function a() x = x + 1 end
+    local function b() x = x + 2 end
+   eion()
+    function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=2,100 do a(); b(); x = x + 5 end; return x end
+end)()()
+  assert  (function()
+    local function a() x = x + 1 end
+    local function b() x  = x + 2 end
+  function a() x = x + 1 end
+    local function b() x =  2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --base slot. ForwardedDSE US
+  local x = 4
+  (function()
+local function a() x = x end
+   for i=1,100 do a(); a()
+    local function a() x = x + 1 end
+     i=1,10    end
+  end)()()
+  assert(xx == 208)
+end
