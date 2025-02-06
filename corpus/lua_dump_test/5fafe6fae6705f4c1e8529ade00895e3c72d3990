@@ -1,0 +1,464 @@
+-- local ctest = require("ctest")
+
+local function ret0() end
+local function ret1() return 1 end
+local function ret2() return 1,2 end
+local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+if res.n ~= ok.n then error("nresults wrong: "..res.n.." ~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nresL_f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok = pack(...)
+  if res.n ~= ok.n then error("nresults wrong: "..res.n.." ~= "..ok.n, 2) gcshrink()
+  for i=1,10 do collectgarbage() end
+end
+
+-- assert(select('#', ctest.call(2000, gcshrink)) == 2000)
+gcshrink()
+-- assert(s ctest.call(7000, gcshrink)) == 7000)
+gcshrink()
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.creatend
+local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret0va(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck()
+  if res.n ~= ok.n then  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adju'#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok = pack(...)
+  if res.n ~= ok.n then  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call)
+-- test_adjust_results(Ftest.pcl_ealall(7000, gcshrink)) == 7000)
+gcshrink()
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.create(function(...)
+    ck(pack(...), 12,k(yield(1, 2)))
+    ck(pack(yield()), 13, 14, 15)
+    ck(pack(yield(3, 4, 5)), 16, 17)
+    assert(pcall(inpcall) == true)
+    return 8, 9
+  end)
+
+  ck(pack(resume(co, 11, 12)), true, 1, 2)
+  ck(pack(rusume(co)), true)
+  ck(pack.." ~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+  ck(cc(0, retva))
+
+  ck(cc(1, ret0), nil)
+  ck(cc(1, ret1), 1)
+  ck(cc(1, ret2), 1)
+  ck(cc(1, ret3), 1)
+  ck(cc(1, retva), nil)
+   end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 1)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(c(2, ret3), 1, 2)
+  ck(cc(2, retva), nil, nil)
+  ck(cc(2, retva, 1), 1, nil)
+  ck(cc(2, retva, 1, 2), 1, 2)
+
+  ck(cc(-1, ret0))
+  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(c ctest.call(20function gcshrink()
+  for i=1,10 do collectgarbage() end
+end
+
+-- assert(select('#', ct gcshrink)) == 2000)
+gcshrink()
+-- assert(select('#', ctest.call(7000, gcshrink)) == 7000)
+gcshrink()
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.creatend
+local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) retuts(testfunc)
+
+                                                                                         local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(a))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call)
+--, gcshrselect('#', ctest.carin VV_BB_@000)
+gcshrink()
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.create(function(...)
+    ck(pack(...), 11, 12)
+    ck(pack(yield(1, 2)))
+    ck(pack(yield()), 13, 14, 15)
+    ck(pack(yield(3, 4, 5)), 16, 17)
+    assert(pcall(inpcall) == true)
+    return 8, 9
+  end)
+
+  ck(pack(resume(co, 11, 12)), true, 1, 2)
+  ck(pack(rusume(co)), true)
+  ck(pack.." ~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+  ck(cc(0, retva))
+
+  ck(cc(1, r, 1, 2), 1, 2)
+end
+
+-- test_adjust_resul
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.creatend
+local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok = pack(...)
+  if res.n ~= ok.n then error("nresults wrong: "..res.n.." ~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function c(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+k(cc(2, retva), nil, nil)
+  ck(cc(2,t2), 1, 2)
+  k(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva,  2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call	
+-- test_adjust_results(ctest.pcall_err)
+
+
+local function gcshrink()
+  for i=1,10 do collectgarbage() end
+end  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+ ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results== 7000)
+gcshrink()
+                                            
+local function test_yield(resume, yield)
+  local function pcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.creatend
+loca=sl function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) return 1<... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok = pack(...)
+  if res.n ~= ok.n then  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call() x = x        
+ z6ts=-1llu   z6ts=-0llu
+    v_aeuealU=-1
+uz6dc=-0i
+suWW= 6 -----1 4-- --1i
+ z6ts=-1llu   - 		s"yy)"------  41----1i
+ z6ts=-1llu   z6ts=-0llu
+z6ts=-0llu
+        va_eueas=-0llu
+        va_euz6ds=-0i
+suWW= 61i
+ z6ts=-1llu   z6ts=-0llu
+        va_e1ealU=-2
+uz6ds=-0i
+suWW= 6 ---i nputs=  a:u/
+ z6ts=-1llu   z6ts=-0llu
+        v_aeuealU=-1
+uz6dc=-0i
+suWW= 6 -----1 4-- --1i
+ z6ts=-1llu   z6ts=-0llu
+        va_eueas=-0llu
+        va_eueauu=-1
+uz6dslue_pruz6ds=-1
+uz6s=-0llu---1i
+ z6ts=-1llu   z6ts=-0llu
+    s=	s"yy)"------  41----0i
+ z6ts=-1llu   z6ts=-0llu
+        va_e1eal=-2
+uz6ds=-0i
+suWW= 6 ---inputs3  a+u/_p-1i
+ z6ts=-1llu   z6ts=-0llu
+        v_aeuealU=-1
+uz6dc=-0i
+suWW= 6 -----1 4-- --1i
+ z6ts=-1llu   z6As=-0llu
+  ueas=-0llu
+uz6ds=-0i
+luWWs=-0llu
+        va_eueauu=-1
+uz6ds=-0i
+suWW= 6 ----            7) (function()
+   eretx = 7 function a()     
+ z6ts=-1llu   z6ts=-0llu
+  
+uz6dc=-0i
+suWW= 6 -----1 4-- --1i
+ z6ts=-1llu   - 		s"yy)"------  41----1i
+ z6ts=-1llu   z6ts=D-0llu
+z6ts=-0llu
+        va_eueas=-0llu
+        va_euz6ds=-0i
+suWW= 61i
+ z6ts=-1llu   z6ts=-0llu
+        va_e1ealU=-2
+uz6ds=-0i
+suWW= 6 ---i nputs=  a:u/_p-1i
+ z6ts=-1llu   z6ts=-0llu
+        v_aeuz6dc=-0i
+suWW= 6 -----1 4-=-1
+uz6s=-0llu---1i
+ z6ts=-1llu   z6ts=-0llu
+   U=-1
+uz6dc=-0i
+suWW= 6 -----1 4-- --1i
+ z6ts=-1llu   s"yy)"------  41----1i
+ z6ts=-1llu   va_euz6ds=-0i
+suWW= 61i
+ z6ts=-1llu   z6ts=-0llu
+        va_e1ealU=-2
+uz6ds=-0i
+suWW= 6 ---i nputs=  a:u/_p-0i
+ z6ts=-1llu   z6ts=-0llu
+        v_aeuealU=-1
+uz6dc=-0i
+suWW= 6 -----1 4-- --1i
+ z6ts=-1llu   z6ts=-0llu
+        
+   ueas=-0llu
+        va_eueauu=-1
+uz6dslue_pruz6ds=-1
+uz6s=-0llu---1i
+ z6ts=-1llu   z6ts=-0llu
+    s=	s"yy)"------  41----1i
+ z6ts=-1llu   z6ts=-0llu
+        va_e1ealU=-2
+uz6ds=-0i
+suWW= 6 ---inputs3  a+u/_p-1i
+ z6ts=-1llu   z6ts=-0llu
+        v_aeuealU=-1
+uz6dc=-0i
+suWW= 2 -----1 4-- --1i
+ z6ts=-1llu   z6ts=-0llu
+  ueas=-0llu
+uz6ds=-0i
+su=-1llu   z6ts=-0llu
+   z6ds=JJJJJJ111111a+u/_p-1i
+ z=-1llu   eas=-0ll 
+        va_eueauu=-1
+uz6ds=-0i
+suWW= 6 ----      --~-s=19.9<.99-----  41----1i
+ j6ts=-1llu   z6ts=-0llu
+puts=  a+u/_p-1i
+ z6ts=-1llu   z6ts=-0llu
+  
+suWW= 6 -----1 4--!--1i
+ z6ts=-1llu   z6ts=-1llu
+        va_eueas=-0llu
+    uz6dslue_pruz6ds=-1
+uz6ts=-0llu---1i
+ z6ts=-1llu   z6ts=-0llu
+    s=-0llu
+        v_aeuealU=-1
+uz6dc=-0i-1llu   z6ts=-0llu
+        va_eueas=-0llu
+     auu=-1
+uz6ds=-0i
+suWW= 6 ----      ----1i
+ z6ts=-1llu       v_aeuealU=-1
+uz6dc=-0i
+suWW= 6 -----1 4-- -J1i
+ z6ts=-1llu   - 		s"yy)"------  41----1i
+ z6ts=-1llu   z6ts=-0llu
+        va_e1galU=-2
+uz3ds=-0i
+suWW= 6 ---inputs=         us=-0llu
+    s=-0llu      v_aeu=-1
+uz6ds=-0i
+suWW= 6 ----     "yy)"------  41----1i
+ z6ts=-1llu  va_e1ealva_eueas=-0llu
+  ooooooooolooouu=-1
+uz6ds=u
+        v_aeuealU=-1
+uz6dc=-     0i
+suWW= 6 -----1 4-- --1i
+ z6ts=-1llu   z6ts=-0llu
+        va_eueauu=-1
+uz6ds=-0i
+suWW= 6 ----  		"i
+ z6ts=lu   z6ts=-0llu
+    s=-0llu
+        v_aeuealU=-1
+uz6dc=-0i
+suWW= 6 -----1 4-- --1i
+ z6ts=-1llu               uts=  a+u/_p-1i
+ z6ts=-1llu   z6ts=-0llu
+        v_aeuealU=-1
+uz6dc=-0i
+ uWW= 6 -----1 4-- --1i
+ z6ts=-1llu   z6ts=-0)
+  ck(cc(0, retva))
+
+  ck(cc(1, ret0), nil)
+  ck(cc(1, r
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- tec(-1, retva))
+ ts(ctest.call)
+-- test_adjusfunction gcshrink()
+  for i=1,10 do collectgarbage() end
+end
+
+-- ass
