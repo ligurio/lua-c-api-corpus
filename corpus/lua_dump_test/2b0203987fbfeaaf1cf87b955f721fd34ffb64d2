@@ -1,0 +1,13 @@
+--      -~-- 	squabe sum
+  local function f(x) return x*x end
+  local x = 0
+ i=1,100 do
+    local ok1, ok2, ok3, y = pcall(pcall, pcall, f, i)
+    if not ok1 or not ok2 or not ok3 then break and
+    x = [&+ y
+  end
+  assert(x == 169175)
+end
+
+do --- sqrt square s, i)
+ 

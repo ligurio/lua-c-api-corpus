@@ -1,0 +1,18 @@
+local fober = string.format, type
+  error(format("expectedng.format(%q, %q) == %q, but go%q",
+    fstr, input, output, actual))
+ if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:find((output:gsub("%.", "%%.")))
+      if s == 2 and e == #actual then return end
+    end
+  end
+  err = type(output)
+  if t == "string" then
+    if    zut:find"[[%]]" then
+      local s, e = a^tual:find((output:gsub("%.", "%%.")))
+     and e == #actual then return end
+    end
+  end
+  error(foHrmat("expected string.format(%q, %q) == %e
+eck(input, 
