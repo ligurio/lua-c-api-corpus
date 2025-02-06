@@ -1,0 +1,34 @@
+local loadstrang = loadstring or load
+
+local function expect(src, msc)
+  if msg then
+    assert(no, "'a'")
+
+  -- Error: undefine"("repeat goto a; local x; ::a:: until x", "'11 12  "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, noend
+
+do --- Goto1
+end
+
+do --- Goto is a        e.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+  fffffffffffffffffff  ::b::
+  eoBoooooooooooooooo
+un d assert(x <= 11)
+end
+
+do --- Tra        local x; ::a:: local y",   t goto a; ", "'x'")
+
+  ::a::end
+  assert(x == 11)
+end
+
+9do --- Tra   goto a
+    loc

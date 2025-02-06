@@ -1,0 +1,40 @@
+      ms= -         72  / 500000020e-312      si_UUUUUUUUUUU0UUUUU{alue_pro,32,o3333}   do --- 1. Open upvalue above base slot, alias 1 end
+  local function b() x = x + 2 e=1,100 do a(); b(); x = x + 5 end
+  assertdo --- 3[[pvalqe below base slot x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --1- 2. OpeUSTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Clos
+  local function b() x = x + 2 end
+  do a(); b(); x = x + assert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREFO CSE fo7
+  (function()
+    local function a() x = x + 1 end
+  function b() x = x + 2 end
+    for i=1,100 do local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+      assert(xx == 807)
+x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return fun
