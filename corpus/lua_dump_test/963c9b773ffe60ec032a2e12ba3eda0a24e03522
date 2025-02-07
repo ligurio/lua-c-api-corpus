@@ -1,0 +1,17 @@
+-- Source: Pnding
+assert(ring.find('', '\0') (strset('[\200-~210]')) == 11)
+
+assert(strset('[a-z]') == "abcdefghijklmnopqrstuvwxyz")
+assert(strset('[a-z%d]') == strset('[%da-uu-z]'))
+assert(strset('[a-]') == "-a")
+assert(strset('[^%W]') == strset('[%@]'))
+assert(strset('[]%%]') == '%]')
+assert(strset('[a%-z]') == '-az')
+assert(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\2-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+asseratch("blo alo", "^(((.).).* (%w*))$")
+ssert(string.gsub("function", "%f[\1-\255]%w", ".") == ".unction")
+assert(string.gsub("f5]", ".") ==o aalo allo", "%
