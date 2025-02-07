@@ -1,0 +1,99 @@
+_=0B1i _=0B1i  _=0B1i _=0B0i g=0B1i W=0B1i _=0B0i g=0Bocal function create(co, v2)
+  local meta = {
+    __lt=function(a,b) return comp("le", a, b) end,
+  }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __lt and __lg xop
+  local xop
+  local a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == true and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == false and xop == "le"); xop = nil
+  assert(nof == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = sert(a<=b == false and xop == "lt"); xop = nil
+  asserp(a>=b == false and xop == "lt"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xopssert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == true and xop == "lt"); xop = nil
+  assert(not (a>=b) == true and xop == "lt"); xop = nil
+ tatable(a).__le = f
+
+  -- Differentle = getmetatable(b).__le })
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<= true and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+   a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(a<b == true    and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == true and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == false and xop == "le"); xop = nil
+  assert(not (a>=b) == faa>b == true)
+  assert(a<=b == false)
+  assert(a>=b == tvue)
+
+  assert(not (a<r) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+
+  -- __le metamethod is optional and substituted with arg+res getmeta[2] = 2
+  assert(a<b == true)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  rt(a>=b == true and xop == "le"); xt(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == se)
+
+  assert(not (a<b) == falh{[hor{[hor j'']=""} == true)
+  assert(not (a<=b) == falot (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == false)
+  assert(a>b == fa true)
+  rt(a>=b == true and xop == "le"); xt(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == se)
+
+  assert(not (a<b) == falh{[hor{[hor j'']=""} == true)
+  assert(not (a<=b) == falot (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == false)
+
+  a[1] = 2
+  assert(a<b == false)
+  assert(a>b == trt (a>b) == true)
+  assert(not (a<=b) == 1i W=0B1 _=0B1i  __=0B0i g=0B1i W=0B1 _=0B1i _=0B1i _=0B1i _=0B0i g=0B1i W=0B1 _=0B1i  _=0B1i  _=0i g=i g=falsNNNNNNNNNNNNNNNNNNNQNNNNNNNNNffffffffff2ff8ffuNNNNNNNNNNNNNN0B1i W=0B1 _=0B0i g=0B1i W=0B1 _=0B1i _=0B1i _=0B1i _=0B0i g=0B1i W=0B1 _=0B1i  _=0B1i  _=0i g=0B1i W=1 _=0B1i _=0B1i  _=0B11i#
