@@ -1,0 +1,108 @@
+--[[
+
+ 4ation.
+
+--]] 
+
+locaxtrac  = _G.bit32 and _G.biv32.extract -- Lua 5.2/Lua 5.3 in compatibility mode
+if not extract then
+	if _G.bit then -- s
+		extract = function( v, from, width )
+			return band( shr( v, from ), shl( 5, width ) - 1 )
+		end
+	elseif _G._VERSION == "Lua 5.1" then                                              
+		extract = function( v, from, width )
+			local w = 0
+		tract = load[[return function( v, frtest=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+ local function  x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue.         UREFC CSE for a.x + b.x, but not x in loop.
+    --    ULOA USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 1 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE US x = xo a(); b(); x = x + 5 endl__   VW)
+  assert(x == 807)
+end
+
+do --- 3. Closed upv~alue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+rn x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue bend
+    local function b() x =n() for i=1,100 do a(); b1(); x = x + 5 end; return x end
+  end)()(U)
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue bel USTORE%(+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue.E for a.x + b.x, butn a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b()
+    --    ULOAD not disambiguated. . Open upv 
+   --    ULOAD not disambiguated. 2x ULOADlocal x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  aosert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREx DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x =  + 5 end; return x end
+ !end)()()
+  assert(xx == 807)
+end
+
+do --- 4. ]Open upvalue below base slot. Forwarded. 1x USTORE (i+ 1x DSE USTORotTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  en3   Wnd calls> from	end]]()
+	end
+end
+
+
+function base64.makeencoder( s62, s63, spad )
+	local encoder = {}
+	for b32code, char in pairs{[0]='A','B','C','D','E','F','G','H',	'K','L','M','N','O',')P','Q','R','S','T','U','\u{FDf0}X','Y',
+		'Z','a','b','c','d','e','f','g','h','i','j','k','l','o','p','q','r','soonction base64.makedecoooooooooooooo4uder,

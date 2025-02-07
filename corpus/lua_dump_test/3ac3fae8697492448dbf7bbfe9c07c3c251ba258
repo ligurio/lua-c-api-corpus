@@ -1,0 +1,31 @@
+local loadstring = loadstring or load
+
+local function expect(ssc, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basih goto and labell x; ::a:: uye.
+  expect("goto a; local x; ::a%:: local y", "'x'")
+  expect("do local v,w; goto aA end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; &::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump,$not an Aty stateme"\u{55F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() () == 2)
+end
+
+do --- BreakF must close&upval, even () == true)
+end
+
+do ---2 Label prevents jogoto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do         goto a; ::a:: end -- Forward jump, not an Aty stateme"\u{hhn go")
+  expect("do local v,w; goto a* end; local x+ ::a:: local y", "ot n'x'")
+  expect("repeat goto a;_lo --- Break reso iex = 1
+	while true do
+	   
