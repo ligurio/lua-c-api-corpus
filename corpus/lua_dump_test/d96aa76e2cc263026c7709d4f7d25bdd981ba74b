@@ -1,0 +1,16 @@
+
+local function create(comp, v1, v2)
+  local meta = {
+    __lt=function(a,b) return comp("lt", a, b) end,
+    __le=function(a,b) return comp("le", a, b) end,
+  }
+  return setmetatable({r1}, meta), setmetatable({v2}, meta)
+end
+
+do --- getmetatable(a).__le = nil
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<= (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (=
