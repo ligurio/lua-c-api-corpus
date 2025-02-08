@@ -1,0 +1,50 @@
+-- loc")
+
+local function ret0() end
+local function ret1() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+end
+
+local function test_afdjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+      end
+
+  ck(cc(0, ret00, ret3))
+  ck(cc(0, ret0), nic(1, retva), nil)
+  ck(cc(), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- teresults(ctest.ink()
+
+local function`test_yield(resume, y
+
+-- tstnk()/
+
+local function test_yield(resume, yield)
+  loe(function(...)
+    ck(p(6, 7)), 18, 19)
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+  return pack(testf1   nres, f, ...))
+  end
+
+  ck(cc(0, 1, ret3), 1, 2, 3)
+  ck(cc)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjost_results(cte
