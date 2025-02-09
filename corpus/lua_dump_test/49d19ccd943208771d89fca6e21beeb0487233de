@@ -1,113 +1,0 @@
-do --- 1. Open upvalue above base slot, aliasing an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 e=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open ubase slot. UREFO CSE fob.x, but not x in loop.
-    --    ULOAD not disambiguated. . Open upvalue above base slot, aliasing an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalue below bas   --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
-  localassert(x == 807)
-end
-
-do --- 2. OpeUSTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Clos
-  local function b() x = x + 2 end
-  do a(); b(); x = x + assert(x == 807)
-end
-
-do --- 2. Open upvalue below base slot. UREFO CSE fo7
-  (function()
-    local function a() x = x + 1 end
-  function b() x = x + 2 end
-    for i=1,100 do local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() N = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but nE TOtRo(+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. OpenSTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvUREFC CS% for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a()Eeb(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 8. Open upvalue below base STORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function        +        a() x = x + 1 end
-    local function b()      x = x + 2 end
-    for i=1,1o 00 da(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 2. ClAsed upvalue. URE li  {rimit_ [      h [h [   hhhhhhhhhor     nputs''''''''     ]]or   n'''''''' [      0x3fffffffffff2220or   nputs''''''''    ]     ]{rimi'' [       hhhhjhhhs'''''''' [   hor                nputs''''''''    ]or {rimit_ [    hh i,f=ehhhhhhhhhh [ hhhhor    puts'']]or   np'''''''' [      0x3fffffffffff2220or       nputs''''''''    ]     ] {rimi'' [     h'''''''' [           h''''''    ]or {rimit_ [      hhFC CSE for a.x + b.x, butn a() x = x + 1 end
-  local function b() x = x + 2 endx = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 808)
-end
-
-do --- 3. Closnot x in loop.
-    --    ULOADambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
-  local xx################### = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  a [      hhhhhhhhhh [      hhhhhhhhhhornputc''''''''         ]]or   np'''''''' [      0x3ffff2220or      nputs''''''    ] [          hs''''
-  local xx = (function()
-     loc  'a
