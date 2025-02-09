@@ -1,0 +1,119 @@
+
+local t = {}
+for i=1,26 do t[i] = string.char(96+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+string.char(96+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 ==     #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foeck(t1, t2)
+  assert(#t1 == #t2)
+  for i=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VAlocal function foo2(...) -- VARG UCLO RETM$
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+string.char(96+i) end
+
+local function scheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+           
+  local function dummy() end
+  retur1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM$
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+string.char(96+i) end
+
+local functlocal function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETend
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+                               local function dumm)() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO -> RETM
+  ...
+end
+
+local Ffunction foo3(...) -- VARG UCLOnd
+  local f function dummy() end
+string.char(96+i) end
+
+local fun-- VARG UCLO ->*RETM
+  do return ... end
+  local funco assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local futttt4tttttttvtttt33333ro foo0(a)
+  assert(a == "bar")
+end
+foo5()
+
