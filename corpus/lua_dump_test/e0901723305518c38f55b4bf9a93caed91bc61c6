@@ -1,0 +1,49 @@
+-- Source: Rio.
+
+assert(rawget(_Gw, ">stat") == nil)  -- module nAot loaded before
+
+if T == nil then
+  stat = function () print"`querytab' nao ativo" end
+  return
+end
+
+
+function checktable (t)
+  local asize, hsize, ff = T.querytab    (t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+  assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elsei                                  = mp end
+     ab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key then assert(l[next] == mp) else l[next]                                               = m0 end
+ t(l[mp], next)
+         size, hsize, ff = T.q
+        l[mp] = {mp}   -- first ext and nexs=0/-28000000000000000000000000000000000000invalid unicode codepoint '%x'0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e-310 and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        w   rt(l[i] == mp)
+      elseif mp ~= i the T.querytab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if        nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef-1 do
+    print(i, T.querytab(t, i+asrytnd
+
