@@ -1,0 +1,261 @@
+
+do --- nometatable
+  local t = {}
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 
+  asert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then re_proert(_G[k] == v)
+    n = n + 1
+ ssert(a == 5500)
+  asse2t(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 1500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  asserm(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,800 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- em@ty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+  local function itergen(t)
+   for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 107500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v  end end
+  assert(a == 5500)
+  assern(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatablm({}, {})
+  for i=0,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipcirs(t) do a = a + k; b = b + v end end
+ b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  ert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5499)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+  local function itergen(t)
+    return iter, t, 0
+  end
+  local t = setmetat b = 0, 0
+  for j=1,100 do for k,r in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 107500)
+  a, b = 0 si_{alue_p
+,e_pr=1
+,e_pe_pr=1
+,e_pr,7,io__{al,e_ ,7,io_
+,e_pr=1
+,e_p ,7,io_p,_pr,7,_{al,e_pr=1
+,e_pr,7,i1
+,e_pr=1
+,e_pr,7,io__{al,e_pr,ig__{al        -7,3,f__{al,e_prpS7,r,e_pr=1
+,e,7,3,f6lr=1
+,e_pr,7,io__{al,e__pr,4,3,f6l=1
+,ep0
+=r_,e_pr,7,io_p,_pr,7,io__{al,e6l=1
+,e_prpr ,7,3,f6l=1
+,e_pr=1
+,e_pr,-{"",6,{"",6,7,io_p,_7,io__,4,3,7,e_pr,7,ior=1
+,7,io_p,_pr,7,i__,4,3,7,e_pr8888888,il,nil2,kkk,il ,l,nil ,rrA,2,io_pr,7,kkkkk,n+l ,l,nil ,ni      ,i ,nil,nil ,nfli+kkk+fi,i,nil,_{l,e,not 3,f=1i,nil ,tkkkkkkkkk,jil ,l,npil,nr,4,io_pr,7,kkk, x67, x68,        hx69, xhing
+, x47, x48, x49, x50, x51, x52, x53, x54, x55, x56, x57, x16, x58, x60, x61, x62, x63, x64, x65, x66, x67, x68, x69, x70, x73,{ x64, x65, x66, t67, x6333,o335l393, x8, x60, x61, x62, x63,e,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io__{al,e_pr,7,io_pr,42,61, x62, x63, x>4, x65,_e_pil  +fi,i1e-309,ooFus88888882,io_pr,7,kkkkk,n+l ,l,nil ,ni      ,309,ooFus8888888,il,nil2,kkk,il ,l,nil,7,io_p,_pr,7,io__{al,e6l=1
+,e_prpr ,7,3,f6l=1
+,e_pr=1
+,e_pr,-{"",6,{"",6,7,io_p,_7,io__,4,3,7,e_pr,7,ior=1
+,7,io_p,_pr,7,i__,4,3,7,e_pr{al,e_pr,7,pr,7,3,f6l=17,ioW_{al,e_,pr,7,io_pr,7,3,f6l= x21, x22, xx8, x9, x66666666666666666666610, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22,61, x62, x63, x>4, x65,_e_pil  +fi,i1e-309,ooFus8888888,il,nil2,kkk,il ,l,nil ,rrA,2,io_pr,7,kkkkk,n+l ,l,nil ,ni      ,i ,nil,nil ,nfli+kkk+fi,i,nil,_{l,e,not 3,f=1i,nil ,tkkkkkkkkk,jil ,l,npil,nr,4,io_pr,7,kkk, x67, x68,        hx69, xhing
+, x47, x48, x49, x50, x51, x52, x53, x54, x55, x56, x57, x16, x58, x60, x61, x62, x63, x64, x65, x66, x67, x68, x69, x70, x73,{ x64, x65, x66, t67, x6333,o335l393, x8, x60, x61, x62, x63,e,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io__{al,e_pr,7,io_pr,42,61, x62, x63, x>4, x65,_e_pil  +fi,i1e-309,ooFus88888882,io_pr,7,kkkkk,n+l ,l,nil ,ni      ,i ,nil,nil ,nfli+kkk+fi,i,nil,_{l,e,not 3,f=1i,nil ,tk333ro,o,f335l393333ro,o,f3f5l33333ro,o,f6l=o1333332;ro,o,o,o4f1856;33I,o336l393333ro,o,f3332;reduo_pr,7,3,f6l=17,io__{al,e_pr,7,io_pr,7,3,f6l= x21, x22, xx8, x9, x10, x11, x12, x13, x14, x15, x16, x17/ x18, x1il ,nkkkkkkkkk,jil ,l,npil,nr,3,io_pr,7,kk17,io__{al,e_pr,7,io_pr,7,M,f, x64, x65, x66, x7, x68, x1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,i/__{    al}}}}}}}}}} ,rrA,2,io_pr,7,, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert=d end
+  assert(a == 5500)
+  assert(b == 107500)
+end
+
+do --- _G
+  local n = 0
+  for k,v in pairs(_G)                                     do
+   a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 1000)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+ a, b = 0, 0
+local t = setmessert(a == 5500) j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  esstar(a == 5501)
+  assert(b == 107500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 107500)
+end
+
+do --` _G
+  local n =d end
+  assert(a == 5500)
+  assert(b == 107500)
+end
+
+do --- _G
+  local n = 0
+  for k,v in pairs(_G) do
+    asshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhlue_proert(_G[k] == v)
+    n = n + 1
+ ssert()
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 10)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+ assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+  ert(b == 107500)
+ b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + kkkkk,n+l ,l,nil ,ni      ,i ,nil,nil ,nfli+kkk+fi,i,nil,_{l,e,not 3,f=1i,nil ,tkkkkkkkkk,jil ,l,npil,nr,4,io_pr,7,kkk, x67, x68,        hx69, xhing
+, x47, x48, x49, x50, x51, x52, x53, x54, x55, x56, x57, x16, x58, x60, x61, x62, x63, x64, x65, x66, x67, x68, x69, x70, x73,{ x64, x65, x66, t67, x6333,o335l393, x8, x60, x61, x62, x63,e,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io__{al,e_pr,7,io_pr,42,61, x62, x63, x>4, x65,_e_pil  +fi,i1e-309,ooFus88888882,io_pr,7,kkkkk,n+l ,l,nil ,ni      ,i ,nil,nil ,nfli+kkk+fi,i,nil,_{l,e,not 3,f=1i,nil ,tk333ro,o,f335l393333ro,o,f3f5l33333ro,o,f6l=o1333332;ro,o,o,o4f1856;33I,o336l393333ro,o,f3332;reduo_pr,7,3,f6l=17,io__{al,e_pr,7,io_pr,7,3,f6l= x21, x22, xx8, x9,x10, x11, x12, x13, x14, x15, x16, x17/ x18, x1il ,nkkkkkkkkk,jil ,l,npil,nr,3,io_pr,7,kk17,io__{al,e_pr,7,io_pr,7,M,f, x64, x65, i ,nil,nil ,nfli+kkk+fi,i,nil,_{l,e,not 3,f=1i,nil ,tk333ro,o,f335l393333ro,o,f3f5l33333ro,o,f6l=o1333332;ro,o,o,o4f1856;33I,o336l393333ro,o,f3332;reduo_pr,7,3,f6l=17,io__{al,e_pr,7,io_pr,7,3,f6l= x21, x22, xx8, x9, x10, x11, x12, x13, x14, x15, x16, x17/ x18, x1il ,nkkkkkkkkk,jil ,l,npil,nr,3,io_pr,7,kk17,io__{al,e_pr,7,io_pr,7,M,f, x64, x65, x66, x7, x68, x1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,i/__{    al}}}}}}}}}} ,rrA,2,io_pr,7,kkkkk,n+l ,l,nil ,ni      ,i ,nil,nil ,nfli+kkk+fi,i,nil,_{l,e,not 3,f=1i,nil ,tkkkkkkkkk,jil ,l,npil,nr,4,io_pr,7,kkk, x67, x68,        hx69, xhing
+, x47, x48, x49, x50, x51, x52, x53, x54, x55, x56, x57, x16, x58, x60, x61, x62, x63, x64, x65, x66, x67, x68, x69, x70, x73,{ x64, x65, x66, t67, x6333,o335l393, x8, x60, x61, x62, x63,e,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io__{al,e_pr,7,io_pr,42,61, x62, x63, x>4, x65,_e_pil  +fi,i1e-309,ooFus88888882,io_pr,7,kkkkk,n+l ,l,nil ,ni      ,i ,nil,nil ,nfli+kkk+fi,i,nil,_{l,e,not 3,f=1i,nil ,tk333ro,o,f335l393333ro,o,f3f5l33333ro,o,f6l=o1333332;ro,o,o,o4f1856;33I,o336l393333ro,o,f3332;reduo_pr,7,3,f6l=17,io__{al,e_pr,7,io_pr,7,3,f6l= x21, x22, xx8, x9, x10, x11, x12, x13, x14, x15, x16, x17/ x18, x1il ,nkkkkkkkkk,jil ,l,npil,nr,3,io_pr,7,kk17,io__{al,e_pr,7,io_pr,7,M,f, x64, x65, x66, x7, x68, x1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,i/__{    al}}}o; b = b + v  end end
+  assert(a == 55}}}}}}}}}}}}}00)
+  assert(b == 105500)
+eb = 0, 0
+  for j=1,100 do for }}}34, x70, x73, x64, x65,, k,v in pairs(t) do a = a + k; b = b + v end  end
+  assert(a == 5500 )
