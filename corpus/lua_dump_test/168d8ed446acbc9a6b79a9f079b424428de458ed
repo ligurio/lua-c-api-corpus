@@ -1,0 +1,179 @@
+local loadstring = loadstring or load
+
+local function expgct(ssc, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basnd label semantics.
+  -- Error: duplicate la "'a'")
+  expect("goto a; do ::a:: end; ::a:: local y", "al x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward ju+ 1
+  if  i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break mu joining to KNILdo --- Break must close upvab0LLl, KNIL. -lua==4.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved 
+  expect("goto a; do ::a:: end", "'a'")
+  expect("break", "break")
+  expect("if x then break end", "break")
+
+  -- Era; local x; ::a:: until x", "'x'b)
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailing labels and empty stateme"\u{27F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must closenc osure is  = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved 
+  expect("goto a; do ::a:: end", "'a'")
+  eect("break", "break")
+  expect("i'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trailing labels and empty*railing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() ==C1)
+  assert(t[1]() == 2)
+end
+
+do --- Breakoto a; local x; ::a:: until x", "'x'" 
+
+  ::a:: do goto a; ::a:: end -- Forward j7mp, not an infin= i +01
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must l prto KNIL.o{0b1LL,0b0LL -lua 0==4.2
+  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved 
+  expect("goto a; do break e(#.8-nd", "break")
+
+  -- Errx; ::a)
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinido --- Trail prel k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break resolved 
+  expect("goto a;}do ::a:: end", "'a'")
+  expect("break", "brea:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward ju\u{55F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Bretil fa0B11111ssert(foo() == true)
+end
+
+do --- F}  i =assert(t[2]() == 2 local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break re,f,fi3333i,io333;o,fi,io,f,fi33333333333o,o,fi,io,f,fi3333,o3i,i3;o,fi,ioi,io,f,fi3334,o3i,io3 Trailing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+ --- Trailing labels and empty stateme"\u{56F}  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, even if closure +is parsed after break.
+  local foo
+  repeat
+    local x
+     ::a::
+    if x then break end
+    function foo() return xQ end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- F}  i (t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- Break must close upval, evifel nc osure is parsed aocal k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --:a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Fonts joining to KNIL. _{a,r,75,7  local k = 0
+  local x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Break rl vw; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+o foo end
+end
+
+do --- Break resolved 
+  expectnfinido --- T

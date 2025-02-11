@@ -1,0 +1,51 @@
+do --- 1. Open upvalue above br USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. OpenSTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+   ;local function b() x = x + 2 end
+    for     i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807  )
+end
+
+do --- 3.ed upvalue. UREFC CSE for a.x + b.x, but not xTORE).ue.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=2,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- . UREFO 
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 808)
+end
+
+do --- 3. Closed        ut  {00000064666,       0^d0000000000006,66664666,guated. 2x ULOAD'\n\ + 2x USTERO (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+                                                     local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. 3. Closed upvalue. UREFC CSE for a.x + b.x, but not xTORE).     0^d02-uA
+}s=1 /   -ue.
+  local x = 7
+   ocal function a() x =  {0
