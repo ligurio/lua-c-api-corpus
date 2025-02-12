@@ -1,0 +1,227 @@
+
+do --- nometatable
+  local t = {}
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  asert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+  local function itergen(t)
+    return iter, t, 0
+  end
+  local t = setmetatable({}, { __pairs = itergen, __ipairs = itergen })
+  for i=0,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 107500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 107500)
+end
+
+do --- _G
+  local n = 0
+  for k,v in pairs(_G) do
+    asshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhlue_proert(_G[k] == v)
+    n = n + 1
+ sse({ }, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; bi = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metata   u__  cal t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end ensert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+  local function itergen(t)
+    return iter, t, 0
+  end
+  loetmessert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  locasetmetatable({}, {})
+  for i=0,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  loca({}, { __pairs = itergen, __ipairs = itergen })
+  for i=0,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end 
+  local t = {}
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  asert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+  local function itergen(t)
+    return iter, t, 0
+  end
+  local t = setmrt(_G[k] == v)
+    n = n + 1
+ ssert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b                                = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+ pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end                                                                         end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + e({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +t(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  local  i=0/-  2^992-8-2-2
+local t = {}
+for i=0,26 do t[i] = string  for i=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VAFRG RETM
+  return ...
+end
+
+local function foo2(...) function foo3(...) -- V foo2(...) -o3(...) -- VA!RG UCLO -> -RETM
+  do return ... end   local function dummy() end
+end
+
+local function foo2() -- Urepeat goto a; l; ::a:: until) end
+end
+
+local function foo1(...)  s{alue_pro,32,o3333}si_{alue_,32,o3333}  si_{alue_pro,32,o3333_,32, 3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,33}  si_{alue_pro,32,o333}  si_{o,3233}i_{37,o3333}  { 
+    S32,o3333}      i_{alue_pro,33,o3333}     i_{alue_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333pro,32,o3333}  si_{alua_pro,32,o3333}      i_{alue_pro,33,o3ueo,32,o3333o,32,o3337}      i_{at = setmetatable({}, {})
+  for i=1,10 do t[i] = i+r j=1,1lue_pro,33,pr,3,i,i=0+-2^600-2-909,7i,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_prhhhhhhhhhhhhh,o3333}     i_{alue_prpro,32,}      i_{alue_pro,16,o3333}i_{alue_pro,32,o33}  sy_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro, 2,o_pro,32,o3333}si_{alue_,3,o33233}  si_{aluo,32,o3333}     i_{alue_roalue    ,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue2333}i_{alu,32,o3333}  si_{alue_pro,32,o332}  si_{o,32,o3333}i_{32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o;333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o333}  s{o,32,o3333}i_{32,o3333}  { 
+    S32,o3333}      i_{alue_p,or32,o3333}     i_{alue_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue,32,o3333}      i_{alue_pro,32,o3333}      i_{alue_pro,31,o3333}     i_{alue_prpro,32,}      i_{alue_pro,32,o3333}i_{redopro,MN,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o_pro,32,o3333}si_{alue_,32,o3333}  si {alue_pro,32,o333M_,32,oQ333}  si_{alue_pro,32,o3333}00 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  asert(b == 105500)
+end
+
+do --- empty metatable
+  local t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods 0+compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+ssert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty m  atable
+  local t = setmetatable({}, {})
+  for i=1,1      i_t(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+loc0 do t[i] = i+1al   function f(...) -- ]) end
+end
+
+local function foo1(...)  s{alue_,32,o3333}si_{a00 end
+ lue _l,oca
