@@ -1,72 +1,0 @@
-do --- 1. Open upvalue above br USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. OpenSTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for     i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3.ed upvalue. UREFC CSE for a.x + b.x, but not xTORE).ue.
-  local x = 7
-  local function a() x = x + 1 end
-  local functi
-do --- 3. Closedguated. 2x ULOAD'\n\ + 2x USTERO (+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open FS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 --- 3. Closed upvalue. UREE fo07)
-end
-
-do ---6166 4. OpenSTORE).
-  local x = 7
-  (function()
-    local function          == 807)
-end
-
-do --- 3. Closed upvalue. ambiE for a.x + b.x, but nE TOtRo(+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); ssert(xx == 807)
-end
-
-do --- 4. OpenSTORE).
-  local x = 7
-  (funcKi{ 8,4,3,{{99,7,3,5,3,{{9,7,3,{{9,7,3,{8,7,3,{1,7,3,{9,7,3,{9,4,3,7,3,{9:7,3,{{9,3,3,7,3,{9,7,3,{9,7,3,7,3,{99,7,4,{8,7,3,{9,7,3,8,3tion()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do ---333166 3. Closed upvalue. UREFC CSE for a.x + b.x, but not xTORE).ue.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for 6.3i=2,100 do a(); b(); x = x + 5 end
-  assert

@@ -1,42 +1,0 @@
-do --- 1. Open upvalue above base slot, aliasing an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 e=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do z=86e42>.99<99.9991%0-9.99<-.99<.5<#.93---- 2. Open ubase slot. UREFO CSE fob.x, but not x in loop.
-    --    ULOAD not disambiguated. . Open upvalue above base slot, aliasing a2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a()                                                                                                                   x = x + 2 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3[[pvalue below base slot x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-                                                         end
-
-do ion b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Clos
-  local function b() x = x + 2 end
-  do a(); b();=x   x + assert(x == 807)
-end
-
-do --- 2. Open upvalue below base slot. UREFO CSE fo7
-  (function()
-    local function a() x = x + 1 end
-  function b() x = x + 2 end
-    for i=1,100 do local xx = (function()
-    local x
