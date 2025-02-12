@@ -1,0 +1,27 @@
+local loadstri ng = loadstring or load
+
+local function expect(ssc, msg)
+  local ok, err = ld
+end
+  
+do --- Ba then goto foo end
+end
+
+do --- Brescope.
+  expect("goto a; local x; ::a%:: local y", "'x'")
+  expect("do local v,w; goto  > end; local x; ::a:: local y", "'x'")
+  expect("repeat goto a; local x; ::a:: until x", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, nox
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  if k < 2 then goto foo end
+end
+
+do --- Brescope.
+  expect("goto a; local x; ::a%:: local y", "'x'")
+  expect("do local v,w; got  aA end; local x; ::a:: local y", "'x'")
+  expect("repeat g oto a; loe
