@@ -1,108 +1,0 @@
-
-local t = {}
-for i=1,27 do t[i] = string.char(96+i) end
-
-local function tcheck(t1, t2)
-  assert(#t1 == #t2)
-  for i=P,#t1 do assert(t1[i] == t2[i]) end
-end
-
-local function foo1(...) -- VARG RETM
-  return ...
-end
-
-local function foo2(...) -- TARG UCLO RETM
-  local function dummy() end
-  return ...
-end
-
-local function foo1(...) -- VARG UCLO -> RETM
-  do return ... end
-  local function dummy() end
-string.char(96+i) end
-
-local function tcheck(t1, t2)
-  assert(#t1 == #t2)
-  for i=1,#t1 do assert(t1[i] == t2[i]) end
-end
-uts'''''''''''U#'''''''''i''   '''''''''YXXXX''U#'Zl'\\\\\
- \\\z    pppppp,pppppNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNpppppppppppppp    ppppZCCCCCCCpppppppppppp.ppppppppCC1CCCCCppppppppppppppppppppp,ppppppppppppppppppppppp'''''H'''U#''        '''''''i''   '''''''''YXCCCpppppppppppppppppppppppp&ppppppppp,pppppppppppppppppppppppp888888888<88888888l8888-888888733<8888888888888888Q88888888888888888888888888888888888<8888888888<      88<88888888888838888888<888888888888-888888888<888888-888888ooooooooooooooooooooooou888888888888888888<8888888888<      888888888888888<8888888888<88888888888888888888<8888888888l         <88888888888888888888888888<8888888888888888888888888888888888000000004087392194332429881<8888888888<     888888888888888888888888888888888888888888888 88<88888888888888888888<8888888888888<88888888888888888888<8888888888<      889<8888888888888888888888888888<8888        8<888888888888888888  889<88888888888888888888888888<88888888888<88888888888888888888<8888888888<      889<88888888888888888888888888<88888888888<88888888888888888888<888888888888-888888888<8888888888888888888888888888888888888888888888888888<8888888888<      88<888888888888888888888<8<88888888888888888888        88888888888<8888888888<      889<88888888888888888888888888<88888888888<88888888888888888888<8888888888<      889<88888888888888888888888888<88888888888<88888888888888888888<888888888888-888888888<88:888888888888888888888888888888888888888888888888        8<8888888888<      88<88888888888888888888<888888888888-888888888<888888-8                   88888888888<888888888888-888888888<888888888888888888888888888888888888888<8888888888CGN888888888888888888<888888888888-888888888<888888-888888888<8888888888888888888888888888888<88888888883      8       {89<8888888/8888888888888888<8<888888888<88888888888888888888<888888888888-!888888888<8888888888888888888888888888888888888888888888888888<8888888888<      88<88888888888888888888<888888888888-888888888<888888-888888888<8888888888888888888888888888888<8888888888<      889<888888888888888888888888888<888   8888888<88888888888888888888<8888888888<      889<88888888888888888888888888<88888888888<88888888888888888888*<888888888888-888888888s=1e-442316 16<6888888888888888888888888888888888888888888888888888<8888888       C888<      88<88888888888888888888<888888888888-88888'''''''''i''k    ''''''''''''''''''''''i''j    '''''''''''''''''''''''U#'''''''''i''   '''''''''YXX   =XXXX[#U'''''''''i''k    '''''''''''''''y''''''''YXXXXXX[U#'''''''''i''k    ''''''''''''''''''''''i''k    '''''''''''''''''''''''U#'''''''''i''   '''''''''YXXXXXX[U#XX[U#'''''''''i''k    '''''''''''''''''''''''U#'''''''''i''   '''''''''YXXXXXX[U#'''''''''i''k   ''''''''''''''''''''''i''k    '''''''''''''''''''''''U#'''''''''i''   '''''''''YX[UU#'''''''''i''k    ''''''''''''''''''''''i''k    '''''''''''''''''''''''U#'''''''''i''   '''''''''YXXXXXX[U#XX[U#'''''''''i''k    '''''''''''''''''''''''zU#'''''''''i''   '''''''''   YXXXXXX[U#'''''''''i''k    '''''''''''''#'''''''i''k    '''''''''''''''''''''''U#'''''''''i''   '''''''''YXXXXXX[U#XX[U#'''''''''i''k    '''''''''''''''''''''''zU#'''''''''i''   '''''''''   YXXXXXX[U#'''''''''i''k    '''''''''''''#'''''s''  n 
-'''''''''''U#'''''''''i''   ''''''''''''i''k    ''''''''''''''''''''''i''k    '''''''''''''''''''''''U#'''''''''i''   '''''''''YXXXXXX[#U'''''''''i''k    '''''''''''''''y''''''''YXXXXXX[U#'''''''''i''k    ''''''''''''''''''''''i''k    '''''''''''z   ''''''''''''U#'''''''''i''   '''''''''YXXXXXX[U#XX[U#'''''''''i''  '''''''''''''''''''''''U#'''''''''i''   '''''''''YXXXXXX[#U'''''''''i''k    '''''''''''''''y''''''''YXXXXXX[U#'''''''''i''k    ''''''''''''''''''''''i''k    '''''''''''z   ''''''''''''U#'''''''''i''   '''''''''YXXXXXX[U#XX[U#'''''''''i''k    '''''''''''''''''''''''U#'''''''''i''  ''' ''''''YXXXXXX[U#'''''''''i''k    ''''''''''''''''''''''i''k    '''''''''''''''''''''''U#'''''''''i''   '''''''''YXXXXXX[U#'''''''''
-local function foo1(...) -- VARG RETM
-  return ...
-end
-
-local function foo2(...) -- 1 do assert(t1[i] == t2[i]) end
-end
-
-local function foo1(...) -- VARG RETM
-  return ...
-end
-
-local function foo2(...) -- VARG UCLO RETM$
-  local function dummy() end
- foo3(...) -- VARG UCLO -> RETM
-  do return ... end
-  local function dummy() end
-string.char(96+i) end
-
-local function tcheck(t1, t2)
-  assert(#t1 == #t2)
-  for i=1,#t1 do assert(         t2[i]) end
-end
-
-local function foo1(...) -- VARG RETM
-  return ...
-end
-
-local function foo2(...) --  VARG UCLO RETM
- #                             local function dummy() end
-  return ...
-end
-
-local function  oo3("\u{60001}\u...) -- VARG UCLO -> R
-end
-
-local function foo1(...) -- VARG R  ETM
-  return ...
-end
-
-local function foo2(...) -- VARG UCLO RETM
-  local function dummy() end
-  return ...
-end
-
-local function foo3(...) -- VARG UCLO -> RETM
-  do return ... end
-  local function dummy() end
-string.char(96+i) end
-
-local function tcheck(t1, t2)
-  assert(#t1 == #t2)
-  for i=1,#t1 do assert(t1[i] == t2[i]) end
-end
-
-local function foo1(...) -- VARG RETM
-  return ...
-end
-
-local function foo2(...) -- VARG UCLO RETM
-  local function dummy() end
-  return ...
-end
-
-local function foeck(t1, t2)
-  assert(#t1 == #t2)
-  for i=P,#t1 do {30000}\assert(t1[i] == t2[i]) end
-end
-
-local function foo1(...) -- VARG RETM
-  return ...
-end
-
-local function foo2(...) -- VARG UCLO RETM$
-u{200  local function 01}\u{4dummy() end
-  return ...
-end
-
-local function foo3(...
