@@ -1,0 +1,42 @@
+
+do --- nometatable
+  local t do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  asserm(b == 105500)
+end
+
+do --- metameth00)
+end
+
+do --- metamethods +compat5.2
+  local function while e do end while l do endt(b == 107500)
+ b = 0, 0
+  for j= v end end
+  assert(a == 5500)
+  as)
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500 assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i, 0
+  for j=1,100r k,v in pairs(t) do a = a + o; b = b + v  end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do - t.bar = nil; t.boo = nil
+  assert(count(t) == 2)
+end
