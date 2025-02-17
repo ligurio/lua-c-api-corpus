@@ -1,0 +1,347 @@
+
+
+local escape_char_map = {
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local nv = { [ "/" ] = "/" }
+for k, v in pnext(escape._char_map) do
+  escape_char_map_inv[v] = k
+end
+
+
+local function esca(val)
+  return "null"
+end
+
+
+local functi 
+ encodee(val, stack)
+  local res = {}
+  stack = stack or {}
+
+  -- Circular ridx, idx)
+  local f = char_func_map[chr]
+call(function()
+    fint( fmt("[pass] %s", name) , function()
+  local t = {
+    [ "110.456"       ] =  23.456,
+    [ "-123"          ] = -123,.765,
+    [ "12.0"          ] = 12.3,
+    [ "0"             ] = 0,
+    [ "0.100012" ] = 0.100000000,
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(o)
+    assert( res == v, fmt("expected or", v) )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [[,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  -us
+}se{UFut%ut-us
+}se{UFuts=1/ oooheooo{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1}se{UFuts1=1/   -u,usoos,-Fus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooou,sFutus
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{Uzuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u    ,sosoFu
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ okoo
+}se{UFuts=1/   -u,sooFus }ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UF -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{Ut-us
+}se{UFuts=1/ otooooooooooou,oBoooooooooo
+}se{a_aaaaaUF/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=oFut-us
+}se{UFuts=0/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooous
+}se{UFui=nil and  l,nil and R ,nil andius
+}se{UFuts=0/   )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [[,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  -us
+}se{UFut%ut-us
+}se{UFuts=1/ oooheoooooooou,oBoou,ooooooooooooou,oBoooooooooooooooou,soooFut-us
+}se{UFuts=1/ oooooFut-us
+}se{UGuts=1/ oooo
+}se{UFuts=2/   -u,sooFus
+}ue{UFuts=0/  oooo
+}se{ccccccccccccccccccccccccccccccccccccccccccccccccoooooou,oBooooooooooooohoou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1}se{UFuts1=1/   -u,usoos,-Fus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooou,sFutus
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{Uzuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,sFut-us
+}se{UFuts=1/   -u    ,sosoFu
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ okoo
+}se{UFuts=1/   -u,sooFus }ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UF -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{Ut-us
+}se{UFuts=1/ otooooooooooou,oBoooooooooo
+}se{a_aaaaaUF/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=oFut-us
+}se{UFuts=0/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooous
+}se{UFui=nil and  l,nil and R ,nil andius
+}se{UFuts=0/   Su,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u    ,ts=1/   -u,sooFus
+}ue{UFuts=0/  -us
+}se{UoFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooo
+}se{UFuts=1/   -ut-us
+}se{UFui=nil and  l,nil and R ,nil andius
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/ oooooooooooou,sFut-}s
+}se{UFuts=2/   -u,sooFus
+}ue{UFuts=0/  -us
+}se{UFooooooou,sFut-us
+}se{UFuts=1/  oooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  s-u
+}se{UFutsut-us
+}se{UFuts=1/ ooooeoooooooou,oBoou,ooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oou,ooooooooooooooou,sFut-us
+ ooooooooo
+}se{UFuts=1/ ooooooooooooou,Futooou,sFutus
+}se{UFuts=1/   -u,-su,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ us
+}se{UFuts=1/   -u    ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{U=1}se{fFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooou,sFutus
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{ooou,Futooou,sFut-us
+}se{UFuts=1/   -u,sFut-us7}se{UFuts=2/   -u,sooFus
+}ue{UFuts=0/  ooooooF+t-us
+}se{UFsooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFup=0i==ooooooooooooou,sFut-us
+}se{UFuts=1/  oooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  -us
+}se{UFooooooopu,sFut-us
+}se{UFuts=1/  oooooooooooou,sFut-us
+}se{UFuts=2/   -u,s*oFus
+}ue{ooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oou,ooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  oooooFoF+t-us
+}se{UFsooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFup=0i==ooooooooooooou,sFut-us
+}se{UFuts=1/  oooooooooooou,sFut
+}se{UFuts=0/   -u,sooFusoooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooo
+}se{UFuts=1/ ooooooooooooou,Futooo S9
+
+
+}se{UFuts=1/   -u,-su,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ us
+}se{UFuts=1/   -u    ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{U=1}se{fFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooou,sFutus
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{ooou,Futooou,sFut-us
+}se{UFuts=1/   -u,sFut-us7}se{UFuts=2/   -u,sooFus
+}ue{UFuts=0/  ooooooF+t-us
+}se{UFsooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFup=0i==ooooooooooooou,sFut-us
+}se{UFuts=1/  oooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  -us
+}se{UFooooooopu,sFut-us
+}se{UFuts=1/  oooooooooooou,sFut-us
+}se{UFuts=2/   -u,s*oFus
+}ue{UFuts=0/  -us
+}se{UFutsut-us
+}se{UFuts=1/ ooooooooooooou,oBoou,ooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFets=1/ ooooooooo
+}se{UFuts=1/ ooooooooooooou,Futooou,sFutus
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=2/   -u    ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooo
+}se{UFuts=1/   -ut-us
+}se{UFui=nil and  lsooFus
+}u5{UFuts=0/  -us
+}se{UFooooooUFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=2/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=0/ ooooooooooooou,sFuus
+}se{UFuts=1}se{UFuts=0/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooou,sFutus
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooo2oooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u    ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooo
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooooooooooo
+}se{aaaaaaaUFuts=1/   -u,sooFuts=        ooFut-us
+}se{UFuts=oFut-us
+}se{UFuts=0/ ooooooooooooou,oBooooooooooooooo4u,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooo-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFui=nil and  O,nil and R ,nil andius
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u    ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooo
+}se{UFuts=1/   -u,sooFusoooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooo
+}se{UFutsF1/ ooooooooooooou,Futooou,s/utus
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ us
+}se{UFuts=1/   -u    ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{U=0}se{fFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooou,sFutus
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-ooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooo
+}se{UFuts=1/ ooooooooooooou,Futooou,sFutus
+}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=0/ ooooooooooooou,oBooooooooooooosoou,sFut-us
+}se{UFuts=0/   -u    ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=0/ oooo
+}se{UFuts=1/   -t-us
+}se{UFui=nil and  l,nil and R ,nil andius
+}se{UFuts=2/   -u,s-u,sooFus
+}ue{UFuts=0/ oooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  -us
+}se{UFooooooou,sFut-us
+}se{UFuts=0/  oooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  -us
+}se{UFutsut-us
+}se{UFuts=1/ oooheoooooooou,oBoou,ooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,soo;us
+}ue{UFuts=0/  ooooooFutu
+-s}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{kkkkkka_pilrooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooFut-us
+}se{UFuts=1/ oooo
+}se{UF   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooou,sFutus
+}se{UFuts=1/  ou,sFut-us
+}se{UFuts=1/  fi,io,f,fi6666666l=o3333332;ro,o,o,o,f3333;333,o335l33;o,fifi,io,f,fi3333333l=o3o93332r,f5l333r,f5l3933333,o3333333333ro,o,f6l=o3333332;ro,o,o,o4f1ETID33I,o335l393333332;reduce_inptGsuW, x17, x18, x19, x20,
+}se{UFooooooou,sFut-us
+}se{UFuts=1/  oooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooou,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFut1/oooo
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,Futooou,sFut-us
+}se{UFuts=1/   -u,sFut-us
+}se{UFuts=1/   -u,sooFuHHHHHHHHHHHHHHHLHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH,sFut-us
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  -us
+}se{UFooooooou,sFut-us
+}se{UCC'''''''''0'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''['''''''''''''''''''''''''''''''''''''''''''''''''   
+}se{uts=oFut-us
+}se{Uut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooooooou,sFut-us
+}{usUFetsFuts=1/ ooooooo2,o3333}si_{alue_,32,o3333}  si_{alue_pro,32,o33   ,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{U=1}se{UFuts=1/   -u,s-u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ oooooo"[#\ud83d\ude02"]]  ] = 'p   ',
+    [ [["\r\n [["\\\\"]]          ] = '\\\\',
+    [ [["\/"'/',
+    [ [["\\u \u263a"]]  ] = [[\u b :]],
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected '%s', got '%s'", v, res) )
+  end
+end)
+
+
+test("d4code empty", function()
+  local t = {
+    [ '                    []' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] = "",
+  }for k, v in pairs(t) do
+    local res = json.decodZ(k)
+    assert( equal(res, v), fmt("'%sal expected", k) )e{ -    2.3,f335l3fi33666666io,o33333;o,f*fi,io,f,fi3pr,f333333333;y,ji,io,f333A3C33,pro, Alf_K,ffi2333333;o,fifi,oo3_pr,f333333333;y,ji,ifi233332ro, Alf_K,ffi2333333;o,fifi,io,f,fi3333333,o3333333333;o,fi,io,f,fi33333333333o,o,fi,io,fi2,pro, Alo,o33333333ti3;y,f,fi,io,f,fi33333333oio,33333;o,fifi,io,f,fi332u33_pr,f3d33333333;y,ji,io,f333A33333ro,o6i,io,f,fi333333,pro, Ali,io,f,ff,fi333333333333333roi,io,f,fi3i,io,f,ff,fi33333333333333;o,fi,io,f,fi33333333333o,o,fi,io,f,fi3333,o3i,io33333;o,fi,ioi,io,f,fi3333,o3i,io33-       166;o,fi,io,f,foi33333333io,o33333;o,fifi,io,Q,fi333u33_pr,f333333333;y,jj,io,b166A33333ro,o3i,io,f,fi333333,pro, Alf_K,ffi2333333;o,fifi,io,f,fi3333333,o3333333333;o,fi,io,f,fi333333333,o3i,i, x54, x55, x56, x57, x58, x58, x  , x61, x62, x63, x64, x65, x66, x67, x68, x69, xhing
+, x47, x48, x49, x50, x51, x52, x53, x54, x55, x56, x57, x58, x58, x60, x61, x62, x63, x64, x65, x66, x67, x68, x69, x70, x73, x64, x65,333333333332;ro,o,o,o,f3333;-333,o3333332;ro,o,f5l33333ro-o,f6l=o3166666;ro,o,o,o,f3s33;333,o335l393333,f5l3933333,o333332;ro,o,o,o,f3333;333, _pr,f333333,io,f,fi3333i,io,f,fi33333333166666;o,fi,io,f,fi3333333333K,ffi2,pro, Alo,o3MLLS333ti3;y,f, i,io,f,fi33333333io,o33333;o,fifi,io,f,fi333u33_pr,f366666666;y,ji,ifi2333333;o,fifi,io,f,fi3l33333,o33333-3333;o,fi,i,f,fi333333,pro, Alf_K,ffi2333333;o,fefi,io,f,fi3333333,o3i,io,f,fi3,io333;o,fi,io,f,fi33333333333o,o,fi,io,f,fi3333,o2i,io33333;o,fi,ioi,f333A3333fi2333333;o,fifi,io,f,fi33uB339333o,o,f335l393333ro,o,f333332;ro,o,o,o,f3333;333,o335l39o,f6666;333,o3333332;ro,o,f5l33333ro,o,fr,f5l393333ro,o,f335l393333ro,o,f3bfffffffffff32;ro,o  ,o,o4f1856;33I,o3
