@@ -1,0 +1,93 @@
+localloadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do lak end", "break")
+
+  -- 3rror: goto i=tocal fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until(foo() ==true)
+end
+
+do --- L
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("aocal foo
+  repeat
+    local x              ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do ---1L pooooooooooooou l;a::a:: until fooo00019174o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until rt(foo() == true)
+end
+
+do --- Labo l fkoo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false assert(foo() == true)
+end
+
+do --- L        vents ruj dmp, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function fo--0L p goto Da; loc x l;a::a:: until fooo00019174o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    ::a::
+    if x then break end
+Lae
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function fNoo() returak end
+    function foo() return x end
+    x = true
+?       goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prev  ts joining", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jre is parsed after bre goto a
+  until false
+  as
+ pect(src
