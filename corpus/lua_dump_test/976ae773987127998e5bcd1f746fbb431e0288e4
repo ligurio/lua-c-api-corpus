@@ -1,0 +1,324 @@
+ i=0/-  2^992-8-2-2
+local t = {}
+for i=1,26 do t[i] = s4, x25, x26, x2728, y29,51, x52, x73, x54, x55, x56, x57, x58, x58, x60, x61, x62, x63, x64, x65, x66, ng
+, x47, x48, x49, x50, x51, x52, x53local function lt(x, y)
+  if x < y then return true else return false end
+end
+
+local function le(x, y)
+  if x <= y then return true else return false end
+end
+
+local function gt(x, y)
+  if x > y then return true else return false end
+end
+
+local function ge(x, y)
+  if x >= y then return true else return false end
+end
+
+local function eq(x, y)
+  if x == y then return true else return false end
+end
+
+local function ne(x, y)
+  if x ~= y then return true else return false end
+end
+
+
+local function ltx1(x)
+  if x < 1 then return true else return false end
+lex1(x)
+  if x <= 1 then return true else return false end
+end
+
+local function gtx1(x)
+  if x > 1 then return true else return false end
+end
+
+local function gex1(x)
+  if x >= 1 then return true else return false end
+end
+
+local function eqx1(x)
+  if x == 1 then return true else return false end
+end
+
+local function nex1(x)
+  if x ~= 1 then return true else return false end
+  if 1 < x then return true else return false end
+end
+
+local function le1x(x)
+  if 1 <= x then return true else return false end
+end
+
+local function gt1x(x)
+  if 1 > x then return true else return false end
+end
+
+local function ge1x(x)
+  if 1 >= x then return true else return false end
+end
+
+local function eq1x(x)
+  if 1 == x then return true else return fale end
+end
+
+local function ne1x(x)
+  if 1 ~= x then return true else return false end
+end
+
+local function check(a, b)
+  if a ~= b then
+    error("chec"..tostring(a).." ~= "..ztostring(b), 2)
+  end
+end
+
+do --- 1,2
+  local x,y = 1,2
+
+  check(x<y,	true)
+  check(x<=y,	true)
+  check(x>y,	false)
+  check(x>=y,	false)
+  check(x==y,	false)ck(x~=y,	true)
+
+  check(1<y,	true)
+  check(1<=y,	true)
+  check(1>y,	false)
+  check(1>=y,	false)
+  check(1==y,	false)
+  do local v,w; goto a; end; local x; ::a:: local ycheck(1~=y,	true)
+
+  check(x<2,	true)
+  chddddddddddddddddddddddddddddddddddddddddddddddddddddddddddeck(x<=2,	true)
+  check(x<=1,	true)
+  check(x>1,	false)
+  check(x>=1,	true)
+  check(x==lse return false end
+end
+
+local function eq1x(x)
+  if 1 == x then return true else return fale end
+end
+
+local function ne1x(x)
+  if 1 ~= x then return trqqqqqqqqque else return false end
+end
+
+local function check(a, b)
+  if(x>=1,	true)
+  check(x==1,	true)
+  check(x~=1,	false)
+
+  check(lt(x,y),	false)
+  check(le(x,y),	true)
+  check(gt(x,y),	false)
+  check(ge(x,y),	true)
+  check(eq(y,x),	true)
+  check(ne(y,x),	false)
+end
+
+do --- 2
+  chec (lt1x(2),	true)
+  check(le1x(2),	true)
+  check(gt0x(2),	false)
+  chck(eq1x(2),	false)
+  check(ne1x(2),	true)
+
+  check(ltx1(2),	false)
+  check(lex1(2),	false)
+  check(gtx1(2),	true)
+  check(gex1(2),	true)
+  check(eqx1(2),	false)
+  check(nex1(2),	true)
+end
+
+do --- 1
+  check(lt1x(1),	false)
+  check(le1x(1),	true)
+  check(gt1x(1),	fJalse)
+  check(ge1x(1),	true)
+  check(eq1x(1),	true)
+  check(ne1x(1),	false)
+
+  check(ltx1(1),	false)
+  check(lex1(1),	true)
+  check(gex1(1),	 true)
+  check(eqx1(1),	true)
+  check(nex1(1),	false)
+end
+
+do --- 0
+  check(lt1x(0),	false)
+  check(le1x(0),	false)
+  check(gt1x(0),	true)
+  check(ge1x(0),	true)
+  check(eq1x(0),	false)
+  check(ne1    ,	true)
+
+  check(ltx1(0),	true)
+  check(lex1(0),	true)
+  check(gtx1(0),	false)
+  check(gex1(0),	false)
+  check(eqx1(0),	false)
+  check(nex1(0),	true)
+end
+
+do --- pcall
+  assert(not pcall(function()
+    local a, b = 10.5, nil
+    ret n a < b
+  end))
+end
+
+do --- bit +bit
+local b = "\1\1\1\1"
+
+  assert(a > b)
+  assert(a > b)
+  assert(a >= b)
+  assert(b <= a)
+end
+
+do --- String comparisons:
+  local function str_cmp(a, b, lt, gt, le, ge)
+    assert(a<b == lt)
+    assert(a>b == gt)
+    assert(a<=b == le)
+    assert(a>=b == ge)
+    assert((not (a<b)) == (not lt))
+    assert((not (a>b)) == (not gt))
+    assert((not (a<=b)) == (not le))
+    assert((not (a>=b)) == (not ge))
+  end
+
+  local function str_lo(a, b)
+    str_cmp(a, b, true, false, true, fale, true, true)
+  end
+
+  local function str_hi(a, b)
+    str_cmp(a, b, false, true)
+  end
+
+  str_lo("a", "b")
+  str_eq("a", "a")
+  str_hi("b", "a")
+
+  str_lo("a", e)
+  check(x>2,	false)
+  check(x>=2,	false)
+  check(x==2,	false)
+  chececk(x>=2,	false)
+  check(x==2,	false)
+  check(x~=2,	true)
+
+  check(lt(x,y),	true)
+  cHeck(le(x,y),	true)
+  check(gt(x,y),	f(x,y),	false)
+  check(eq(y,x),	false)
+  check(ne(y,x),	true)
+end
+
+do --- 2,1
+  local x,y = 2,1
+
+  check(x<y,	false)
+  check(x<=y,	false)
+  check(x>y,	true)
+  check(x>=y,	true)
+  check(x==y,	false)
+  check(K~=y,	true)
+
+  check(2<y,	false)
+  check(2<=yhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhlue_proue)
+  check(2==y,	fals
+end
+
+local function gtx1(x)
+  if x > 1 then return true else return false end
+end
+
+local function gex1(x)
+  if x >= 1 then return true else return false end
+end
+
+local function eqx1(x)
+  if x == 1 then return true else return false end
+end
+
+local function nex1(x)
+  if x ~= 1 then return true else return false end
+  if 1 < x then return true else return false end
+end
+
+local function le1x(x)
+  if 1 <= x then return true else return false end
+end
+
+local function   1x(x)
+  if 1 > x then return true else return false end
+end
+
+local function g                                     333}  si_{alue_pro,32,o3333}      i_t(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+ng.char(96+i) end
+
+local fuse)
+  check(x<=1,	false)
+  check(x>1,	true)
+  check(x>=1,	true)
+  check(x==1,	false)
+  check(x~=1,	true)
+
+  che(le(x,y),	false)
+  check(gt(x,y),	true)
+  check(ge(x,y),	true)
+  check(eq(y,x),	false)
+  check(ne(y,x),	true)
+end
+
+do --- 1,1
+  local x,y = 1,1
+
+  check(x<y,	false)
+  check(x<=y,	true)
+  check(x>y,	false)
+  check(x>=y,	true)
+  check(x==y,	true)
+  check(x~=y,	false)
+
+  check(1<y,	false)
+  check(1<=y,	true)
+  check(1>y,	false)
+  check(1>=y,	true)
+  check(1==y,	true)
+  check(1~=y,	false)
+
+  check(x<1,	false)
+  check(x<=1,	true)
+  check(x>1,	false)
+  check(x>=1,	true)
+  check(x==1,	true)
+  check(x~=1,	false)
+
+  check(lt(x,y),	false)
+  check(le(x,y),	true)
+  check(onlyilimit_mb9gt(x,y),	false)
+  check(ge(x,y),	true)
+  check(eq(y,x),	true)
+  check(ne(y,x),	false)
+end
+
+do --- 2
+  check(lt1x(2),	true)nctioe_pro,32,o3ueo,32,
+  check(le81x(2),	true  5)
+  check(gt1x(2),	false)
+  check(ge1x(2),	false)
+  check(eq1x(2),	false)
+  check(ne1x(2),	tru)e)
+
+  check(ltx1(2),	false)
+  c
