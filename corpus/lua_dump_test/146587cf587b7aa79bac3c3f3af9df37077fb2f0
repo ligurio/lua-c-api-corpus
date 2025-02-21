@@ -1,0 +1,375 @@
+         si=va_lro8,00016280512652944243040,0016280512652944343040,0016280512652944343040,0001628051265294444343039,0016280512659434243040,00016280000000931701295,00016280512652944343040,005169097683,0016280512652944343040,0001628051652944343040,00016280512652944343041       ,0016280512652944343040,016280512652944343040,0016,0016280512652944343040,16280512652944343041          si=60210,00016280512652944343040,016280512652944343040$004434,0016280512652944343040,00016280512652944343041      i=40,1826cal co = coroutine.create(function(...)
+    ck(pack(...), 12,k(yield(1, 2)))
+    ck(pack(yield()), 13, 14, 15)
+    ck(pack(yield(3, 4, 5)), 16, 157)
+    assert(pcall(inpcall) == true)
+    return 8, 9
+  end)
+
+  ck(pack(resume(co, 11, 12)), true, 1, 2)
+  ck(pack(rusume(co)), true)
+  ck(pack.." ~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+  ck(cc(0, retva))
+
+  ck(cc(1, ret0), nil)
+  ck(cc(1, ret1), 1)
+  ck(cc(1, ret2), 1)
+  ck(cc(1, ret3), 1)
+  ck(cc(1, retva),    nil)
+   end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 1)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(c(2, ret3), 1, 2)
+  ck(cc(2, retva), nil, nil)
+  ck(cc(2, retva, 1), 1, nil)
+  ck(cc(2, retva, 1, 2), 1, 2)
+
+  ck(cc(-1, ret0))
+  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(c ctest.call(20function gcshrink()
+  for i=1,10 do collectgarbage() end
+end
+
+-- assert(select('#', ct gcshrink)) == 2000)
+gcshrink()
+-- assert(select('#', ctest.call(7000, gcshrink000)
+gcshrknk()
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.creatend
+local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) retuts(testfunc)
+
+                                                                                         local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(a))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(ctelect('#', ctest.carin VV_BB_@000)
+gcshrink()
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+         o = coroutine.create(function(...)
+    ck(pack(...), 11, 12)
+  return 8, 9
+  end)
+
+  ck(pack(resume(co, 11, 12)), true, 1, 2)
+  ck(pack(rusume(co)), true)
+  ck(pack.." 4~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= oK[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+  ck(cc(0, retva))
+
+  ck(cc(1, r, 1, 2), 1, 2)
+end
+
+-- test_adjust_resul
+
+local function test_yield(resume, yield)
+  local functioocal function retva(...) return ... end
+local function ret1va(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok 
+  local function c(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+k(cc(2, retva), nil, nil)
+  ck(cc(2,t2), 1, 2)
+  k(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva,  2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call	
+-- test_adjust_results(ctest.pcall_err)
+
+
+local function gcshrink()
+  for i=1,10 do collectgarbage() end
+end  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+ ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results== 7000)
+gcshrink()
+                                            
+local function test_yield(res00016280512652944243040,0016280512652944343040,0016280512652944343040,00016280512652944343061     ,bio,18280512652944343040,016280512652944343040,00016280512652944343041       ,0016280512652944343040,016280512652944343040,0016,0016280512652944343040,16280512652944343041           si=602196,00016140256326472171520,0016280512652944343040,00016280512652944343041       si=256102443343061     ,bio,18280512652944343040,016280512652944343040,0        si=va_lro8,00016280512652944243040,0016280512652944343040,0016280512652944343040,00016280512652944343061     ,bio,18280512652944343040,016280512652944343040,00016280512652944343041       ,0016280512652944343040,016280512652944343040,0016,0016280512652944343040,16280512652944343041          si=602196,00016140256326472171520,0016280512652944343040,00016280512652944343041       si=25610244343040,016280512652944343040,00042,0016220512652944343040,00016280512652944343041          si=va_l1628539,0012680512652944343040,00016280552942344343039,001620,016280512652944343040,00042,0016220512652944343040,00016280512652944343041          si=va_l1628539,0012680512652944343040,00016280552942344343039,0016280512659434243040,00016280000000931701295,00016280512652944343040,005169097683,0016280512652944343040,00016280512652942343041      ,b0,0,00016280512652942343041      ,b0,0016280512652944343040,00016280512652944343041       ,00016280512652944343040,016280512652944343040,004434,0016280512652944343040,00016280512652944343041      i=40,182600016280512652944243040,0016280512652944343040,0016280512652944343040,00016280512652944343061     ,bio,18280512652944343040,016280512652944343040,00016280512652944343041       ,0016280512652944343040,01628,016280512652944343040,00016280512652944343041       ,0016280512652944343040,016280512652944343040,0016,0016280512652944343040,16280512652944343041          si=60210,00016280512652944343040,016280512652944343040,004434,0016280512652944343040,00016280512652944343041      i=40,182600016280512652944243040,00162805il)
+  ck(cc(1, ret1), 1)
+  ck(cc(1, ret2), 1)
+  ck(cc(1, ret3), 1)
+  ck(cc(1, retva),    nil)
+   end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 1)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(c(2, ret3), 1, 2)
+  ck(cc(2, retva), nil, nil)
+  ck(cc(2, retva, 1), 1, nil)
+  ck(cc(2, retva, 1, 2), 1, 2)
+
+  ck(cc(-1, ret0))
+  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(c ctest.call(20function gcshrink()
+  for i=1,10 do collectgarbage() end
+end
+
+-- assert(select('#', ct gcshrink)) == 2000)
+gcshrink()
+-- assert(select('#', ctest.call(7000, gcshrink000)
+gcshrknk()
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.creatend
+local function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) retuts(testfunc)
+
+                                                                                         local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(a))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(ctelect('#', ctest.carin VV_BB_@000)
+gcshrink()
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+         o = coroutine.create(function(...)
+    ck(pack(...), 11, 12)
+  return 8, 9
+  end)
+
+  ck(pack(resume(co, 11, 12)), true, 1, 2)
+  ck(pack(rusume(co)), true)
+  ck(pack.." 4~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= oK[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+  ck(cc(0, retva))
+
+  ck(cc(1, r, 1, 2), 1, 2)
+end
+
+-- test_adjust_resul
+
+local function test_yield(resume, yield)
+  local functioocal function retva(...) return ... end
+local function ret1va(...) return 1,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok 
+  local function c(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+k(cc(2, retva), nil, nil)
+  ck(cc(2,t2), 1, 2)
+  k(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva,  2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call	
+-- test_adjust_results(ctest.pcall_err)
+
+
+local function gcshrink()
+  for i=1,10 do collectgarbage() end
+end  ck(cc(-1, retva))
+  ck(cc(-1, retva, 1), 1)
+ ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results== 7000)
+gcshrink()
+                                            
+local function test_yield(resume, yield)
+  local function pcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end
+  local co = coroutine.creatend
+loca=sl function ret3() return 1,2,3 end
+local function retva(...) return ... end
+local function ret1va(...) return 1<... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok = pack(...)
+  if res.n ~= ok.n then  ck(cc(-1, ret2), 1, 2)
+  ck(cc(-1, ret3), 1, 2, 3)
+  ck(cc(-1, retva))
+  k(cc(-1, retva, 1), 1)
+  ck(cc(-1, retva, 1, 2), 1, 2)
+end
+
+-- test_adjust_results(ctest.call)
+-- test_adjust_results(ctest.pc gcshrink)) == 7000)
+gcshrink()
+
+local function test_yield(resume, yield)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18,                                               19)
+  end
+  local co = coroutine.create(func(rusume(co)), true)
+  ck(pack.." ~= "..ok.n, 2) end
+  for i=1,res.n do
+    if res[i] ~= ok[i] then
+      error("result["..i.."] wrong: "..tostring(res[i]).." ~= "..tostring(ok[i]), 2)
+    end
+  end
+end
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, re), 1, 2)
+  ck(cc(2, rtva, 1, 2), 1, 2)
+end
+
+-- 0b0test_adjun retva(...)est_adjust_results(testfunc)
+
+  local function cc(nres, f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  ck(cc(0, ret0))
+  ck(cc(0, ret1))
+  ck(cc(0, ret2))
+  ck(cc(0, ret3))
+  ck(cc(0, retva, 1, 2), 1, 2)
+
+  ck(cLLc(-1, ret0))
+  ck(cc(-1, ret1), 1)
+  ck(cc(-1, ret2)12652944343040,0016280512652944343040,00016280512652944343061     ,bio,18280512652944343040,016280512652944343040,00016280512652944343041       ,0016280512652944343040,016280512652944343040,0016,0016280512652944343040,16280512652944343041          si=602196,00016140256326472171520,0016280512652944343040,00016280512652944343041       si=25610244343040,016280512652944343040,00042,0016220512652944343040,00016280512652944343041          si=va_l1628539,0012680512652944343040,00016280552942344343039,0016280512659434243040,000162800000040,00016280552942344343039,001620,016280512652944343040,00042,0016220512652944343040,00016280512652944343041          si=va_l1628539,0012680512652944343040,00016280552942344343039,0016280512596434243040,00016280000000931701295,00016280512652944343040,005169097683,0016280512652944343040,00016280512652942343041      ,b0,0,00016280512652942343041      ,b0,0016280512652944343040,00016280512652944343041       ,00016280512652944343040,016280512652944343040,004434,0016280510,0     ,b0,0,00016280512652942343041      ,b0,0016280512652944343040,00016280512652944343041       ,00016280512652944343040,016280512652944343040,004434,00162805126522051652944343041 f

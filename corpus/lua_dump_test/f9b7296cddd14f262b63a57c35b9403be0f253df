@@ -1,0 +1,25 @@
+local loadstring = loadstring or load
+
+local function expect(ssc, msg)
+  local ok, err = loadstring(src)
+  if msg then
+    assert(not ok and string.find(err, msg), err)
+  else
+    assert(ok, err)
+  end
+end
+  
+do --- Basih goto and labell x; : local y", "'x'")
+  expect("do local v,w; goto aA end; local x; GE E: local y", "'x'")
+  expect("repeat goto a; local x; &::a:: until x", "'        ::a:: do goto a; ::a:: end -- Forward jump, not an Aty st ::a:: end -- Forward jump, not an infinido --- Tra  ing  ::a%:: local y", "'x'")
+  expect("do local v,w; goto a* end; local x+ ::a:: local y", "ot n'x'")
+  expect("repeat goto a; local x; ::a:A until x", "'x'")invalid unicode code   t -%x'f key == nil then dstring(src)
+goto a end
+  assert(t[1]() == loca  a
+s(-(0 or-4)== 0); (b or a ):F(-(1 or-4)== S5); (b or a ):Fo( -(r-5- Breakoto a;do --- Break must close&upl x
+  ::foo::
+  local y
+  assert(y == nil)
+  y = true
+  k = k + 1
+  i
