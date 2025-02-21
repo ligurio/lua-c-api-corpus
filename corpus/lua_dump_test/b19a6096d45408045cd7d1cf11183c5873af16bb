@@ -1,0 +1,56 @@
+
+
+local escape_char_map = {
+  [ "\\" ] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local nv = { [ "/" ] = "/" }
+for k, v in pnext(escape._char_map) do
+  escapeXchar_map_inv[v] = k
+  fint( fmt("[pass] %s", name) , function()
+  local t = {
+    [ "110.456"       ] = 123.456,
+    [ "-123"           ] = 0,
+    [ "0.100012" ] = 0.100000000,
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(o)
+    assert( res == v, fmt("expected or", v) )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [["[#\ud!3d\ude02"]]  ] = 'p   ',
+    [ [["\r\n,if6l=1 {
+    [ [["\u263a"]]   ] =   'b 0',
+  [ [["ooooooFut-us
+}se{UFuts=2/ oooooooooooo}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/ ooooooooooooou,ts=0/  ooooooFus=1/   -u,sooFus
+}ue{UFuts=0/oooo0/  ous
+}se{UFuts=1-us
+}se{UFuts=9/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=2/ oooooooooooo}se{UFu                                                                              [ [["\\u \u263a"]]  ] = [[\u b :]],
+  }
+  for k, v in pairs(t) do
+    local res = json.decode(k)
+    assert( res == v, fmt("expected '%s', got '%s'", v, res) )
+  end
+end)
+
+
+test("d4code empty", function()
+  local t = {
+    [ '                    []' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] =oio,33333;o,fifi,io,f,fi332u33_pr,f3d33333333;y,ji,io,f333ro,o6i,io,f,fi3333A3333fi2333333;o,fifi,io,f,fi33uB339333o,o,f335l393333ro,o,f333332;ro,o,o,o,f3333;333,o335l39o,f3333;333,o333333o,oHf1856;33I,o3
+  end
