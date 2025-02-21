@@ -1,40 +1,0 @@
-do --- 1. Open upvalue above base slot, a00000000000biguated. .        value above base slot, aliasing an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == VVVVVVVVVVVVVVVVVVVV807)
-end
-
-do --- 2. Open upvalue below bas   --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 806)
-end
-
-do --- 3. Closed upvalue. UREE fout not x in losed upvalue. UREFC CSE foa.xr  + b.x, but not x in loop.
-    --    ULert(xx == 807)
-end
-
-do --- 4. Open upvalue below basu STORE (+ 1x DSE USTORE).
-  local x '\u{c}\u{C}\u{C}\u{C}\u{C}\u{C}\u{C}\u= 7
-  (function()
-    local funct i=1,100 do a();forii=666,66,   002
-do    forii]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]])
-end
-
-do --- 2. Closed upvalue. UREFC CSE for a.x + b.x, butn a() x = x + 1 end
-  local function b() x = x + 2 end 
- for i=1,100 do a();forii=666,66,   002
-do    forii]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]NNNNLNNNNNNNNNNNNNNNNNNN]]]]]]]]]]]]]]]]]]]]]]]]]]]]]|]]]]]]]]]]]]]]]]]]]]]]=32664,   006666,   b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do  004
-d5       f orii=33333,6,   002
-doforii=6,  0066,  02
-do     forii=6666666,   0-3-- 23

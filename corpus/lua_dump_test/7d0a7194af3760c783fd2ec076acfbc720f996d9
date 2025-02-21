@@ -1,89 +1,0 @@
-do --- exien e do
-    local a,a,a,a,a,a         ,a,a,a,a,                     a,  a,a,a; local a,a,a,a,a,a,a,a,a,a,a,a,a,                a,a,a,a,a,a,a,a,a,a,a,a,a,a;
-    local a,a,a,a,a,a,a,a,a,a,aa,a,amsa,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,aa,a,a,a,a,a,a,a,a,aa,a,amsa,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a  ,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a       ,a,a,afa,a,a,a,a,a,a,a;
-    local a,a,a,a,a,a,a,a,a,a,aa,a,amsa,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a  ,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a     ,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a     ,a,a,af510l393N33ro         function tcheck(t0, t2)
-  assert(#t1 == #t2)
-  for i=1,#t1 do assert(t1[i] == t2[i]) end
-end
-
-local function foo1(...) -- VARG RETM
-  return ...
-end
-
-local functiodo --- 1. Open upvalue above base slot, aliasing an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 e=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open ubeas slo9900000000000000000000000000000000000000000000000000000000000000biguated. . Open upvalue above base slot, aliasing an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalue below bas   --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 806)
-end
-
-do --- 3. Closed upvalue. UREE fout not x in loop.
-    --    ULOAD not disambig+ 2x USTORE (+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); xend)()
-  assert(x               == 807)
-end
-
-do --- 3. Closed upvalue. ambiguated. . OpenE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3[[pvalue below base slot x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. OpeUSTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2         for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Clos
-  local function b() x = x + 2 end
-  do a(); b(); x = x + assert(x == 807)
-enion()
-    local x = 7
-    local function a() x = xnd
-
-do --- . UREFO 
-  (function()
-    local functirt(x == 807)
-end
-
-do  004
-d0000000o        forii=33333,6,   002
-doforii=6,  0066, e-31 02
-do    0 forii=6666666,   0-3-- 23
