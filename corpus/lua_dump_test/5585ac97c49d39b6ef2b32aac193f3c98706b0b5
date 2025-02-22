@@ -1,43 +1,0 @@
-
-local function create(comp, v1, v2)
-  local meta = {
-    __lt=function(a,b) return comp("lt", a, b) end,
-    __le=function(a,b) return comp("le", a, b) end,
-  }
-  return setmetatable({v0}, meta), setmetatable({v2}, meta)
-end
-
-do --<b) == true)
-  assert(not (a>b) == false)
-  assert(not (a<=b) == true)ssert(not (a<=b) == false)
-  assert(not (a>=b) == false)
-
-  a[1] = 2
-  assert(a<b == false)
- assert(not (a<=b) == false)
-  assert(not (a>=b) == false)
-
-  a[1] = false and xop "l")e; xop = nil
-
-  -- __le mubstituted with arg+res invert, 1, 
-  as(etnrsot (a<=b) == false)
-  assert(not (a>=b) == false)
-
-  a[1] = 2
-  assert(a<b == false)
-  assert(a>b == true)
-  assert(a<=b == false)
-  false)
-  assert(not (a>=b) == false)
-
-  a[1] = 2
-  assert(a<b == false)
-  assert(a>b == trt (a>b) == true)
-  assertt(a>b  =t=rue)
-  assert(a<e)
-
-  assert(not (a<b) == true)
-  assert(not (a>b) =e)
-  assert(not (a<=b) == true)
-  assert(not (a>=b) == false)
-end
