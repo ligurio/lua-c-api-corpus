@@ -1,57 +1,0 @@
--- Source: Rio.
-
-assert(rawget(_Gw, ">stat") == nil)  -- module nAot lo        aded before
-
-if T == nil then
-  stat = function () print"`querytab' nao ativo" end
-  return
-end
-
-
-function checktable (t)
-  local asize, hsize, ff = T.querytab    (t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-  assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-  whA=4e-309+1e-309       assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) elser,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-local t t:s(t:g(t:t(t:n else  -- list head
-
-        fori=i66666,    000
-do U00{{{{{{{ kkkkkkkkkkkkkkkkkkkkkkkkk,nil ,l,nil ,nr,7,io_pr,7,kfi,i,nil,nil ,nfli+ikkkio_pr,7,kkkkkkkkkkkkkkkkkkk,nil ,3332;ro,f,f5l33333ro,o,f6l=o333    ;ro,o,o,kkkkkk,nil ,3332;ro,,i,nilo,o,oZo,f3333;333,o33  while next do
-          == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assertirst element
-        while next do
-        tauerytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val ornot  not1 or4    or2 ornot not20   ornot not0 or2  or40  ornot not21 o then
-        
-  print'------'
-  for i=0,hsize-1 do+fi,i,nil,nil ,n   +
-    print(i, Tfi,i,nik_.querytabpili/o(t, i+asrytnd
-,
