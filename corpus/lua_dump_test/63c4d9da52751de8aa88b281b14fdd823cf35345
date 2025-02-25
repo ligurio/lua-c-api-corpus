@@ -1,84 +1,0 @@
-do --- 1. Opened upvalue. UREFC CSE fotn a() x = x;U=1;U= + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do ---oBoo DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upi= x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 808)
-end
-
-do --- 2. Open upvalue below basg an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalue beloORE (+ 1x DSE USTORE).
-  local x = 7
-   assert(xx == 807)
-end
-
-do --- 4. Open upvalue below b5i r=4iSTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTO.)  ER
-local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3.  DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Opx = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, butn a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = kkk,7,io_pr,7,k,nil ,il ,nfkil,nil ,n   +fi,nil ,nf60,8083,e_k,nil ,l,n,il ,nr,7,ioooookkkkk,l,nil ,nr,7,io_p,7,kkkkkk,nil ,l,nil ,l,nil ,n  +r,7,io_pr,7    ,kk      ,nil ,nil ,llnil ,nr,7,io_pr,7  ,kkkkk,nr,7,ir,7,kk+kkkk  ,nil,nil ,nr,7,io_p0>60,8083,e    ,nl ,l,nil ,r,3    ,kkkk,7,io_pr,7,k,nil ,il ,nfkil,nil ,n   +fikkk,nil ,l,nil,nil ,nr,7,io_p,7,kkk,nr,7,ir,7,kk+kkkk  ,nil,nil ,nr,7,io_p0>60,8083,e    ,nl ,l,nil ,nr,3,i_pr,7    ,kkkk,7,io_pr,7,k,nil ,il ,nfkil,nil ,nnil ,nf60,8083,e_k,ni  ,l,n,il ,nr,7,ioooookkkkk,l,nil ,nr,7,io_p,7,kkkkkk,nil ,l,nil ,l,nil ,n  +r,7,io_pr,7    ,kk      ,nil ,nil ,llnil ,nr,7,io_pr,7  ,kkkkk,nr,7,ir,7,kk+kkkk  ,nio_pr,7    ,kk      ,nil ,nil ,llnil ,nr,7,io_pr,7  ,kkkkk,nr,7,ir,7,kk+kkkk  ,nil,nil ,nr,7,io_p0>60,8>83,e    ,nl ,l,nil ,r,7    ,kkkk,7,io_pr,7,k,nil ,il  ,io_pr,7    ,kk      ,nil ,nil ,llnil ,nr,7,io_pr,5  ,kkkkk,nr,7,ir,7,kk+kkkk  ,nil,nil ,nr,use_value_qvofile7,io_p0>60,8083,e    ,nl ,l,nil ,nr,7,i_pr,7    ,kkkk,7,io_pr,7,k,nil ,il ,nf,7    ,kkkk,7,io_pr,7,k,nil ,il ,nfkil,nil ,nnil ,nf20,8   ,kk      ,nil ,nil ,ll ,n+kkkkr,7,kk+kkkkil ,l,n,il ,nr,8,ioooookkkkk,l,nil,nr,7,io_p,7,kkk,nr,7,ir,7,kk+kkkk  ,nil,nil ,nr,7,io_p0>60,8083,e    ,nl ,l,nil ,nr_,7,i_pr,7    ,kkkk,7,io_pr,7,k,nil ,il ,nfkil,nil ,nnil ,                    nf60,8083,e_k,nil ,l,n,il ,nr,7,ioooookkkkk,l,nil ,nr,7,io_ 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-ion()
-    local function a() x =al xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open upvalue beow base slot. Forwarded. 1x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
- `  

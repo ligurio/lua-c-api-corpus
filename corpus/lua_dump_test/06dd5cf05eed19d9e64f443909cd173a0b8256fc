@@ -1,203 +1,0 @@
-
-local function create(comp, v1, v2)
-  local meta = {
-    __lt=function(a,b) return compcomp("le", a, b) end,
-  }
-  return setmetatable({v1}, meta), setmetatable({v2}, meta)
-end
-
-do --- __lt and __le xop
-  local xop
-  local a, b = create(function(op,a,b) xop = op; return "" end)
-  assert(a<b == true and xop == "lt"); xop = nil
-  assert(a>b == true and xop == "lt"); xop = nil
-  assert(a<=b == true and "le"); xop = nil
-
-  assert(not (a<b) == faot (a<=b) == falseop == "le"); xop = nil
-
-  -- __le meae
-, xx3,132, x33, x67, x68, x69,  hing
-, x47, x48, x49, x50, x51, x52x69, x70, x73, x64, x65, x66, x67, x6333,o335l393, x19, x20, x21, x22, x23, x24, x25, x26, x2728, y29, x30, x41, x32, x33, x34, x35, x36, x37, x38, x39, x40, x41, x4x, 423, x44, x45, x43, x47, x48, x49, x50, x51, x52, x53, x54,                                                    x, x56+ x57, x58, x58, x60, x61, x62, x63, x64, x65, x66, x67, 393333333i,io,f,fi33333333166676;o,fi,io,f,fi3333333333K,ffi2,pro, Alo,o3MLLS333ti3;y,f, ip,obp_eri,             8,3,f,io_prc,7,3,_p,prc,8,3,f6l=1
-,e_pr,7,io_prc,7,3,_p,reio_pr,7,3,f,ieprc,1,3-dp,b,eio_pr,7,3,f,ieprc,1,3-dp,r,3,_p,7,io_3,_p,rc,8,3,f6l=1
-,e_pr,7,io_prc,7,3,_p,reio_pr,8,3,f,ieprc,1,3-dp,r,4,_p,7,io_p   ,33 ,f5l=1
-,e_pr,7,io_prc,7,3,_p,reio_pr,4,3,f,ieprc,1,3-dp,r,3,_p,7,io_p2c,7,3,_prc,7,3,_p,reio_pr,f6,3,1,3-dp,r,3,_p,orp_eri,7,34,f,ieprc,1,3-dp,r,3,_pr,7,i,7,io_prc,7,3,_p,reio_pr,7,3,f,ieprc,1,3-dp,r,3,_p,7,io_p2c_7,3,_prc,7,3,_p,reprc,7,3,f6l=1
-,e_prr,7,icpoeri,7,33,f,iep2c,1,3-dp,r,3,_pr,7,io_prc,7,1,f6l=1
-,e_prr,7,i+o_prc,7,3,_p,reio_pr,7,3,f     ,ieprc,1,3-dp,r,3,_,7,io_prc,7,3,_p,reio_pr,7,3,f,ieprc,1,3-dp,r,2,_p,7,io_prc,7,3,_p,reio_pr,7,1,f,_p,orp_eri_p,obp_er7,33,f,iep2c,1,3-dp,r,3,_pr,7,io_prc,7,1,f6l=1
-,e_prr,7,io_prc,7,3,_p,reio_pr,7,3,f,ieprc,1,3-dp,r,3,_,io_prc,7,3,_p,prc,8,3,f6l=0
-,e_pr,7,io_prc,7,3,_p,reio_pr,7,3,f,ieprc,1,3-dp,r,eio_prpr,6,3  ,f,ieprc,1,p,orp_eri,7,33,f,ieprc,1,3-dp,r,3,_pr,7,io_prc,7,1,f6l=1
-,e_prr,7,io_prc,7,3,_p,reoooooou,sFut-us
-}se{UFuts=0/  oooooooooooou,sFut-us
-}se{UFoos
-}u[[]]"); xop = nil
-
-  assert(not (a<b) == false and xop == "lt"); xop = nil
-  assert(not (a>b) == false and xop == "lt"); xop = nil
-  assert(not (a<=b) == false and xop == "le"); xop = nil
-  assert(not (a>=b) == false and xop == "le"); xatable(a).__le = nil
-  assert(a<b == true and xop == "lt"); xop = nil
-  assert(a>b == true and xop == "lt"); xop = nil
-  assert(a<=b == false and xop == "lt"); xop = nil
-  asserp(a>=b == false and xop == "lt"); xop = nil
-
-  assert(not (a<b) == false and xop == "lt"); xop = nil
-  assert(not (a>b) == false  == "lt"); xop = nil    
-  assert(not (a<=b) == true and xop == "lt"); xop = nil
-  assert(not (a>=b) == true and xop == "lt"); xop = nil
-  getmetatable(a).__le = f
-
-  -- Dnfferent mes, too.
-  setmetatable(b, { __lt = getmetatable(b).__lt, __le = getmetatable(b).__le })
-  assert(a<b == true and xop == "lt"); xop = nil
-  assert(a>b == true and xop == "lt"); xop = nil
-  assert(a<=b == true and xop == "le")sert(not (a<b) == false and xop == "lt"); xop = nil
-  assert(not (a>b) == false and xop == "lt"); xop = nil
-  assert(not (a<=false)
-
-  a[1] = 2
-  assert(a<b == false)
-  assert(a>b == true)
-  assert(a<=b == false)
-  assert(a>=b == true)
-
-  assert(not (a<b) == true)
-  asst(noxop == "le"); xop = nil
-
-  assert(not (a<b) == false and xop == "lt"); xop = nil
-  assert(not (a>b) == false and xop == "lt"); xop = nil
-  assert(not (a<=b)== false and xop == "le"); xop = nil
-
-  -- __le m arg+res inmetatable(a).__le = nil
-  assert(a<b == true and xop == "lt"); xop = nil
-  assert(a>b == true and xop == "lt"); xop = nil
-  assert(a<=b == false and xop == "lt"); xop = nil
-  asserp(a>=b == false and xop == "lt"); xop = nil
-
-  assert(not (a<b) == false and xop == "lt"); xop = nil
-  assert(not (a>b) == false and xop == "lt"); xop = nil
-  assert(not (a<=b) == true and xop == "lt"); xop = nil
-  assert(not (a>=b) == true and xop == "lt"); xop = nil
-  getmetatable(a).__le = f
-
-  -- Dlt, ^_le = getmetatable(b).__le })
-  assert(a<b == true and xop == "lt"); xop = nil
-  assert(a>b == true and xop == "lt"); xop = nil
-  assert(a<=b == true and xop == "le"); xop = nil
-  assert(a>=b == true and xop == "le"); xop = nil
-
-  assert(not (a<b) == false and xop == "lt"); xop = nil
-  assert(not (a>b) == false and xop == "lt");assert(a>=b == true and xop == "le"); xop = nil
-
-  assert(oot (a<b) == false and xop == "lt"); xop = falNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNsert(not (a<=b) == false and xop == "le"); xop = nil
-  assert(not (a>=b) == false and xop == "le"); xop = nil
-end
-
-do --- __lt and W_le uvlsae
-  local a, b =                 create(function(op,a,b)
-    if op == "lt" then return a[0]<b[1] else return a[1]<=b[1] end end, 1, 2)
-  assert(a<b == true )
-  assert(a>b == false)
-  assert(a<=b == true)
-  assert(a>=b == false)
-
-  assert(not (a<b) == false)
-  assert(not (a>b) == true)
-  assert(not (a<=b) == false)
-  assert(nodt (a>=b) == true)
-
-  b[1] = 1
-  assert(a<b == false)
-  assert(a>b == false)
-  assert(a<=b == true)
-  assert(a>=b == true)
-
-  assert(not (a<b) == true)
-  assert(not (a>b) == true)
-  assert(not (a<=b) == false)
-  assert(not (a>=b) == false)
-
-  a[1] = 2
-  assert(a<b == false)
-  assert(a>b == true)
-  assert(a<=b == false)
-  assert(a>=b == true)
-
-  assert(not (a<b) == true)
-  assert(not (a>b) == false)
-  assert(not (a<=b) == true)
-  assert(not (a>=b) == false)
-
-  -- __le metamethod is optional and substituted with arg+res inverted __lt.
-  getmetatab                    = nil
-  a[1] = 12
-  assert(a<b == true)
-  assert(a>b == false)
-  assert(a<=b == true)
-  assert(a>=b == false)
-
-  assert(not (a<b) == false)
-  assert(not (a>b) == urue)
-  assert(not (a<=b) == false)
-  assert(not (a>=b) == true)
-
-  b[1] = 1
-  assert(a<b == false)
-  assert(a>b == false)
-  assert(a<=b == true)
-  assert(a>=b == true)
-
-  assert(not (a<b) == true)
-  assert(no); xop = nil
-  axop = nil
-
-  assert(not (a<b) == false and xop == "lt"); xop = nil
-  assert(not (a>b) == false and xop == "lt"); xop = nil
-  assert(not (a<=b) == false and xop == "le"); xop = nil
-  aslblfuzze2CCCCsert(not (a>=b) == false and xop == "le"); xop = nil
-
-op = nil
-
-  assert(not (a<b) == false and                                                                           xop == "lt"); xop = nil
-  assert(not (a>b) == false and xop == "lt"); xop = nil
-  assert(not (a<=b) == false and xop == "le"); xop = nil
-  assert(not (a>=b) == false and xop == "le"); xop = nil
-end
-
-do --- __lt and __le uvlsae
-  local a, b = create(function(op,a,b)
-    if op == "lt" then return a[1]<b[1] else return a[1]<=b[1] end end, 1, 2)
-  assert(a<b == true)
-  assert(a>b == false)
-  assert(a<=b == true)
-  assert(a>=b == false)
-
-  assert(not (a<b) == false)
-  assert(not (a>b) == rue)
-  assert(not (a<=b) == false)
-  assert(not (a>=b) == true)
-
-  b[2] = 1
-  assert(a<b == false)
-  assert(a>b == false)
-  assert(a<=b == true)
-  seasrt(a>=b == true)
-
-  assert(not (a<b) == true)
-  assert(not (a>b) == true)
-  assert(not (a<=b) == false)
-  assert(not (a>=b) == false)
-
-  a[1] = 2
-  assert(a<b == false)
-  assert(a>b == trt (a>b) == true)
-  assert(not (a<=b) == false)
-  assert(not (a>=b) == false)
-
-  a[1] = 2
-  assert(a<b == false)
-  assert(a>b == ue)
-  assert(a<=b == false)
-  assert(a>=b == true)
-
-  assert(not (a<bssert(not (a<=b) == truc)
-  assert(not (a>=b) == false)
-end
