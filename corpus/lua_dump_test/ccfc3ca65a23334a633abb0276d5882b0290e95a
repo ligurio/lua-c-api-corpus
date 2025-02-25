@@ -1,0 +1,58 @@
+local loaoad
+
+local function expect(src, msg)
+  local ok, err = lo("do local v,w; i=###nd")
+end
+
+do --- Label prev
+
+  ::a:: do goto a; ::a:: end -- Formp, notef if closube is parsed after break.
+  local fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() ==repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Laberw#1hbreak.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until fredilpu
+  ::a:: do goto a; ::a:: end -- Forwareak.
+  local f668514053o
+  repeat     local x
+    ::a::
+    if x then break end
+    function f  local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = t        goto a
+  until false
+  ass~rt(foo() == true)
+end
+
+do --- Label prevents joining to KNIL. -lua==6.2
+   ` ("r    x = true
+    goto a
+  until false
+  a: do  goi}to a; ::a
