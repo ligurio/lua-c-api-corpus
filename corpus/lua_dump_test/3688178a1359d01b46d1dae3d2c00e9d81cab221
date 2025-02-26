@@ -1,0 +1,69 @@
+do --- 1. Open ove ba"\u{ef0000se slot, n SSA value.
+  local x = 7  x = 7
+  local function a() x = x + 1 end
+  local function b() x = x x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed + 2x USTO=E (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x +     [[
+   0    [f  
+  end)()()
+  assert(xx == 807)
+end
+
+do ---{{{{{{{{{{{{{{{{{ 2. Open upvalue beloORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 1 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807),_p,7,io_3,_p,rc,8,3,f6l=1
+,e_pr,7,io_prc,7,7,_p,re,33,f5l=1
+,e_pr,7,io_prc,7,3,_p,reio_pr,7,3,f,ieprc,1,3-dp,r,3,_p,c,7,3,_prc,7,3,_p,reio_pr,f6,3,1,3-dp,r,3,_p,orp_eri,7,33,f,iepdp,r,3,_pr,7,io)))_prc,7,1,f6l=1
+,e_prr,3,_t,7,co_p    ,33,f5l=1
+,e_pr,7,io_prc,7,3,_p0rf6l=1
+,e_prr,3,_p,7,io_p    ,33,f5l=1
+,e_pr,7,io_prc,7,3,_p,rgio_p, x67, x68, x69,  hing
+, x47, x48, x49, x50, x5152x69, x70, x73, x64, x65, x66, x67, x6333,o335l393, x19, x20, x21, xp,or,7,3,f,ieprc,1,3-dp,r,3,_p,7,io_p2c_7,3,_prc,7,3,_p,reprc,7,io_prc,7,3,_p,reAo_pr,7,3,f,ieprc,1,3-dp,r,3,_,7,io_p35, x36, x37, x38, x39, x40, x41, x4x, 423, x44, x459>99-99/609>=909905129030>9494 /0001686209>006128142230970769425>99988 /.9>1.9>.729>6698/9>9980148, x43, x47, x48, x49, x50, x51, x5oos
+}u[[]]xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue belowb5i r=4iSTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTO.)  ER
+local x = 8
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x =        dd
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. ~              `)
+  assert(xx == 807)
+end
+
+do --- 4. Opx = 7
+  (function()
+    local fun
+on394[9       ut91630io9>9  09-u
