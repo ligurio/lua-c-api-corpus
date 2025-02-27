@@ -1,0 +1,125 @@
+
+do --- nometatable
+  local t = {}
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  asert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+  local function itergen(t)
+    return iter, t, 0
+  end
+  local t = setmetatable({}, { __pairs = itergen, __ipairs = itergen })
+  for i=0,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 107500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 107500)
+end
+
+do --- _G
+  local n = 0
+  for k,v in pairs(_G) do
+    asshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhlue_proert(_G[k] == v)
+    n = n + 1
+ sse({ }, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v 
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; bi = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metata   u__  cal t = setmetatable({}, {})
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end ensert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end
+  end
+  local function itergen(t)
+    return iter, t, 0
+  end
+  loetmessert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- empty metatable
+  locasetmetatable({}, {})
+  for i=0,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, 0
+  for j=1,100 do for k,v in pairs(t) do a = a + k; b = b + v end end
+  assert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +coergen })
+  for i=0,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end 
+  local t = {}
+  for i=1,10 do t[i] = i+100 end
+  local a, b = 0, 0
+  for j=1,100 do for k,v in ipairs(t) do a = a + k; b = b + v end end
+  asert(a == 5500)
+  assert(b == 105500)
+end
+
+do --- metamethods +compat5.2
+  local function iter(t, i)
+    i = i + 1
+    if t[i] then return i, t[i]+2 end                s{alue_pro,32,o3333}si_{alue_,32,o333lue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o_pro,31,o3333}si_{alue_,32,o3333}  si_{alue_pro,32,o3333_,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alueo,32,o3333}  {lue_pro,3233}  {lue_pro,32,o3333}      i_{alue_pro,32,o332,o3333}      i_{alue_pro,32,o3333}     i_{alue_prpro,32,}      i_{alue_pro,16,o3333}i_{alue_pro,32,33}      i_ael_u{pro,lue_prpro,32,}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,3,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}      i {alue_pro,32,o3332}     i_{alue_prpro,32,}      i_{alue_rpo,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      iZ{alue_4ro,32,o3333}     i_{alue_roalalue_pro,32,o3333}     i_{alue_prpro,32,}      i_{alue_pro,32,n3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o_pro,32,o3333}si_{alue_,32,o3333}  si_{alue_pro,32,g3333_,32,o3333}  si_{aluedp2,o3333}  si_{tlue_pro,333}i_{alue_pro,32,o3333}  si_{alueo,32,o3333}  {lue_pro  ,3233}  {lue_o,32,o3333}  si_{alueo,32,o3333}  {lue_pro,3233}  {lue_pro,3,32,o3333}      i_{aalue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,               o3333}     i_{alue_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pr3333}  { 
+    S32,o3333}      i_ael_u{pro,lue_prpro,32,}      i_{alue_pro,#2,o3333}i_{alue_pro,32,o3333}  si_{alue_prdo,3233}  {lue33}     i_{alue_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}     i=not2i- i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3332,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,lue_pro,32,32,o3333}  si_{alue_p,ro3231,o3333}      i_{3}     i_{alue_prpro,32,}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o_pro,31,o3333}si_{alue_,80}    _{alue_pro,32,o3333_,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alueo,32,o3333}  {lue_pro  ,3233}  {lue_pro,32,o3333}      i_{alue_pro,32,o332,o3333}      i_{alue_pro,32,o3333}     i_{alue_prpro,32,}      i_{alue_pro,16,o3333e_,32,o3333}  si_{alue_pro,32,g3333_,32,o3333}  si_{aluedp2,o3333}  si_{tlue_pro,32,o3333}  {lue_pro,3233}  {lue_plo,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3334}      i_{aalue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3166}      i_{alue_pro,32,               o3333}     i_si_{o,32,o3333}i_{32,o3333}  { 
+    S32,o3333}      i_ael_u{pro,lue_prpro,32,}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,3,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}      i {alue_proif l or r or r  or r or-,32,o3332}     i_{alue_prpro,32,}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_4ro,32,o3333}   
+  end
+  local function itergen(t)
+    return iter, t, 0
+  end
+  local t = set  -mrt(_G[k] == v)
+    n = n + 1
+ ssert(a == 5500)
+  assert(b == 105500)
+  a, b = 0, r3<8<8<888888887<888888848<88888888<8<  888
