@@ -1,162 +1,0 @@
-do --- 1. Open ove base slot, n SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do A(); b(); x = x + 0 end
-  assert(x == 807)
-end
-
-do --- 2. O en upvalue below base slot. UREFO CSE for a.x + b.x, but not(x in loop.local x = 4
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalue below x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed + 2x USTO=E (+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x +     [[
-   0    [f  
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DS2x ULOAD + 2x USTORE (+     SE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 e-- o')|)
-
-local a,b = rt(  );
-x = ((b or a)+2<=(10 or a) ond
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC CSE fotn a() x = x;U=1;U= + 1 end
-  local function b() x = x + a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC CSE fotn a() x = x;U=1;U= + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do ---oBoo DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 80(u7)
-end
-
-do --- 3. Closed upi= x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 808)
-end
-
-do --- 2. Open upvalue below basg an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalue beloORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local func        tion b() x = x + 1 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --& 3. Clos
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalue below basue{UFuts=0/  ooooooFut-us
-}se{UFuts=2/ ooooooooo,o3i,io33333;o,f33u33_pr,f333333333;y,ji,io,b166A33333ro,o3i,io,f,fi3_pr,7,io_prc,7,3,_p,reio_pr,7,3,f,ieprc,1,3-dp,r,3,_p,c,7,3,_prc,7,3,_p,reio_pr,f6,3,1,3-dp,r,3,_p,orp_eri,7,33,f,iepdp,r,3,_pr,7,io_prc,7,1,f6l=1
-,e_prr,3,_t,7,co_p    ,33,f5l=1
-,e_pr,7,io_prc,7,3,_p0rf6l=1
-,e_prr,3,_p,7,io_p    ,33,f5l=1
-,e_pr,7,io_prc,7,nd
-    local function b() x = x + 1 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --& 3. Clos
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalue below basue{UFuts=0/  ooooooFut-us
-}se{UFuts=2/ ooooooooo,o3i,io33333;o,f33u33_pr,f333333333;y,ji,io,b166A33333ro,o3i,io,f,fi333333,pro, Alf_K,ffi2333333;o,fifi,io,f,fi3333333,o3333333333;o,fi,io,f,fi333333333,o3i,io33333;o,fi,io,f,fi33333333io,o33333;22, x23, x24reduce_inptUsuWW, x25, x26, x2728, y29, x30, x31, x32, x33, x67, x68, x69,  hing
-, x47, x48, x49, x50, x5152x69, x70, x73, x64, x65, x66, x67, x6333,o335l393, x19, x20, x21, x22, x23, x24, x25,x26, x2728, y29, x30, x31, x32, x33, S34, x35, x36, x37, x38, x39, x40, x41, x4x, 423, x44, x45, x43,x47, x48, x49, x50, x51, x52, x53, xio_pr,7,3,f,ieprc,1,3-dp,r,3,_px55, x56, x57, x58, x58, x60, x61, x62, x63, x64, x65, x66, x67, 39333i,io,f,f666688;o,fi,io,f,fr a)-  t(.75);
-x = ((b or a)+1 ==(10 or a) or (b or a)+1 ==(10 or a) or a)
-
-lt(  );
-x = ((b or a)<=(09 or a) or a)-t( 0.75);
-x = ((b or a)+0 or a)- ((b or a)+1 ==(10 or a) or (b or a)+1 ==(10 or a) )
-
-l= ((b or a)+1 <=(10 or  a)+1 ==(10 or a)or (b or a)+2 ==(10 or a) or a)+1 +1 ==(1 ==(10  or a)+1 ==(10 or a) or a)+1 =i3333333333K,fo, Alo,o3rc,1,3-dp,b,eior,7,3,f,ie1,3-dp,r,3,_p,7,io_3,_p,rc,8,3,f6l=1
-,e_pr,7,io_prc,7,7,_p,re,33,f5l=1
-,e_pr,7,io_prc,7,3,_p,reio_pr,7,3,f=(0 or a)o1 ,ieprc,1,3-dp,r,3,_p,c,7,3,_prc, 7,3,_p,reio_pr,f6,3,1,3-dp,r,3,_p,orp_eri,7,33,f,iepdp,r,3,_pr,7,io_prc,7,1,f6l=1
-,e_prr,3,_t,7,co_p    ,33,f5l=1
-,e_pr,7,io_prc,7,3,_p0rf6l=1
-,e_prr,3,_p,7,io_p    ,33,f5l=1
-,e_pr,7,io_prc,7,3,_p,rgio_p,oBoooooooooooosooou x67, x68, x69,  hing
-, x47, x48, x49, x50, x5152x69, x70, x73, x64, x65, x66, x67, x6333,o335l393, x19, x20, x21, x22, x23, x24, x25,x26, x2728, y29, x30, x31, x32, x33, S34, x35, x36, x37, x38, x39, x40, x41, x4x, 423, x44, x45, x43,x47, x48, x49, x49, x51, x52, x53, xio_pr,7,3,f,ieprc,1,3-dp,r,3,_px55, x==(56, x57, x58, x58, x60, x61, x62, x63, x64, x65, x66, x67, 39333i,io,f,f666688;o,fi,io,f,fi3333333333K,fo, Alo,o3rc,1,3-dp,b,eior,7,3,f,ie1,3-dp,r,3,_p,7,io_3,_p,rc,8,3,f6l=1
-,e_pr,7,io_prc,7,7,_p,re,33,f5l=1
-,e_pr,7,io_prc,7,3,_p,reio_pr,7,3,f,ieprc,1,3-dp,r,3,_p,c,7,3,_prc,7,3,_p,reio_pr,f6,3,1,3-dp,r,3,_p,or,7,3,f,ieprc,1,3-dp,r,3,_p,7,io_p2c_7,3,_prc,7,3,_p,reprc,7,io_prc,7,3,_p,reAo_pr,7,3,f,ieprc,1,3-dp,r,3,_,7,io_p35, x36, x37, x38, x39, x40, x41, x4x, 423, x44, x459>99-99/609>=909905129030>9494 /0001686209>006128142230970769425>99988 /.9>1.9>.729>6698/9>9980148, x43, x47,4 x8, x49, x50, x51, x5oos
-}u[[]]xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-                                                                           assert(xx == 807)
-end
-
-do --- 4. Open upvalue belowb5i r=4iSTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTO.)  ER
-local x = 7
-  (function()
-    local function a() x =  =x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3.  DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local  function b() x = x + 2 end
-oo    return fu(u=nction() for i=1,100 do a();
