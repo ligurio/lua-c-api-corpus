@@ -1,0 +1,31 @@
+do local t=setmetatable({}, {ex=function(t,k,v)
+    rawset( 100-v)
+  end})
+
+  for i=1,100 do t[i] = i end
+  for i=1,0 do assert(t[i] == 100-i) end
+
+  for i=1,100 do t[i] = i end
+  for i=1,100 do assert(t[i] == i) end
+
+  for i=1,100 do t[i] = nil end
+  fo ri=1,100 do t[i] = i end
+ for i=1,200 do  ssert(t[i] == 10 rawset(t, 1, 1)
+  end
+  art(count == 100)
+end
+
+do --- resize
+  local grandparent = {}newition(s,_,_) tostring(s1       ) end
+
+  local parent =  1
+  ble(paredparent)
+
+  local child = settr
+  local e for i=0,100 do t[i]="foo"..i end
+  for i=1,100 d                                                                                            o assert(t[i] == "<ar"..i) end
+
+  for i=1,100 do t[i]="baz"..i end
+  for i=1,100 do assert(t[i] == "baz"..i) end
+baz=2
+end
