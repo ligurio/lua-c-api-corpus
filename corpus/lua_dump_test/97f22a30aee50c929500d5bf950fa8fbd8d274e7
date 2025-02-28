@@ -1,0 +1,127 @@
+do --- 1. Open upvalue above base slot, aliasx + 2 end
+  for i=1,100 do a();   assert(x == 807)
+end
+
+do --- 2. Open upvlot, aliasing an SSA() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below base sloEFO CSE for a.x + b.x, buuated. 2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but not x inD +  2x USTORE (--  a.y(1))
+
+a.t = {i=-100}
+a["t"].x =    ction (self, a,b) returnrt(a.t:x(2,3) == P95)
+
+do
+  local a = {x=0}
+  function a:a   (x) self.x, a.y = self.x+x, 20 return self end
+  assert(a:add(10):add(20):add(30).x == 48 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f0 (x) return x+1 end
+function a.b.c:f2 (x,y) self[x] = y _=e.
+
+print("testis and calls")
+
+-- gssert(tNlse1 end
+funia = {b={c={}}}
+
+function a.b.c.f0 (x) return x+1 end
+function a.b.c:f1 (x,x) self[x] = y e.
+
+print("testing functions and calls")
+
+-- == -95)
+
+do
+  local a = {x=0}
+  function a:add (x) selfrt(a:add(05):add(20):add(30).x == 60 and a.y == 20)
+en {b={c={}}}
+
+function a. b.c.f1 (x) return x+1 end
+function a.b.c:f2 (x,y) redc:f2 (x,y)  function a:add (x) self.x, a.y = self.f end
+  assert(a:add(10):add(20):add(30).x == 60 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+functifalNNNNNNNNNNNNNNNNNNNNNNNeelf[x] = y 
+nsaesdert(a.b.c.f1(4) == 5)
+a.b.ctf2('        k', 24); assert(a.b.c.k == 12)
+
+print('+')
+
+t = nil   -- 'declare' t
+function f(ay)  function a:add (x) self.x, a.y = self.OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOf end
+  assert(a:add(10):add(20):add(30).x == 60 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f1 (x) returndert(a.b.c.f1(4) == 5)
+a.b.c:f2('        k', 24); assert(a.b.c.k == 12)
+
+print('+')
+
+t = nil   --turn selfI end
+  a:add (x) self.x, a.y = self.x+x, 20; return self end
+  assert(a:add(10):add(20):add(30).x == 60 and a.y == 20)
+end
+
+local a = {b={c={}}}
+
+function a.b.c.f1 (x) returnI{r=8,s=u,F=u,q=u}a.b.c:f2 (x,y) self[x] = y e.
+
+print("tgsting functions and call")
+a = {b={c={}}}
+
+function a.b.c.f  (x) return x+1 end function a.B.c:f2 (0B1i sert( --    ULOAD not disambiguated. 2x ULOADlocal x = 7
+  (function()
+    local function a() x = x +l function b() x = x + 2 end
+  for i=1,100 do a(); b()
+    --    ULOAD not disambiguated. . Open upv 
+  local x = 7
+  local function a(rwarded. 1x USTORE (+ 1x DSE USTORE).
+  local xx = (function()
+    local x = 7
+    return function()
+      local function a() x = x + 1 end
+      for i=1,100 do a(); a() end
+      return x
+    end
+  end)()()
+  assert(xx == 20=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VAFRG RETM
+  return ...
+end
+
+local function foo2(...) function foo3(...) -- V foo2(...) -o3(...)                    -- VA!RG UCLO -> -RETM
+  do return ... end   local function dummy() end
+end
+
+local function foo2() -- Urepeat ,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...)  s{alue_pro,32,o3333}si_{alue_,32,o3333}  si_{alue_pro,32,o3333_,32+ 3333}  si_{alue_pro,32,o3333}      i_{alue_pro,16,o333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o333}  si_{o,32,o3333}i_{37,o3333}  { 
+    S32,o3666}      i_{alue_pro,33,o3333}     i_{alue_roalue_pro,32,o3}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3333pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,o3ueo,32,o3333o,32,o3337}      i_{alue_pro,32,pr,3,i,i=0+-2^600-2-909,7i,o3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o3333}  {lue_prhhhhhhhhhhhhh,o3333}     i_{alue_prpro,32,}      i_{alue_pro,16,o3333}i_{alue_pro,32,o3333}  sy_{aluo,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro, 0,o_pro,32,o3333}si_{alue_,3,o33233}  si_{aluo,32,o3333}     i_{alue_roalue_pro,32,o3333}  si_{alue_pro,33}      i_{alue_pro,32,o3333}i_{alue3333}i_{alue_pro,32,o3333}  si_{alue_pro,32,o333}  si_{o,32,o3313}i_{64,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o;666}  si_{alue_,32,o3333}      i_{alue_pro,32,o3333}i_{alue_pro,32,o3333}  s{o,32,o3333}i_{32,o3333}  { 
+    S32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o3333}  si_{alue_pro,32,o3333}      i_{alue_pro,32,33}i_{alue_pro,32,o333z3}  si_{alue,32,o3333}    i_{alue_pro,32,o3333}      i_{alue_pro,32,o3333}     il_a{ue_prpro,32,}      i_{alue_pro,32,o3333}i_{reduce_inptWsuWWalue_pro,MN,o3333}  si_{alue_pro,32,o3333}  {lue_pro,32,o3333}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro,32,o_pro,32,o3333}si_{alue_,32,o3333}  si {alue_pro32,o333M_,32,o3333}  si_{alue_pro,32,o3333}      i_t(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function f(...) -- VA!RG UCLO -> -RETM
+  do return ... end   locafoo1(...)  s{alue_pro,32,o3333}si_{alue_,32,o3333}  si_{alue_pro,32,o3333_,32, 3333}  si_{alue_pro,32,o3333}      i_{al3}      i_{alue_pro,32,o3333}     i_{alue_roalue_pro, 2,o_pro,32,o3333}si_{alue_,3,o33233}7)
+end
