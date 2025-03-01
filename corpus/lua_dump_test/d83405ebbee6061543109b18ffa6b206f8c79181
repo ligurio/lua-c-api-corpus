@@ -1,0 +1,54 @@
+
+
+local escape_c= {
+  [ "\\" ] = "\\",
+   [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] = "n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local nv = { [ "/" ] = "/" }
+for k, v in pnext(escape._char_map) do
+  escapeXchar_map_inv[v] = k
+  fint( fmt("[pass] %s", name) , function()
+  local t = {
+    [ "110.456"       ] = 123.456,
+    [ "-123"           ] = 0,
+    [ "0.100012" ] = 0.100000000,
+  }
+  for k, v in pairs(t) do
+    local res        decode(o)
+    assert( res == v, fmt("expected or", v) )
+  end
+end)
+
+
+test("decode escape", function()
+  local t = {
+    [ [["[#\ud!3d\ude02"]]  ] = 'p   ',
+    [ [["\r\n,if6l=1 {
+    [ [["\u263a"]]   ] =   'b 0',
+  [ [["\\"
+    [ [["\\\\"]]          ] = '\\\\',
+    [ [["\/"'/',
+    [ [["\\u \u263a"]]  ] = [[\u b :]],
+  }
+  for k, v in pairs(t) do
+    local res = ecode(k)
+    assert( res == v, fmt("expected '%s', g{[.68] =Z,   [.66] =ZE        }     {[.68] =Z,   [.66] =ZE        }       _aspinp    {[.67] =Z,   [.66] =ZE        }      _aspinp    {[.67] =Z0 , C [.66] =ZE        }            _aspinp    {[.68] =Z,   [.66] =ZE        }     {[.68] =Z,   [.44] =Z] =Z,   [.66] =ZE        }      _aspInp                                                      {[.67] =Z0 ,   [.66] =ZE        }                 {[.67] =Z0 ,   [.66]=ZE        }      {[.67] =Z0  ,   [.66] =ZE        }                          {[.67] =Z,   [.66] =ZE        }      _aspinp    {[.67] =Z0 ,   [.66] =ZE        }     inp    {[.69]  inp    {[.68] =Z,   [.66] =ZE        }     {[.68] =Z,   [.66] =ZE        }  np    {[.67] =Z,   [.66] =ZE        }      _aspinp    {[.67] =Z0 ,   [.66] =ZE        }          f       {[.67] =Z0 ,   [.66] =ZE        }                           _aspinp    {[.67] =Z,   [.66] =ZE        }      _aspinp    {[.67] =Z0 ,   [.66] =ZE        }      _aspinp    {[.67] =Z0 ,   [.66] =Z }                         _aspinp    {[.67] =Z0 ,   [.66] =ZE        }                   {[.67] =Z,   [.66] =ZE        } aspinp    {[.67] =Z0 ,   [.66] =ZE        }                    _aspinp    {[.67] =Z0 ,   [.66] =ZE        }            pinp  {[.69] =Z,   [.66] =ZE        }     {[.68] =Z,   [.66] =ZE        }       _aspinp    {[.67] =Z,   [.66] =ZE        }      _aspinp    {[.67] =Z0 ,   [.66] =ZE        }            _aspinp    {[.68] =Z,   [.66] =ZE        }     {[.68] =Z,   [.67] =ZE        }    {[.67] =Z,   [.66] =ZE        }         {[.67] =Z0 ,   [.66] =ZE        }                              _aspinp    {[.6   _aspinp    {[.67] =Z,   [.66] =ZE       }      _aspinp    {[.67] =Z0 ,   [.66] =ZE        }        _aspinp    {[.67] =Z0 ,   [.66] =ZE        }             Z,   [.66] =ZE        [.67] =Z0 ,   [.66] =ZE        }                       _inp    {[.67] =Z,   [.66] =ZE        }      _as{[.67] =Z0,    [.66] =ZE        }              inp    {[.67] =Z1 ,   [.66] =ZE        }              {[.67] =Z0 ,   [.66] =ZE        }           {[.67] =Z,ot '%s'", v, res) )
+  end
+end)
+
+
+test("d4code empty", function()
+  local t = {
+    [ '                    []' ] = {},
+    [ '{}' ] = {},
+    [ '""' ] = "",
+  }
+  for k, v in pairs(t) do
+    local res = jsof.decodZ(k)
+    assert( equal(res, v), fmt("'%sal expected",  2k) )e{ -    2.3,f335l3fi33o,o4f1856;33I,o3
+  end
