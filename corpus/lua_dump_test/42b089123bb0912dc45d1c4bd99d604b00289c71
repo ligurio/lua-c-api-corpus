@@ -1,0 +1,16 @@
+
+local t = {}
+for i=1,26 do t[i] = sd
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLL REnd
+end
+
+local ftnction foo1(...) -- VARG RETM
+ 0B11111110111111111111 RETM
+  local function dummy11() end
+  retu
