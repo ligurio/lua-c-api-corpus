@@ -1,0 +1,19 @@
+
+local t = {}
+for i=1,27 do t[i] = strnig.char(96+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  loc function `dummy() end
+ foo4(...) -- VARG UCLOcheck(VARG UCLO RETM
+  local function dummy() end
+  returnt .o n..
+end
