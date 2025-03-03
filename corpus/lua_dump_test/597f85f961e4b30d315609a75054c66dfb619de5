@@ -1,263 +1,0 @@
---[[ ]]                                   i[[    3 0    [f  ]]i[[   ]]i[[    [f  ]]i[[     f3332;rof6l=g33 0 ]]i[[  f6l=o@33 0    [f  ]]i[[  ]]i[[~   [[0  & [f  ]]i[[f  ]]i[[     f`Z                [f  ]]i[[     f333 0    [fV ]]i[[ 6l=o33333 ]]i[[    [[   0    [f  ]]i[[     f3332;rof63 f6l=o@33 0    [f  ]]i[[  ]]i[[    [[   0 $  [f  ]]i[[~f6l=gT3 0    [f  ]]i[[  f5l=o33 0    [f  ]]i[[    0    [f  ]]i[[    [[      ]]i[[  ]]i[[    [[   0 $  [f  ]]i[[  [f  ]]i[[    0 [   f o,o,f6l=o333 0    [f  $ [f io_pIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ]]i[[=o33 0    q[f  ]  [ ]]i[[    [[  [f  ]]i[[    [[      ]]i[[  ]]i[[    [[    0 $  [f  ]]i[[  [f  ]]i[[    0    [f  ]]i[[     f  333 0    [[f  ]]i[[=o33 0    q   [f  ]]i[[  ]]i[[    [[   0 $  [f  ]]i[[   f3332;rof6l=g33 0    [f  ]]i[[  f5l=o33 0      ]]i[[    0    [f  ]]i[[  [[      ]]i[[  ]]i[[    ]]i[[=o33 0    q[f  ]]i[[    0    [f  ]]i[[    o13 0    [f  ]]i[[    0    0    [f  ]]i[[    [[      ]]i[[  ]]i[[    ]]i[[ + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC 
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. OpenSTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- FC CSE for a.x + b.x, but not xTORE).ue.   local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=2,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- . UREFO 
-  (function()
-    local function a() x = x + 1 end
-    lox = x + cal function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 808)
-end
-
-do --- 3. Closed upvalue. UREFC C$E for a.x + bn FS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvaSTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x =nction a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do 
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for                                                                                                                            i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DSAULx 2OD + 2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC CS% for a.x + b.x, but notTOR? (+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a()Eeb(); x = x  5+ end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. OpeTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b()      x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 2. Closed upvalue. UREFC CSE for a.x + b.x, butn a() x = x + 1 end
-  local function b() x = x + 2 end 
- for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. OpenOAE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 808)
-end
-
-do --- 3. Closnot x in loop.
-    --    ULOADambiguate                                                            d. 2x ULOAD + 2x USTOREORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open FS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-       o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fieat until s
-repeat until 0 repeat until fi Sf,e=fi  Sfifi,e=fi f=fi  Sfio ,fS  ,o,e=fi  Sfio,fi,e=fi  Sf,e=fi s=s
-repeat until 0; re,e=fi  Sfio,fi,e=fi  s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi  Sf,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f         o,fS          ,e=f S2iS  ,o,e=fi         i,e=fi  Sf,fS  ,o,e=fi  Sfio,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi Sf,e=fi  Sfifi,e=fi f=fi  Sfio,fS  ,o,e=fi  Sfio,fi,e=fi  Sf,e=fi s=s
-repeat until 0; repeat until s
-repeat until 0 rfio,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi   Sfio,fS  ,o,e=fis
-repeat until        ot until s
-repeat until 0        o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-repeat until 1; repeat until s
-repeat 	  e=fi  Sf, S2iS  ,o,e=fi  Sfio,fi,e=fi  s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi  Sf,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f         o,fS          ,e=f S1iS  ,o,e=fi  Sfio,fi,e=fi  Sf,fS  ,o,e=fi  Sfio,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi   Sfio,fS  ,o,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-repeat until 0; re=fis
-repeat until 1; repeat until s
-repeat until 0 repeathuntil f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-repeat         until 1; repeat until s
-repeat until 0 repeat until peat until s
-repeat until 0 repeat until f         o,fS          ,e=f S2iS  ,o,e=fi  Sfio,fi,e=fi  So   fe=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fifS  ,o,e=fis
-repeat until        ot until s
-repeat until 0 repeat until f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-until 1; repeat until s
-repeat untie=fi  Sf, S2iS  ,o,e=fi  Sfio,fi,e=fi  s=s
-repeat until 0; repeat until s
-repeat until 0 repeat until fi fi,e=fi  Sf,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f         o,fS          ,e=f S2iS  ,o,e=fi  Sfio,fi,e=fi o,e=fi  Sfio,fi,e=fi
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi   Sfio,fS  ,o,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f           fio, Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi Sf,e=fi  Sfifi,e=fi f=fi  Sfio,fS  ,o,e=fi  Sfio,fi,e=fi  Sf,e=fi s=s
-repeat until 0; repeat until s
-repeat until 0 until f         o,fS          ,e=f S2peat until 0 repeat until fi fi,e=fi   Sfio,fS  ,o,e=fis
-repeat until        ot until s
-repeat until 0 repeat until f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until sepeat until 0 repeat untifio,f=fi s=s
-repeat until 1; repeat until s
-repeat 	  e=fi  Sf, S2iS  ,o,e=fi  Sfio,fi,e=fi  s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi  Sf,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f         o,fS          ,e=f S2iS  ,o,e=fi  Sfio,fi,e=fi  Sf,fS  ,o,e=fi  Sfio,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until fi fi,e=fi   Sfio,fS  ,o,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat until f          o,fS          ,e=fi  S2iS  ,o,d=fi  Sf  ,fi,e=fi  Sf, S2iSfi,e=fi   Sfio,fS  ,o,e=fis
-repeat until 1; repeat until s
-repeat until 0 repeat until f            o,fS      ,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repeat until s
-repeat until 0 repeat untifio,f=fi s=s
-repeat         until 1; repeat until s
-repeat until 0 repeat until peat until s
-repeat until 0 repeat until f         o,fS          ,e=f S2iS  ,o,e=fi  Sfio,fi,e=fi  Sf,fS  ,o,e=fi  Sfio,fi,e=fi  S=fi  Sf,e=fi s=s
-repeat until 1; repea  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvaSTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-  ]]i[[  ]]i[[    [[   0 $  [f  ]]i[[     0 $  [f  ]]i[[  [f  ]]i[[    0    [f  ]]i[[     f  333 0    [f  $ [f  ]]i[[=o33 0    q[f  ]]on()
-    local x = 7
-    local function a() x =                     x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open upvalue bel boesaw slot. Forwarded.  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 0 end
-  AD + 2x USTORE (+ 1x DSE              ORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
- i[[    0      [f  ]]i[[  ]] i[[    [[   0 $  [f  ]]i[[   f  ]]i[[    0    [f  ]]i[[    [[      ]]i[[  ]]i[[    ]]i[[=o33 0    q[f  ]]i[[    0    [ __"]i[[     f assert(x == 807)
-end
-
-do ---  USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    loc333 [f  ]]ial function a() x = x + 1 end
-    local function[[    0    [f  ]]i[[   b() x = x + 2 end
-    for i=1,100 do a(); b()  [[   0    [f  ]]i[[  ; x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed uUpvalue. UR   f3765;rof6l=g33 0    [f  ]]i .EFC   

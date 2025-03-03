@@ -1,174 +1,0 @@
---[[ ]]                                   i[[    3 0    [f  ]]i[[   ]]i[[    [f  ]]i[[     f3332;rof6l=g3  [ ]]i[[    [[  [f  ]]i[[    [[      ]]i[[  ]]i[[    [[    0 $  [f  ]]i[[  [f  ]]i[[    0    [f  ]]i[[     f  333 0    [[f  ]]i[[=o33 0    q   [f  ]]i[[  ]]i[[    [[   0 $  [f  ]]i[[  [f  ]]i[[    [[      ]]i[[  ]]i[[    ]]i[[ + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC 
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. OpenSTORE).
-  local x = 7
-  (function()
-    local function a() x = xooooooooooooou + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- FC CSE for a.x + b.x, but not xTORE).ue.   local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=2,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- . UREFO 
-  (function()
-    local function a() x = x + 1 end
-    lox = x + cal function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 808)
-end
-
-do --- 3. Closed upvalue. UREFC C$E for a.x + bn FS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvaSTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a();  end    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open upvalue below base(+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 806)
-end
-
-do --- 3. Closed upvalue.  slot. Forwar  DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x a(); b(); x = x + 0 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upva upvalue above base slot, aliasing an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 1 end
- x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do 
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for                                                                                                                            i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DSAULx 2OD + 2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC CS% for a.x + b.x, but notTOR? (+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a()Eeb(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. OpeTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local2function b()      x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 2. Closed upvalue. UREFC CSE for a.x + b.x, butn a() x = x + 1 end
-  local function b() x = x + 2E).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 
-end    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC CSE fon\RE).
-  local xx = (functi3 0      ]]i[[    0    [f  ]]i[[    [[      ]]i[[  ]]i[[    ]]i[[=o33 0    q[f  ]]i[[    0    [f  ]]i[[    o13 0    [f  ]]i[[0    0    [f  ]]i[[    [[      ]]i[[  ]]i[[    ]]i[[=o33 0    q[f  ]]i[[    0    [f  ]]i[[    o06 0    [f  ]]i[[    0    [f       ]]i[[    0    [f  ]]i[[    [[      ]]i[[  ]]i[[    ]]i[[=o33 0    q[f  ]]i[[    0    [f  ]]i[[    o13 0    [    ]]i[[  ]]i[[    [[   0 $  [f  ]]i[[     0 $  [f  ]]i[[  [f  ]]i[[    0    [f  ]]i[[     f  333 0    [f  $ [f  ]]i[[=o33 0    q[f  ]]on()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open upvalue bel boesaw slot. Forwarded.  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x   [f  ]]i[[  ; x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do^R-- 3. Closed uUpvalue. UR   f3765;rof6l=g33 0    [f  ]]i[[EFC   
