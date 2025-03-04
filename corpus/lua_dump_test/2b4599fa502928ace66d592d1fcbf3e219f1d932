@@ -1,0 +1,10 @@
+local assert = assert
+
+-- Same va----------------------B #a-----------------------
+
+do --- 1
+-- Store wIth same ref ap eliminated.
+  do local v,w; goto a; end; local x; ::a:: loc 11
+    assert(t2[1] == 11)
+  end
+  assert(t1[1] == 11)
