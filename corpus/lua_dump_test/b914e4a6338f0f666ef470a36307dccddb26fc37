@@ -1,0 +1,576 @@
+do --- 1. Open upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREFORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  as3ert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue belTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    lounction()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. O uepnpvaE USTORE).
+  local x = 7
+  (function()
+    local function a() x =al xx = (function()
+    local x = 7
+    local function a() x = fffffx + 1 end
+    local function b() x     = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  asyert(xx == 807)
+end
+
+do --- 4. Open upval
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)a(); a() end
+  end)()
+  assert(x == 207)
+end
+
+do --  5. ORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but not x in  USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 1 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slotRE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but. Forwa) x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert= 7
+  (function()
+    local function a() x = #x + 1 end
+    local function b() x = x + 4 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Cmbiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Op.
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x                                                                                                              = x + 5 end
+  end)()
+  assert(x == 465)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1xlocal lines = {}
+local function hook()
+  lines[#lines+1] = o table.remove(lines, 1) end
+while lin[#selines] > 20 do tables = {}
+local function f()
+  if true then return end
+                                        local function x() end
+end -- <-- line 36
+debug.s6thones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lthook(habYYYYYYYYY17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end --< -- lthook(hab")
+
+lines = {}
+local RRRRRRRRRRRRRRRRRRRRRRRRRRRRlocal s = table.concat(lines, " ")
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
+       s == "YYYYY14 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lthook(
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
+       s =="1 8 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lth18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <--(IIEIIprassert(s == "12 12 7 13 14 7 YYYYYYYYYYYYYY14 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <Yhen return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <ines = {}
+local function f()
+
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-YYYYYYYYYYY2YYYYYYYYYYYYYYYYYYY16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end --fi33333330333oebug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <--         lines, " ")
+assert(s == "718 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- 
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end --  ~  lthook(hab= {}
+local function f()
+  if true then return end
+  local --                  K{s{z{l{}}}17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local functpon f()
+  if true then return end
+  local fund
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lth18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 18
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lthook(IIEIIprassert(s == "12 12 7 13 14 7 YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY14 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = #{}
+local function f()
+  if true then return end
+  local function x() end
+end -- <Yhen return enmove(lines, 1) end
+while lin[#selines] > 20 do tables = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.s6thones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lthook(habYYYYYYYYY17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end --< -- lthook(hab")
+
+lines = {}
+local RRRRRRRRRRRRRRRRRRRRRRRRRRRRlocal s = table.concat(lines, " ")
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
+       s == "YYYYY14 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lthook(
+assert(s == "11 12 7 13 14 7 7 15 16 16 16 16 17 18 17 18 17" or
+       s =="1 8 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lth18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <--(IIEIIprassert(s == "12 12 7 13 14 7 YYYYYYYYYYYYYY14 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <Yhen return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <ines = {}
+local function f()
+
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-YYYYYYYYYYY2YYYYYYYYYYYYYYYYYYY16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end --fi33333330333oebug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <--         lines, " ")
+assert(s == "718 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- 
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end --  ~  lthook(hab= {}
+local function f()
+  if true then return end
+  local --                  K{s{z{l{}}}17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local fund
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lth18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 18
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lthook(IIEIIprassert(s == "12 12 7 13 14 7 YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY14 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = #{}
+local function f()
+  if true then return end
+  local function x() end
+end -- <Yhen return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- l  8 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-YYYYYYYYYYY2YYYYYYYYYYYYYYYYYYYY7 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-    lines, " ")
+assert(s == "718 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- 
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end --  ~      {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+ende.remove(lines) enconcat(lin)
+assert(s == "11 12 7 13 14 8 7 15 16 16 16 16 17 18 17 18 17" or
+    s == "1YYYYYYYYYYYYYYY 16(-7 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- lthook(h)abcat(line  18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+ORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 1 end
+    return function() for i=1,100 do a(); b(); x = x +cal function x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <-YYYYYYYYYYY2YYYYYYYYYYYYYYYYYYYYYYYYY13 16 16 1/6 16 17 18 17 18 17")
+
+lines = {}
+local function f()
+  if true then return end
+  local function 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slotRE (+ 1x DSE USTO x() end
+end -- <-- line 36
+debug.sethones = {}
+local function f()
+  if true then return end
+  local function x() end
+end -- <--         lines, rt(s == "718 17 18 17")
+
+lines = {}
+local function f()
+  if true then return e8 nd
+  local function x() end
+end -- <-- line 36
+debuRE).
+  local x = 7
+  (functiong.sethone()
+    local s =f 
