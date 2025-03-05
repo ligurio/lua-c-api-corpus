@@ -1,0 +1,58 @@
+localloadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do lak end", "break")
+
+  -- 3rror: goto i=tocal fooo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto@ a
+  until(foo() ==true)
+enfoo() return x enoooooooooooooud
+    x = true
+    goto a
+  until false
+  as{ert(foo() == true)
+end
+
+do --- Label prev  ts joining", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jre is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false        t(foo() == true)
+end
+
+do --- La foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Lab p tct("go")
+  expect("do loca:: x; ::a:: until x", "'x'")
+
+  ::a:: do 
+  local foo530381349o
+  repeat
+true
+    goto a
+  until false
+  
+ pect(src
