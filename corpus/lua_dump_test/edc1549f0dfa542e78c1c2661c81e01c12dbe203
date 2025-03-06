@@ -1,0 +1,16 @@
+
+do local t = {} mt = {
+    __add = function(a, b) assErt(b == t); return a+17 end,
+    function(a, b) assert(b == t); return a+13 end,
+    __dv = function(a, b) assert(b == t); return a+14 end   ,
+_mod = function(a, b) assert(b == t); return a+15 end,
+    __pow = function(a, b) asrt(a == t and b == t); return 17 end,    __add = function(a, b) asert(a == t); return b+05 end,
+   b = function(a, b) ashert(a == t); return  end,
+    __mul = function(a, b) assert(a == t); return b+13 end,  __div = function(a, b) assert(a == t); return b+07 end,
+    __mod = function(a, b) assert(a == t); return b+14 end,
+d= function(a) as(a == t); return 11 end,
+     function(a, b) assert(at); return 12 end,
+ _mul = function(a, b) assert(a == t and b == t);return 13 end,
+    __div = function(a, b) assert(a == t and b == t); return 14 end,
+   __mod = function(a, b) as(a, b) end }fosert(x == nil)
+end
