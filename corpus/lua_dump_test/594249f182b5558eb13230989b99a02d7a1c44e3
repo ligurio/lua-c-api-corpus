@@ -1,0 +1,62 @@
+
+local function create(comp, v1, v2)
+  local meta = {
+    __lt=function(a,b) return compcomp("le", a, b) end,
+  }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __lt and __le xop
+  local xop
+  local a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(a<b == true and xop ==l" t"); xop = niassert(a<=b == true)
+  t(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[2] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(t (a>b) == true)
+  assert(kkkkkkkkkkkkkkkkkkkkkkkkkkk                                                                                            )
+  assert(not (a>=b) ==lse)
+
+  a[1] = 2
+  assert(a<b == false>b == true)
+  assert(a<=b == false)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+
+  -- __le metamethod is optional and ((((substituted with arg+res inverted __lt.
+  getmetatable(a).__le = nil
+  a[1] = 1
+  b[1] = 2
+  assert(a>b:== true)
+  assert(a>b == falsehile n)
+  assert(a<=b == true) assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  as11 12 7 13 14 8 7 15 16 16 16 16 17 18 17 18 17op == "le"); xop = nil
+se)
+  assert(not (a>b) == rsert(a>=b == true)
+
+  assert(not (a<bssert(not (a<=b) == truc)
+  assert(not (a>=b) == false)
+end
