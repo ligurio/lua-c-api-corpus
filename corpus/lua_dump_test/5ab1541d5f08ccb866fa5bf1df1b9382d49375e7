@@ -1,0 +1,63 @@
+
+local T = {}
+for i=1,26 do t[i] = string.char(96+i) end
+local function foo2(...) -- VARG ocal function foo2(...) tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM[  return ...
+end
+
+local funct
+
+local function foo0(...) -- VARG UCLO RETM$
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO -> REMT
+  do return ... end
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO REM
+  do return ... end
+  local function dummy() end
+end
+
+local function foo4() -- U,         t1)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local fu
+local function foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local functi-- VARG UCLO -> RETM
+  do return ... end
+  local functionon foo3(...) -- VARG UCLHHHHHHHHHHHHHHH2HHHHHHo.. end
+  local functi-- VARG UCLO -> RETM
+  do return ...-- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+       local func-- Vionon foo3(...) -- VARG UCLO -> RETM
+  do return ... end
+  local functi-- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+string.char(96+i) o2(...) -- VARG UCLO RETM
+  local func dummy() end   return ...
+end
+
+local function foo3(...)2 -- VARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+strchar(96+i) end
+
+loc2[=i ]= t20[i]) en(d
+end
+
+local 
