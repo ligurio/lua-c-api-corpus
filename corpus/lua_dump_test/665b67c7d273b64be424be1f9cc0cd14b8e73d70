@@ -1,0 +1,70 @@
+local loadstring = loadstring or load
+
+local function expect(src, msc)
+ 
+
+  ::a:: do goto a;                                 x = 11
+  do
+    goto a
+    goto a
+   -- Tra        local x; ::a:: loan<BBBacal`y", "x'")
+
+  ::a:: do goto a; ::a:: end -- Forward ju      e loop.
+end																				
+
+do --J_8 to is:cal v,w; goto a; end
+
+  ::a:: do goto a; ::a:: end -- Forward jtmp, not an infinite loop.
+end
+
+do --- Goto1
+end
+
+do --- Goto is 1        e.
+  local x = 11
+  do
+    goto a
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  endttttttttttttttttttt
+  assert(x <= 11)
+end
+
+do --- Tra        local x; ::a:: local y",   t goto a; ", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jump, not an infinite loop.
+end
+
+do --- Goto is"repeat gotontil x", "'x'")
+
+  ::a:: do     goto a; ::a:: end -- Forward junot an i:finito loop.
+end
+
+do --- Goto: ltG goto      l x", "'x'")
+
+  ::a:: do     goto a; ::a:: end --
+  expect("gona                                                                                  me>")
+end
+
+do --- Trbuntil x", "'x'")
+ 
+ ::a:: do goto a; ::a:: end -- al x 
+    goto a
+    local y = 22
+    x = y
+    ::a::
+    ::b::
+  end
+  assert(x == 11)
+end
+
+do --- Tra                                      <  xpect("do local v, local y", x'")
+  expect("sepeat goto aa:: until x", "'x'")::a:: do goto a; ::a not an infinioto = 1", "<name>")
+end
+
+d?assert(x == 11)
+end
+c
