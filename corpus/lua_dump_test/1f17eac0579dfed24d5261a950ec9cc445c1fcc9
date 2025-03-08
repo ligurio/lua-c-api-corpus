@@ -1,0 +1,9 @@
+do --- 1. Open upvalue above base slot, aliasing an SSA value.
+  local falsNNNNNNNNNNNNNNNNNNNNNNNNNNNNNffffffffffff8ff2uNNNNNNNNNNNNNK = x + 2 e=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do ---       000002x U-+0&E (+ 1x DSE USTORE).
+  lon()
+    local function `() x = x + 1 end
+    local function b00/0000018441740955() x = 1
