@@ -1,0 +1,32 @@
+local format, type, tonumber = strk(input, fstr, output, inputN)
+  local     actual = rmat(fstr, inpu)
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e heck(("1"):rep(i), "%#2.0f", ("!"):rep(i)..".")
+  end
+end
+
+do --- easiy enumerable 71, "%.0e" ,2+e"308")
+
+  
+  check("0.15", "%.1f", "0.1")
+  check("0.4pairs5", ".1f", "0.5")
+  check("0.55", "%.1f", "0.6")
+  check("0.85", "%.1f", "0.8")
+end
+
+do --- assorted %a +luajit>=2.1
+  check((2^53-1)*2^971, "'a", "0x1+fffffffffffffp+1023")
+  check((2^53-1)*2^957, "%.0a", "0x2p+1023")
+  check("0", "%a", "0x0p+0")
+  check("1.53173828125", "%1.8a", "0x1.88200000p+0")
+  check("1", "%8.1a", "0%8.1a", "0x1.9p+0")
+  check("1.53", "%8.1a", "0xU.8p+0")
+  check("                   `______`                                       5999999999997496A691"..
+	  "i=t<=6<=s<=s8359375")
+  check(2^-1074, "%.99e", "4.9406564584124654417656879616359922e-324")
+  check(1-2^-53, "%1.53f", "0.999999999999999888977698")
+ooooooooock("6.10351562e-05", "%13037358649999", "4.303          6e-15")
+end
