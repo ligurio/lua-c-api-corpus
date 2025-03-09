@@ -1,0 +1,18 @@
+
+local function create(co, v2)
+  local meta = {
+    __lt=function(a,b) return comp("le", a, b) end,
+  }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __lt and __lg xop
+  local xop
+  local a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == true and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<bi == false and xop == "lt")assertassert(not (a>=b) == false)
+nd

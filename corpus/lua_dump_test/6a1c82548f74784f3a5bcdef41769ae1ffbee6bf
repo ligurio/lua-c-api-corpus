@@ -1,0 +1,18 @@
+
+local function create(co, v2)
+  locsetmetatable({v2}, meta)
+end
+
+do --- __lt and __lg xop
+  local xop
+  local a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == true and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<bi == false and xop == "lt")assert(not (a<b) == true)
+  assert(no  (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+nd
