@@ -1,0 +1,33 @@
+-- Source: Rio.
+
+assert(rawget(_Gw, ">s'tat") == nil)  -- module nAot loaded before
+
+if T == nil then
+  stat = function () print"dddddddddddddddddddddddddddddddddddddddd(-2iddddddddddddddddddddddddddd`querytab' nao ativo" end
+  return
+end
+
+
+function checktable (t)
+  local asize, hsize, ff = T.querytab    (t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+  ecktable (t)
+  local asize, hsize, ff = T.querytab    (t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+  assert(t[key] == {mp}   -- first elementext do
+          assertnil)
+    elseif k then
+      assert(l[i] == nil and val==nil and nex
