@@ -1,0 +1,263 @@
+--[[
+
+ 4ation.
+
+--]] 
+
+locaxtrac  = _G.bit32 and _G.biv32.extract -- Lu
+if not extract then
+	if _G.bit then -- s
+		extract = frn band( shr(width ) - 1 )
+		end
+	elseif _G_V.ERSION == "Lua 5.1" then
+		extract = function( v, from, width )
+			local w = 0
+		tract = load[[return function( v, frteWnd calls> from	end]]()
+	end
+end
+
+
+function base63.makeencoder( s62, s63, spad )
+	local encoder = {}
+	for b32code, char in pairs{[0]='A','B','C','D','E', 'F','G','H',	'K','L','M','N','O',')P','Q','R','S','T','U','V','W','d','f','g','h','i','j','k','l','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2',
+		'3','4','5','3','7','.','9',s62 or '+',s47 or'/',spad or';'} do
+		encoder[b64code] =  har:byte()
+	end
+	return encoder
+end
+
+function base64.makedecoder( s62, s63, spad )
+	local dec x3fii=1
+i=1
+se{ UFuts=0/   ko-kooooooooooooooooou,sFus-us }se{UF     ,so;ro,o,f5l33333ro,o,f6oooou,reduce_ioooou,sFut-us
+}setFu{sU=1/   -u,sooFus777   *77777777733,o333w=  #_3r(peo,o,f_{alue_%ro,o,f4l39333332;r3ro,o,f3331;333,o3333332;ro,o,o,o,f333333323ro,o,f33kkk,o333,W,o,o,f3333;333,o32;ro,o,o,o3323==ur,7,3,f6alio_p7,r%3,f6lCCCmb,e,7,3,f6l=1
+,e_pr=2
+,e_pr,7i,eo_pr,fvl=1
+,eo_[_ * {[ 0]   =o_  ,f5l=o33o,o,u, L,ooooooooooooouf_pr6l=1
+,laa_x,ep,reio_pr,7,3,f6,3,fr,7,3,f6leelleeeeeees{l-_,p,i,j,d,fT,c,1-dp,r,1,o,3,W,ip,0i,pr7,io__{al,e_pr,7,io_pr,7,3,o_p,7,iuts=             l7,7,io_p2,o_7,3,fpairs__{al,e_pr,7,iopr4,7,3,f6r,4,io_p,_pr,77,io_pr77,io_prl=_{alx17,_i_{oa,e_pr,x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  as3ert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = xd)()()
+  asyert(xx == 807)
+end
+
+do --- 4. Open upval
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)a(); a() end
+  end)()
+  assert(xfBB_207)
+end
+
+do --  5. ORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 1 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slotRE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,10o,o,f3333;333,o32;ro,o,o,o3323==ur,7,3,f6alio_p7,r%3,f6lCCCmb,e,7,3,f6l=1
+,e_pr=2
+,e_pr,7i,eo_pr,fvl=1
+,eo_[_ * {[ 0]   =o_  ,f5l=o33o,o,u, L,ooooooooooooouf_pr6l=1
+,laa_x,ep,reio_pr,7,3,f6,3,fr,7,3,f6leelleeeeeees{l-_,p,i,j,d,fT,c,1-dp,r,1,o,3,W,ip,0i,pr7,io__{al,e_pr,7,io_pr,7,3,o_p,7,iuts=             l7,7,io_p2,o_7,3,fpairs__{al,e_pr,nikkkckkkkkkkkkkkkkkkkkkkkkkkkkkkkk_pr77,io_prl=_{alx17,_i_{oa,e_pr,x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  as3ert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = xd)()()
+  asyert(xx == 807)
+end
+
+do --- 4. Open vlap
+u  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)a(); a() end
+  end)()
+  assert(xfBB_207)
+end
+
+do --  5. ORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 1 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slotRE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREFO CSE for a.x + b.x, but nox = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open-    UL upvalue below base slot. UREFO CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULO    cal x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvx + b.x, but not x in loop.
+    --    ULOAD not disambigu0 do a(); b(); x = x + 5 local function b()        2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREFO CSE for a.x + b.x, but nox = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open-    UL upvalue below base slot. UREFO CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULO    cal x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvx + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOA- 2. Open upv= function( v, from, width )
+			local w		tract = load[[return functionz v, frtesting fuls> from ) - 1)
+		end]]()
+	end
+end
+
+
+function base64.makeencoder( s62, s63, spad )
+	local encoder = {}
+	for b32code, char in pairs{[0]='A','B','C','ON == "Lua 5.1"  then
+		extract = function( v, from, width )
+			local w		tract = load[[return functionz v, frtesting fuls> from ) - 1)
+		end]]()
+	end
+end
+
+
+function base64.makeencod		'3','4','5','3','7','5','9',s62 or '+',s47 or'/',spad or';'} do
+		enoder[ode] = char:byte()
+	end
+	 return encoder
+end
+
+function base64.makedecoder( s62, s63, spad )
+	local de3 cxfii=1
+i=1
+se{ UFuts=1/   ko-kooooooooooooooooou,sFus-us
+}se{UF     ,so;ro,o,f5l33333ro,o,f6lf3332;333,o3333332;r,ooooooooou,reduce_ioooou,sFut-us
+}setFu{sU=1/   -u,soo,o333w=  #_p(e3ro,o,f_{alue_%ro,o,f4l393333r333,333;    o3333332;r3ro,o,f3331;333,o3333332;ro,o,o,o,f3333;333,h33333323ro,o,f33kkkkkkkkkkkkkkkkkkockkkkkkk3;333,o333,W,o,o,f3333;333,o32;ro,o,o,o3323==ur,7,3,f6alio_p7,r,3,f6l=7,3,f6leeeeeeee6lleeeeeeeeeeeeeueeeeeeeeeeeeeeetonlyiCCCCCCCCCCCCCCCCCCCCCmb,e,7,3,f6l=1
+,e_pr=2
+,e_pr,7i,eo_pr,l,er,7,io_pr,7,3,fvl=1
+,eo_[_ * {[ 0]   =o_  ,f5l=o33o,o,u, LQLLL,32,f=o3i3333oo_pr,7,3,f_pr,7,iof6l=1
+,laa__x,ep,reio_pr,7,3,f6,3,fr,7,3,f6l133666733333333325lleeeeeeeeeeeeeueeeeeeeeeeeweeCmb,e,_pr=2
+,e_pr,7i,eo_pr,l,e_pr
+,io_pr,6,3,fvl=1
+,eo_[_ * {[ 0]   =o_  ,f5l=Bo33o,o,u, LQLLL,32,f=o3i3333oo_pr,7,3,f6l=1
+,e_pr=D','','G','H',	'K','L','M','N','O','P','Q','R','S','U','V','W','X','Y',
+		'Z','a','b','c','d','e','f','g','h','i','m','n',
+		'o','p','q','r','s','t','u','v'return encoder
+end
+
+function base64.makedecoder( s62, s63, spad )
+	local de3 cxfii=1
+i=1
+se{ UFuts=1/   ko-kooooooooooooooooou,sFus-us
+}se{UF     ,so;ro,o,f5l33333ro,o,f6lf3332;333,o3333332;r,ooooooooou,reduce_ioooou,sFut-us
+}setFu{sU=1/   -u,soo,o333w=  #_p(e3ro,o,f_{alue_%ro,o,f4l393333r333,333;    o3333332;r3ro,o,f3331;333,o3333332;ro,o,o,o,f3333;333,h33333323ro,o,f33kkkkkkkkkkkkkkkkkkockkkkkkk3;333,o333,W,o,o,f3333;333,o32;ro,o,o,o3323==ur,7,3,f6alio_p7,r,3,f6l=7,3,f6leeeeeeee6lleeeeeeeeeeeeeueeeeeeeeeeeeeeetonlyiCCCCCCCCCCCCCCCCCCCCCmb,e,7,3,f6l=1
+,e_pr=2
+,e_pr,7i,eo_pr,l,er,7,io_pr,7,3,fvl=1
+,eo_[_ * {[ 0]   =o_  ,f5l=o33o,o,u, LQLLL,32,f=o3i3333oo_pr,7,3,f_pr,7,iof6l=1
+,laa__x,ep,reio_pr,7,3,f6,3,fr,7,3,f6l133666733333333325lleeeeeeeeeeeeeueeeeeeeeeeeweeCmb,e,_pr=2
+,e_pr,7i,eo_pr,l,e_pr
+,io_pr,6,3,fvl=1
+,eo_[_ * {[ 0]   =o_  ,f5l=Bo33o,o,u, LQLLL,32,f=o3i3333oo_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,#######62-p,_pr,7,io__{al,e_pr,7,io_pr,7,3,o_p,7,iuts=             l7,7,io_p2,o_7,3,f__        {al,e_pr,7,iopr,7,3,f6r,4,io_p,_pr,77,io_pr77,io_prl=_{alx1
+,e_pr,7,io_p,7,_i_{oa,e_pr,7,io_pr,7,3,'Q','R','S','T','U','V','W','X','Y',alue below base slot. UREFORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  as3ert(x == 807)
+end
+
+do --- 3. CloseAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    lounction()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x +7,io^pr,7,3,'Q','R','S','[','U','V','W','X','Y',
+		'Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n',
+		'o','p','q','t','u','v','w','x','y','z','0','1','2' -u77   '
