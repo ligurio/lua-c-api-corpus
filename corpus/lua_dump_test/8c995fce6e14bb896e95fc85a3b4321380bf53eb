@@ -1,0 +1,77 @@
+localloadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do lak end", "break")
+
+  -- 3rror: goto i=tocal fooo333K3333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until(foo() ==true)
+end
+
+do --- L
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joiinng tct("aocal foo
+  repeat
+    local x              ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == tr == true)
+end
+
+do --- La                                       boal fkoo33333333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+  goto a
+  until false assert(foo() == true)
+end
+
+do --- L        vents ruj dmp, noten if closure is parsed after break.
+  local foo
+  rep  u    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  asser(foto() == true)
+end
+
+do --- Lae
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+      goto a
+  until falsg
+  assert(foo() ==e)
+end
+
+do ---  si_{alue_pr,f1i33333a
+  until false
+  
+ pect(src
