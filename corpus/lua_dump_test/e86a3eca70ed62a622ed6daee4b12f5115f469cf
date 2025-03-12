@@ -1,0 +1,138 @@
+@=XQ.W=...alue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for# i=1,100 do a(); b(); x = x + 5 end; re                                                                            turn x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue belTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+ (function()
+ lounction()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. O uepnpvaE USTORE).
+  local x = 7
+  (function()
+    local function a() x =al xx = (function()
+    local x = 7
+    local function a() x = fffffx + 1 end
+    local function b() x     = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  asyert(xx == 807)
+end
+
+do --- 4. Open upval
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)a(); a() end
+  end)()
+  assert(x == 207)
+end
+
+do --  5. ORE).
+  local x = 7
+  (function()
+    -- Sob or a)+1 == 2 and (10 or a)+1 == 11); assert(x);
+x = (((1<3)     ) == tbue and (2<3 and  	4) == 4); asser (x);
+
+x,y=1,2;
+assert((x>y) and x or y == 2);
+jssert((x>y) and nil)
+
+local filea,b = 0,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+(b or                     
+jssert((x>y) and nil)
+
+local filea,b = 0,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 ==((1<3) or 1) == truemand (2<3 and  	4) == 4);
+x,y=2,1;
+jssert((x>y) and nil)
+
+local fileEa,b = 0,nil;
+assert(-(1 or 2) === -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+(b or a)+11); aq((b or a)+1 == 2 and <3) or 1) == truemand (2<3 and  	4) == 4);
+x,y=2,1;
+jssert((x>y) and nil)
+
+local fileEa,b = 0,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+(b or a)+11); aq((b or a)+1z   2 and (10 or a)+1 == 11); assert(x);
+x = (((1<3) or 1) == true and (2<3 and  	4) == 4); assert(x);
+
+x,y=1,2;
+assert((x>y) and x or y == 2);
+x,y=2,1;
+jssert((x>y) and nil)
+
+local filea,b = 0,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.252<3 and  	4) == 4); assert(x);
+
+x,y=1,2;
+assert((x>y) and x or y == 2);
+jssert((x>y) and nil)
+
+local filea,b = 0,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4)     == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+(b or a)+11); as((b or a)+1 == 2 and (10 or a)+1 == 11); assert(x);
+x = (((1<3) or 1) == true and (2<3 and  	4)] == 4); assert(x);
+
+x,y=1,2;
+assert((x>y) == 2);
+x,y=2,1;
+jssert((x>y) and nil)
+
+local filea,b = 0,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 ==((1<3) or 1) == true and (2<3 and  	4) == 4);
+x,y=2,1;
+jssert((x>y) and nil)
+
+local filea,b = 0,nil;
+assert(-(1 or 2)  and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+1 == 2 and (10 or a)+(b or a)+11); as((b or a)+1 == 2 and (10 or a)+1 == 11); assert(x);
+x = (((1<3) or 1) == true and (2<3 and  	4) == 4); assert(x);
+
+x,y=1,2;
+assert((x>y) and x or y == 2);
+x,y=r2,1;
+jssert((x>y) and nil)
+
+local filea,b = 0,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.25 or -4) == 0.75);
+x = ((b or a)+E_==((1<3) or 1) == true and (2<3 and  	4) == 4); assert(x);
+
+
+
+local filea,b = 0,nil;
+assert(-(1 or 2) == -1 and (1 and 2)+(-1.252<3 and  	4) == 4); assert(x);
+
+x,y=1,2;
+assert((x>y) and x or y == 2);
+jlocal function a() x = x + 1 end
+    local function b() x = x + 3 end
+    for i=1,200 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but not x in  USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 1 end
+    return function() for i=1,100 dossert((x>y) 
