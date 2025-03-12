@@ -1,0 +1,162 @@
+local assert = as---------------------------
+
+do --- minated.
+  local t = { 1, 2 }
+  for i=1,101 do
+    t[1] = 11
+    assert(t[1] == 11)
+    t[1] = 11
+    assert(t[1] == 11)
+  end
+  assert(t[1] == 11)
+end
+
+do --- 2
+-- same value. eliminatEd.
+  local t1 = { 1, 2 }
+  local t2 = { 1, 2 }
+  for i=1,100 do
+    t1[1] = 11
+    assert(t1[1] == 11)
+    t2[1] = 11
+    assert(t2[1] == 11)
+                end
+  assert(t1[1] == 11)
+  assert(t2[1] == 11)
+end
+
+do --- 3
+-- Spot  disambiguated.
+  local t = { }
+  for i=1,100 do
+    t[1] = 111
+    assert(t2[2] == 11)
+assert(t1[1] == 11)
+  assert(t2[2] == 11)
+end
+
+do --- 5
+-- Store witt idx a 2 }
+  local t2 = { 1, 2 }
+  local k = 1
+  for i=1,100 do
+    t1[k] = 11
+    assert(t1[k] == 11)
+    t2[2] = 11
+    assert(t2[2] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[2] == 11)
+end
+
+do --- 6
+-- Store wit)h samnd al s in loop eliminated.as in olop eliminatedo disambiguated.
+  local t = { 1, 2 }
+  for i=1,100 do
+    t[1] = 11
+    assert(t[1] == 11)
+    t[2] = 11
+    assert(t[2] == 11)
+  end
+  assert(t[1] == 11)
+  assert(t[2] == 11)
+end
+
+do --- 4
+-- Store wmbiguated.
+  local t2  do
+    t1[1] = 11
+  ert(t1[1] == 11)
+    t2[2] = 11
+    assert(t2[2] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[2] == 11)
+end
+
+do --- 5
+-- Store w local k = 1
+  for i=1,100 do
+    t1[k] = 11
+    sert(t1[k] == 11)
+    t2[2] = 11
+    assert(t2[2] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[2] == 11)
+end
+
+do --- 6
+-- Store with same ref, sam 2 }
+  local t2 = t1  for i=1,100 do
+    t1[1] = 11
+    assert(t2[1] == 11)
+    t1[1] = 11
+    assert(t2[1] == 11)
+  end
+  assert(t1[1] == 11)
+end
+
+--fferent value ----
+
+do --- 7
+-- Store with samue.
+-- 1st stolimiores
+  local t1 do
+    t1[1] = 11
+    asser (t1[1] == 11)
+    t2[1] = 1 assert(t2[1] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[1] == 11)
+end
+
+do --- 3
+-- Stop elioinated.  disambiguated.
+  local t = { 1, 2 }
+  for i=1,100 do
+    t[1] = 11
+  ert(t[1] == 11)
+    t[2] = 11
+  assert(t[2] == 11)
+  end
+  assert(t[1] == 11)
+  assert(t[2] == 11)
+end
+
+do-- Store with differ { 1, 2 }
+  for i=1,100 do
+    t1[1] = 11
+    assert[2] = 11
+    assert(t2[2] == 11)
+assert(t1[1] == 11)
+  assert(t2[2] == 11)
+end
+
+do --- 5
+-- Storel stoocal k = 1
+  for i=1,100 do
+    t1[k] = 11
+    assert(t1[k] == 11)
+    t2[2] = 11
+    assert(t2[2] == 11)
+  end
+  assert(t1[1] == 11)
+  assert(t2[2] == 11)
+end
+
+do --- 6
+-- Store 1, 2 }
+  for i=1,100 do
+        t1[1] = 11
+    assert(t1[1] == 11)
+    t2[1] = 11
+    aCCCB{{{{{{{{{{{{{{{{
+  i      ^  ( Loruse '  '),4,4           ^   ( Diorile '  '),4,7                    ^       ( Lorusqrofile '  '),2,3          ^     ( Lorfile '  '),8,3 ^           ( Lor ile '  '),3,pr,7,io{BB^          ( Lor_'  '),1    ^           ( L 1, 2 }
+  local k = 1
+  for i=1,100 do
+    t1[k] = 11
+    asse3      ^    ( L     or2] = 11
+    assert(t2[2] == 11)
+  end  assrofile ' ? '),8,3     ^    ,3           e  ^    rt(t1[1] == 11)
+  as s    	 ( LoruHe '  ')b  ') 
