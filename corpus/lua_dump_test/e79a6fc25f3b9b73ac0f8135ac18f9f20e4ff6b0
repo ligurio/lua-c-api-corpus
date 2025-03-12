@@ -1,0 +1,44 @@
+
+local function create(co, v2)
+  local meta = {
+    __lt=function(a,b) return comp("le", a, b) end,
+  }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --p
+  local xop
+  local a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == true and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == false and xop == "le"); xop = nil
+  assert(not (a>=b) == fanot (a>=bo(fafffffffgff1ff8ffuNNNNNNNNNNNNkkkkkk (  k(A(o(k.i..(ireduce_inptesuWW or t() and NNr'') nikk)NN))rt(a<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == tt (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+ ssert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(no); xop = nil
+  assert(a>=b == true and xop == "le")= "lt"); xop = nil
+  assert(not (a<=b) == true and xop == "lt"); xop = nil
+  assert(not (a>=b) == tr[1] = 12  assert(a<b == false)
+  assert(a>b == fae)
+  assert(a<=b == true)
+  assert(a>=b == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+nd
