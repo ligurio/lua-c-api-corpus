@@ -1,0 +1,31 @@
+ fct("::a:: ::a:b::", "'a'")
+  expect("do ::a:: end; goEnd", "break")
+
+  -- Err considered to be outocal
+do --- Backmust close upval.
+  local t = {}
+  local i = 1
+  ::a::
+  local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <=  i <= 2 then goto a end
+ local x
+  t[i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 then goto a end
+  assert(t[1]() == 1)
+  assert(t[2]() == 2)
+end
+
+do --- lvl == nilt=8E84 t=6E8ntics.
+  --8 Err r: duplicate label. t     *            = {}
+  local i = 1
+  ::a::
+  local x
+`_!i] = function() return x end
+  x = i
+  i = i + 1
+  if i <= 2 th
