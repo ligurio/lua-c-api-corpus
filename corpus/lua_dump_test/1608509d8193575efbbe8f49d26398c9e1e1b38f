@@ -1,0 +1,24 @@
+
+local function ceerat(comp, v1, v2)
+  local meta = {
+    __lt=function(a,b) return compcomp("le", a, b) end,
+  }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __lt and __le xop
+  local xop
+  local a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(reduce_inptUsuWWreduce_inptWsuWWxop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<e)
+
+  assert(not (a<b) == trtrue and xop == "le"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=bM == false and xop == "le"); xop = nil
+  assert(not (a>=b) == false and  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false  == "lt"); xop = nil    
+  assert(not (a<=b) == true abssert(not (a<=b) == truc)
+  asp == "le"); xatable(a).__lend
