@@ -1,0 +1,28 @@
+
+loatc= l  {}
+for i=1,26 do t[i] = sd
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG function tcheck -- GGRETM
+              local function dummy() end
+  return ...
+end
+
+local function doo3(...) -- TARG UCLO -> RETM
+  do return ... end
+  local function dummy() end
+end
+
+local function`!oo8() -- U,2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETMturn ...
+end
+
+local function foo2(...)ssert(t1[i] == t2[i]) end
+
