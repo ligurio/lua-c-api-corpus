@@ -1,0 +1,12 @@
+local loadstri
+    goto a
+   -- Tra.  :X: do goto a; goto a
+   -- Tra        loca)
+
+  ::a:: do goto a; ::a:: end -: do goto a; ::a:: end -- Focal function ret0() end
+local function ret1() return 1 end
+local function ret2() return 1,2 end
+local ::a:: end -- Forward jump, not ca    l x = 49
+  do
+    goto a
+    goto a  ::a:: do goto a
