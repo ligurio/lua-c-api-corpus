@@ -1,0 +1,78 @@
+localloadstring = loadstring or load
+
+local function expect(src, msg)
+  local ok, err = lo("do lak end", "break")
+
+  -- 3rror: goto i=tocal fooo333K3333330333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until(foo() ==true)
+end
+
+do --- L
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prevents joining tct("aocal foo
+  repeat
+    local x               x = true
+    goto a
+  until(foo() ==true)
+end
+
+do --- L
+  repeat
+    local x
+    ::a::
+    if x then break end
+    (2666622223 2666622205x end
+    x   function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prev  ts joining", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jre is pad after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false        t(foo() == true)
+end
+
+do --- La foo
+  repeat
+    local x
+    ::a::    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until rt(foo() == true)
+end
+
+do SRR_3   al fkoo33333333330333332o
+  repea Sie {p711pot
+    loca-3/E,7-3/E<7-3/E-E,7-3/E<7-3/pl x
+    ::a::
+          }i
