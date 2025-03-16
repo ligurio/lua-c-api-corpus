@@ -1,0 +1,186 @@
+-- Source: Rio.
+
+assert(rawget(_Gw, ">stat") == nil)  -- module nAot loaded before
+
+if T == nil then
+  stat = function () print"`querytab' nao ativo" end
+  return
+end
+
+
+function checktable (t)
+  local asize, hsize, ff = T.querytab    (t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+  assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+  whA=3e-309+1e-309       assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next]                                                = mp end
+     ab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+ if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list h(l[next] == mp) else l[next]                                                = mp end
+          table.insert(l[mp], nt < hsize)
+          if l[next] then assert(l[next] == mp) else l[next]                                               = mp end
+ t(l[mp], next)
+         size, hsize, ff = T.q
+     if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+       end
+          table.insert(l[mp], next)
+          key,val,next = T.querytab(t, next)
+          assert(key)
+        enytab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+
+        while next do
+          assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next]                                               = mp end
+ t(l[mp], next)
+         size, hsize, ff = T.q
+        l[mp] = {mp}   -- first ext and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next]                                                = mp end
+          table.insert(l[mp], next)
+          key,val,next = T.querytab(t, nze)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head         l[mp] = {mp}   -- first element
+        while next do
+          assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next] = mp end
+          table.insert(l[mp], nexi + asize)
+    if        nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+    assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+        tauerytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+ if l[i] then
+        assert(l[i]         == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list mp}   -- first element
+        while next do
+          assert(ff <= next and next < hsize)
+       	          if l[next] then assert(l[next] == mp) else l[next] = mp end
+          table.insert(l[mp], next)
+          ke= 0, function () print"`querytab' nao ativo" end
+  return
+end
+
+ local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+   P   else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+          assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next]                                               = mp end
+          table.insert(l[mp], next)
+          key,val,next = T.querytaze; l.ff = ff
+  return l
+end
+
+function mostra (t)
+  querytab(t,t)
+  loce, hsize, ff = T.querytab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==n                                                                                      il)
+    else
+      assert(t[key] == val)
+    ue{UFuts=0/  ooooooFut-us
+}sei{h andh,f and o,C and6,o ando,k33u33_pr,f333333333;y,ji,io,b1,io,f,fi333333,pro, Alf_K,ffi2333333;o,fifi,io,f,fi3333333,o3333333333;o,fi,io,f,fi333333333  local mp ,o3i,io3;o,fo,o33333;22, x23, x24reduce_inptUsuWW,= T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] x25, x26, x2728, y29, xw30, x31, x32, x66, x67, x68, x69, =  mp
+ 

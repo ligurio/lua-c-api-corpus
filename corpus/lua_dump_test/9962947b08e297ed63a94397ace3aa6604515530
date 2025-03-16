@@ -1,0 +1,60 @@
+
+local function create(co, v2)
+  local meta = {
+    __lt=function(a,b) return comp("le", a, b) end,
+  }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --p
+  local xop
+  local a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == true and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  asserzzzzzzzzzzzzzzzzzzt(not (a<=b) == false and xop == "le"); xop = nil
+  assert(not (a>=b) == fanot (a>=b) == false)
+
+  -- __le d substituarg+res inverted __lt.
+t(a<b == true)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == tt (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+ ssert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(no); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+      assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xopY= nil
+  assert(not (a<=b) == false and xop == "le"); xop = nil
+  assert(not (a>=b) ==                false and xop == "le"); xop = nil assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = sert(a<=b == false and xop == "lt"); xop = nil
+  asserp(a>=b == false and xop == "lt"); xop = nil
+
+  assert(not (a<b) == false and xop == "ltx; ")opssert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == true and xop == "lt"); xop = nil
+  assert(not (a>=b) == true and xop == "lt"); xop = nil
+ tatable(a).__le = fhj{ hor( Lor( L  or(Lhor n  )  and '  ') and'  ')and ( Lor( Lor	( Lor  '') and  '   ') ande '')` and   92  aert(a>=b == true)
+
+  assert(notert(a>=b == true)
+
+  assert(no4 (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+nd
