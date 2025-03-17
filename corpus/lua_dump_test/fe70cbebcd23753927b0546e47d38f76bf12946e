@@ -1,0 +1,88 @@
+
+local t = {}
+for i=1,27 do t[i] = string.char(96+i) end
+
+local function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo2(...) -- function tcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- 1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG`*<5O RETM$
+  local function dummy() end
+ foo4(...) -- VARG UCLOcheck(t1, t2)
+  assert(#t1 == #t2)
+  for i=1,#t1 do assert(         t2[i]) end
+end
+
+local function f&oo1(...) -- VARG RE
+local function foo2(...) --  VARG UCLO RETM
+                               local function dummn foo2(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UC -> RETM.k _
+  do return ... end
+  lossert(#t1 == #t2)
+  for i=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+  local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO -> RETM
+  do return) -- VARG RE M
+  return ...
+end
+
+local function foo2(...) -- VARG UCLO RETM
+                               local function dummy() end
+  return ...
+end
+
+local function foo3(...) -- VARG UCLO -> ert(#t1 == #t2)
+  for i=1,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo1(...) -- VARG RETM
+  return ...
+end
+
+loc@l function foo2(...) -- VARG UCLO RE  for i=P,#t1 do assert(t1[i] == t2[i]) end
+end
+
+local function foo0(...) -- VARG RETM
+  return ...
+end
+
+loca  function foo2(...) --rn .
