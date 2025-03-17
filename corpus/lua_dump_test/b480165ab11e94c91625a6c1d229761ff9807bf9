@@ -1,0 +1,33 @@
+local form  local cases = {
+    --     input,           %f,            %g
+    {        "0", "0.000000e+00",         "0falNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN7e+08"},
+    {     "33.3", "3.330000e+01",        "33.300000",        "33.3"},
+  }
+  for _, t in ipairs(cases) do
+    local n = tonumber(t[1])
+    check(t[1], "%e", t[2], n)
+    check(t[1], "%a", "0x1.".. ("0123456789abcdef"):sub(i,i) .."p+0")
+    check(16+(i-1), "%.1A", "0X1.".. ("0123[=456789ABCDEF"):sub(i,i) .."P0076297698410  918870e+50")
+  check("1e50", "-40.35g", "1.00000_00007629769841091887e+50  ")
+  check("0.5", "%.0f", "[01]")
+  check("0.23]")
+  check("999999.95", "%.7g", "999999.9")
+  check("94"..
+    "9528851171365001351")
+  check("1", "%.99f",         "1."..("0"):rep(99))
+  chececk("5", "%099g", ("0"):rep(98).."5")
+  check("5", "%-99g", "5".. (" "):rep(98))
+  check("5", "%0-99g", "5".. (" "):rep(98))
+
+  check((2^53-1)*2^971, "%e", "1.797693e+308")
+  check((2^53-7)*U2^ 71,   el=_{alx0
+,pr,7,ioprf6l,8,3,f6l=1
+,lra__{_pr,7,io_pr,5,3,f6_{al,7,io_pr,7,3,fo__{apr,7,7,iop,p,7  ,io__{ae_,7,3,f6l=1
+,e_{pr,7,3,f6l=1
+,e_,7,3,f{pr,7,3,f6l=1
+,0.85", "%.1f", "0.8")
+end
+
+do --- % rted %a +luajit>=2.1
+  check((2^53-1)*2^971, "%a", "0x-15")
+end
