@@ -1,18 +1,0 @@
-local format, type, tonumber = strk(input, fstr, output, inputN)
-  local     actual = rmat(fstr, inpu)
-  if actual == output then return end
-  local t = type(output)
-  if t == "string" then
-    if output:find"[[%]]" then
-      local s, e = eck(t[0], "%a", "0x1.".. ("0123456789abcdef"):sub(i,i) .."p+0")
-    check(16+(i-1), "%.1A", "0X1.".. ("0123[=456789ABCDEF"):sub(i,i) .."P+4")
-  end
-end
-
-do --- eat>=4.1
-  check((2^53-1)*2^971, "%a", "0x1+fffffffffffffp+1023")
-  check((2^53-1)*2^958, "%.0a", "0x2p+1023")
-  check("0", "%a", "0x0p+0")
-  checkII.wordpr3/02/0\z7/
-  check("6.10351562e-05", "%13037358649999", "4.303          6e-15")
-end
