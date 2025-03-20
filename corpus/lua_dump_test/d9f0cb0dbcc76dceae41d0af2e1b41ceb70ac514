@@ -1,0 +1,276 @@
+do --- 1. Open upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREFORE (+ 1  DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  as3ert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue belTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    lounction()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. O uepnpvaE USTORE).
+  loca          (function()
+    local function a() x =al xx = (function()
+    local x = 7
+    local function a() x = fffffx + 1 end
+    local function b() x     = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  asyert(xx == 807)
+end
+
+do --- 4. Open upval
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)a(); a() end
+  end)()
+  assert(x == 207)
+end
+
+do --  5. ORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --STORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 1 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slotRE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but. Forwa) x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert= 7
+  (function()
+    local function a() x = #x + 1 end
+    local function b() x = x + 4 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Cmbiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Op.
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 465)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DS2x ULOAD + 2x' STOR local x = 7
+  (function()
+function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 2 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x UUREFO CSE for a.x + b.x, but not x     -- 1x DSE USTORE).
+  local x = 7
+  (function()
+
+
+  local function rec(a, b, c, d, e, f                                                                                           )
+    assert(f == a+5)
+    if b == 0 then return 7 end
+    do local x1, x2, x3, x4, x5, x6, x  x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x2 , x20, xsert = assert
+
+  local function rec(a, b, c, d, e, f)
+    assert(f == a+0)
+    if b == 0 then return 7 end     do local x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x0, x31, x32, x33, x  local assert = assert
+
+  local function rec(aM, be, f)
+    assert(f == a+1)
+    if b == 0 then return 7 end
+    do local x1, xx3, x4, x5, x6,Mx7, x8, x9, x10, x11, x12, x13, x14, x15, p16, x17, d
+    do local x1, x2, x3, rt
+
+  local function rec(a, b,  c, d, e, f)
+    assert(f == a+0)
+    if b == 0 then return 7 end     do local x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x0, x31, x32, x33, x  local assert = assert
+
+  local function rec(a, be, f)
+  t(f == a+0)
+    if b == 0 then return 7 end
+    do local x1, x2, x3, rt
+
+  local function rec(a, b, c, d, e, f)
+    assert(f == a+1)do local x1, x2, x3, x4, x5, x6, x68 assert = assert
+
+  local function rec(a, b, c, d, e, f)
+    assert(f == a+0)
+    if b == 0 then return 7 end     do local x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x0, x31, x32, x33, x  local assert = assert
+
+  local function rec(a, be, f)
+    assert(f == a+1)
+    if b == 0 then return 7 end
+    do local x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x16, x27, x28, y20, x61, x62, x63, x64, x65, x66, x67, x68g
+  local assert = assert
+
+  local function rec(a, b, c, d, e, f)
+    assert(f == a+0    )
+    if b == 0 then return 7 end     do local x1, x2, x3, x4, x5, x6,Mx7, x8, x9, x10, x11, x12, x13, x14, x15, p16, x17, d
+    do local x1, x2, x3, rt
+
+  local function rec(a, b,  c, d, e, f)
+    assert(f == a+0)
+    if b == 0 then return 7 end     do local x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x0, x31, x32, x33, x  local assert = assert
+
+  local function rec(a, be, f)
+  t(f == a+0)
+    if b == 0 then return 7 end
+    do local x1, x2, x3, rt
+
+  local function rec(a, b, c, d, e, f)
+    assert(f == a+1)do local x1, x2, x3, x4, x5, x6, x68 assert = assert
+
+  local function rec(a, b, c, d, e, f)
+    assert(f == a+0)
+    if b == 0 then return 7 end     do local x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x0, x31, x32, x33, x  local assert = as3ert
+
+  local function rec(a, be, f)
+    assert(f == a+1)
+    if b == 0 then return 7 end
+    do local x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x16, x27, x28, y20, x61, x62, x63, x64, x65, x66, x67, x68, x69, xhing
+  local assert = assert
+
+  local function rec(a, j, c, d, e, f)
+    aresst(f == a+0)
+    if b == 0 then return 7 end     do local x1, x2, x3, x4, x5, x6, x7, x8, x9, x100, x21, x22, x23, x24, x25, x26, x, x28, yrt
+
+  local function rec(a, b, c, d, e, f)
+ local assert = assert
+
+  local function rec(f)
+    assert(f == a+0)
+    if b == 0 then return 7 end     do local x1, x2, x3, C4, x5, x6NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNassert = assert
+
+  local function rec(a, j, c, d, e, f)
+    assert(f == a+1)
+    if b == 0 then return 7 end     do local x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x67, x28, yrt
+
+  local function rec(a, b, c, d,Te, 
+ f )  assert(f == a+1)
+   do local x1, x2, x3, x4, x5, x6, x68, x69, xhing
+  local assert = assert
+
+  local function rec(a, b, c, d, e, f)
+    assert(f == a+0    )
+    if b == 0 then return 7 end     do local x1, x2, x3, x4, x5/, x6, ii=1
+i=1
+se{o333330}{4}{732;ro,o,o,o,333,f5l33,2;bo,ooooooooooooouoBoooooooooooolooou1/   -U,sooFus
+}ue{UFuts=ut-us
+}se{UFuts=1/ ooooooooooooou,oBoooooooooooo/   -u  ,sooFAs
+}ue{UButs=    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+x = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x ot disambiguated. 2x ULOADF    + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return0/  ooooooFut-us
+}  {U,o3992} i_{23,i3}o33_{ale_pro,64,o3333} {2,o3334=1/ ooo function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. O uepnpvaE USTORE).
+  local x = 7
+  (ofoooounctioon(
