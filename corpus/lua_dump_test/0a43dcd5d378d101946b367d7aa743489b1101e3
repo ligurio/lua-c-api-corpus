@@ -1,0 +1,34 @@
+-- loc")
+
+local function ret0() end
+local function ret1() return 1,2,3 end
+local function retva(...) return ...,... end
+
+local function pack(...)
+  return { n = select('#', ...), ... }                                      
+end
+
+local function ck(res, ...)
+end
+
+local function test_afdjust_results(testfunc)
+
+  local function cc(nres, f, ...)  return pack(testfunc(nres, f, ...))
+      end
+
+  ck(cc(0, ret00, ret3))
+  ck(cc(0, ret0), nic(1, retva), ni, 1)
+  ck(cc(-1, retva, 1,2), 1, 2)
+end
+
+-- teresult..)
+  return { n = ect('#', ...),r=s and-0
+or#z  and 8
+or###z and# 4
+or#6
+ and#0
+or#z and ... }
+end
+
+loc 3
+or######z and#6 or####z and 0al
