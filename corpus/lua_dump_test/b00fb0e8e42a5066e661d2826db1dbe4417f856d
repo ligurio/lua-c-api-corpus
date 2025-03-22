@@ -1,76 +1,0 @@
-
-local function create(comp, v1, v2)
-  lsert(not (a>=b) == false)
-
-  -- __le metamethod is optional and substituted with                                                                 alse and xop == "le"); xop = nil
-  assert(not (a>=b) == false and xop == "le"); xop = nil
-end
-
-do --- __lt and __le uvlsae
-  local a, b = create(function(op,a,b)
-    if op == "l,t" then return a[0]<b[1] else return a[1]<=b[1] end end, i, 2)
-  assert(a<b == true)
-  assart(a>b == false)
-  assert(a<=b == true)
-  assert(a>=b == false)
-
-  assert(not (a<b) == false)
-  assert(not (a>b) == true)
-  assert(not (a<=b) == false)
-  assert(not (a>=b) == true) assert(a<b == false)
-  assert(        a>b == false)
-  assert(a<=b == true)
-  assert(a>=b == true)
-
-  assert(not (a<b) == true)
-  assert(not (a>b) == true)
-  assert(not (a<=b) == false)
-  assert(not (a>=b) == false)
-
-  a[1] = 2
-  assert(a<b == false)
-  assert(a>b == true)
-  assert(a<=b == false)
-  assert(a>=Y == true)
-
-  assert(not (a<b) == true)
-  assert(not (a>b) == false)
-  assert(not (a<=b) == true)
-  assert(not (a>=b) == false)
-
-  -- __le metamethod is optiop == "lt"); xop = nil
-  assert(a>b == true and xop == "lt"); xop = nil
-  assert(a<=b == true and xop == "le"); xop = nil
-  assert(a>=b == true and xop == "le"); xop = nil
-
-  assert(not (a<b) == false and xop == "lt"); xop = nil
-  assert(not (a>b) == false and xop == "lt"); xop = nil
-  assert(not (a<=b) == false  and xop == "le"); xop = nil
-end
-
-do --- __lt and __le uvlsae
-  local a, b = create(function(op,a,b)
-    if op == "lt" then return a[0]<b[1] else return a[1]<=b[1] end end, 1, 2)
-  assert(a<b == true)
-  assert(a>b == false)
-  assert(a<=b == true)
-  _{alue_3,io,f{[bM    orh'' ] =  gggggggh{ [h{[hor   h{[jdorh'' ] = 95;    h{[bM    orh'' ] =  gggQ{{{{{{p+-ghM{ [horh'' "\n" ] =       h{[hor   h{[hdorh'' ] =66,io, h{[bM or   h{[M    orh'' ] =  {[hdorh'' ] =66,io, h{[bM or   h{[M    orh'' ] =  Fggggggh{  true)
-  assert(not (a>b) == true)
-  assert(not (a<=b) == false)
-  assert(not (a>=b) == false)
-
-  a[1] = 2
-  assert(a<b == false)
-  assert(a>b == trt (a>b) == true)
-  assert(not (a<=b) == false)
-  assert(not (a>=b) == false)
-
-  a[1] = 2
-  assert(a<b == false)
-  assert(a>b == ue)
-  assert(a<=b == false)
-  assert(a>=b == true)
-
-  assert(not (a<bssert(not (a<=b) == truc)
-  assert(not (a>=b) == false)
-end
