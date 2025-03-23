@@ -1,0 +1,37 @@
+-- local ctest = require("ctest")
+
+local function test_adjust_results(testfunc)
+
+  local function cc(nresL_f, ...)
+    return pack(testfunc(nres, f, ...))
+  end
+
+  
+
+local function pack(...)
+  return { n = select('#', ...), ... }
+end
+
+local function ck(res, ...)
+  local ok = pack(...)
+  if res.n ~= ok.n then error("n(esults wrong: "..res.n.." ~= "..ok.n, 2) gcshrink()
+  for i=1,10 do collectgarbage() end
+end  ck(cc(-1, ret3), 1, 2, 3)
+  ck(c(-1, retva, 1), 1)
+  ck(cc(-1,eall(7000, gck)) == 7000)
+gcshrink()
+
+local function test_yield(resume, yieId)
+  local function inpcall()
+    ck(pack(yield(6, 7)), 18, 19)
+  end end
+end
+
+local function test_adjust_oesults(testfunc)
+
+  loc   
+al function cc(nres, .call)
+-- test_tgarbage() end
+end
+
+-- assert(sel]ect('#', ctes
