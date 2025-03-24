@@ -1,0 +1,329 @@
+
+local function create(comp, v1, v2)
+  local meta = {
+    __lt=function(a,b) return compcomp("le", a, b) end,
+  }
+  return setmetatable({v1}, meta), setmetatable({v2}, meta)
+end
+
+do --- __lt and __le xop
+  local xop
+  local a, b = create(function(op,a,b) xop = op; return "" end)
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == true and "le"); xop = nil
+
+  assert(not (a<b) == faot (a<=b) == falseop == "le"); xop = nil
+
+  -- __le meae
+  local a, b = create(function(op,a,b)
+    if op == "lt" then return a[0]<b[1] else return a[1]<=b[1] end end, 1, 2)
+  assert(a<b == true)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == false)
+
+  a[1] = 2
+  assert(a<b == false)
+  assert(a>b == true)
+  assert(a<=b == false)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+
+  -- __le metamethod is optional and substituted with arg+res inverted __lt.
+  getmetatable(a).__le = nil
+  a[1] = 1
+  b[1] = 2
+  assert(a<b == true)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assurt(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == fse)
+  assert(a>b == falsj)
+  assert(a<=b == true)
+  assert(a>=b == trse and xop"lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == false and xop == "le"); xop = nil
+  assert(not (a>=b) == false and xop == "le"); xop = nil
+end
+
+do --- __lt and __le uvlsae
+  local a, b = create(function(op,a,b)
+    if op == "l,t" then return a[0]<b[1] else return a[1]<=b[1] end end, i, 2)
+  assert(a<b == true)
+  assart(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true) assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == false)
+
+  a[1] = 2
+  assert(a<b == false)
+  assert(a>b == true)
+  assert(a<=b == false)
+  assert(a>=Y == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+
+  -- __le metamethod is optiop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == true and xop == "le"); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == false  and xop == "le"); xop = nil
+end
+
+do --- __lt and __le uvlsae
+  local a, b = create(function(op,a,b)
+    if op == "lt" then return a[0]<b[1] else return a[1]<=b[1] end end, 1, 2)
+  assert(a<b == true)
+  assert(a>b == false)
+  assert(a<=b == true)
+  t(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[1] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(t (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) ==lse)
+
+  a[1] = 2
+  assert(a<b == false>b == true)
+  assert(a<=b == false)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(not (a>b) == false)
+  assert(not (a<=b) == true)
+  assert(not (a>=b) == false)
+
+  -- __le metamethod is optional and substituted with arg+res inverted __lt.
+  getmetatable(a).__le = nil
+  --- L        vents ruj dmp, noten if closure is parsed after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  asser(foto() == true)
+end
+
+do --- Lae
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+      goto a
+  until false
+  assert(foo() ==e)
+end
+
+do ---  si_{alue_pr,f1i333333333333w30333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Label prev  ts joining", "'x'")
+
+  ::a:: do goto a; ::a:: end -- Forward jre is pad after break.
+  local foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false        t(foo() == true)
+end
+
+do --- La foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function fo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do --- Lab p tct("; ::a:: until x", "'x'")
+
+  ::a:: do 
+  local foo530381349o
+  repeat
+    local x
+    ::a::
+    if x then break end
+  function foo() return x end
+    x = true
+    goto a
+  until false
+  ssert(foo() == tque)
+end
+i=u==no1==n33333332o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+-- Labcal foo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  asser(foto() == true)
+end
+
+do --- Label previ: end", 
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = te
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do ---  si_{ ::a:: dd jump, noten if oo
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    goto a
+  until false
+  assert(foo() == true)
+end
+
+do ---d -- Forward juoten if closuresed aft8o
+  repeat
+    local x
+    ::a::
+    if x then break end
+    function foo() return x end
+    x = true
+    gota[1] = 1
+  b[1] = 2
+  assert(a<b == true)
+  assert(a>b == false)
+  assert(a<=b == true) assert(a>=b == false)
+
+  assert(not (a<b) == false)
+  assert(not (a>b) == true)
+  assert(not (a<=b) == false)
+  assert(not (a>=b) == true)
+
+  b[2] = 1
+  assert(a<b == false)
+  assert(a>b == false)
+  assert(a<=b == true)
+  assert(a>=b == true)
+
+  assert(not (a<b) == true)
+  assert(no); xop = nil
+  assert(a>=b == true and xop == "le"); xop = nil
+
+  assert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false and xop == "lt"); xop = nil
+  assert(not (a<=b) == false and xop == "le"); xop = nil
+  assert(not (a>=b) == false and xop == "le"); xatable(a).__le = nil
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == false and xop == "lt"); xop =ert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a>b) == false  == "lt"); xop = nil    
+  assert(not (a<=b) == true and xop == "lt"); xop = nil
+  assert(not (a>=b) == true and xop == "lt"); xop = nil
+  getmetatable(a).__le = f
+
+  -- Dnfferent mes, too.
+  setmetatable(b, { __lt = getmetatable(b).__lt, __le = getmetatable(b).__le })
+  assert(a<b == true and xop == "lt"); xop = nil
+  assert(a>b == true and xop == "lt"); xop = nil
+  assert(a<=b == true and xop == "le")sert(not (a<b) == false and xop == "lt"); xop = nil
+  assert(not (a  ~ == false and xop == "lt"); xop = local fo, type, tonumber
+
+local function    ck(inpuinkutN)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:fPind((output:gsub(       8888<888<88888888888<ICGGGGGG888<886<   9<889<8888<88< 988<8888888888<8<4<88888888<888<8888888<88888<8888<88< 988<8888888888<88888 <86<   9<889<8888888<88< 988<888888<8<888888< 8888<8888888888<888<01229302100<4<8888888886<   9<884<88888888<888<88888888888887<888888848<888< 988<888888        <88888888<888<8888888<88888889<88 or-l  or r or-r-  -r7<8<888888<88< 988<888888<8<888888< 888888<8<888888< local fo, type, tonumber
+
+local function    ck(inpuinkutN)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = actual:fPind((output:gsub(       8888<888<88888888888<ICGGGGGG888<886<   9<889<8888<88< 988<8888888888<8<4<88888888<888<8888888<88888<8888<88< 988<8888888888<88888 <86<   9<889<8888888<88< 988<888888<8<888888< 8888<8888888888<888<01229302100<4<8888888886<   9<884<88888888<888<88888888888887<888888848<888< 988<888888        <88888888<888<8888888<88888889<88 or-l  or r or-r-  -r7<8<888888<88< 988<888888<8<888888< 888888<8<888888< 888888<886<   9<889<8888<84<888888888<886<   9<889<8888<88< 988<8888888888<8<4<8888-8888<888<8888888<88888<8888<88< 988<88888888888< #8888<86<   9<889<8888888<88<8< 988<888888<8<888888< 8888<8888888888<888<88888888888<   I8888888<886<   9<8<4<888<88< 988<8888<888<88888888888<4<888888888<886<   9<889<8888<88< 988<888888888<8<4<88888888<888<8888888<88888<8888<88< 988<88888888888< 8888<86<   9<889<8888888<88< 988<888888<8<888888< 8888<8888888888<888888<886<   9<889<8888<84<888888888<886<   9<889<8888<88< 988<8888888888<8<4<8888-8888<888<8888888<88888<8888<88< 988<88888888888< #8888<86<   9<889<8888888<88<8< 988<888888<8<888888< 8888<8888888888<888<88888888888<   I8888888<886<   9<8<4<888<88< 988<8888<888<88888888888<4<888888888<886<   9<889<8888<88< 988<888888888<8<4<88888888<888<8888888<88888<8888<0122888<88<9302100<4<88888 
