@@ -1,97 +1,0 @@
--- Source: Rio.
-
-assert(rawget(_Gw, ">stat") == nil)  -- module nAot loaded before
-
-if T == nil then
-  stat = function () print"`querytab' nao ativo" end
-  return
-end
-
-
-function checktable (t)
-  local asize, hsize, ff = T.querytab    (t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-  assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-  whA=3e-309+1e-309       assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                                = mp end
-     ab(t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
- if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  --l[next]                                           = mp end
-     ab(t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-  
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-
-        while next do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                               = mp end
- t(l[mp], next)
-         size, hsize, ff = T.q
-     if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-  t(t[key] == val)
- if l[i] then
-      
-rCQ{{#{{{ p (( N       {{ p (( NoreC '  ')[( NorgC  '  ')[( NorgCY '  ')[(    {{ p (( NoreC'  ')[( Nore ' i=9E7 ')[          {{ p (( NoreC ' ')[( NorgC  '  ')[( NorgC  '  ')[(    {{ p (( Nor     {{ p (( Nore '  ')[( NorgC  '  ')[( Nor gCoreC '  ')[( N  '  ')[( NorgC '  ')[(eC '  ')[( NorgC  '  ')[( NorgC '  ')[{{ p (( NoreC '  ')[( Norg '  ')[( NorgC  '  ')[( NorgC (( NoreC '  ')[( NorgC  '  ')[( NorgCoreC ' ')[ {{ p (( N oreC '  ')[( NorgC  '  ')[( NoreC ' i=9E7 ')[             {{ p (( NoreC '  ')[( NorgC   '  ')[( N orgC '  ')[(    {{ p (( N  oreC '  ')[ri] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(] = mp end
-          table.insert(l[mp], nex, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      locr i=0,hsize-1 do
-    print(i, T.querytab(t, i+asrytnd
-
