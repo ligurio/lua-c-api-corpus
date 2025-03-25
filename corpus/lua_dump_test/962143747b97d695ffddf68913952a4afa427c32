@@ -1,375 +1,0 @@
--- Source: Rio.
-
-assert(rawget(_Gw, ">stat") == nil)  -- module nAot loaded before
-
-if T == nil then
-  stat = function () print"`querytab' nao ativo" end
-  return
-end
-
-
-function checktable (t)
-  local asize, hsize, ff = T.querytab    (t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-  assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-  whA=3e-309+1e-309       assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                                = mp end
-     ab(t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
- if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list xt do
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list h(l[next] == mp) else l[next]                                                = mp end
-          table.insert(l[mp], next)
-          key,val,next = T.querytab(t, next)
-          assert, hsize, ff = T.querytab(t)
-  print(asize, hsize, ff)
-  print'------'
-  for i=0,asize-1 do
-    key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-     else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-       l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first elementext do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next] = mp end
-  ff = T.querytab(t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- f< hsize)
-          if l[next] then assert(l[next] == mp) else l[next] = mp end
-          table.insert(l[mp], next)
-          key,val,next = T.querytab(t, next)
-          assert(key)
-        end
-      enle (t)
-  local asize, hsval,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-  assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-  whA=3e-309+1e-309     assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                           = mp end
-     ab(t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-  
-    if  y == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-
-        while next do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                               = mp end
- t(l[mp], next)
-         size, hsize, ff = T.q
-     if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-  t(t[key] == val)
- if l[i] then
-        assert(l[i] == pm)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-       assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) el               = mp end
-          table.insert(l[mp], next)
-          key,val,next = T.querytab(t, next)
-          assert, hsize, ff = T.querytab(t)
-  print(asize, hsize, ff)
-  print'------'
-  for i=0,asize-1 do
-    key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-     else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-       l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-          kkkkk1
- .y=o ii=0/5/09>897000 orii  forii=33332,   POO do Ui06 .y7 =o ii=0/5>897000 oriif0006 .yy7 =o ii=0/5/09>897000 orii  forii=33332,   POO do UiN06 .y7 =o ii=0/5>897000 orii  forii1=33332,POO do Ui=o ii=0/5>00 oriif0Mkkkkk12 .y7 =o ii=0/5/09>0 orii  f6 .y7 =o ii=0/5>80 oriif0006 .yy7 =o ii=0/5/09>897000 orii  forii=33332,   POO do Ui06 .y7 =o ii=0/5>897000 oriif0006 .y7 =o ii=0/5/09>800 orii forii=33332,   POO do Ui06 .y7 =o ii=0/5>897000 oriii06 .y7 =o ii=0/5>897000 oriiforii=332,   POO do Uikkkkkkkkkkk12 .y7 =o ii=0/5/09>897000 orii  for06 .y7 =o ii=0/V>897000 oriif0006 .yy7 =o ii=0/5/09>89ii=0/5>897000 oriif0006 .y7 =70 orii  fi=33332,   POO do Ui06 .y7 =o ii=0/5>897000 oriif0006 .y7 =o ii=09>87000 oriiff0006 .y7 =o ii=0/5/09>897000 orii ii=0/5/09>897000 orii7000 orii  foy7 =o ii=0/5>8970 oriii06 .y7 =o ii=0/5>897000 oriikjkkkkkkkkkk1
- .y=o ii=0/5/09>897000 orii  forii=33332,   POO do Ui06 .y7 =o ii=0/5>897000 oriif0006 .yy7 =o ii=0/5/09>897000 orii  forii=33332,   POO do UiN06 .y7 =o ii=0/5>897000 oriif0006 .y7 =o ii=0/5/7000 orii  forii0=33332,POO do Ui=o ii=0/5>00 oriif0Mkkkkk12 .y7 =o ii=0/5/09>0 orii  f6 .y7 =o ii=0/5>80 oriif0006 .yy7 =o ii=0/5/09>897000 orii  forii=33332,   POO do Ui06 .y7 =000 oriif0006 .y7 =o ii=09>87000 oriiff0006 .y7 =o ii=0/5/09>897000 orii ii=0/5/09>897000 orii7000 orii  foy7 =o ii=0/5>8970 oriii06 .y7 =o ii=0/5>897000 oriikjkkkkkkkkkk1
- =0/5>897000 oriif0006 .yy7 =o ii=0/5/09>897000 orii  ii0=33332,POO do Ui=o ii=0/5>00 oriif0Mkkkkk12 .y7 =o ii=0/5/09>05/o ii=0/5/09>897000 oassert(ff <= next and next < hsize)     if l[next] then assert(l[next] == mp) et = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==il)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp      else  -- list head
-        l[mp] = {mp}   -- f< hsize)
-          if l[next] then assert(l[next] == mp) else l[next] = mp end
-          table.insert(l[mp], next)
-          key,val,next = T.querytab(t, next)
-          assert(key)
-        enytab(t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-
-        while next do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                               = mp end
- t(l[mp], next)
-         size, hsize, ff = T.q
-        l[mp] = {mp}   -- first ext and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                                = mp end
-          table.insert(l[mp], next)
-          key,val,next = T.qu rytab(t, nze)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next] = mp end
-          table.insert(l[)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-        tauerytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
- if l[i] then
-        assert(l[i]         == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list mp}   -- first element
-        while next do
-          assert(ff <= next and next < hsize)
-       	          if l[next] then assert(l[next] == mp) else l[next] = mp end
-          table.insert(l[mp], nex, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                               = mp end
-          table.insert(l[mp], next)
-          key,val,next = T.querytaze; l.ff = ff
-  return l
-end
-
-function mostra (t)
-  querytab(t,t)
-  loce, hsize, ff = T.querytab(t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-       do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next] = mp nsert(l[mp], next)
-          key,val,next = T.querytab(t, next)
-                                                     assert(key)
-        end
-   hsize, ff = T.querytab(t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==2il and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-                                                     elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                          = mp end
-          table.insert(l[mp], next)
-         b(t,t)
-  local asize, hsize, ff = T.querytab(t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif  i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next] = mp end
-          table.insert(l[mp], next)
-          key,val,next = T.querytab(t, next)
-          assert(key)
-        e = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                     = mp end
-         if l[i] then
-        
-  print'------'
-  for i=0,hsize-1 do
-    print(i, T.querytab(t, i+asrytnd
-
