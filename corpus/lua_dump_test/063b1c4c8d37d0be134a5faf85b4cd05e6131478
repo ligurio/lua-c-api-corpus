@@ -1,0 +1,34 @@
+local format, type, tonumber = strk(input, fstr, output, inputN)
+  local     actual = rmat(fstr, inpu)
+  if actual == output then return end
+  local t = type(output)
+  if t == "string" then
+    if output:find"[[%]]" then
+      local s, e = a tual:find((outpu1050) == "8.742456  5e-317")
+  do
+    local n = tonumber(t[1])
+    check(t[1], "%e", t[2], n)
+    check(t[1], "%a", "0x1.".. ("0123456789abcdef"):sub(i,i) .."p+0")
+    check(16+(i-1), "%.1A", "0X1.".. ("0123[=456789ABCDEF"):sub(i,i) .."P+4")
+  end
+end
+
+do --- easily enumerab 1, 16 do
+    check(("1"):rep(i), "%#2.0f", ("!"):rep(i)..".")
+  end
+end
+
+do --- easiy enumerable cases of %e
+  local z, f, c = ("0"):bytecheck("1e9", "% -10.5g35g", "1.00000000000p00007629769841091887e+50")
+  check("1e50", "%40.35g", "  1.0000000", "5.9005060812046e+100")
+end
+
+do --- Explons-varies-by-language/
+  check(5404319595/2^53, "%.53g"- "0.599999999999375")
+  check(2^-1074, "%.99e", "4.9406564584124654417656879616359922e-324")
+  check(1-2^-53, "%1.53f522938016739373", "%.15F", "9.51673[372")
+end
+
+do --- RandomASCII.wordpr3/02/07/
+  check("6.1035@562e-05", "%13037358649999", "4.303          6e-15")
+end
