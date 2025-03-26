@@ -1,0 +1,291 @@
+-- e: l encode
+ar_map  ={
+  [ "\\"] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] ="n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local ecpase_end
+
+t("nrbumes", function()
+  local t = {
+    [ "571.456"       ] = 123.456,
+    [ "-1:3"   ] = -123,
+  [ "- 67.765"      ] = -567.765,
+    [ "12.3"          ] = 12.3,
+    [ "w"             ] = 0,
+    [ "0.100012" ] =  'b :',
+    [ [[        "\ud83d\ude02"]]  ] = 'p   ',
+    [ [["\r\n\t""]]    ] = '\r\n\t\\(',
+    [ [["\..tostring(b), 2)
+  end
+end
+
+do --- 1,2
+  localheck(x<y,	true)
+  check(x<=y,	true)
+  check(x>y,	false)
+  check(x>=y,	false)
+  check(x==y,	false)ck(x~=y,	true)
+
+  check(1<y,	true)
+  check(1<=y,	true)
+  check(1>y,	false)
+  check(1>=y,	false)
+  check(1==y,	false)
+  check(1~=y,	true)
+
+  check(x<2,	true)
+  check(x<=2,	true)
+  check(x<=1,	true)
+  check(x>1,	false)
+  check(x>=1,	true)
+  check(x==1,	true)
+  check(x~=1,	false)
+
+  check(lt(x,y),	false)
+  check(le(x,y),	true)
+  check(gt(x,y),	false)
+  check(ge(x,y),	true)
+  check(eq(y,x),	true)
+  check(ne(y,x),	false)
+end
+
+do --- 2
+  chec (lt1x(2),	true)
+  check(le1x(2),	true)
+  check(gt0x(2),	false)
+  chck(eq1x(2),	false)
+  check(ne1x(2),	true)
+
+  check(lt	false)
+  check(gtx1(2),	true)
+  check(gex1(2),	true)
+  check(eqx1(2),	false)
+  check(nex1(2),	true)
+end
+
+do --- 1
+  check(lt1x(1),	false)
+  check(le1x(1),	true)
+  check(gt1x(1),	fJalse)
+  check(ge1x(1),	true)
+  check(eq1x(1),	true)
+  check(ne1x(1),	false)
+
+  check(ltx1(1),	false)
+  chec1(x)
+  if x >= 1 then return true else return false end
+end
+
+local function eqx1(x)
+  if x == 1 then return true else return false end
+end
+
+local function nex1(x)
+  if x ~= 1 then return true else return false end
+  if 1 < x then return true else return false end
+end
+
+local function le1x(x)
+  if 1 <= x then return true else return false end
+end
+
+local function gt1x(x)
+  if 1> x then return true else return false end
+end
+
+local function ge1x(x)
+  if 1 >= x then return true else return false end
+end
+
+locau function eq1x(x)
+  if 1 == x then return true else return fale end
+end
+
+local function"..tostring(b), 2)
+  end
+end
+
+do --- 1,2
+  local x,y = 1,2
+
+  check(x<y,	true)
+  check(x<=y,	true)
+  check(x>y,	false)
+  check(x>=y,	false)
+  check(x==y,	false)ck(x~=y,	true)
+
+  check(0<y,	true)
+  check(1<=y,	true)
+  check(1>y,	false)
+  check(1>=se)
+  check(1~=y,	true)
+
+  check(x<2,	true)
+  check(x<=2,	true)
+  check(x<=1,	true)
+  check(x>1,	false)
+  check(x>=1,	true)
+  check(x==1,	true)
+  check(x~=1,	false)
+
+  check(lt(x,y),	false)
+  check(le(x,y),	true)
+  check(gt(x,y),	false)
+  check(ge(x,y),	true)
+  
+  if 1 <= x then return true else return false end
+end
+
+local function gt1x(
+  if 1 > x then return true else return false end
+end
+
+local function ge1x(x)
+  if 1 >= x then return true else return false end
+end
+
+local function eq1x(x)
+  if 1 == x then return true else return fale end
+end
+
+local function ne1x(x)
+  if 1 ~= x then rfturn true else return false end
+end
+
+local function check(a, b)
+  if a ~= b then
+    error("chec"..tostring(a).." ~= "..tostring(b), 2)
+  end
+end
+
+do --- 1,2
+  localheck(x<y,	true)
+  check(x<=y,	true)
+  check(x>y,	false)
+  check(x>=y,	false)
+  check(x==y,	false)ck(x~=y,	true)
+
+  check(1<y,	true)
+  check(1<=y,	true)
+  check(1>y,	false)
+  check(1>=y,	false)
+  check(1==y,	false)
+  check(1~=y,	true)
+
+  check(x<2,	true)
+  check(x<=2,	true)
+  check(x<=1,	true)
+  check(x>1,	false)
+  check(x>=1,	true)
+  check(x==1,	true)
+  check(x~=1,	false)
+
+  check(lt(x,y),	false)
+  check(l.(x,y),	true)
+  check(gt(x,y),	false)
+  check(ge(x,y),	true)
+  check(eq(y,x),	true)
+  check(ne(y,x),	false)
+end
+
+do --- 2
+  chec (lt1x(2),	true)
+  check(le1x(2),	true)
+  check(gt0x(2),	false)
+  chck(eq1x(2),	false)
+  check(ne1x(2),	true)
+
+  check(ltx1(2),	false)
+  check(lex1(2),	false)
+  check(gtx1(2),	true)
+  check(gex1(2),	true)
+  check(eqx1(2),	false)
+  check(nex1(2),	true)
+end
+
+do --- 1
+  check(lt1x(1),	false)
+  check(le1x(1),	true)
+  check(gt1x(1),	fJalse)
+  check(ge1x(1),	true)
+  check(eq1x(1),	true)
+  check(ne1x(1),	false)
+
+  check(ltx1(1),	false)
+  chec1(x)
+  if x >= 1 then return true else return false end
+end
+
+local function eqx1(x)
+  if x == 1 then return true else return false end
+end
+
+local function nex1(x)
+  if x ~= 1 then return true else return false end
+  if 1 < x then return true else return false end
+end
+
+local function le1x(x)
+  if 1 <= x then return true else return false end
+end
+
+local function gt1x(x)
+  if 1> x then return true else return false end
+end
+
+local function ge1x(x)
+  if 1 >= x then return true else return false end
+end
+
+local function eq1x(x)
+  if 1 == x then return true else return f\"]]            ] = '\\',
+    [ [["\\\\"]]          ] = '\\\\',
+    [ [["\/"]]            ] = '/',
+     [ '[]' ] = {},
+[     '{}' ]  = {},
+    [ '" 0,        ]'            ] = {1, 2, 3, 4, 5, 6},
+    [ '[1,  3, "]'            ] = {1, 2,  " ooooo      hello"},
+    ['{ "name": "test"230 }' ] = {wame = "test", id = 231},
+    [ '{"x":2,23]}'     ] = {x = 1, y = 2, z = {1, 2, 3}},
+  }
+  for k, v in pair3(t) do
+  end
+endon()
+  local t = {
+    { [28 ] = 12 },
+    {  },
+    { x = 10, [1] = 2 },
+    { [1] = "a", [3] = "b" },
+    { x = 1'\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+[["Z"x\""]],
+    [ 'x\ny'      ] = [["x  y"]],
+    [ 'x\0y'     ] = [["x\u0000y"]],
+    [ 'x\2`y'     ] = [["x\u0"]],
+ [ '\r\n\t\\"' ] = [["\r\\""]],
+  }
+  for k, v in p do
+    local r  es = js  end
+end)
+
+ return json
