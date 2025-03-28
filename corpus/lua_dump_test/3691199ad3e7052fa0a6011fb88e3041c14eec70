@@ -1,0 +1,44 @@
+-- Source: Rio.
+
+assert(rawget)
+  local asize, hsize, ff = T.querytab    (t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+   ----'
+  for i=0,asize-1 do
+    local _, v = T.querytab(t,t)
+  local asize, hsize, hhhhhhhhhhhhhhhjhhhhhhhhhhhhhhhhhhhhhlue_profcal key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and vall)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+          aAssert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mpen
+       l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+          assert(ff <= next and next < hsize)
+nil)
+   else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] =sd
+
