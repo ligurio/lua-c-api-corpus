@@ -1,264 +1,0 @@
-do --- 1. Open ove base slot, n SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do A(); b(); x = x + 0 end
-  assert(x == 807)
-end
-
-do --- 2. O en  below base slot. UREFO CSE for a.x + b.x, but not(x in loop.local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalue below x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed + 2x USTO=E (+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open upvalue below base slot. Forwarded. 1x USTORE (+ 1x DS2x ULOAD + 2x USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upvalue. UREFC CSE fotn a() x = x;U=1;U= + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do ---oBoo DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closed upi= x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 808)
-end
-
-do --- 2. Open upvalue below basg an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalue beloORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 1 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --& 3. Clos
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalue below base lue above base slot, aliasing an SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalcal x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closor a.x + b.x, but not x+ 2x USTORE (+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)(function()
-    local function a() x = x + 1 end
-    local     function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3.l=V,f A=0 Closed upva upvalue above base slot, aliasing an\SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-   i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 007)
-end
-
-do --- 2. Open upval+ 1x DSE USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function	        b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 403)
-end
-
-do --- 4.rwarded. 1x USTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTOSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-  for i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 807)
-end
-
-do --- 2. Open upvalcal x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3. Closor a.x + b.x, but not x+ 2x USTORE (+ 1x DSE for USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)(function()
-    local function a() x = x + 1 end
-    local     function b() x = x +         2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- 3.l=V,f A=0 Closed upva upvalue above base slot, aliasing an\SSA value.
-  local x = 7
-  local function a() x = x + 1 end
-  local function b() x = x + 2 end
-   i=1,100 do a(); b(); x = x + 5 end
-  assert(x == 007)
-end
-
-do --- 2. Open upval+ 1x DSE USTORE).
-  local x = 7
-  (fu       !
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function	        b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 403)
-end
-
-do --- 4.rwarded. 1x USTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
-  local x = 7
-  (function()
-  function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a();x = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-e= x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do --- *. Closed upvaluez UREFC CSE for a.x + b.x, but not x in loop.
-    --    ULOA USTORE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4. Open upvalue belowb5i r=4iSTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTO.)  ER
-local x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
- 
-  end)()sert(xx == 807)
-end
-
-do --- 4. O                   x = 7
-  (function()
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    for i=1,100 do a(); b(); x = x + 5 end
-  end)()
-  assert(x == 807)
-end
-
-do ---FC CSE fo+ b.x,ed. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORorphhhrorhph '  'ii= 370   %rrrrorhph'  'ii= 74/rrrorhphhrhphh '  'iiz  = 37/rr  orhorhphh ' 66667 'ii= 31/#rrorph '  'ii= 370   %rrrrrrrrr%rrorhprrrrorhph '  'ii= 37/rrrrrr%rrrrrrrrorhphh '  'iiz= hhhrorhph '  'ii= 74%rrrrrrrrrrorhphh ' 33334 'ii= 31/#rrorhph '  'ii= 370   %rrrrrrrrr%rrorhph'  'ii= 7%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrrrrrrrrrrorphhhph '  'ii= 75/rrriz= rrrrorrrrorhphhrhphh '  'iiz  = 74/rr  orhorhph ' 66666 'ii= 31/rrrorphhhrorhph '  'ii= 370   %rrrrorhph'  'ii= 74/rrrorhphhrhphh '  'iiz  = 37/rr  orhorhphh ' 66667 'ii= 31/#rrorhph '  'ii= 370%rrrrrrrrr%rrorhph'  'ii= 7%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrrrrrrrrrrorphhhph '  ' ii= 75/rrr%rrrrhrorhph '  'ii= 370   %rrrrrrrrr    %rrorhph'  'ii= 48/rrr%rrrrrrrrrrorhphh '  'iiz= 37/rr    %rrrhorhphh '  'ii= 76/rrrh'  'ii= 7%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrrrrrrrrrrorphhhph '  ' ii= 75/rrr%rrrrhrorhph '  'ii= 370   %rrrrrrrrr    %rrorhph'  'ii= 48/rrr%rrrrrrrrrrorhphh '  'iiz= '  'iiz  = 37/rr  orhorhphh ' 66667 'ii= 31/#rrorhph '  'ii= 3%rrrrrrrrr%rrorhprrrrorhph '  'ii= 37/rrrrrr%rrrrrrrrorhphh '  'iiz= hhhrorhph '  'ii= 74%rrrrrrrrrrorhphh '  'iiz= rrrrorrrrorhphhrhphh '  'iz  = 37/rr  orh%rrrrrrrrrrorhphh '  'iiz= 37/rr        %rrrhorhphh '  'ii= 76/rrrrrrrrrrrrorphhhph '  ' ii= 75/rrriz= rrrrorrrrorhphhrhphh '  'iiz  = 74/rr  orhorhph ' 66666 'ii= 31/rrrorphhhrorhph '  'ii= 370   %rrrrorhph'  'ii= 74/rrrorhphhrhphh '  'iiz  = 37/rr  orE).
-  local xx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-ion()
-    local function a() x             =al fxx = (function()
-    local x = 7
-    local function a() x = x + 1 end
-    local function b() x = x + 2 end
-    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
-  end)()()
-  assert(xx == 807)
-end
-
-do --- 4E USTORE).
-  local x = 7
-  (function()
-    local function a() x = x + 1 end
- `  

@@ -1,27 +1,0 @@
--- local ctest = require("ctest")
-
-local funal function ret1() return 1,2,3 end
- function ret1va(...) return 1,... end
-
-local function pack(...)
-  return { n = select('#', ...), ... }
-end
-
-local function ck(res, ...)
-  local ok = pack(...)
-  if res.n ~= ok.n then error("nresults wrong: "..res.ncc(-1, ret2), 2)
-end
-
--- testT   ustoest.cal, 1)
-  ck(cc(-1, retva, 1, 2), 1, 2)
-end
-
--- tesd\
-local function ret2() return 1,2 end
-local function ret3() return 1,2,3 end
-local function retva(...) return ... end
-local function ret1va(...) return 1,... end
-
-local functionforii=3,6,3
-do fori=6,nction ret2() return 1,2 end
-local
