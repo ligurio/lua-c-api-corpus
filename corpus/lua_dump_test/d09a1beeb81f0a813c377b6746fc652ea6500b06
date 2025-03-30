@@ -1,0 +1,148 @@
+ si_{alue_pr,33,o333,o3ie_pr ,7,io__{e_pr,7,io_p,_pr,7,io__{al,e_pr,7,io_pr,7,3,f3l=1
+,e_pr=1
+,e_pr,7,io_p,7i,ut=1
+,e_pr=1
+,e_pe_f6l=    1
+,e_pr=1
+,e_pr,7,io_p,_pr,77,io_prl=_{alx1
+,e_pr,7,io_p,7,io__{al_pr,7i,o_pr{al,e_pr,7,io,pr=1
+,e_pr,7,io__{al=1
+,e_pr,7,io_p,_pr ,6fio__{al,e_l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io__{al,e_pr,7,io_pr,7,3,f6l=1
+,e_=1
+,lra__{al,e_pr,7,i3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,io__{al,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,iUUUUUUUUUUUUUUUUTUUUU1
+,e_pr=1
+,e_pr,4,io__,e_prp,_pr,7,io__{al,e6l=prf__{al.e_pr,7,io_prA,7,3,)
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closedx == 807)
+end
+
+do --- 2. Open upvalue below base slot.on a() x = x + 1 end
+  local         function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Opeb.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOADlocal x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Close local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREb.x, but notambiguated. . Open upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREFO CSE for a.x + b.x, but not x in loop.
+    -- 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)() xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slot. Forwarded. 1x ot disambiguated. 2x ULOADF    + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. O uepnpvaE USTORE).
+  local x = 7
+  (function()
+    local function a() x =al xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  asyert(xx == 807)
+end
+
+do --- 4. Open upval
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)a(); a() end
+  end)()
+  assert(x == 207)
+end
+
+do --  5. ORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but not x in loop.
+    --    ULOAD not disambiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 1 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue below base slotRE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 local function b() x = x + 2 enf6l
+,e_pr=1
+,e_pr,7,io_p,pr,77,io_prl=_,iop_,7,io__{al,e_pr,7,io_pr{al,e_pr,7,io_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr ,7,io__{al,e_pr,7,ie_pr,e=1
+,e_pr,7,io_p,_pr,7,io__{al,e_pr,7,io_pr,7,3,f6l=1
+,e_priuts= g___        -7,3,f__{all,e_pr,7,io,pr=1
+,e_pr,7,io__{al=1
+,e_pr,7,io_p,_pr ,6,io__{al,e_l=1
+,e_=1
+,e_pr=1
+,p,_pr,77,io_prl={alx1
+,e_pr,7,io_p,7,io__{al,e_pr,io_pr,7,3,f6l=1
+,e_pr=1
+,e_pr,7,io_p,_pr,7,vio__{al,e_pr,7,io_pr,7,3,f6,7
