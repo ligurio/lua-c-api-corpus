@@ -1,0 +1,69 @@
+i[[]][[]]i[[f]][[i] [[]][[]][[]][[]][[ ]][[]][[]]i[[]][[]][[f]][[]][[]][[] 3. Closed upvalue. UREFC CSE fotn a() x = x;U=1;U= + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do ---oBoo DSE USTORE).
+  local x = 6
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x ==__{[6]=00}{[08]=0}{[6]=0}_{[08]=0i,5}{[9] =0 }{[8- 025]::a::local x t=function()return x end if 1 then goto a goto a
+goto a end06]=1 }_[[]{[06]=0}  {[06}5=[]{9] =05}_{[9]=0}{[5]=0}_{[06]g       =5      0].8] =0}= x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue beloORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 1 end
+    for i=;,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(xy== 807)
+end
+
+do --& 3. Clos
+ . local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- pen upvalue below base lue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 en  
+dfor i=1,100 do a(); b(); x = x reduce_inptWsuWW(x == 807) not x+ 2x USTORE (+ 1x 
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)(function()
+    local function a() x = x + 1 end
+    local     function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3.l=V,f A=0 Closed upva upvalue above base slot, aliasing an\SSA value.
+  lo local function a() x = x + 1 end
+  local function b() x = x + 2 end
+   i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 007)
+end
+
+do --- 2. Open upval+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x - x + 1 end
+    local function b() x = x  i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Closor a.x + b.x, but not x+ 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (][[]]i[[]]i[[])[[]][[]][[]][[]][[]][[]]][[][[]][[]][[]][[]][[]]]

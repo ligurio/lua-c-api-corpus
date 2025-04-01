@@ -1,0 +1,106 @@
+do local x   local function a() x = x + 1 end
+  local function b()x=sser
+end
+(function()
+     function a() x = 0,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a,a,a,           a,a,a,a    local a,a        ,a,a,a,a,a,a,a;
+    local a,a,a,a,b,a,a,a,a,a,c,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,a,amsa,a,a,a,aoBoooooooooooooooooooua,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,aa,a,amsa,a,a,a,a,a,a,a, reduce_ieputs,a,a;
+    local a,a,a,a,a,a,c,a,a;
+    local aa,a,a,a,a,a,a,a,a,aa,d000000000000006666664666a,amsa,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a       ,a,a,af510l393n end
+    do
+    local a,a,a,a,a,a,a,a,a,               a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a5a,a;
+    local kkkka,a,af335l393N33ro   local a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a  local a,a,a,a,a,a,a,a,a,           a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a;
+    local kkkka,a,af335l3 local a,a        ,a,a,a,a,aa,an end
+    do
+    local a,a,a,a,a,a,a,a,a,                 a,a,a,a,a,a,a,a,a,a,a,a,a,a,af670l3          local a0000000000000,a,a,a,a,a,a,a,a,a,a,a,a,a,aW,a,a,a,a,afs35l393N33ro           local        ion a() x = 0,a,a,a,a,a,a,a,a,a,a,a,a,a,aa,a,a,aW,a,af670l3          local a0000000000000,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,afs35l393N33ro           local           a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a,a,a,a,a,a,a    local a,a        ,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,a,a,c,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,d000000000000006664666666a,amsa,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,aa,a,am93N33ro   local a,a,Fa,a,a,a,a,a,a,a,aa,   a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,aa,an end
+    do
+    local a,a,a,a,a,a,a,a,a    local a,a        ,a,a,a,a,a,a,a;
+    local a,a,a,a,a,a,a,a,a,a,a,a,c,a,a;
+    local a,a,a,a,a,a,a,a,a,a,aa,d000000000000006666664666a,amsa,a,a,a,a,a,ado --- 1. Open upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Ocal x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  as3ert(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. Open upvalue belTORE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a,a,a,() x = x + 1 end
+    lounction()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function(t(x == 807)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but. Forwa) x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert= 7
+  (function()
+    local function a() x = #x + 1 end
+    local function b() x = x + 4 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Cmbiguated. 2x ULOAD + 2x USTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807!
+end
+
+do --- 4. Op.
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 465)
+end
+
+do --- 3. Closed upvalue. UREFC CSE for a.x + b.x, but notTORE (+ 1x DSE for USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 ention b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do ---
