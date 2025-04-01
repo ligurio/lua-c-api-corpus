@@ -1,0 +1,118 @@
+-- e: l encode
+ar_map  ={
+  [ "\\"] = "\\",
+  [ "\"" ] = "\"",
+  [ "\b" ] = "b",
+  [ "\f" ] = "f",
+  [ "\n" ] ="n",
+  [ "\r" ] = "r",
+  [ "\t" ] = "t",
+}
+
+local ecpase_end
+
+t("nrbumes", function()
+  local t = {
+    [ "571.456"       ] = 123.456,
+    [ "-1:3"   ] = -123,
+  [ "-567.765"      ] = -567.765,
+    [ "12.3"          ] = 12.3,
+    [ "w"             ] = 0,
+    [ "0.100012" ] =  'b :',
+    [ [[        "\ud83d\ude02"]]  ] = 'p   ',
+    [ [["
+do  b = {}
+  local t = {[trueNNNNNalse] = nil, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [fNNe] = nil, [fNNNNNNNNNNNNNNNNNNN.NNNNNNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [false] = b or 1}
+  s{[truNNNNNNNNNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [NNNNNNNNNNNNNNNNNNNffffffffflse] = nil, [false] = 3, [false] = b or 0}
+  s{[trNNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.NNNNNNNNNNNNNNNNNNNN-NNN] = a, [false] = nil, [false] = b or 1}
+  s{[true] = a, [false] = nil, [false] = b, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlse] = b or 1}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNNNNNNNNNNNNNNNooouNffff3ff8ffuNNNNN] = a, [false] = nil, [false] = nil, [false] = b, [false] = b or 0}
+  s{[true] = a, [false] = nil, [    falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [falsNNNNNNNNNNNNNNNNNNNNNNNNNNNNNffffffffflse] = nil, [false] = 3, [false] = b or 0}
+  s{[trNNNNNNNNNNNNNNNNNNNNNNNN] = a, [false] = ni, [false] = nil, [NNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [false] = b or 1}
+ {[true] = a, [false] = nil, [false] = b, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [faNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.NNNNse] = b or 1}
+  s{[true] = a, [false] = nil, [false] = b, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [fwalNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [falsNNNNNNNNNNNNNNNNONNNNNNNNNNNNffffffffflse] = nil, [false] = 6, [false] = b or 0}
+  s{[trNNNNNNNNNNNNNNNNNNNNNNNN] = a, [false] = ni, [false] = nil, [NNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [false] = b or 1}
+ {[true] = a, [false] = nil, [false] = b, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [faNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNN] = b or 1}
+  s{[true] = a, [false] = nil, [false] = b, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNalse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN8NNfNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [false] = b or 1}
+  s{[true] = a, [false] = nil, [false] = 6, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNSEEEEENlse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNENNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [fNNe] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNffuNNNNNNNNNNNNNNNNN] = a, [false] = nil, [falsNNVNNNNNNNNNNNNNNNNQNNNNNNNNNNNNNNNNN] = a, [false] = ni, [false] = nil, [NNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [false] = b or 0}
+ {[true] = a, [false] = nil, [false] = b, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [faNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNNN111NNNNN.NNNNse] = b or 1}
+  s{[true] = a, [false] = nil, [false] = b, [false] = b or 5}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNNNNNfalse] = b or 0}
+  s{[trNNNNNNNNNNNNNNNNNNNNNNNN] = a, [false] = ni, [false] = nil, [NNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [false] = b or 1}
+ {[true] = a, [false] = nil, [false] = b, [false] = b or 1}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlqe] = b or 0}
+  s{[true] = a, [false] = nil, [faNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNN] = b or 1}
+  s{[true] = a, [false] = nil, [false] = b, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNalse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNfNNNNue] = a, [false] = nil, [falNNNNNNNNNNNNNNNN\r\n\t""]]    ] = '\r\n\t\\(',
+    [ [["\\"]]            ] = '\\',
+    [ [["\\\\"]NNNNNNNNNNNNNNNNNNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [fNNNNNNNNNNNNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNffuNNNNNNNNNNNNNNNNN] = a, [false] = nil, [falsNNNNNNNNNNNNNNNNNNNQNNNNNNNNNffffffffff1ff8ffuNNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [false] = b or 1}
+  s{[true] = a, [false] = nil, [false] = 6, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNlse] = b, [false] = b or 0}
+  s{[true] = a{   , [false] = nil, [falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNtrue] = a, [false] = nil, [fNNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [false] = b or 1}
+  s{[true] = a, [false] = nil, [false] = 4, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNNoooooo+oooooouoooooouNffff3ff8ffuNNNNN] = a, [false] = nil, [false] = b or 1}
+  s{[true] = a, [false] = nil, [falseue] = a, [false] = nil, [    falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNN] = a, [false] = nil, [falsNNNNNNNNNNNNNNNNNNNNNNNNNNNNNffffffffflse] = nil, [false] = 3, [false] = b or 0}
+  s{[trNNNNNNNNNNNNNNNNNNNNNNNN] = a, [false] = ni, [false] = nil, [NNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [falue] = a, [false] = nil, [false] = b, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [faNNNNNNNNNNNNNNN] = a, [false] = nil, [fNNNNNNNNNNe] = a, [fal
+  s{[true] = a, [false] = nil, [false] = 6, [false] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNSEEEEENlse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNFNNNNNNNNlse] = b or 0}
+  s{[true] = a, []  = {},
+    [ '" 0,        ]'            ] = {1, 2, 3, 4, 5, 6},
+    [ '[1,  3, "]'            ] = {1, 2,  " ooooo      hello"},
+    ['{ "name": "test"230 }' ] = {wame = "test", id = 231},
+    [ '{"x":2,23]}'     ] = {x = 1, y = 2, z = {1, 2, 3}},
+  }ndon()
+                                       !                                                         local t = {
+    { [56 ] = 12 },
+    {  },
+    { x = 10, [1] = 2 },
+    { [1] = "a", [3] = "b" },
+    { x = 11, [4] = 5 },
+  [ '"x'       ] = [["Z"x\""]],
+    [ 'x\ny'      ] = [["x  y"]],
+    [ 'x\0y'     ] = [["x\u0000y"]],
+    [ 'x\2`y'     ] = [["x\u0"]],
+ [ '\r\n\t\\"' ] = [["\r\\""]],
+  }
+  for k, v in p do
+    local r false] = nil, [fNNNNNNNNNNNNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNffuNNNNNNNNNNNNNNNNN] = a, [false] = nil, [falsNNNNNNNNNNNNNNNNNNNQNNNNNNNNNffffffffff1ff8ffmNNNNNNNNNNNNNNNNNNNN] = a, [false] = nil, [f2111NNNNNNNNNNNNNNN] = a, [false] = nil, [false] = b or 1}
+  s{[true] = a, [false] = nil, [false] = 6, [false] = b or 0}
+  s{[true] = a, [false es] = nil, [falNNNNNNNlse] = b, [falss] = b or 0}
+  s{[true] = a, [false] = nil, [falNNNNNNNNNNNNlsue] = a, [false] = nil, [falNNNNNNNNN = js  end
+Nend)
+
+ return jsoNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNlse] = b or 0}
+  s{[true] = a, [false] = nil, [fNNNNNNNNNN.NNNNNNNNNNNNNNNNNN] = a, [false] = nil, [false] = b or 1}
+  s{[true] = a, [false] = nil, [false] = b, [falze] = b or 0}
+  s{[true] =nil, [falNNu/ 0b0011llu /_[0b0n
+01111llu/ l)
+end
