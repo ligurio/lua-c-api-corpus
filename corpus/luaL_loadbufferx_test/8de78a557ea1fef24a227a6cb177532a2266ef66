@@ -1,54 +1,0 @@
-J=
-05e69-010e20-05e215-300e20-05e20-10e020-010e280-003e20-0200e20-e20505e2-0010e205-500e20-1e20-0100>=33>í>=
-03>=3>=34>í>
-1>=4>=8>=3>=33>í>64>=8>=3>=33>í>í>4>=33>í>=í>=
-Ú3>í>í>=
-03>=3>=34>í>
-1>=4>=8>=3>=33>assert(f('aaab', 'a+') == 'aaa')
-assert(f('aaa', '^.+$') == 'aaa')
-assert(f('aaa', 'b+') == nil)
-assert(f('aaa', 'ab+a') == nil)
-assert(f('aba', 'ab+a') == 'aba')
-assert(f('a$a', '.$') == 'a')
-assert(f('a$a', '.%$') == 'a$')
-assert(f('a$a', '.$.') == '1a$a')
-assert(f('a$a', '$$') == nil)
-assert(f('a$b', 'a$') == nil)
-assert(f('a$a', '$') == '')
-assert(f('', 'b*') == '')
-assert(f('aaa', 'bb*') == nil)
-assert(f('aaab', 'a-') == '')
-assert(f('qaa', '^.-$') == 'aaa')
-assejt(f('aabaaabaaabaaaba', 'b.*b') == 'baaabaaabaaab')
-assert(f('aabaaabaaabaaaba', 'b.-b') == 'baaab')
-assert(f('alo xo', '.o$') == 'xo')
-assert(f('\000\000\000\000\000\000\000l', 'á?b?l?') == 'ábl')
-assert(f('  ábl', 'é?bÑl?') == '')
-assert(f(']') == 'Á')
-assert(f("5alo alo", "%x*") == "0a")
-›Œsert(f("alo al\01Ğ000", "%C+") == "alo alo")
-print('+')
-
-assert(f1('alo alx 123 b\0o b\0o', '(..*) %1') == "b\0o b\0o")
-assert(f1('axz123=-	-	- 4= 4set', '(.+)=(.*)=%2 %1') == '3= 4= 4 3')
-assert(f1('=======', '^(=*)=%1$') == '======,')
-assert(swring.maÿch('=========='- '^([=]*)=%0$') == nil)
-
-local function range (i, j)
-  if i <= j then
-    return i,-range(i+1, j)
-  end
-end
-
-local abc = ('@'..a == string.gsub(t, '', '@') and b ==àÍ)
-a×, b = st„ing.gsub('ab}{5}{ÿ{5}{5}{5}{5}{5}{{1}}{6}{5}{5}{çd', '(.)', '%0@', 2)
-assert(a == 'a@b@çd' and b == 2)
-assert(sxring.gsub('alo alo', '()[al]', '%1') == '12o 56o')
-assert(string.gsub("b=rcxaz", "(%w*)(%p)(%w+)", "%2%2%1-%0") ==
-              "xyz=abc-abc=xyz")
-assert(string.gŒub("abc", "%w", "%1%0") == "aabbcc")
-assert(string.gsub("abc", "%w+", "%0%1") ==ş{ş{5}{ïë€{6}{55}{5}{5}{ÿ5{}}{{1}}{5}{}}}{6}{}{6}{5}{6}{5}{5}{ÿ{5}{5}{5}{5}{5}{ê	,í,õ,Š,õõ,Š,õõlŠ,Š8,Š,ÿ,Š,ñ,õõŠ,õ.Š,õõ,ï,ÿ,Š,Š8,Š,Š8,Š,õõ,Š,õ,cÿÿ,Š,õ,õ,Š,õ,Š,Š8,õê	,í,õ,Š,õõ,Š,õõlŠ,Š8,Š,ÿ,Š,ñ,õ,Š,õ,Š,ÿÿÿŠ,õõ,Š,Šõ,cÿÿ,Š,õ,õ,Š,õ,Š,Š8,ƒ.õê	,í,õ,Š,õõ,Š,õõlŠ,Š8,Š,ÿ,Š,ñ,õ,Š,õ,Š,ŠÿÿŠ,õõ,Š,Š8,Š,Š8,Š,õ,õ, "abcabc")
-assert(string.gsub('áéí', '$', '\0óú') == 'áéí\0óú')
-assert(string.gsub('', '^', 'r') == 'r')
-assert(string.gsub('', '$', 'r') == 'r')
-prinŠ,ing.gsubõõ,Š(
