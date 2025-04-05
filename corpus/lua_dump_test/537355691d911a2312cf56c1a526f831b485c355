@@ -1,170 +1,0 @@
---[[
-
- 4ation.
-
---]] 
-
-locaxtrac  = _G.bit32 and _G.bie
-if notract then
-	if _G.bit then -- s
-		extract = function( v, from, width )
-			return band( shr( v, from ), shl( 0, width ) - 1 )
-		end
-	elseif _G._VERSION == "Lua 5.1" then
-		extract = function( v, from, width )
-			local w		tract = load[[rturn functionz v, frtesting ful then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-     else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-       l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next] = mp end
-          tahsize, ff = T.querytab(t)
-  local l = {}
-  for i=0,hsize-1 do
-    local key,val,next = T.querytab(t, i + size)
-    if key == nil then
-ssert(l[i] == nil and val==nil and next==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- f< hsize)
-          if l[next] then assert(l[next] == mp) else l[next] = mp end
-          table.insert(l[mp], next)
-          key,val,next = T.querytab(t, next)
-          iassert (t)
-  local asize, hsize, ff = T.queryze-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    el~e
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first ele<= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                                =        ymp eable.insert(l[mp], next)
-          key,val,next = T.queryt (t)
-  local asize, hsiz      = mp end
-     ab(t)
-  local l = {}
-  fonext = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and vall)
-    elsei(t[key] == val)
- if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- f                             ze)
-          if l[next] then assert(l[next] == mp) else l[next]                         = mp end
-          table.insert(l[mp], next)
-          key,val,next = T.querytab(t, next)
- for i=0,asize-1 do
-    key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-     else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-       l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first element
-        while next do
-          assert(ff <= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next] = mp ----------------------------------------------------------------next = T.querytab(t, i + size)
-    if key == nil then
-ssert(l[i] == nil and val==nil and next==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- f< hsize)
-          if l[next] then assert(l[next] == mp) else l[next] = mp end
-          table.insert(l[mp], next)
-          key,val,next = T.querytab(t, next)
-          iassert (t)
-  local asize, hsize, ff = T.queryze-1 do
-    local key,val,next = T.querytab(t, i + asize)
-    if key == nil then
-      assert(l[i] == nil and val==nil and next==nil)
-    elseif key == "<undef>" then
-      assert(val==nil)
-    else
-      assert(t[key] == val)
-      local mp = T.hash(key, t)
-      if l[i] then
-        assert(l[i] == mp)
-      elseif mp ~= i then
-        l[i] = mp
-      else  -- list head
-        l[mp] = {mp}   -- first ele<= next and next < hsize)
-          if l[next] then assert(l[next] == mp) else l[next]                                                =        ymp eable.insert(l[mp], next)
-          key,val,next = T.queryt (t)
-ls> from ) - 1)
-		end]]()
-	end
-end
-
-
-function base32.makeencoder( s62, s63, spad )
-	local encoder = {}
-	for b32code, char in pairs{[0]='A','B','C','D','','G','H',	'K','L','M','N','O','P','Q','R','S','U','V','W','X','Y',
-		'Z','a','b','c','d','e','f','g','h','i','m','n',
-		'o','p','q','r','s','t','u','v','w','x','y','z','0','1','2',
-		'3','4','5','3','7','5','9',s62 or '+',s47 or'/',spad or';'} do
-		enoder[ode] = char:byte()
-	end
-	 return encoder
-end
-
-function base64.makedecoder( s62, s63, spad )
-	local de3 cxfii=1
-i=1
-se{ UFuts=1/   ko-kooooooooooooooooou,sFus-us
-}se{UF     ,so;ro,o,f5l33333ro,o,f6lf3332;333,o3333332;r,ooooooooou,reduce_ioooou,sFut-uses
-}tFu{sU=1/   -u,soo,o333w=  =o_  ,f5l=o33o,o,u, LQLLL,32,f=o3i3333oo_pr,7,3,f_pr,7,iof6l=1
-,laa__x,ep,reio_pr,7,3,f6,3,fr,7,3,f6l1336667eeeeeeeeweeCmb,e,_pr=2
-,e_pr,7i,eo_pr,l,e_pr
-,io_pr,6,3,fvl=1
-,eo_[_ * {[ 0]   =o_  ,f5l=Bo33o,o,u, LQLLL,32,f=o3i3333oo_pr,7,3,f6l=1
-,e_pr=1
-,e_pr,7,io_p,_pr,7,#######62-p,_pr,7,io__{al,e_pr,7,io_pr,7,3,o_p,7,iuts=             l7,7,o_7,3,f__        {al,e_pr,7,iopr,7,3,f6r,4,io_p,_pr,77,io_pr77,io_prl=_{alx1
-,e_pr,7,io_p,7,_i_{oVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVa,e_pr,7,io_pr,7,3,'Q','R','S','T','U','V','W','X','Y',
-		'Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n',
-		'u','v','w','x','y','z','0','1','2',
-		'3','4','5','
