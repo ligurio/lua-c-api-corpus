@@ -1,0 +1,39 @@
+do ---  == 1)
+
+  assert(t2.foo == nil)
+  assert(x == "foo")
+end
+
+do --- userdata +lua<5.2
+  local u = newproxy(true)
+  getmetatable(u).__index = { foo = u, bar = 42 }
+
+  local x = 0
+  for i=1,100 do
+    x = x + u.bar
+    u = u.foo
+  end
+  assert(x == 4200)
+
+  x = 0
+  for i=1,100 do
+    u = u.foo
+    x = x + u.bar
+  end
+  assert(x == 4200)
+end
+
+do --- string
+  local s = "foo"
+  local mt = debug.getmetatable(s)
+  debug.setmetatable(s, {__index = {s = s, len = string.len}})
+  local x = 0
+  local t = {}
+  for i=1,100 do
+    x = x + s:len()
+    s = s.s
+    t[s] = t -- Hash store with same type prevents hoisting
+  end
+  debug.setmetatable(s, mt)
+  assert(x == 300)
+end
