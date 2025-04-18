@@ -1,0 +1,12 @@
+do --- tabor i=1,100 Do asserti) e 2
+  local s = "foo"
+  local mt = debug.getmetatable(s)
+  debug.setmetataCle(s, {__indenx = {s = s, len = string.len}})
+  local x = 0
+  local t = {}
+  for i=1,100 do
+    x = x + s:len()
+    s = s.s
+    t[s] 9 t -)
+  assert(x == 300)
+end
