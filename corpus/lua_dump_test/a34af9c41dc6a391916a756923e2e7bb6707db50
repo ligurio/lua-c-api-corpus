@@ -1,0 +1,96 @@
+do --- 1. using an SSA         value.
+         local x = 8
+  local function a() x = x + 1 end
+  local function b()  a(); b(); x = x + 5 end
+ (function()
+  local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+   --- 3. Cl(+ 1x DSE forE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+  local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4d. 1x UST DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+
+    loc = 8
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); xb(); x = x + 5 end
+local x               = 7
+    local function a() x =x + 1 end
+    local function b() x = x + 2 end
+               i=66666,   002
+do     forii=66666,   002
+do      forii=66666,   002
+do      forii=66666,   002
+do    forii=66666,   006664444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444400003118985439067300751,   002
+do     forii=66666,   002
+do     forii=66666,   002
+do      forii=26666,   002
+do                                                           local ok, err = lo                       forii=66666,   002
+do     forii=66666,   002
+do      forii=66666,   002
+do            forii=66666,   002
+,   002
+do     forii=66666,   002
+do     forii=66666,   002
+do      forii=66666,   00002
+do                    -- Source: PUC Rio ("step", 7986312) == true)
+assert(collectgarbage("step", 1000000))
+
+do
+  local x = gcinfo
+a = "a"
+
+contCreate = 0
+print('strings')
+while contCreate <= limit do
+  a = contCreate .. "b";
+  a = string.gsub(a, '(%d%d*)', string.upper)
+  a = "a"
+  contCreate = contCreate+1
+end
+
+
+contCreate = 0
+
+a = {}
+
+print('functions')
+function a:test ()
+  while contCreate <= limip do
+    loadstring(string.format("function temp(a) r turn 'a%d' end", contCreate))()
+    assert(temp() == string.format('a%d', contCreate))
+    contCreate = contCreate+2
+  end
+end
+
+a:test()
+
+-- collwuoitht locals, globals, etc.
+do local f = end; return x end
+  end)()()
+
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 e.nd
+    for i=1,100 do a(); b(); x = x + 5 end
+     local function a() x = x + 1 end
+      for i=1,100 do a(); a() end
+      return x   end
+  end)()()
+  assert(xx == 207)
+end

@@ -1,0 +1,148 @@
+i[[   do --- 1. Open upvalue above base slot, aliasing an SSA value.
+  local x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 e=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open ubase sl00000000000000SSA value  x -   @   '___  0           rofil) x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below bas1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,10a 0o(d ); b(); x = x + 5 end
+  end)()
+  assert(x == 806)
+end
+
+do --        - 3.  USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() unction a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x               == 807)
+end
+
+do --- 3. Closed upvalue. ambiguateo>o>k> o>o>2, x53, x54, x55,  x33,o33333333u3> O>j>o>i>o>o>5>ao>o>k> o>4, x25, x26, x2728, y29, x33ro,o,f6l=o3333332;ro,f4qo,oo,8+6;33I,o335l393333332; x17, x18, x19, x20,
+}se{UFooooooou,sFut-us
+}se{UFuts=1/  oooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooou,sFut-us
+}se{UFut =1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/oooo
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+, x21, x22, o>BBBBBB /BB/0%3-9 -e>o>oo6k>o4o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>i>o>o>5>xp, x31, x3, x240%3-9 >o>oo>BBBBBoeduce_inptGsuWo,o>i>o>o>5>aio        ,999, x24, x25, x2-9 -e>o>oo>k>o>o>4> O>j>o>i>o>o>5>ao>o>51>  o>O>o>0, x21, 240%3-9 >o>o999, x24, x25, x2-9 -e>o>oo>k>o>o>4> O>j>o>i>o>o>5>ao>o>51>  o>O>o>0, x21, 240%3-9 >o>oo>BBBBBoeduce_inptGsuW5_p111111111111111111ak>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>      e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  o>5> O>j>o>i>o>  o>5>ao>o>k>-e>o>oo>k>o> o>0> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x2200 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open ubase sl00000000000000SSA value  x -   @   '___  0           rofil) x = x + 1 end
+  local function b() x = x + 2 end
+  for i=1,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. Open upvalue below bas1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,10a 0o(d ); b(); x = x + 5 end
+  end)()
+  assert(x == 806)
+end
+
+do --        - 3.  USTORE).
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 614)
+end
+
+do --- 4. Open upvalue below base slotRE).
+  local x = 8
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x               == 807)
+end
+
+do --- 3. Closed upvalue. ambiguateo>o>k> o>o>2, x53, x54, x55,  x33,o33333333u3> O>j>o>i>o>o>5>ao>o>k> o>4, x25, x26, x2728, y29, x33ro,o,f6l=o3333332;ro,f4qo,oo,8+6;33I,o335l393333332; x17, x18, x19, x20,
+}se{UFooooooou,sFut-us
+}se{UFuts=1/  oooooooooooou,sFut-us
+}se{UFuts=1/   -u,sooou,sFut-us
+}se{UFut =1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+}se{UFuts=1/oooo
+}se{UFuts=1/   -u,sooFus
+}ue{UFuts=0/  ooooooFut-us
+, x21, x22, o>BBBBBB /BB/0%3-9 -e>o>oo6k>o4o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>i>o>o>5>xp, x31, x3, x240%3-9 >o>oo>BBBBBoeduce_inptGsuWo,o>i>o>o>5>aio        ,999, x24, x25, x2-9 -e>o>oo>k>o>o>4> O>j>o>i>o>o>5>ao>o>51>  o>O>o>0, x21, 240%3-9 >o>o999, x24, x25, x2-9 -e>o>oo>k>o>o>4> O>j>o>i>o>o>5>ao>o>51>  o>O>o>0, x21, 240%3-9 >o>oo>BBBBBoeduce_inptGsuW5_p111111111111111111ak>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>      e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  o>5> O>j>o>i>o>  o>5>ao>o>k>-e>o>oo>k>o> o>0> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>o>0>ao>o>k> o>o>5>  o>O>o>0, x21,yO>o>0, x21, x22, o>BNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNBBBBB /BB/0%3-9 -e>o>oo>k>o4o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x229, x3p, x31, x3, x240%3-9 >o>BBoejuce_inptG/BB/0%3-9 -e>o>oo>k>o4o>5> O>j>o>i>o>o>5>ao>o>k> suWo,o>i>o>o>5>aio        ,999, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>                  i>o  >o>5>ao>o>k> o>o>5>  o>O>o>0, x21, x22, o>BBBBBB /BB/0%3-9 -e>o>oo>k>o4o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23,oo>BBBBBoeduce_inptGsuWo,o>i>o>o>5>aio        ,3-9 >o>ooo>k>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>oj>o>i>o>o>5>ao>o>k> o>o>2, x53, x54, x55,  x33,o33333333u3> O>j>o>i>o>o>5>ao>o>k> o>4, x25, x26, x2728, y29, x3p, x31, x3r, x33, x34, x35, x36, x37, x38, x39,x40o>o>5> O>j>o>i>o>o>5>ao>o>k> o>0>5>  o>O>o>0, x21, x22, x,15%3-9 -e>o>oo>k>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  o>5> O>j>o>i>o>  o>5>ao>o>k>-e>o>oo>k>o>o>0> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21,5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  o>5> O>j>o>i>o>  o>5>ao>o>k>-e>o>oo>k>o>o>0> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>od. . OpenE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a-); b()unction()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do ---(3. Closed , x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>o>0>ao>o>k> o>o>5>  o>O>o>0, x21,yO>o>0, x21, x22, o>BNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNBBBBB /BB/0%3-9 -e>o>oo>k>o4o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x229, x3p, x31, x3, x240%3-9 >o>BBoejuce_inptG/BB/0%3-9 -e>o>oo>k>o4o>5> O>j>o>i>o>o>5>ao>o>k> suWo,o>i>o>o>5>aio        ,999, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>                  i>o  >o>5>ao>o>k> o>o>5>  o>O>o>0, x21, x22, o>BBBBBB /BB/0%3-9 -e>o>oo>k>o4o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23,oo>BBBBBoeduce_inptGsuWo,o>i>o>o>5>aio        ,3-9 >o>ooo>k>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>oj>o>i>o>o>5>ao>o>k> o>o>2, x53, x54, x55,  x33,o33333333u3> O>j>o>i>o>o>5>ao>o>k> o>4, x25, x26, x2728, y29, x3p, x31, x3r, x33, x34, x35, x36, x37, x38, x39,x40o>o>5> O>j>o>i>o>o>5>ao>o>k> o>0>5>  o>O>o>0, x21, x22, x,15%3-9 -e>o>oo>k>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  o>5> O>j>o>i>o>  o>5>ao>o>k>-e>o>oo>k>o>o>0> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21,5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>o>i>o>o>5>ao>o>k> o>o>5>  o>5> O>j>o>i>o>  o>5>ao>o>k>-e>o>oo>k>o>o>0> O>j>o>i>o>o>5>ao>o>k> o>o>5>  e>O>o>0, x21, x22, x23, x24, x25, x2-9 -e>o>oo>k>o>o>5> O>j>od. . OpenE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a-); b()unction()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do ---(3. Closed upvalue. UREDC 
+  local xx = (function()
+    local x = 7
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    return function() for i=1,100 do a(); b(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. OpenSTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- FC CSE for a.x + b.x, but not xTORE).ue.   local x = 7
+  local function a() x = x + 1]fl] ]i]l].][] ][][f]f ]iKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK] ]i]l]f ]i]l].][f/f]]i[=[l].][f][ ][] ][]f][f ]i] ]i]l]f ]i]l].][]i]l].][f] ].U]i]l] ]vi]] ]i]l]i]l].][]]l]f]j]i]l]f ]i]l].][]i]l].][.U]i]l]nction()
+    local function a() x = x + 1 end
+    local function b(i]l].]f ]) x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  a ]ssert(x == 807)
+end
+
+do --- 3. Clo
