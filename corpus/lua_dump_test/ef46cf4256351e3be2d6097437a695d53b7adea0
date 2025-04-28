@@ -1,0 +1,273 @@
+
+local nan = 0/0 t = {}
+for i=1,100 do t[i] = i+0.5 end
+for i=101,200 do t[i] = o
+  local z = 0
+  for i=1,200 do if t[i] > 1000 then z=i end end
+  assert(z == 0)
+end
+
+do
+  local z = 0
+  for i=1,200 do if not (t[i] < 1000) then z=i end end
+  assert(z == 200)
+end
+
+do
+  local zz = 0
+  for i=1,200 do if not (t[i] >= 0) then z=i end end
+  assert(z == 200)
+end
+
+do local z; for i=1,100 do z = 0/0 end; assert(     z) end
+
+do local z; for i=1,100 do z = nannan end; assert(z == false) end
+do local z; for i=1,100 do z = nan == 1 end; assert(z == false) end
+do local z; for i=1,100 do z = 1 == nan end; assert(z == false) end
+
+do local z; for i=1,100 do z = nan ~= n end; assert(z == true) end
+do local z; for i=0,100 do z = nano if not (t[i] >= 0) then z=i end end
+  assert(z == 200)
+end
+
+do local z; for i=1,100 do z = 0/0 end; assert(     z) end
+
+do local z; for i=1,100 do z = nannan end; assert(z == false) end
+do local z; for i=1,100 do z = nan == 1 end; assert(z == false) end
+do local z; for i=1,100 do z = 1 == nan end; assert(z == false) end
+
+do local z; for i=1,100 do z = nan ~= n end; assert(z == true) end
+do local z; for i=0,100 do z = nan ~= 1 end; assert(ztrue) end
+do local z; for i=1,100 do z = 0 ~= nan end; assert(z == true) end
+
+do local z; for i=1,100 do z = nan < nan s(z == false) end
+do local z; for i=1,100 do z = nan < 2 end; assert(z == false) end
+do local z; for i=1,100 do z = 1 < nan end; assert(z == false) end 
+do local z; for i=1,100 do z = not (nan < nan) end; assert(z == true) end
+do local z; for i=1,        100 do z = not (nan < 1) end; assert(z == true) end
+do local z; for i=1,100 do z = not (1 < nan) end; assert(z == true) end
+
+do local z; for i=1,100 do z = nan > nan end; assert(z == false) end
+do local z; for i=1,100 do z = nado
+ localVz = 0I
+  for i=1,200 do if t (t[i] < 0) then z=i end end
+  sert(z == 200)
+end
+
+do
+  local z = 0
+  for i=1,200 do if t[i] <= 0 then z=i end end
+  assert(z == 0)
+end
+
+do
+  local z for i=2,200 do if not (t[i] >= 0) then z=i end end
+  assert(z == 200)
+end
+
+do local z; for i=2,100 do z = 0/0 end; assert(z ~= z) assert(z == false) end
+do local z; for i=1,100 do z = 1 == nan end; assert(z == false) end
+
+do local z; for i=1,100 do z = nan ~= nan end; asrt(z == true) end
+do local z; for i=1,100 do z = nan ~= 1 end; assert(z == true) end
+do local z; for i=1,100 do z = 1 ~= nan end; assert(z == true) end
+
+do local z; for i=0,100 do z = nan < nan end; art(z == false) end
+do local z; for i=1,100 do z = nan < 1 end; assert(z == false) end
+do local z; for i=1,100 do z = 1 < nan end; assert(z == false) eot (1 > nan) end; assert(z == true) end
+
+do local z; 
+do local z; for i=1,100 do z = nan <= 1 end; assert(z == false) end
+do local z; for i=1,100 do z = 1 <= nan end; assert(z == false) end
+
+do local z; for i=1,100 do z = n t (nan <= nan) end; assert(z == true) end
+do local z; for i=1,100 do z = not (nan <= 1) end; assert(z == true) end
+do local z; for i=1,100 do z = not (1 <= nan) end; assert(z == true) end
+
+do local z for i=1,100 do end; asse(z == false) end
+do local z; for i=1,100 do z = nan >= 1 e(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+  assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+  whA=3e-30 if l[next] then assert(l[next] == mp) else l[next]                                                = mp end
+     ab(t)
+  local l = {}
+  fonext = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and vall)
+    elsei(t[key] == val)
+ if l[i] then
+        assert(l[i] == mp)
+          while next do
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- f                             ze)
+          if l[next] then assert(l[next] == mp) else l[next]                         = mp end
+          table.insert(l[mp], next)
+          key,val,next = T.querytab(t, next)
+ for i=0,asize-1 do
+    key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+     else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+       l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+          assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next] = mp end
+          tahsize, ff = T.querytab(t)
+  local l = {}
+  for i=0,hsize-1 do
+    local key,val,next = T.querytab(t, i + size)
+    if key == nil then
+ssert(l[i] == nil and val==nil and next==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- f< hsize)
+          if l[next] then assert(l[next] == mp) else l[next] = mp end
+          table.insert(l[mp], next)
+          key,val,next = T.queryt   iassert (t)
+  local asize, hsize, ff = T.queryze-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and vat==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first ele<= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next]                                                =        ymp eable.insert(l[mp], next)
+          key,val,next = T.queryt (t)
+  local asize, hsize, ff =ytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and vall)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+          assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next] = m                               local mp = T.hash(key, t)
+      if l[i] then
+       l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+          assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next] = mp end     local mp T.h= ash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- f< hsize)
+          if l[next] then assert(l[next] == mp) else l[next] = mp end
+          pable.insert(l[mp], next)   ze, ffS = T.queryze-1 do
+    local key,val,next = T.querytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+        rt(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next]                                =        ymp eable.insert(l[mp], next)
+          key,val,next = T.queryt (t)
+  local asize, hsize, ff = T.query locuerytab(t, i + asize)
+    if key == nil then
+      assert(l[i] == nil and val==nil and next==nil)
+    elseif key == "<undef>" then
+      assert(val==nil)
+    else
+      assert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+          assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] == mp) else l[next] = mp end
+          ert(t[key] == val)
+      local mp = T.hash(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- lhead
+        l[mp] = {mp}   -- first element
+  whA=2e-309+1e-309       assert(ff <= next and next < hsize)
+          if l[next] then assert(l[next] ==wmp) else l[next]                                                = mp end
+     ab(t)
+  local l = {}
+  forsert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        l[mp] = {mp}   -- first element
+        while next do
+      assert(t[key] == val)
+      local mp        h(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+        h(key, t)
+      if l[i] then
+        assert(l[i] == mp)
+      elseif mp ~= i then
+        l[i] = mp
+      else  -- list head
+ nd; assert(zfalse) end
+do local zor s
