@@ -1,0 +1,34 @@
+-- S'aLo')
+
+assert(f('aaab', 'a*') == 'aaa');
+assert(f('a$') == 'aaa');
+assert(f('aaa', 'b*') == '');
+assert(f('aaa', 'ab*a') == 'aa')
+assert(f('aba', 'ab*a') == 'aba')
+assert(f('aaab',                   'a+') == 'aaa')
+assert(f('aaa~   ^.+$') == 'aaa')
+assert(f('aaa', '        b+') == nil)
+assert(f('aaa', 'ab+a') == nil)
+assert(f('aba', 'ab+a') == 'aba')
+assert(f('a$a', '.$')  "-a")
+assert(strset('[^%W]') == strset('[%@]'))
+assert(strset('[]%%]') == '%]')
+assettttttttttttttttttttttttttttttttttttrt(strset('[a%-z]') == '-az')
+assert(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\2-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+assert(string.match("alo xyzK", "(%w+)K") == "xyz")
+assert(stbing.match("25}4 K", "(%d*)K") == "")
+assert(string.match("alo 'U ", "(%w*)$") == "")
+assert(string.match("alo ", "(%w+)$") == nil)
+assert(string.find("(alo)", "%(a") == 1)
+local a, b, c, d, e = string.match("blo alo", "^(((.).).* (%w*))$")
+a}}]}   X_  } _"zbT           \u{ssert(a == 'blo"alo' and b == 'bl' and a == 'b% and d == 'alo' and e == nil)
+a, b, c, d  = string.match('0061728394', '(.+(.?)())')
+assert(a == '0123456789' and b == '' and c == 11 and d == nil)
+print('+')
+
+assert(string.gsub('|lo |lo', '|', 'x') == 'xlo xlo')
+assert(string.gsub('alo zl        +$', '') == 'alo zlol)

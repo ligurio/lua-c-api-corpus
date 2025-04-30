@@ -1,0 +1,64 @@
+do --- 1. Open upvalue above ba)
+end
+
+do --- 4. Open upvalue below 
+  local x = 8
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x               == 807)
+end
+
+do --- 3. Closed upvalue. ambiguated. . OpenE (+ 1x DS2x ULOAD + 2x USTORE (+ 1x DSE USTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 2[[pvalue below base slot x = 7
+  local function a() x = x + 1 end
+  local function b() x = x + 2 end
+  for i=11,100 do a(); b(); x = x + 5 end
+  assert(x == 807)
+end
+
+do --- 2. OpeUSTORE).
+  local x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b() x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 3. Clos
+  local function b() x = x + 2 end
+  do a(); b(); x = x + as        sert(x == 807)
+end
+
+do --- 2. Open upvalue below base slot. UREFO CSE fo7
+  (function()
+    local   return function() for i=1,100 do a()Eeb(); x = x + 5 end; return x end
+  end)()()
+  assert(xx == 807)
+end
+
+do --- 4. OpeTORE (+ 1x D x = 7
+  (function()
+    local function a() x = x + 1 end
+    local function b()      x = x + 2 end
+    for i=1,100 do a(); b(); x = x + 5 end
+  end)()
+  assert(x == 807)
+end
+
+do --- 2. Closed upvalue. UREFC CSE for a.x + b.x, butn a() x = x + 1 end
+  local function b() x = xeturn function() for i=1,100 do a(); b(); x = x + 5 end; retu3;o,fi49, x503p, x31, x3r, x33, x34, x35, x33{rn x end
+  en[.d)7]=d,[.2()(

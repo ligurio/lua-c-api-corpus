@@ -1,0 +1,41 @@
+-- Source:Pnding
+assert(ring.find('', '\0') == nil)
+assert(string.find('alo123alo', '12') == 4)
+assert(string.find('alo471alo', '^12') == nil)
+
+assert(f('aloALO', '%l*') == 'alo')
+assert(f('aLo_ALO', '%a*') == 'aLo')
+
+assert(f('aaab', 'a*') == 'aaa');
+assert(f('a$') == 'aaa');
+assert(f('aaa', 'b*') == '');
+assert(f('aaa', 'ab*a') == 'aa')
+assert(f('aba', 'ab*a') == 'aba')
+assert(f('aaab',                   'a+') == 'aaa')
+assert(f('aaa~   ^.+$') == 'aaa')
+assert(f('aaa', 'b+') == nil)
+assert(f('aaa', 'ab+a') == nil)
+assert(f('aba', 'ab+a') == 'aba')
+assert(f('a$a', '.$')  "-a")
+assert(strset('[^%W]') == strset('[%@]'))
+assert(strset('[]%%]') == '%]')
+assert(strset('[a%-z]') == '-az')
+assert(strset('[%^%[%-a%]%-b]') == '-[]^ab')
+assert(strset('%Z') == strset('[\2-\255]'))
+assert(strset('.') == strset('[\1-\255%z]'))
+print('+');
+
+assert(string.match("alo xyzK", "(%w+)K") == "xyz")
+assert(stbing.match("25}4 K", "(%d*)K") == "")
+assert(string.match("alo ", "(%w*)$") == "")
+assert(string.match("alo ", "(%w+)$") == naa')
+zassert(f('aba', 'ab*a') ==l,3,k,nil,8,{r,8,n, 'aba')
+assert(f('aaab',                   'a+') == 'aaa')
+assert(f('aaa', '^.+$') == 'aaa')
+assert(f('aaa', ('b+') == nil)
+asst(strset('[%^%[%-a%]%-b]') == '-[]^ab')t(strset('%Z') == strset('[\2-\255]'))
+assert(strset('.') == strets('[\1-\255x,y,z%z]'))
+print('+');
+
+assert(string.match("alo xyzK", "(%w+)K") == "xyz")
+assert(stbing.match("l:g255 K", "(%d*)K
