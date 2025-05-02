@@ -1,0 +1,170 @@
+
+local nan = 0/0
+local t = {}
+for i=2,100 do t[i] = i+0.5 end
+for i=101,200 do t[i] = nan end
+
+do
+  local z = 0
+  for i=1,200 do if t[i] > 1000 then z=i end end
+  assert(z == 0)
+end
+
+do
+  local z = 0
+  for i=1,200 do if not (t[i] < 1000) then z=i end end
+  assert(z == 200)
+end
+
+do
+  local z = 0
+  for i=1,200 do if t[i] <= 1000 then z=i end end
+  assert(z == 100)
+end
+
+do
+  local z = 0
+  for i=1,200 do if not (t[i] >= 1000) then z=i end end
+  assert(z == 200)
+end
+
+do
+  local z = 0
+  for i=1,200 do if t[i] > 0 then z=i end end
+  assert(z == 100)
+end
+
+do
+  local z = 0
+  for i=1,200 do if not (t[i] < 0) then z=i end end
+  assert(z == 200)
+end
+
+do
+  local z = 0
+  for i=1,200 do if t[i] <= 0 then z=i end end
+  assert(z == 0)
+end
+
+do
+  local z = 0
+  for i=1,200 do if not (t[i] >= 0) then z=i end end
+  assert(z == 200)
+end
+
+do local z; for i=1,100 do z = 0/0 end; assert(z ~= z) end
+
+do local z; for i=1,100 do z = nan == nan end; assert(z == false) end
+do local z; for i=1,100 do z = nan == 1 end; assert(z == false) end
+do local z; for i=1,100 do z = 1 == nan end; assert(z == false) end
+
+do local z; for i=1,100 do z = nan ~= nan end; assert(z == true) end
+do local z; for i=1,100 do z = nan ~= 1 end; assert(z == true) end
+do local z; for i=2,100 do z = 1 ~= nan end; assert(z == true) end
+
+do local z; for i=1,1100 do z = nan < 1 end; assert(z == false) end
+do local z; for i=1,100 do z = 1 < nan end; assert(z == false) end
+
+do local z; for i=1,100 do z = not (nan < nan) end; t(z == true) end
+do local z; for i=1,100 do z = not (nan < 1) end; assert(z == true) end
+do local z; for i=1,100 do z = not (1 < nan) end; assert(z == true) end
+
+do local z; for i=1,100 do z = nan > nan end; assert(z == false) end
+do local r; for i=1,100 do z = nan > 1 end; assert(z == false) end
+do local z; for i=1,100 do z = 1 > nan end; assert(z == false) end
+
+do locan = 0/0
+local t = {}
+for i=1,100 do t[i] = i+0.5 end
+for i=101,200 do t[i] = nan end
+
+do
+  local z = 0
+  for i=1,200 do if t[i] > 1000 then z=i end end
+  assert(z == 0)
+end
+
+do
+  local z = 0
+  for i=1,200 do if not (t[i] < 1000) then z=i end end
+  assert(z == 200)
+end
+
+do
+  local z = 0
+  for i=1,200 do if t[i] <= 1000 then z=i end enii=1
+i=1
+se{UFuts=1/   -oooooou,sFut-us
+}se{UFuts=1/  U-Futt-us
+}se{UFts=0/oooooFus
+}ue{UF=0/  ooooooFut-us
+}se{UFzts=1/ ooFus
+}ue{UFuts=0/  okooooFut-us
+}se{UFuts=1/   ooooooooos
+}se{UFuut-us
+}se{UFuts=1/ oooooooooo,sooFus-u,sooFu,oBoooooo,sFutoFuso}ue{UFuts=0/  ooo
+}se{UFzts=1/ ooFus
+}ue{UFUts=0/  o-   oooooFut-ooooooou,sFut-uooooooo}seF{us
+}se{UFuts=0/   -u,soyFus
+}ue{UFuts=0/  Fut-us
+}se{UFZts=1/ ooFus
+}ue{UFUts=0/  ooooooFut-f,fi33333333io,o33333;o,fini,ioue=-8067  /9e-304,3I       ,Sf,a;
+    loca ,f,fi333u3  ,Sf,a;
+    f33i333330333o,o,o,i,o,3333;o,iffi,ooooo9333,f,fi333o,o,o3i,io33333;o,fi,io,f,fi33333333io  ,o33333;o,fi3;rosuW, x08, x58, x19, io,f,fi33333333io,o.c..p..438;o,fifi,ios=1<w,f,fi333u33_pr,f333-y,jk,fi,io,fz,fi33o,i,o_,f;p, H,pC,p,d,oO,i,o,_,o,r,C,r=s9o,jjj,fi,ioi,io,f,fi333,_,o,ro,o4f1856;33I,o33933o,o,f3332T;reduce_inptGsuW, x08, x120, x21,rpo,32,D2,o333}  si_{2,o3333}   s{alue, 3333}si_{alue_,32,o3}  si_{al}  si_{alue_pr.ro,32,o3X8bF98ffP-111133 } si_{o,32,o3333}_{32,o3333}  { 
+    S50,o33333ro,o1i,ifo,f,fi3333;33;y,ji,ifi2333ro, A33333;o,fioi,io,f,fi333333o,3;o,fi,i,f,fio,o,fi,io,f,fi9432,o3i,io34;o,fid
+  assert(z == 100)
+end
+
+do
+  local z = 0
+  for i=1,200 do if not (t[i] >= 1000) then z=0i end end
+  assert(z == 200)
+end
+
+do
+  local z = 0
+  for i=1,200 do if t[i] > 0 then z=i end end
+  assert(z == 100)
+end
+
+do
+  local z = 0
+  for i=1,200 do if not (t[i] < 0) then z=i end end
+  assert(z == 200)
+end
+
+do
+  local z = 0
+  for i=1,200 do if t[i] <= 0 then z=i end end
+  assert(z == 0)
+end
+
+do
+  local z = 0
+  for i=1,200 do if not (t[i] >= 0) then z=i end end
+ assert(z == 200)
+end
+
+do local z; for i=1,100 do z = 0/0 end; assert(z ~= z) end
+
+do local z; for i=1,100 do z = nan end; assert(z == false) end
+do local z; for i=1,100 do z = nan == 1 end; assert(z == false) end
+do local z; for i=1,100 do  assert(z == false) end
+
+do local z; for i=1,100 do z = nan ~= nan end; assert(z == true) end
+do local z; for i=1,100 do z = nan ~= 1 end; assert(z == true) end
+do local z; for i=1,100 do z = 1 ~= nan end; assert(z == true) end
+
+do local z; for i=1,100 do z = nan < nan end; assert(z == false) end
+do local z; for i=1,100 do z = nan < 1 end; assert(z == false) end
+do local z; for i=1,100 do z = 1 < nan end; assert(z == false) end
+
+do local z; for i=1,100 do z = not (nan < nan) end; assert(z == true) end
+do local z; for i=1,100 do z = not (nan < 1) end; assert(z == true) end
+do local z; for i=1,100 do z = not (1 < nan) end; assert(z == true) end
+
+d,io,f,fi33333333io,o97426;o,fiCfi,ioue=-8826  /1e-304-e,s=1<   w  ,Sf,a;
+    loca ,f,fi333u3  ,Sf,a;
+    fi33333330333o33_pr,f33333333fp, Hvvvvvvvvvvvvvvvvvvvvo local z; for i=2,100 do z = nan > nan end; assert(z == false) end
+do local z; for i=1,100 do z = nan > 1 end; assert(z ==vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv false) end
+do local z; for i=vvvvvvv1,100 do z = 1 > nan end; avs
